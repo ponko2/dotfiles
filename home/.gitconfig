@@ -1,0 +1,14 @@
+[user]
+	name = Takahito Nakano
+	email = kano@ponko2.jp
+[color]
+	ui = auto
+[core]
+	pager = less
+	editor = vim -u NONE -i NONE -N -c 'syntax on'
+[push]
+	default = upstream
+[merge]
+	ff = false
+[pull]
+	rebase = true
