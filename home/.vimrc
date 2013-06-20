@@ -3,6 +3,9 @@
 " Enable no Vi compatible commands.
 set nocompatible
 
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
+
 let s:is_windows = has('win16') || has('win32') || has('win64')
 let s:is_cygwin = has('win32unix')
 let s:is_mac = !s:is_windows && !s:is_cygwin
@@ -225,7 +228,7 @@ NeoBundle 'Shougo/unite-sudo', '', 'default'
 
 NeoBundleLazy 'Shougo/neocomplcache', '', 'default', {
       \ 'autoload' : {
-      \   'insert' : 1,
+      \   'commands' : 'NeoComplCacheEnable',
       \ }}
 
 "NeoBundleLazy 'Shougo/neocomplcache-rsense', '', 'default', {
@@ -399,17 +402,22 @@ NeoBundleLazy 'AndrewRadev/switch.vim', {
 
 NeoBundleLazy 'teramako/jscomplete-vim', {
       \ 'autoload' : {
-      \   'filetypes' : ['javascript']
+      \   'filetypes' : 'javascript'
       \ }}
 
 NeoBundleLazy 'jelera/vim-javascript-syntax', {
       \ 'autoload' : {
-      \   'filetypes' : ['javascript']
+      \   'filetypes' : 'javascript'
       \ }}
 
 NeoBundleLazy 'jiangmiao/simple-javascript-indenter', {
       \ 'autoload' : {
-      \   'filetypes' : ['javascript']
+      \   'filetypes' : 'javascript'
+      \ }}
+
+NeoBundleLazy 'elzr/vim-json', {
+      \ 'autoload' : {
+      \   'filetypes' : 'json',
       \ }}
 
 NeoBundleLazy 'hail2u/vim-css3-syntax', {
@@ -513,6 +521,11 @@ NeoBundleLazy 'vim-ruby/vim-ruby', {
       \ 'autoload' : {
       \   'mappings' : '<Plug>(ref-keyword)',
       \   'filetypes' : 'ruby'
+      \ }}
+
+NeoBundleLazy 'exu/pgsql.vim', {
+      \ 'autoload' : {
+      \   'filetypes' : 'sql',
       \ }}
 
 NeoBundleLazy 'thinca/vim-ref', {
@@ -906,7 +919,8 @@ autocmd MyAutoCmd WinEnter * checktime
 
 " Disable paste.
 autocmd MyAutoCmd InsertLeave *
-      \ if &paste | set nopaste mouse=a | echo 'nopaste' | endif
+      \ if &paste | set nopaste mouse=a | echo 'nopaste' | endif |
+      \ if &l:diff | diffupdate | endif
 
 "}}}
 
@@ -1165,6 +1179,9 @@ let g:java_highlight_functions = 1
 let g:SimpleJsIndenter_BriefMode = 1
 let g:SimpleJsIndenter_CaseIndentLevel = -1
 
+" PostgreSQL
+let g:sql_type_default = 'pgsql'
+
 " Syntax highlight for user commands.
 augroup syntax-highlight-extends
   autocmd!
@@ -1364,7 +1381,7 @@ nnoremap <silent> [Space]rg
 "}}}
 
 " Useful save mappings.
-nnoremap <Leader><Leader> :<C-u>update<CR>
+nnoremap <silent> <Leader><Leader> :<C-u>update<CR>
 
 " Change current directory.
 nnoremap <silent> [Space]cd :<C-u>call <SID>cd_buffer_dir()<CR>
@@ -1760,23 +1777,22 @@ nnoremap <silent> [Space]b :<C-u>UniteBookmarkAdd<CR>
 nnoremap <silent><expr> [Tag]t &filetype == 'help' ? "\<C-]>" :
       \ ":\<C-u>UniteWithCursorWord -buffer-name=tag tag tag/include\<CR>"
 
-nnoremap <silent> [Tag]n :<C-u>tag<CR>
-
 nnoremap <silent><expr> [Tag]p &filetype == 'help' ?
       \ ":\<C-u>pop\<CR>" : ":\<C-u>Unite jump\<CR>"
+
+" Tab jump
+for n in range(1, 9)
+  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+endfor
 "}}}
 
 nnoremap <silent> <C-h> :<C-u>Unite -buffer-name=help help<CR>
 nnoremap <silent> g<C-h> :<C-u>UniteWithCursorWord help<CR>
 
-nnoremap <expr><silent> ;/ <SID>smart_search_expr(
-      \ ":\<C-u>Unite -buffer-name=search -no-split -start-insert line/fast\<CR>",
-      \ ":\<C-u>Unite -buffer-name=search -auto-highlight -start-insert line\<CR>")
+nnoremap <silent> ;/ :<C-u>Unite -buffer-name=search -no-split -start-insert line<CR>
 nnoremap <silent> ;?
       \ :<C-u>Unite -buffer-name=search -auto-highlight -start-insert line:backward<CR>
-nnoremap <silent><expr> ;* <SID>smart_search_expr(
-      \ ":\<C-u>UniteWithCursorWord -no-split -buffer-name=search line/fast\<CR>",
-      \ ":\<C-u>UniteWithCursorWord -auto-highlight -buffer-name=search line\<CR>")
+nnoremap <silent> ;* :<C-u>UniteWithCursorWord -no-split -buffer-name=search line<CR>
 cnoremap <expr><silent><C-g> (getcmdtype() == '/') ?
       \ "\<ESC>:Unite -buffer-name=search -no-split line -input=".getcmdline()."\<CR>" : "\<C-g>"
 
@@ -1862,16 +1878,23 @@ function! bundle.hooks.on_source(bundle)
 
   call unite#set_profile('source/grep', 'context', {'no_quit' : 1})
 
+  call unite#custom_source('file_rec', 'sorters', 'sorter_reverse')
+
+  " Custom filters."{{{
+  call unite#custom_source(
+        \ 'buffer,file_rec/async,file_mru', 'matchers',
+        \ ['converter_tail', 'matcher_fuzzy'])
+  call unite#custom_source(
+        \ 'file_rec', 'matchers', ['matcher_fuzzy'])
+  call unite#custom_source(
+        \ 'file_rec/async,file_mru', 'converters',
+        \ ['converter_file_directory'])
   call unite#filters#sorter_default#use(['sorter_rank'])
+  "}}}
 
   function! s:unite_my_settings() "{{{
-    call unite#set_substitute_pattern('files', '^\.v/',
-          \ [expand('~/.vim/'), unite#util#substitute_path_separator($HOME)
-          \ . '/.vim/bundle/*/'], 1000)
-    call unite#set_substitute_pattern('files', '\.', '*.', 1000)
     call unite#custom_alias('file', 'h', 'left')
     call unite#custom_default_action('directory', 'narrow')
-    call unite#set_substitute_pattern('file', '[^~.]\zs/', '*/*', 20)
 
     call unite#custom_default_action('versions/git/status', 'commit')
 
@@ -1978,7 +2001,7 @@ let g:neocomplcache_enable_at_startup = 1
 
 let bundle = neobundle#get('neocomplcache')
 function! bundle.hooks.on_source(bundle)
-  let g:neocomplcache_enable_smart_case = 0
+  let g:neocomplcache_enable_smart_case = 1
   let g:neocomplcache_enable_camel_case_completion = 0
   let g:neocomplcache_enable_underbar_completion = 0
   let g:neocomplcache_enable_fuzzy_completion = 1
@@ -2002,6 +2025,9 @@ function! bundle.hooks.on_source(bundle)
   endif
   if !exists('g:neocomplcache_force_omni_patterns')
     let g:neocomplcache_force_omni_patterns = {}
+  endif
+  if !exists('g:neocomplcache_omni_functions')
+    let g:neocomplcache_omni_functions = {}
   endif
 
   let g:neocomplcache_enable_auto_close_preview = 1
@@ -2080,7 +2106,7 @@ function! bundle.hooks.on_source(bundle)
   inoremap <expr><C-p> pumvisible() ? "\<C-p>" : "\<C-p>\<C-n>"
   inoremap <expr>' pumvisible() ? neocomplcache#close_popup() : "'"
 
-  inoremap <expr><C-x><C-f> neocomplcache#manual_filename_complete()
+  inoremap <expr><C-x><C-f> neocomplcache#start_manual_complete('filename_complete')
 
   " <CR>: close popup and save indent.
   inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
@@ -2167,6 +2193,7 @@ function! bundle.hooks.on_source(bundle)
     nmap <buffer> O <Plug>(vimfiler_sync_with_another_vimfiler)
     nnoremap <silent><buffer><expr> gy vimfiler#do_action('tabopen')
     nmap <buffer> p <Plug>(vimfiler_quick_look)
+    nmap <buffer> <Tab> <Plug>(vimfiler_switch_to_other_window)
   endfunction
   "}}}
 endfunction
@@ -2747,9 +2774,7 @@ set nrformats& nrformats-=octal
 let t:cwd = getcwd()
 "}}}
 
-if !has('vim_starting')
-  call neobundle#call_hook('on_source')
-endif
+call neobundle#call_hook('on_source')
 
 set secure
 

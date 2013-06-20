@@ -11,6 +11,8 @@ let s:is_mac = !s:is_windows && !s:is_cygwin
 
 " Fonts:"{{{
 
+set ambiwidth=double
+
 if s:is_windows
   " Number of pixel lines inserted between characters.
   set linespace=2
@@ -19,8 +21,8 @@ if s:is_windows
     set ambiwidth=auto
   endif
 
-  set guifont=Consolas:h12
-  set guifontwide=MS_Gothic:h12
+  set guifont=Ricty:h12
+  set guifontwide=Ricty:h12
 elseif has('mac')
   set guifont=Andale\ Mono:h18
   set guifontwide=ヒラギノ丸ゴ\ ProN\ W4:h18
@@ -75,7 +77,7 @@ set mousehide
 " 貼り付け
 nnoremap <RightMouse> "+p
 xnoremap <RightMouse> "+p
-inoremap <RightMouse> <C-r><C-o>+
+nnoremap <RightMouse> <C-r><C-o>+
 cnoremap <RightMouse> <C-r>+
 
 "}}}
