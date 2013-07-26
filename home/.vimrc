@@ -553,7 +553,8 @@ NeoBundleLazy 'Shougo/vinarise', '', 'default', {
 
 NeoBundleLazy 'tyru/open-browser.vim', {
       \ 'autoload' : {
-      \   'mappings' : '<Plug>(open-browser-wwwsearch)',
+      \   'commands' : ['OpenBrowserSearch', 'OpenBrowser'],
+      \   'functions' : 'openbrowser#open',
       \ }}
 
 NeoBundleLazy 'yuratomo/w3m.vim', {
@@ -590,8 +591,15 @@ NeoBundleLazy 'thinca/vim-guicolorscheme', {
       \   'terminal' : 1
       \ }
 
-NeoBundle 'tyru/winmove.vim', {
-      \   'gui' : 1
+NeoBundleLazy 'tyru/winmove.vim', { 'autoload' : {
+      \   'gui' : 1,
+      \   'mappings' : [
+      \     ['n', '<Plug>(winmove-up)',
+      \           '<Plug>(winmove-down)',
+      \           '<Plug>(winmove-left)',
+      \           '<Plug>(winmove-right)']],
+      \   },
+      \   'augroup' : 'winmove',
       \ }
 
 NeoBundle 'Shougo/neobundle-vim-scripts', '', 'default'
@@ -869,7 +877,7 @@ if exists('*FoldCCtext')
 endif
 
 " :grep で使われるプログラムの指定
-set grepprg=grep\ -nH
+set grepprg=grep\ -inH
 
 " ファイル名やパス名に使われる文字の指定
 set isfname& isfname-==
@@ -1874,29 +1882,28 @@ let bundle = neobundle#get('unite.vim')
 function! bundle.hooks.on_source(bundle)
   autocmd MyAutoCmd FileType unite call s:unite_my_settings()
 
-  call unite#set_profile('action', 'context', {'start_insert' : 1})
+  call unite#custom#profile('action', 'context', {'start_insert' : 1})
 
-  call unite#set_profile('source/grep', 'context', {'no_quit' : 1})
+  call unite#custom#profile('source/grep', 'context', {'no_quit' : 1})
 
-  call unite#custom_source('file_rec', 'sorters', 'sorter_reverse')
+  call unite#custom#source('file_rec', 'sorters', 'sorter_reverse')
 
   " Custom filters."{{{
-  call unite#custom_source(
+  call unite#custom#source(
         \ 'buffer,file_rec/async,file_mru', 'matchers',
         \ ['converter_tail', 'matcher_fuzzy'])
-  call unite#custom_source(
-        \ 'file_rec', 'matchers', ['matcher_fuzzy'])
-  call unite#custom_source(
+  call unite#custom#source(
+        \ 'file,file_rec', 'matchers', ['matcher_fuzzy'])
+  call unite#custom#source(
         \ 'file_rec/async,file_mru', 'converters',
         \ ['converter_file_directory'])
   call unite#filters#sorter_default#use(['sorter_rank'])
   "}}}
 
   function! s:unite_my_settings() "{{{
-    call unite#custom_alias('file', 'h', 'left')
-    call unite#custom_default_action('directory', 'narrow')
-
-    call unite#custom_default_action('versions/git/status', 'commit')
+    call unite#custom#alias('file', 'h', 'left')
+    call unite#custom#default_action('directory', 'narrow')
+    call unite#custom#default_action('versions/git/status', 'commit')
 
     let g:unite_quick_match_table = {
           \ 'a' : 1, 's' : 2, 'd' : 3, 'f' : 4, 'g' : 5,
@@ -1920,7 +1927,7 @@ function! bundle.hooks.on_source(bundle)
       execute g:unite_kind_openable_lcd_command '`=dir`'
     endfunction
     "}}}
-    call unite#custom_action('file,buffer', 'tabopen', my_tabopen)
+    call unite#custom#action('file,buffer', 'tabopen', my_tabopen)
     unlet my_tabopen
     "}}}
 
@@ -2159,7 +2166,7 @@ nnoremap <silent> [Window]f :<C-u>Unite neosnippet/user neosnippet/runtime<CR>
 "}}}
 
 " vimfiler.vim "{{{
-nnoremap <silent> [Space]v :<C-u>VimFiler<CR>
+nnoremap <silent> [Space]v :<C-u>VimFiler -find<CR>
 nnoremap [Space]ff :<C-u>VimFilerExplorer<CR>
 
 let bundle = neobundle#get('vimfiler')
@@ -2654,6 +2661,13 @@ call submode#map('undo/redo', 'n', '', '+', 'g+')
 
 " junkfile.vim "{{{
 nnoremap <silent> [Window]e :<C-u>Unite junkfile/new junkfile -start-insert<CR>
+"}}}
+
+" winmove.vim"{{{
+nmap <Up>    <Plug>(winmove-up)
+nmap <Down>  <Plug>(winmove-down)
+nmap <Left>  <Plug>(winmove-left)
+nmap <Right> <Plug>(winmove-right)
 "}}}
 
 "}}}
