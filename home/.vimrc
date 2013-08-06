@@ -1173,7 +1173,7 @@ augroup MyAutoCmd
   \ |   filetype detect
   \ | endif
 
-  autocmd BufEnter,BufNewFile * if bufname('%') != '' && &filetype == ''
+  autocmd BufRead,BufNewFile * if bufname('%') != '' && &filetype == ''
         \ | setlocal ft=hybrid | endif
 
 augroup END
@@ -1908,10 +1908,10 @@ function! bundle.hooks.on_source(bundle)
 
   " Custom filters."{{{
   call unite#custom#source(
-        \ 'buffer,file_rec/async,file_mru', 'matchers',
+        \ 'buffer,file_rec,file_rec/async,file_mru', 'matchers',
         \ ['converter_tail', 'matcher_fuzzy'])
   call unite#custom#source(
-        \ 'file,file_rec', 'matchers',
+        \ 'file', 'matchers',
         \ ['matcher_fuzzy', 'matcher_hide_hidden_files'])
   call unite#custom#source(
         \ 'file_rec/async,file_mru', 'converters',
@@ -1998,7 +1998,9 @@ function! bundle.hooks.on_source(bundle)
   if executable('ag')
     " Use ag in unite grep source.
     let g:unite_source_grep_command = 'ag'
-    let g:unite_source_grep_default_opts = '--nocolor --nogroup --hidden --column'
+    let g:unite_source_grep_default_opts =
+          \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
+          \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
     let g:unite_source_grep_recursive_opt = ''
   elseif executable('jvgrep')
     " For jvgrep.
