@@ -6,9 +6,15 @@
 [core]
 	pager = less
 	editor = vim -u NONE -i NONE -N -c 'syntax on'
+	excludesfile = ~/.gitignore
+	quotepath = false
 [push]
 	default = upstream
 [merge]
 	ff = false
 [pull]
 	rebase = true
+[pager]
+	log = diff-highlight | LESS=-R less
+	show = diff-highlight | LESS=-R less
+	diff = diff-highlight | LESS=-R less
