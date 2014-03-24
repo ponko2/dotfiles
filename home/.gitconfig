@@ -8,8 +8,9 @@
 	editor = vim -u NONE -i NONE -N -c 'syntax on'
 	excludesfile = ~/.gitignore
 	quotepath = false
+	precomposeunicode = true
 [push]
-	default = upstream
+	default = current
 [merge]
 	ff = false
 [pull]
