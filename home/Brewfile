@@ -1,0 +1,48 @@
+update
+
+upgrade
+
+tap homebrew/dupes
+tap homebrew/binary
+tap homebrew/versions
+tap phinze/homebrew-cask
+tap josegonzalez/homebrew-php
+tap sanemat/font
+
+install zsh
+install git
+install jq
+install macvim --override-system-vim --with-luajit
+install the_silver_searcher
+install wget
+install imagemagick
+install dos2unix
+install colordiff
+install nkf
+install httpd
+install rbenv
+install ruby-build
+install php54
+install php54-intl
+install php54-mcrypt
+install php54-xdebug
+install phpmd
+install php-cs-fixer
+install php-code-sniffer
+install ricty
+
+install brew-cask
+cask install alfred
+cask install clipmenu
+cask install cyberduck
+cask install dropbox
+cask install iterm2
+cask install virtualbox
+cask install vagrant
+cask install firefox
+cask install google-chrome
+cask install google-drive
+cask install google-hangouts
+cask install google-japanese-ime
+
+cleanup
