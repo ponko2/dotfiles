@@ -12,14 +12,21 @@ tap sanemat/font
 install zsh
 install git
 install jq
+install node
+install sqlite
 install macvim --override-system-vim --with-luajit
 install the_silver_searcher
 install wget
+install watch
+install exiftool
 install imagemagick
 install dos2unix
 install colordiff
 install nkf
 install httpd
+install putty
+install openssh
+install ssh-copy-id
 install rbenv
 install ruby-build
 install php54
@@ -36,7 +43,10 @@ cask install alfred
 cask install clipmenu
 cask install cyberduck
 cask install dropbox
+cask install pdftk
 cask install iterm2
+cask install shiftit
+cask install xtrafinder
 cask install virtualbox
 cask install vagrant
 cask install firefox
