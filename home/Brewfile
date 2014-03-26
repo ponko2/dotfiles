@@ -55,5 +55,6 @@ cask install google-drive
 cask install google-hangouts
 cask install google-chrome-beta
 cask install google-japanese-ime
+cask install phpstorm-eap
 
 cleanup
