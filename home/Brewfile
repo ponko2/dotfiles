@@ -6,6 +6,7 @@ tap homebrew/dupes
 tap homebrew/binary
 tap homebrew/versions
 tap phinze/cask
+tap caskroom/versions
 tap josegonzalez/php
 tap sanemat/font
 
@@ -50,9 +51,9 @@ cask install xtrafinder
 cask install virtualbox
 cask install vagrant
 cask install firefox
-cask install google-chrome
 cask install google-drive
 cask install google-hangouts
+cask install google-chrome-beta
 cask install google-japanese-ime
 
 cleanup
