@@ -45,13 +45,13 @@ cask install java7
 cask install xquartz
 cask install dash
 cask install alfred
+cask install slate
 cask install clipmenu
 cask install sourcetree
 cask install cyberduck
 cask install dropbox
 cask install pdftk
 cask install iterm2
-cask install shiftit
 cask install xtrafinder
 cask install virtualbox
 cask install vagrant
