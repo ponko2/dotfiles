@@ -1,8 +1,12 @@
 // Configs
 S.configAll({
-  "defaultToCurrentScreen" : true,
-  "nudgePercentOf"         : "screenSize",
-  "resizePercentOf"        : "screenSize"
+  "defaultToCurrentScreen"  : true,
+  "nudgePercentOf"          : "screenSize",
+  "resizePercentOf"         : "screenSize",
+  "secondsBetweenRepeat"    : 0.1,
+  "checkDefaultsOnLoad"     : true,
+  "focusCheckWidthMax"      : 3000,
+  "orderScreensLeftToRight" : false
 });
 
 S.bindAll({
