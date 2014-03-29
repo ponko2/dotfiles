@@ -46,6 +46,7 @@ cask install xquartz
 cask install dash
 cask install alfred
 cask install clipmenu
+cask install sourcetree
 cask install cyberduck
 cask install dropbox
 cask install pdftk
