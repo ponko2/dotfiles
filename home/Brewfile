@@ -55,6 +55,7 @@ cask install iterm2
 cask install xtrafinder
 cask install virtualbox
 cask install vagrant
+cask install vlc
 cask install firefox
 cask install google-drive
 cask install google-hangouts
