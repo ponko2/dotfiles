@@ -43,6 +43,7 @@ install brew-cask
 cask install java6
 cask install java7
 cask install xquartz
+cask install dash
 cask install alfred
 cask install clipmenu
 cask install cyberduck
