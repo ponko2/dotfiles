@@ -50,5 +50,8 @@ S.bindAll({
   "j:cmd;alt" : S.op("focus", { "direction" : "behind" }),
 
   // Window Hints
-  "esc:cmd" : S.op("hint")
+  "esc:cmd" : S.op("hint"),
+
+  // Grid
+  "esc:ctrl" : S.op("grid")
 });
