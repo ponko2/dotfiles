@@ -1,6 +1,6 @@
 setopt complete_aliases
 
-alias :q="exit"
+alias :q='exit'
 
 case "${OSTYPE}" in
   linux*)
@@ -15,4 +15,4 @@ esac
 
 alias vi='vim'
 
-alias gr="git-root"
+alias gr='git-root'
