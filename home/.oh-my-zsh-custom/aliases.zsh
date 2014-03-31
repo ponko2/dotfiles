@@ -11,6 +11,10 @@ case "${OSTYPE}" in
     alias pbcopy='putclip'
     alias open='cygstart'
     ;;
+  darwin*)
+    alias -g photoshop='open -b com.adobe.Photoshop'
+    alias -g illustrator='open -b com.adobe.Illustrator'
+    ;;
 esac
 
 alias vi='vim'
