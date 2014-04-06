@@ -19,6 +19,7 @@ install macvim --override-system-vim --with-luajit
 install the_silver_searcher
 install wget
 install watch
+install unrar
 install exiftool
 install imagemagick
 install dos2unix
