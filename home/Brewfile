@@ -47,6 +47,9 @@ cask install dash
 cask install alfred
 cask install slate
 cask install clipmenu
+cask install onepassword
+cask install skitch
+cask install the-unarchiver
 cask install sourcetree
 cask install cyberduck
 cask install dropbox
@@ -62,5 +65,7 @@ cask install google-hangouts
 cask install google-chrome-beta
 cask install google-japanese-ime
 cask install phpstorm-eap
+cask install airmail
+cask install appcleaner
 
 cleanup
