@@ -15,7 +15,7 @@ install git
 install jq
 install node
 install sqlite
-install macvim --override-system-vim --with-luajit
+install macvim --HEAD --override-system-vim --with-lua --with-luajit
 install the_silver_searcher
 install wget
 install watch
