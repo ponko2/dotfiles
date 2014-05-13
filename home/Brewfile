@@ -5,7 +5,7 @@ upgrade
 tap homebrew/dupes
 tap homebrew/binary
 tap homebrew/versions
-tap phinze/cask
+tap caskroom/cask
 tap caskroom/versions
 tap josegonzalez/php
 tap sanemat/font
