@@ -67,6 +67,7 @@ cask install google-chrome-beta
 cask install google-japanese-ime
 cask install phpstorm-eap
 cask install airmail
+cask install android-file-transfer
 cask install appcleaner
 
 cleanup
