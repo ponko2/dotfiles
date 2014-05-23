@@ -40,6 +40,7 @@ install phpmd
 install php-cs-fixer
 install php-code-sniffer
 install ricty --vim-powerline
+install boot2docker
 
 install brew-cask
 cask install java6
