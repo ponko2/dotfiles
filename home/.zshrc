@@ -33,7 +33,7 @@ ZSH_THEME="simple"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zaw git autojump brew docker rbenv)
+plugins=(zaw git autojump brew brew-cask vagrant docker rbenv bundler composer laravel4)
 
 source $ZSH/oh-my-zsh.sh
 
