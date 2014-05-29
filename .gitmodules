@@ -1,0 +1,3 @@
+[submodule "home/.oh-my-zsh-custom/plugins/zaw"]
+	path = home/.oh-my-zsh-custom/plugins/zaw
+	url = git@github.com:zsh-users/zaw.git
