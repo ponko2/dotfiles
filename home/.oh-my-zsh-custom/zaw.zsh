@@ -1,6 +1,10 @@
 bindkey '^R' zaw-history
 
-bindkey '^x^c' zaw-cdr
+autoload -Uz is-at-least
+if is-at-least 4.3.11; then
+  bindkey '^x^d' zaw-cdr
+fi
+
 bindkey '^x^b' zaw-git-recent-branches
 bindkey '^x^f' zaw-git-files
 
