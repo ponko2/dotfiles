@@ -21,4 +21,4 @@ alias vi='vim'
 
 alias gr='git-root'
 
-alias rsync='rsync -C --filter=":- .gitignore"'
+alias rsync-git='rsync -C --filter=":- .gitignore"'
