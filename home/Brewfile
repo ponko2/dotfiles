@@ -43,34 +43,34 @@ install ricty --vim-powerline
 install boot2docker
 
 install brew-cask
-cask install java6
-cask install xquartz
-cask install dash
-cask install alfred
-cask install slate
-cask install clipmenu
-cask install onepassword
-cask install skitch
-cask install the-unarchiver
-cask install sourcetree
-cask install cyberduck
-cask install dropbox
-cask install pdftk
-cask install iterm2
-cask install xtrafinder
-cask install virtualbox
-cask install vagrant
-cask install vagrant-manager
-cask install atom
-cask install vlc
-cask install firefox
-cask install google-drive
-cask install google-hangouts
-cask install google-chrome-beta
-cask install google-japanese-ime
-cask install phpstorm-eap
-cask install android-file-transfer
-cask install caffeine
-cask install appcleaner
+cask install java6 || true
+cask install xquartz || true
+cask install dash || true
+cask install alfred || true
+cask install slate || true
+cask install clipmenu || true
+cask install onepassword || true
+cask install skitch || true
+cask install the-unarchiver || true
+cask install sourcetree || true
+cask install cyberduck || true
+cask install dropbox || true
+cask install pdftk || true
+cask install iterm2 || true
+cask install xtrafinder || true
+cask install virtualbox || true
+cask install vagrant || true
+cask install vagrant-manager || true
+cask install atom || true
+cask install vlc || true
+cask install firefox || true
+cask install google-drive || true
+cask install google-hangouts || true
+cask install google-chrome-beta || true
+cask install google-japanese-ime || true
+cask install phpstorm-eap || true
+cask install android-file-transfer || true
+cask install caffeine || true
+cask install appcleaner || true
 
 cleanup
