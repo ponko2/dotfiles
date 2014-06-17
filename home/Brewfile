@@ -41,7 +41,6 @@ install phpmd
 install php-cs-fixer
 install php-code-sniffer
 install ricty --vim-powerline
-install boot2docker
 
 install brew-cask
 cask install java6 || true
@@ -62,6 +61,7 @@ cask install xtrafinder || true
 cask install virtualbox || true
 cask install vagrant || true
 cask install vagrant-manager || true
+cask install boot2docker || true
 cask install atom || true
 cask install vlc || true
 cask install firefox || true
