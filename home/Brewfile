@@ -3,6 +3,7 @@ update
 upgrade
 
 tap homebrew/dupes
+tap homebrew/apache
 tap homebrew/binary
 tap homebrew/versions
 tap caskroom/cask
@@ -26,7 +27,7 @@ install imagemagick
 install dos2unix
 install colordiff
 install nkf
-install httpd
+install httpd22
 install putty
 install openssh
 install ssh-copy-id
