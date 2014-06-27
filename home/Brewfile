@@ -9,6 +9,7 @@ tap homebrew/versions
 tap caskroom/cask
 tap caskroom/versions
 tap josegonzalez/php
+tap peco/peco
 tap sanemat/font
 
 install zsh
@@ -40,6 +41,7 @@ install php54-xdebug
 install phpmd
 install php-cs-fixer
 install php-code-sniffer
+install peco
 install ricty --vim-powerline
 
 install brew-cask
