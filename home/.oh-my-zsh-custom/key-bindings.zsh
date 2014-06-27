@@ -7,6 +7,15 @@ bindkey "^n"   history-beginning-search-forward-end
 bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
 
+# history incremental search
+if zle -la | grep -q '^history-incremental-pattern-search'; then
+  bindkey '^r' history-incremental-pattern-search-backward
+  bindkey '^s' history-incremental-pattern-search-forward
+else
+  bindkey '^r' history-incremental-search-backward
+  bindkey '^s' history-incremental-search-forward
+fi
+
 # 直前のコマンドの最後の単語を挿入
 autoload smart-insert-last-word
 zle -N insert-last-word smart-insert-last-word
