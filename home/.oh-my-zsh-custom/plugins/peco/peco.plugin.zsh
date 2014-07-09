@@ -19,10 +19,10 @@ function peco-history() {
 zle -N peco-history
 
 function peco-cdr() {
-  local output=$(cdr -l | awk '{ print $2 }' | peco)
+  local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
 
-  if [ -n "$output" ]; then
-    BUFFER="cd $output"
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
     zle accept-line
   fi
 
