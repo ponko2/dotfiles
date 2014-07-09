@@ -57,6 +57,7 @@ cask install onepassword || true
 cask install skitch || true
 cask install the-unarchiver || true
 cask install sourcetree || true
+cask install sequel-pro || true
 cask install cyberduck || true
 cask install dropbox || true
 cask install pdftk || true
