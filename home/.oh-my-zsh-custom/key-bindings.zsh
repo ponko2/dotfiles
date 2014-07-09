@@ -20,7 +20,12 @@ fi
 
 # ディレクトリ移動の履歴を検索
 if zle -la | grep -q '^peco-cdr$'; then
-  bindkey '^x^d' peco-cdr
+  bindkey '^xd' peco-cdr
+fi
+
+# ghqで管理しているリポジトリを検索
+if zle -la | grep -q '^peco-src$'; then
+  bindkey '^x^d' peco-src
 fi
 
 # 直前のコマンドの最後の単語を挿入

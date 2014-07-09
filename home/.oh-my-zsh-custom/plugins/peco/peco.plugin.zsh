@@ -29,3 +29,15 @@ function peco-cdr() {
   _peco-clear-screen
 }
 zle -N peco-cdr
+
+function peco-src () {
+  local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
+
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+
+  _peco-clear-screen
+}
+zle -N peco-src

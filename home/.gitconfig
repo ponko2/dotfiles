@@ -19,3 +19,5 @@
 	log = diff-highlight | LESS=-R less
 	show = diff-highlight | LESS=-R less
 	diff = diff-highlight | LESS=-R less
+[ghq]
+	root = ~/src

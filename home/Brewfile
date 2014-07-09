@@ -10,6 +10,7 @@ tap caskroom/cask
 tap caskroom/versions
 tap josegonzalez/php
 tap peco/peco
+tap motemen/ghq
 tap sanemat/font
 
 install zsh
@@ -44,6 +45,7 @@ install phpmd
 install php-cs-fixer
 install php-code-sniffer
 install peco
+install ghq
 install ricty --vim-powerline
 
 install brew-cask
