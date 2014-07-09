@@ -69,6 +69,7 @@ cask install vagrant-manager || true
 cask install boot2docker || true
 cask install atom || true
 cask install vlc || true
+cask install fluid || true
 cask install firefox || true
 cask install google-drive || true
 cask install google-hangouts || true
