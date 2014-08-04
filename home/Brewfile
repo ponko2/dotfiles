@@ -41,9 +41,6 @@ install php54
 install php54-intl
 install php54-mcrypt
 install php54-xdebug
-install phpmd
-install php-cs-fixer
-install php-code-sniffer
 install peco
 install ghq
 install ricty --vim-powerline

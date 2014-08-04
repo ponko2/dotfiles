@@ -1,0 +1,8 @@
+{
+    "require": {
+        "fabpot/php-cs-fixer": "@stable",
+        "phpmd/phpmd": "@stable",
+        "squizlabs/php_codesniffer": "@stable",
+        "phpunit/phpunit": "@stable"
+    }
+}
