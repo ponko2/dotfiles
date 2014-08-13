@@ -73,8 +73,8 @@ cask install vlc || true
 cask install fluid || true
 cask install firefox || true
 cask install google-drive || true
+cask install google-chrome || true
 cask install google-hangouts || true
-cask install google-chrome-beta || true
 cask install google-japanese-ime || true
 cask install phpstorm-eap || true
 cask install android-file-transfer || true
