@@ -38,7 +38,6 @@ install ssh-copy-id
 install rbenv
 install ruby-build
 install php54
-install php54-intl
 install php54-mcrypt
 install php54-xdebug
 install composer
