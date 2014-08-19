@@ -14,7 +14,7 @@
 [merge]
 	ff = false
 [pull]
-	rebase = true
+	rebase = preserve
 [pager]
 	log = diff-highlight | LESS=-R less
 	show = diff-highlight | LESS=-R less
