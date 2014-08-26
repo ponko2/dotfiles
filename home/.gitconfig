@@ -23,3 +23,5 @@
 	root = ~/src
 [grep]
 	fullname = true
+[tag]
+	sort = version:refname
