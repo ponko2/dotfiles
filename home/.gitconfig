@@ -21,3 +21,5 @@
 	diff = diff-highlight | LESS=-R less
 [ghq]
 	root = ~/src
+[grep]
+	fullname = true
