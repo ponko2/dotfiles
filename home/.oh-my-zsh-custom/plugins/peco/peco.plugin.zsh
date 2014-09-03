@@ -11,7 +11,7 @@ function _peco-tac() {
 }
 
 function peco-history() {
-  BUFFER=$(fc -l -n 1 | _peco-tac | peco --query "$LBUFFER")
+  BUFFER="$(fc -l -n 1 | _peco-tac | peco --query "$LBUFFER" | perl -pe 's/\\n/\n/g')"
   CURSOR=$#BUFFER
 
   _peco-clear-screen
