@@ -4,11 +4,11 @@ upgrade
 
 tap homebrew/dupes
 tap homebrew/apache
+tap homebrew/php
 tap homebrew/binary
 tap homebrew/versions
 tap caskroom/cask
 tap caskroom/versions
-tap josegonzalez/php
 tap peco/peco
 tap motemen/ghq
 tap sanemat/font
@@ -37,9 +37,9 @@ install openssh
 install ssh-copy-id
 install rbenv
 install ruby-build
-install php54
-install php54-mcrypt
-install php54-xdebug
+install php55
+install php55-mcrypt
+install php55-xdebug
 install composer
 install peco
 install ghq
