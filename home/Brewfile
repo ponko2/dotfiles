@@ -41,6 +41,7 @@ install php55
 install php55-mcrypt
 install php55-xdebug
 install composer
+install python
 install peco
 install ghq
 install ricty --vim-powerline
