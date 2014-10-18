@@ -31,12 +31,12 @@ install imagemagick
 install dos2unix
 install colordiff
 install nkf
-install httpd22
 install putty
 install openssh
 install ssh-copy-id
 install rbenv
 install ruby-build
+install httpd24
 install php55
 install php55-mcrypt
 install php55-xdebug
