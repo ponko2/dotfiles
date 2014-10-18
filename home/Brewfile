@@ -53,7 +53,6 @@ cask install dash || true
 cask install alfred || true
 cask install slate || true
 cask install clipmenu || true
-cask install karabiner || true
 cask install onepassword || true
 cask install skitch || true
 cask install the-unarchiver || true
@@ -67,10 +66,8 @@ cask install xtrafinder || true
 cask install virtualbox || true
 cask install vagrant || true
 cask install vagrant-manager || true
-cask install boot2docker || true
 cask install atom || true
 cask install vlc || true
-cask install fluid || true
 cask install firefox || true
 cask install google-drive || true
 cask install google-chrome || true
