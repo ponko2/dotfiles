@@ -75,7 +75,7 @@ cask install google-hangouts || true
 cask install google-japanese-ime || true
 cask install phpstorm-eap || true
 cask install android-file-transfer || true
-cask install caffeine || true
+cask install keepingyouawake || true
 cask install appcleaner || true
 
 cleanup
