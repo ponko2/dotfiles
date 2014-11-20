@@ -47,7 +47,7 @@ install ghq
 install ricty --vim-powerline
 
 install brew-cask
-cask install java6 || true
+cask install java || true
 cask install xquartz || true
 cask install dash || true
 cask install alfred || true
