@@ -14,7 +14,7 @@ tap motemen/ghq
 tap sanemat/font
 
 install zsh
-install git
+install git --without-completions
 install jq
 install httpie
 install node
