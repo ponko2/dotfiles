@@ -50,7 +50,6 @@ install brew-cask
 cask install java || true
 cask install xquartz || true
 cask install dash || true
-cask install alfred || true
 cask install slate || true
 cask install clipmenu || true
 cask install onepassword || true
@@ -62,7 +61,6 @@ cask install cyberduck || true
 cask install dropbox || true
 cask install pdftk || true
 cask install iterm2 || true
-cask install xtrafinder || true
 cask install virtualbox || true
 cask install vagrant || true
 cask install vagrant-manager || true
