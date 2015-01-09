@@ -1,11 +1,4 @@
 {
-    "repositories": [
-        { "packagist": false },
-        {
-            "type": "composer",
-            "url": "http://composer-proxy.jp/proxy/packagist"
-        }
-    ],
     "require": {
         "fabpot/php-cs-fixer": "@stable",
         "phpmd/phpmd": "@stable",
