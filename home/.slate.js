@@ -11,10 +11,10 @@ S.configAll({
 
 S.bindAll({
   // Resize Bindings
-  "l:alt"      : S.op("resize", { "width" : "+10%", "height" : "+0" }),
-  "h:alt"      : S.op("resize", { "width" : "-10%", "height" : "+0" }),
-  "k:alt"      : S.op("resize", { "width" : "+0",   "height" : "-10%" }),
-  "j:alt"      : S.op("resize", { "width" : "+0",   "height" : "+10%" }),
+  // "l:alt"      : S.op("resize", { "width" : "+10%", "height" : "+0" }),
+  // "h:alt"      : S.op("resize", { "width" : "-10%", "height" : "+0" }),
+  // "k:alt"      : S.op("resize", { "width" : "+0",   "height" : "-10%" }),
+  // "j:alt"      : S.op("resize", { "width" : "+0",   "height" : "+10%" }),
   "l:ctrl;alt" : S.op("resize", { "width" : "-10%", "height" : "+0",   "anchor" : "bottom-right" }),
   "h:ctrl;alt" : S.op("resize", { "width" : "+10%", "height" : "+0",   "anchor" : "bottom-right" }),
   "k:ctrl;alt" : S.op("resize", { "width" : "+0",   "height" : "+10%", "anchor" : "bottom-right" }),
@@ -42,10 +42,10 @@ S.bindAll({
   "j:ctrl;alt;cmd" : S.op("throw", { "screen" : "down",  "width" : "screenSizeX", "height" : "screenSizeY" }),
 
   // Focus Bindings
-  "l:cmd"     : S.op("focus", { "direction" : "right" }),
-  "h:cmd"     : S.op("focus", { "direction" : "left" }),
-  "k:cmd"     : S.op("focus", { "direction" : "up" }),
-  "j:cmd"     : S.op("focus", { "direction" : "down" }),
+  // "l:cmd"     : S.op("focus", { "direction" : "right" }),
+  // "h:cmd"     : S.op("focus", { "direction" : "left" }),
+  // "k:cmd"     : S.op("focus", { "direction" : "up" }),
+  // "j:cmd"     : S.op("focus", { "direction" : "down" }),
   "k:cmd;alt" : S.op("focus", { "direction" : "behind" }),
   "j:cmd;alt" : S.op("focus", { "direction" : "behind" }),
 
