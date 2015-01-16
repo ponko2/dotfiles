@@ -19,7 +19,7 @@ install jq
 install httpie
 install node
 install sqlite
-install macvim --HEAD --override-system-vim --with-lua --with-luajit
+install macvim --override-system-vim --with-lua --with-luajit
 install the_silver_searcher
 install the_platinum_searcher
 install wget
