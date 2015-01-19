@@ -1,0 +1,10 @@
+bundler
+pry
+pry-doc
+homesick
+capistrano
+cocoapods --pre
+sass
+scss-lint
+compass
+compass-normalize

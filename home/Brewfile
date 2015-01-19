@@ -35,6 +35,8 @@ install putty
 install openssh
 install ssh-copy-id
 install rbenv
+install rbenv-gem-rehash
+install rbenv-default-gems
 install ruby-build
 install httpd24
 install php55
