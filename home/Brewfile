@@ -68,6 +68,7 @@ cask install vagrant || true
 cask install vagrant-manager || true
 cask install atom || true
 cask install vlc || true
+cask install toggldesktop || true
 cask install firefox-ja || true
 cask install firefoxdeveloperedition-ja || true
 cask install google-drive || true
