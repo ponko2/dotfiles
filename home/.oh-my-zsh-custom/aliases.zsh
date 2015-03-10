@@ -19,6 +19,6 @@ esac
 
 alias vi='vim'
 
-alias gr='git-root'
+alias gr='cd-gitroot'
 
 alias rsync-git='rsync -C --filter=":- .gitignore"'

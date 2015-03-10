@@ -8,24 +8,12 @@ bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
 
 # history incremental search
-if zle -la | grep -q '^peco-history$'; then
-  bindkey '^r' peco-history
-elif zle -la | grep -q '^history-incremental-pattern-search'; then
+if zle -la | grep -q '^history-incremental-pattern-search'; then
   bindkey '^r' history-incremental-pattern-search-backward
   bindkey '^s' history-incremental-pattern-search-forward
 else
   bindkey '^r' history-incremental-search-backward
   bindkey '^s' history-incremental-search-forward
-fi
-
-# ディレクトリ移動の履歴を検索
-if zle -la | grep -q '^peco-cdr$'; then
-  bindkey '^xd' peco-cdr
-fi
-
-# ghqで管理しているリポジトリを検索
-if zle -la | grep -q '^peco-src$'; then
-  bindkey '^x^d' peco-src
 fi
 
 # 直前のコマンドの最後の単語を挿入
@@ -37,3 +25,27 @@ bindkey '^]' insert-last-word
 # undo/redo
 bindkey "^[u" undo
 bindkey "^[r" redo
+
+# anyframe
+if zle -la | grep -q '^anyframe-widget-'; then
+  bindkey '^xb' anyframe-widget-cdr
+  bindkey '^x^b' anyframe-widget-checkout-git-branch
+
+  bindkey '^xr' anyframe-widget-execute-history
+  bindkey '^x^r' anyframe-widget-execute-history
+
+  bindkey '^xp' anyframe-widget-put-history
+  bindkey '^x^p' anyframe-widget-put-history
+
+  bindkey '^xg' anyframe-widget-cd-ghq-repository
+  bindkey '^x^g' anyframe-widget-cd-ghq-repository
+
+  bindkey '^xk' anyframe-widget-kill
+  bindkey '^x^k' anyframe-widget-kill
+
+  bindkey '^xi' anyframe-widget-insert-git-branch
+  bindkey '^x^i' anyframe-widget-insert-git-branch
+
+  bindkey '^xf' anyframe-widget-insert-filename
+  bindkey '^x^f' anyframe-widget-insert-filename
+fi

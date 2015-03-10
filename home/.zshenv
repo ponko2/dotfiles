@@ -5,3 +5,11 @@ export PATH="$PATH:./node_modules/.bin"
 
 export RBENV_ROOT=/usr/local/var/rbenv
 export DOCKER_HOST=tcp://localhost:4243
+
+export LANG=ja_JP.UTF-8
+
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
