@@ -54,6 +54,7 @@ cask install xquartz || true
 cask install dash || true
 cask install slate || true
 cask install clipmenu || true
+cask install karabiner || true
 cask install 1password || true
 cask install skitch || true
 cask install the-unarchiver || true
