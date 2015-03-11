@@ -47,6 +47,9 @@ install python
 install peco
 install ghq
 install ricty --vim-powerline
+install tmux
+install ansifilter
+install reattach-to-user-namespace
 
 install brew-cask
 cask install java || true

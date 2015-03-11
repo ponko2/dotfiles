@@ -1,3 +1,6 @@
 [submodule "home/.antigen"]
 	path = home/.antigen
 	url = https://github.com/zsh-users/antigen.git
+[submodule "home/.tmux/plugins/tpm"]
+	path = home/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
