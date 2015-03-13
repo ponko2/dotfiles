@@ -6,6 +6,8 @@ export PATH="$PATH:./node_modules/.bin"
 export RBENV_ROOT=/usr/local/var/rbenv
 export DOCKER_HOST=tcp://localhost:4243
 
+export NOTIFY_COMMAND_COMPLETE_TIMEOUT=10
+
 export LANG=ja_JP.UTF-8
 
 if [[ -n $SSH_CONNECTION ]]; then

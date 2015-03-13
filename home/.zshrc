@@ -12,10 +12,14 @@ fi
 antigen use oh-my-zsh
 
 case "${OSTYPE}" in
+  linux*)
+    antigen bundle marzocchi/zsh-notify
+    ;;
   darwin*)
     antigen bundle osx
     antigen bundle brew
     antigen bundle brew-cask
+    antigen bundle shrkw/zsh-notify --branch=tmux_support
     ;;
 esac
 
