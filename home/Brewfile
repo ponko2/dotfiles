@@ -84,5 +84,6 @@ cask install phpstorm-eap || true
 cask install android-file-transfer || true
 cask install keepingyouawake || true
 cask install appcleaner || true
+cask install flashlight || true
 
 cleanup
