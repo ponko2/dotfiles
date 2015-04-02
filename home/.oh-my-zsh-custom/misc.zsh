@@ -32,3 +32,12 @@ setopt short_loops
 if [ "$TERM" != "dumb" ]; then
   stty -ixon;
 fi
+
+case "${OSTYPE}" in
+  darwin*)
+    ## pager
+    export PAGER="less"
+    export LESS="-R"
+    export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh  %s'
+    ;;
+esac

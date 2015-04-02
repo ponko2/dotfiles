@@ -22,6 +22,7 @@ install sqlite
 install macvim --override-system-vim --with-lua --with-luajit
 install the_silver_searcher
 install the_platinum_searcher
+install source-highlight
 install wget
 install watch
 install rsync
