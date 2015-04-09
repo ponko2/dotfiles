@@ -1,90 +1,86 @@
-update
+tap 'homebrew/dupes'
+tap 'homebrew/apache'
+tap 'homebrew/php'
+tap 'homebrew/binary'
+tap 'homebrew/versions'
+tap 'homebrew/brewdler'
+tap 'caskroom/cask'
+tap 'caskroom/versions'
+tap 'peco/peco'
+tap 'motemen/ghq'
+tap 'sanemat/font'
 
-upgrade
+brew 'zsh'
+brew 'git', args: ['without-completions']
+brew 'jq'
+brew 'httpie'
+brew 'node'
+brew 'sqlite'
+brew 'macvim', args: ['override-system-vim', 'with-lua', 'with-luajit']
+brew 'the_silver_searcher'
+brew 'the_platinum_searcher'
+brew 'source-highlight'
+brew 'curl'
+brew 'wget'
+brew 'watch'
+brew 'rsync'
+brew 'unrar'
+brew 'exiftool'
+brew 'imagemagick'
+brew 'dos2unix'
+brew 'colordiff'
+brew 'nkf'
+brew 'putty'
+brew 'openssh'
+brew 'ssh-copy-id'
+brew 'rbenv'
+brew 'rbenv-gem-rehash'
+brew 'rbenv-default-gems'
+brew 'ruby-build'
+brew 'httpd24'
+brew 'php55'
+brew 'php55-mcrypt'
+brew 'php55-xdebug'
+brew 'composer'
+brew 'python'
+brew 'peco'
+brew 'ghq'
+brew 'ricty', args: ['vim-powerline']
+brew 'tmux'
+brew 'ansifilter'
+brew 'reattach-to-user-namespace'
+brew 'terminal-notifier'
 
-tap homebrew/dupes
-tap homebrew/apache
-tap homebrew/php
-tap homebrew/binary
-tap homebrew/versions
-tap caskroom/cask
-tap caskroom/versions
-tap peco/peco
-tap motemen/ghq
-tap sanemat/font
-
-install zsh
-install git --without-completions
-install jq
-install httpie
-install node
-install sqlite
-install macvim --override-system-vim --with-lua --with-luajit
-install the_silver_searcher
-install the_platinum_searcher
-install source-highlight
-install wget
-install watch
-install rsync
-install unrar
-install exiftool
-install imagemagick
-install dos2unix
-install colordiff
-install nkf
-install putty
-install openssh
-install ssh-copy-id
-install rbenv
-install rbenv-gem-rehash
-install rbenv-default-gems
-install ruby-build
-install httpd24
-install php55
-install php55-mcrypt
-install php55-xdebug
-install composer
-install python
-install peco
-install ghq
-install ricty --vim-powerline
-install tmux
-install ansifilter
-install reattach-to-user-namespace
-install terminal-notifier
-
-install brew-cask
-cask install java || true
-cask install xquartz || true
-cask install dash || true
-cask install slate || true
-cask install clipmenu || true
-cask install karabiner || true
-cask install 1password || true
-cask install skitch || true
-cask install the-unarchiver || true
-cask install sourcetree || true
-cask install sequel-pro || true
-cask install cyberduck || true
-cask install dropbox || true
-cask install pdftk || true
-cask install iterm2 || true
-cask install virtualbox || true
-cask install vagrant || true
-cask install vagrant-manager || true
-cask install atom || true
-cask install vlc || true
-cask install toggldesktop || true
-cask install firefox-ja || true
-cask install firefoxdeveloperedition-ja || true
-cask install google-drive || true
-cask install google-chrome || true
-cask install google-hangouts || true
-cask install google-japanese-ime || true
-cask install phpstorm-eap || true
-cask install android-file-transfer || true
-cask install keepingyouawake || true
-cask install appcleaner || true
-cask install flashlight || true
-
-cleanup
+brew 'brew-cask'
+cask 'java'
+cask 'xquartz'
+cask 'dash'
+cask 'slate'
+cask 'clipmenu'
+cask 'karabiner'
+cask '1password'
+cask 'skitch'
+cask 'the-unarchiver'
+cask 'sourcetree'
+cask 'sequel-pro'
+cask 'cyberduck'
+cask 'dropbox'
+cask 'pdftk'
+cask 'iterm2'
+cask 'virtualbox'
+cask 'vagrant'
+cask 'vagrant-manager'
+cask 'atom'
+cask 'vlc'
+cask 'toggldesktop'
+cask 'firefox-ja'
+cask 'firefoxdeveloperedition-ja'
+cask 'google-drive'
+cask 'google-chrome'
+cask 'google-hangouts'
+cask 'google-japanese-ime'
+cask 'phpstorm-eap'
+cask 'android-file-transfer'
+cask 'keepingyouawake'
+cask 'appcleaner'
+cask 'flashlight'
