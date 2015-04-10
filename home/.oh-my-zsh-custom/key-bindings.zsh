@@ -7,8 +7,11 @@ bindkey "^n"   history-beginning-search-forward-end
 bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
 
-# history incremental search
-if zle -la | grep -q '^history-incremental-pattern-search'; then
+# history search
+if zle -la | grep -q '^anyframe-widget-'; then
+  bindkey '^r' anyframe-widget-put-history
+  bindkey '^s' anyframe-widget-put-history
+elif zle -la | grep -q '^history-incremental-pattern-search'; then
   bindkey '^r' history-incremental-pattern-search-backward
   bindkey '^s' history-incremental-pattern-search-forward
 else
