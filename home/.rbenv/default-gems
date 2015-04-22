@@ -1,9 +1,10 @@
 bundler
+rubocop
 pry
 pry-doc
 homesick
 capistrano
-cocoapods --pre
+cocoapods
 sass
 scss-lint
 compass
