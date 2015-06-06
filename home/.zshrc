@@ -31,6 +31,7 @@ antigen bundle zsh-users/zsh-completions src
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+fpath=($HOME/.anyframe-custom(N-/) $fpath)
 antigen bundle mollifier/anyframe
 antigen bundle mollifier/cd-gitroot
 antigen bundle motemen/ghq zsh

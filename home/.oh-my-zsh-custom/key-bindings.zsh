@@ -47,7 +47,7 @@ if zle -la | grep -q '^anyframe-widget-'; then
   bindkey '^x^k' anyframe-widget-kill
 
   bindkey '^xi' anyframe-widget-insert-git-branch
-  bindkey '^x^i' anyframe-widget-insert-git-branch
+  bindkey '^x^i' anyframe-widget-interactive-git-rebase
 
   bindkey '^xf' anyframe-widget-insert-filename
   bindkey '^x^f' anyframe-widget-insert-filename
