@@ -1,9 +1,4 @@
 {
     "config": {},
-    "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "http://packagist.jp"
-        }
-    }
+    "repositories": {}
 }
