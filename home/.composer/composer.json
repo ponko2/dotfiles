@@ -4,7 +4,6 @@
         "phpmd/phpmd": "@stable",
         "squizlabs/php_codesniffer": "@stable",
         "phpunit/phpunit": "@stable",
-        "laravel/homestead": "~2.0",
         "psy/psysh": "@stable"
     }
 }
