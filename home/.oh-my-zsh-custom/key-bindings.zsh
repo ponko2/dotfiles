@@ -50,5 +50,5 @@ if zle -la | grep -q '^anyframe-widget-'; then
   bindkey '^x^i' anyframe-widget-interactive-git-rebase
 
   bindkey '^xf' anyframe-widget-insert-filename
-  bindkey '^x^f' anyframe-widget-insert-filename
+  bindkey '^x^f' anyframe-widget-interactive-git-commit-fixup
 fi

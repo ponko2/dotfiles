@@ -27,3 +27,5 @@
 	sort = version:refname
 [fetch]
 	prune = true
+[rebase]
+	autosquash = true
