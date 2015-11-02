@@ -1,0 +1,56 @@
+"*":
+  "exception-reporting":
+    userId: "995809c0-dab0-1a4e-ddae-dc00c4fcc8ce"
+  welcome:
+    showOnStartup: false
+  core: {}
+  editor:
+    invisibles: {}
+    backUpBeforeSaving: true
+    fontSize: 16
+    lineHeight: 1.4
+    preferredLineLength: 120
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+  "vim-mode":
+    useClipboardAsDefaultRegister: true
+  minimap:
+    plugins:
+      "minimap-autohide": true
+      bookmarks: true
+      "find-and-replace": true
+      "git-diff": true
+      linter: true
+      pigments: true
+      selection: true
+  tabs:
+    enableVcsColoring: true
+    usePreviewTabs: true
+  "autocomplete-plus":
+    useAlternateScoring: true
+  "fuzzy-finder":
+    useAlternateScoring: true
+  "linter-eslint":
+    disableWhenNoEslintrcFileInPath: true
+    globalNodePath: "/usr/local"
+  "linter-phpcs":
+    executablePath: "~/.composer/vendor/bin/phpcs"
+    disableWhenNoConfigFile: true
+  "linter-phpmd":
+    projectRules: true
+    executablePath: "~/.composer/vendor/bin/phpmd"
+  "linter-rubocop":
+    command: "/usr/local/var/rbenv/shims/rubocop"
+  "linter-scss-lint":
+    executablePath: "/usr/local/var/rbenv/shims/scss-lint"
+  "linter-stylelint":
+    usePreset: false
+  "autocomplete-php":
+    executablePath: "/usr/local/bin/php"
+  "markdown-preview":
+    useGitHubStyle: true
+  "git-diff":
+    showIconsInEditorGutter: true
+  "open-vim":
+    executablePath: "/usr/local/bin/mvim"
