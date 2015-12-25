@@ -1,9 +1,11 @@
+cask_args appdir: '/Applications'
+
 tap 'homebrew/dupes'
 tap 'homebrew/apache'
 tap 'homebrew/php'
 tap 'homebrew/binary'
 tap 'homebrew/versions'
-tap 'homebrew/brewdler'
+tap 'homebrew/bundle'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
 tap 'peco/peco'
