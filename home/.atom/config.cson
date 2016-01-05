@@ -46,6 +46,7 @@
     executablePath: "/usr/local/var/rbenv/shims/scss-lint"
   "linter-stylelint":
     usePreset: false
+    disableWhenNoConfig: true
   "autocomplete-php":
     executablePath: "/usr/local/bin/php"
   "markdown-preview":
