@@ -52,7 +52,6 @@ brew 'ansifilter'
 brew 'reattach-to-user-namespace'
 brew 'terminal-notifier'
 
-brew 'brew-cask'
 cask 'java' unless system '/usr/libexec/java_home --failfast'
 cask 'xquartz'
 cask 'clipy'
