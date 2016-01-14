@@ -4,6 +4,7 @@
         "phpmd/phpmd": "@stable",
         "squizlabs/php_codesniffer": "@stable",
         "phpunit/phpunit": "@stable",
-        "psy/psysh": "@stable"
+        "psy/psysh": "@stable",
+        "hirak/prestissimo": "@stable"
     }
 }
