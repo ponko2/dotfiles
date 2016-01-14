@@ -1,57 +1,59 @@
 "*":
-  "exception-reporting":
-    userId: "995809c0-dab0-1a4e-ddae-dc00c4fcc8ce"
-  welcome:
-    showOnStartup: false
+  "atom-ternjs":
+    useSnippets: true
+  "autocomplete-php":
+    executablePath: "/usr/local/bin/php"
+  "autocomplete-plus":
+    useAlternateScoring: true
   core: {}
   editor:
-    invisibles: {}
     backUpBeforeSaving: true
     fontSize: 16
+    invisibles: {}
     lineHeight: 1.4
     preferredLineLength: 120
     showIndentGuide: true
     showInvisibles: true
     softWrap: true
-  "vim-mode":
-    useClipboardAsDefaultRegister: true
-  minimap:
-    plugins:
-      "minimap-autohide": true
-      bookmarks: true
-      "find-and-replace": true
-      "git-diff": true
-      linter: true
-      pigments: true
-      selection: true
-  tabs:
-    enableVcsColoring: true
-    usePreviewTabs: true
-  "autocomplete-plus":
-    useAlternateScoring: true
+  "exception-reporting":
+    userId: "995809c0-dab0-1a4e-ddae-dc00c4fcc8ce"
   "fuzzy-finder":
     useAlternateScoring: true
+  "git-diff":
+    showIconsInEditorGutter: true
   "linter-eslint":
     disableWhenNoEslintrcFileInPath: true
     globalNodePath: "/usr/local"
   "linter-phpcs":
-    executablePath: "~/.composer/vendor/bin/phpcs"
     disableWhenNoConfigFile: true
+    executablePath: "~/.composer/vendor/bin/phpcs"
   "linter-phpmd":
-    projectRules: true
     executablePath: "~/.composer/vendor/bin/phpmd"
+    projectRules: true
   "linter-rubocop":
     command: "/usr/local/var/rbenv/shims/rubocop"
   "linter-scss-lint":
     executablePath: "/usr/local/var/rbenv/shims/scss-lint"
   "linter-stylelint":
-    usePreset: false
     disableWhenNoConfig: true
-  "autocomplete-php":
-    executablePath: "/usr/local/bin/php"
+    usePreset: false
   "markdown-preview":
     useGitHubStyle: true
-  "git-diff":
-    showIconsInEditorGutter: true
+  minimap:
+    plugins:
+      bookmarks: true
+      "find-and-replace": true
+      "git-diff": true
+      linter: true
+      "minimap-autohide": true
+      pigments: true
+      selection: true
   "open-vim":
     executablePath: "/usr/local/bin/mvim"
+  tabs:
+    enableVcsColoring: true
+    usePreviewTabs: true
+  "vim-mode":
+    useClipboardAsDefaultRegister: true
+  welcome:
+    showOnStartup: false
