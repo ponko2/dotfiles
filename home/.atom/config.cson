@@ -8,9 +8,10 @@
   core: {}
   editor:
     backUpBeforeSaving: true
-    fontSize: 16
+    fontFamily: "Ricty"
+    fontSize: 18
     invisibles: {}
-    lineHeight: 1.4
+    lineHeight: 1.2
     preferredLineLength: 120
     showIndentGuide: true
     showInvisibles: true
