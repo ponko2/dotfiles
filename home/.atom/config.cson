@@ -1,5 +1,6 @@
 "*":
   "atom-ternjs":
+    inlineFnCompletion: false
     useSnippets: true
   "autocomplete-php":
     executablePath: "/usr/local/bin/php"
