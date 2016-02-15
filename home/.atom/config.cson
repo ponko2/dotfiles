@@ -5,7 +5,8 @@
     executablePath: "/usr/local/bin/php"
   "autocomplete-plus":
     useAlternateScoring: true
-  core: {}
+  core:
+    closeEmptyWindows: false
   editor:
     backUpBeforeSaving: true
     fontFamily: "Ricty"
