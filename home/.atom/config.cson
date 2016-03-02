@@ -29,9 +29,7 @@
     globalNodePath: "/usr/local"
   "linter-phpcs":
     disableWhenNoConfigFile: true
-    executablePath: "~/.composer/vendor/bin/phpcs"
   "linter-phpmd":
-    executablePath: "~/.composer/vendor/bin/phpmd"
     projectRules: true
   "linter-rubocop":
     command: "/usr/local/var/rbenv/shims/rubocop"
