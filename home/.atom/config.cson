@@ -33,8 +33,6 @@
     projectRules: true
   "linter-rubocop":
     command: "/usr/local/var/rbenv/shims/rubocop"
-  "linter-scss-lint":
-    executablePath: "/usr/local/var/rbenv/shims/scss-lint"
   "linter-stylelint":
     disableWhenNoConfig: true
     usePreset: false
