@@ -2,8 +2,6 @@
   "atom-ternjs":
     inlineFnCompletion: false
     useSnippets: true
-  "autocomplete-php":
-    executablePath: "/usr/local/bin/php"
   "autocomplete-plus":
     useAlternateScoring: true
   core:
@@ -31,8 +29,6 @@
     disableWhenNoConfigFile: true
   "linter-phpmd":
     projectRules: true
-  "linter-rubocop":
-    command: "/usr/local/var/rbenv/shims/rubocop"
   "linter-stylelint":
     disableWhenNoConfig: true
     usePreset: false
@@ -54,8 +50,6 @@
       pigmentsDecorationsZIndex: 0
       selection: true
       selectionDecorationsZIndex: 0
-  "open-vim":
-    executablePath: "/usr/local/bin/mvim"
   tabs:
     enableVcsColoring: true
     usePreviewTabs: true
