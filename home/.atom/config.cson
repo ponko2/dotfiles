@@ -41,18 +41,27 @@
   minimap:
     plugins:
       bookmarks: true
+      bookmarksDecorationsZIndex: 0
       "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
       "git-diff": true
+      "git-diffDecorationsZIndex": 0
       linter: true
+      linterDecorationsZIndex: 0
       "minimap-autohide": true
+      "minimap-autohideDecorationsZIndex": 0
       pigments: true
+      pigmentsDecorationsZIndex: 0
       selection: true
+      selectionDecorationsZIndex: 0
   "open-vim":
     executablePath: "/usr/local/bin/mvim"
   tabs:
     enableVcsColoring: true
     usePreviewTabs: true
+  "tree-view":
+    autoReveal: true
   "vim-mode":
-    useClipboardAsDefaultRegister: true
+    useSmartcaseForSearch: true
   welcome:
     showOnStartup: false
