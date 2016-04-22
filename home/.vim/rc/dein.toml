@@ -1,0 +1,44 @@
+[[plugins]]
+repo = 'LeafCage/foldCC'
+hook_add = '''
+  let g:foldCCtext_enable_autofdc_adjuster = 1
+  set foldtext=FoldCCtext()
+'''
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+hook_add = '''
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_prompt_mappings = {
+      \ 'PrtSelectMove("j")': ['<c-j>', '<c-n>'],
+      \ 'PrtSelectMove("k")': ['<c-k>', '<c-p>'],
+      \ 'PrtHistory(-1)':     ['<down>'],
+      \ 'PrtHistory(1)':      ['<up>'],
+      \ }
+'''
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'kana/vim-tabpagecd'
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'vim-jp/autofmt'
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+on_ft = 'help'

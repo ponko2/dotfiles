@@ -1,0 +1,103 @@
+scriptencoding utf-8
+
+" Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
+
+" Enable no Vi compatible commands "{{{
+if &compatible
+  set nocompatible
+endif
+"}}}
+
+" Platform check "{{{
+let s:is_windows = has('win32') || has('win64')
+
+function! IsWindows() abort
+  return s:is_windows
+endfunction
+
+function! IsMac() abort
+  return !s:is_windows && !has('win32unix')
+      \ && (has('mac') || has('macunix') || has('gui_macvim')
+      \     || (!executable('xdg-open') && system('uname') =~? '^darwin'))
+endfunction
+"}}}
+
+" Exchange path separator "{{{
+if IsWindows()
+  set shellslash
+endif
+"}}}
+
+function! s:source_rc(path, ...) abort "{{{
+  let use_global = get(a:000, 0, !has('vim_starting'))
+  let abspath = resolve(expand('~/.vim/rc/' . a:path))
+
+  if !use_global
+    execute 'source' fnameescape(abspath)
+    return
+  endif
+
+  " substitute all 'set' to 'setglobal'
+  let content = map(readfile(abspath),
+        \ 'substitute(v:val, "^\\W*\\zsset\\ze\\W", "setglobal", "")')
+
+  " create tempfile and source the tempfile
+  let tempfile = tempname()
+
+  try
+    call writefile(content, tempfile)
+    execute printf('source %s', fnameescape(tempfile))
+  finally
+    if filereadable(tempfile)
+      call delete(tempfile)
+    endif
+  endtry
+endfunction "}}}
+
+" Set augroup "{{{
+augroup MyAutoCmd
+  autocmd!
+augroup END
+"}}}
+
+" Initialize:
+call s:source_rc('init.rc.vim')
+
+" Dein:
+call s:source_rc('dein.rc.vim')
+
+" Encoding:
+call s:source_rc('encoding.rc.vim')
+
+" Search:
+call s:source_rc('search.rc.vim')
+
+" Edit:
+call s:source_rc('edit.rc.vim')
+
+" View:
+call s:source_rc('view.rc.vim')
+
+" FileType:
+call s:source_rc('filetype.rc.vim')
+
+" Mappings:
+call s:source_rc('mappings.rc.vim')
+
+" Commands:
+call s:source_rc('commands.rc.vim')
+
+" Platform:
+call s:source_rc('windows.rc.vim')
+call s:source_rc('unix.rc.vim')
+call s:source_rc('mac.rc.vim')
+call s:source_rc('cui.rc.vim')
+
+" Others:
+call s:source_rc('others.rc.vim')
+
+set secure
+
+
+" vim: foldmethod=marker fileencoding=utf-8

@@ -1,0 +1,108 @@
+[[plugins]]
+repo = 'Konfekt/FastFold'
+on_event = 'InsertEnter'
+hook_post_source = 'FastFoldUpdate'
+
+[[plugins]]
+repo = 'Shougo/junkfile.vim'
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_if = 1
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = 'neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+depends = 'unite.vim'
+on_map = [['n', '<Plug>']]
+on_if = "isdirectory(bufname('%'))"
+hook_source = 'source ~/.vim/rc/plugins/vimfiler.rc.vim'
+
+[[plugins]]
+repo = 'h1mesuke/vim-alignta'
+on_cmd = 'Align'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+on_map = [['n', '<Plug>']]
+hook_add = '''
+  " <Leader>f{char} to move to {char}
+  map  <Leader>f <Plug>(easymotion-bd-f)
+  nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+  " s{char}{char} to move to {char}{char}
+  nmap s <Plug>(easymotion-overwin-f2)
+
+  " Move to line
+  map <Leader>L <Plug>(easymotion-bd-jk)
+  nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+  " Move to word
+  map  <Leader>w <Plug>(easymotion-bd-w)
+  nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+  let g:EasyMotion_startofline = 0
+  "let g:EasyMotion_show_prompt = 0
+  "let g:EasyMotion_verbose = 0
+'''
+
+[[plugins]]
+repo = 'kana/vim-niceblock'
+on_map = [['x', '<Plug>']]
+hook_add = '''
+  xmap I  <Plug>(niceblock-I)
+  xmap A  <Plug>(niceblock-A)
+'''
+
+[[plugins]]
+repo = 'kana/vim-operator-replace'
+depends = 'vim-operator-user'
+on_map = [['nx', '<Plug>']]
+hook_add = '''
+  xmap p <Plug>(operator-replace)
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-jplus'
+on_map = [['n', '<Plug>']]
+hook_add = '''
+  nmap J <Plug>(jplus)
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-textobj-multiblock'
+depends = 'vim-textobj-user'
+on_map = [['ox', '<Plug>']]
+
+[[plugins]]
+repo = 'rhysd/accelerated-jk'
+on_map = [['n', '<Plug>']]
+hook_add = '''
+  nmap <silent>j <Plug>(accelerated_jk_gj)
+  nmap <silent>k <Plug>(accelerated_jk_gk)
+'''
+
+[[plugins]]
+repo = 'rhysd/vim-operator-surround'
+depends = 'vim-operator-user'
+on_map = [['n', '<Plug>']]
+hook_add = '''
+  nmap <silent>sa <Plug>(operator-surround-append)a
+  nmap <silent>sd <Plug>(operator-surround-delete)a
+  nmap <silent>sr <Plug>(operator-surround-replace)a
+  nmap <silent>sc <Plug>(operator-surround-replace)a
+'''
+
+[[plugins]]
+repo = 'thinca/vim-visualstar'
+on_map = '<Plug>(visualstar-'
+hook_add = '''
+  map *  <Plug>(visualstar-*)zv
+  map #  <Plug>(visualstar-#)zv
+  map g* <Plug>(visualstar-g*)zv
+  map g# <Plug>(visualstar-g#)zv
+'''
