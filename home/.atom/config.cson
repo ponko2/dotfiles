@@ -24,6 +24,7 @@
     showIconsInEditorGutter: true
   "linter-eslint":
     disableWhenNoEslintrcFileInPath: true
+    fixOnSave: true
     globalNodePath: "/usr/local"
   "linter-phpcs":
     disableWhenNoConfigFile: true
