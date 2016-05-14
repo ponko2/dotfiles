@@ -13,6 +13,7 @@ tap 'motemen/ghq'
 tap 'sanemat/font'
 
 brew 'zsh'
+brew 'gnupg2'
 brew 'git', args: ['without-completions']
 brew 'jq'
 brew 'httpie'

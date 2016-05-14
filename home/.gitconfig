@@ -1,6 +1,7 @@
 [user]
 	name = Takahito Nakano
 	email = kano@ponko2.jp
+	signingkey = FE0A9D7F
 [color]
 	ui = auto
 [core]
@@ -32,3 +33,7 @@
 	autostash = true
 [stash]
 	showPatch = true
+[gpg]
+	program = gpg2
+[commit]
+	gpgsign = true
