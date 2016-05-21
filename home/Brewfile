@@ -17,7 +17,7 @@ brew 'gnupg2'
 brew 'git', args: ['without-completions']
 brew 'jq'
 brew 'httpie'
-brew 'node'
+brew 'nodebrew'
 brew 'sqlite'
 brew 'macvim', args: ['override-system-vim', 'with-lua', 'with-luajit']
 brew 'the_silver_searcher'
