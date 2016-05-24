@@ -12,6 +12,7 @@ tap 'peco/peco'
 tap 'motemen/ghq'
 tap 'sanemat/font'
 
+brew 'mas'
 brew 'zsh'
 brew 'gnupg2'
 brew 'git', args: ['without-completions']
@@ -77,3 +78,9 @@ cask 'google-hangouts'
 cask 'google-japanese-ime'
 cask 'keepingyouawake'
 cask 'appcleaner'
+
+mas 'Monosnap', id: 540348655
+mas 'Reeder',   id: 880001334
+mas 'Xcode',    id: 497799835
+mas 'Slack',    id: 803453959
+mas 'Twitter',  id: 409789998

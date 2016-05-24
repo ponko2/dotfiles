@@ -9,6 +9,7 @@ export GPG_TTY=$(tty)
 export RBENV_ROOT=/usr/local/var/rbenv
 export NODEBREW_ROOT=/usr/local/var/nodebrew
 export NOTIFY_COMMAND_COMPLETE_TIMEOUT=10
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
