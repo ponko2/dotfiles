@@ -52,6 +52,7 @@
       selection: true
       selectionDecorationsZIndex: 0
   tabs:
+    addNewTabsAtEnd: true
     enableVcsColoring: true
     usePreviewTabs: true
   "tree-view":
