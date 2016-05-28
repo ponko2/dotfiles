@@ -38,7 +38,7 @@ set showmatch
 set cpoptions& cpoptions-=m
 set matchtime=3
 set matchpairs& matchpairs+=<:>
-source $VIMRUNTIME/macros/matchit.vim
+packadd matchit
 
 " バッファが編集中でもその他のファイルを開けるように
 set hidden
