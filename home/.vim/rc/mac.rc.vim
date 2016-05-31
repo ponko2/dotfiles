@@ -14,8 +14,8 @@ if has('gui_running')
 endif
 
 if exists('+macmeta')
-   " MacVimでMETAキーを使えるようにする
-   set macmeta
+  " MacVimでMETAキーを使えるようにする
+  set macmeta
 endif
 
 

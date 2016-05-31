@@ -52,10 +52,10 @@ set breakat=\ \	;:,!?
 " 折り返し設定
 set whichwrap& whichwrap+=h,l,<,>,[,],b,s,~
 if exists('+breakindent')
-   set breakindent
-   set wrap
+  set breakindent
+  set wrap
 else
-   set nowrap
+  set nowrap
 endif
 
 " Do not display greetings message at the time of Vim start.

@@ -5,6 +5,8 @@ if has('win32') || has('win64')
   set shellslash
   set runtimepath^=$HOME/.vim
   set runtimepath+=$HOME/.vim/after
+  set packpath^=$HOME/.vim
+  set packpath+=$HOME/.vim/after
 endif
 
 source $HOME/.vim/vimrc
