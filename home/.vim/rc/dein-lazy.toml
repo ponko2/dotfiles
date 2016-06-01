@@ -28,7 +28,7 @@ on_cmd = 'Align'
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
-on_map = {n = '<Plug>'}
+on_map = '<Plug>'
 hook_add = '''
   " <Leader>f{char} to move to {char}
   map  <Leader>f <Plug>(easymotion-bd-f)
@@ -61,14 +61,14 @@ hook_add = '''
 [[plugins]]
 repo = 'kana/vim-operator-replace'
 depends = 'vim-operator-user'
-on_map = {nx = '<Plug>'}
+on_map = {x = '<Plug>'}
 hook_add = '''
   xmap p <Plug>(operator-replace)
 '''
 
 [[plugins]]
 repo = 'osyo-manga/vim-jplus'
-on_map = {n = '<Plug>'}
+on_map = {nv = '<Plug>'}
 hook_add = '''
   nmap J <Plug>(jplus)
   vmap J <Plug>(jplus)
@@ -92,12 +92,11 @@ hook_add = '''
 [[plugins]]
 repo = 'rhysd/vim-operator-surround'
 depends = 'vim-operator-user'
-on_map = {n = '<Plug>'}
+on_map = '<Plug>(operator-surround-'
 hook_add = '''
-  nmap <silent>sa <Plug>(operator-surround-append)a
-  nmap <silent>sd <Plug>(operator-surround-delete)a
-  nmap <silent>sr <Plug>(operator-surround-replace)a
-  nmap <silent>sc <Plug>(operator-surround-replace)a
+  map <silent>sa <Plug>(operator-surround-append)
+  map <silent>sd <Plug>(operator-surround-delete)
+  map <silent>sr <Plug>(operator-surround-replace)
 '''
 
 [[plugins]]
