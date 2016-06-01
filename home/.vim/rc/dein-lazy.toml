@@ -35,7 +35,7 @@ hook_add = '''
   nmap <Leader>f <Plug>(easymotion-overwin-f)
 
   " s{char}{char} to move to {char}{char}
-  nmap s <Plug>(easymotion-overwin-f2)
+  "nmap s <Plug>(easymotion-overwin-f2)
 
   " Move to line
   map <Leader>L <Plug>(easymotion-bd-jk)
@@ -71,6 +71,9 @@ repo = 'osyo-manga/vim-jplus'
 on_map = {n = '<Plug>'}
 hook_add = '''
   nmap J <Plug>(jplus)
+  vmap J <Plug>(jplus)
+  nmap <Leader>J <Plug>(jplus-input)
+  vmap <Leader>J <Plug>(jplus-input)
 '''
 
 [[plugins]]
