@@ -8,6 +8,10 @@ filetype plugin indent on
 syntax enable
 
 augroup MyAutoCmd
+  " 長いブロックでもシンタックスハイライト
+  autocmd FileType html,jsp,asp,php,xml,perl
+        \ syntax sync minlines=500 maxlines=1000
+
   " コメントの自動挿入をしない
   autocmd FileType,Syntax,BufEnter,BufWinEnter *
         \ setlocal formatoptions-=ro | setlocal formatoptions+=mM
