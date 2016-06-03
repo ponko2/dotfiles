@@ -29,7 +29,7 @@
   "linter-phpcs":
     disableWhenNoConfigFile: true
   "linter-phpmd":
-    projectRules: true
+    rulesets: "ruleset.xml"
   "linter-stylelint":
     disableWhenNoConfig: true
     usePreset: false
@@ -61,3 +61,7 @@
     useSmartcaseForSearch: true
   welcome:
     showOnStartup: false
+".blade.html.php.text":
+  editor:
+    commentEnd: " --}}"
+    commentStart: "{{-- "
