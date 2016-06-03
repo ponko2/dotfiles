@@ -108,3 +108,17 @@ hook_add = '''
   map g* <Plug>(visualstar-g*)zv
   map g# <Plug>(visualstar-g#)zv
 '''
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html', 'php', 'css', 'scss']
+hook_add = '''
+  let g:user_emmet_install_global = 0
+  let g:user_emmet_settings = {
+        \   'php' : {
+        \     'extends' : 'html',
+        \     'filters' : 'c',
+        \   },
+        \ }
+  autocmd FileType html,php,css,scss EmmetInstall
+'''
