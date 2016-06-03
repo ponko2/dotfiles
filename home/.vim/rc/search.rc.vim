@@ -16,8 +16,8 @@ set smartcase
 " インクリメンタルサーチを有効にする
 set incsearch
 
-" 検索パターンを強調表示しない
-set nohlsearch
+" 検索パターンを強調表示
+set hlsearch
 
 " 検索がファイル末尾まで進んだらファイル先頭から再び検索する
 set wrapscan

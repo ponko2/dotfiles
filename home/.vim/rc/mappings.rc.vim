@@ -4,6 +4,11 @@ scriptencoding utf-8
 " Key-mappings:
 "
 
+" Normal mode keymappings: "{{{
+" 検索の強調表示を無効化
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+"}}}
+
 " Command-line mode keymappings: "{{{
 " <C-a>, A: move to head.
 cnoremap <C-a> <Home>
@@ -24,9 +29,12 @@ cnoremap <C-k> <C-\>e getcmdpos() == 1 ?
       \ '' : getcmdline()[:getcmdpos()-2]<CR>
 " <C-y>: paste.
 cnoremap <C-y> <C-r>*
+" <C-g>: Exit.
+cnoremap <C-g> <C-c>
 
 " Auto escape / and ? in search command.
-cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+"cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+"cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 "}}}
 
 
