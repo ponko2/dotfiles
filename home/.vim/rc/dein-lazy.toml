@@ -14,6 +14,22 @@ on_if = 1
 [[plugins]]
 repo = 'Shougo/unite.vim'
 depends = 'neomru.vim'
+hook_source = 'source ~/.vim/rc/plugins/unite.rc.vim'
+hook_add = '''
+  if IsMac()
+    nnoremap <silent> <D-p>
+          \ :<C-u>Unite -buffer-name=files -no-split -multi-line -unique -silent
+          \ jump_point file_point file_mru
+          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec/async'`
+          \ buffer_tab:- file file/new<CR>
+  else
+    nnoremap <silent> <C-p>
+          \ :<C-u>Unite -buffer-name=files -no-split -multi-line -unique -silent
+          \ jump_point file_point file_mru
+          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`
+          \ buffer_tab:- file file/new<CR>
+  endif
+'''
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'

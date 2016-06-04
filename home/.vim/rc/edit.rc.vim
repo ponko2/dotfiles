@@ -59,14 +59,6 @@ set foldcolumn=1
 set fillchars=vert:\|
 set commentstring=%s
 
-" :grep で使われるプログラムの指定
-if executable('ag')
-  set grepprg=ag\ --smart-case\ --vimgrep
-  set grepformat=%f:%l:%c:%m
-else
-  set grepprg=grep\ -inH
-endif
-
 " ファイル名やパス名に使われる文字の指定
 set isfname& isfname-==
 

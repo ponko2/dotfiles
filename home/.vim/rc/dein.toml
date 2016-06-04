@@ -13,18 +13,6 @@ repo = 'Shougo/vimproc.vim'
 build = 'make'
 
 [[plugins]]
-repo = 'ctrlpvim/ctrlp.vim'
-hook_add = '''
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_prompt_mappings = {
-      \ 'PrtSelectMove("j")': ['<c-j>', '<c-n>'],
-      \ 'PrtSelectMove("k")': ['<c-k>', '<c-p>'],
-      \ 'PrtHistory(-1)':     ['<down>'],
-      \ 'PrtHistory(1)':      ['<up>'],
-      \ }
-'''
-
-[[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
