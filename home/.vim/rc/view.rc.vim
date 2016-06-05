@@ -143,7 +143,7 @@ set viewdir=~/.vim/view
 set viewoptions& viewoptions-=options viewoptions+=slash,unix
 
 " 指定した列を強調表示
-if v:version >= 703
+if has('conceal')
   " For conceal.
   set conceallevel=2
   set concealcursor=niv
