@@ -8,8 +8,18 @@ repo = 'Shougo/junkfile.vim'
 on_source = 'unite.vim'
 
 [[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
 repo = 'Shougo/neomru.vim'
 on_if = 1
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+depends = 'context_filetype.vim'
+if = "has('lua')"
+on_event = 'InsertEnter'
+hook_source = 'source ~/.vim/rc/plugins/neocomplete.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
