@@ -15,8 +15,8 @@ endif
 " Load dein.
 if has('vim_starting')
   let s:dein_dir = finddir('dein.vim', '.;')
-  if s:dein_dir != '' || &runtimepath !~ '/dein.vim'
-    if s:dein_dir == '' && &runtimepath !~ '/dein.vim'
+  if s:dein_dir !=# '' || &runtimepath !~# '/dein.vim'
+    if s:dein_dir ==# '' && &runtimepath !~# '/dein.vim'
       let s:dein_dir = expand('$CACHE/dein')
             \. '/repos/github.com/Shougo/dein.vim'
       if !isdirectory(s:dein_dir)
