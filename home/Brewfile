@@ -15,6 +15,7 @@ tap 'sanemat/font'
 brew 'mas'
 brew 'zsh'
 brew 'gnupg2'
+brew 'pinentry-mac'
 brew 'git', args: ['without-completions']
 brew 'jq'
 brew 'httpie'
