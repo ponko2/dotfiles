@@ -9,34 +9,34 @@ scriptencoding utf-8
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 " 引数リスト移動
-nnoremap <silent> [a :previous<CR>
-nnoremap <silent> ]a :next<CR>
-nnoremap <silent> [A :first<CR>
-nnoremap <silent> ]A :last<CR>
+nnoremap <silent> [a :<C-u>previous<CR>
+nnoremap <silent> ]a :<C-u>next<CR>
+nnoremap <silent> [A :<C-u>first<CR>
+nnoremap <silent> ]A :<C-u>last<CR>
 
 " バッファリスト移動
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
+nnoremap <silent> [b :<C-u>bprevious<CR>
+nnoremap <silent> ]b :<C-u>bnext<CR>
+nnoremap <silent> [B :<C-u>bfirst<CR>
+nnoremap <silent> ]B :<C-u>blast<CR>
 
 " ロケーションリスト移動
-nnoremap <silent> [l :lprevious<CR>
-nnoremap <silent> ]l :lnext<CR>
-nnoremap <silent> [L :lfirst<CR>
-nnoremap <silent> ]L :llast<CR>
+nnoremap <silent> [l :<C-u>lprevious<CR>
+nnoremap <silent> ]l :<C-u>lnext<CR>
+nnoremap <silent> [L :<C-u>lfirst<CR>
+nnoremap <silent> ]L :<C-u>llast<CR>
 
 " エラーリスト移動
-nnoremap <silent> [q :cprevious<CR>
-nnoremap <silent> ]q :cnext<CR>
-nnoremap <silent> [Q :cfirst<CR>
-nnoremap <silent> ]Q :clast<CR>
+nnoremap <silent> [q :<C-u>cprevious<CR>
+nnoremap <silent> ]q :<C-u>cnext<CR>
+nnoremap <silent> [Q :<C-u>cfirst<CR>
+nnoremap <silent> ]Q :<C-u>clast<CR>
 
 " タグリスト移動
-nnoremap <silent> [t :tprevious<CR>
-nnoremap <silent> ]t :tnext<CR>
-nnoremap <silent> [T :tfirst<CR>
-nnoremap <silent> ]T :tlast<CR>
+nnoremap <silent> [t :<C-u>tprevious<CR>
+nnoremap <silent> ]t :<C-u>tnext<CR>
+nnoremap <silent> [T :<C-u>tfirst<CR>
+nnoremap <silent> ]T :<C-u>tlast<CR>
 "}}}
 
 " Command-line mode keymappings: "{{{
