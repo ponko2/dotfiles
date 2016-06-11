@@ -40,13 +40,13 @@ hook_add = '''
     nnoremap <silent> <D-p>
           \ :<C-u>Unite -buffer-name=files -no-split -multi-line -unique -silent
           \ jump_point file_point file_mru
-          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec/async'`
+          \ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec/async'`
           \ buffer_tab:- file file/new<CR>
   else
     nnoremap <silent> <C-p>
           \ :<C-u>Unite -buffer-name=files -no-split -multi-line -unique -silent
           \ jump_point file_point file_mru
-          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`
+          \ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`
           \ buffer_tab:- file file/new<CR>
   endif
 '''
@@ -157,4 +157,11 @@ hook_add = '''
         \   },
         \ }
   autocmd FileType html,php,css,scss EmmetInstall
+'''
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+on_if = "finddir('.git', ';') != ''"
+hook_add = '''
+  let g:gitgutter_diff_args = 'HEAD'
 '''
