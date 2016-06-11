@@ -165,3 +165,24 @@ on_if = "finddir('.git', ';') != ''"
 hook_add = '''
   let g:gitgutter_diff_args = 'HEAD'
 '''
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+on_if = 1
+hook_add = '''
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 1
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_check_on_wq = 0
+
+  let g:syntastic_css_checkers        = ['stylelint']
+  let g:syntastic_javascript_checkers = ['eslint']
+  let g:syntastic_php_checkers        = ['php', 'phpcs', 'phpmd']
+  let g:syntastic_ruby_checkers       = ['rubocop']
+  let g:syntastic_scss_checkers       = ['stylelint']
+  let g:syntastic_vim_checkers        = ['vint']
+'''
