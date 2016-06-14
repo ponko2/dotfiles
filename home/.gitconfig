@@ -16,6 +16,10 @@
 	ff = false
 [pull]
 	rebase = preserve
+[diff]
+	compactionHeuristic = true
+[interactive]
+	diffFilter = diff-highlight
 [pager]
 	log = diff-highlight | LESS=-R less
 	show = diff-highlight | LESS=-R less
