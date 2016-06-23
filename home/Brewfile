@@ -17,6 +17,7 @@ brew 'zsh'
 brew 'gnupg2'
 brew 'pinentry-mac'
 brew 'git', args: ['without-completions']
+brew 'go'
 brew 'jq'
 brew 'httpie'
 brew 'nodebrew'
