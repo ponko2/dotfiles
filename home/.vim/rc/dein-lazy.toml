@@ -186,3 +186,10 @@ hook_add = '''
   let g:syntastic_scss_checkers       = ['stylelint']
   let g:syntastic_vim_checkers        = ['vint']
 '''
+
+[[plugins]]
+repo = 'vim-jp/vim-go-extra'
+on_ft = 'go'
+hook_add = '''
+  autocmd FileType go autocmd BufWritePre <buffer> Fmt
+'''
