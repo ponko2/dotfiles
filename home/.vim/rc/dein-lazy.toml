@@ -167,6 +167,17 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'elzr/vim-json'
+on_ft = 'json'
+hook_add = '''
+  let g:vim_json_syntax_conceal = 0
+'''
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+[[plugins]]
 repo = 'scrooloose/syntastic'
 on_if = 1
 hook_add = '''
@@ -186,11 +197,4 @@ hook_add = '''
   let g:syntastic_ruby_checkers       = ['rubocop']
   let g:syntastic_scss_checkers       = ['stylelint']
   let g:syntastic_vim_checkers        = ['vint']
-'''
-
-[[plugins]]
-repo = 'vim-jp/vim-go-extra'
-on_ft = 'go'
-hook_add = '''
-  autocmd FileType go autocmd BufWritePre <buffer> Fmt
 '''
