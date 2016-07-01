@@ -176,6 +176,10 @@ hook_add = '''
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
+hook_add = '''
+  let g:go_fmt_command = 'goimports'
+  let g:go_list_type = 'quickfix'
+'''
 
 [[plugins]]
 repo = 'scrooloose/syntastic'
@@ -191,10 +195,15 @@ hook_add = '''
   let g:syntastic_check_on_wq = 0
 
   let g:syntastic_css_checkers        = ['stylelint']
-  let g:syntastic_go_checkers         = ['gometalinter']
+  let g:syntastic_go_checkers         = ['golint', 'govet', 'errcheck']
   let g:syntastic_javascript_checkers = ['eslint']
   let g:syntastic_php_checkers        = ['php', 'phpcs', 'phpmd']
   let g:syntastic_ruby_checkers       = ['rubocop']
   let g:syntastic_scss_checkers       = ['stylelint']
   let g:syntastic_vim_checkers        = ['vint']
+
+  let g:syntastic_mode_map = {
+        \   'mode': 'active',
+        \   'passive_filetypes': ['go']
+        \ }
 '''
