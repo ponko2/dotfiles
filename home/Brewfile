@@ -1,5 +1,3 @@
-cask_args appdir: '/Applications'
-
 tap 'homebrew/dupes'
 tap 'homebrew/apache'
 tap 'homebrew/php'
