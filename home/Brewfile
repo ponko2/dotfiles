@@ -6,8 +6,6 @@ tap 'homebrew/versions'
 tap 'homebrew/bundle'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
-tap 'peco/peco'
-tap 'motemen/ghq'
 tap 'sanemat/font'
 
 brew 'mas'
