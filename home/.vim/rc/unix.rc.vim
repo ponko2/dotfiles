@@ -14,5 +14,8 @@ else
   set grepprg="grep -inH $*"
 endif
 
+if &shell =~# 'fish$'
+  set shell=sh
+endif
 
 " vim: foldmethod=marker fileencoding=utf-8

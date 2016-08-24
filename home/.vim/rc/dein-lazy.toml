@@ -167,6 +167,10 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'dag/vim-fish'
+on_ft = 'fish'
+
+[[plugins]]
 repo = 'elzr/vim-json'
 on_ft = 'json'
 hook_add = '''
