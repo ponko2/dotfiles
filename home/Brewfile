@@ -22,6 +22,7 @@ brew 'httpie'
 brew 'nodebrew'
 brew 'sqlite'
 brew 'macvim', args: ['override-system-vim', 'with-lua', 'with-luajit']
+brew 'moreutils'
 brew 'the_silver_searcher'
 brew 'the_platinum_searcher'
 brew 'source-highlight'
@@ -52,6 +53,8 @@ brew 'ricty', args: ['vim-powerline']
 brew 'tmux'
 brew 'ansifilter'
 brew 'reattach-to-user-namespace'
+brew 'rename'
+brew 'renameutils'
 brew 'terminal-notifier'
 
 cask 'java' unless system '/usr/libexec/java_home --failfast'
