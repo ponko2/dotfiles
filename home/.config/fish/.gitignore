@@ -1,0 +1,6 @@
+*
+!.gitignore
+!conf.d/
+!conf.d/*
+!config.fish
+!fishfile
