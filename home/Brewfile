@@ -8,6 +8,7 @@ tap 'caskroom/cask'
 tap 'caskroom/versions'
 tap 'sanemat/font'
 
+brew 'fish'
 brew 'mas'
 brew 'zsh'
 brew 'gnupg2'
