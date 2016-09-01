@@ -6,6 +6,7 @@
     useAlternateScoring: true
   core:
     closeEmptyWindows: false
+    telemetryConsent: "limited"
   editor:
     backUpBeforeSaving: true
     fontFamily: "Ricty"
