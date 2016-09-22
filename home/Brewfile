@@ -3,7 +3,6 @@ tap 'homebrew/apache'
 tap 'homebrew/php'
 tap 'homebrew/binary'
 tap 'homebrew/versions'
-tap 'homebrew/bundle'
 tap 'caskroom/cask'
 tap 'caskroom/versions'
 tap 'sanemat/font'
@@ -86,6 +85,5 @@ cask 'appcleaner'
 
 mas 'Monosnap', id: 540348655
 mas 'Reeder',   id: 880001334
-mas 'Xcode',    id: 497799835
 mas 'Slack',    id: 803453959
 mas 'Twitter',  id: 409789998
