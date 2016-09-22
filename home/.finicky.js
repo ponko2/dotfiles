@@ -1,10 +1,16 @@
-finicky.setDefaultBrowser('com.google.Chrome');
+finicky.setDefaultBrowser('com.apple.Safari');
 
 finicky.onUrl(function (url, opts) {
   var sourceApplication = opts && opts.sourceBundleIdentifier;
 
+  var safari = {
+    bundleIdentifier: 'com.apple.Safari',
+    openInBackground: true
+  };
+
   var chrome = {
-    bundleIdentifier: 'com.google.Chrome'
+    bundleIdentifier: 'com.google.Chrome',
+    openInBackground: true
   };
 
   var firefox = {
@@ -14,12 +20,12 @@ finicky.onUrl(function (url, opts) {
 
   // SNS
   if (url.match(/^https?:\/\/twitter\.com/)) {
-    return chrome;
+    return safari;
   }
 
   // Tech
   if (url.match(/^https?:\/\/(github|qiita)\.com/)) {
-    return chrome;
+    return safari;
   }
 
   // Reeder
