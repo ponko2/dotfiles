@@ -66,7 +66,6 @@ cask 'the-unarchiver'
 cask 'sourcetree'
 cask 'sequel-pro'
 cask 'psequel'
-cask 'cyberduck'
 cask 'dropbox'
 cask 'virtualbox'
 cask 'vagrant'
@@ -84,6 +83,7 @@ cask 'google-japanese-ime'
 cask 'keepingyouawake'
 cask 'appcleaner'
 
+mas 'ForkLift', id: 412448059
 mas 'Monosnap', id: 540348655
 mas 'Reeder',   id: 880001334
 mas 'Slack',    id: 803453959
