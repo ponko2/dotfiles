@@ -15,7 +15,6 @@ case "${OSTYPE}" in
   darwin*)
     antigen bundle osx
     antigen bundle brew
-    antigen bundle brew-cask
     ;;
 esac
 
