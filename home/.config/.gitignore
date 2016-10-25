@@ -2,3 +2,5 @@
 !.gitignore
 !fish/
 !fish/*
+!git/
+!git/*
