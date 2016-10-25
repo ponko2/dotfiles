@@ -92,6 +92,7 @@ endif
 
 " 補完候補が1つしかないときもポップアップメニューを使う
 set completeopt=menuone
+set completeopt+=noinsert
 
 " キーワード補完の対象を設定
 set complete=.
@@ -143,13 +144,9 @@ set viewdir=~/.vim/view
 set viewoptions& viewoptions-=options viewoptions+=slash,unix
 
 " 指定した列を強調表示
-if has('conceal')
-  " For conceal.
-  set conceallevel=2
-  set concealcursor=niv
-
-  set colorcolumn=120
-endif
+set conceallevel=2
+set concealcursor=niv
+set colorcolumn=119
 
 " 終了時の情報を保存
 set viminfo& viminfo+=n~/.vim/tmp/viminfo

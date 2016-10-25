@@ -37,6 +37,9 @@ nnoremap <silent> [t :<C-u>tprevious<CR>
 nnoremap <silent> ]t :<C-u>tnext<CR>
 nnoremap <silent> [T :<C-u>tfirst<CR>
 nnoremap <silent> ]T :<C-u>tlast<CR>
+
+" Better x
+nnoremap x "_x
 "}}}
 
 " Command-line mode keymappings: "{{{
@@ -61,10 +64,6 @@ cnoremap <C-k> <C-\>e getcmdpos() == 1 ?
 cnoremap <C-y> <C-r>*
 " <C-g>: Exit.
 cnoremap <C-g> <C-c>
-
-" Auto escape / and ? in search command.
-"cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
-"cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 "}}}
 
 

@@ -46,9 +46,6 @@ set hidden
 " 開いているファイルが他で編集されたら読み直す
 "set autoread
 
-" Insertモードでの単語補完時にもignorecase
-set infercase
-
 " :cd や :lcd を使ったときに検索されるディレクトリの設定
 "set cdpath& cdpath+=~
 
@@ -78,15 +75,8 @@ set writebackup
 set backupdir=~/.vim/tmp
 
 " vimを終了してもundo履歴を復元する
-if v:version >= 703
-  set undofile
-  set undodir=~/.vim/undo
-endif
-
-" tagの設定
-if v:version < 703 || (v:version == 7.3 && !has('patch336'))
-  set notagbsearch
-endif
+set undofile
+set undodir=~/.vim/undo
 
 " Visual blockモードで仮想編集を有効にする
 set virtualedit=block

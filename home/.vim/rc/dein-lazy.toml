@@ -1,7 +1,10 @@
 [[plugins]]
-repo = 'Konfekt/FastFold'
-on_event = 'BufEnter'
-hook_post_source = 'FastFoldUpdate'
+repo = 'LeafCage/foldCC'
+on_ft = 'vim'
+hook_add = '''
+  let g:foldCCtext_enable_autofdc_adjuster = 1
+  set foldtext=FoldCCtext()
+'''
 
 [[plugins]]
 repo = 'Shougo/junkfile.vim'

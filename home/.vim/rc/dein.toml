@@ -1,11 +1,4 @@
 [[plugins]]
-repo = 'LeafCage/foldCC'
-hook_add = '''
-  let g:foldCCtext_enable_autofdc_adjuster = 1
-  set foldtext=FoldCCtext()
-'''
-
-[[plugins]]
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
@@ -30,3 +23,6 @@ repo = 'vim-jp/autofmt'
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 on_ft = 'help'
+
+[[plugins]]
+repo = 'rhysd/vim-gfm-syntax'
