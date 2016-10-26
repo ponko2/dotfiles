@@ -43,13 +43,13 @@ hook_add = '''
     nnoremap <silent> <D-p>
           \ :<C-u>Unite -buffer-name=files -no-split -multi-line -unique -silent
           \ jump_point file_point file_mru
-          \ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec/async'`
+          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec/async'`
           \ buffer_tab:- file file/new<CR>
   else
     nnoremap <silent> <C-p>
           \ :<C-u>Unite -buffer-name=files -no-split -multi-line -unique -silent
           \ jump_point file_point file_mru
-          \ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`
+          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`
           \ buffer_tab:- file file/new<CR>
   endif
 '''
@@ -62,8 +62,15 @@ on_if = "isdirectory(bufname('%'))"
 hook_source = 'source ~/.vim/rc/plugins/vimfiler.rc.vim'
 
 [[plugins]]
-repo = 'h1mesuke/vim-alignta'
-on_cmd = 'Align'
+repo = 'junegunn/vim-easy-align'
+on_map = {xn = '<Plug>(EasyAlign)'}
+hook_add = '''
+  " Start interactive EasyAlign in visual mode (e.g. vipga)
+  xmap ga <Plug>(EasyAlign)
+
+  " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+  nmap ga <Plug>(EasyAlign)
+'''
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
@@ -164,7 +171,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
-on_if = "finddir('.git', ';') != ''"
+on_if = "executable('git') && finddir('.git', ';') != ''"
 hook_add = '''
   let g:gitgutter_diff_args = 'HEAD'
 '''

@@ -21,6 +21,7 @@ set ambiwidth=double
 if IsWindows()
   set guifont=MS_Gothic:h12:cSHIFTJIS
   set guifontwide=MS_Gothic:h12:cSHIFTJIS
+  set renderoptions=type:directx
 
   " 行間隔の設定
   set linespace=1
