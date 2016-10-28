@@ -66,5 +66,10 @@ cnoremap <C-y> <C-r>*
 cnoremap <C-g> <C-c>
 "}}}
 
+" Visual mode keymappings: "{{{
+" Disable dos-standard-mappings
+silent! vunmap <C-x>
+"}}}
+
 
 " vim: foldmethod=marker fileencoding=utf-8
