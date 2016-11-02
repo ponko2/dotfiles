@@ -18,4 +18,10 @@ if &shell =~# 'fish$'
   set shell=sh
 endif
 
+" Enable true color
+if exists('+termguicolors')
+  set termguicolors
+endif
+
+
 " vim: foldmethod=marker fileencoding=utf-8

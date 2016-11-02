@@ -9,26 +9,6 @@ if &compatible
 endif
 "}}}
 
-" Platform check "{{{
-let s:is_windows = has('win32') || has('win64')
-
-function! IsWindows() abort
-  return s:is_windows
-endfunction
-
-function! IsMac() abort
-  return !s:is_windows && !has('win32unix')
-      \ && (has('mac') || has('macunix') || has('gui_macvim')
-      \     || (!executable('xdg-open') && system('uname') =~? '^darwin'))
-endfunction
-"}}}
-
-" Exchange path separator "{{{
-if IsWindows()
-  set shellslash
-endif
-"}}}
-
 function! s:source_rc(path, ...) abort "{{{
   let use_global = get(a:000, 0, !has('vim_starting'))
   let abspath = resolve(expand('~/.vim/rc/' . a:path))
@@ -70,14 +50,8 @@ call s:source_rc('dein.rc.vim')
 " Encoding:
 call s:source_rc('encoding.rc.vim')
 
-" Search:
-call s:source_rc('search.rc.vim')
-
-" Edit:
-call s:source_rc('edit.rc.vim')
-
-" View:
-call s:source_rc('view.rc.vim')
+" Options:
+call s:source_rc('options.rc.vim')
 
 " FileType:
 call s:source_rc('filetype.rc.vim')
@@ -93,9 +67,6 @@ call s:source_rc('windows.rc.vim')
 call s:source_rc('unix.rc.vim')
 call s:source_rc('mac.rc.vim')
 call s:source_rc('cui.rc.vim')
-
-" Others:
-call s:source_rc('others.rc.vim')
 
 set secure
 
