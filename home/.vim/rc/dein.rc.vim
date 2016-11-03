@@ -48,9 +48,7 @@ call dein#save_state()
 if !has('vim_starting')
   call dein#call_hook('source')
   call dein#call_hook('post_source')
-
-  filetype plugin indent on
-  syntax enable
+  call vimrc#on_filetype()
 endif
 
 

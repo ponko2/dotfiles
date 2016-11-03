@@ -9,7 +9,8 @@ if !has('gui_running') | finish | endif
 " Color Scheme: "{{{
 
 if !exists('g:colors_name')
-  colorscheme wombat
+  set background=dark
+  colorscheme solarized
 endif
 
 "}}}
@@ -115,10 +116,6 @@ set guioptions+=c
 " Don't flick cursor.
 set guicursor& guicursor+=a:blinkon0
 
-" Vimを透けさせる
-if IsMac()
-  set transparency=10
-endif
 
 "}}}
 

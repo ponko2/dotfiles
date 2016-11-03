@@ -26,3 +26,6 @@ on_ft = 'help'
 
 [[plugins]]
 repo = 'rhysd/vim-gfm-syntax'
+
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'

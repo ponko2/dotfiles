@@ -4,9 +4,6 @@ scriptencoding utf-8
 " FileType:
 "
 
-filetype plugin indent on
-syntax enable
-
 augroup MyAutoCmd
   " 長いブロックでもシンタックスハイライト
   autocmd FileType html,jsp,asp,php,xml,perl

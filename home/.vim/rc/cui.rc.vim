@@ -12,7 +12,9 @@ if has('gui_running') | finish | endif
 set t_Co=256
 
 if !exists('g:colors_name')
-  colorscheme wombat256mod
+  set background=dark
+  let g:solarized_termtrans = 1
+  colorscheme solarized
 endif
 
 "}}}
