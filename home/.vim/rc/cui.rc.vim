@@ -6,6 +6,14 @@ if has('gui_running') | finish | endif
 " CUI:
 "
 
+" Mouse: "{{{
+
+" Disable the mouse.
+set mouse=
+set mousemodel=
+
+"}}}
+
 " Color Scheme: "{{{
 
 " Enable 256 color terminal.
@@ -16,14 +24,6 @@ if !exists('g:colors_name')
   let g:solarized_termtrans = 1
   colorscheme solarized
 endif
-
-"}}}
-
-" Mouse: "{{{
-
-" Disable the mouse.
-set mouse=
-set mousemodel=
 
 "}}}
 

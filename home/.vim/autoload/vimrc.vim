@@ -8,8 +8,6 @@ function! vimrc#on_filetype() abort "{{{
     silent! filetype plugin indent on
     filetype detect
     syntax enable
-
-    " gitgutter highlight
     doautocmd ColorScheme
   endif
 endfunction "}}}

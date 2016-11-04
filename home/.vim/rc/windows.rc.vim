@@ -11,8 +11,5 @@ if $PATH !~? '\(^\|;\)' . escape($VIM, '\\') . '\(;\|$\)'
   let $PATH = $VIM . ';' . $PATH
 endif
 
-" 斜体表示をしない
-let g:solarized_italic = 0
-
 
 " vim: foldmethod=marker fileencoding=utf-8

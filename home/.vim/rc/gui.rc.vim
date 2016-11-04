@@ -6,15 +6,6 @@ if !has('gui_running') | finish | endif
 " GUI:
 "
 
-" Color Scheme: "{{{
-
-if !exists('g:colors_name')
-  set background=dark
-  colorscheme solarized
-endif
-
-"}}}
-
 " Font: "{{{
 
 set ambiwidth=double
@@ -26,6 +17,9 @@ if IsWindows()
 
   " 行間隔の設定
   set linespace=1
+
+  " 斜体表示をしない
+  let g:solarized_italic = 0
 
   " 一部のUCS文字の幅を自動計測して決める
   if has('kaoriya')
@@ -59,7 +53,7 @@ endif
 
 if has('multi_byte_ime') || has('xim') || has('gui_macvim')
   " IME ON時のカーソルの色を設定
-  highlight CursorIM guibg=Purple guifg=NONE
+  autocmd MyAutoCmd ColorScheme * highlight CursorIM guibg=Purple guifg=NONE
 
   " 挿入モードでのデフォルトIME状態
   set iminsert=0
@@ -116,6 +110,14 @@ set guioptions+=c
 " Don't flick cursor.
 set guicursor& guicursor+=a:blinkon0
 
+"}}}
+
+" Color Scheme: "{{{
+
+if !exists('g:colors_name')
+  set background=dark
+  colorscheme solarized
+endif
 
 "}}}
 

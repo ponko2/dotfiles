@@ -46,6 +46,11 @@ call dein#end()
 call dein#save_state()
 
 if !has('vim_starting')
+  " Installation check.
+  if dein#check_install()
+    call dein#install()
+  endif
+
   call dein#call_hook('source')
   call dein#call_hook('post_source')
   call vimrc#on_filetype()

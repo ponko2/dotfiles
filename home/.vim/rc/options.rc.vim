@@ -4,9 +4,6 @@ scriptencoding utf-8
 " Search:
 "
 
-" * 等での検索時 - で切らない
-set iskeyword& iskeyword+=-
-
 " 大文字と小文字を無視する
 set ignorecase
 
@@ -65,12 +62,6 @@ packadd matchit
 
 " バッファが編集中でもその他のファイルを開けるように
 set hidden
-
-" 開いているファイルが他で編集されたら読み直す
-"set autoread
-
-" :cd や :lcd を使ったときに検索されるディレクトリの設定
-"set cdpath& cdpath+=~
 
 " 折り畳みの設定
 set foldenable
@@ -144,11 +135,6 @@ if IsWindows()
 else
   set listchars=tab:▸\ ,trail:-,extends:»,precedes:«,nbsp:%
 endif
-augroup HighlightIdegraphicSpace
-  autocmd!
-  autocmd Colorscheme * highlight IdeographicSpace term=underline ctermbg=DarkGray guibg=DarkGray
-  autocmd VimEnter,WinEnter * match IdeographicSpace /　/
-augroup END
 
 " 最下ウィンドウにいつステータス行を常に表示
 set laststatus=2

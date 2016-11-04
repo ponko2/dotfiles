@@ -161,12 +161,16 @@ on_ft = ['html', 'php', 'css', 'scss']
 hook_add = '''
   let g:user_emmet_install_global = 0
   let g:user_emmet_settings = {
+        \   'jsp' : {
+        \     'extends' : 'html',
+        \     'filters' : 'c',
+        \   },
         \   'php' : {
         \     'extends' : 'html',
         \     'filters' : 'c',
         \   },
         \ }
-  autocmd FileType html,php,css,scss EmmetInstall
+  autocmd MyAutoCmd FileType html,xhtml,jsp,asp,php,css,scss EmmetInstall
 '''
 
 [[plugins]]
