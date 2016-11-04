@@ -50,7 +50,6 @@ brew 'tmux'
 brew 'unrar'
 brew 'watch'
 brew 'wget'
-brew 'yarn'
 brew 'zsh'
 
 cask '1password'
