@@ -1,0 +1,10 @@
+[[plugins]]
+repo = 'zchee/deoplete-go'
+on_i = 1
+on_ft = 'go'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+on_i = 1
+hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/deoplete.rc.vim'

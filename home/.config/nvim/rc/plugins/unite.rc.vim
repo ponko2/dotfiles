@@ -31,17 +31,9 @@ call unite#custom#source(
 
 call unite#filters#sorter_default#use(['sorter_rank'])
 
-if executable('hw')
-  let g:unite_source_grep_command = 'hw'
-  let g:unite_source_grep_default_opts = '--no-group --no-color'
-  let g:unite_source_grep_recursive_opt = ''
-elseif executable('ag')
+if executable('ag')
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts = '--smart-case --vimgrep'
-  let g:unite_source_grep_recursive_opt = ''
-elseif executable('pt')
-  let g:unite_source_grep_command = 'pt'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
   let g:unite_source_grep_recursive_opt = ''
 endif
 

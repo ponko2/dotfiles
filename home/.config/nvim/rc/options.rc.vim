@@ -58,7 +58,12 @@ set showmatch
 set cpoptions& cpoptions-=m
 set matchtime=3
 set matchpairs& matchpairs+=<:>
-packadd matchit
+
+if has('nvim')
+  source $VIMRUNTIME/macros/matchit.vim
+else
+  packadd matchit
+endif
 
 " バッファが編集中でもその他のファイルを開けるように
 set hidden
@@ -81,16 +86,19 @@ set ttimeoutlen=100
 " スワップ設定
 set swapfile
 set updatetime=1000
-set directory=~/.vim/tmp
+set directory=$XDG_CACHE_HOME/nvim/tmp
 
 " バックアップ設定
 set backup
 set writebackup
-set backupdir=~/.vim/tmp
+set backupdir=$XDG_CACHE_HOME/nvim/tmp
 
 " vimを終了してもundo履歴を復元する
 set undofile
-set undodir=~/.vim/undo
+if !isdirectory(expand('$XDG_CACHE_HOME/nvim/undo'))
+  call mkdir(expand('$XDG_CACHE_HOME/nvim/undo'), 'p')
+endif
+set undodir=$XDG_CACHE_HOME/nvim/undo
 
 " Visual blockモードで仮想編集を有効にする
 set virtualedit=block
@@ -257,7 +265,10 @@ set ttyfast
 set display=lastline
 
 " View setting.
-set viewdir=~/.vim/view
+if !isdirectory(expand('$XDG_CACHE_HOME/nvim/view'))
+  call mkdir(expand('$XDG_CACHE_HOME/nvim/view'), 'p')
+endif
+set viewdir=$XDG_CACHE_HOME/nvim/view
 set viewoptions& viewoptions-=options viewoptions+=slash,unix
 
 " 指定した列を強調表示
@@ -266,7 +277,22 @@ set concealcursor=niv
 set colorcolumn=119
 
 " 終了時の情報を保存
-set viminfo& viminfo+=n~/.vim/tmp/viminfo
+if has('nvim')
+  set shada& shada+=n$XDG_CACHE_HOME/nvim/tmp/shada
+else
+  set viminfo& viminfo+=n$XDG_CACHE_HOME/nvim/tmp/viminfo
+endif
+
+" Color Scheme: "{{{
+
+" Enable 256 color terminal.
+set t_Co=256
+
+if !exists('g:colors_name')
+  colorscheme desert
+endif
+
+"}}}
 
 
 "---------------------------------------------------------------------------
@@ -281,6 +307,29 @@ set nrformats& nrformats-=octal
 
 " Default home directory.
 let t:cwd = getcwd()
+
+" Input Japanese: "{{{
+
+if has('multi_byte_ime') || has('xim')
+  " IME ON時のカーソルの色を設定
+  autocmd MyAutoCmd ColorScheme * highlight CursorIM guibg=Purple guifg=NONE
+
+  " 挿入モードでのデフォルトIME状態
+  set iminsert=0
+
+  " 検索モードでのデフォルトIME状態
+  set imsearch=0
+
+  " 挿入モードでのIME状態を記憶させない
+  inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+endif
+
+if has('gui_macvim') && has('kaoriya')
+  set noimdisable
+  set imdisableactivate
+endif
+
+"}}}
 
 
 " vim: foldmethod=marker fileencoding=utf-8

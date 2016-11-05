@@ -4,3 +4,5 @@
 !fish/**
 !git/
 !git/**
+!nvim/
+!nvim/**

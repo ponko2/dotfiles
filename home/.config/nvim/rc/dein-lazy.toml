@@ -19,27 +19,31 @@ repo = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'Shougo/neomru.vim'
 on_if = 1
+on_source = ['unite.vim', 'denite.nvim']
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
 depends = 'context_filetype.vim'
 if = "has('lua')"
-on_event = 'InsertEnter'
-hook_source = 'source ~/.vim/rc/plugins/neocomplete.rc.vim'
+on_i = 1
+hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/neocomplete.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 depends = ['neosnippet-snippets', 'context_filetype.vim']
 on_event = 'InsertCharPre'
 on_ft = 'snippet'
-hook_source = 'source ~/.vim/rc/plugins/neosnippet.rc.vim'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/neosnippet.rc.vim'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
 depends = 'neomru.vim'
-hook_source = 'source ~/.vim/rc/plugins/unite.rc.vim'
+on_source = 'denite.nvim'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/unite.rc.vim'
 hook_add = '''
-  if IsMac()
+  if has('nvim')
+    " do nothing.
+  elseif IsMac() && has('gui_running')
     nnoremap <silent> <D-p>
           \ :<C-u>Unite -buffer-name=files -no-split -multi-line -unique -silent
           \ jump_point file_point file_mru
@@ -55,11 +59,36 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = 'Denite'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/denite.rc.vim'
+hook_add = '''
+  if !has('nvim')
+    " do nothing.
+  elseif IsMac() && has('gui_vimr')
+    nnoremap <silent> <D-p>
+          \ :<C-u>Denite file_point
+          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`
+          \ file_mru<CR>
+  else
+    nnoremap <silent> <C-p>
+          \ :<C-u>Denite file_point
+          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`
+          \ file_mru<CR>
+  endif
+'''
+
+[[plugins]]
+repo = 'nixprime/cpsm'
+on_source = 'denite.nvim'
+build = 'env PY3=ON ./install.sh'
+
+[[plugins]]
 repo = 'Shougo/vimfiler.vim'
 depends = 'unite.vim'
 on_map = {n = '<Plug>'}
 on_if = "isdirectory(bufname('%'))"
-hook_source = 'source ~/.vim/rc/plugins/vimfiler.rc.vim'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/vimfiler.rc.vim'
 
 [[plugins]]
 repo = 'junegunn/vim-easy-align'

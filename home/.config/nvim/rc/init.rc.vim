@@ -15,7 +15,7 @@ endfunction
 
 function! IsMac() abort
   return !s:is_windows && !has('win32unix')
-      \ && (has('mac') || has('macunix') || has('gui_macvim')
+      \ && (has('mac') || has('macunix') || has('gui_macvim') || has('gui_vimr')
       \     || (!executable('xdg-open') && system('uname') =~? '^darwin'))
 endfunction
 "}}}
@@ -46,10 +46,6 @@ if !has('gui_running') && IsWindows()
 endif
 "}}}
 
-if has('multi_byte_ime')
-  set iminsert=0 imsearch=0
-endif
-
 " Use English interface.
 if IsWindows()
   language message en
@@ -62,6 +58,11 @@ if IsWindows()
   set shellslash
 endif
 "}}}
+
+" Make temp directory
+if !isdirectory(expand('$XDG_CACHE_HOME/nvim/tmp'))
+  call mkdir(expand('$XDG_CACHE_HOME/nvim/tmp'), 'p')
+endif
 
 " Disable menu.vim
 if has('gui_running')

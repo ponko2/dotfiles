@@ -1,6 +1,6 @@
 scriptencoding utf-8
 
-if !has('gui_running') | finish | endif
+if !has('gui_running') && !has('gui_vimr') | finish | endif
 
 "---------------------------------------------------------------------------
 " GUI:
@@ -10,16 +10,15 @@ if !has('gui_running') | finish | endif
 
 set ambiwidth=double
 
-if IsWindows()
+if has('gui_vimr')
+  " do nothing.
+elseif IsWindows()
   set guifont=MS_Gothic:h12:cSHIFTJIS
   set guifontwide=MS_Gothic:h12:cSHIFTJIS
   set renderoptions=type:directx
 
   " 行間隔の設定
   set linespace=1
-
-  " 斜体表示をしない
-  let g:gruvbox_italic = 0
 
   " 一部のUCS文字の幅を自動計測して決める
   if has('kaoriya')
@@ -45,29 +44,6 @@ endif
 " Height of window.
 if &lines < 40
    set lines=40
-endif
-
-"}}}
-
-" Input Japanese: "{{{
-
-if has('multi_byte_ime') || has('xim') || has('gui_macvim')
-  " IME ON時のカーソルの色を設定
-  autocmd MyAutoCmd ColorScheme * highlight CursorIM guibg=Purple guifg=NONE
-
-  " 挿入モードでのデフォルトIME状態
-  set iminsert=0
-
-  " 検索モードでのデフォルトIME状態
-  set imsearch=0
-
-  " 挿入モードでのIME状態を記憶させない
-  inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
-endif
-
-if has('gui_macvim') && has('kaoriya')
-  set noimdisable
-  set imdisableactivate
 endif
 
 "}}}
@@ -109,19 +85,6 @@ set guioptions+=c
 
 " Don't flick cursor.
 set guicursor& guicursor+=a:blinkon0
-
-"}}}
-
-" Color Scheme: "{{{
-
-if !exists('g:colors_name')
-  set background=dark
-  try
-    colorscheme gruvbox
-  catch
-    colorscheme desert
-  endtry
-endif
 
 "}}}
 

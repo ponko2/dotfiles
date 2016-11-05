@@ -3,10 +3,11 @@ if !1 | finish | endif
 
 if has('win32') || has('win64')
   set shellslash
-  set runtimepath^=$HOME/.vim
-  set runtimepath+=$HOME/.vim/after
-  set packpath^=$HOME/.vim
-  set packpath+=$HOME/.vim/after
 endif
 
-source $HOME/.vim/vimrc
+set runtimepath^=$HOME/.config/nvim
+set runtimepath+=$HOME/.config/nvim/after
+set packpath^=$HOME/.config/nvim
+set packpath+=$HOME/.config/nvim/after
+
+source $HOME/.config/nvim/init.vim

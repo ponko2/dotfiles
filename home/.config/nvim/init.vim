@@ -9,9 +9,17 @@ if &compatible
 endif
 "}}}
 
+if empty($XDG_CONFIG_HOME)
+  let $XDG_CONFIG_HOME = expand('~/.config')
+endif
+
+if empty($XDG_CACHE_HOME)
+  let $XDG_CACHE_HOME = expand('~/.cache')
+endif
+
 function! s:source_rc(path, ...) abort "{{{
   let use_global = get(a:000, 0, !has('vim_starting'))
-  let abspath = resolve(expand('~/.vim/rc/' . a:path))
+  let abspath = resolve(expand('$XDG_CONFIG_HOME/nvim/rc/' . a:path))
 
   if !use_global
     execute 'source' fnameescape(abspath)
@@ -68,6 +76,7 @@ call s:source_rc('commands.rc.vim')
 call s:source_rc('windows.rc.vim')
 call s:source_rc('unix.rc.vim')
 call s:source_rc('mac.rc.vim')
+call s:source_rc('neovim.rc.vim')
 call s:source_rc('gui.rc.vim')
 call s:source_rc('cui.rc.vim')
 
