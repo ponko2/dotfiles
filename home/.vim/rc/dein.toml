@@ -28,7 +28,7 @@ on_ft = 'help'
 repo = 'rhysd/vim-gfm-syntax'
 
 [[plugins]]
-repo = 'altercation/vim-colors-solarized'
+repo = 'thinca/vim-zenspace'
 
 [[plugins]]
-repo = 'thinca/vim-zenspace'
+repo = 'morhetz/gruvbox'

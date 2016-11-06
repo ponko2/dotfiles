@@ -21,8 +21,11 @@ set t_Co=256
 
 if !exists('g:colors_name')
   set background=dark
-  let g:solarized_termtrans = 1
-  colorscheme solarized
+  try
+    colorscheme gruvbox
+  catch
+    colorscheme desert
+  endtry
 endif
 
 "}}}

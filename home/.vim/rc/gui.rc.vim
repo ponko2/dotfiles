@@ -19,7 +19,7 @@ if IsWindows()
   set linespace=1
 
   " 斜体表示をしない
-  let g:solarized_italic = 0
+  let g:gruvbox_italic = 0
 
   " 一部のUCS文字の幅を自動計測して決める
   if has('kaoriya')
@@ -116,7 +116,11 @@ set guicursor& guicursor+=a:blinkon0
 
 if !exists('g:colors_name')
   set background=dark
-  colorscheme solarized
+  try
+    colorscheme gruvbox
+  catch
+    colorscheme desert
+  endtry
 endif
 
 "}}}
