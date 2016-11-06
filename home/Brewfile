@@ -52,7 +52,6 @@ brew 'tmux'
 brew 'unrar'
 brew 'watch'
 brew 'wget'
-brew 'zsh'
 
 cask '1password'
 cask 'appcleaner'
