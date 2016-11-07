@@ -32,12 +32,3 @@ repo = 'thinca/vim-zenspace'
 
 [[plugins]]
 repo = 'morhetz/gruvbox'
-hook_add = '''
-  if IsWindows()
-    " 斜体表示をしない
-    let g:gruvbox_italic = 0
-  endif
-
-  set background=dark
-  autocmd MyAutoCmd VimEnter * nested colorscheme gruvbox
-'''

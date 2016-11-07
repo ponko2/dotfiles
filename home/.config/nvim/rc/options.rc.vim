@@ -136,6 +136,10 @@ set formatexpr=autofmt#japanese#formatexpr()
 " View:
 "
 
+" 相対的な行番号を表示
+autocmd MyAutoCmd WinEnter,FocusGained * setlocal relativenumber
+autocmd MyAutoCmd WinLeave,FocusLost   * setlocal norelativenumber
+
 " 特殊文字を可視化
 set list
 if IsWindows()
@@ -289,7 +293,17 @@ endif
 set t_Co=256
 
 if !exists('g:colors_name')
-  colorscheme desert
+  if IsWindows()
+    " 斜体表示をしない
+    let g:gruvbox_italic = 0
+  endif
+
+  try
+    set background=dark
+    colorscheme gruvbox
+  catch
+    colorscheme desert
+  endtry
 endif
 
 "}}}

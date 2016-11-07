@@ -8,10 +8,8 @@ if IsWindows() | finish | endif
 
 " :grep で使われるプログラムの指定
 if executable('ag')
-  set grepprg="ag --smart-case --vimgrep $*"
+  set grepprg=ag\ --smart-case\ --vimgrep\ $*
   set grepformat=%f:%l:%c:%m
-else
-  set grepprg="grep -inH $*"
 endif
 
 if &shell =~# 'fish$'
