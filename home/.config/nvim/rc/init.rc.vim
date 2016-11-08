@@ -18,6 +18,16 @@ function! IsMac() abort
       \ && (has('mac') || has('macunix') || has('gui_macvim') || has('gui_vimr')
       \     || (!executable('xdg-open') && system('uname') =~? '^darwin'))
 endfunction
+
+let s:is_gui = has('gui_running') || has('gui_vimr')
+
+function! IsGUI() abort
+  return s:is_gui
+endfunction
+
+function! IsCUI() abort
+  return !s:is_gui
+endfunction
 "}}}
 
 " Setting of the encoding to use for a save and reading.

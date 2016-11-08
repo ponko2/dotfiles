@@ -10,7 +10,7 @@ augroup MyAutoCmd
         \ syntax sync minlines=500 maxlines=1000
 
   " * 等での検索時 - で切らない
-  autocmd FileType html,xhtml,jsp,asp,php,css,scss
+  autocmd FileType html,xhtml,jsp,asp,php,javascript,css,scss
         \ setlocal iskeyword& iskeyword+=-
 
   " コメントの自動挿入をしない

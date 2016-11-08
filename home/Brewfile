@@ -23,7 +23,7 @@ brew 'go'
 brew 'httpie'
 brew 'imagemagick'
 brew 'jq'
-brew 'macvim', args: ['override-system-vim', 'with-lua', 'with-luajit']
+brew 'macvim', args: ['override-system-vim', 'with-lua', 'with-luajit', 'with-python3']
 brew 'mas'
 brew 'moreutils'
 brew 'neovim'

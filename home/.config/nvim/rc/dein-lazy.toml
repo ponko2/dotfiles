@@ -41,9 +41,9 @@ depends = 'neomru.vim'
 on_source = 'denite.nvim'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/unite.rc.vim'
 hook_add = '''
-  if has('nvim')
+  if has('python3')
     " do nothing.
-  elseif IsMac() && has('gui_running')
+  elseif IsMac() && IsGUI()
     nnoremap <silent> <D-p>
           \ :<C-u>Unite -buffer-name=files -no-split -multi-line -unique -silent
           \ jump_point file_point file_mru
@@ -63,9 +63,9 @@ repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/denite.rc.vim'
 hook_add = '''
-  if !has('nvim')
+  if !has('python3')
     " do nothing.
-  elseif IsMac() && has('gui_vimr')
+  elseif IsMac() && IsGUI()
     nnoremap <silent> <D-p>
           \ :<C-u>Denite file_point
           \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`

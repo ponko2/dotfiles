@@ -1,6 +1,6 @@
 scriptencoding utf-8
 
-if !has('gui_running') && !has('gui_vimr') | finish | endif
+if !IsGUI() | finish | endif
 
 "---------------------------------------------------------------------------
 " GUI:
