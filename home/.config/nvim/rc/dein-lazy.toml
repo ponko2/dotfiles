@@ -267,6 +267,12 @@ hook_add = '''
         \   'gosimple',
         \   'staticcheck',
         \ ]
+
+  autocmd MyAutoCmd FileType go nmap <Leader>b <Plug>(go-build)
+  autocmd MyAutoCmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+  autocmd MyAutoCmd FileType go nmap <Leader>i <Plug>(go-info)
+  autocmd MyAutoCmd FileType go nmap <Leader>r <Plug>(go-run)
+  autocmd MyAutoCmd FileType go nmap <Leader>t <Plug>(go-test)
 '''
 
 [[plugins]]
