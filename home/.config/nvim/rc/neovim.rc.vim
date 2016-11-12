@@ -19,5 +19,9 @@ endif
 " Share the histories
 autocmd MyAutoCmd CursorHold * if exists(':rshada') | rshada | wshada | endif
 
+" Terminal setting.
+command! -bang Terminal terminal<bang> $SHELL
+tnoremap <silent> <ESC> <C-\><C-n>
+
 
 " vim: foldmethod=marker fileencoding=utf-8

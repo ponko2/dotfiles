@@ -41,19 +41,11 @@ depends = 'neomru.vim'
 on_source = 'denite.nvim'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/unite.rc.vim'
 hook_add = '''
-  if has('python3')
-    " do nothing.
-  elseif IsMac() && IsGUI()
-    nnoremap <silent> <D-p>
-          \ :<C-u>Unite -buffer-name=files -no-split -multi-line -unique -silent
-          \ jump_point file_point file_mru
-          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec/async'`
-          \ buffer_tab:- file file/new<CR>
-  else
+  if !has('python3')
     nnoremap <silent> <C-p>
           \ :<C-u>Unite -buffer-name=files -no-split -multi-line -unique -silent
           \ jump_point file_point file_mru
-          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`
+          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec/async'`
           \ buffer_tab:- file file/new<CR>
   endif
 '''
@@ -63,14 +55,7 @@ repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/denite.rc.vim'
 hook_add = '''
-  if !has('python3')
-    " do nothing.
-  elseif IsMac() && IsGUI()
-    nnoremap <silent> <D-p>
-          \ :<C-u>Denite file_point
-          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`
-          \ file_mru<CR>
-  else
+  if has('python3')
     nnoremap <silent> <C-p>
           \ :<C-u>Denite file_point
           \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`
@@ -219,6 +204,10 @@ on_ft = 'json'
 hook_add = '''
   let g:vim_json_syntax_conceal = 0
 '''
+
+[[plugins]]
+on_ft = 'markdown'
+repo = 'rhysd/vim-gfm-syntax'
 
 [[plugins]]
 repo = 'fatih/vim-go'
