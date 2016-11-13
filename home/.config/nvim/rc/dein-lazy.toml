@@ -259,9 +259,26 @@ hook_add = '''
 
   autocmd MyAutoCmd FileType go nmap <Leader>b <Plug>(go-build)
   autocmd MyAutoCmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+  autocmd MyAutoCmd FileType go nmap <Leader>e <Plug>(go-rename)
   autocmd MyAutoCmd FileType go nmap <Leader>i <Plug>(go-info)
-  autocmd MyAutoCmd FileType go nmap <Leader>r <Plug>(go-run)
+  autocmd MyAutoCmd FileType go nmap <Leader>s <Plug>(go-implements)
   autocmd MyAutoCmd FileType go nmap <Leader>t <Plug>(go-test)
+
+  autocmd MyAutoCmd FileType go nmap <Leader>ds <Plug>(go-def-split)
+  autocmd MyAutoCmd FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+  autocmd MyAutoCmd FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+  autocmd MyAutoCmd FileType go nmap <Leader>gd <Plug>(go-doc)
+  autocmd MyAutoCmd FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+  autocmd MyAutoCmd FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+
+  if has('nvim')
+    autocmd MyAutoCmd FileType go nmap <Leader>rs <Plug>(go-run-split)
+    autocmd MyAutoCmd FileType go nmap <Leader>rv <Plug>(go-run-vertical)
+    autocmd MyAutoCmd FileType go nmap <Leader>rt <Plug>(go-run-tab)
+  else
+    autocmd MyAutoCmd FileType go nmap <Leader>r <Plug>(go-run)
+  endif
 '''
 
 [[plugins]]
