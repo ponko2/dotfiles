@@ -111,6 +111,16 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'lambdalisue/vim-gita'
+on_cmd = 'Gita'
+hook_add = '''
+  nnoremap <silent> <Leader>gs :<C-u>Gita status<CR>
+
+  autocmd MyAutoCmd FileType gita-status nmap <buffer> cc <Plug>(gita-commit-open)
+  autocmd MyAutoCmd FileType gita-status nmap <buffer> ca <Plug>(gita-commit-open-amend)
+'''
+
+[[plugins]]
 repo = 'kana/vim-niceblock'
 on_map = {x = '<Plug>'}
 hook_add = '''
