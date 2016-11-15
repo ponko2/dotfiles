@@ -4,6 +4,8 @@
 
 call denite#custom#map('insert', '<C-n>', 'move_to_next_line')
 call denite#custom#map('insert', '<C-p>', 'move_to_prev_line')
+call denite#custom#map('normal', '<C-n>', 'move_to_next_line')
+call denite#custom#map('normal', '<C-p>', 'move_to_prev_line')
 
 call denite#custom#source('file_mru', 'matchers',
       \ ['matcher_fuzzy', 'matcher_project_files'])
@@ -24,7 +26,17 @@ call denite#custom#var('file_rec/git', 'command',
 
 call denite#custom#option('default', 'prompt', '>')
 
-if executable('ag')
+if executable('rg')
+  call denite#custom#var('file_rec', 'command',
+        \ ['rg', '--files', '--glob', '!.git'])
+
+  call denite#custom#var('grep', 'command', ['rg'])
+  call denite#custom#var('grep', 'recursive_opts', [])
+  call denite#custom#var('grep', 'final_opts', [])
+  call denite#custom#var('grep', 'separator', ['--'])
+  call denite#custom#var('grep', 'default_opts',
+        \ ['--vimgrep', '--no-heading', '--smart-case', '--hidden'])
+elseif executable('ag')
   call denite#custom#var('file_rec', 'command',
         \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 
@@ -33,8 +45,8 @@ if executable('ag')
   call denite#custom#var('grep', 'final_opts', [])
   call denite#custom#var('grep', 'separator', [])
   call denite#custom#var('grep', 'default_opts',
-        \  ['--follow', '--nocolor', '--nogroup',
-        \ '--smart-case', '--vimgrep'])
+        \  ['--vimgrep', '--follow', '--nocolor', '--nogroup',
+        \ '--smart-case', '--hidden'])
 endif
 
 

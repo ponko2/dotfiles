@@ -56,10 +56,11 @@ on_cmd = 'Denite'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/denite.rc.vim'
 hook_add = '''
   if has('python3')
-    nnoremap <silent> <C-p>
-          \ :<C-u>Denite file_point
-          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`
-          \ file_mru<CR>
+    nnoremap <silent> <C-p> :<C-u>Denite file_point file_mru
+          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+
+    nnoremap <silent> <Leader>/ :<C-u>Denite -buffer-name=search -no-empty grep<CR>
+    nnoremap <silent> <Leader>n :<C-u>Denite -buffer-name=search -resume -mode=normal<CR>
   endif
 '''
 

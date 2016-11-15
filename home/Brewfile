@@ -40,6 +40,7 @@ brew 'reattach-to-user-namespace'
 brew 'rename'
 brew 'renameutils'
 brew 'ricty', args: ['vim-powerline']
+brew 'ripgrep'
 brew 'rsync'
 brew 'ruby-build'
 brew 'source-highlight'
