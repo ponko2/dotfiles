@@ -219,9 +219,10 @@ if !&verbose
   set spelllang+=cjk
 endif
 
-" 補完候補が1つしかないときもポップアップメニューを使う
+" 補完定設
 set completeopt=menuone
 set completeopt+=noinsert
+set completeopt+=noselect
 
 " キーワード補完の対象を設定
 set complete=.

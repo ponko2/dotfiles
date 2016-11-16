@@ -5,6 +5,21 @@ on_ft = 'go'
 build = 'make'
 
 [[plugins]]
+repo = 'carlitux/deoplete-ternjs'
+on_i = 1
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'fishbullet/deoplete-ruby'
+on_i = 1
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'pbogut/deoplete-padawan'
+on_i = 1
+on_ft = 'php'
+
+[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
 on_i = 1

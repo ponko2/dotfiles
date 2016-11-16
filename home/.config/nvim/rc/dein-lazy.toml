@@ -22,6 +22,14 @@ on_if = 1
 on_source = ['unite.vim', 'denite.nvim']
 
 [[plugins]]
+repo = 'Shougo/neoinclude.vim'
+on_if = 1
+
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+on_source = ['neocomplete.vim', 'deoplete.nvim']
+
+[[plugins]]
 repo = 'Shougo/neocomplete.vim'
 depends = 'context_filetype.vim'
 if = "has('lua')"
@@ -204,21 +212,6 @@ on_if = "executable('git') && finddir('.git', ';') != ''"
 hook_add = '''
   let g:gitgutter_diff_args = 'HEAD'
 '''
-
-[[plugins]]
-repo = 'dag/vim-fish'
-on_ft = 'fish'
-
-[[plugins]]
-repo = 'elzr/vim-json'
-on_ft = 'json'
-hook_add = '''
-  let g:vim_json_syntax_conceal = 0
-'''
-
-[[plugins]]
-on_ft = 'markdown'
-repo = 'rhysd/vim-gfm-syntax'
 
 [[plugins]]
 repo = 'fatih/vim-go'
