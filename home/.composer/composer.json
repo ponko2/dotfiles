@@ -1,10 +1,11 @@
 {
     "require": {
-        "fabpot/php-cs-fixer": "@stable",
+        "friendsofphp/php-cs-fixer": "@stable",
+        "hirak/prestissimo": "@stable",
+        "mkusher/padawan": "@stable",
         "phpmd/phpmd": "@stable",
-        "squizlabs/php_codesniffer": "@stable",
         "phpunit/phpunit": "@stable",
         "psy/psysh": "@stable",
-        "hirak/prestissimo": "@stable"
+        "squizlabs/php_codesniffer": "@stable"
     }
 }
