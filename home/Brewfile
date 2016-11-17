@@ -43,7 +43,6 @@ brew 'ricty', args: ['vim-powerline']
 brew 'ripgrep'
 brew 'rsync'
 brew 'ruby-build'
-brew 'rust'
 brew 'source-highlight'
 brew 'sqlite'
 brew 'ssh-copy-id'

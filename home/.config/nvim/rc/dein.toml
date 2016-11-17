@@ -61,15 +61,3 @@ on_ft = 'javascript'
 [[plugins]]
 repo = 'shawncplus/phpcomplete.vim'
 on_ft = 'php'
-
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-on_ft = 'rust'
-
-[[plugins]]
-repo = 'racer-rust/vim-racer'
-on_ft = 'rust'
-hook_add = '''
-  let g:racer_cmd = expand('~/.cargo/bin/racer')
-  let $RUST_SRC_PATH = expand('~/src/github.com/rust-lang/rust/src')
-'''

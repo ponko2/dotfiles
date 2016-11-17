@@ -8,7 +8,6 @@ set -x NODEBREW_ROOT /usr/local/var/nodebrew
 set -x RBENV_ROOT /usr/local/var/rbenv
 set -x RBENV_SHELL fish
 
-set -x PATH $HOME/.cargo/bin $PATH
 set -x PATH $HOME/.composer/vendor/bin $PATH
 set -x PATH $RBENV_ROOT/shims $PATH
 set -x PATH $NODEBREW_ROOT/current/bin $PATH
