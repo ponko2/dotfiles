@@ -40,6 +40,9 @@ set shiftwidth=2
 " インデントをshiftwidthの倍数に丸める
 set shiftround
 
+" 最終行への <EOL> 追加を無効化
+set nofixendofline
+
 " modelineを使う
 set modeline
 
