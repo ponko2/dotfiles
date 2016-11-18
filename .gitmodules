@@ -1,6 +1,3 @@
 [submodule "home/.tmux/plugins/tpm"]
 	path = home/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "home/.tmux/powerline"]
-	path = home/.tmux/powerline
-	url = https://github.com/erikw/tmux-powerline.git
