@@ -139,10 +139,6 @@ set formatexpr=autofmt#japanese#formatexpr()
 " View:
 "
 
-" 相対的な行番号を表示
-autocmd MyAutoCmd WinEnter,FocusGained * setlocal relativenumber
-autocmd MyAutoCmd WinLeave,FocusLost   * setlocal norelativenumber
-
 " 特殊文字を可視化
 set list
 if IsWindows()

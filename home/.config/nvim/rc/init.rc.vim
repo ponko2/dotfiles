@@ -57,11 +57,11 @@ endif
 "}}}
 
 " Use English interface.
-if IsWindows()
-  language message en
-else
-  language message C
-endif
+language message C
+
+" <Leader>
+let g:mapleader = "\<Space>"
+nnoremap <Space> <Nop>
 
 " Exchange path separator "{{{
 if IsWindows()
