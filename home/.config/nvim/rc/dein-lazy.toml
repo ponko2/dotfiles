@@ -182,10 +182,10 @@ hook_add = '''
 repo = 'thinca/vim-visualstar'
 on_map = '<Plug>(visualstar-'
 hook_add = '''
-  map *  <Plug>(visualstar-*)zv
-  map #  <Plug>(visualstar-#)zv
-  map g* <Plug>(visualstar-g*)zv
-  map g# <Plug>(visualstar-g#)zv
+  map *  <Plug>(visualstar-*)zvzz
+  map #  <Plug>(visualstar-#)zvzz
+  map g* <Plug>(visualstar-g*)zvzz
+  map g# <Plug>(visualstar-g#)zvzz
 '''
 
 [[plugins]]
@@ -264,8 +264,7 @@ hook_add = '''
   autocmd MyAutoCmd FileType go nmap <Leader>b <Plug>(go-build)
   autocmd MyAutoCmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
   autocmd MyAutoCmd FileType go nmap <Leader>e <Plug>(go-rename)
-  autocmd MyAutoCmd FileType go nmap <Leader>i <Plug>(go-info)
-  autocmd MyAutoCmd FileType go nmap <Leader>s <Plug>(go-implements)
+  autocmd MyAutoCmd FileType go nmap <Leader>i <Plug>(go-implements)
   autocmd MyAutoCmd FileType go nmap <Leader>t <Plug>(go-test)
 
   autocmd MyAutoCmd FileType go nmap <Leader>ds <Plug>(go-def-split)
