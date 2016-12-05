@@ -2,10 +2,10 @@
 " denite.nvim
 "
 
-call denite#custom#map('insert', '<C-n>', 'move_to_next_line')
-call denite#custom#map('insert', '<C-p>', 'move_to_prev_line')
-call denite#custom#map('normal', '<C-n>', 'move_to_next_line')
-call denite#custom#map('normal', '<C-p>', 'move_to_prev_line')
+call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>')
+call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>')
+call denite#custom#map('normal', '<C-n>', '<denite:move_to_next_line>')
+call denite#custom#map('normal', '<C-p>', '<denite:move_to_previous_line>')
 
 call denite#custom#source('file_mru', 'matchers',
       \ ['matcher_fuzzy', 'matcher_project_files'])
