@@ -43,8 +43,9 @@ set shiftround
 " 最終行への <EOL> 追加を無効化
 set nofixendofline
 
-" modelineを使う
-set modeline
+" Disable modeline.
+set modelines=0
+set nomodeline
 
 " クリップボードレジスタを使う
 if has('unnamedplus')
@@ -162,8 +163,8 @@ set title
 " ウィンドウタイトルが占める列の割合(パーセント)
 set titlelen=95
 
-" Disable tabline.
-set showtabline=0
+" Enable tabline.
+set showtabline=1
 
 " Set statusline.
 let &g:statusline="%{winnr('$')>1?'['.winnr().'/'.winnr('$')"

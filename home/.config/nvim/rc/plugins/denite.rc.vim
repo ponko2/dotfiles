@@ -2,12 +2,12 @@
 " denite.nvim
 "
 
-call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>')
-call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>')
-call denite#custom#map('normal', '<C-n>', '<denite:move_to_next_line>')
-call denite#custom#map('normal', '<C-p>', '<denite:move_to_previous_line>')
+call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
+call denite#custom#map('normal', '<C-n>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('normal', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
 
-call denite#custom#source('file_mru', 'matchers',
+call denite#custom#source('file_old', 'matchers',
       \ ['matcher_fuzzy', 'matcher_project_files'])
 call denite#custom#source('file_rec,grep', 'matchers',
       \ ['matcher_cpsm'])
@@ -17,7 +17,7 @@ call denite#custom#source('grep', 'matchers',
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
       \ ['.git/', '*.min.*'])
 
-call denite#custom#source('file_mru', 'converters',
+call denite#custom#source('file_old', 'converters',
       \ ['converter_relative_word'])
 
 call denite#custom#alias('source', 'file_rec/git', 'file_rec')
