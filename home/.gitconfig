@@ -16,7 +16,7 @@
 [pull]
 	rebase = preserve
 [diff]
-	compactionHeuristic = true
+	indentHeuristic = true
 [interactive]
 	diffFilter = diff-highlight
 [pager]
