@@ -191,8 +191,6 @@ endif
 set shortmess=aTI
 
 " ベルを無効にする
-set t_vb=
-set novisualbell
 set belloff=all
 
 " コマンドライン補完
