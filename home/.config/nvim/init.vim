@@ -35,7 +35,7 @@ function! s:source_rc(path, ...) abort "{{{
 
   try
     call writefile(content, tempfile)
-    execute printf('source %s', fnameescape(tempfile))
+    execute 'source' fnameescape(tempfile)
   finally
     if filereadable(tempfile)
       call delete(tempfile)

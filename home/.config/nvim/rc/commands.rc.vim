@@ -5,19 +5,34 @@ scriptencoding utf-8
 "
 
 " Trim trailing whitespace
-command! -range=% TrimTrailingWhitespace keeppatterns <line1>,<line2>s/\s\+$//e
-
-" Display diff with the file.
-command! -nargs=1 -complete=file Diff vertical diffsplit <args>
-
-" Display diff from last save.
-command! DiffOrig vert new | setlocal bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
-
-" Disable diff mode.
-command! -nargs=0 Undiff setlocal nodiff noscrollbind wrap
+command! -range=% TrimTrailingWhitespace
+      \ call <SID>TrimTrailingWhitespace(<line1>, <line2>)
+function! s:TrimTrailingWhitespace(line1, line2) abort
+  let view = winsaveview()
+  execute 'keepjumps keeppatterns ' .
+        \ a:line1 . ',' . a:line2 . 's/\s\+$//e'
+  call winrestview(view)
+endfunction
 
 " Rename file
-command! -nargs=1 -bang -bar -complete=file Rename saveas<bang> <args> | call delete(expand('#:p'))
+command! -nargs=1 -bang -bar -complete=file Rename
+      \ saveas<bang> <args> | call delete(expand('#:p'))
+
+command! -bang -bar -complete=file -nargs=? Utf8
+      \ edit<bang> ++enc=utf-8 <args>
+command! -bang -bar -complete=file -nargs=? Cp932
+      \ edit<bang> ++enc=cp932 <args>
+command! -bang -bar -complete=file -nargs=? Latin
+      \ edit<bang> ++enc=latin1 <args>
+
+command! WUtf8 setlocal fenc=utf-8
+command! WCp932 setlocal fenc=cp932
+command! WLatin1 setlocal fenc=latin1
+
+command! -bang -complete=file -nargs=? WUnix
+      \ write<bang> ++fileformat=unix <args> | edit <args>
+command! -bang -complete=file -nargs=? WDos
+      \ write<bang> ++fileformat=dos <args> | edit <args>
 
 
 " vim: foldmethod=marker fileencoding=utf-8

@@ -67,7 +67,7 @@ hook_add = '''
     nnoremap <silent> <C-p> :<C-u>Denite file_point file_old
           \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
 
-    nnoremap <silent> <Leader>/ :<C-u>Denite -buffer-name=search -no-empty grep<CR>
+    nnoremap <silent> <Leader>/ :<C-u>Denite -buffer-name=search -no-empty -mode=normal grep<CR>
     nnoremap <silent> <Leader>n :<C-u>Denite -buffer-name=search -resume -mode=normal<CR>
   endif
 '''
@@ -93,30 +93,6 @@ hook_add = '''
 
   " Start interactive EasyAlign for a motion/text object (e.g. gaip)
   nmap ga <Plug>(EasyAlign)
-'''
-
-[[plugins]]
-repo = 'easymotion/vim-easymotion'
-on_map = '<Plug>'
-hook_add = '''
-  " <Leader>f{char} to move to {char}
-  map  <Leader>f <Plug>(easymotion-bd-f)
-  nmap <Leader>f <Plug>(easymotion-overwin-f)
-
-  " s{char}{char} to move to {char}{char}
-  "nmap s <Plug>(easymotion-overwin-f2)
-
-  " Move to line
-  map <Leader>L <Plug>(easymotion-bd-jk)
-  nmap <Leader>L <Plug>(easymotion-overwin-line)
-
-  " Move to word
-  map  <Leader>w <Plug>(easymotion-bd-w)
-  nmap <Leader>w <Plug>(easymotion-overwin-w)
-
-  let g:EasyMotion_startofline = 0
-  "let g:EasyMotion_show_prompt = 0
-  "let g:EasyMotion_verbose = 0
 '''
 
 [[plugins]]
