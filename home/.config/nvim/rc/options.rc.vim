@@ -140,6 +140,9 @@ set formatexpr=autofmt#japanese#formatexpr()
 " View:
 "
 
+" 文字幅が曖昧な文字を全角表示
+set ambiwidth=double
+
 " 特殊文字を可視化
 set list
 if IsWindows()

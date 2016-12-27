@@ -8,8 +8,6 @@ if !IsGUI() | finish | endif
 
 " Font: "{{{
 
-set ambiwidth=double
-
 if has('gui_vimr')
   " do nothing.
 elseif IsWindows()
