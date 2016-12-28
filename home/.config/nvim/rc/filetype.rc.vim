@@ -8,6 +8,8 @@ augroup MyAutoCmd
   " 長いブロックでもシンタックスハイライト
   autocmd FileType html,xhtml,jsp,asp,php,xml,perl
         \ syntax sync minlines=500 maxlines=1000
+  autocmd CursorHold *.toml
+        \ syntax sync minlines=500 maxlines=1000
 
   " * 等での検索時 - で切らない
   autocmd FileType html,xhtml,jsp,asp,php,javascript,css,scss

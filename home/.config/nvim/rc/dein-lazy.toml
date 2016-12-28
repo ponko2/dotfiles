@@ -195,64 +195,53 @@ hook_add = '''
   let g:go_highlight_build_constraints = 1
 
   let g:go_auto_type_info = 1
-  let g:go_fmt_command = 'goimports'
+  let g:go_fmt_command = 'gofmt'
+  let g:go_fmt_options = '-s'
   let g:go_metalinter_autosave = 1
 
   let g:go_metalinter_enabled = [
-        \   'vet',
-        \   'vetshadow',
-        \   'gotype',
+        \   'aligncheck',
         \   'deadcode',
+        \   'dupl',
+        \   'errcheck',
+        \   'gas',
+        \   'goconst',
         \   'gocyclo',
         \   'golint',
-        \   'varcheck',
-        \   'structcheck',
-        \   'aligncheck',
-        \   'errcheck',
-        \   'dupl',
+        \   'gosimple',
+        \   'gotype',
         \   'ineffassign',
         \   'interfacer',
-        \   'unconvert',
-        \   'goconst',
-        \   'gosimple',
         \   'staticcheck',
+        \   'structcheck',
+        \   'unconvert',
+        \   'varcheck',
+        \   'vet',
+        \   'vetshadow',
         \ ]
 
   let g:go_metalinter_autosave_enabled = [
-        \   'vet',
-        \   'vetshadow',
-        \   'gotype',
         \   'deadcode',
+        \   'dupl',
+        \   'gas',
+        \   'goconst',
         \   'gocyclo',
         \   'golint',
-        \   'dupl',
-        \   'ineffassign',
-        \   'goconst',
         \   'gosimple',
+        \   'gotype',
+        \   'ineffassign',
         \   'staticcheck',
+        \   'vet',
+        \   'vetshadow',
         \ ]
 
   autocmd MyAutoCmd FileType go nmap <Leader>b <Plug>(go-build)
   autocmd MyAutoCmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+  autocmd MyAutoCmd FileType go nmap <Leader>d <Plug>(go-doc)
   autocmd MyAutoCmd FileType go nmap <Leader>e <Plug>(go-rename)
   autocmd MyAutoCmd FileType go nmap <Leader>i <Plug>(go-implements)
+  autocmd MyAutoCmd FileType go nmap <Leader>r <Plug>(go-run)
   autocmd MyAutoCmd FileType go nmap <Leader>t <Plug>(go-test)
-
-  autocmd MyAutoCmd FileType go nmap <Leader>ds <Plug>(go-def-split)
-  autocmd MyAutoCmd FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-  autocmd MyAutoCmd FileType go nmap <Leader>dt <Plug>(go-def-tab)
-
-  autocmd MyAutoCmd FileType go nmap <Leader>gd <Plug>(go-doc)
-  autocmd MyAutoCmd FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-  autocmd MyAutoCmd FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-
-  if has('nvim')
-    autocmd MyAutoCmd FileType go nmap <Leader>rs <Plug>(go-run-split)
-    autocmd MyAutoCmd FileType go nmap <Leader>rv <Plug>(go-run-vertical)
-    autocmd MyAutoCmd FileType go nmap <Leader>rt <Plug>(go-run-tab)
-  else
-    autocmd MyAutoCmd FileType go nmap <Leader>r <Plug>(go-run)
-  endif
 '''
 
 [[plugins]]
