@@ -32,9 +32,6 @@ tnoremap <silent> <C-w>j <C-\><C-n><C-w>j
 tnoremap <silent> <C-w>k <C-\><C-n><C-w>k
 tnoremap <silent> <C-w>l <C-\><C-n><C-w>l
 tnoremap <silent> <C-w>w <C-\><C-n><C-w>w
-nnoremap <silent> <Leader>s :<C-u>belowright 10split term://$SHELL<CR>
-autocmd MyAutoCmd BufWinEnter,WinEnter term://* startinsert
-autocmd MyAutoCmd BufLeave term://* stopinsert
 
 
 " vim: foldmethod=marker fileencoding=utf-8

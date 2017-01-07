@@ -24,3 +24,12 @@ repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
 on_i = 1
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/deoplete.rc.vim'
+
+[[plugins]]
+repo = 'Shougo/deol.nvim'
+on_cmd = 'Deol'
+on_source = 'denite.nvim'
+hook_add = '''
+  nnoremap <silent> <Leader>N :<C-u>call deol#new({'command': 'fish'})<CR>
+  nnoremap <silent> <Leader>s :<C-u>Deol fish<CR>
+'''
