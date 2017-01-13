@@ -18,27 +18,27 @@ if empty($XDG_CACHE_HOME)
 endif
 
 function! s:source_rc(path, ...) abort "{{{
-  let use_global = get(a:000, 0, !has('vim_starting'))
-  let abspath = resolve(expand('$XDG_CONFIG_HOME/nvim/rc/' . a:path))
+  let l:use_global = get(a:000, 0, !has('vim_starting'))
+  let l:abspath = resolve(expand('$XDG_CONFIG_HOME/nvim/rc/' . a:path))
 
-  if !use_global
-    execute 'source' fnameescape(abspath)
+  if !l:use_global
+    execute 'source' fnameescape(l:abspath)
     return
   endif
 
   " substitute all 'set' to 'setglobal'
-  let content = map(readfile(abspath),
-        \ 'substitute(v:val, "^\\W*\\zsset\\ze\\W", "setglobal", "")')
+  let l:content = map(readfile(l:abspath),
+        \ "substitute(v:val, '^\\W*\\zsset\\ze\\W', 'setglobal', '')")
 
   " create tempfile and source the tempfile
-  let tempfile = tempname()
+  let l:tempfile = tempname()
 
   try
-    call writefile(content, tempfile)
-    execute 'source' fnameescape(tempfile)
+    call writefile(l:content, l:tempfile)
+    execute 'source' fnameescape(l:tempfile)
   finally
-    if filereadable(tempfile)
-      call delete(tempfile)
+    if filereadable(l:tempfile)
+      call delete(l:tempfile)
     endif
   endtry
 endfunction "}}}

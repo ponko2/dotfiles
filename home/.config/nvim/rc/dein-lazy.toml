@@ -245,6 +245,10 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'neomake/neomake'
+on_if = 1
+
+[[plugins]]
 repo = 'w0rp/ale'
 on_if = 1
 hook_add = '''

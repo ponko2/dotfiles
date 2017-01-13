@@ -16,8 +16,8 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ deoplete#manual_complete()
 function! s:check_back_space() abort "{{{
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1] =~ '\s'
+  let l:col = col('.') - 1
+  return !l:col || getline('.')[l:col - 1] =~? '\s'
 endfunction "}}}
 
 " <S-TAB>: completion back.
