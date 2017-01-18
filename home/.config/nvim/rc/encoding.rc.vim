@@ -6,8 +6,8 @@ scriptencoding utf-8
 
 " When do not include Japanese, use encoding for fileencoding.
 function! s:ReCheck_FENC() abort
-  let is_multi_byte = search("[^\x01-\x7e]", 'n', 100, 100)
-  if &fileencoding =~# 'iso-2022-jp' && !is_multi_byte
+  let l:is_multi_byte = search("[^\x01-\x7e]", 'n', 100, 100)
+  if &fileencoding =~# 'iso-2022-jp' && !l:is_multi_byte
     let &fileencoding = &encoding
   endif
 endfunction
