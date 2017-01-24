@@ -7,6 +7,12 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'Shougo/neoyank.vim'
+on_if = 1
+on_event = 'TextYankPost'
+on_source = ['unite.vim', 'denite.nvim']
+
+[[plugins]]
 repo = 'Shougo/junkfile.vim'
 on_source = 'unite.vim'
 
@@ -18,16 +24,10 @@ repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
-on_if = 1
-on_source = ['unite.vim']
 
 [[plugins]]
 repo = 'Shougo/neoinclude.vim'
 on_if = 1
-
-[[plugins]]
-repo = 'Shougo/neco-syntax'
-on_source = ['neocomplete.vim', 'deoplete.nvim']
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
@@ -48,34 +48,21 @@ repo = 'Shougo/unite.vim'
 depends = 'neomru.vim'
 on_source = 'denite.nvim'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/unite.rc.vim'
-hook_add = '''
-  if !has('python3')
-    nnoremap <silent> <C-p>
-          \ :<C-u>Unite -buffer-name=files -no-split -multi-line -unique -silent
-          \ jump_point file_point file_mru
-          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec/async'`
-          \ buffer_tab:- file file/new<CR>
-  endif
-'''
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/denite.rc.vim'
 hook_add = '''
-  if has('python3')
-    nnoremap <silent> <C-p> :<C-u>Denite file_point file_old
-          \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+  nnoremap <silent> <C-p> :<C-u>Denite file_point file_old
+        \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
 
-    nnoremap <silent> <Leader>/ :<C-u>Denite -buffer-name=search -no-empty -mode=normal grep<CR>
-    nnoremap <silent> <Leader>n :<C-u>Denite -buffer-name=search -resume -mode=normal<CR>
-  endif
+  nnoremap <silent> <Leader>/ :<C-u>Denite -buffer-name=search -no-empty -mode=normal grep<CR>
+  nnoremap <silent> <Leader>n :<C-u>Denite -buffer-name=search -resume -mode=normal<CR>
+
+  nnoremap <silent> <Leader>R :<C-u>Denite -buffer-name=register register neoyank<CR>
+  xnoremap <silent> <Leader>R :<C-u>Denite -buffer-name=register -default-action=replace register neoyank<CR>
 '''
-
-[[plugins]]
-repo = 'nixprime/cpsm'
-on_source = 'denite.nvim'
-build = 'env PY3=ON ./install.sh'
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
@@ -255,6 +242,11 @@ hook_add = '''
   let g:ale_sign_error = '✖'
   let g:ale_sign_warning = '⚠'
   let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+  let g:ale_linters = {
+        \   'html': [],
+        \   'javascript': ['eslint'],
+        \ }
 '''
 
 [[plugins]]

@@ -23,7 +23,6 @@ if has('vim_starting')
 endif
 
 let g:dein#install_progress_type = 'title'
-let g:dein#install_message_type = 'none'
 let g:dein#enable_notification = 1
 
 let s:path = expand('$XDG_CACHE_HOME/dein')
@@ -55,6 +54,10 @@ endif
 if !has('vim_starting')
   call dein#call_hook('source')
   call dein#call_hook('post_source')
+
+  syntax enable
+  filetype plugin indent on
+elseif !empty(argv())
   call vimrc#on_filetype()
 endif
 

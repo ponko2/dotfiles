@@ -58,3 +58,13 @@ on_ft = 'javascript'
 [[plugins]]
 repo = 'shawncplus/phpcomplete.vim'
 on_ft = 'php'
+
+[[plugins]]
+repo = 'ujihisa/neco-look'
+
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+
+[[plugins]]
+repo = 'nixprime/cpsm'
+build = 'env PY3=ON ./install.sh'

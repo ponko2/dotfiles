@@ -8,6 +8,5 @@ function! vimrc#on_filetype() abort "{{{
     silent! filetype plugin indent on
     filetype detect
     syntax enable
-    doautocmd ColorScheme
   endif
 endfunction "}}}
