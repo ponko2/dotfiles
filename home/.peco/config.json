@@ -1,5 +1,4 @@
 {
-  "InitialFilter": "Fuzzy",
   "StickySelection": true,
   "Keymap": {
     "C-g": "peco.Cancel",
