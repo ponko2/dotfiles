@@ -56,7 +56,7 @@ repo = 'othree/yajs.vim'
 on_ft = 'javascript'
 
 [[plugins]]
-repo = 'shawncplus/phpcomplete.vim'
+repo = 'php-vim/phpcd.vim'
 on_ft = 'php'
 
 [[plugins]]

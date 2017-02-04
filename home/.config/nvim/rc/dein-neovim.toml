@@ -20,6 +20,11 @@ on_i = 1
 on_ft = 'php'
 
 [[plugins]]
+repo = 'ponko2/deoplete-fish'
+on_i = 1
+on_ft = 'fish'
+
+[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
 on_i = 1
