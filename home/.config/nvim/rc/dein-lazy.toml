@@ -65,6 +65,10 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'Jagua/vim-denite-ghq'
+on_source = 'denite.nvim'
+
+[[plugins]]
 repo = 'Shougo/vimfiler.vim'
 depends = 'unite.vim'
 on_map = {n = '<Plug>'}

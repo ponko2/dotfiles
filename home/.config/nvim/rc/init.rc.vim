@@ -69,11 +69,6 @@ if IsWindows()
 endif
 "}}}
 
-" Make temp directory
-if !isdirectory(expand('$XDG_CACHE_HOME/nvim/tmp'))
-  call mkdir(expand('$XDG_CACHE_HOME/nvim/tmp'), 'p')
-endif
-
 " Disable menu.vim
 if has('gui_running')
   set guioptions=Mc

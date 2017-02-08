@@ -11,7 +11,7 @@ if has('vim_starting')
   let s:dein_dir = finddir('dein.vim', '.;')
   if s:dein_dir !=# '' || &runtimepath !~# '/dein.vim'
     if s:dein_dir ==# '' && &runtimepath !~# '/dein.vim'
-      let s:dein_dir = expand('$XDG_CACHE_HOME/dein')
+      let s:dein_dir = expand('$XDG_DATA_HOME/dein')
             \. '/repos/github.com/Shougo/dein.vim'
       if !isdirectory(s:dein_dir)
         execute '!git clone https://github.com/Shougo/dein.vim' s:dein_dir
@@ -25,7 +25,7 @@ endif
 let g:dein#install_progress_type = 'title'
 let g:dein#enable_notification = 1
 
-let s:path = expand('$XDG_CACHE_HOME/dein')
+let s:path = expand('$XDG_DATA_HOME/dein')
 if !dein#load_state(s:path)
   finish
 endif

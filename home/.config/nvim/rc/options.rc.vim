@@ -88,19 +88,25 @@ set ttimeoutlen=100
 " スワップ設定
 set swapfile
 set updatetime=1000
-set directory=$XDG_CACHE_HOME/nvim/tmp
+if !isdirectory(expand('$XDG_DATA_HOME/nvim/swap'))
+  call mkdir(expand('$XDG_DATA_HOME/nvim/swap'), 'p')
+endif
+set directory=$XDG_DATA_HOME/nvim/swap
 
 " バックアップ設定
 set backup
 set writebackup
-set backupdir=$XDG_CACHE_HOME/nvim/tmp
+if !isdirectory(expand('$XDG_DATA_HOME/nvim/backup'))
+  call mkdir(expand('$XDG_DATA_HOME/nvim/backup'), 'p')
+endif
+set backupdir=$XDG_DATA_HOME/nvim/backup
 
 " vimを終了してもundo履歴を復元する
 set undofile
-if !isdirectory(expand('$XDG_CACHE_HOME/nvim/undo'))
-  call mkdir(expand('$XDG_CACHE_HOME/nvim/undo'), 'p')
+if !isdirectory(expand('$XDG_DATA_HOME/nvim/undo'))
+  call mkdir(expand('$XDG_DATA_HOME/nvim/undo'), 'p')
 endif
-set undodir=$XDG_CACHE_HOME/nvim/undo
+set undodir=$XDG_DATA_HOME/nvim/undo
 
 " Visual blockモードで仮想編集を有効にする
 set virtualedit=block
@@ -269,10 +275,10 @@ set ttyfast
 set display=lastline
 
 " View setting.
-if !isdirectory(expand('$XDG_CACHE_HOME/nvim/view'))
-  call mkdir(expand('$XDG_CACHE_HOME/nvim/view'), 'p')
+if !isdirectory(expand('$XDG_DATA_HOME/nvim/view'))
+  call mkdir(expand('$XDG_DATA_HOME/nvim/view'), 'p')
 endif
-set viewdir=$XDG_CACHE_HOME/nvim/view
+set viewdir=$XDG_DATA_HOME/nvim/view
 set viewoptions& viewoptions-=options viewoptions+=slash,unix
 
 " 指定した列を強調表示
@@ -281,10 +287,8 @@ set concealcursor=niv
 set colorcolumn=119
 
 " 終了時の情報を保存
-if has('nvim')
-  set shada& shada+=n$XDG_CACHE_HOME/nvim/tmp/shada
-else
-  set viminfo& viminfo+=n$XDG_CACHE_HOME/nvim/tmp/viminfo
+if !has('nvim')
+  set viminfo& viminfo+=n$XDG_DATA_HOME/nvim/viminfo
 endif
 
 " Color Scheme: "{{{
