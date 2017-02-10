@@ -57,16 +57,21 @@ hook_add = '''
   nnoremap <silent> <C-p> :<C-u>Denite file_point file_old
         \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
 
-  nnoremap <silent> <Leader>/ :<C-u>Denite -buffer-name=search -no-empty -mode=normal grep<CR>
-  nnoremap <silent> <Leader>n :<C-u>Denite -buffer-name=search -resume -mode=normal<CR>
+  nnoremap <silent> <Leader><Tab> :<C-u>Denite buffer<CR>
 
-  nnoremap <silent> <Leader>R :<C-u>Denite -buffer-name=register register neoyank<CR>
-  xnoremap <silent> <Leader>R :<C-u>Denite -buffer-name=register -default-action=replace register neoyank<CR>
+  nnoremap <silent> <Leader>/ :<C-u>Denite -buffer-name=search -no-empty -mode=normal grep<CR>
+  nnoremap <silent> <Leader>n :<C-u>Denite -buffer-name=search -resume -mode=normal -refresh<CR>
+  nnoremap <silent> <Leader>p :<C-u>Denite -buffer-name=register register neoyank<CR>
+  xnoremap <silent> <Leader>p :<C-u>Denite -buffer-name=register -default-action=replace register neoyank<CR>
+  nnoremap <silent> <Leader>; :<C-u>Denite -mode=normal change jump<CR>
 '''
 
 [[plugins]]
 repo = 'Jagua/vim-denite-ghq'
 on_source = 'denite.nvim'
+hook_add = '''
+  nnoremap <silent> <Leader><C-p> :<C-u>Denite ghq<CR>
+'''
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
@@ -226,13 +231,13 @@ hook_add = '''
         \   'vetshadow',
         \ ]
 
-  autocmd MyAutoCmd FileType go nmap <Leader>b <Plug>(go-build)
-  autocmd MyAutoCmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
-  autocmd MyAutoCmd FileType go nmap <Leader>d <Plug>(go-doc)
-  autocmd MyAutoCmd FileType go nmap <Leader>e <Plug>(go-rename)
-  autocmd MyAutoCmd FileType go nmap <Leader>i <Plug>(go-implements)
-  autocmd MyAutoCmd FileType go nmap <Leader>r <Plug>(go-run)
-  autocmd MyAutoCmd FileType go nmap <Leader>t <Plug>(go-test)
+  autocmd MyAutoCmd FileType go nmap <Leader>B <Plug>(go-build)
+  autocmd MyAutoCmd FileType go nmap <Leader>C <Plug>(go-coverage-toggle)
+  autocmd MyAutoCmd FileType go nmap <Leader>D <Plug>(go-doc)
+  autocmd MyAutoCmd FileType go nmap <Leader>E <Plug>(go-rename)
+  autocmd MyAutoCmd FileType go nmap <Leader>I <Plug>(go-implements)
+  autocmd MyAutoCmd FileType go nmap <Leader>R <Plug>(go-run)
+  autocmd MyAutoCmd FileType go nmap <Leader>T <Plug>(go-test)
 '''
 
 [[plugins]]
