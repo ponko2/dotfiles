@@ -2,7 +2,6 @@
     "require": {
         "friendsofphp/php-cs-fixer": "@stable",
         "hirak/prestissimo": "@stable",
-        "mkusher/padawan": "@stable",
         "phpmd/phpmd": "@stable",
         "phpunit/phpunit": "@stable",
         "psy/psysh": "@stable",

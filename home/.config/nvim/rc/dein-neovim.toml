@@ -15,7 +15,7 @@ on_i = 1
 on_ft = 'ruby'
 
 [[plugins]]
-repo = 'pbogut/deoplete-padawan'
+repo = 'php-vim/phpcd.vim'
 on_i = 1
 on_ft = 'php'
 

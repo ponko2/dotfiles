@@ -56,10 +56,6 @@ repo = 'othree/yajs.vim'
 on_ft = 'javascript'
 
 [[plugins]]
-repo = 'php-vim/phpcd.vim'
-on_ft = 'php'
-
-[[plugins]]
 repo = 'ujihisa/neco-look'
 
 [[plugins]]
