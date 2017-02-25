@@ -92,13 +92,11 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'lambdalisue/vim-gita'
-on_cmd = 'Gita'
+repo = 'lambdalisue/gina.vim'
+on_cmd = 'Gina'
 hook_add = '''
-  nnoremap <silent> <Leader>gs :<C-u>Gita status<CR>
-
-  autocmd MyAutoCmd FileType gita-status nmap <buffer> cc <Plug>(gita-commit-open)
-  autocmd MyAutoCmd FileType gita-status nmap <buffer> ca <Plug>(gita-commit-open-amend)
+  nnoremap <silent> <Leader>gs :<C-u>Gina status<CR>
+  nnoremap <silent> <Leader>gc :<C-u>Gina commit<CR>
 '''
 
 [[plugins]]
