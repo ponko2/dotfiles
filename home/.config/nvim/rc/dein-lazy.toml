@@ -74,6 +74,17 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'chemzqm/denite-git'
+depends = 'vim-easygit'
+on_source = 'denite.nvim'
+hook_add = '''
+  nnoremap <silent> <Leader>gs :<C-u>Denite gitstatus<CR>
+'''
+
+[[plugins]]
+repo = 'chemzqm/vim-easygit'
+
+[[plugins]]
 repo = 'Shougo/vimfiler.vim'
 depends = 'unite.vim'
 on_map = {n = '<Plug>'}
@@ -95,7 +106,7 @@ hook_add = '''
 repo = 'lambdalisue/gina.vim'
 on_cmd = 'Gina'
 hook_add = '''
-  nnoremap <silent> <Leader>gs :<C-u>Gina status<CR>
+  nnoremap <silent> <Leader>gS :<C-u>Gina status<CR>
   nnoremap <silent> <Leader>gc :<C-u>Gina commit<CR>
 '''
 
@@ -236,6 +247,14 @@ hook_add = '''
   autocmd MyAutoCmd FileType go nmap <Leader>I <Plug>(go-implements)
   autocmd MyAutoCmd FileType go nmap <Leader>R <Plug>(go-run)
   autocmd MyAutoCmd FileType go nmap <Leader>T <Plug>(go-test)
+'''
+
+[[plugins]]
+repo = 'sbdchd/neoformat'
+on_if = 1
+hook_add = '''
+  let g:neoformat_enabled_javascript = ['prettiereslint']
+  autocmd MyAutoCmd BufWritePre * Neoformat
 '''
 
 [[plugins]]
