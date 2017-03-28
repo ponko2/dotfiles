@@ -68,6 +68,8 @@ cnoremap <C-k> <C-\>e getcmdpos() == 1 ?
 cnoremap <C-y> <C-r>*
 " <C-g>: Exit.
 cnoremap <C-g> <C-c>
+" %% -> %:h/
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 "}}}
 
 " Visual mode keymappings: "{{{

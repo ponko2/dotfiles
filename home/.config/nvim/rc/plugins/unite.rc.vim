@@ -10,6 +10,7 @@ call unite#custom#profile('default', 'context', {
       \   'vertical': 0,
       \   'start_insert': 1,
       \   'short_source_names': 1,
+      \   'direction': 'botright',
       \ })
 call unite#custom#profile('action', 'context', {
       \   'start_insert': 1,

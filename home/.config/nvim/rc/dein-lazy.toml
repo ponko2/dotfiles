@@ -15,6 +15,10 @@ on_source = ['unite.vim', 'denite.nvim']
 [[plugins]]
 repo = 'Shougo/junkfile.vim'
 on_source = 'unite.vim'
+hook_add = '''
+  nnoremap <silent> <Leader>j :<C-u>Unite junkfile/new junkfile
+        \ -default-action=split -start-insert<CR>
+'''
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
@@ -252,10 +256,6 @@ hook_add = '''
 [[plugins]]
 repo = 'sbdchd/neoformat'
 on_if = 1
-hook_add = '''
-  let g:neoformat_enabled_javascript = ['prettiereslint']
-  autocmd MyAutoCmd BufWritePre * Neoformat
-'''
 
 [[plugins]]
 repo = 'neomake/neomake'
