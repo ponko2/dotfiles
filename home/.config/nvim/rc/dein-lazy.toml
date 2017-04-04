@@ -162,10 +162,10 @@ hook_add = '''
 repo = 'thinca/vim-visualstar'
 on_map = '<Plug>(visualstar-'
 hook_add = '''
-  map *  <Plug>(visualstar-*)zvzz
-  map #  <Plug>(visualstar-#)zvzz
-  map g* <Plug>(visualstar-g*)zvzz
-  map g# <Plug>(visualstar-g#)zvzz
+  vmap *  <Plug>(visualstar-*)zv
+  vmap #  <Plug>(visualstar-#)zv
+  vmap g* <Plug>(visualstar-g*)zv
+  vmap g# <Plug>(visualstar-g#)zv
 '''
 
 [[plugins]]
@@ -203,10 +203,11 @@ hook_add = '''
   let g:go_highlight_types = 1
   let g:go_highlight_build_constraints = 1
 
-  let g:go_auto_type_info = 1
+  let g:go_auto_type_info = 0
   let g:go_fmt_command = 'gofmt'
   let g:go_fmt_options = '-s'
-  let g:go_metalinter_autosave = 1
+  let g:go_gocode_unimported_packages = 1
+  let g:go_metalinter_autosave = 0
 
   let g:go_metalinter_enabled = [
         \   'aligncheck',
@@ -230,18 +231,10 @@ hook_add = '''
         \ ]
 
   let g:go_metalinter_autosave_enabled = [
-        \   'deadcode',
-        \   'dupl',
-        \   'gas',
-        \   'goconst',
-        \   'gocyclo',
         \   'golint',
         \   'gosimple',
-        \   'gotype',
-        \   'ineffassign',
         \   'staticcheck',
         \   'vet',
-        \   'vetshadow',
         \ ]
 
   autocmd MyAutoCmd FileType go nmap <Leader>B <Plug>(go-build)
@@ -251,6 +244,7 @@ hook_add = '''
   autocmd MyAutoCmd FileType go nmap <Leader>I <Plug>(go-implements)
   autocmd MyAutoCmd FileType go nmap <Leader>R <Plug>(go-run)
   autocmd MyAutoCmd FileType go nmap <Leader>T <Plug>(go-test)
+  autocmd MyAutoCmd FileType go nmap <Leader><C-g> <Plug>(go-info)
 '''
 
 [[plugins]]
@@ -271,6 +265,7 @@ hook_add = '''
   let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
   let g:ale_linters = {
+        \   'go': ['golint', 'gosimple', 'govet', 'staticcheck'],
         \   'html': [],
         \   'javascript': ['eslint'],
         \ }
