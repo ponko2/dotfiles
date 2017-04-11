@@ -248,6 +248,10 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'jodosha/vim-godebug'
+on_ft = 'go'
+
+[[plugins]]
 repo = 'sbdchd/neoformat'
 on_if = 1
 
