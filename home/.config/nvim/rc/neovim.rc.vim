@@ -23,7 +23,7 @@ endif
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
 " Use cursor shape feature
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
+set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
 " Share the histories
 autocmd MyAutoCmd CursorHold * if exists(':rshada') | rshada | wshada | endif

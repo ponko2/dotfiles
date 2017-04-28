@@ -207,7 +207,7 @@ hook_add = '''
   let g:go_fmt_command = 'gofmt'
   let g:go_fmt_options = '-s'
   let g:go_gocode_unimported_packages = 1
-  let g:go_metalinter_autosave = 0
+  let g:go_metalinter_autosave = 1
 
   let g:go_metalinter_enabled = [
         \   'aligncheck',
@@ -269,7 +269,7 @@ hook_add = '''
   let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
   let g:ale_linters = {
-        \   'go': ['golint', 'gosimple', 'govet', 'staticcheck'],
+        \   'go': [],
         \   'html': [],
         \   'javascript': ['eslint'],
         \ }
