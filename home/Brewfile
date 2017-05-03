@@ -19,7 +19,7 @@ brew 'fish'
 brew 'fisherman'
 brew 'ghq'
 brew 'git', args: ['without-completions']
-brew 'gnupg2'
+brew 'gnupg'
 brew 'go'
 brew 'httpie'
 brew 'hub'
