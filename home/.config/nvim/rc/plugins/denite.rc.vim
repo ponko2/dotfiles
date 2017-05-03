@@ -29,25 +29,25 @@ call denite#custom#option('default', 'prompt', '>')
 
 if executable('rg')
   call denite#custom#var('file_rec', 'command',
-        \ ['rg', '--files', '--glob', '!.git'])
+        \ ['rg', '--files', '--glob', '!.git', ''])
 
   call denite#custom#var('grep', 'command', ['rg'])
-  call denite#custom#var('grep', 'recursive_opts', [])
-  call denite#custom#var('grep', 'final_opts', [])
-  call denite#custom#var('grep', 'separator', ['--'])
   call denite#custom#var('grep', 'default_opts',
         \ ['--vimgrep', '--no-heading', '--smart-case', '--hidden'])
+  call denite#custom#var('grep', 'recursive_opts', [])
+  call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+  call denite#custom#var('grep', 'final_opts', [])
 elseif executable('ag')
   call denite#custom#var('file_rec', 'command',
         \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 
   call denite#custom#var('grep', 'command', ['ag'])
-  call denite#custom#var('grep', 'recursive_opts', [])
-  call denite#custom#var('grep', 'final_opts', [])
-  call denite#custom#var('grep', 'separator', [])
   call denite#custom#var('grep', 'default_opts',
         \  ['--vimgrep', '--follow', '--nocolor', '--nogroup',
         \ '--smart-case', '--hidden'])
+  call denite#custom#var('grep', 'recursive_opts', [])
+  call denite#custom#var('grep', 'pattern_opt', [])
+  call denite#custom#var('grep', 'final_opts', [])
 endif
 
 

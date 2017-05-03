@@ -14,10 +14,10 @@ on_source = ['unite.vim', 'denite.nvim']
 
 [[plugins]]
 repo = 'Shougo/junkfile.vim'
-on_source = 'unite.vim'
+on_source = 'denite.nvim'
 hook_add = '''
-  nnoremap <silent> <Leader>j :<C-u>Unite junkfile/new junkfile
-        \ -default-action=split -start-insert<CR>
+  nnoremap <silent> <Leader>j :<C-u>Denite junkfile:new junkfile
+        \ -default-action=split<CR>
 '''
 
 [[plugins]]
@@ -50,7 +50,6 @@ hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/neosnippet.rc.vim'
 [[plugins]]
 repo = 'Shougo/unite.vim'
 depends = 'neomru.vim'
-on_source = 'denite.nvim'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/unite.rc.vim'
 
 [[plugins]]
