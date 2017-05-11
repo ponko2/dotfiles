@@ -91,8 +91,14 @@ set isfname& isfname-==
 
 " タイムアウト設定
 set timeout
-set timeoutlen=3000
-set ttimeoutlen=100
+if has('gui_running')
+  set timeoutlen=3000
+  set ttimeoutlen=100
+else
+  set ttimeoutlen=10
+  autocmd MyAutoCmd InsertEnter * set timeoutlen=0
+  autocmd MyAutoCmd InsertLeave * set timeoutlen=1000
+endif
 
 " スワップ設定
 set swapfile
