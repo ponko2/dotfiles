@@ -24,6 +24,7 @@ endif
 
 let g:dein#install_progress_type = 'title'
 let g:dein#enable_notification = 1
+let g:dein#install_log_filename = expand('~/dein.log')
 
 let s:path = expand('$XDG_DATA_HOME/dein')
 if !dein#load_state(s:path)
