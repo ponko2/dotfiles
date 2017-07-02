@@ -91,6 +91,7 @@ set isfname& isfname-==
 
 " タイムアウト設定
 set timeout
+set ttimeout
 if has('gui_running')
   set timeoutlen=3000
   set ttimeoutlen=100
