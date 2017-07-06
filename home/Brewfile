@@ -6,7 +6,6 @@ tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'fisherman/tap'
 tap 'go-delve/delve'
-tap 'neovim/neovim'
 
 brew 'ansifilter'
 brew 'colordiff'
