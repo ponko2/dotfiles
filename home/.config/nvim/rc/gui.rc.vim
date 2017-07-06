@@ -23,8 +23,8 @@ elseif IsWindows()
     set ambiwidth=auto
   endif
 elseif IsMac()
-  set guifont=Ricty:h18
-  set guifontwide=Ricty:h18
+  set guifont=Ricty\ Diminished\ Regular:h18
+  set guifontwide=Ricty\ Diminished\ Regular:h18
 else
   set guifont=Ricty\ 12
   set guifontwide=Ricty\ 12
