@@ -25,7 +25,10 @@ call denite#custom#alias('source', 'file_rec/git', 'file_rec')
 call denite#custom#var('file_rec/git', 'command',
       \ ['git', 'ls-files', '-co', '--exclude-standard'])
 
-call denite#custom#option('default', 'prompt', '>')
+call denite#custom#option('default', {
+      \ 'auto_accel': v:true,
+      \ 'prompt': '>'
+      \ })
 
 if executable('rg')
   call denite#custom#var('file_rec', 'command',

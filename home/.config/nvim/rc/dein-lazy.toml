@@ -58,6 +58,7 @@ on_cmd = 'Denite'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/denite.rc.vim'
 hook_add = '''
   nnoremap <silent> <C-p> :<C-u>Denite file_point file_old
+        \ -sorters=sorter_rank
         \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
 
   nnoremap <silent> <Leader><Tab> :<C-u>Denite buffer<CR>

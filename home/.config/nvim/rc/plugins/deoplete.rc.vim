@@ -6,7 +6,7 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_camel_case = 1
 let g:deoplete#skip_chars = ['(', ')']
 
-call deoplete#custom#set('_', 'converters', [
+call deoplete#custom#source('_', 'converters', [
       \ 'converter_remove_paren',
       \ 'converter_remove_overlap',
       \ 'converter_truncate_abbr',
@@ -14,7 +14,7 @@ call deoplete#custom#set('_', 'converters', [
       \ 'converter_auto_delimiter',
       \ ])
 
-call deoplete#custom#set('look', 'min_pattern_length', 4)
+call deoplete#custom#source('look', 'min_pattern_length', 4)
 
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 let g:deoplete#ignore_sources.php = ['omni']

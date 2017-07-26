@@ -52,6 +52,10 @@ repo = 'Shougo/neco-vim'
 on_ft = 'vim'
 
 [[plugins]]
+repo = 'artur-shaik/vim-javacomplete2'
+on_ft = 'java'
+
+[[plugins]]
 repo = 'othree/yajs.vim'
 on_ft = 'javascript'
 
