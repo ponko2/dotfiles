@@ -13,5 +13,3 @@ set -x PATH $RBENV_ROOT/shims $PATH
 set -x PATH $NODEBREW_ROOT/current/bin $PATH
 set -x PATH ./node_modules/.bin $PATH
 set -x PATH $GOPATH/bin $PATH
-set -x PATH /usr/local/sbin $PATH
-set -x PATH /usr/local/bin $PATH
