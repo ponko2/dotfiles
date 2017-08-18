@@ -2,10 +2,3 @@ bundler
 rubocop
 pry
 pry-doc
-homesick
-capistrano
-cocoapods
-sass
-scss-lint
-compass
-compass-normalize
