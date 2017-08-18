@@ -13,3 +13,4 @@ set -x PATH $RBENV_ROOT/shims $PATH
 set -x PATH $NODEBREW_ROOT/current/bin $PATH
 set -x PATH ./node_modules/.bin $PATH
 set -x PATH $GOPATH/bin $PATH
+set -x PATH $PATH /usr/local/share/git-core/contrib/diff-highlight
