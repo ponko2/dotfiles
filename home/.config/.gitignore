@@ -4,5 +4,7 @@
 !fish/**
 !git/
 !git/**
+!karabiner/
+!karabiner/**
 !nvim/
 !nvim/**
