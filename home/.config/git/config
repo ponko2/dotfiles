@@ -34,8 +34,6 @@
 	autostash = true
 [stash]
 	showPatch = true
-[includeIf "gitdir:~/.homesick/repos/dotfiles/"]
-  path = ~/.config/git/ponko2.inc
 [includeIf "gitdir:~/src/github.com/ponko2/"]
   path = ~/.config/git/ponko2.inc
 [includeIf "gitdir:~/src/ponko2.local/"]
