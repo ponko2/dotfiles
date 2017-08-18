@@ -32,11 +32,11 @@ call denite#custom#option('default', {
 
 if executable('rg')
   call denite#custom#var('file_rec', 'command',
-        \ ['rg', '--files', '--glob', '!.git', ''])
+        \ ['rg', '--files', '--glob', '!.git/*', ''])
 
   call denite#custom#var('grep', 'command', ['rg'])
   call denite#custom#var('grep', 'default_opts',
-        \ ['--vimgrep', '--no-heading', '--smart-case', '--hidden'])
+        \ ['--vimgrep', '--no-heading', '--smart-case', '--hidden', '--glob', '!.git/*'])
   call denite#custom#var('grep', 'recursive_opts', [])
   call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
   call denite#custom#var('grep', 'final_opts', [])
