@@ -12,3 +12,8 @@ end
 if which -s colordiff
     alias diff="colordiff"
 end
+
+# vim
+if which -s nvim
+    alias vim="nvim"
+end
