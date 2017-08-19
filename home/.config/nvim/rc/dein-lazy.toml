@@ -96,6 +96,15 @@ on_if = "isdirectory(bufname('%'))"
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/vimfiler.rc.vim'
 
 [[plugins]]
+repo = 'Shougo/deol.nvim'
+on_cmd = 'Deol'
+on_source = 'denite.nvim'
+hook_add = '''
+  nnoremap <silent> <Leader>s :<C-u>Deol fish<CR>
+  nnoremap <silent> <Leader>S :<C-u>call deol#new({'command': 'fish'})<CR>
+'''
+
+[[plugins]]
 repo = 'junegunn/vim-easy-align'
 on_map = {xn = '<Plug>(EasyAlign)'}
 hook_add = '''
