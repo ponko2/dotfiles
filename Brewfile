@@ -20,12 +20,13 @@ brew 'wget'
 brew 'git', args: ['without-completions']
 brew 'source-highlight'
 brew 'ghq'
-#brew 'gnupg'
-#brew 'pinentry-mac'
+brew 'gnupg'
+brew 'pinentry-mac'
 
 ## Fish Shell
+tap 'fisherman/tap'
 brew 'fish'
-brew 'fisherman/tap/fisherman'
+brew 'fisherman'
 brew 'colordiff'
 brew 'exa'
 brew 'peco'
@@ -52,14 +53,15 @@ brew 'ruby-build'
 
 ## Golang
 brew 'go'
-brew 'go-delve/delve/delve'
+#tap 'go-delve/delve'
+#brew 'delve'
 
 ## Node.js
 brew 'nodebrew'
 
 ## Vim
 brew 'macvim', args: ['override-system-vim', 'with-lua', 'with-luajit', 'with-python3']
-brew 'neovim'
+brew 'neovim', args: ['HEAD']
 
 # Mac Apps
 tap 'caskroom/cask'
@@ -86,8 +88,6 @@ cask 'google-chrome'
 # Fonts
 tap 'caskroom/fonts'
 cask 'font-ricty-diminished'
-#cask 'font-myrica'
-#cask 'font-source-han-code-jp'
 
 ## Vagrant
 #cask 'vagrant'
@@ -96,7 +96,7 @@ cask 'font-ricty-diminished'
 
 ## Cloud Storage
 #cask 'dropbox'
-#cask 'google-drive'
+#cask 'google-backup-and-sync'
 
 ## Database
 #cask 'psequel'
