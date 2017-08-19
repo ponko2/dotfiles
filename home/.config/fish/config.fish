@@ -1,7 +1,12 @@
 set -x LANG ja_JP.UTF-8
 set -x GITHUB_USER ponko2
 
-set -x EDITOR vim
+if which -s nvim
+    set -x EDITOR nvim
+else
+    set -x EDITOR vim
+end
+
 set -x GOPATH $HOME
 set -x GPG_TTY (tty)
 set -x NODEBREW_ROOT /usr/local/var/nodebrew

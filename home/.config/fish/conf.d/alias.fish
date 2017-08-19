@@ -15,5 +15,8 @@ end
 
 # vim
 if which -s nvim
+    alias vi="nvim"
     alias vim="nvim"
+else
+    alias vi="vim"
 end
