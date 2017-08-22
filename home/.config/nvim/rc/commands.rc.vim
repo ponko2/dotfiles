@@ -13,6 +13,16 @@ function! s:TrimTrailingWhitespace(line1, line2) abort
   call winrestview(l:view)
 endfunction
 
+" Convert Samba Address
+command! -range=% ConvertSambaAddress
+      \ call <SID>ConvertSambaAddress(<line1>, <line2>)
+function! s:ConvertSambaAddress(line1, line2) abort
+  let l:view = winsaveview()
+  execute 'keepjumps keeppatterns' a:line1 . ',' . a:line2 . 's/\\/\//g'
+  execute 'keepjumps keeppatterns' a:line1 . ',' . a:line2 . 's/^/smb:/'
+  call winrestview(l:view)
+endfunction
+
 " Rename file
 command! -nargs=1 -bang -bar -complete=file Rename
       \ saveas<bang> <args> | call delete(expand('#:p'))
