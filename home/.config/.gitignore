@@ -5,6 +5,8 @@
 !git/
 !git/**
 !karabiner/
-!karabiner/**
+!karabiner/assets
+!karabiner/assets/complex_modifications
+!karabiner/assets/complex_modifications/**
 !nvim/
 !nvim/**
