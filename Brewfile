@@ -18,6 +18,7 @@ brew 'wget'
 
 ## Git
 brew 'git', args: ['without-completions']
+brew 'git-flow-avh'
 brew 'source-highlight'
 brew 'ghq'
 brew 'gnupg'
@@ -59,6 +60,10 @@ brew 'go'
 ## Node.js
 brew 'nodebrew'
 
+## Java
+brew 'maven'
+brew 'tomcat'
+
 ## Vim
 brew 'macvim', args: ['override-system-vim', 'with-lua', 'with-luajit', 'with-python3']
 brew 'neovim', args: ['HEAD']
@@ -67,6 +72,7 @@ brew 'neovim', args: ['HEAD']
 tap 'caskroom/cask'
 cask 'xquartz'
 cask 'java' unless system '/usr/libexec/java_home --failfast'
+cask 'eclipse-jee'
 cask '1password'
 cask 'appcleaner'
 cask 'clipy'
@@ -75,6 +81,8 @@ cask 'google-japanese-ime'
 cask 'iterm2'
 cask 'karabiner-elements'
 cask 'keepingyouawake'
+cask 'mysqlworkbench'
+cask 'sourcetree'
 cask 'the-unarchiver'
 #cask 'gitify'
 #cask 'insomnia'
@@ -85,14 +93,17 @@ cask 'the-unarchiver'
 cask 'firefox'
 cask 'google-chrome'
 
-# Fonts
+## Fonts
 tap 'caskroom/fonts'
 cask 'font-ricty-diminished'
+
+## VirtualBox
+cask 'virtualbox'
+cask 'virtualbox-extension-pack'
 
 ## Vagrant
 #cask 'vagrant'
 #cask 'vagrant-manager'
-#cask 'virtualbox'
 
 ## Cloud Storage
 #cask 'dropbox'
