@@ -13,6 +13,11 @@ set -x NODEBREW_ROOT /usr/local/var/nodebrew
 set -x RBENV_ROOT /usr/local/var/rbenv
 set -x RBENV_SHELL fish
 
+set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
+set -x JRE_HOME $JAVA_HOME/jre
+set -x M2_HOME (brew --prefix maven)/libexec
+set -x MAVEN_HOME $M2_HOME
+
 if test -d $RBENV_ROOT/shims
     set -x PATH $RBENV_ROOT/shims $PATH
 end
