@@ -1,7 +1,8 @@
 ### Windows ###
-# Windows image file caches
+# Windows thumbnail cache files
 Thumbs.db
 ehthumbs.db
+ehthumbs_vista.db
 
 # Folder config file
 Desktop.ini
@@ -15,14 +16,47 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
-### OSX ###
-.DS_Store
+# Windows shortcuts
+*.lnk
+
+### macOS ###
+*.DS_Store
 .AppleDouble
 .LSOverride
 
 # Thumbnails
 ._*
 
-# Files that might appear on external disk
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
 .Spotlight-V100
+.TemporaryItems
 .Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Microsoft Office ###
+*.tmp
+
+# Word temporary
+~$*.doc*
+
+# Excel temporary
+~$*.xls*
+
+# Excel Backup File
+*.xlk
+
+# PowerPoint temporary
+~$*.ppt*
+
+# Visio autosave temporary files
+*.~vsd*
