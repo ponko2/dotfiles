@@ -280,6 +280,7 @@ hook_add = '''
   let g:ale_linters = {
         \   'go': [],
         \   'html': [],
+        \   'java': [],
         \   'javascript': ['eslint'],
         \ }
 '''
