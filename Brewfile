@@ -54,6 +54,7 @@ brew 'ruby-build'
 
 ## Golang
 brew 'go'
+brew 'dep'
 #tap 'go-delve/delve'
 #brew 'delve'
 
@@ -114,9 +115,10 @@ cask 'virtualbox-extension-pack'
 #cask 'sequel-pro'
 
 # App Store
-#brew 'mas'
+brew 'mas'
+mas 'Microsoft Remote Desktop', id: 715768417
+mas 'Slack', id: 803453959
 #mas 'ForkLift', id: 412448059
 #mas 'Monosnap', id: 540348655
-#mas 'Reeder',   id: 880001334
-#mas 'Slack',    id: 803453959
-#mas 'Twitter',  id: 409789998
+#mas 'Reeder', id: 880001334
+#mas 'Twitter', id: 409789998
