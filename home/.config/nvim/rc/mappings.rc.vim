@@ -21,14 +21,50 @@ nnoremap <silent> [B :<C-u>bfirst<CR>
 nnoremap <silent> ]B :<C-u>blast<CR>
 
 " ロケーションリスト移動
-nnoremap <silent> [l :<C-u>lprevious<CR>
-nnoremap <silent> ]l :<C-u>lnext<CR>
+function! s:Lprevious() abort
+  try
+    lprevious
+  catch /^Vim\%((\a\+)\)\=:E553/
+    llast
+  catch
+    echo v:exception
+  endtry
+endfunction
+function! s:Lnext() abort
+  try
+    lnext
+  catch /^Vim\%((\a\+)\)\=:E553/
+    lfirst
+  catch
+    echo v:exception
+  endtry
+endfunction
+nnoremap <silent> [l :<C-u>call <SID>Lprevious()<CR>
+nnoremap <silent> ]l :<C-u>call <SID>Lnext()<CR>
 nnoremap <silent> [L :<C-u>lfirst<CR>
 nnoremap <silent> ]L :<C-u>llast<CR>
 
 " エラーリスト移動
-nnoremap <silent> [q :<C-u>cprevious<CR>
-nnoremap <silent> ]q :<C-u>cnext<CR>
+function! s:Cprevious() abort
+  try
+    cprevious
+  catch /^Vim\%((\a\+)\)\=:E553/
+    clast
+  catch
+    echo v:exception
+  endtry
+endfunction
+function! s:Cnext() abort
+  try
+    cnext
+  catch /^Vim\%((\a\+)\)\=:E553/
+    cfirst
+  catch
+    echo v:exception
+  endtry
+endfunction
+nnoremap <silent> [q :<C-u>call <SID>Cprevious()<CR>
+nnoremap <silent> ]q :<C-u>call <SID>Cnext()<CR>
 nnoremap <silent> [Q :<C-u>cfirst<CR>
 nnoremap <silent> ]Q :<C-u>clast<CR>
 
