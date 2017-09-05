@@ -11,6 +11,8 @@
 	ff = false
 [pull]
 	rebase = preserve
+[log]
+	date = iso8601-local
 [diff]
 	indentHeuristic = true
 [interactive]
