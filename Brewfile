@@ -24,6 +24,10 @@ brew 'ghq'
 brew 'gnupg'
 brew 'pinentry-mac'
 
+## Subversion
+tap 'tholu/tap'
+brew 'subversion18', args: ['with-unicode-path']
+
 ## Fish Shell
 tap 'fisherman/tap'
 brew 'fish'
