@@ -3,8 +3,10 @@ set -x GITHUB_USER ponko2
 
 if which -s nvim
     set -x EDITOR nvim
+    set -x GIT_EDITOR "nvim -u NONE -i NONE -N -c 'syntax on'"
 else
     set -x EDITOR vim
+    set -x GIT_EDITOR "vim -u NONE -i NONE -N -c 'syntax on'"
 end
 
 set -x GOPATH $HOME
