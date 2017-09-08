@@ -23,6 +23,13 @@ finicky.onUrl(function (url, opts) {
     return safari;
   }
 
+  // ChatWork
+  if (url.match(/^https?:\/\/www\.chatwork\.com/)) {
+    return {
+      bundleIdentifier: 'com.google.Chrome'
+    };
+  }
+
   // Tech
   if (url.match(/^https?:\/\/(github|qiita)\.com/)) {
     return safari;
