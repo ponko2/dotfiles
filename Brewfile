@@ -36,11 +36,6 @@ brew 'exa'
 brew 'peco'
 brew 'terminal-notifier'
 
-## Fish Shell
-tap 'fisherman/tap'
-brew 'fish'
-brew 'fisherman'
-
 ## Tmux
 brew 'tmux'
 brew 'ansifilter'

@@ -37,9 +37,6 @@ repo = 'hail2u/vim-css3-syntax'
 repo = 'chrisbra/vim-zsh'
 
 [[plugins]]
-repo = 'dag/vim-fish'
-
-[[plugins]]
 repo = 'elzr/vim-json'
 on_ft = 'json'
 hook_add = '''

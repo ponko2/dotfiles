@@ -1,7 +1,5 @@
 *
 !.gitignore
-!fish/
-!fish/**
 !git/
 !git/**
 !karabiner/
