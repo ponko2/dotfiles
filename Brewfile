@@ -28,14 +28,18 @@ brew 'pinentry-mac'
 tap 'tholu/tap'
 brew 'subversion18', args: ['with-unicode-path']
 
-## Fish Shell
-tap 'fisherman/tap'
-brew 'fish'
-brew 'fisherman'
+## Zsh
+brew 'zsh'
+brew 'zplug'
 brew 'colordiff'
 brew 'exa'
 brew 'peco'
 brew 'terminal-notifier'
+
+## Fish Shell
+tap 'fisherman/tap'
+brew 'fish'
+brew 'fisherman'
 
 ## Tmux
 brew 'tmux'

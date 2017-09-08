@@ -1,0 +1,4 @@
+git log --oneline --decorate --no-color \
+  | anyframe-selector-auto \
+  | awk '{print $1}' \
+  | anyframe-action-execute git commit --fixup

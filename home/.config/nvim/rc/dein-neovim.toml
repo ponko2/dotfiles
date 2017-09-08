@@ -20,6 +20,10 @@ on_i = 1
 on_ft = 'php'
 
 [[plugins]]
+repo = 'zchee/deoplete-zsh'
+on_ft = 'zsh'
+
+[[plugins]]
 repo = 'ponko2/deoplete-fish'
 on_i = 1
 on_ft = 'fish'

@@ -6,9 +6,7 @@ if IsWindows() | finish | endif
 " UNIX:
 "
 
-if &shell =~# 'fish$'
-  set shell=sh
-endif
+set shell=zsh
 
 
 " vim: foldmethod=marker fileencoding=utf-8
