@@ -18,6 +18,15 @@ repo = 'kana/vim-tabpagecd'
 repo = 'kana/vim-textobj-user'
 
 [[plugins]]
+repo = 'kana/vim-textobj-function'
+
+[[plugins]]
+repo = 'haya14busa/vim-textobj-function-syntax'
+
+[[plugins]]
+repo = 'AndrewRadev/splitjoin.vim'
+
+[[plugins]]
 repo = 'vim-jp/autofmt'
 
 [[plugins]]

@@ -53,6 +53,17 @@ depends = 'neomru.vim'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/unite.rc.vim'
 
 [[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+hook_add = '''
+  let g:ctrlp_prompt_mappings = {
+        \   'PrtSelectMove("j")': ['<c-j>', '<c-n>'],
+        \   'PrtSelectMove("k")': ['<c-k>', '<c-p>'],
+        \   'PrtHistory(-1)':     ['<down>'],
+        \   'PrtHistory(1)':      ['<up>'],
+        \ }
+'''
+
+[[plugins]]
 repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/denite.rc.vim'
@@ -204,6 +215,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'fatih/vim-go'
+depends = ['neosnippet.vim', 'ctrlp.vim']
 on_ft = 'go'
 hook_add = '''
   let g:go_highlight_functions = 1
@@ -211,12 +223,21 @@ hook_add = '''
   let g:go_highlight_fields = 1
   let g:go_highlight_types = 1
   let g:go_highlight_build_constraints = 1
+  let g:go_highlight_generate_tags = 1
 
+  let g:go_auto_sameids = 1
   let g:go_auto_type_info = 0
+
   let g:go_fmt_command = 'gofmt'
-  let g:go_fmt_options = '-s'
+  let g:go_fmt_fail_silently = 1
+  let g:go_fmt_options = {
+        \   'gofmt': '-s',
+        \   'goimports': '',
+        \ }
+
+  let g:go_snippet_engine = "neosnippet"
+
   let g:go_gocode_unimported_packages = 1
-  let g:go_metalinter_autosave = 1
 
   let g:go_metalinter_enabled = [
         \   'aligncheck',
@@ -239,26 +260,28 @@ hook_add = '''
         \   'vetshadow',
         \ ]
 
-  let g:go_metalinter_autosave_enabled = [
-        \   'golint',
-        \   'gosimple',
-        \   'staticcheck',
-        \   'vet',
-        \ ]
-
-  autocmd MyAutoCmd FileType go nmap <Leader>B <Plug>(go-build)
+  " run :GoBuild or :GoTestCompile based on the go file
+  function! s:build_go_files()
+    let l:file = expand('%')
+    if l:file =~# '^\f\+_test\.go$'
+      call go#test#Test(0, 1)
+    elseif l:file =~# '^\f\+\.go$'
+      call go#cmd#Build(0)
+    endif
+  endfunction
+  autocmd MyAutoCmd FileType go nmap <Leader>A <Plug>(go-alternate-edit)
+  autocmd MyAutoCmd FileType go nmap <Leader>B :<C-u>call <SID>build_go_files()<CR>
   autocmd MyAutoCmd FileType go nmap <Leader>C <Plug>(go-coverage-toggle)
-  autocmd MyAutoCmd FileType go nmap <Leader>D <Plug>(go-doc)
-  autocmd MyAutoCmd FileType go nmap <Leader>E <Plug>(go-rename)
-  autocmd MyAutoCmd FileType go nmap <Leader>I <Plug>(go-implements)
+  autocmd MyAutoCmd FileType go nmap <Leader>I <Plug>(go-info)
+  autocmd MyAutoCmd FileType go nmap <Leader>O <Plug>(go-imports)
   autocmd MyAutoCmd FileType go nmap <Leader>R <Plug>(go-run)
   autocmd MyAutoCmd FileType go nmap <Leader>T <Plug>(go-test)
-  autocmd MyAutoCmd FileType go nmap <Leader><C-g> <Plug>(go-info)
-'''
 
-[[plugins]]
-repo = 'jodosha/vim-godebug'
-on_ft = 'go'
+  autocmd MyAutoCmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+  autocmd MyAutoCmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+  autocmd MyAutoCmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+  autocmd MyAutoCmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+'''
 
 [[plugins]]
 repo = 'sbdchd/neoformat'
@@ -272,17 +295,26 @@ on_if = 1
 repo = 'w0rp/ale'
 on_if = 1
 hook_add = '''
-  let g:ale_open_list = 1
+  let g:ale_set_loclist = 0
+  let g:ale_set_quickfix = 1
+
   let g:ale_sign_column_always = 1
   let g:ale_sign_error = '✖'
   let g:ale_sign_warning = '⚠'
   let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
   let g:ale_linters = {
-        \   'go': [],
+        \   'go': [
+        \     'gofmt',
+        \     'golint',
+        \     'gosimple',
+        \     'staticcheck',
+        \     'go vet',
+        \   ],
         \   'html': [],
         \   'java': [],
         \   'javascript': ['eslint'],
+        \   'zsh': [],
         \ }
 '''
 

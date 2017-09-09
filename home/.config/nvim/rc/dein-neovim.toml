@@ -5,6 +5,10 @@ on_ft = 'go'
 build = 'make'
 
 [[plugins]]
+repo = 'jodosha/vim-godebug'
+on_ft = 'go'
+
+[[plugins]]
 repo = 'carlitux/deoplete-ternjs'
 on_i = 1
 on_ft = 'javascript'
