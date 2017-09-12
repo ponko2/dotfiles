@@ -9,6 +9,10 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.mdwn,*.md
         \ setfiletype markdown
 
+  " mustache
+  autocmd BufNewFile,BufRead *.template.html
+        \ setfiletype mustache
+
   " Vue components
   autocmd BufNewFile,BufRead *.vue
         \ setfiletype html
