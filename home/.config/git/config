@@ -2,7 +2,6 @@
 	ui = auto
 [core]
 	pager = less
-	editor = vim -u NONE -i NONE -N -c 'syntax on'
 	quotepath = false
 	precomposeunicode = true
 [push]

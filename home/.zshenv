@@ -22,9 +22,9 @@ autoload -Uz zmv
 
 # Editor
 if type nvim &> /dev/null; then
-  export EDITOR='nvim -u NONE -i NONE -N -c "syntax on"'
+  export EDITOR='nvim -u NONE -i NONE -N +"syn on" +"set cb+=unnamed"'
 else
-  export EDITOR='vim -u NONE -i NONE -N -c "syntax on"'
+  export EDITOR='vim -u NONE -i NONE -N +"syn on" +"set cb+=unnamed"'
 fi
 export CVSEDITOR="${EDITOR}"
 export SVN_EDITOR="${EDITOR}"
