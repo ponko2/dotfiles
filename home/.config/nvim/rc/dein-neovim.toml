@@ -32,3 +32,11 @@ repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
 on_i = 1
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/deoplete.rc.vim'
+
+[[plugins]]
+repo = 'bfredl/nvim-miniyank'
+on_map = '<Plug>(miniyank-'
+hook_add = '''
+  map p <Plug>(miniyank-autoput)
+  map P <Plug>(miniyank-autoPut)
+'''

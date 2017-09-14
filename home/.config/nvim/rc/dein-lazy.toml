@@ -180,7 +180,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'thinca/vim-visualstar'
-on_map = '<Plug>(visualstar-'
+on_map = {v = '<Plug>(visualstar-'}
 hook_add = '''
   vmap *  <Plug>(visualstar-*)zv
   vmap #  <Plug>(visualstar-#)zv
