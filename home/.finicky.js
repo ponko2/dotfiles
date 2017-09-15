@@ -1,4 +1,4 @@
-finicky.setDefaultBrowser('com.apple.Safari');
+finicky.setDefaultBrowser('com.google.Chrome');
 
 finicky.onUrl(function (url, opts) {
   var sourceApplication = opts && opts.sourceBundleIdentifier;
@@ -20,7 +20,7 @@ finicky.onUrl(function (url, opts) {
 
   // SNS
   if (url.match(/^https?:\/\/twitter\.com/)) {
-    return safari;
+    return chrome;
   }
 
   // ChatWork
@@ -32,7 +32,7 @@ finicky.onUrl(function (url, opts) {
 
   // Tech
   if (url.match(/^https?:\/\/(github|qiita)\.com/)) {
-    return safari;
+    return chrome;
   }
 
   // Reeder
