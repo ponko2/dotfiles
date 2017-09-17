@@ -119,9 +119,9 @@ cask 'virtualbox-extension-pack'
 
 # App Store
 brew 'mas'
+mas 'ForkLift', id: 412448059
 mas 'Microsoft Remote Desktop', id: 715768417
+mas 'Monosnap', id: 540348655
 mas 'Slack', id: 803453959
-#mas 'ForkLift', id: 412448059
-#mas 'Monosnap', id: 540348655
 #mas 'Reeder', id: 880001334
 #mas 'Twitter', id: 409789998
