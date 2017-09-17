@@ -55,6 +55,7 @@ hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/unite.rc.vim'
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
 hook_add = '''
+  let g:ctrlp_map = '<Nop>'
   let g:ctrlp_prompt_mappings = {
         \   'PrtSelectMove("j")': ['<c-j>', '<c-n>'],
         \   'PrtSelectMove("k")': ['<c-k>', '<c-p>'],
