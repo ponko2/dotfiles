@@ -9,6 +9,17 @@ case "${OSTYPE}" in
     ;;
 esac
 
+# Disable correction.
+alias cp='nocorrect cp'
+alias git='nocorrect git'
+alias ln='nocorrect ln'
+alias man='nocorrect man'
+alias mkdir='nocorrect mkdir'
+alias mv='nocorrect mv'
+alias rm='nocorrect rm'
+alias sudo='nocorrect sudo'
+alias vim='nocorrect vim'
+
 # ls
 if type exa &> /dev/null; then
   alias ls='exa --time-style="long-iso"'
