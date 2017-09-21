@@ -31,7 +31,10 @@ if type colordiff &> /dev/null; then
 fi
 
 # vim
-if type nvim &> /dev/null; then
+if type nvr &> /dev/null; then
+  alias vi='nvr --remote-wait-silent'
+  alias vim='nvr --remote-wait-silent'
+elif type nvim &> /dev/null; then
   alias vi='nvim'
   alias vim='nvim'
 else

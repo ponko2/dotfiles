@@ -39,6 +39,7 @@ clean: ## Remove dotfiles
 neovim:
 	pip2 install neovim
 	pip3 install neovim
+	pip3 install neovim-remote
 	gem install neovim
 	@nvim +CheckHealth
 
