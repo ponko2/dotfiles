@@ -5,7 +5,8 @@
 	quotepath = false
 	precomposeunicode = true
 [push]
-	default = current
+	default = simple
+	followTags = true
 [merge]
 	ff = false
 [pull]
@@ -14,6 +15,8 @@
 	date = iso8601-local
 [diff]
 	indentHeuristic = true
+[status]
+	showUntrackedFiles = all
 [interactive]
 	diffFilter = diff-highlight
 [pager]
