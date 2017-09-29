@@ -39,6 +39,9 @@ fi
 export HISTSIZE=10000
 export SAVEHIST=10000
 
+# pure
+export PURE_GIT_PULL=0
+
 setopt no_global_rcs
 
 case ${OSTYPE} in
