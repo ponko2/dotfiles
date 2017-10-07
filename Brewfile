@@ -1,3 +1,8 @@
+# Tap
+tap 'caskroom/cask'
+tap 'caskroom/fonts'
+tap 'caskroom/versions'
+
 # Shell
 brew 'curl'
 brew 'dos2unix'
@@ -23,10 +28,6 @@ brew 'source-highlight'
 brew 'ghq'
 brew 'gnupg'
 brew 'pinentry-mac'
-
-## Subversion
-tap 'tholu/tap'
-brew 'subversion18', args: ['with-unicode-path']
 
 ## Zsh
 brew 'zsh'
@@ -65,17 +66,16 @@ brew 'dep'
 brew 'nodebrew'
 
 ## Java
+cask 'java8' unless system '/usr/libexec/java_home --failfast'
 brew 'maven'
 brew 'tomcat'
 
 ## Vim
-brew 'macvim', args: ['override-system-vim', 'with-lua', 'with-luajit', 'with-python3']
+brew 'macvim', args: ['with-override-system-vim', 'with-lua', 'with-luajit', 'with-python3']
 brew 'neovim', args: ['HEAD']
 
 # Mac Apps
-tap 'caskroom/cask'
 cask 'xquartz'
-cask 'java' unless system '/usr/libexec/java_home --failfast'
 cask 'eclipse-jee'
 cask '1password'
 cask 'appcleaner'
@@ -98,7 +98,6 @@ cask 'firefox'
 cask 'google-chrome'
 
 ## Fonts
-tap 'caskroom/fonts'
 cask 'font-ricty-diminished'
 
 ## VirtualBox
