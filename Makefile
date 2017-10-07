@@ -24,14 +24,12 @@ $(HOMEBREW):
 	brew bundle
 
 init: | $(HOMEBREW) ## Setup dotfiles
-	$(update-submodule)
 
 deploy: ## Create symlink to home directory
 	@$(foreach file, $(DOTFILES), $(LN) $(SRCDIR)/$(file) $(HOME)/$(file);)
 
 update: ## Fetch changes for this repo
 	git pull origin master
-	$(update-submodule)
 
 clean: ## Remove dotfiles
 	@$(foreach file, $(DOTFILES), $(RM) $(HOME)/$(file);)
@@ -48,7 +46,3 @@ gruvbox:
 
 .PHONY: install
 install: init deploy ## Run make init, deploy
-
-define update-submodule
-	git submodule update --init --recursive --remote
-endef
