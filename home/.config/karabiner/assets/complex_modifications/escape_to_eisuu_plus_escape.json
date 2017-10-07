@@ -20,6 +20,7 @@
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.googlecode\\.iterm2$",
+                "^com\\.qvacua\\.VimR$",
                 "^org\\.vim\\."
               ]
             }
@@ -41,6 +42,7 @@
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.googlecode\\.iterm2$",
+                "^com\\.qvacua\\.VimR$",
                 "^org\\.vim\\."
               ]
             }
