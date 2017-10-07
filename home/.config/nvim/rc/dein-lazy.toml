@@ -78,7 +78,7 @@ hook_add = '''
 repo = 'Jagua/vim-denite-ghq'
 on_source = 'denite.nvim'
 hook_add = '''
-  nnoremap <silent> <Leader><C-p> :<C-u>Denite ghq<CR>
+  nnoremap <silent> <Leader><C-p> :<C-u>Denite -default-action=cd ghq<CR>
 '''
 
 [[plugins]]
