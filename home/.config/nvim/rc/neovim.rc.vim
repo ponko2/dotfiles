@@ -32,9 +32,12 @@ autocmd MyAutoCmd FocusGained * checktime
 
 " Terminal setting.
 command! -bang Terminal terminal<bang> zsh
-autocmd MyAutoCmd TermOpen * startinsert
-autocmd MyAutoCmd TermOpen * setlocal modifiable
-autocmd MyAutoCmd TermClose * buffer #
+augroup Terminal
+  autocmd!
+  autocmd TermOpen * startinsert
+  autocmd TermOpen * setlocal modifiable
+  autocmd TermClose * buffer #
+augroup END
 
 
 " vim: foldmethod=marker fileencoding=utf-8

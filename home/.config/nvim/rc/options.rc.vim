@@ -72,7 +72,7 @@ set hidden
 
 " 折り畳みの設定
 set foldenable
-set foldmethod=marker
+set foldmethod=manual
 set foldcolumn=1
 set fillchars=vert:\|
 set commentstring=%s
@@ -91,15 +91,9 @@ set isfname& isfname-==
 
 " タイムアウト設定
 set timeout
+set timeoutlen=1000
 set ttimeout
-if has('gui_running')
-  set timeoutlen=3000
-  set ttimeoutlen=100
-else
-  set ttimeoutlen=10
-  autocmd MyAutoCmd InsertEnter * set timeoutlen=0
-  autocmd MyAutoCmd InsertLeave * set timeoutlen=1000
-endif
+set ttimeoutlen=100
 
 " スワップ設定
 set swapfile

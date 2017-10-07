@@ -11,7 +11,7 @@ augroup filetypedetect
 
   " mustache
   autocmd BufNewFile,BufRead *.template.html
-        \ setfiletype mustache
+        \ setfiletype html.mustache
 
   " Vue components
   autocmd BufNewFile,BufRead *.vue

@@ -1,12 +1,4 @@
 [[plugins]]
-repo = 'LeafCage/foldCC'
-on_ft = 'vim'
-hook_add = '''
-  let g:foldCCtext_enable_autofdc_adjuster = 1
-  set foldtext=FoldCCtext()
-'''
-
-[[plugins]]
 repo = 'Shougo/neoyank.vim'
 on_if = 1
 on_event = 'TextYankPost'
@@ -54,7 +46,7 @@ hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/unite.rc.vim'
 
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
-hook_add = '''
+hook_source = '''
   let g:ctrlp_map = '<Nop>'
   let g:ctrlp_prompt_mappings = {
         \   'PrtSelectMove("j")': ['<c-j>', '<c-n>'],
@@ -192,26 +184,19 @@ hook_add = '''
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = ['html', 'php', 'css', 'scss']
-hook_add = '''
-  let g:user_emmet_install_global = 0
+on_i = 1
+hook_source = '''
   let g:user_emmet_settings = {
-        \   'jsp' : {
-        \     'extends' : 'html',
-        \     'filters' : 'c',
-        \   },
-        \   'php' : {
-        \     'extends' : 'html',
-        \     'filters' : 'c',
+        \   'variables': {
+        \     'lang': 'ja',
         \   },
         \ }
-  autocmd MyAutoCmd FileType html,xhtml,jsp,asp,php,css,scss EmmetInstall
 '''
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 on_if = "executable('git') && finddir('.git', ';') != ''"
-hook_add = '''
+hook_source = '''
   let g:gitgutter_diff_args = 'HEAD'
 '''
 
@@ -219,7 +204,7 @@ hook_add = '''
 repo = 'fatih/vim-go'
 depends = ['neosnippet.vim', 'ctrlp.vim']
 on_ft = 'go'
-hook_add = '''
+hook_source = '''
   let g:go_highlight_functions = 1
   let g:go_highlight_methods = 1
   let g:go_highlight_fields = 1
@@ -261,7 +246,8 @@ hook_add = '''
         \   'vet',
         \   'vetshadow',
         \ ]
-
+'''
+hook_add = '''
   " run :GoBuild or :GoTestCompile based on the go file
   function! s:build_go_files()
     let l:file = expand('%')
@@ -271,18 +257,30 @@ hook_add = '''
       call go#cmd#Build(0)
     endif
   endfunction
-  autocmd MyAutoCmd FileType go nmap <Leader>A <Plug>(go-alternate-edit)
-  autocmd MyAutoCmd FileType go nmap <Leader>B :<C-u>call <SID>build_go_files()<CR>
-  autocmd MyAutoCmd FileType go nmap <Leader>C <Plug>(go-coverage-toggle)
-  autocmd MyAutoCmd FileType go nmap <Leader>I <Plug>(go-info)
-  autocmd MyAutoCmd FileType go nmap <Leader>O <Plug>(go-imports)
-  autocmd MyAutoCmd FileType go nmap <Leader>R <Plug>(go-run)
-  autocmd MyAutoCmd FileType go nmap <Leader>T <Plug>(go-test)
 
-  autocmd MyAutoCmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-  autocmd MyAutoCmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-  autocmd MyAutoCmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-  autocmd MyAutoCmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+  augroup Golang
+    autocmd!
+
+    autocmd FileType go nmap <Leader><C-g> :GoDecls<CR>
+    autocmd FileType go imap <Leader><C-g> <ESC>:<C-u>GoDecls<CR>
+
+    autocmd FileType go nmap <Leader>A <Plug>(go-alternate-edit)
+    autocmd FileType go nmap <Leader>B :<C-u>call <SID>build_go_files()<CR>
+    autocmd FileType go nmap <Leader>C <Plug>(go-coverage-toggle)
+    autocmd FileType go nmap <Leader>E <Plug>(go-install)
+    autocmd FileType go nmap <Leader>I <Plug>(go-info)
+    autocmd FileType go nmap <Leader>L <Plug>(go-metalinter)
+    autocmd FileType go nmap <Leader>O <Plug>(go-imports)
+    autocmd FileType go nmap <Leader>R <Plug>(go-run)
+    autocmd FileType go nmap <Leader>S <Plug>(go-def-split)
+    autocmd FileType go nmap <Leader>T <Plug>(go-test)
+    autocmd FileType go nmap <Leader>V <Plug>(go-def-vertical)
+
+    autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+    autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+    autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+    autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+  augroup END
 '''
 
 [[plugins]]
@@ -296,10 +294,7 @@ on_if = 1
 [[plugins]]
 repo = 'w0rp/ale'
 on_if = 1
-hook_add = '''
-  let g:ale_set_loclist = 0
-  let g:ale_set_quickfix = 1
-
+hook_source = '''
   let g:ale_sign_column_always = 1
   let g:ale_sign_error = '✖'
   let g:ale_sign_warning = '⚠'
@@ -321,9 +316,28 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'iyuuya/denite-ale'
+depends = 'ale'
+on_source = 'denite.nvim'
+hook_add = '''
+  nnoremap <silent> <Leader>l :<C-u>Denite -no-empty ale<CR>
+'''
+
+[[plugins]]
 repo = 'ciaranm/securemodelines'
 on_event = 'BufRead'
 
 [[plugins]]
 repo = 'rhysd/vim-gfm-syntax'
 on_event = 'BufRead'
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+on_ft = 'vim'
+
+[[plugins]]
+repo = 'artur-shaik/vim-javacomplete2'
+on_ft = 'java'
+hook_source = '''
+  autocmd MyAutoCmd FileType java setlocal omnifunc=javacomplete#Complete
+'''

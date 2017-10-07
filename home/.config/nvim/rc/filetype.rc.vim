@@ -6,13 +6,13 @@ scriptencoding utf-8
 
 augroup MyAutoCmd
   " 長いブロックでもシンタックスハイライト
-  autocmd FileType html,xhtml,jsp,asp,php,xml,perl
+  autocmd FileType html,xml
         \ syntax sync minlines=500 maxlines=1000
   autocmd CursorHold *.toml
         \ syntax sync minlines=500 maxlines=1000
 
   " * 等での検索時 - で切らない
-  autocmd FileType html,xhtml,jsp,asp,php,javascript,css,scss
+  autocmd FileType html,javascript,css,scss,less
         \ setlocal iskeyword& iskeyword+=-
 
   " コメントの自動挿入をしない

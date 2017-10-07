@@ -31,7 +31,6 @@ repo = 'vim-jp/autofmt'
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
-on_ft = 'help'
 
 [[plugins]]
 repo = 'thinca/vim-zenspace'
@@ -47,26 +46,15 @@ repo = 'chrisbra/vim-zsh'
 
 [[plugins]]
 repo = 'elzr/vim-json'
-on_ft = 'json'
 hook_add = '''
   let g:vim_json_syntax_conceal = 0
 '''
 
 [[plugins]]
 repo = 'cespare/vim-toml'
-on_ft = 'toml'
-
-[[plugins]]
-repo = 'Shougo/neco-vim'
-on_ft = 'vim'
-
-[[plugins]]
-repo = 'artur-shaik/vim-javacomplete2'
-on_ft = 'java'
 
 [[plugins]]
 repo = 'othree/yajs.vim'
-on_ft = 'javascript'
 
 [[plugins]]
 repo = 'mustache/vim-mustache-handlebars'

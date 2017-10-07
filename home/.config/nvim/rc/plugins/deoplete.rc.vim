@@ -16,9 +16,6 @@ call deoplete#custom#source('_', 'converters', [
 
 call deoplete#custom#source('look', 'min_pattern_length', 4)
 
-let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-let g:deoplete#ignore_sources.php = ['omni']
-
 " Plugin key-mappings. "{{{
 
 " <TAB>: completion.

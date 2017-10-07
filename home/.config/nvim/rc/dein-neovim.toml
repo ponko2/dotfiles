@@ -19,11 +19,6 @@ on_i = 1
 on_ft = 'ruby'
 
 [[plugins]]
-repo = 'php-vim/phpcd.vim'
-on_i = 1
-on_ft = 'php'
-
-[[plugins]]
 repo = 'zchee/deoplete-zsh'
 on_ft = 'zsh'
 
@@ -37,6 +32,6 @@ hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/deoplete.rc.vim'
 repo = 'bfredl/nvim-miniyank'
 on_map = '<Plug>(miniyank-'
 hook_add = '''
-  map p <Plug>(miniyank-autoput)
-  map P <Plug>(miniyank-autoPut)
+  nmap p <Plug>(miniyank-autoput)
+  nmap P <Plug>(miniyank-autoPut)
 '''
