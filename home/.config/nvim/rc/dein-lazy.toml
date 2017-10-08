@@ -61,9 +61,11 @@ repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/denite.rc.vim'
 hook_add = '''
-  nnoremap <silent> <C-p> :<C-u>Denite file_point file_old
-        \ -sorters=sorter_rank
-        \ `executable('git') && finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+  nnoremap <silent> <C-p> :<C-u>Denite -sorters=sorter_rank file_point file_old
+        \ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+
+  nnoremap <silent> <Leader>. :<C-u>DeniteBufferDir -sorters=sorter_rank
+        \ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
 
   nnoremap <silent> <Leader><Tab> :<C-u>Denite buffer<CR>
 
@@ -195,7 +197,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
-on_if = "executable('git') && finddir('.git', ';') != ''"
+on_if = "finddir('.git', ';') != ''"
 hook_source = '''
   let g:gitgutter_diff_args = 'HEAD'
 '''
@@ -282,14 +284,6 @@ hook_add = '''
     autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
   augroup END
 '''
-
-[[plugins]]
-repo = 'sbdchd/neoformat'
-on_if = 1
-
-[[plugins]]
-repo = 'neomake/neomake'
-on_if = 1
 
 [[plugins]]
 repo = 'w0rp/ale'
