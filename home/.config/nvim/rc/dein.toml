@@ -66,5 +66,11 @@ repo = 'ujihisa/neco-look'
 repo = 'Shougo/neco-syntax'
 
 [[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''
+  let g:gitgutter_diff_base = 'HEAD'
+'''
+
+[[plugins]]
 repo = 'nixprime/cpsm'
 build = 'env PY3=ON ./install.sh'
