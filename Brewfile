@@ -37,11 +37,6 @@ brew 'exa'
 brew 'peco'
 brew 'terminal-notifier'
 
-## Tmux
-brew 'tmux'
-brew 'ansifilter'
-brew 'reattach-to-user-namespace'
-
 ## Grep
 brew 'ripgrep'
 brew 'the_platinum_searcher'
