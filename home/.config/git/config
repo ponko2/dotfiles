@@ -37,6 +37,6 @@
 [stash]
 	showPatch = true
 [include]
-  path = ~/.config/git/work.inc
+	path = ~/.config/git/work.inc
 [includeIf "gitdir:~/src/github.com/ponko2/"]
-  path = ~/.config/git/ponko2.inc
+	path = ~/.config/git/ponko2.inc
