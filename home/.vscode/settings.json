@@ -1,0 +1,37 @@
+{
+  "editor.fontSize": 18,
+  "editor.fontFamily":
+    "'Ricty Diminished', Menlo, Monaco, 'Courier New', monospace",
+  "terminal.integrated.fontSize": 18,
+  "vim.leader": "<Space>",
+  "vim.useSystemClipboard": true,
+  "vim.overrideCopy": true,
+  "vim.visualstar": true,
+  "vim.enableNeovim": true,
+  "vim.disableAnnoyingNeovimMessage": true,
+  "prettier.eslintIntegration": true,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.formatOnSave": true
+  },
+  "[less]": {
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.formatOnSave": true
+  }
+}
