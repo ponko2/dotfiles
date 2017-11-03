@@ -74,3 +74,19 @@ hook_add = '''
 [[plugins]]
 repo = 'nixprime/cpsm'
 build = 'env PY3=ON ./install.sh'
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+if = "has('nvim')"
+hook_add = '''
+  let g:LanguageClient_autoStart = 1
+
+  " npm install -g javascript-typescript-langserver
+  let g:LanguageClient_serverCommands = {
+        \   'javascript': [
+        \     expand('$NODEBREW_ROOT/current/bin/javascript-typescript-stdio')
+        \   ],
+        \ }
+
+  autocmd MyAutoCmd FileType javascript setlocal omnifunc=LanguageClient#complete
+'''

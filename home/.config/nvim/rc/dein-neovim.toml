@@ -9,13 +9,7 @@ repo = 'jodosha/vim-godebug'
 on_ft = 'go'
 
 [[plugins]]
-repo = 'carlitux/deoplete-ternjs'
-on_i = 1
-on_ft = 'javascript'
-
-[[plugins]]
 repo = 'fishbullet/deoplete-ruby'
-on_i = 1
 on_ft = 'ruby'
 
 [[plugins]]
