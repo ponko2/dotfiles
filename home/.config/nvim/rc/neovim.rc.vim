@@ -34,7 +34,6 @@ autocmd MyAutoCmd FocusGained * checktime
 command! -bang Terminal terminal<bang> zsh
 augroup Terminal
   autocmd!
-  autocmd TermOpen * startinsert
   autocmd TermOpen * setlocal modifiable
   autocmd TermClose * buffer #
 augroup END
