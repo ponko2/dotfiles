@@ -8,7 +8,6 @@
   "vim.overrideCopy": true,
   "vim.visualstar": true,
   "vim.enableNeovim": true,
-  "vim.disableAnnoyingNeovimMessage": true,
   "prettier.eslintIntegration": true,
   "[javascript]": {
     "editor.formatOnSave": true
