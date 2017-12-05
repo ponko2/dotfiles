@@ -40,5 +40,3 @@
 	path = ~/.config/git/work.inc
 [includeIf "gitdir:~/src/github.com/ponko2/"]
 	path = ~/.config/git/ponko2.inc
-[includeIf "gitdir:~/.local/share/dein/"]
-	path = ~/.config/git/dein.inc
