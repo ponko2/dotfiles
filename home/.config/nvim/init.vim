@@ -50,8 +50,6 @@ endfunction "}}}
 " Set augroup "{{{
 augroup MyAutoCmd
   autocmd!
-  autocmd FileType,Syntax,BufNewFile,BufNew,BufRead *?
-        \ call vimrc#on_filetype()
 augroup END
 "}}}
 
@@ -60,6 +58,9 @@ call s:source_rc('init.rc.vim')
 
 " Dein:
 call s:source_rc('dein.rc.vim')
+
+" Syntax
+call s:source_rc('syntax.rc.vim')
 
 " Encoding:
 call s:source_rc('encoding.rc.vim')

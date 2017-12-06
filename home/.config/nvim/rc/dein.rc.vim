@@ -55,11 +55,6 @@ endif
 if !has('vim_starting')
   call dein#call_hook('source')
   call dein#call_hook('post_source')
-
-  syntax enable
-  filetype plugin indent on
-elseif !empty(argv())
-  call vimrc#on_filetype()
 endif
 
 

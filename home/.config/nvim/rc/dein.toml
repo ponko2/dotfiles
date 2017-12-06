@@ -78,6 +78,8 @@ build = 'env PY3=ON ./install.sh'
 [[plugins]]
 repo = 'autozimu/LanguageClient-neovim'
 if = "has('nvim')"
+rev = "next"
+build = './install.sh'
 hook_add = '''
   let g:LanguageClient_autoStart = 1
 
