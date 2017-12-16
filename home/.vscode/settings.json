@@ -2,6 +2,7 @@
   "editor.fontSize": 18,
   "editor.fontFamily":
     "'Ricty Diminished', Menlo, Monaco, 'Courier New', monospace",
+  "editor.minimap.enabled": false,
   "terminal.integrated.fontSize": 18,
   "vim.leader": "<Space>",
   "vim.useSystemClipboard": true,
