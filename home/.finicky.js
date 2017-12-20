@@ -39,9 +39,4 @@ finicky.onUrl(function (url, opts) {
   if (sourceApplication === 'com.reederapp.rkit2.mac') {
     return firefox;
   }
-
-  // Slack
-  if (sourceApplication === 'com.tinyspeck.slackmacgap') {
-    return firefox;
-  }
 });
