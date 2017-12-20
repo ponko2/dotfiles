@@ -57,6 +57,12 @@ repo = 'cespare/vim-toml'
 repo = 'othree/yajs.vim'
 
 [[plugins]]
+repo = 'othree/javascript-libraries-syntax.vim'
+
+[[plugins]]
+repo = 'othree/es.next.syntax.vim'
+
+[[plugins]]
 repo = 'mustache/vim-mustache-handlebars'
 
 [[plugins]]
