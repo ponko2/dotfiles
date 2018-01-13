@@ -30,8 +30,13 @@ finicky.onUrl(function (url, opts) {
     };
   }
 
-  // Tech
-  if (url.match(/^https?:\/\/(github|qiita)\.com/)) {
+  // GitHub
+  if (url.match(/^https?:\/\/github/)) {
+    return chrome;
+  }
+
+  // Qiita
+  if (url.match(/^https?:\/\/qiita\.com/)) {
     return chrome;
   }
 
