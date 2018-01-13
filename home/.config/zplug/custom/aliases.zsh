@@ -11,6 +11,7 @@ esac
 
 # Disable correction.
 alias cp='nocorrect cp'
+alias go='nocorrect go'
 alias git='nocorrect git'
 alias ln='nocorrect ln'
 alias man='nocorrect man'
