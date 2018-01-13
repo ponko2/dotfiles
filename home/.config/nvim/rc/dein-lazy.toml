@@ -300,6 +300,14 @@ hook_source = '''
         \   'javascript': ['eslint'],
         \   'zsh': [],
         \ }
+
+  let g:ale_fix_on_save = 1
+  let g:ale_fixers = {
+        \   'javascript': ['eslint'],
+        \   'css': ['prettier'],
+        \   'scss': ['prettier'],
+        \   'less': ['prettier'],
+        \ }
 '''
 
 [[plugins]]
