@@ -85,16 +85,12 @@ build = 'env PY3=ON ./install.sh'
 repo = 'autozimu/LanguageClient-neovim'
 if = "has('nvim')"
 rev = "next"
-build = './install.sh'
+build = "bash install.sh"
 hook_add = '''
-  let g:LanguageClient_autoStart = 1
+  let g:LanguageClient_autoStart = 0
 
   " npm install -g javascript-typescript-langserver
   let g:LanguageClient_serverCommands = {
-        \   'javascript': [
-        \     expand('$NODEBREW_ROOT/current/bin/javascript-typescript-stdio')
-        \   ],
+        \   'javascript': ['javascript-typescript-stdio'],
         \ }
-
-  autocmd MyAutoCmd FileType javascript setlocal omnifunc=LanguageClient#complete
 '''
