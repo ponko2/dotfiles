@@ -23,6 +23,7 @@
 	log = diff-highlight | LESS=-R less
 	show = diff-highlight | LESS=-R less
 	diff = diff-highlight | LESS=-R less
+	branch = cat
 [ghq]
 	root = ~/src
 [grep]
