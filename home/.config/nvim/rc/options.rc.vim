@@ -293,7 +293,7 @@ set viewoptions& viewoptions-=options viewoptions+=slash,unix
 
 " 指定した列を強調表示
 set conceallevel=2
-set concealcursor=niv
+set concealcursor=nc
 set colorcolumn=119
 
 " 終了時の情報を保存

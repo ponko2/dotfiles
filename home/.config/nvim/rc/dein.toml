@@ -54,13 +54,29 @@ hook_add = '''
 repo = 'cespare/vim-toml'
 
 [[plugins]]
+repo = 'billyvg/tigris.nvim'
+if = "has('nvim')"
+build = './install.sh'
+hook_add = '''
+  let g:tigris#enabled = 1
+  let g:tigris#on_the_fly_enabled = 1
+  let g:tigris#delay = 300
+'''
+
+[[plugins]]
+if = "!has('nvim')"
 repo = 'othree/yajs.vim'
 
 [[plugins]]
+if = "!has('nvim')"
 repo = 'othree/javascript-libraries-syntax.vim'
 
 [[plugins]]
+if = "!has('nvim')"
 repo = 'othree/es.next.syntax.vim'
+
+[[plugins]]
+repo = 'rhysd/vim-gfm-syntax'
 
 [[plugins]]
 repo = 'mustache/vim-mustache-handlebars'
