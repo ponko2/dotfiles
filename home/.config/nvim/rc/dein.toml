@@ -77,6 +77,10 @@ repo = 'othree/es.next.syntax.vim'
 
 [[plugins]]
 repo = 'rhysd/vim-gfm-syntax'
+hook_add = '''
+  let g:gfm_syntax_emoji_conceal = 1
+  let g:markdown_fenced_languages = ['java', 'javascript', 'json']
+'''
 
 [[plugins]]
 repo = 'mustache/vim-mustache-handlebars'
