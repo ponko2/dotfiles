@@ -20,6 +20,7 @@ alias mv='nocorrect mv'
 alias rm='nocorrect rm'
 alias sudo='nocorrect sudo'
 alias vim='nocorrect vim'
+alias jest='nocorrect jest'
 
 # ls
 if type exa &> /dev/null; then
