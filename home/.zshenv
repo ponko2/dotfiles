@@ -73,6 +73,9 @@ esac
 export RBENV_ROOT=/usr/local/var/rbenv
 export PATH=$RBENV_ROOT/shims:$PATH
 
+# Python
+export PATH=/usr/local/opt/python@2/bin:$PATH
+
 # Node.js
 export NODEBREW_ROOT=/usr/local/var/nodebrew
 export PATH=$NODEBREW_ROOT/current/bin:$PATH

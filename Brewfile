@@ -43,8 +43,8 @@ brew 'the_platinum_searcher'
 brew 'the_silver_searcher'
 
 ## Python
-brew 'python2'
-brew 'python3'
+brew 'python'
+brew 'python@2'
 
 ## Ruby
 brew 'rbenv'
