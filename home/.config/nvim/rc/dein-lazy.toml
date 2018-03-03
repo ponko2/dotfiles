@@ -35,7 +35,7 @@ hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/neocomplete.rc.vim'
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 depends = ['neosnippet-snippets', 'context_filetype.vim']
-on_event = 'InsertCharPre'
+on_i = 1
 on_ft = 'snippet'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/neosnippet.rc.vim'
 
