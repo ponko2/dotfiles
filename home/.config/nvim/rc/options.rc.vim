@@ -97,7 +97,7 @@ set ttimeoutlen=100
 
 " スワップ設定
 set swapfile
-set updatetime=1000
+set updatetime=100
 if !isdirectory(expand('$XDG_DATA_HOME/nvim/swap'))
   call mkdir(expand('$XDG_DATA_HOME/nvim/swap'), 'p')
 endif
