@@ -9,22 +9,22 @@ call denite#custom#map('normal', '<C-j>', '<denite:move_to_next_line>', 'noremap
 call denite#custom#map('normal', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
 call denite#custom#map('normal', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
 
-call denite#custom#source('file_old', 'matchers',
+call denite#custom#source('file/old', 'matchers',
       \ ['matcher_fuzzy', 'matcher_project_files'])
 
 if has('nvim')
-  call denite#custom#source('file_rec,grep', 'matchers',
+  call denite#custom#source('file/rec,grep', 'matchers',
         \ ['matcher_cpsm'])
 endif
 
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
       \ ['.git/', '*.min.*'])
 
-call denite#custom#source('file_old', 'converters',
+call denite#custom#source('file/old', 'converters',
       \ ['converter_relative_word'])
 
-call denite#custom#alias('source', 'file_rec/git', 'file_rec')
-call denite#custom#var('file_rec/git', 'command',
+call denite#custom#alias('source', 'file/rec/git', 'file/rec')
+call denite#custom#var('file/rec/git', 'command',
       \ ['git', 'ls-files', '-co', '--exclude-standard'])
 
 call denite#custom#option('default', {
@@ -33,7 +33,7 @@ call denite#custom#option('default', {
       \ })
 
 if executable('rg')
-  call denite#custom#var('file_rec', 'command',
+  call denite#custom#var('file/rec', 'command',
         \ ['rg', '--files', '--glob', '!.git/*'])
 
   call denite#custom#var('grep', 'command', ['rg'])
@@ -43,7 +43,7 @@ if executable('rg')
   call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
   call denite#custom#var('grep', 'final_opts', [])
 elseif executable('ag')
-  call denite#custom#var('file_rec', 'command',
+  call denite#custom#var('file/rec', 'command',
         \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 
   call denite#custom#var('grep', 'command', ['ag'])

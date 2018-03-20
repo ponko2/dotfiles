@@ -1,26 +1,6 @@
 [[plugins]]
-repo = 'zchee/deoplete-go'
-on_i = 1
-on_ft = 'go'
-build = 'make'
-
-[[plugins]]
 repo = 'jodosha/vim-godebug'
 on_ft = 'go'
-
-[[plugins]]
-repo = 'fishbullet/deoplete-ruby'
-on_ft = 'ruby'
-
-[[plugins]]
-repo = 'zchee/deoplete-zsh'
-on_ft = 'zsh'
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-depends = 'context_filetype.vim'
-on_i = 1
-hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/deoplete.rc.vim'
 
 [[plugins]]
 repo = 'bfredl/nvim-miniyank'

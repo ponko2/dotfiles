@@ -38,10 +38,6 @@ call dein#load_toml(expand('$XDG_CONFIG_HOME/nvim/rc/dein-lazy.toml'), {'lazy' :
 
 if has('nvim')
   call dein#load_toml(expand('$XDG_CONFIG_HOME/nvim/rc/dein-neovim.toml'), {'lazy' : 1})
-
-  if dein#tap('deoplete.nvim')
-    call dein#disable('neocomplete.vim')
-  endif
 endif
 
 call dein#end()

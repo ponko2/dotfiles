@@ -26,13 +26,6 @@ repo = 'Shougo/neoinclude.vim'
 on_if = 1
 
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
-depends = 'context_filetype.vim'
-if = "has('lua')"
-on_i = 1
-hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/neocomplete.rc.vim'
-
-[[plugins]]
 repo = 'Shougo/neosnippet.vim'
 depends = ['neosnippet-snippets', 'context_filetype.vim']
 on_i = 1
@@ -61,11 +54,11 @@ repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/denite.rc.vim'
 hook_add = '''
-  nnoremap <silent> <C-p> :<C-u>Denite -sorters=sorter_rank file_point file_old
-        \ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+  nnoremap <silent> <C-p> :<C-u>Denite -sorters=sorter_rank file/point file/old
+        \ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
 
   nnoremap <silent> <Leader>. :<C-u>DeniteBufferDir -sorters=sorter_rank
-        \ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+        \ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
 
   nnoremap <silent> <Leader><Tab> :<C-u>Denite buffer<CR>
 
@@ -336,3 +329,18 @@ on_ft = 'java'
 hook_source = '''
   autocmd MyAutoCmd FileType java setlocal omnifunc=javacomplete#Complete
 '''
+
+[[plugins]]
+repo = 'zchee/deoplete-go'
+on_ft = 'go'
+build = 'make'
+
+[[plugins]]
+repo = 'zchee/deoplete-zsh'
+on_ft = 'zsh'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+on_i = 1
+hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/deoplete.rc.vim'

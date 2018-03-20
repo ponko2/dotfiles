@@ -64,16 +64,16 @@ hook_add = '''
 '''
 
 [[plugins]]
-if = "!has('nvim')"
 repo = 'othree/yajs.vim'
+if = "!has('nvim')"
 
 [[plugins]]
-if = "!has('nvim')"
 repo = 'othree/javascript-libraries-syntax.vim'
+if = "!has('nvim')"
 
 [[plugins]]
-if = "!has('nvim')"
 repo = 'othree/es.next.syntax.vim'
+if = "!has('nvim')"
 
 [[plugins]]
 repo = 'rhysd/vim-gfm-syntax'
@@ -114,3 +114,11 @@ hook_add = '''
         \   'javascript': ['javascript-typescript-stdio'],
         \ }
 '''
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+if = "!has('nvim')"
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+if = "!has('nvim')"
