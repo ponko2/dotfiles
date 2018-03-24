@@ -38,18 +38,6 @@ depends = 'neomru.vim'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/unite.rc.vim'
 
 [[plugins]]
-repo = 'ctrlpvim/ctrlp.vim'
-hook_source = '''
-  let g:ctrlp_map = '<Nop>'
-  let g:ctrlp_prompt_mappings = {
-        \   'PrtSelectMove("j")': ['<c-j>', '<c-n>'],
-        \   'PrtSelectMove("k")': ['<c-k>', '<c-p>'],
-        \   'PrtHistory(-1)':     ['<down>'],
-        \   'PrtHistory(1)':      ['<up>'],
-        \ }
-'''
-
-[[plugins]]
 repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/denite.rc.vim'
@@ -190,7 +178,6 @@ hook_source = '''
 
 [[plugins]]
 repo = 'fatih/vim-go'
-depends = ['neosnippet.vim', 'ctrlp.vim']
 on_ft = 'go'
 hook_source = '''
   let g:go_highlight_functions = 1
@@ -215,7 +202,6 @@ hook_source = '''
   let g:go_gocode_unimported_packages = 1
 
   let g:go_metalinter_enabled = [
-        \   'aligncheck',
         \   'deadcode',
         \   'dupl',
         \   'errcheck',
@@ -225,8 +211,11 @@ hook_source = '''
         \   'golint',
         \   'gosimple',
         \   'gotype',
+        \   'gotypex',
         \   'ineffassign',
         \   'interfacer',
+        \   'maligned',
+        \   'megacheck',
         \   'staticcheck',
         \   'structcheck',
         \   'unconvert',
@@ -285,8 +274,9 @@ hook_source = '''
         \     'gofmt',
         \     'golint',
         \     'gosimple',
-        \     'staticcheck',
+        \     'gotype',
         \     'go vet',
+        \     'staticcheck',
         \   ],
         \   'html': [],
         \   'java': [],
