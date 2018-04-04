@@ -42,10 +42,11 @@ repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/denite.rc.vim'
 hook_add = '''
-  nnoremap <silent> <C-p> :<C-u>Denite -sorters=sorter_rank file/point file/old
-        \ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
+  nnoremap <silent> <C-p> :<C-u>Denite -sorters=sorter/rank file/point file/old
+        \ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`
+        \ file file:new<CR>
 
-  nnoremap <silent> <Leader>. :<C-u>DeniteBufferDir -sorters=sorter_rank
+  nnoremap <silent> <Leader>. :<C-u>DeniteBufferDir -sorters=sorter/rank
         \ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
 
   nnoremap <silent> <Leader><Tab> :<C-u>Denite buffer<CR>

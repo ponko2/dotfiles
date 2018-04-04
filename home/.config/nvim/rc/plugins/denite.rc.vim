@@ -10,14 +10,14 @@ call denite#custom#map('normal', '<C-p>', '<denite:move_to_previous_line>', 'nor
 call denite#custom#map('normal', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
 
 call denite#custom#source('file/old', 'matchers',
-      \ ['matcher_fuzzy', 'matcher_project_files'])
+      \ ['matcher/fuzzy', 'matcher/project_files'])
 
 if has('nvim')
   call denite#custom#source('file/rec,grep', 'matchers',
-        \ ['matcher_cpsm'])
+        \ ['matcher/cpsm'])
 endif
 
-call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
+call denite#custom#filter('matcher/ignore_globs', 'ignore_globs',
       \ ['.git/', '*.min.*'])
 
 call denite#custom#source('file/old', 'converters',
