@@ -21,7 +21,7 @@ call denite#custom#filter('matcher/ignore_globs', 'ignore_globs',
       \ ['.git/', '*.min.*'])
 
 call denite#custom#source('file/old', 'converters',
-      \ ['converter_relative_word'])
+      \ ['converter/relative_word'])
 
 call denite#custom#alias('source', 'file/rec/git', 'file/rec')
 call denite#custom#var('file/rec/git', 'command',
