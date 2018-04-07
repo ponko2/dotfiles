@@ -141,7 +141,7 @@ autocmd MyAutoCmd InsertLeave * if &l:diff | diffupdate | endif
 autocmd MyAutoCmd BufWritePre *
       \ call s:mkdir_as_necessary(expand('<afile>:p:h'), v:cmdbang)
 function! s:mkdir_as_necessary(dir, force) abort
-  if !isdirectory(a:dir) && &l:buftype == '' &&
+  if !isdirectory(a:dir) && &l:buftype ==# '' &&
         \ (a:force || input(printf('"%s" does not exist. Create? [y/N]',
         \              a:dir)) =~? '^y\%[es]$')
     call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
@@ -185,13 +185,13 @@ set titlelen=95
 set showtabline=1
 
 " Set statusline.
-let &g:statusline="%{winnr('$')>1?'['.winnr().'/'.winnr('$')"
-      \ . ".(winnr('#')==winnr()?'#':'').']':''}\ "
-      \ . "%{(&previewwindow?'[preview] ':'').expand('%:t')}"
-      \ . "\ %=%{(winnr('$')==1 || winnr('#')!=winnr()) ?
-      \ '['.(&filetype!=''?&filetype.',':'')"
-      \ . ".(&fenc!=''?&fenc:&enc).','.&ff.']' : ''}"
-      \ . "%m%{printf('%'.(len(line('$'))+2).'d/%d',line('.'),line('$'))}"
+let &g:statusline = "%{winnr('$') > 1 ? '['.winnr().'/'.winnr('$')"
+      \ . ".(winnr('#') ==# winnr() ? '#' : '').']' : ''}\ "
+      \ . "%{(&previewwindow ? '[Preview] ' : '').expand('%:t')}\ "
+      \ . "%=%{(winnr('$') ==# 1 || winnr('#') !=# winnr()) ? "
+      \ . "'['.(&filetype !=# '' ? &filetype.',' : '')"
+      \ . ".(&fenc !=# '' ? &fenc : &enc).','.&ff.']' : ''}"
+      \ . "%m%{printf('%'.(len(line('$')) + 2).'d/%d', line('.'), line('$'))}"
 
 " 折り返し表示の設定
 set linebreak

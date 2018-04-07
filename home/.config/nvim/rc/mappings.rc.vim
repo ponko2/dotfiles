@@ -98,14 +98,13 @@ cnoremap <C-n> <Down>
 " <C-p>: previous history.
 cnoremap <C-p> <Up>
 " <C-k>, K: delete to end.
-cnoremap <C-k> <C-\>e getcmdpos() == 1 ?
-      \ '' : getcmdline()[:getcmdpos()-2]<CR>
+cnoremap <C-k> <C-\>e getcmdpos() ==# 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
 " <C-y>: paste.
 cnoremap <C-y> <C-r>*
 " <C-g>: Exit.
 cnoremap <C-g> <C-c>
 " %% -> %:h/
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+cnoremap <expr> %% getcmdtype() ==# ':' ? expand('%:h').'/' : '%%'
 
 
 "---------------------------------------------------------------------------
