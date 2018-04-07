@@ -6,7 +6,8 @@ if !IsGUI() | finish | endif
 " GUI:
 "
 
-" Font: "{{{
+"---------------------------------------------------------------------------
+" Font:
 
 if has('gui_vimr')
   " do nothing.
@@ -30,9 +31,9 @@ else
   set guifontwide=Ricty\ 12
 endif
 
-"}}}
 
-" Window: "{{{
+"---------------------------------------------------------------------------
+" Window:
 
 " Width of window.
 if &columns < 170
@@ -44,9 +45,9 @@ if &lines < 40
    set lines=40
 endif
 
-"}}}
 
-" Mouse: "{{{
+"---------------------------------------------------------------------------
+" Mouse:
 
 " どのモードでもマウスを使えるようにする
 set mouse=a
@@ -60,9 +61,9 @@ set nomousefocus
 " 入力時にマウスポインタを隠す
 set mousehide
 
-"}}}
 
-" Menu: "{{{
+"---------------------------------------------------------------------------
+" Menu:
 
 " Hide toolbar and menus.
 set guioptions-=T
@@ -81,14 +82,12 @@ if has('patch-8.0.1609')
   set guioptions+=!
 endif
 
-"}}}
 
-" View: "{{{
+"---------------------------------------------------------------------------
+" View:
 
 " Don't flick cursor.
 set guicursor& guicursor+=a:blinkon0
 
-"}}}
 
-
-" vim: foldmethod=marker fileencoding=utf-8
+" vim: fileencoding=utf-8

@@ -10,11 +10,12 @@ let g:neosnippet#snippets_directory = expand('$XDG_CONFIG_HOME/nvim/snippets')
 
 autocmd MyAutoCmd CompleteDone * call neosnippet#complete_done()
 
-" Plugin key-mappings. "{{{
+"---------------------------------------------------------------------------
+" Plugin key-mappings:
+
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
-" }}}
 
 
-" vim: foldmethod=marker fileencoding=utf-8
+" vim: fileencoding=utf-8

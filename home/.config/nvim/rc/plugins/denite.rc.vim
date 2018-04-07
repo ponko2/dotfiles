@@ -35,7 +35,6 @@ call denite#custom#option('default', {
 if executable('rg')
   call denite#custom#var('file/rec', 'command',
         \ ['rg', '--files', '--glob', '!.git/*'])
-
   call denite#custom#var('grep', 'command', ['rg'])
   call denite#custom#var('grep', 'default_opts',
         \ ['--vimgrep', '--no-heading', '--smart-case', '--hidden', '--glob', '!.git/*'])
@@ -45,7 +44,6 @@ if executable('rg')
 elseif executable('ag')
   call denite#custom#var('file/rec', 'command',
         \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-
   call denite#custom#var('grep', 'command', ['ag'])
   call denite#custom#var('grep', 'default_opts',
         \  ['--vimgrep', '--follow', '--nocolor', '--nogroup',
@@ -56,4 +54,4 @@ elseif executable('ag')
 endif
 
 
-" vim: foldmethod=marker fileencoding=utf-8
+" vim: fileencoding=utf-8

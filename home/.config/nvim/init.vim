@@ -3,11 +3,10 @@ scriptencoding utf-8
 " Skip initialization for vim-tiny or vim-small.
 if !1 | finish | endif
 
-" Enable no Vi compatible commands "{{{
+" Enable no Vi compatible commands
 if &compatible
   set nocompatible
 endif
-"}}}
 
 if empty($XDG_CONFIG_HOME)
   let $XDG_CONFIG_HOME = expand('$HOME/.config')
@@ -21,7 +20,7 @@ if empty($XDG_DATA_HOME)
   let $XDG_DATA_HOME = expand('$HOME/.local/share')
 endif
 
-function! s:source_rc(path, ...) abort "{{{
+function! s:source_rc(path, ...) abort
   let l:use_global = get(a:000, 0, !has('vim_starting'))
   let l:abspath = resolve(expand('$XDG_CONFIG_HOME/nvim/rc/' . a:path))
 
@@ -45,13 +44,12 @@ function! s:source_rc(path, ...) abort "{{{
       call delete(l:tempfile)
     endif
   endtry
-endfunction "}}}
+endfunction
 
-" Set augroup "{{{
+" Set augroup
 augroup MyAutoCmd
   autocmd!
 augroup END
-"}}}
 
 " Initialize:
 call s:source_rc('init.rc.vim')
@@ -88,4 +86,4 @@ call s:source_rc('cui.rc.vim')
 set secure
 
 
-" vim: foldmethod=marker fileencoding=utf-8
+" vim: fileencoding=utf-8

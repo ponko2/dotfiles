@@ -35,4 +35,4 @@ augroup Terminal
 augroup END
 
 
-" vim: foldmethod=marker fileencoding=utf-8
+" vim: fileencoding=utf-8

@@ -9,4 +9,4 @@ if IsWindows() | finish | endif
 set shell=zsh
 
 
-" vim: foldmethod=marker fileencoding=utf-8
+" vim: fileencoding=utf-8

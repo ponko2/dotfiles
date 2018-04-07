@@ -20,4 +20,4 @@ set fileformat=unix
 set fileformats=unix,dos,mac
 
 
-" vim: foldmethod=marker fileencoding=utf-8
+" vim: fileencoding=utf-8

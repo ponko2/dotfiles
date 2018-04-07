@@ -6,7 +6,9 @@ if !IsCUI() | finish | endif
 " CUI:
 "
 
-" Timeout: "{{{
+"---------------------------------------------------------------------------
+" Timeout:
+
 set notimeout
 set ttimeout
 set ttimeoutlen=10
@@ -16,15 +18,13 @@ augroup FastEscape
   autocmd InsertEnter * set timeoutlen=0
   autocmd InsertLeave * set timeoutlen=1000
 augroup END
-"}}}
 
-" Mouse: "{{{
+"---------------------------------------------------------------------------
+" Mouse:
 
 " Disable the mouse.
 set mouse=
 set mousemodel=
 
-"}}}
 
-
-" vim: foldmethod=marker fileencoding=utf-8
+" vim: fileencoding=utf-8

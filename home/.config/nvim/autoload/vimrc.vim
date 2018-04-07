@@ -2,11 +2,11 @@
 " vimrc functions:
 "
 
-function! vimrc#on_filetype() abort "{{{
+function! vimrc#on_filetype() abort
   if execute('filetype') =~# 'OFF'
     " Lazy loading
     silent! filetype plugin indent on
     filetype detect
     syntax enable
   endif
-endfunction "}}}
+endfunction

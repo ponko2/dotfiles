@@ -1,8 +1,11 @@
 scriptencoding utf-8
 
 "---------------------------------------------------------------------------
-" Search:
+" Options:
 "
+
+"---------------------------------------------------------------------------
+" Search:
 
 " 大文字と小文字を無視する
 set ignorecase
@@ -22,7 +25,6 @@ set wrapscan
 
 "---------------------------------------------------------------------------
 " Edit:
-"
 
 " タブをスペースにする
 set smarttab
@@ -152,7 +154,6 @@ set formatexpr=autofmt#japanese#formatexpr()
 
 "---------------------------------------------------------------------------
 " View:
-"
 
 " 文字幅が曖昧な文字を全角表示
 set ambiwidth=double
@@ -301,11 +302,10 @@ if !has('nvim')
   set viminfo& viminfo+=n$XDG_DATA_HOME/nvim/viminfo
 endif
 
-" Color Scheme: "{{{
-
 " Enable 256 color terminal.
 set t_Co=256
 
+" Color Scheme
 if !exists('g:colors_name')
   if IsWindows()
     " 斜体表示をしない
@@ -320,12 +320,9 @@ if !exists('g:colors_name')
   endtry
 endif
 
-"}}}
-
 
 "---------------------------------------------------------------------------
 " Others:
-"
 
 " 日本語ヘルプを優先
 set helplang& helplang=ja,en
@@ -336,8 +333,7 @@ set nrformats& nrformats-=octal
 " Default home directory.
 let t:cwd = getcwd()
 
-" Input Japanese: "{{{
-
+" Input Japanese
 if has('multi_byte_ime') || has('xim')
   " IME ON時のカーソルの色を設定
   autocmd MyAutoCmd ColorScheme * highlight CursorIM guibg=Purple guifg=NONE
@@ -351,13 +347,10 @@ if has('multi_byte_ime') || has('xim')
   " 挿入モードでのIME状態を記憶させない
   inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 endif
-
 if has('gui_macvim') && has('kaoriya')
   set noimdisable
   set imdisableactivate
 endif
 
-"}}}
 
-
-" vim: foldmethod=marker fileencoding=utf-8
+" vim: fileencoding=utf-8

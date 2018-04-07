@@ -6,7 +6,7 @@ if !has('vim_starting') | finish | endif
 " Initialize:
 "
 
-" Platform check "{{{
+" Platform check
 let s:is_windows = has('win32') || has('win64')
 
 function! IsWindows() abort
@@ -28,7 +28,6 @@ endfunction
 function! IsCUI() abort
   return !s:is_gui
 endfunction
-"}}}
 
 " Setting of the encoding to use for a save and reading.
 " Make it normal in UTF-8 in Unix.
@@ -49,12 +48,11 @@ let &fileencodings = join([
       \   'cp932'
       \ ], ',')
 
-" Setting of terminal encoding. "{{{
+" Setting of terminal encoding.
 if !has('gui_running') && IsWindows()
   " For system.
   set termencoding=cp932
 endif
-"}}}
 
 " Use English interface.
 language message C
@@ -63,11 +61,10 @@ language message C
 let g:mapleader = "\<Space>"
 nnoremap <Space> <Nop>
 
-" Exchange path separator "{{{
+" Exchange path separator
 if IsWindows()
   set shellslash
 endif
-"}}}
 
 " Disable menu.vim
 if has('gui_running')
@@ -98,4 +95,4 @@ let g:loaded_spellfile_plugin  = 1
 let g:loaded_man               = 1
 
 
-" vim: foldmethod=marker fileencoding=utf-8
+" vim: fileencoding=utf-8

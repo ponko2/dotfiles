@@ -4,7 +4,9 @@ scriptencoding utf-8
 " Key-mappings:
 "
 
-" Normal mode keymappings: "{{{
+"---------------------------------------------------------------------------
+" Normal mode keymappings:
+
 " 検索の強調表示を無効化
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
@@ -76,9 +78,11 @@ nnoremap <silent> ]T :<C-u>tlast<CR>
 
 " Better x
 nnoremap x "_x
-"}}}
 
-" Command-line mode keymappings: "{{{
+
+"---------------------------------------------------------------------------
+" Command-line mode keymappings:
+
 " <C-a>, A: move to head.
 cnoremap <C-a> <Home>
 " <C-b>: previous char.
@@ -102,19 +106,22 @@ cnoremap <C-y> <C-r>*
 cnoremap <C-g> <C-c>
 " %% -> %:h/
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-"}}}
 
-" Visual mode keymappings: "{{{
+
+"---------------------------------------------------------------------------
+" Visual mode keymappings:
+
 " Disable dos-standard-mappings
 silent! vunmap <C-x>
-"}}}
 
-" Terminal keymappings: "{{{
+
+"---------------------------------------------------------------------------
+" Terminal keymappings:
+
 if exists(':tnoremap')
   tnoremap <ESC> <ESC><C-\><C-n>
   tnoremap <C-w> <C-\><C-n><C-w>
 endif
-"}}}
 
 
-" vim: foldmethod=marker fileencoding=utf-8
+" vim: fileencoding=utf-8

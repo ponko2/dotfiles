@@ -44,4 +44,4 @@ command! -bang -complete=file -nargs=? WDos
       \ write<bang> ++fileformat=dos <args> | edit <args>
 
 
-" vim: foldmethod=marker fileencoding=utf-8
+" vim: fileencoding=utf-8
