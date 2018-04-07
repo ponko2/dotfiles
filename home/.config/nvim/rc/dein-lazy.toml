@@ -46,11 +46,11 @@ hook_add = '''
 
   nnoremap <silent> <Leader><Tab> :<C-u>Denite buffer<CR>
 
-  nnoremap <silent> <Leader>/ :<C-u>Denite -buffer-name=search -no-empty -mode=normal grep<CR>
+  nnoremap <silent> <Leader>/ :<C-u>Denite -buffer-name=search -no-empty -mode=normal grep::!<CR>
   nnoremap <silent> <Leader>n :<C-u>Denite -buffer-name=search -resume -mode=normal -refresh<CR>
   nnoremap <silent> <Leader>p :<C-u>Denite -buffer-name=register register neoyank<CR>
   xnoremap <silent> <Leader>p :<C-u>Denite -buffer-name=register -default-action=replace register neoyank<CR>
-  nnoremap <silent> <Leader>; :<C-u>Denite -mode=normal change jump<CR>
+  nnoremap <silent> <Leader>; :<C-u>Denite -unique -mode=normal change jump<CR>
 '''
 
 [[plugins]]
