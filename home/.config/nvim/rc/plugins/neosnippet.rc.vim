@@ -10,6 +10,7 @@ let g:neosnippet#snippets_directory = expand('$XDG_CONFIG_HOME/nvim/snippets')
 
 autocmd MyAutoCmd CompleteDone * call neosnippet#complete_done()
 
+
 "---------------------------------------------------------------------------
 " Plugin key-mappings:
 

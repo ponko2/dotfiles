@@ -79,32 +79,40 @@ nnoremap <silent> ]T :<C-u>tlast<CR>
 " Better x
 nnoremap x "_x
 
+" Better Y
+nnoremap Y y$
+
 
 "---------------------------------------------------------------------------
 " Command-line mode keymappings:
 
-" <C-a>, A: move to head.
-cnoremap <C-a> <Home>
-" <C-b>: previous char.
-cnoremap <C-b> <Left>
-" <C-d>: delete char.
-cnoremap <C-d> <Del>
-" <C-e>, E: move to end.
-cnoremap <C-e> <End>
-" <C-f>: next char.
-cnoremap <C-f> <Right>
-" <C-n>: next history.
+" Next history.
+cnoremap <Down> <C-n>
 cnoremap <C-n> <Down>
-" <C-p>: previous history.
+
+" Previous history.
+cnoremap <Up> <C-p>
 cnoremap <C-p> <Up>
-" <C-k>, K: delete to end.
-cnoremap <C-k> <C-\>e getcmdpos() ==# 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
-" <C-y>: paste.
-cnoremap <C-y> <C-r>*
-" <C-g>: Exit.
-cnoremap <C-g> <C-c>
+
 " %% -> %:h/
 cnoremap <expr> %% getcmdtype() ==# ':' ? expand('%:h').'/' : '%%'
+
+" Emacs-like key mappings
+cnoremap <C-a> <Home>
+cnoremap <C-b> <Left>
+cnoremap <C-d> <Del>
+cnoremap <C-e> <End>
+"cnoremap <C-f> <Right>
+cnoremap <C-g> <C-c>
+cnoremap <C-k> <C-\>e getcmdpos() ==# 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
+if has('unnamedplus')
+  cnoremap <C-y> <C-r>+
+else
+  cnoremap <C-y> <C-r>*
+endif
+
+" Open Command-line window
+"execute 'set cedit=\<C-f>'
 
 
 "---------------------------------------------------------------------------
