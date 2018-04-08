@@ -27,7 +27,7 @@ repo = 'Shougo/neosnippet.vim'
 depends = ['neosnippet-snippets', 'context_filetype.vim']
 on_i = 1
 on_ft = 'snippet'
-hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/neosnippet.rc.vim'
+hook_source = 'call vimrc#source_rc("plugins/neosnippet.rc.vim")'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
@@ -35,7 +35,7 @@ repo = 'Shougo/unite.vim'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
-hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/denite.rc.vim'
+hook_source = 'call vimrc#source_rc("plugins/denite.rc.vim")'
 hook_add = '''
   nnoremap <silent> <C-p> :<C-u>Denite -sorters=sorter/rank file/point file/old
         \ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`
@@ -75,7 +75,7 @@ repo = 'chemzqm/vim-easygit'
 repo = 'Shougo/vimfiler.vim'
 depends = ['unite.vim']
 on_if = "isdirectory(bufname('%'))"
-hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/vimfiler.rc.vim'
+hook_source = 'call vimrc#source_rc("plugins/vimfiler.rc.vim")'
 
 [[plugins]]
 repo = 'Shougo/deol.nvim'
@@ -321,4 +321,4 @@ on_ft = 'zsh'
 repo = 'Shougo/deoplete.nvim'
 depends = ['context_filetype.vim']
 on_i = 1
-hook_source = 'source $XDG_CONFIG_HOME/nvim/rc/plugins/deoplete.rc.vim'
+hook_source = 'call vimrc#source_rc("plugins/deoplete.rc.vim")'

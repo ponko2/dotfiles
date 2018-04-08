@@ -20,68 +20,42 @@ if empty($XDG_DATA_HOME)
   let $XDG_DATA_HOME = expand('$HOME/.local/share')
 endif
 
-function! s:source_rc(path, ...) abort
-  let l:use_global = get(a:000, 0, !has('vim_starting'))
-  let l:abspath = resolve(expand('$XDG_CONFIG_HOME/nvim/rc/' . a:path))
-
-  if !l:use_global
-    execute 'source' fnameescape(l:abspath)
-    return
-  endif
-
-  " substitute all 'set' to 'setglobal'
-  let l:content = map(readfile(l:abspath),
-        \ "substitute(v:val, '^\\W*\\zsset\\ze\\W', 'setglobal', '')")
-
-  " create tempfile and source the tempfile
-  let l:tempfile = tempname()
-
-  try
-    call writefile(l:content, l:tempfile)
-    execute 'source' fnameescape(l:tempfile)
-  finally
-    if filereadable(l:tempfile)
-      call delete(l:tempfile)
-    endif
-  endtry
-endfunction
-
 " Set augroup
 augroup MyAutoCmd
   autocmd!
 augroup END
 
 " Initialize:
-call s:source_rc('init.rc.vim')
+call vimrc#source_rc('init.rc.vim')
 
 " Dein:
-call s:source_rc('dein.rc.vim')
+call vimrc#source_rc('dein.rc.vim')
 
 " Syntax
-call s:source_rc('syntax.rc.vim')
+call vimrc#source_rc('syntax.rc.vim')
 
 " Encoding:
-call s:source_rc('encoding.rc.vim')
+call vimrc#source_rc('encoding.rc.vim')
 
 " Options:
-call s:source_rc('options.rc.vim')
+call vimrc#source_rc('options.rc.vim')
 
 " FileType:
-call s:source_rc('filetype.rc.vim')
+call vimrc#source_rc('filetype.rc.vim')
 
 " Mappings:
-call s:source_rc('mappings.rc.vim')
+call vimrc#source_rc('mappings.rc.vim')
 
 " Commands:
-call s:source_rc('commands.rc.vim')
+call vimrc#source_rc('commands.rc.vim')
 
 " Platform:
-call s:source_rc('windows.rc.vim')
-call s:source_rc('unix.rc.vim')
-call s:source_rc('mac.rc.vim')
-call s:source_rc('neovim.rc.vim')
-call s:source_rc('gui.rc.vim')
-call s:source_rc('cui.rc.vim')
+call vimrc#source_rc('windows.rc.vim')
+call vimrc#source_rc('unix.rc.vim')
+call vimrc#source_rc('mac.rc.vim')
+call vimrc#source_rc('neovim.rc.vim')
+call vimrc#source_rc('gui.rc.vim')
+call vimrc#source_rc('cui.rc.vim')
 
 set secure
 
