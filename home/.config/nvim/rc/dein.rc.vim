@@ -36,10 +36,6 @@ call dein#begin(s:path, expand('<sfile>'))
 call dein#load_toml(expand('$XDG_CONFIG_HOME/nvim/rc/dein.toml'), {'lazy': 0})
 call dein#load_toml(expand('$XDG_CONFIG_HOME/nvim/rc/dein-lazy.toml'), {'lazy' : 1})
 
-if has('nvim')
-  call dein#load_toml(expand('$XDG_CONFIG_HOME/nvim/rc/dein-neovim.toml'), {'lazy' : 1})
-endif
-
 call dein#end()
 call dein#save_state()
 

@@ -102,17 +102,12 @@ repo = 'nixprime/cpsm'
 build = 'env PY3=ON ./install.sh'
 
 [[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
+repo = 'bfredl/nvim-miniyank'
 if = "has('nvim')"
-rev = "next"
-build = "bash install.sh"
+on_map = '<Plug>(miniyank-'
 hook_add = '''
-  let g:LanguageClient_autoStart = 0
-
-  " npm install -g javascript-typescript-langserver
-  let g:LanguageClient_serverCommands = {
-        \   'javascript': ['javascript-typescript-stdio'],
-        \ }
+  nmap p <Plug>(miniyank-autoput)
+  nmap P <Plug>(miniyank-autoPut)
 '''
 
 [[plugins]]
@@ -122,3 +117,18 @@ if = "!has('nvim')"
 [[plugins]]
 repo = 'roxma/vim-hug-neovim-rpc'
 if = "!has('nvim')"
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
+hook_add = '''
+  if has('vim_starting') && !empty(argv())
+    let g:LanguageClient_autoStart = 0
+  endif
+
+  " npm install -g javascript-typescript-langserver
+  let g:LanguageClient_serverCommands = {
+        \   'javascript': ['javascript-typescript-stdio'],
+        \ }
+'''

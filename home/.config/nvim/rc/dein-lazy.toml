@@ -256,6 +256,11 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'jodosha/vim-godebug'
+if = "has('nvim')"
+on_ft = 'go'
+
+[[plugins]]
 repo = 'w0rp/ale'
 on_if = 1
 hook_source = '''

@@ -4,8 +4,7 @@
 
 call deoplete#enable()
 
-let g:deoplete#enable_camel_case = 1
-let g:deoplete#skip_chars = ['(', ')']
+call deoplete#custom#option('camel_case', v:true)
 
 call deoplete#custom#source('_', 'converters', [
       \ 'converter_remove_paren',
