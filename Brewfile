@@ -2,8 +2,10 @@
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'caskroom/versions'
+tap 'cloudflare/cloudflare'
 
 # Shell
+brew 'cloudflared'
 brew 'curl'
 brew 'dos2unix'
 brew 'exiftool'
