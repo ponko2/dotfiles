@@ -171,6 +171,11 @@ hook_source = '''
         \ }
 '''
 
+# npm install -g import-js
+[[plugins]]
+repo = 'Galooshi/vim-import-js'
+on_ft = 'javascript'
+
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
@@ -233,16 +238,18 @@ hook_add = '''
   augroup Golang
     autocmd!
 
+    autocmd FileType go nmap K <Plug>(go-info)
+    autocmd FileType go nmap <F2> <Plug>(go-rename)
+
+    autocmd FileType go nmap <Leader>i <Plug>(go-imports)
     autocmd FileType go nmap <Leader><C-g> :GoDecls<CR>
     autocmd FileType go imap <Leader><C-g> <ESC>:<C-u>GoDecls<CR>
 
     autocmd FileType go nmap <Leader>A <Plug>(go-alternate-edit)
     autocmd FileType go nmap <Leader>B :<C-u>call <SID>build_go_files()<CR>
     autocmd FileType go nmap <Leader>C <Plug>(go-coverage-toggle)
-    autocmd FileType go nmap <Leader>E <Plug>(go-install)
-    autocmd FileType go nmap <Leader>I <Plug>(go-info)
+    autocmd FileType go nmap <Leader>I <Plug>(go-install)
     autocmd FileType go nmap <Leader>L <Plug>(go-metalinter)
-    autocmd FileType go nmap <Leader>O <Plug>(go-imports)
     autocmd FileType go nmap <Leader>R <Plug>(go-run)
     autocmd FileType go nmap <Leader>S <Plug>(go-def-split)
     autocmd FileType go nmap <Leader>T <Plug>(go-test)

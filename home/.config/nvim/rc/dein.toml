@@ -131,4 +131,8 @@ hook_add = '''
   let g:LanguageClient_serverCommands = {
         \   'javascript': ['javascript-typescript-stdio'],
         \ }
+
+  autocmd FileType javascript nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+  autocmd FileType javascript nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+  autocmd FileType javascript nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 '''
