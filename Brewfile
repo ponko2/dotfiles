@@ -26,6 +26,7 @@ brew 'wget'
 ## Git
 brew 'git', args: ['without-completions']
 brew 'git-flow-avh'
+brew 'git-lfs'
 brew 'source-highlight'
 brew 'ghq'
 brew 'gnupg'
