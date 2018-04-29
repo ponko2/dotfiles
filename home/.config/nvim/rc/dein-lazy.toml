@@ -294,6 +294,7 @@ hook_source = '''
   let g:ale_fix_on_save = 1
   let g:ale_fixers = {
         \   'javascript': ['eslint'],
+        \   'vue': ['eslint'],
         \   'css': ['prettier'],
         \   'scss': ['prettier'],
         \   'less': ['prettier'],

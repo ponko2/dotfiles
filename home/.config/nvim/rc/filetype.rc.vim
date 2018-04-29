@@ -8,12 +8,15 @@ augroup MyAutoCmd
   " 長いブロックでもシンタックスハイライト
   autocmd FileType html,xml
         \ syntax sync minlines=500 maxlines=1000
-  autocmd CursorHold *.toml
+  autocmd CursorHold *.js,*.toml
         \ syntax sync minlines=500 maxlines=1000
+  autocmd FileType vue syntax sync fromstart
 
-  " * 等での検索時 - で切らない
-  autocmd FileType html,javascript,css,scss,less
+  " * を使用した検索時等の区切り文字を調整
+  autocmd FileType html,css,scss,less
         \ setlocal iskeyword& iskeyword+=-
+  autocmd FileType javascript,vue
+        \ setlocal iskeyword& iskeyword+=$,-
 
   " コメントの自動挿入をしない
   autocmd FileType,Syntax,BufEnter,BufWinEnter *

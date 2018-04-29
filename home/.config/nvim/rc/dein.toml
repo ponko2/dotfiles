@@ -53,27 +53,26 @@ hook_add = '''
 [[plugins]]
 repo = 'cespare/vim-toml'
 
-[[plugins]]
-repo = 'billyvg/tigris.nvim'
-if = "has('nvim')"
-build = './install.sh'
-hook_add = '''
-  let g:tigris#enabled = 1
-  let g:tigris#on_the_fly_enabled = 1
-  let g:tigris#delay = 300
-'''
+# [[plugins]]
+# repo = 'billyvg/tigris.nvim'
+# build = './install.sh'
+# hook_add = '''
+#   let g:tigris#enabled = 1
+#   let g:tigris#on_the_fly_enabled = 1
+#   let g:tigris#delay = 300
+# '''
 
 [[plugins]]
 repo = 'othree/yajs.vim'
-if = "!has('nvim')"
 
 [[plugins]]
 repo = 'othree/javascript-libraries-syntax.vim'
-if = "!has('nvim')"
 
 [[plugins]]
 repo = 'othree/es.next.syntax.vim'
-if = "!has('nvim')"
+
+[[plugins]]
+repo = 'posva/vim-vue'
 
 [[plugins]]
 repo = 'rhysd/vim-gfm-syntax'
@@ -128,11 +127,13 @@ hook_add = '''
   endif
 
   " npm install -g javascript-typescript-langserver
+  " npm install -g vue-language-server
   let g:LanguageClient_serverCommands = {
         \   'javascript': ['javascript-typescript-stdio'],
+        \   'vue': ['vls'],
         \ }
 
-  autocmd FileType javascript nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-  autocmd FileType javascript nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-  autocmd FileType javascript nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+  autocmd MyAutoCmd FileType javascript,vue nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+  autocmd MyAutoCmd FileType javascript,vue nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+  autocmd MyAutoCmd FileType javascript,vue nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 '''
