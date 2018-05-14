@@ -6,6 +6,8 @@ call deoplete#enable()
 
 call deoplete#custom#option('camel_case', v:true)
 
+call deoplete#custom#source('_', 'matchers', ['matcher_head'])
+
 call deoplete#custom#source('_', 'converters', [
       \ 'converter_remove_paren',
       \ 'converter_remove_overlap',
