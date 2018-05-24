@@ -1,3 +1,5 @@
+[user]
+	name = Takahito Nakano
 [color]
 	ui = auto
 [core]
@@ -42,9 +44,9 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-[include]
-	path = ~/.config/git/work.inc
 [includeIf "gitdir:~/src/ponko2.local/"]
 	path = ~/.config/git/ponko2.inc
-[includeIf "gitdir:~/src/github.com/ponko2/"]
+[includeIf "gitdir:~/src/github.com/"]
 	path = ~/.config/git/ponko2.inc
+[includeIf "gitdir:~/src/github.*.co.jp/"]
+	path = ~/.config/git/work.inc

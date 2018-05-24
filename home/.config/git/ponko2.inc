@@ -1,5 +1,4 @@
 [user]
-	name = Takahito Nakano
 	email = kano@ponko2.jp
 	signingkey = FE0A9D7F
 [gpg]
