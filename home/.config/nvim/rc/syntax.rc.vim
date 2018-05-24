@@ -7,9 +7,8 @@ scriptencoding utf-8
 autocmd MyAutoCmd FileType,Syntax,BufNewFile,BufNew,BufRead *?
       \ call vimrc#on_filetype()
 
-if !has('vim_starting')
-  filetype plugin indent on
-  syntax enable
-elseif !empty(argv())
+if has('vim_starting') && !empty(argv())
   call vimrc#on_filetype()
 endif
+
+syntax enable

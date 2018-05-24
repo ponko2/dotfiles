@@ -6,9 +6,9 @@ scriptencoding utf-8
 
 augroup MyAutoCmd
   " 長いブロックでもシンタックスハイライト
-  autocmd FileType html,xml
-        \ syntax sync minlines=500 maxlines=1000
-  autocmd CursorHold *.js,*.toml
+  autocmd FileType html,xml,javascript
+        \ syntax sync minlines=1000 maxlines=2000
+  autocmd CursorHold *.toml
         \ syntax sync minlines=500 maxlines=1000
   autocmd FileType vue syntax sync fromstart
 

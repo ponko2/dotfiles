@@ -39,6 +39,9 @@ repo = 'thinca/vim-zenspace'
 repo = 'morhetz/gruvbox'
 
 [[plugins]]
+repo = 'itchyny/vim-parenmatch'
+
+[[plugins]]
 repo = 'hail2u/vim-css3-syntax'
 
 [[plugins]]
@@ -122,10 +125,6 @@ repo = 'autozimu/LanguageClient-neovim'
 rev = 'next'
 build = 'bash install.sh'
 hook_add = '''
-  if has('vim_starting') && !empty(argv())
-    let g:LanguageClient_autoStart = 0
-  endif
-
   " npm install -g javascript-typescript-langserver
   " npm install -g vue-language-server
   let g:LanguageClient_serverCommands = {
