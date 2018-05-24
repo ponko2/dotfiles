@@ -1,4 +1,12 @@
 module.exports = {
+  excludes: [
+    "./coverage/**",
+    "./docs/**",
+    "./etc/**",
+    "./node/**",
+    "./target/**",
+    "./test-output/**"
+  ],
   aliases: {
     $: "node_modules/jquery",
     _: "node_modules/lodash",
@@ -11,8 +19,8 @@ module.exports = {
   },
   namedExports: {
     "node_modules/@profiscience/knockout-contrib-router": [
-      'Route',
-      'Router'
+      "Route",
+      "Router"
     ]
   },
   groupImports: false,

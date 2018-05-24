@@ -21,6 +21,7 @@ brew 'sqlite'
 brew 'ssh-copy-id'
 brew 'unrar'
 brew 'watch'
+brew 'watchman'
 brew 'wget'
 
 ## Git
