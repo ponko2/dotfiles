@@ -45,6 +45,9 @@ repo = 'itchyny/vim-parenmatch'
 repo = 'hail2u/vim-css3-syntax'
 
 [[plugins]]
+repo = 'cakebaker/scss-syntax.vim'
+
+[[plugins]]
 repo = 'chrisbra/vim-zsh'
 
 [[plugins]]
