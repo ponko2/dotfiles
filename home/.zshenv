@@ -39,6 +39,10 @@ fi
 export HISTSIZE=10000
 export SAVEHIST=10000
 
+# Correction
+export CORRECT_IGNORE='_*'
+export CORRECT_IGNORE_FILE='.*'
+
 # pure
 export PURE_GIT_PULL=0
 

@@ -11,16 +11,10 @@ esac
 
 # Disable correction.
 alias cp='nocorrect cp'
-alias go='nocorrect go'
-alias git='nocorrect git'
 alias ln='nocorrect ln'
-alias man='nocorrect man'
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'
-alias rm='nocorrect rm'
 alias sudo='nocorrect sudo'
-alias vim='nocorrect vim'
-alias jest='nocorrect jest'
 
 # ls
 if type exa &> /dev/null; then
