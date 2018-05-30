@@ -12,6 +12,7 @@ brew 'exiftool'
 brew 'httpie'
 brew 'hub'
 brew 'imagemagick'
+brew 'iproute2mac'
 brew 'jq'
 brew 'nkf'
 brew 'openssh'
@@ -58,8 +59,6 @@ brew 'ruby-build'
 ## Golang
 brew 'go'
 brew 'dep'
-#tap 'go-delve/delve'
-#brew 'delve'
 
 ## Node.js
 brew 'nodebrew'
