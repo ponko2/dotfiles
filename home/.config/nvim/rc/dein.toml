@@ -135,7 +135,7 @@ hook_add = '''
         \   'vue': ['vls'],
         \ }
 
-  autocmd MyAutoCmd FileType javascript,vue nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-  autocmd MyAutoCmd FileType javascript,vue nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-  autocmd MyAutoCmd FileType javascript,vue nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+  autocmd MyAutoCmd FileType javascript,vue nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<CR>
+  autocmd MyAutoCmd FileType javascript,vue nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
+  autocmd MyAutoCmd FileType javascript,vue nnoremap <buffer> <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 '''
