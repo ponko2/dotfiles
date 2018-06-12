@@ -9,7 +9,7 @@ command! -range=% TrimTrailingWhitespace
       \ call <SID>TrimTrailingWhitespace(<line1>, <line2>)
 function! s:TrimTrailingWhitespace(line1, line2) abort
   let l:view = winsaveview()
-  execute 'keepjumps keeppatterns' a:line1 . ',' . a:line2 . 's/\s\+$//e'
+  execute 'keepjumps keeppatterns' a:line1 . ',' . a:line2 . 's/\%(\s\+\)\?\?$//e'
   call winrestview(l:view)
 endfunction
 

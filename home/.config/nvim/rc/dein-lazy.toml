@@ -1,6 +1,5 @@
 [[plugins]]
 repo = 'Shougo/neoyank.vim'
-on_if = 1
 on_event = 'TextYankPost'
 on_source = ['denite.nvim']
 
@@ -20,13 +19,12 @@ repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'Shougo/neoinclude.vim'
-on_if = 1
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 depends = ['neosnippet-snippets', 'context_filetype.vim']
-on_i = 1
 on_ft = 'snippet'
+on_event = 'InsertEnter'
 hook_source = 'call vimrc#source_rc("plugins/neosnippet.rc.vim")'
 
 [[plugins]]
@@ -162,7 +160,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_i = 1
+on_event = 'InsertEnter'
 hook_source = '''
   let g:user_emmet_settings = {
         \   'variables': {
@@ -330,5 +328,5 @@ on_ft = 'zsh'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 depends = ['context_filetype.vim']
-on_i = 1
+on_event = 'InsertEnter'
 hook_source = 'call vimrc#source_rc("plugins/deoplete.rc.vim")'
