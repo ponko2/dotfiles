@@ -281,6 +281,8 @@ hook_source = '''
         \   'html': [],
         \   'java': [],
         \   'javascript': ['eslint'],
+        \   'markdown': ['textlint'],
+        \   'text': ['textlint'],
         \   'zsh': [],
         \ }
 

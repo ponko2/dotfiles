@@ -44,5 +44,8 @@ neovim:
 gruvbox:
 	ghq get morhetz/gruvbox-contrib
 
+textlint:
+	npm install -g textlint textlint-rule-preset-ja-technical-writing
+
 .PHONY: install
 install: init deploy ## Run make init, deploy
