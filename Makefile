@@ -45,7 +45,7 @@ gruvbox:
 	ghq get morhetz/gruvbox-contrib
 
 textlint:
-	npm install -g textlint textlint-rule-preset-ja-technical-writing
+	npm install -g textlint textlint-rule-preset-japanese
 
 .PHONY: install
 install: init deploy ## Run make init, deploy
