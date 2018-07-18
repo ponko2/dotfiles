@@ -1,7 +1,7 @@
 [[plugins]]
 repo = 'Shougo/neoyank.vim'
 on_event = 'TextYankPost'
-on_source = ['denite.nvim']
+on_source = 'denite.nvim'
 
 [[plugins]]
 repo = 'Shougo/junkfile.vim'
@@ -60,7 +60,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'chemzqm/denite-git'
-depends = ['vim-easygit']
+depends = 'vim-easygit'
 on_source = 'denite.nvim'
 hook_add = '''
   nnoremap <silent> <Leader>gs :<C-u>Denite gitstatus<CR>
@@ -71,14 +71,14 @@ repo = 'chemzqm/vim-easygit'
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
-depends = ['unite.vim']
+depends = 'unite.vim'
 on_if = "isdirectory(bufname('%'))"
 hook_source = 'call vimrc#source_rc("plugins/vimfiler.rc.vim")'
 
 [[plugins]]
 repo = 'Shougo/deol.nvim'
 on_cmd = 'Deol'
-on_source = 'denite.nvim'
+depends = 'denite.nvim'
 hook_add = '''
   nnoremap <silent> <Leader>s :<C-u>Deol -split zsh<CR>
   nnoremap <silent> <Leader>S :<C-u>Deol zsh<CR>
@@ -114,7 +114,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'kana/vim-operator-replace'
-depends = ['vim-operator-user']
+depends = 'vim-operator-user'
 on_map = {x = '<Plug>'}
 hook_add = '''
   xmap p <Plug>(operator-replace)
@@ -140,7 +140,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'rhysd/vim-operator-surround'
-depends = ['vim-operator-user']
+depends = 'vim-operator-user'
 on_map = '<Plug>(operator-surround-'
 hook_add = '''
   map <silent>sa <Plug>(operator-surround-append)
@@ -300,7 +300,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'iyuuya/denite-ale'
-depends = ['ale']
+depends = 'ale'
 on_source = 'denite.nvim'
 hook_add = '''
   nnoremap <silent> <Leader>l :<C-u>Denite -no-empty ale<CR>
@@ -322,6 +322,9 @@ on_ft = 'vim'
 repo = 'zchee/deoplete-go'
 on_ft = 'go'
 build = 'make'
+hook_source = '''
+  let g:deoplete#sources#go#source_importer = 1
+'''
 
 [[plugins]]
 repo = 'zchee/deoplete-zsh'
@@ -329,6 +332,6 @@ on_ft = 'zsh'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
-depends = ['context_filetype.vim']
+depends = 'context_filetype.vim'
 on_event = 'InsertEnter'
 hook_source = 'call vimrc#source_rc("plugins/deoplete.rc.vim")'

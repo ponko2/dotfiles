@@ -105,6 +105,7 @@ hook_add = '''
 [[plugins]]
 repo = 'nixprime/cpsm'
 build = 'env PY3=ON ./install.sh'
+frozen = 1
 
 [[plugins]]
 repo = 'bfredl/nvim-miniyank'
