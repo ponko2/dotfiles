@@ -33,9 +33,6 @@ call vimrc#source_rc('encoding.rc.vim')
 " Options:
 call vimrc#source_rc('options.rc.vim')
 
-" FileType:
-call vimrc#source_rc('filetype.rc.vim')
-
 " Mappings:
 call vimrc#source_rc('mappings.rc.vim')
 

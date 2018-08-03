@@ -151,6 +151,10 @@ endfunction
 " Use autofmt.
 set formatexpr=autofmt#japanese#formatexpr()
 
+" コメントの自動挿入をしない
+autocmd MyAutoCmd FileType,Syntax,BufEnter,BufWinEnter *
+      \ setlocal formatoptions-=ro formatoptions+=mM
+
 
 "---------------------------------------------------------------------------
 " View:
