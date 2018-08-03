@@ -66,6 +66,3 @@ call denite#custom#map('insert', '<C-f>', '<denite:move_caret_to_right>', 'norem
 call denite#custom#map('insert', '<C-g>', '<denite:quit>', 'noremap')
 call denite#custom#map('insert', '<C-k>', '<denite:delete_text_after_caret>', 'noremap')
 call denite#custom#map('insert', '<C-y>', '<denite:paste_from_default_register>', 'noremap')
-
-
-" vim: fileencoding=utf-8

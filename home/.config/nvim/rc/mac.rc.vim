@@ -20,6 +20,3 @@ if exists('+macmeta')
   " MacVimでMETAキーを使えるようにする
   set macmeta
 endif
-
-
-" vim: fileencoding=utf-8

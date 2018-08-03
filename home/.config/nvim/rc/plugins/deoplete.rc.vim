@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 "---------------------------------------------------------------------------
 " deoplete.nvim
 "
@@ -48,6 +50,3 @@ endfunction
 
 inoremap <expr><C-g> deoplete#undo_completion()
 inoremap <expr><C-l> deoplete#refresh()
-
-
-" vim: fileencoding=utf-8

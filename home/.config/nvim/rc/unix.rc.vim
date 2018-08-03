@@ -7,6 +7,3 @@ if IsWindows() | finish | endif
 "
 
 set shell=zsh
-
-
-" vim: fileencoding=utf-8

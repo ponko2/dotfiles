@@ -88,6 +88,3 @@ endif
 
 " Don't flick cursor.
 set guicursor& guicursor+=a:blinkon0
-
-
-" vim: fileencoding=utf-8

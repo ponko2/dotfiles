@@ -129,6 +129,3 @@ if exists(':tnoremap')
   tnoremap <ESC> <ESC><C-\><C-n>
   tnoremap <C-w> <C-\><C-n><C-w>
 endif
-
-
-" vim: fileencoding=utf-8

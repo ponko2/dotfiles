@@ -18,6 +18,3 @@ set fileformat=unix
 
 " Automatic recognition of a new line cord.
 set fileformats=unix,dos,mac
-
-
-" vim: fileencoding=utf-8

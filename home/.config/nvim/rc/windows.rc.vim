@@ -10,6 +10,3 @@ if !IsWindows() | finish | endif
 if $PATH !~? '\(^\|;\)' . escape($VIM, '\\') . '\(;\|$\)'
   let $PATH = $VIM . ';' . $PATH
 endif
-
-
-" vim: fileencoding=utf-8

@@ -22,6 +22,3 @@ augroup MyAutoCmd
   autocmd FileType,Syntax,BufEnter,BufWinEnter *
         \ setlocal formatoptions-=ro | setlocal formatoptions+=mM
 augroup END
-
-
-" vim: fileencoding=utf-8

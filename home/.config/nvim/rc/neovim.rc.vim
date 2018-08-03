@@ -33,6 +33,3 @@ augroup Terminal
   autocmd TermOpen * setlocal modifiable
   autocmd TermClose * buffer #
 augroup END
-
-
-" vim: fileencoding=utf-8

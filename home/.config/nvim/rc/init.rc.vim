@@ -1,5 +1,3 @@
-scriptencoding utf-8
-
 if !has('vim_starting') | finish | endif
 
 "---------------------------------------------------------------------------
@@ -38,6 +36,8 @@ if has('vim_starting') && &encoding !=# 'utf-8'
     set encoding=utf-8
   endif
 endif
+
+scriptencoding utf-8
 
 " Build encodings.
 let &fileencodings = join([
@@ -93,6 +93,3 @@ let g:loaded_logipat           = 1
 let g:loaded_tutor_mode_plugin = 1
 let g:loaded_spellfile_plugin  = 1
 let g:loaded_man               = 1
-
-
-" vim: fileencoding=utf-8

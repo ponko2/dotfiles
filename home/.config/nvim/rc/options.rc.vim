@@ -351,6 +351,3 @@ if has('gui_macvim') && has('kaoriya')
   set noimdisable
   set imdisableactivate
 endif
-
-
-" vim: fileencoding=utf-8

@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 "---------------------------------------------------------------------------
 " vimfiler.vim
 "
@@ -20,6 +22,3 @@ if IsWindows()
   " Use trashbox.
   let g:unite_kind_file_use_trashbox = 1
 endif
-
-
-" vim: fileencoding=utf-8

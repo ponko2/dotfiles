@@ -25,6 +25,3 @@ augroup END
 " Disable the mouse.
 set mouse=
 set mousemodel=
-
-
-" vim: fileencoding=utf-8

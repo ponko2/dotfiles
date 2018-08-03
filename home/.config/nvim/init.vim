@@ -1,12 +1,5 @@
-scriptencoding utf-8
-
 " Skip initialization for vim-tiny or vim-small.
 if !1 | finish | endif
-
-" Enable no Vi compatible commands
-if &compatible
-  set nocompatible
-endif
 
 if empty($XDG_CONFIG_HOME)
   let $XDG_CONFIG_HOME = expand('$HOME/.config')
@@ -58,6 +51,3 @@ call vimrc#source_rc('gui.rc.vim')
 call vimrc#source_rc('cui.rc.vim')
 
 set secure
-
-
-" vim: fileencoding=utf-8
