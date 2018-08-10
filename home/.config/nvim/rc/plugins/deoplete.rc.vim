@@ -4,8 +4,6 @@ scriptencoding utf-8
 " deoplete.nvim
 "
 
-call deoplete#enable()
-
 call deoplete#custom#option('camel_case', v:true)
 
 call deoplete#custom#source('_', 'matchers',
@@ -20,6 +18,8 @@ call deoplete#custom#source('_', 'converters', [
       \ ])
 
 call deoplete#custom#source('look', 'min_pattern_length', 4)
+
+call deoplete#enable()
 
 
 "---------------------------------------------------------------------------
