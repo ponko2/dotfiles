@@ -97,20 +97,6 @@ cnoremap <C-p> <Up>
 " %% -> %:h/
 cnoremap <expr> %% getcmdtype() ==# ':' ? expand('%:h').'/' : '%%'
 
-" Emacs-like key mappings
-cnoremap <C-a> <Home>
-cnoremap <C-b> <Left>
-cnoremap <C-d> <Del>
-cnoremap <C-e> <End>
-"cnoremap <C-f> <Right>
-cnoremap <C-g> <C-c>
-cnoremap <C-k> <C-\>e getcmdpos() ==# 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
-if has('unnamedplus')
-  cnoremap <C-y> <C-r>+
-else
-  cnoremap <C-y> <C-r>*
-endif
-
 
 "---------------------------------------------------------------------------
 " Visual mode keymappings:
