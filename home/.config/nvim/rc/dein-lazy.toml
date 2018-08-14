@@ -238,10 +238,10 @@ hook_add = '''
 
     autocmd FileType go nmap <buffer> K <Plug>(go-info)
     autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
+    autocmd FileType go nmap <buffer> <C-g> :<C-u>Denite decls<CR>
+    autocmd FileType go imap <buffer> <C-g> <ESC>:<C-u>Denite decls<CR>
 
     autocmd FileType go nmap <buffer> <Leader>i <Plug>(go-imports)
-    autocmd FileType go nmap <buffer> <Leader><C-g> :GoDecls<CR>
-    autocmd FileType go imap <buffer> <Leader><C-g> <ESC>:<C-u>GoDecls<CR>
 
     autocmd FileType go nmap <buffer> <Leader>A <Plug>(go-alternate-edit)
     autocmd FileType go nmap <buffer> <Leader>B :<C-u>call <SID>build_go_files()<CR>

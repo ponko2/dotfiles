@@ -111,9 +111,6 @@ else
   cnoremap <C-y> <C-r>*
 endif
 
-" Open Command-line window
-"execute 'set cedit=\<C-f>'
-
 
 "---------------------------------------------------------------------------
 " Visual mode keymappings:
