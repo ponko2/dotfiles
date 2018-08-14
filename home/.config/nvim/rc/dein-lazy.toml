@@ -28,9 +28,6 @@ on_event = 'InsertEnter'
 hook_source = 'call vimrc#source_rc("plugins/neosnippet.rc.vim")'
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
-
-[[plugins]]
 repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_source = 'call vimrc#source_rc("plugins/denite.rc.vim")'
@@ -70,10 +67,12 @@ hook_add = '''
 repo = 'chemzqm/vim-easygit'
 
 [[plugins]]
-repo = 'Shougo/vimfiler.vim'
-depends = 'unite.vim'
-on_if = "isdirectory(bufname('%'))"
-hook_source = 'call vimrc#source_rc("plugins/vimfiler.rc.vim")'
+repo = 'Shougo/defx.nvim'
+on_cmd = 'Defx'
+hook_source = 'call vimrc#source_rc("plugins/defx.rc.vim")'
+hook_add = '''
+nnoremap <silent> <Leader>f :<C-u>Defx<CR>
+'''
 
 [[plugins]]
 repo = 'Shougo/deol.nvim'
