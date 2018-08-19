@@ -6,6 +6,10 @@ scriptencoding utf-8
 
 autocmd MyAutoCmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
+  set timeout timeoutlen=0
+  autocmd MyAutoCmd BufEnter <buffer> set timeout timeoutlen=0
+  autocmd MyAutoCmd BufLeave <buffer> set notimeout timeoutlen&
+
   " Define mappings
   nnoremap <silent><buffer><expr> <CR> defx#do_action('open')
   nnoremap <silent><buffer><expr> K defx#do_action('new_directory')
