@@ -71,7 +71,7 @@ repo = 'Shougo/defx.nvim'
 on_cmd = 'Defx'
 hook_source = 'call vimrc#source_rc("plugins/defx.rc.vim")'
 hook_add = '''
-nnoremap <silent> <Leader>f :<C-u>Defx<CR>
+nnoremap <silent> <Leader>f :<C-u>Defx `expand('%:p:h')` -search=`expand('%:p')`<CR>
 '''
 
 [[plugins]]
