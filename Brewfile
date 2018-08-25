@@ -25,7 +25,7 @@ brew 'watchman'
 brew 'wget'
 
 ## Git
-brew 'git', args: ['without-completions']
+brew 'git'
 brew 'git-flow-avh'
 brew 'git-lfs'
 brew 'source-highlight'
@@ -76,6 +76,7 @@ cask 'xquartz'
 cask 'eclipse-jee'
 cask '1password'
 cask 'appcleaner'
+cask 'docker'
 cask 'finicky'
 cask 'google-japanese-ime'
 cask 'insomnia'
@@ -83,11 +84,10 @@ cask 'iterm2'
 cask 'karabiner-elements'
 cask 'keepingyouawake'
 cask 'mysqlworkbench'
+cask 'skype'
 cask 'sourcetree'
 cask 'the-unarchiver'
-cask 'vimr'
-#cask 'skype'
-#cask 'vlc'
+cask 'vlc'
 
 ## Browser
 cask 'firefox'
@@ -101,18 +101,17 @@ cask 'virtualbox'
 cask 'virtualbox-extension-pack'
 
 ## Cloud Storage
-#cask 'dropbox'
-#cask 'google-backup-and-sync'
+cask 'dropbox'
+cask 'google-backup-and-sync'
 
 ## Database
-#cask 'psequel'
-#cask 'sequel-pro'
+cask 'psequel'
+cask 'sequel-pro'
 
 # App Store
 brew 'mas'
-mas 'ForkLift', id: 412448059
 mas 'Microsoft Remote Desktop', id: 715768417
 mas 'Monosnap', id: 540348655
 mas 'Slack', id: 803453959
+#mas 'ForkLift', id: 412448059
 #mas 'Reeder', id: 880001334
-#mas 'Twitter', id: 409789998
