@@ -19,6 +19,7 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> N defx#do_action('new_file')
   nnoremap <silent><buffer><expr> d defx#do_action('remove')
   nnoremap <silent><buffer><expr> r defx#do_action('rename')
+  nnoremap <silent><buffer><expr> x defx#do_action('execute_system')
   nnoremap <silent><buffer><expr> h defx#do_action('cd', ['..'])
   nnoremap <silent><buffer><expr> ~ defx#do_action('cd')
   nnoremap <silent><buffer><expr> q defx#do_action('quit')
