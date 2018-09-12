@@ -32,6 +32,8 @@
 	fullname = true
 [tag]
 	sort = version:refname
+[branch]
+	sort = -authordate
 [fetch]
 	prune = true
 [rebase]
