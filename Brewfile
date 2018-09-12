@@ -68,7 +68,7 @@ brew 'maven'
 brew 'tomcat'
 
 ## Vim
-brew 'macvim', args: ['with-override-system-vim', 'with-lua', 'with-luajit', 'with-python3']
+brew 'macvim', args: ['with-override-system-vim', 'with-lua', 'with-luajit']
 brew 'neovim', args: ['HEAD']
 
 # Mac Apps
