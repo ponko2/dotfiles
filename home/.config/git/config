@@ -48,7 +48,7 @@
 	clean = git-lfs clean -- %f
 [commit]
 	template = ~/.config/git/commit-template
-[includeIf "gitdir:~/src/ponko2.local/"]
+[includeIf "gitdir:~/src/ponko2.test/"]
 	path = ~/.config/git/ponko2.inc
 [includeIf "gitdir:~/src/github.com/"]
 	path = ~/.config/git/ponko2.inc
