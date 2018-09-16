@@ -326,10 +326,6 @@ hook_source = '''
 '''
 
 [[plugins]]
-repo = 'zchee/deoplete-zsh'
-on_ft = 'zsh'
-
-[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
 on_event = 'InsertEnter'
