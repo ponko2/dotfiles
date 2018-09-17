@@ -12,6 +12,9 @@ function! s:defx_my_settings() abort
 
   " Define mappings
   nnoremap <silent><buffer><expr> <CR> defx#do_action('open')
+  nnoremap <silent><buffer><expr> c defx#do_action('copy')
+  nnoremap <silent><buffer><expr> m defx#do_action('move')
+  nnoremap <silent><buffer><expr> p defx#do_action('paste')
   nnoremap <silent><buffer><expr> l defx#do_action('open')
   nnoremap <silent><buffer><expr> E defx#do_action('open', 'vsplit')
   nnoremap <silent><buffer><expr> P defx#do_action('open', 'pedit')
@@ -20,6 +23,7 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> d defx#do_action('remove')
   nnoremap <silent><buffer><expr> r defx#do_action('rename')
   nnoremap <silent><buffer><expr> x defx#do_action('execute_system')
+  nnoremap <silent><buffer><expr> . defx#do_action('toggle_ignored_files')
   nnoremap <silent><buffer><expr> h defx#do_action('cd', ['..'])
   nnoremap <silent><buffer><expr> ~ defx#do_action('cd')
   nnoremap <silent><buffer><expr> q defx#do_action('quit')
