@@ -44,7 +44,6 @@ export CORRECT_IGNORE='_*'
 export CORRECT_IGNORE_FILE='.*'
 
 # pure
-export PURE_CMD_MAX_EXEC_TIME=10
 export PURE_GIT_PULL=0
 
 setopt no_global_rcs
