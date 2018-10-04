@@ -46,6 +46,9 @@ export CORRECT_IGNORE_FILE='.*'
 # pure
 export PURE_GIT_PULL=0
 
+# fzf
+export FZF_DEFAULT_OPTS="--height=50% --reverse --inline-info --cycle --multi --ansi"
+
 setopt no_global_rcs
 
 case ${OSTYPE} in

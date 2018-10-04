@@ -179,3 +179,8 @@ setopt share_history
 
 # URL文字列を自動エスケープ
 zle -N self-insert url-quote-magic
+
+# anyframe
+if zplug check 'mollifier/anyframe'; then
+  zstyle ':anyframe:selector:' use fzf
+fi
