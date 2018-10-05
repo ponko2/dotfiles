@@ -47,7 +47,7 @@ export CORRECT_IGNORE_FILE='.*'
 export PURE_GIT_PULL=0
 
 # fzf
-export FZF_DEFAULT_OPTS="--height=50% --reverse --inline-info --cycle --multi --ansi"
+export FZF_DEFAULT_OPTS="--height=50% --reverse --inline-info --cycle --multi --ansi --no-sort"
 
 setopt no_global_rcs
 
