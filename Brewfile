@@ -5,6 +5,7 @@ tap 'caskroom/versions'
 tap 'cloudflare/cloudflare'
 
 # Shell
+brew 'awscli'
 brew 'cloudflared'
 brew 'curl'
 brew 'dos2unix'
