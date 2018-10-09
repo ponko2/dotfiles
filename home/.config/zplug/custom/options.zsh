@@ -182,5 +182,6 @@ zle -N self-insert url-quote-magic
 
 # anyframe
 if zplug check 'mollifier/anyframe'; then
-  zstyle ':anyframe:selector:' use fzf
+  zstyle ':anyframe:selector:' use peco
+  zstyle ':anyframe:selector:fzf:' command 'fzf --exact --no-sort --cycle --reverse --inline-info --ansi'
 fi
