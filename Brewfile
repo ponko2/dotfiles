@@ -63,6 +63,8 @@ brew 'ruby-build'
 ## Golang
 brew 'go'
 brew 'dep'
+brew 'alecthomas/tap/gometalinter'
+brew 'golangci/tap/golangci-lint'
 
 ## Node.js
 brew 'nodebrew'
