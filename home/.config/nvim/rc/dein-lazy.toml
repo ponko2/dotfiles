@@ -271,14 +271,7 @@ hook_source = '''
   let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
   let g:ale_linters = {
-        \   'go': [
-        \     'gofmt',
-        \     'golint',
-        \     'gosimple',
-        \     'gotype',
-        \     'go vet',
-        \     'staticcheck',
-        \   ],
+        \   'go': ['golangci-lint'],
         \   'html': [],
         \   'java': [],
         \   'javascript': ['eslint'],
@@ -296,7 +289,8 @@ hook_source = '''
         \   'less': ['prettier'],
         \ }
 
-  let g:ale_go_staticcheck_lint_package = 1
+  let g:ale_go_golangci_lint_options = ''
+  let g:ale_go_golangci_lint_package = 1
 '''
 
 [[plugins]]
