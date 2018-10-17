@@ -103,8 +103,14 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'nixprime/cpsm'
-build = 'env PY3=ON ./install.sh'
+repo = 'raghur/fruzzy'
+hook_post_update = '''
+  call fruzzy#install()
+'''
+hook_add = '''
+  let g:fruzzy#usenative = 1
+  let g:fruzzy#sortonempty = 1
+'''
 
 [[plugins]]
 repo = 'bfredl/nvim-miniyank'
