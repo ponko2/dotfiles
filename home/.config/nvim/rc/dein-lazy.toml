@@ -306,10 +306,6 @@ repo = 'ciaranm/securemodelines'
 on_event = 'BufRead'
 
 [[plugins]]
-repo = 'rhysd/vim-gfm-syntax'
-on_event = 'BufRead'
-
-[[plugins]]
 repo = 'Shougo/neco-vim'
 on_ft = 'vim'
 
