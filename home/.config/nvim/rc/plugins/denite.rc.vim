@@ -2,15 +2,11 @@
 " denite.nvim
 "
 
-if has('nvim')
-  call denite#custom#source('_', 'matchers',
-        \ ['matcher/fruzzy'])
-  call denite#custom#source('file/old', 'matchers',
-        \ ['matcher/fruzzy', 'matcher/project_files'])
-else
-  call denite#custom#source('file/old', 'matchers',
-        \ ['matcher/fuzzy', 'matcher/project_files'])
-endif
+call denite#custom#source('file/old', 'matchers',
+      \ ['matcher/fruzzy', 'matcher/project_files'])
+
+call denite#custom#source('file/rec', 'matchers',
+      \ ['matcher/fruzzy'])
 
 call denite#custom#filter('matcher/ignore_globs', 'ignore_globs',
       \ ['.git/', '*.min.*'])

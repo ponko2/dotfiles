@@ -49,6 +49,17 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'raghur/fruzzy'
+on_source = 'denite.nvim'
+hook_post_update = '''
+  call fruzzy#install()
+'''
+hook_add = '''
+  let g:fruzzy#usenative = 1
+  let g:fruzzy#sortonempty = 1
+'''
+
+[[plugins]]
 repo = 'Jagua/vim-denite-ghq'
 on_source = 'denite.nvim'
 hook_add = '''
@@ -81,7 +92,7 @@ repo = 'Shougo/deol.nvim'
 on_cmd = 'Deol'
 depends = 'denite.nvim'
 hook_add = '''
-  nnoremap <silent> <Leader>s :<C-u>Deol -split zsh<CR>
+  nnoremap <silent> <Leader>s :<C-u>Deol zsh -split<CR>
   nnoremap <silent> <Leader>S :<C-u>Deol zsh<CR>
   " nnoremap <silent> <Leader>S :<C-u>call deol#new({'command': 'zsh'})<CR>
 '''
@@ -313,9 +324,6 @@ on_ft = 'vim'
 repo = 'zchee/deoplete-go'
 on_ft = 'go'
 build = 'make'
-hook_source = '''
-  let g:deoplete#sources#go#source_importer = 1
-'''
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'

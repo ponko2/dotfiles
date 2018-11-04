@@ -103,16 +103,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'raghur/fruzzy'
-hook_post_update = '''
-  call fruzzy#install()
-'''
-hook_add = '''
-  let g:fruzzy#usenative = 1
-  let g:fruzzy#sortonempty = 1
-'''
-
-[[plugins]]
 repo = 'bfredl/nvim-miniyank'
 if = "has('nvim')"
 on_map = '<Plug>(miniyank-'
