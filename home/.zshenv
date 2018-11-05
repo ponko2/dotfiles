@@ -43,9 +43,6 @@ export SAVEHIST=10000
 export CORRECT_IGNORE='_*'
 export CORRECT_IGNORE_FILE='.*'
 
-# pure
-export PURE_GIT_PULL=0
-
 setopt no_global_rcs
 
 case ${OSTYPE} in
