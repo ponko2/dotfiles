@@ -87,6 +87,7 @@ let g:loaded_netrw             = 1
 let g:loaded_netrwPlugin       = 1
 let g:loaded_netrwSettings     = 1
 let g:loaded_netrwFileHandlers = 1
+let g:loaded_matchit           = 1
 let g:loaded_matchparen        = 1
 let g:loaded_LogiPat           = 1
 let g:loaded_logipat           = 1

@@ -319,6 +319,10 @@ repo = 'ciaranm/securemodelines'
 on_event = 'BufRead'
 
 [[plugins]]
+repo = 'andymass/vim-matchup'
+on_event = 'BufRead'
+
+[[plugins]]
 repo = 'deris/vim-shot-f'
 on_event = 'BufRead'
 

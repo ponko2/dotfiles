@@ -65,10 +65,6 @@ set cpoptions& cpoptions-=m
 set matchtime=3
 set matchpairs& matchpairs+=<:>
 
-if !exists('g:loaded_matchit') && !has('nvim')
-  packadd! matchit
-endif
-
 " バッファが編集中でもその他のファイルを開けるように
 set hidden
 
