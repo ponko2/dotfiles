@@ -23,6 +23,7 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> . defx#do_action('toggle_ignored_files')
   nnoremap <silent><buffer><expr> h defx#do_action('cd', ['..'])
   nnoremap <silent><buffer><expr> ~ defx#do_action('cd')
+  nnoremap <silent><buffer><expr> \ defx#do_action('cd', getcwd())
   nnoremap <silent><buffer><expr> q defx#do_action('quit')
   nnoremap <silent><buffer><nowait><expr> <Space> defx#do_action('toggle_select') . 'j'
   nnoremap <silent><buffer><expr> * defx#do_action('toggle_select_all')
@@ -31,4 +32,7 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> <C-l> defx#do_action('redraw')
   nnoremap <silent><buffer><expr> <C-g> defx#do_action('print')
   nnoremap <silent><buffer><expr> cd defx#do_action('change_vim_cwd')
+  nnoremap <silent><buffer><expr> <Tab> winnr('$') != 1 ?
+        \ ':<C-u>wincmd w<CR>' :
+        \ ':<C-u>Defx -buffer-name=temp -split=vertical<CR>'
 endfunction

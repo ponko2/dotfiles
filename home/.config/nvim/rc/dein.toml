@@ -18,6 +18,9 @@ repo = 'kana/vim-tabpagecd'
 repo = 'kana/vim-textobj-user'
 
 [[plugins]]
+repo = 'thinca/vim-textobj-between'
+
+[[plugins]]
 repo = 'kana/vim-textobj-function'
 
 [[plugins]]
@@ -42,6 +45,12 @@ repo = 'morhetz/gruvbox'
 repo = 'itchyny/vim-parenmatch'
 
 [[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+  let g:indent_guides_enable_on_vim_startup = 1
+'''
+
+[[plugins]]
 repo = 'hail2u/vim-css3-syntax'
 
 [[plugins]]
@@ -59,15 +68,6 @@ hook_add = '''
 [[plugins]]
 repo = 'cespare/vim-toml'
 
-# [[plugins]]
-# repo = 'billyvg/tigris.nvim'
-# build = './install.sh'
-# hook_add = '''
-#   let g:tigris#enabled = 1
-#   let g:tigris#on_the_fly_enabled = 1
-#   let g:tigris#delay = 300
-# '''
-
 [[plugins]]
 repo = 'othree/yajs.vim'
 
@@ -79,13 +79,6 @@ repo = 'othree/es.next.syntax.vim'
 
 [[plugins]]
 repo = 'posva/vim-vue'
-
-[[plugins]]
-repo = 'rhysd/vim-gfm-syntax'
-hook_add = '''
-  let g:gfm_syntax_emoji_conceal = 1
-  let g:markdown_fenced_languages = ['java', 'javascript', 'json']
-'''
 
 [[plugins]]
 repo = 'mustache/vim-mustache-handlebars'

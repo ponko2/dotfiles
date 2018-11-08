@@ -85,6 +85,8 @@ hook_add = '''
 nnoremap <silent> <Leader>f :<C-u>Defx `expand('%:p:h')`
         \ -split=vertical -winwidth=50 -direction=topleft
         \ -search=`expand('%:p')`<CR>
+nnoremap <silent> <Leader>F :<C-u>Defx
+        \ -listed -resume -buffer-name=tab`tabpagenr()`<CR>
 '''
 
 [[plugins]]
@@ -274,7 +276,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'w0rp/ale'
-on_if = 1
+on_event = 'BufRead'
 hook_source = '''
   let g:ale_sign_column_always = 1
   let g:ale_sign_error = '✖'
@@ -315,6 +317,25 @@ hook_add = '''
 [[plugins]]
 repo = 'ciaranm/securemodelines'
 on_event = 'BufRead'
+
+[[plugins]]
+repo = 'deris/vim-shot-f'
+on_event = 'BufRead'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+on_event = 'BufRead'
+hook_add = '''
+  autocmd MyAutoCmd FileType markdown,toml let b:lexima_disabled = 1
+'''
+
+[[plugins]]
+repo = 'rhysd/vim-gfm-syntax'
+on_event = 'BufRead'
+hook_add = '''
+  let g:gfm_syntax_emoji_conceal = 1
+  let g:markdown_fenced_languages = ['java', 'javascript', 'json', 'sh', 'sql']
+'''
 
 [[plugins]]
 repo = 'Shougo/neco-vim'
