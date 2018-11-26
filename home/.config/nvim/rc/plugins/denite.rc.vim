@@ -14,6 +14,9 @@ call denite#custom#filter('matcher/ignore_globs', 'ignore_globs',
 call denite#custom#source('file/old', 'converters',
       \ ['converter/relative_word'])
 
+call denite#custom#source('buffer', 'matchers',
+      \ ['matcher/fuzzy', 'matcher/ignore_current_buffer'])
+
 call denite#custom#alias('source', 'file/rec/git', 'file/rec')
 call denite#custom#var('file/rec/git', 'command',
       \ ['git', 'ls-files', '-co', '--exclude-standard'])

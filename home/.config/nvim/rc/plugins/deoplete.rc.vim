@@ -7,6 +7,7 @@ scriptencoding utf-8
 call deoplete#custom#option('camel_case', v:true)
 call deoplete#custom#option('auto_complete_delay', 0)
 call deoplete#custom#option('async_timeout', 100)
+call deoplete#custom#option('ignore_sources', {'_': ['around', 'buffer']})
 
 call deoplete#custom#source('_', 'matchers',
       \ ['matcher_fuzzy', 'matcher_length'])
@@ -19,7 +20,8 @@ call deoplete#custom#source('_', 'converters', [
       \ 'converter_auto_delimiter',
       \ ])
 
-call deoplete#custom#source('look', 'min_pattern_length', 4)
+call deoplete#custom#source('look', 'filetypes', ['text', 'markdown', 'gitcommit'])
+call deoplete#custom#source('tabnine', 'rank', 200)
 
 call deoplete#enable()
 

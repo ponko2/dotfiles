@@ -329,6 +329,11 @@ on_ft = 'go'
 build = 'make'
 
 [[plugins]]
+repo = 'tbodt/deoplete-tabnine'
+on_event = 'InsertEnter'
+build = './install.sh'
+
+[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
 on_event = 'InsertEnter'
