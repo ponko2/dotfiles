@@ -67,17 +67,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'chemzqm/denite-git'
-depends = 'vim-easygit'
-on_source = 'denite.nvim'
-hook_add = '''
-  nnoremap <silent> <Leader>gs :<C-u>Denite gitstatus<CR>
-'''
-
-[[plugins]]
-repo = 'chemzqm/vim-easygit'
-
-[[plugins]]
 repo = 'Shougo/defx.nvim'
 on_cmd = 'Defx'
 hook_source = 'call vimrc#source_rc("plugins/defx.rc.vim")'
@@ -108,14 +97,6 @@ hook_add = '''
 
   " Start interactive EasyAlign for a motion/text object (e.g. gaip)
   nmap ga <Plug>(EasyAlign)
-'''
-
-[[plugins]]
-repo = 'lambdalisue/gina.vim'
-on_cmd = 'Gina'
-hook_add = '''
-  nnoremap <silent> <Leader>gS :<C-u>Gina status<CR>
-  nnoremap <silent> <Leader>gc :<C-u>Gina commit<CR>
 '''
 
 [[plugins]]
