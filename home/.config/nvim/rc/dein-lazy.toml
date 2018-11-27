@@ -69,13 +69,46 @@ hook_add = '''
 [[plugins]]
 repo = 'Shougo/defx.nvim'
 on_cmd = 'Defx'
-hook_source = 'call vimrc#source_rc("plugins/defx.rc.vim")'
 hook_add = '''
 nnoremap <silent> <Leader>f :<C-u>Defx `expand('%:p:h')`
         \ -split=vertical -winwidth=50 -direction=topleft
         \ -search=`expand('%:p')`<CR>
 nnoremap <silent> <Leader>F :<C-u>Defx
         \ -listed -resume -buffer-name=tab`tabpagenr()`<CR>
+'''
+[plugins.ftplugin]
+defx = '''
+  " Define mappings
+  nnoremap <silent><buffer><expr> <CR> defx#async_action('drop')
+  nnoremap <silent><buffer><expr> c defx#do_action('copy')
+  nnoremap <silent><buffer><expr> m defx#do_action('move')
+  nnoremap <silent><buffer><expr> p defx#do_action('paste')
+  nnoremap <silent><buffer><expr> l defx#async_action('drop')
+  nnoremap <silent><buffer><expr> E defx#do_action('open', 'vsplit')
+  nnoremap <silent><buffer><expr> P defx#do_action('open', 'pedit')
+  nnoremap <silent><buffer><expr> K defx#do_action('new_directory')
+  nnoremap <silent><buffer><expr> N defx#do_action('new_file')
+  nnoremap <silent><buffer><expr> d defx#do_action('remove')
+  nnoremap <silent><buffer><expr> r defx#do_action('rename')
+  nnoremap <silent><buffer><expr> ! defx#do_action('execute_command')
+  nnoremap <silent><buffer><expr> x defx#do_action('execute_system')
+  nnoremap <silent><buffer><expr> yy defx#do_action('yank_path')
+  nnoremap <silent><buffer><expr> . defx#do_action('toggle_ignored_files')
+  nnoremap <silent><buffer><expr> ; defx#do_action('repeat')
+  nnoremap <silent><buffer><expr> h defx#do_action('cd', ['..'])
+  nnoremap <silent><buffer><expr> ~ defx#do_action('cd')
+  nnoremap <silent><buffer><expr> \ defx#do_action('cd', getcwd())
+  nnoremap <silent><buffer><expr> q defx#do_action('quit')
+  nnoremap <silent><buffer><nowait><expr> <Space> defx#do_action('toggle_select') . 'j'
+  nnoremap <silent><buffer><expr> * defx#do_action('toggle_select_all')
+  nnoremap <silent><buffer><expr> j line('.') == line('$') ? 'gg' : 'j'
+  nnoremap <silent><buffer><expr> k line('.') == 1 ? 'G' : 'k'
+  nnoremap <silent><buffer><expr> <C-l> defx#do_action('redraw')
+  nnoremap <silent><buffer><expr> <C-g> defx#do_action('print')
+  nnoremap <silent><buffer><expr> cd defx#do_action('change_vim_cwd')
+  nnoremap <silent><buffer><expr> <Tab> winnr('$') != 1 ?
+        \ ':<C-u>wincmd w<CR>' :
+        \ ':<C-u>Defx -buffer-name=temp -split=vertical<CR>'
 '''
 
 [[plugins]]
@@ -227,32 +260,30 @@ hook_add = '''
       call go#cmd#Build(0)
     endif
   endfunction
+'''
+[plugins.ftplugin]
+go = '''
+  nmap <buffer> K <Plug>(go-info)
+  nmap <buffer> <F2> <Plug>(go-rename)
+  nmap <buffer> <C-g> :<C-u>Denite decls<CR>
+  imap <buffer> <C-g> <ESC>:<C-u>Denite decls<CR>
 
-  augroup Golang
-    autocmd!
+  nmap <buffer> <Leader>i <Plug>(go-imports)
 
-    autocmd FileType go nmap <buffer> K <Plug>(go-info)
-    autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
-    autocmd FileType go nmap <buffer> <C-g> :<C-u>Denite decls<CR>
-    autocmd FileType go imap <buffer> <C-g> <ESC>:<C-u>Denite decls<CR>
+  nmap <buffer> <Leader>A <Plug>(go-alternate-edit)
+  nmap <buffer> <Leader>B :<C-u>call <SID>build_go_files()<CR>
+  nmap <buffer> <Leader>C <Plug>(go-coverage-toggle)
+  nmap <buffer> <Leader>I <Plug>(go-install)
+  nmap <buffer> <Leader>L <Plug>(go-metalinter)
+  nmap <buffer> <Leader>R <Plug>(go-run)
+  nmap <buffer> <Leader>S <Plug>(go-def-split)
+  nmap <buffer> <Leader>T <Plug>(go-test)
+  nmap <buffer> <Leader>V <Plug>(go-def-vertical)
 
-    autocmd FileType go nmap <buffer> <Leader>i <Plug>(go-imports)
-
-    autocmd FileType go nmap <buffer> <Leader>A <Plug>(go-alternate-edit)
-    autocmd FileType go nmap <buffer> <Leader>B :<C-u>call <SID>build_go_files()<CR>
-    autocmd FileType go nmap <buffer> <Leader>C <Plug>(go-coverage-toggle)
-    autocmd FileType go nmap <buffer> <Leader>I <Plug>(go-install)
-    autocmd FileType go nmap <buffer> <Leader>L <Plug>(go-metalinter)
-    autocmd FileType go nmap <buffer> <Leader>R <Plug>(go-run)
-    autocmd FileType go nmap <buffer> <Leader>S <Plug>(go-def-split)
-    autocmd FileType go nmap <buffer> <Leader>T <Plug>(go-test)
-    autocmd FileType go nmap <buffer> <Leader>V <Plug>(go-def-vertical)
-
-    autocmd Filetype go command! -buffer -bang A call go#alternate#Switch(<bang>0, 'edit')
-    autocmd Filetype go command! -buffer -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-    autocmd Filetype go command! -buffer -bang AS call go#alternate#Switch(<bang>0, 'split')
-    autocmd Filetype go command! -buffer -bang AT call go#alternate#Switch(<bang>0, 'tabe')
-  augroup END
+  command! -buffer -bang A call go#alternate#Switch(<bang>0, 'edit')
+  command! -buffer -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+  command! -buffer -bang AS call go#alternate#Switch(<bang>0, 'split')
+  command! -buffer -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 '''
 
 [[plugins]]
