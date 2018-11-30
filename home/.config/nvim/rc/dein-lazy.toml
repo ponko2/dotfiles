@@ -313,6 +313,7 @@ hook_source = '''
         \   'css': ['prettier'],
         \   'scss': ['prettier'],
         \   'less': ['prettier'],
+        \   'yaml': ['prettier'],
         \ }
 
   let g:ale_go_golangci_lint_options = ''

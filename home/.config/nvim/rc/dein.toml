@@ -80,6 +80,9 @@ repo = 'posva/vim-vue'
 repo = 'mustache/vim-mustache-handlebars'
 
 [[plugins]]
+repo = 'pearofducks/ansible-vim'
+
+[[plugins]]
 repo = 'ujihisa/neco-look'
 
 [[plugins]]
