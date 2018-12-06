@@ -80,7 +80,6 @@ brew 'neovim', args: ['HEAD']
 
 # Mac Apps
 cask 'xquartz'
-cask 'eclipse-jee'
 cask '1password'
 cask 'appcleaner'
 cask 'docker'
