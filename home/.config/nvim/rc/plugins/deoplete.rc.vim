@@ -21,7 +21,7 @@ call deoplete#custom#source('_', 'converters', [
       \ ])
 
 call deoplete#custom#source('look', 'filetypes', ['text', 'markdown', 'gitcommit'])
-call deoplete#custom#source('tabnine', 'rank', 200)
+call deoplete#custom#source('tabnine', 'rank', 500)
 
 call deoplete#enable()
 
