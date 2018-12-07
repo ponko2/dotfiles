@@ -1,0 +1,28 @@
+[language.javascript]
+command = "javascript-typescript-stdio"
+install = [["npm", "install", "-g", "javascript-typescript-langserver"]]
+
+[language.html]
+command = "html-languageserver"
+args = ["--stdio"]
+install = [["npm", "install", "-g", "vscode-html-languageserver-bin"]]
+
+[language.go]
+command = "go-langserver"
+args = ["-mode", "stdio", "-gocodecompletion"]
+install = [["go", "get", "-u", "github.com/sourcegraph/go-langserver"]]
+
+[language.typescript]
+command = "typescript-language-server"
+args = ["--stdio"]
+install = [["npm", "install", "-g", "typescript-language-server"]]
+
+[language.css]
+command = "css-languageserver"
+args = ["--stdio"]
+install = [["npm", "install", "-g", "vscode-css-languageserver-bin"]]
+
+[language.scss]
+command = "css-languageserver"
+args = ["--stdio"]
+install = [["npm", "install", "-g", "vscode-css-languageserver-bin"]]
