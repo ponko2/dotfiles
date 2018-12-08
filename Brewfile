@@ -108,7 +108,7 @@ cask 'virtualbox-extension-pack'
 
 ## Cloud Storage
 cask 'dropbox'
-cask 'google-backup-and-sync'
+cask 'google-drive-file-stream'
 
 ## Database
 cask 'psequel'
