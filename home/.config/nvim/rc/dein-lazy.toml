@@ -250,7 +250,8 @@ hook_source = '''
         \   'vetshadow',
         \ ]
 '''
-hook_add = '''
+[plugins.ftplugin]
+go = '''
   " run :GoBuild or :GoTestCompile based on the go file
   function! s:build_go_files()
     let l:file = expand('%')
@@ -260,9 +261,7 @@ hook_add = '''
       call go#cmd#Build(0)
     endif
   endfunction
-'''
-[plugins.ftplugin]
-go = '''
+
   nmap <buffer> K <Plug>(go-info)
   nmap <buffer> <F2> <Plug>(go-rename)
   nmap <buffer> <C-g> :<C-u>Denite decls<CR>

@@ -5,8 +5,6 @@ scriptencoding utf-8
 "
 
 call deoplete#custom#option('camel_case', v:true)
-call deoplete#custom#option('auto_complete_delay', 0)
-call deoplete#custom#option('async_timeout', 100)
 call deoplete#custom#option('ignore_sources', {'_': ['around', 'buffer']})
 
 call deoplete#custom#source('_', 'matchers',
