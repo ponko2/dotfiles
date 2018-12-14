@@ -8,9 +8,9 @@ args = ["--stdio"]
 install = [["npm", "install", "-g", "vscode-html-languageserver-bin"]]
 
 [language.go]
-command = "go-langserver"
-args = ["-mode", "stdio", "-gocodecompletion"]
-install = [["go", "get", "-u", "github.com/sourcegraph/go-langserver"]]
+command = "golsp"
+args = ["-mode", "stdio"]
+install = [["go", "get", "-u", "golang.org/x/tools/cmd/golsp"]]
 
 [language.typescript]
 command = "typescript-language-server"
@@ -26,3 +26,12 @@ install = [["npm", "install", "-g", "vscode-css-languageserver-bin"]]
 command = "css-languageserver"
 args = ["--stdio"]
 install = [["npm", "install", "-g", "vscode-css-languageserver-bin"]]
+
+[language.less]
+command = "css-languageserver"
+args = ["--stdio"]
+install = [["npm", "install", "-g", "vscode-css-languageserver-bin"]]
+
+[language.vue]
+command = "vls"
+install = [["npm", "install", "-g", "vue-language-server"]]
