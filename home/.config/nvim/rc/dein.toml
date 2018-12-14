@@ -119,7 +119,12 @@ hook_add = '''
   " npm install -g javascript-typescript-langserver
   " npm install -g vue-language-server
   let g:LanguageClient_serverCommands = {
+        \   'go': ['golsp', '-mode', 'stdio'],
         \   'javascript': ['javascript-typescript-stdio'],
+        \   'css': ['css-languageserver', '--stdio'],
+        \   'scss': ['css-languageserver', '--stdio'],
+        \   'less': ['css-languageserver', '--stdio'],
+        \   'html': ['html-languageserver', '--stdio'],
         \   'vue': ['vls'],
         \ }
 
