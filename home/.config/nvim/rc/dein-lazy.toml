@@ -336,13 +336,6 @@ repo = 'deris/vim-shot-f'
 on_event = 'BufRead'
 
 [[plugins]]
-repo = 'cohama/lexima.vim'
-on_event = 'BufRead'
-hook_add = '''
-  autocmd MyAutoCmd FileType markdown,toml let b:lexima_disabled = 1
-'''
-
-[[plugins]]
 repo = 'rhysd/vim-gfm-syntax'
 on_event = 'BufRead'
 hook_add = '''
