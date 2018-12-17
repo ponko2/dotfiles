@@ -46,41 +46,11 @@ hook_add = '''
   let g:indent_guides_enable_on_vim_startup = 1
 '''
 
-[[plugins]]
-repo = 'hail2u/vim-css3-syntax'
-
-[[plugins]]
-repo = 'cakebaker/scss-syntax.vim'
-
-[[plugins]]
-repo = 'chrisbra/vim-zsh'
-
-[[plugins]]
-repo = 'elzr/vim-json'
+repo = 'sheerun/vim-polyglot'
 hook_add = '''
+  let g:polyglot_disabled = ['markdown', 'go']
   let g:vim_json_syntax_conceal = 0
 '''
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-
-[[plugins]]
-repo = 'othree/yajs.vim'
-
-[[plugins]]
-repo = 'othree/javascript-libraries-syntax.vim'
-
-[[plugins]]
-repo = 'othree/es.next.syntax.vim'
-
-[[plugins]]
-repo = 'posva/vim-vue'
-
-[[plugins]]
-repo = 'mustache/vim-mustache-handlebars'
-
-[[plugins]]
-repo = 'pearofducks/ansible-vim'
 
 [[plugins]]
 repo = 'ujihisa/neco-look'
