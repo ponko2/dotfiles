@@ -153,7 +153,7 @@ set formatexpr=autofmt#japanese#formatexpr()
 
 " コメントの自動挿入をしない
 autocmd MyAutoCmd FileType,Syntax,BufEnter,BufWinEnter *
-      \ setlocal formatoptions-=ro formatoptions+=mM
+      \ setlocal formatoptions-=r formatoptions-=o formatoptions+=mM
 
 
 "---------------------------------------------------------------------------
