@@ -65,8 +65,11 @@ case ${OSTYPE} in
     # Java
     export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
     export JRE_HOME=$JAVA_HOME/jre
-    export M2_HOME=$(brew --prefix maven)/libexec
+    export M2_HOME=/usr/local/opt/maven/libexec
     export MAVEN_HOME=$M2_HOME
+
+    # MySQL
+    export PATH=/usr/local/opt/mysql-client/bin:$PATH
     ;;
 esac
 
