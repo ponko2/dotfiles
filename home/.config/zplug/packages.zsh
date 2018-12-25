@@ -2,7 +2,7 @@
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # theme
-zplug 'mafredri/zsh-async', from:github
+zplug 'mafredri/zsh-async', use:async.zsh, from:github
 zplug 'sindresorhus/pure', use:pure.zsh, from:github, as:theme
 
 # plugins
