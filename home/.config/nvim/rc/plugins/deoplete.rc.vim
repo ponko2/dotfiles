@@ -5,10 +5,12 @@ scriptencoding utf-8
 "
 
 call deoplete#custom#option('camel_case', v:true)
+call deoplete#custom#option('skip_multibyte', v:true)
 call deoplete#custom#option('ignore_sources', {'_': ['around', 'buffer']})
 
 call deoplete#custom#source('_', 'matchers',
       \ ['matcher_fuzzy', 'matcher_length'])
+call deoplete#custom#source('tabnine', 'matchers', [])
 
 call deoplete#custom#source('_', 'converters', [
       \ 'converter_remove_paren',
@@ -17,6 +19,10 @@ call deoplete#custom#source('_', 'converters', [
       \ 'converter_truncate_menu',
       \ 'converter_auto_delimiter',
       \ ])
+call deoplete#custom#source('tabnine', 'converters', [
+      \ 'converter_remove_overlap',
+      \ ])
+
 
 call deoplete#custom#source('look', 'filetypes', ['text', 'markdown', 'gitcommit'])
 call deoplete#custom#source('tabnine', 'rank', 500)
@@ -39,10 +45,6 @@ endfunction
 
 " <S-TAB>: completion back.
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS>  deoplete#smart_close_popup()."\<C-h>"
 
 " <CR>: close popup or save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
