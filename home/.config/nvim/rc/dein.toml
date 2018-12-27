@@ -46,6 +46,7 @@ hook_add = '''
   let g:indent_guides_enable_on_vim_startup = 1
 '''
 
+[[plugins]]
 repo = 'sheerun/vim-polyglot'
 hook_add = '''
   let g:polyglot_disabled = ['markdown', 'go', 'jsx']
@@ -98,7 +99,14 @@ hook_add = '''
         \   'vue': ['vls'],
         \ }
 
-  autocmd MyAutoCmd FileType javascript,vue nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<CR>
-  autocmd MyAutoCmd FileType javascript,vue nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
-  autocmd MyAutoCmd FileType javascript,vue nnoremap <buffer> <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+  function! s:LC_maps()
+    if has_key(g:LanguageClient_serverCommands, &filetype)
+      nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<CR>
+      nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
+      nnoremap <buffer> <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+      nnoremap <buffer> <silent> <F5> :call LanguageClient_contextMenu()<CR>
+    endif
+  endfunction
+
+  autocmd MyAutoCmd FileType * call s:LC_maps()
 '''
