@@ -76,6 +76,13 @@ nnoremap <silent> <Leader>f :<C-u>Defx `expand('%:p:h')`
 nnoremap <silent> <Leader>F :<C-u>Defx
         \ -listed -resume -buffer-name=tab`tabpagenr()`<CR>
 '''
+hook_source = '''
+call defx#custom#column('mark', {
+        \ 'directory_icon': '▾',
+        \ 'readonly_icon': '✗',
+        \ 'selected_icon': '✓',
+        \ })
+'''
 [plugins.ftplugin]
 defx = '''
   " Define mappings
@@ -89,6 +96,8 @@ defx = '''
   nnoremap <silent><buffer><expr> K defx#do_action('new_directory')
   nnoremap <silent><buffer><expr> N defx#do_action('new_file')
   nnoremap <silent><buffer><expr> M defx#do_action('new_multiple_files')
+  nnoremap <silent><buffer><expr> C defx#do_action('toggle_columns', 'mark:filename:type:size:time')
+  nnoremap <silent><buffer><expr> S defx#do_action('toggle_sort', 'Time')
   nnoremap <silent><buffer><expr> d defx#do_action('remove')
   nnoremap <silent><buffer><expr> r defx#do_action('rename')
   nnoremap <silent><buffer><expr> ! defx#do_action('execute_command')
@@ -347,11 +356,6 @@ hook_add = '''
 [[plugins]]
 repo = 'Shougo/neco-vim'
 on_ft = 'vim'
-
-[[plugins]]
-repo = 'zchee/deoplete-go'
-on_ft = 'go'
-build = 'make'
 
 [[plugins]]
 repo = 'tbodt/deoplete-tabnine'

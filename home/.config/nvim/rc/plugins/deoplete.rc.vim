@@ -6,7 +6,7 @@ scriptencoding utf-8
 
 call deoplete#custom#option('camel_case', v:true)
 call deoplete#custom#option('skip_multibyte', v:true)
-call deoplete#custom#option('ignore_sources', {'_': ['around', 'buffer']})
+call deoplete#custom#option('ignore_sources', {'_': ['around', 'buffer', 'tag']})
 
 call deoplete#custom#source('_', 'matchers',
       \ ['matcher_fuzzy', 'matcher_length'])
@@ -25,7 +25,8 @@ call deoplete#custom#source('tabnine', 'converters', [
 
 
 call deoplete#custom#source('look', 'filetypes', ['text', 'markdown', 'gitcommit'])
-call deoplete#custom#source('tabnine', 'rank', 500)
+call deoplete#custom#source('tabnine', 'rank', 301)
+call deoplete#custom#source('LanguageClient', 'rank', 300)
 
 call deoplete#enable()
 
