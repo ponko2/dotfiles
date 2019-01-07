@@ -33,8 +33,7 @@ on_cmd = 'Denite'
 hook_source = 'call vimrc#source_rc("plugins/denite.rc.vim")'
 hook_add = '''
   nnoremap <silent> <C-p> :<C-u>Denite -sorters=sorter/sublime file/point file/old
-        \ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`
-        \ file file:new<CR>
+        \ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
 
   nnoremap <silent> <Leader>. :<C-u>DeniteBufferDir -sorters=sorter/sublime
         \ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
