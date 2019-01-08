@@ -77,7 +77,7 @@ nnoremap <silent> <Leader>F :<C-u>Defx
 '''
 hook_source = '''
 call defx#custom#column('mark', {
-        \ 'directory_icon': '▾',
+        \ 'directory_icon': '▸',
         \ 'readonly_icon': '✗',
         \ 'selected_icon': '✓',
         \ })
