@@ -47,10 +47,10 @@ endfunction
 " <S-TAB>: completion back.
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" <CR>: close popup or save indent.
+" <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function() abort
-  return pumvisible() ? deoplete#close_popup() : "\<CR>"
+  return (pumvisible() ? deoplete#close_popup() : "")."\<CR>"
 endfunction
 
 inoremap <expr><C-g> deoplete#undo_completion()
