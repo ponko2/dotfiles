@@ -5,32 +5,28 @@ if !has('vim_starting') | finish | endif
 "
 
 " Platform check
-let s:is_windows = has('win32') || has('win64')
-
 function! IsWindows() abort
-  return s:is_windows
+  return has('win32') || has('win64')
 endfunction
 
 function! IsMac() abort
-  return !s:is_windows && !has('win32unix')
+  return !IsWindows() && !has('win32unix')
       \ && (has('mac') || has('macunix') || has('gui_macvim') || has('gui_vimr')
       \     || (!executable('xdg-open') && system('uname') =~? '^darwin'))
 endfunction
 
-let s:is_gui = has('gui_running') || has('gui_vimr')
-
 function! IsGUI() abort
-  return s:is_gui
+  return has('gui_running') || has('gui_vimr')
 endfunction
 
 function! IsCUI() abort
-  return !s:is_gui
+  return !IsGUI()
 endfunction
 
 " Setting of the encoding to use for a save and reading.
 " Make it normal in UTF-8 in Unix.
 if has('vim_starting') && &encoding !=# 'utf-8'
-  if IsWindows() && !has('gui_running')
+  if IsWindows() && IsCUI()
     set encoding=cp932
   else
     set encoding=utf-8
@@ -49,7 +45,7 @@ let &fileencodings = join([
       \ ], ',')
 
 " Setting of terminal encoding.
-if !has('gui_running') && IsWindows()
+if IsWindows() && IsCUI()
   " For system.
   set termencoding=cp932
 endif
@@ -67,7 +63,7 @@ if IsWindows()
 endif
 
 " Disable menu.vim
-if has('gui_running')
+if IsGUI()
   set guioptions=Mc
 endif
 

@@ -7,7 +7,7 @@ if !IsMac() | finish | endif
 "
 
 " MacVim
-if has('gui_running')
+if IsGUI()
   let g:macvim_skip_colorscheme = 1
   let g:macvim_skip_cmd_opt_movement = 1
   let g:macvim_hig_shift_movement = 0
