@@ -9,9 +9,7 @@ if !IsGUI() | finish | endif
 "---------------------------------------------------------------------------
 " Font:
 
-if has('gui_vimr')
-  " do nothing.
-elseif IsWindows()
+if IsWindows()
   set guifont=MS_Gothic:h12:cSHIFTJIS
   set guifontwide=MS_Gothic:h12:cSHIFTJIS
   set renderoptions=type:directx

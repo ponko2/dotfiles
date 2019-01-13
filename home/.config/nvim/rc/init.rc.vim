@@ -11,12 +11,12 @@ endfunction
 
 function! IsMac() abort
   return !IsWindows() && !has('win32unix')
-      \ && (has('mac') || has('macunix') || has('gui_macvim') || has('gui_vimr')
+      \ && (has('mac') || has('macunix') || has('gui_macvim')
       \     || (!executable('xdg-open') && system('uname') =~? '^darwin'))
 endfunction
 
 function! IsGUI() abort
-  return has('gui_running') || has('gui_vimr')
+  return has('gui_running')
 endfunction
 
 function! IsCUI() abort
