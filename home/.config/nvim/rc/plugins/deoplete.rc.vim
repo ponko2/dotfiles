@@ -4,28 +4,38 @@ scriptencoding utf-8
 " deoplete.nvim
 "
 
-call deoplete#custom#option('camel_case', v:true)
-call deoplete#custom#option('skip_multibyte', v:true)
-call deoplete#custom#option('ignore_sources', {'_': ['around', 'buffer', 'tag', 'LanguageClient']})
+call deoplete#custom#option({
+      \ 'auto_refresh_delay': 10,
+      \ 'camel_case': v:true,
+      \ 'candidate_marks': ['A', 'S', 'D', 'F', 'G'],
+      \ 'ignore_sources': {'_': ['around', 'buffer', 'tag', 'LanguageClient']},
+      \ 'keyword_patterns': { '_': '[a-zA-Z_]\k*\(?' },
+      \ 'prev_completion_mode': 'mirror',
+      \ 'skip_multibyte': v:true,
+      \ })
 
-call deoplete#custom#source('_', 'matchers',
-      \ ['matcher_fuzzy', 'matcher_length'])
-call deoplete#custom#source('tabnine', 'matchers', [])
+call deoplete#custom#source('_', {
+      \ 'converters': [
+      \   'converter_auto_delimiter',
+      \   'converter_remove_overlap',
+      \   'converter_remove_paren',
+      \   'converter_truncate_abbr',
+      \   'converter_truncate_menu',
+      \ ],
+      \ 'matchers': [
+      \   'matcher_fuzzy',
+      \   'matcher_length',
+      \ ],
+      \ })
 
-call deoplete#custom#source('_', 'converters', [
-      \ 'converter_remove_paren',
-      \ 'converter_remove_overlap',
-      \ 'converter_truncate_abbr',
-      \ 'converter_truncate_menu',
-      \ 'converter_auto_delimiter',
-      \ ])
-call deoplete#custom#source('tabnine', 'converters', [
-      \ 'converter_remove_overlap',
-      \ ])
-
+call deoplete#custom#source('tabnine', {
+      \ 'converters': ['converter_remove_overlap'],
+      \ 'matchers': [],
+      \ 'min_pattern_length': 2,
+      \ 'rank': 300,
+      \ })
 
 call deoplete#custom#source('look', 'filetypes', ['text', 'markdown', 'gitcommit'])
-call deoplete#custom#source('tabnine', 'rank', 300)
 
 call deoplete#enable()
 
@@ -49,8 +59,14 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function() abort
-  return (pumvisible() ? deoplete#close_popup() : "")."\<CR>"
+  return (pumvisible() ? deoplete#close_popup() : '')."\<CR>"
 endfunction
 
-inoremap <expr><C-g> deoplete#undo_completion()
-inoremap <expr><C-l> deoplete#refresh()
+inoremap <expr><C-g> pumvisible() ? deoplete#undo_completion() : "\<C-g>"
+inoremap <expr><C-l> pumvisible() ? deoplete#refresh() : "\<C-l>"
+
+inoremap <expr>A pumvisible() ? deoplete#insert_candidate(0) : 'A'
+inoremap <expr>S pumvisible() ? deoplete#insert_candidate(1) : 'S'
+inoremap <expr>D pumvisible() ? deoplete#insert_candidate(2) : 'D'
+inoremap <expr>F pumvisible() ? deoplete#insert_candidate(3) : 'F'
+inoremap <expr>G pumvisible() ? deoplete#insert_candidate(4) : 'G'
