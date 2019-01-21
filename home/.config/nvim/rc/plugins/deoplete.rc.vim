@@ -7,7 +7,6 @@ scriptencoding utf-8
 call deoplete#custom#option({
       \ 'auto_refresh_delay': 10,
       \ 'camel_case': v:true,
-      \ 'candidate_marks': ['A', 'S', 'D', 'F', 'G'],
       \ 'ignore_sources': {'_': ['around', 'buffer', 'tag', 'LanguageClient']},
       \ 'keyword_patterns': { '_': '[a-zA-Z_]\k*\(?' },
       \ 'prev_completion_mode': 'mirror',
@@ -64,9 +63,3 @@ endfunction
 
 inoremap <expr><C-g> pumvisible() ? deoplete#undo_completion() : "\<C-g>"
 inoremap <expr><C-l> pumvisible() ? deoplete#refresh() : "\<C-l>"
-
-inoremap <expr>A pumvisible() ? deoplete#insert_candidate(0) : 'A'
-inoremap <expr>S pumvisible() ? deoplete#insert_candidate(1) : 'S'
-inoremap <expr>D pumvisible() ? deoplete#insert_candidate(2) : 'D'
-inoremap <expr>F pumvisible() ? deoplete#insert_candidate(3) : 'F'
-inoremap <expr>G pumvisible() ? deoplete#insert_candidate(4) : 'G'

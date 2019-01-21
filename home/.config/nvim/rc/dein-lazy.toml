@@ -206,11 +206,6 @@ hook_source = '''
         \ }
 '''
 
-# npm install -g import-js
-[[plugins]]
-repo = 'Galooshi/vim-import-js'
-on_ft = 'javascript'
-
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
@@ -338,10 +333,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'ciaranm/securemodelines'
-on_event = 'BufRead'
-
-[[plugins]]
-repo = 'deris/vim-shot-f'
 on_event = 'BufRead'
 
 [[plugins]]
