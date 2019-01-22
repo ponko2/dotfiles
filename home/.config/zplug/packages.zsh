@@ -9,7 +9,7 @@ zplug 'sindresorhus/pure', use:pure.zsh, from:github, as:theme
 zplug 'b4b4r07/enhancd', use:init.sh
 zplug 'mollifier/anyframe'
 zplug 'mollifier/cd-gitroot'
-zplug 'zsh-users/zsh-syntax-highlighting', defer:2
+zplug 'zdharma/fast-syntax-highlighting', defer:2
 
 # local plugins
 zplug "$XDG_CONFIG_HOME/zplug/custom", from:local, use:'*.zsh'
