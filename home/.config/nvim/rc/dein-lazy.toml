@@ -18,9 +18,6 @@ repo = 'Shougo/context_filetype.vim'
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
-repo = 'Shougo/neoinclude.vim'
-
-[[plugins]]
 repo = 'Shougo/neosnippet.vim'
 depends = ['neosnippet-snippets', 'context_filetype.vim']
 on_ft = 'snippet'
@@ -342,6 +339,15 @@ hook_add = '''
   let g:gfm_syntax_emoji_conceal = 1
   let g:markdown_fenced_languages = ['java', 'javascript', 'json', 'sh', 'sql']
 '''
+
+# [[plugins]]
+# repo = 'Shougo/neoinclude.vim'
+
+# [[plugins]]
+# repo = 'Shougo/neco-syntax'
+
+[[plugins]]
+repo = 'ujihisa/neco-look'
 
 [[plugins]]
 repo = 'Shougo/neco-vim'

@@ -54,12 +54,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'ujihisa/neco-look'
-
-[[plugins]]
-repo = 'Shougo/neco-syntax'
-
-[[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
   let g:gitgutter_diff_base = 'HEAD'

@@ -9,7 +9,7 @@ call deoplete#custom#option({
       \ 'camel_case': v:true,
       \ 'ignore_sources': {'_': ['around', 'buffer', 'tag', 'LanguageClient']},
       \ 'keyword_patterns': { '_': '[a-zA-Z_]\k*\(?' },
-      \ 'prev_completion_mode': 'mirror',
+      \ 'prev_completion_mode': 'length',
       \ 'skip_multibyte': v:true,
       \ })
 
@@ -29,7 +29,7 @@ call deoplete#custom#source('_', {
 
 call deoplete#custom#source('tabnine', {
       \ 'converters': ['converter_remove_overlap'],
-      \ 'matchers': [],
+      \ 'is_volatile': v:false,
       \ 'min_pattern_length': 2,
       \ 'rank': 300,
       \ })
