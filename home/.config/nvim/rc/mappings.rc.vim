@@ -76,6 +76,10 @@ nnoremap <silent> ]t :<C-u>tnext<CR>
 nnoremap <silent> [T :<C-u>tfirst<CR>
 nnoremap <silent> ]T :<C-u>tlast<CR>
 
+" Better n
+nnoremap <silent> n :<C-u>execute 'normal!' v:count1 . 'nzvzz'<CR>
+nnoremap <silent> N :<C-u>execute 'normal!' v:count1 . 'Nzvzz'<CR>
+
 " Better x
 nnoremap x "_x
 
