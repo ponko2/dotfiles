@@ -1,47 +1,60 @@
-finicky.setDefaultBrowser('com.google.Chrome');
+finicky.setDefaultBrowser("org.mozilla.firefox");
 
-finicky.onUrl(function (url, opts) {
+finicky.onUrl(function(url, opts) {
   var sourceApplication = opts && opts.sourceBundleIdentifier;
 
-  var safari = {
-    bundleIdentifier: 'com.apple.Safari',
-    openInBackground: true
-  };
+  // Reeder
+  if (sourceApplication === "com.reederapp.rkit2.mac") {
+    var chrome = {
+      bundleIdentifier: "com.google.Chrome",
+      openInBackground: true
+    };
 
-  var chrome = {
-    bundleIdentifier: 'com.google.Chrome',
-    openInBackground: true
-  };
+    // SNS
+    if (url.match(/^https?:\/\/twitter\.com/)) {
+      return chrome;
+    }
 
-  var firefox = {
-    bundleIdentifier: 'org.mozilla.firefox',
-    openInBackground: true
-  };
+    // GitHub
+    if (url.match(/^https?:\/\/github/)) {
+      return chrome;
+    }
 
-  // SNS
-  if (url.match(/^https?:\/\/twitter\.com/)) {
-    return chrome;
-  }
+    // Qiita
+    if (url.match(/^https?:\/\/qiita\.com/)) {
+      return chrome;
+    }
 
-  // ChatWork
-  if (url.match(/^https?:\/\/www\.chatwork\.com/)) {
     return {
-      bundleIdentifier: 'com.google.Chrome'
+      openInBackground: true
     };
   }
 
-  // GitHub
-  if (url.match(/^https?:\/\/github/)) {
-    return chrome;
+  // Slack
+  if (sourceApplication === "com.tinyspeck.slackmacgap") {
+    return {
+      bundleIdentifier: "com.google.Chrome"
+    };
   }
 
-  // Qiita
-  if (url.match(/^https?:\/\/qiita\.com/)) {
-    return chrome;
+  // 1Password
+  if (sourceApplication === "com.agilebits.onepassword7") {
+    return {
+      bundleIdentifier: "com.google.Chrome"
+    };
   }
 
-  // Reeder
-  if (sourceApplication === 'com.reederapp.rkit2.mac') {
-    return firefox;
+  // iTerm2
+  if (sourceApplication === "com.googlecode.iterm2") {
+    return {
+      bundleIdentifier: "com.google.Chrome"
+    };
+  }
+
+  // Command Line Tools
+  if (sourceApplication === null) {
+    return {
+      bundleIdentifier: "com.google.Chrome"
+    };
   }
 });
