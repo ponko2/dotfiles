@@ -15,6 +15,10 @@ if exists('&inccommand')
   set inccommand=nosplit
 endif
 
+if exists('&pumblend')
+  set pumblend=20
+endif
+
 " Enable true color
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 

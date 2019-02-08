@@ -7,7 +7,7 @@ scriptencoding utf-8
 call deoplete#custom#option({
       \ 'auto_refresh_delay': 10,
       \ 'camel_case': v:true,
-      \ 'ignore_sources': {'_': ['around', 'buffer', 'tag', 'LanguageClient']},
+      \ 'ignore_sources': {'_': ['around', 'buffer', 'tag', 'dictionary', 'LanguageClient']},
       \ 'keyword_patterns': { '_': '[a-zA-Z_]\k*\(?' },
       \ 'prev_completion_mode': 'length',
       \ 'skip_multibyte': v:true,
