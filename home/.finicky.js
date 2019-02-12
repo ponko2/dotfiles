@@ -44,6 +44,13 @@ finicky.onUrl(function(url, opts) {
     };
   }
 
+  // Thunderbird
+  if (sourceApplication === "org.mozilla.thunderbird") {
+    return {
+      bundleIdentifier: "com.google.Chrome"
+    };
+  }
+
   // iTerm2
   if (sourceApplication === "com.googlecode.iterm2") {
     return {
