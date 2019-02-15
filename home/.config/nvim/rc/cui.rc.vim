@@ -20,6 +20,14 @@ augroup FastEscape
 augroup END
 
 "---------------------------------------------------------------------------
+" Color:
+
+" Enable true color
+if exists('+termguicolors')
+  set termguicolors
+endif
+
+"---------------------------------------------------------------------------
 " Mouse:
 
 " Disable the mouse.
