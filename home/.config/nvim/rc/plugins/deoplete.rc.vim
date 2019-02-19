@@ -36,6 +36,15 @@ call deoplete#custom#source('tabnine', {
 
 call deoplete#custom#source('look', 'filetypes', ['text', 'markdown', 'gitcommit'])
 
+call deoplete#custom#filter('attrs_order', {
+      \ 'javascript': {
+      \   'kind': [
+      \     'Function',
+      \     'Property'
+      \   ]
+      \ },
+      \ })
+
 call deoplete#enable()
 
 
