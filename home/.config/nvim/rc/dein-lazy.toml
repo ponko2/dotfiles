@@ -301,31 +301,48 @@ hook_source = '''
   let g:ale_sign_column_always = 1
   let g:ale_sign_error = '✖'
   let g:ale_sign_warning = '⚠'
-  let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+  let g:ale_echo_msg_format = '[%linter%] %code: %%s [%severity%]'
   let g:ale_virtualtext_cursor = 1
-
-  let g:ale_linters = {
-        \   'go': ['golangci-lint'],
-        \   'html': [],
-        \   'java': [],
-        \   'javascript': ['eslint'],
-        \   'markdown': ['textlint'],
-        \   'text': ['textlint'],
-        \   'zsh': [],
-        \ }
-
   let g:ale_fix_on_save = 1
-  let g:ale_fixers = {
-        \   'javascript': ['eslint'],
-        \   'vue': ['eslint'],
-        \   'css': ['prettier'],
-        \   'scss': ['prettier'],
-        \   'less': ['prettier'],
-        \   'yaml': ['prettier'],
-        \ }
-
-  let g:ale_go_golangci_lint_options = ''
-  let g:ale_go_golangci_lint_package = 1
+'''
+[plugins.ftplugin]
+go = '''
+  let b:ale_linters = ['golangci-lint']
+  let b:ale_go_golangci_lint_options = ''
+  let b:ale_go_golangci_lint_package = 1
+'''
+java = '''
+  let b:ale_linters = []
+'''
+javascript = '''
+  let b:ale_linters = ['eslint']
+  let b:ale_fixers = ['eslint']
+'''
+vue = '''
+  let b:ale_linter_aliases = ['javascript', 'vue']
+  let b:ale_linters = ['eslint', 'vls']
+  let b:ale_fixers = ['eslint']
+'''
+css = '''
+  let b:ale_fixers = ['prettier']
+'''
+scss = '''
+  let b:ale_fixers = ['prettier']
+'''
+less = '''
+  let b:ale_fixers = ['prettier']
+'''
+yaml = '''
+  let b:ale_fixers = ['prettier']
+'''
+html = '''
+  let b:ale_linters = []
+'''
+text = '''
+  let b:ale_linters = ['textlint']
+'''
+markdown = '''
+  let b:ale_linters = ['textlint']
 '''
 
 [[plugins]]
