@@ -82,6 +82,7 @@ rev = 'next'
 build = 'bash install.sh'
 hook_add = '''
   let g:LanguageClient_fzfContextMenu = 0
+  let g:LanguageClient_diagnosticsEnable = 0
   let g:LanguageClient_serverCommands = {
         \   'go': ['golsp', '-mode', 'stdio'],
         \   'javascript': ['javascript-typescript-stdio'],
