@@ -8,9 +8,9 @@ args = ["--stdio"]
 install = [["npm", "install", "-g", "vscode-html-languageserver-bin"]]
 
 [language.go]
-command = "golsp"
-args = ["-mode", "stdio"]
-install = [["go", "get", "-u", "golang.org/x/tools/cmd/golsp"]]
+command = "gopls"
+args = ["serve"]
+install = [["go", "get", "-u", "golang.org/x/tools/cmd/gopls"]]
 
 [language.typescript]
 command = "typescript-language-server"
