@@ -5,44 +5,44 @@ scriptencoding utf-8
 "
 
 call deoplete#custom#option({
-      \ 'auto_refresh_delay': 10,
-      \ 'camel_case': v:true,
-      \ 'ignore_sources': {'_': ['around', 'buffer', 'tag', 'dictionary', 'LanguageClient']},
-      \ 'keyword_patterns': { '_': '[a-zA-Z_]\k*\(?' },
-      \ 'prev_completion_mode': 'length',
-      \ 'skip_multibyte': v:true,
+      \   'auto_refresh_delay': 10,
+      \   'camel_case': v:true,
+      \   'ignore_sources': {'_': ['around', 'buffer', 'tag', 'dictionary', 'LanguageClient']},
+      \   'keyword_patterns': { '_': '[a-zA-Z_]\k*\(?' },
+      \   'prev_completion_mode': 'length',
+      \   'skip_multibyte': v:true,
       \ })
 
 call deoplete#custom#source('_', {
-      \ 'converters': [
-      \   'converter_auto_delimiter',
-      \   'converter_remove_overlap',
-      \   'converter_remove_paren',
-      \   'converter_truncate_abbr',
-      \   'converter_truncate_menu',
-      \ ],
-      \ 'matchers': [
-      \   'matcher_fuzzy',
-      \   'matcher_length',
-      \ ],
+      \   'converters': [
+      \     'converter_auto_delimiter',
+      \     'converter_remove_overlap',
+      \     'converter_remove_paren',
+      \     'converter_truncate_abbr',
+      \     'converter_truncate_menu',
+      \   ],
+      \   'matchers': [
+      \     'matcher_fuzzy',
+      \     'matcher_length',
+      \   ],
       \ })
 
 call deoplete#custom#source('tabnine', {
-      \ 'converters': ['converter_remove_overlap'],
-      \ 'is_volatile': v:false,
-      \ 'min_pattern_length': 2,
-      \ 'rank': 300,
+      \   'converters': ['converter_remove_overlap'],
+      \   'is_volatile': v:false,
+      \   'min_pattern_length': 2,
+      \   'rank': 300,
       \ })
 
 call deoplete#custom#source('look', 'filetypes', ['text', 'markdown', 'gitcommit'])
 
 call deoplete#custom#filter('attrs_order', {
-      \ 'javascript': {
-      \   'kind': [
-      \     'Function',
-      \     'Property'
-      \   ]
-      \ },
+      \   'javascript': {
+      \     'kind': [
+      \       'Function',
+      \       'Property'
+      \     ]
+      \   },
       \ })
 
 call deoplete#enable()
