@@ -19,6 +19,7 @@ call deoplete#custom#source('_', {
       \     'converter_remove_overlap',
       \     'converter_remove_paren',
       \     'converter_truncate_abbr',
+      \     'converter_truncate_info',
       \     'converter_truncate_menu',
       \   ],
       \   'matchers': [
@@ -28,8 +29,10 @@ call deoplete#custom#source('_', {
       \ })
 
 call deoplete#custom#source('tabnine', {
-      \   'converters': ['converter_remove_overlap'],
-      \   'is_volatile': v:false,
+      \   'converters': [
+      \     'converter_remove_overlap',
+      \     'converter_truncate_info',
+      \   ],
       \   'min_pattern_length': 2,
       \   'rank': 300,
       \ })

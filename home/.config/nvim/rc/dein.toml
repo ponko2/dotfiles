@@ -49,7 +49,12 @@ hook_add = '''
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
 hook_add = '''
-  let g:polyglot_disabled = ['markdown', 'go', 'jsx']
+  let g:polyglot_disabled = [
+        \   'csv',
+        \   'go',
+        \   'jsx',
+        \   'markdown',
+        \ ]
   let g:vim_json_syntax_conceal = 0
 '''
 
