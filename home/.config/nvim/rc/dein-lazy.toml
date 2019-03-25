@@ -341,9 +341,11 @@ html = '''
 '''
 text = '''
   let b:ale_linters = ['textlint']
+  let b:ale_fixers = ['textlint']
 '''
 markdown = '''
   let b:ale_linters = ['textlint']
+  let b:ale_fixers = ['textlint']
 '''
 
 [[plugins]]

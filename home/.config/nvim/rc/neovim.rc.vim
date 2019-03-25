@@ -22,18 +22,9 @@ endif
 " Enable true color
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
-" Use cursor shape feature
-set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
-
-" " Share the histories
-" autocmd MyAutoCmd FocusGained * if exists(':rshada') | rshada | wshada | endif
-
 autocmd MyAutoCmd FocusGained * checktime
 
 " Terminal setting.
 command! -bang Terminal terminal<bang> zsh
-augroup Terminal
-  autocmd!
-  autocmd TermOpen * setlocal modifiable
-  autocmd TermClose * buffer #
-augroup END
+autocmd MyAutoCmd TermOpen * setlocal modifiable
+autocmd MyAutoCmd TermClose * buffer #
