@@ -1,6 +1,7 @@
 [language.javascript]
-command = "javascript-typescript-stdio"
-install = [["npm", "install", "-g", "javascript-typescript-langserver"]]
+command = "typescript-language-server"
+args = ["--stdio"]
+install = [["npm", "install", "-g", "typescript", "typescript-language-server"]]
 
 [language.html]
 command = "html-languageserver"
