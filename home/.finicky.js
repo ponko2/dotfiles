@@ -51,6 +51,27 @@ finicky.onUrl(function(url, opts) {
     };
   }
 
+  // Excel
+  if (sourceApplication === "com.microsoft.Excel") {
+    return {
+      bundleIdentifier: "com.google.Chrome"
+    };
+  }
+
+  // Word
+  if (sourceApplication === "com.microsoft.Word") {
+    return {
+      bundleIdentifier: "com.google.Chrome"
+    };
+  }
+
+  // Powerpoint
+  if (sourceApplication === "com.microsoft.Powerpoint") {
+    return {
+      bundleIdentifier: "com.google.Chrome"
+    };
+  }
+
   // iTerm2
   if (sourceApplication === "com.googlecode.iterm2") {
     return {
