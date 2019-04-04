@@ -91,12 +91,12 @@ nnoremap Y y$
 " Command-line mode keymappings:
 
 " Next history.
-cnoremap <Down> <C-n>
-cnoremap <C-n> <Down>
+cnoremap <expr> <Down> pumvisible() ? "\<Down>" : "\<C-n>"
+cnoremap <expr> <C-n> pumvisible() ? "\<C-n>" : "\<Down>"
 
 " Previous history.
-cnoremap <Up> <C-p>
-cnoremap <C-p> <Up>
+cnoremap <expr> <Up> pumvisible() ? "\<Up>" : "\<C-p>"
+cnoremap <expr> <C-p> pumvisible() ? "\<C-p>" : "\<Up>"
 
 " %% -> %:h/
 cnoremap <expr> %% getcmdtype() ==# ':' ? expand('%:h').'/' : '%%'

@@ -29,10 +29,10 @@ repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_source = 'call vimrc#source_rc("plugins/denite.rc.vim")'
 hook_add = '''
-  nnoremap <silent> <C-p> :<C-u>Denite -sorters=sorter/sublime file/point file/old
+  nnoremap <silent> <C-p> :<C-u>Denite file/point file/old
         \ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
 
-  nnoremap <silent> <Leader>. :<C-u>DeniteBufferDir -sorters=sorter/sublime
+  nnoremap <silent> <Leader>. :<C-u>DeniteBufferDir
         \ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
 
   nnoremap <silent> <Leader><Tab> :<C-u>Denite buffer<CR>
@@ -299,6 +299,7 @@ go = '''
 repo = 'w0rp/ale'
 on_event = 'BufRead'
 hook_source = '''
+  let g:ale_disable_lsp = 1
   let g:ale_sign_column_always = 1
   let g:ale_sign_error = '✖'
   let g:ale_sign_warning = '⚠'

@@ -5,11 +5,12 @@ scriptencoding utf-8
 "
 
 call deoplete#custom#option({
+      \   'auto_preview': v:true,
       \   'auto_refresh_delay': 10,
       \   'camel_case': v:true,
       \   'ignore_sources': {'_': ['around', 'buffer', 'tag', 'dictionary', 'LanguageClient']},
       \   'keyword_patterns': { '_': '[a-zA-Z_]\k*\(?' },
-      \   'prev_completion_mode': 'length',
+      \   'prev_completion_mode': 'none',
       \   'skip_multibyte': v:true,
       \ })
 
@@ -65,7 +66,7 @@ function! s:check_back_space() abort
 endfunction
 
 " <S-TAB>: completion back.
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
@@ -73,5 +74,5 @@ function! s:my_cr_function() abort
   return (pumvisible() ? deoplete#close_popup() : '')."\<CR>"
 endfunction
 
-inoremap <expr><C-g> pumvisible() ? deoplete#undo_completion() : "\<C-g>"
-inoremap <expr><C-l> pumvisible() ? deoplete#refresh() : "\<C-l>"
+inoremap <expr> <C-g> pumvisible() ? deoplete#undo_completion() : "\<C-g>"
+inoremap <expr> <C-l> pumvisible() ? deoplete#refresh() : "\<C-l>"

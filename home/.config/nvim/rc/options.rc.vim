@@ -218,15 +218,13 @@ set belloff=all
 " コマンドライン補完
 set nowildmenu
 set wildmode=list:longest,full
+set wildoptions=tagfile
 
 " コマンドと以前に使った検索パターン履歴の保存個数
 set history=1000
 
 " Display all the information of the tag by the supplement of the Insert mode.
 set showfulltag
-
-" Can supplement a tag in a command-line.
-set wildoptions=tagfile
 
 " Disable menu
 let g:did_install_default_menus = 1
