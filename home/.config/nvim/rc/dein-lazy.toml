@@ -74,14 +74,14 @@ hook_add = '''
 '''
 hook_source = '''
   call defx#custom#column('filename', {
-          \ 'directory_icon': '▸',
-          \ 'opened_icon': '▾',
-          \ 'root_icon': ' ',
+          \   'directory_icon': '▸',
+          \   'opened_icon': '▾',
+          \   'root_icon': ' ',
           \ })
 
   call defx#custom#column('mark', {
-          \ 'readonly_icon': '✗',
-          \ 'selected_icon': '✓',
+          \   'readonly_icon': '✗',
+          \   'selected_icon': '✓',
           \ })
 '''
 [plugins.ftplugin]
