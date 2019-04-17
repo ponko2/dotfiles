@@ -73,7 +73,7 @@ hook_add = '''
           \ -listed -resume -buffer-name=tab`tabpagenr()`<CR>
 '''
 hook_source = '''
-  call defx#custom#column('filename', {
+  call defx#custom#column('icon', {
           \   'directory_icon': '▸',
           \   'opened_icon': '▾',
           \   'root_icon': ' ',

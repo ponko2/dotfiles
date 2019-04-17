@@ -8,8 +8,9 @@ call deoplete#custom#option({
       \   'auto_preview': v:true,
       \   'auto_refresh_delay': 10,
       \   'camel_case': v:true,
-      \   'ignore_sources': {'_': ['around', 'buffer', 'tag', 'dictionary', 'LanguageClient']},
+      \   'ignore_sources': {'_': ['around', 'buffer', 'LanguageClient']},
       \   'keyword_patterns': { '_': '[a-zA-Z_]\k*\(?' },
+      \   'omni_patterns': { 'go': '[^. *\t]\.\w*' },
       \   'prev_completion_mode': 'none',
       \   'skip_multibyte': v:true,
       \ })
@@ -47,6 +48,11 @@ call deoplete#custom#filter('attrs_order', {
       \       'Property'
       \     ]
       \   },
+      \ })
+
+call deoplete#custom#var('tabnine', {
+      \   'line_limit': 500,
+      \   'max_num_results': 20,
       \ })
 
 call deoplete#enable()
