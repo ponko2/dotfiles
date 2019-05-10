@@ -126,9 +126,6 @@ set virtualedit=block
 " K コマンドに使われるプログラムの設定
 set keywordprg=:help
 
-" Vimの外部で変更を受けたバッファがないかどうか調べる
-autocmd MyAutoCmd WinEnter * checktime
-
 " Disable paste.
 autocmd MyAutoCmd InsertLeave *
       \ if &paste | setlocal nopaste | echo 'nopaste' | endif |
