@@ -46,7 +46,7 @@ setopt no_clobber
 setopt combining_chars
 
 # エイリアスも補完対象に設定
-setopt complete_aliases
+setopt no_complete_aliases
 
 # 語の途中でもカーソル位置で補完
 setopt complete_in_word
