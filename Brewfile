@@ -1,7 +1,6 @@
 # Tap
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
 tap 'cloudflare/cloudflare'
 
 # Shell
@@ -62,8 +61,6 @@ brew 'ruby-build'
 
 ## Golang
 brew 'go'
-brew 'dep'
-brew 'alecthomas/tap/gometalinter'
 brew 'golangci/tap/golangci-lint'
 
 ## Node.js
@@ -72,7 +69,7 @@ brew 'nodebrew'
 ## Java
 cask 'java8' unless system '/usr/libexec/java_home --failfast'
 brew 'maven'
-brew 'tomcat'
+brew 'tomcat@8'
 
 ## Vim
 brew 'macvim', args: ['with-override-system-vim', 'with-lua', 'with-luajit']
