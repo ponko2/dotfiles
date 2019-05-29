@@ -21,11 +21,6 @@ call denite#custom#alias('source', 'file/rec/git', 'file/rec')
 call denite#custom#var('file/rec/git', 'command',
       \ ['git', 'ls-files', '-co', '--exclude-standard'])
 
-call denite#custom#option('default', {
-      \   'auto_accel': v:true,
-      \   'prompt': '>',
-      \ })
-
 if executable('rg')
   call denite#custom#var('file/rec', 'command',
         \ ['rg', '--files', '--glob', '!.git/*'])
@@ -46,25 +41,3 @@ elseif executable('ag')
   call denite#custom#var('grep', 'pattern_opt', [])
   call denite#custom#var('grep', 'final_opts', [])
 endif
-
-
-"---------------------------------------------------------------------------
-" Plugin key-mappings:
-
-" Move line
-call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#map('normal', '<C-n>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('normal', '<C-j>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('normal', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#map('normal', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
-
-" Emacs-like key mappings
-call denite#custom#map('insert', '<C-a>', '<denite:move_caret_to_head>', 'noremap')
-call denite#custom#map('insert', '<C-b>', '<denite:move_caret_to_left>', 'noremap')
-call denite#custom#map('insert', '<C-d>', '<denite:delete_char_after_caret>', 'noremap')
-call denite#custom#map('insert', '<C-e>', '<denite:move_caret_to_tail>', 'noremap')
-call denite#custom#map('insert', '<C-f>', '<denite:move_caret_to_right>', 'noremap')
-call denite#custom#map('insert', '<C-g>', '<denite:quit>', 'noremap')
-call denite#custom#map('insert', '<C-k>', '<denite:delete_text_after_caret>', 'noremap')
-call denite#custom#map('insert', '<C-y>', '<denite:paste_from_default_register>', 'noremap')

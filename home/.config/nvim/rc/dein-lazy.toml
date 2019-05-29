@@ -8,7 +8,7 @@ repo = 'Shougo/junkfile.vim'
 on_source = 'denite.nvim'
 hook_add = '''
   nnoremap <silent> <Leader>j :<C-u>Denite junkfile:new junkfile
-        \ -default-action=split<CR>
+        \ -start-filter -default-action=split<CR>
 '''
 
 [[plugins]]
@@ -29,19 +29,40 @@ repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_source = 'call vimrc#source_rc("plugins/denite.rc.vim")'
 hook_add = '''
-  nnoremap <silent> <C-p> :<C-u>Denite file/point file/old
+  nnoremap <silent> <C-p> :<C-u>Denite -start-filter file/point file/old
         \ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
 
-  nnoremap <silent> <Leader>. :<C-u>DeniteBufferDir
+  nnoremap <silent> <Leader>. :<C-u>DeniteBufferDir -start-filter
         \ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
 
   nnoremap <silent> <Leader><Tab> :<C-u>Denite buffer<CR>
 
-  nnoremap <silent> <Leader>/ :<C-u>Denite -buffer-name=search -no-empty -mode=normal grep::!<CR>
-  nnoremap <silent> <Leader>n :<C-u>Denite -buffer-name=search -resume -mode=normal -refresh<CR>
+  nnoremap <silent> <Leader>/ :<C-u>Denite -buffer-name=search -no-empty grep::!<CR>
+  nnoremap <silent> <Leader>n :<C-u>Denite -buffer-name=search -resume -refresh<CR>
   nnoremap <silent> <Leader>p :<C-u>Denite -buffer-name=register register neoyank<CR>
   xnoremap <silent> <Leader>p :<C-u>Denite -buffer-name=register -default-action=replace register neoyank<CR>
-  nnoremap <silent> <Leader>; :<C-u>Denite -unique -mode=normal change jump<CR>
+  nnoremap <silent> <Leader>; :<C-u>Denite -unique change jump<CR>
+'''
+[plugins.ftplugin]
+denite = '''
+  nnoremap <silent><buffer><expr> <BS> denite#do_map('move_up_path')
+  nnoremap <silent><buffer><expr> <C-c> denite#do_map('quit')
+  nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> <Tab> denite#do_map('choose_action')
+  nnoremap <silent><buffer><expr> a denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> d denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> p denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q denite#do_map('quit')
+  nnoremap <silent><buffer><nowait><expr> <Space> denite#do_map('toggle_select').'j'
+  nnoremap <silent><buffer> <C-n> <Down>
+  nnoremap <silent><buffer> <C-p> <Up>
+'''
+denite-filter = '''
+  inoremap <silent><buffer><expr> <C-c> denite#do_map('quit')
+  nnoremap <silent><buffer><expr> <C-c> denite#do_map('quit')
+  nnoremap <silent><buffer> <C-n> <Down>
+  nnoremap <silent><buffer> <C-p> <Up>
 '''
 
 [[plugins]]
@@ -59,7 +80,7 @@ hook_add = '''
 repo = 'Jagua/vim-denite-ghq'
 on_source = 'denite.nvim'
 hook_add = '''
-  nnoremap <silent> <Leader><C-p> :<C-u>Denite -default-action=cd ghq<CR>
+  nnoremap <silent> <Leader><C-p> :<C-u>Denite -start-filter -default-action=cd ghq<CR>
 '''
 
 [[plugins]]
