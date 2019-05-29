@@ -21,6 +21,11 @@ call denite#custom#alias('source', 'file/rec/git', 'file/rec')
 call denite#custom#var('file/rec/git', 'command',
       \ ['git', 'ls-files', '-co', '--exclude-standard'])
 
+call denite#custom#option('default', {
+      \   'highlight_filter_background': 'CursorLine',
+      \   'split': 'floating',
+      \ })
+
 if executable('rg')
   call denite#custom#var('file/rec', 'command',
         \ ['rg', '--files', '--glob', '!.git/*'])
