@@ -393,12 +393,15 @@ hook_add = '''
 
 # [[plugins]]
 # repo = 'Shougo/neoinclude.vim'
+# on_source = 'deoplete.nvim'
 
 # [[plugins]]
 # repo = 'Shougo/neco-syntax'
+# on_source = 'deoplete.nvim'
 
 [[plugins]]
 repo = 'ujihisa/neco-look'
+on_source = 'deoplete.nvim'
 
 [[plugins]]
 repo = 'Shougo/neco-vim'
@@ -406,7 +409,7 @@ on_ft = 'vim'
 
 [[plugins]]
 repo = 'tbodt/deoplete-tabnine'
-on_event = 'InsertEnter'
+on_source = 'deoplete.nvim'
 build = './install.sh'
 
 [[plugins]]
@@ -418,6 +421,7 @@ hook_source = 'call vimrc#source_rc("plugins/deoplete.rc.vim")'
 [[plugins]]
 repo = 'ncm2/float-preview.nvim'
 on_source = 'deoplete.nvim'
+if = 'has("nvim")'
 hook_source = '''
   let g:float_preview#docked = 0
   let g:float_preview#max_width = 60
