@@ -384,10 +384,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'ciaranm/securemodelines'
-on_event = 'BufRead'
-
-[[plugins]]
 repo = 'rhysd/vim-gfm-syntax'
 on_ft = 'markdown'
 hook_add = '''
