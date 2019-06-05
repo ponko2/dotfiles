@@ -408,6 +408,10 @@ repo = 'Shougo/neco-vim'
 on_ft = 'vim'
 
 [[plugins]]
+repo = 'fszymanski/deoplete-emoji'
+on_source = 'deoplete.nvim'
+
+[[plugins]]
 repo = 'tbodt/deoplete-tabnine'
 on_source = 'deoplete.nvim'
 build = './install.sh'
