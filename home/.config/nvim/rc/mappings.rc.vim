@@ -113,6 +113,5 @@ silent! vunmap <C-x>
 " Terminal keymappings:
 
 if exists(':tnoremap')
-  tnoremap <ESC> <ESC><C-\><C-n>
   tnoremap <C-w> <C-\><C-n><C-w>
 endif
