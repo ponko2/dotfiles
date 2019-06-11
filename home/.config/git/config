@@ -12,7 +12,7 @@
 [merge]
 	ff = false
 [pull]
-	rebase = preserve
+	rebase = merges
 [log]
 	date = iso8601-local
 [diff]
