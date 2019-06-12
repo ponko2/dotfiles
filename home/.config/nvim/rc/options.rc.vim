@@ -50,10 +50,12 @@ set modelines=0
 set nomodeline
 
 " クリップボードレジスタを使う
-if has('unnamedplus')
-  set clipboard& clipboard+=unnamedplus
-else
-  set clipboard& clipboard+=unnamed
+if !has('nvim')
+  if has('unnamedplus')
+    set clipboard& clipboard+=unnamedplus
+  else
+    set clipboard& clipboard+=unnamed
+  endif
 endif
 
 " BackSpaceの挙動を設定

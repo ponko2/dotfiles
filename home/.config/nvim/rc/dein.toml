@@ -67,14 +67,14 @@ hook_add = '''
   let g:gitgutter_diff_base = 'HEAD'
 '''
 
-[[plugins]]
-repo = 'bfredl/nvim-miniyank'
-if = "has('nvim')"
-on_map = '<Plug>(miniyank-'
-hook_add = '''
-  nmap p <Plug>(miniyank-autoput)
-  nmap P <Plug>(miniyank-autoPut)
-'''
+# [[plugins]]
+# repo = 'bfredl/nvim-miniyank'
+# if = "has('nvim')"
+# on_map = '<Plug>(miniyank-'
+# hook_add = '''
+#   nmap p <Plug>(miniyank-autoput)
+#   nmap P <Plug>(miniyank-autoPut)
+# '''
 
 [[plugins]]
 repo = 'roxma/nvim-yarp'
