@@ -17,7 +17,6 @@ call deoplete#custom#option({
 
 call deoplete#custom#source('_', {
       \   'converters': [
-      \     'converter_auto_delimiter',
       \     'converter_remove_overlap',
       \     'converter_remove_paren',
       \     'converter_truncate_abbr',
@@ -39,7 +38,13 @@ call deoplete#custom#source('tabnine', {
       \   'rank': 300,
       \ })
 
-call deoplete#custom#source('look', 'filetypes', ['text', 'markdown', 'gitcommit'])
+call deoplete#custom#source('denite', {
+      \   'matchers': ['matcher_full_fuzzy', 'matcher_length']
+      \ })
+
+call deoplete#custom#source('look', {
+      \   'filetypes': ['text', 'markdown', 'gitcommit']
+      \ })
 
 call deoplete#custom#filter('attrs_order', {
       \   'javascript': {
