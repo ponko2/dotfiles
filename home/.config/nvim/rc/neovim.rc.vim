@@ -19,6 +19,10 @@ if exists('&pumblend')
   set pumblend=20
 endif
 
+if exists('&winblend')
+  set winblend=20
+endif
+
 " コマンドライン補完
 set wildmenu
 set wildmode=full
