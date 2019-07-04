@@ -11,8 +11,8 @@ call denite#custom#source('file/rec', 'matchers',
 call denite#custom#filter('matcher/ignore_globs', 'ignore_globs',
       \ ['.git/', '*.min.*'])
 
-call denite#custom#source('file/old', 'converters',
-      \ ['converter/relative_word'])
+call denite#custom#source('file/old,ghq', 'converters',
+      \ ['converter/relative_word', 'converter/relative_abbr'])
 
 call denite#custom#source('buffer', 'matchers',
       \ ['matcher/fuzzy', 'matcher/ignore_current_buffer'])
