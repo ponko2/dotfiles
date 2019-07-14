@@ -11,7 +11,7 @@ call deoplete#custom#option({
       \   'ignore_sources': {'_': ['around', 'buffer', 'LanguageClient']},
       \   'keyword_patterns': { '_': '[a-zA-Z_]\k*\(?' },
       \   'omni_patterns': { 'go': '[^. *\t]\.\w*' },
-      \   'prev_completion_mode': 'none',
+      \   'prev_completion_mode': 'length',
       \   'skip_multibyte': v:true,
       \ })
 

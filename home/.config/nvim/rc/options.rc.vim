@@ -169,7 +169,7 @@ else
   set listchars=tab:▸\ ,trail:-,extends:»,precedes:«,nbsp:%
 endif
 
-" 最下ウィンドウにいつステータス行を常に表示
+" 最下ウィンドウにステータス行を常に表示
 set laststatus=2
 
 " コマンドラインに使われる画面上の行数を設定
