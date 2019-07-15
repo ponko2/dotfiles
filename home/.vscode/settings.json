@@ -1,5 +1,5 @@
 {
-  "editor.fontFamily": "'Ricty Diminished', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "HackGen, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 18,
   "editor.formatOnSave": false,
   "editor.minimap.enabled": false,
@@ -11,6 +11,7 @@
   "terminal.integrated.fontSize": 18,
   "vim.enableNeovim": true,
   "vim.leader": "<Space>",
+  "vim.neovimPath": "/usr/local/bin/nvim",
   "vim.overrideCopy": true,
   "vim.useSystemClipboard": true,
   "vim.visualstar": true,
