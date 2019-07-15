@@ -66,6 +66,14 @@ denite-filter = '''
 '''
 
 [[plugins]]
+repo = 'ponko2/denite-filter-converter-basename-abbr'
+on_source = 'denite.nvim'
+hook_source = '''
+  call denite#custom#source('file/old,file/rec,file/rec/git', 'converters',
+        \ ['converter/basename_abbr'])
+'''
+
+[[plugins]]
 repo = 'raghur/fruzzy'
 on_source = 'denite.nvim'
 hook_post_update = '''
