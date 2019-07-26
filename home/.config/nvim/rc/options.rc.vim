@@ -26,6 +26,10 @@ set wrapscan
 "---------------------------------------------------------------------------
 " Edit:
 
+" ファイルの変更を検知してバッファを再読み込み
+set autoread
+autocmd MyAutoCmd FocusGained * checktime
+
 " タブをスペースにする
 set smarttab
 set expandtab

@@ -42,10 +42,6 @@ call deoplete#custom#source('denite', {
       \   'matchers': ['matcher_full_fuzzy', 'matcher_length']
       \ })
 
-call deoplete#custom#source('look', {
-      \   'filetypes': ['text', 'markdown', 'gitcommit']
-      \ })
-
 call deoplete#custom#filter('attrs_order', {
       \   'javascript': {
       \     'kind': [

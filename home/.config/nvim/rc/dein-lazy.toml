@@ -399,18 +399,6 @@ hook_add = '''
   let g:markdown_fenced_languages = ['java', 'javascript', 'json', 'sh', 'sql', 'diff']
 '''
 
-# [[plugins]]
-# repo = 'Shougo/neoinclude.vim'
-# on_source = 'deoplete.nvim'
-
-# [[plugins]]
-# repo = 'Shougo/neco-syntax'
-# on_source = 'deoplete.nvim'
-
-[[plugins]]
-repo = 'ujihisa/neco-look'
-on_source = 'deoplete.nvim'
-
 [[plugins]]
 repo = 'Shougo/neco-vim'
 on_ft = 'vim'
