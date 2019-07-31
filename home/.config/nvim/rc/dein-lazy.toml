@@ -326,7 +326,7 @@ go = '''
 '''
 
 [[plugins]]
-repo = 'w0rp/ale'
+repo = 'dense-analysis/ale'
 on_event = 'BufRead'
 hook_source = '''
   let g:ale_disable_lsp = 1
