@@ -90,3 +90,6 @@ export PATH=./node_modules/.bin:$PATH
 export GOPATH=$HOME
 export PATH=$GOPATH/bin:$PATH
 export GO111MODULE=on
+
+# Neovim
+export PATH=$HOME/local/nvim/bin:$PATH
