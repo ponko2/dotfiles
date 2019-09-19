@@ -36,6 +36,7 @@
 	sort = -authordate
 [fetch]
 	prune = true
+	pruneTags = true
 [rebase]
 	autosquash = true
 	autostash = true
