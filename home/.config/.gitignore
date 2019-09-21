@@ -1,5 +1,7 @@
 *
 !.gitignore
+!alacritty/
+!alacritty/**
 !git/
 !git/**
 !karabiner/
