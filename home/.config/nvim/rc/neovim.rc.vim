@@ -6,6 +6,8 @@ if !has('nvim') | finish | endif
 " Neovim:
 "
 
+let g:loaded_python_provider = 0
+
 if IsMac()
   let g:python_host_prog = '/usr/local/opt/python@2/bin/python2'
   let g:python3_host_prog = '/usr/local/bin/python3'
