@@ -244,6 +244,10 @@ endif
 set completeopt=menuone
 set completeopt+=noinsert
 set completeopt+=noselect
+if exists('+completepopup')
+  set completeopt+=popup
+  set completepopup=height:10,width:60,highlight:InfoPopup
+endif
 
 " キーワード補完の対象を設定
 set complete=.
