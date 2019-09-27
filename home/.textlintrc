@@ -1,7 +1,9 @@
 {
   "filters": {},
   "rules": {
-    "preset-ja-spacing": true,
+    "preset-ja-spacing": {
+      "ja-space-between-half-and-full-width": false
+    },
     "preset-ja-technical-writing": {
       "no-exclamation-question-mark": false
     },
