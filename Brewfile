@@ -52,7 +52,6 @@ brew 'the_silver_searcher'
 
 ## Python
 brew 'python'
-brew 'python@2'
 
 ## Ruby
 brew 'rbenv'
