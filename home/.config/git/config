@@ -1,5 +1,6 @@
 [user]
 	name = Takahito Nakano
+	email = 901860+ponko2@users.noreply.github.com
 [color]
 	ui = auto
 [core]
@@ -48,9 +49,7 @@
 	clean = git-lfs clean -- %f
 [commit]
 	template = ~/.config/git/commit-template
-[includeIf "gitdir:~/src/ponko2.test/"]
-	path = ~/.config/git/ponko2.inc
-[includeIf "gitdir:~/src/github.com/"]
-	path = ~/.config/git/ponko2.inc
-[includeIf "gitdir:~/src/github.*.co.jp/"]
+[includeIf "gitdir:~/src/github.*/**"]
 	path = ~/.config/git/work.inc
+[includeIf "gitdir:~/src/github.com/ponko2/**"]
+	path = ~/.config/git/ponko2.inc
