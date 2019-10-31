@@ -350,7 +350,15 @@ javascript = '''
   let b:ale_linters = ['eslint']
   let b:ale_fixers = ['eslint']
 '''
+javascriptreact = '''
+  let b:ale_linters = ['eslint']
+  let b:ale_fixers = ['eslint']
+'''
 typescript = '''
+  let b:ale_linters = ['eslint']
+  let b:ale_fixers = ['eslint']
+'''
+typescriptreact = '''
   let b:ale_linters = ['eslint']
   let b:ale_fixers = ['eslint']
 '''

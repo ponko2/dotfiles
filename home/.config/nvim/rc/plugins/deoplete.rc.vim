@@ -8,7 +8,7 @@ call deoplete#custom#option({
       \   'auto_preview': v:true,
       \   'auto_refresh_delay': 10,
       \   'camel_case': v:true,
-      \   'ignore_sources': {'_': ['around', 'buffer', 'LanguageClient']},
+      \   'ignore_sources': {'_': ['buffer', 'LanguageClient']},
       \   'keyword_patterns': { '_': '[a-zA-Z_]\k*\(?' },
       \   'omni_patterns': { 'go': '[^. *\t]\.\w*' },
       \   'prev_completion_mode': 'length',
@@ -33,6 +33,9 @@ call deoplete#custom#source('tabnine', {
       \     'converter_remove_overlap',
       \     'converter_truncate_info',
       \   ],
+      \   'line_limit': 300,
+      \   'markers': ['.git/'],
+      \   'max_num_results': 5,
       \   'min_pattern_length': 2,
       \   'rank': 300,
       \ })
