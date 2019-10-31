@@ -6,6 +6,7 @@
   "editor.renderIndentGuides": true,
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [120],
+  "editor.suggestSelection": "first",
   "eslint.autoFixOnSave": true,
   "eslint.validate": [
     "javascript",
@@ -20,12 +21,16 @@
     }
   ],
   "npm.enableScriptExplorer": true,
+  "plantuml.render": "PlantUMLServer",
+  "plantuml.server": "http://localhost:8008/",
   "terminal.integrated.fontSize": 18,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.leader": "<Space>",
   "vim.overrideCopy": true,
   "vim.useSystemClipboard": true,
   "vim.visualstar": true,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.iconTheme": "vscode-icons",
   "[css]": {
     "editor.formatOnSave": true
   },
