@@ -7,8 +7,21 @@
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [120],
   "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "autoFix": true,
+      "language": "typescript"
+    },
+    {
+      "autoFix": true,
+      "language": "typescriptreact"
+    }
+  ],
   "npm.enableScriptExplorer": true,
   "terminal.integrated.fontSize": 18,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.leader": "<Space>",
   "vim.overrideCopy": true,
   "vim.useSystemClipboard": true,
