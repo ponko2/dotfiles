@@ -17,6 +17,7 @@ call deoplete#custom#option({
 
 call deoplete#custom#source('_', {
       \   'converters': [
+      \     'converter_case',
       \     'converter_remove_overlap',
       \     'converter_truncate_abbr',
       \     'converter_truncate_info',

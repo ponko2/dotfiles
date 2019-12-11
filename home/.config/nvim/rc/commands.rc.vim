@@ -31,12 +31,9 @@ command! -bang -bar -complete=file -nargs=? Utf8
       \ edit<bang> ++enc=utf-8 <args>
 command! -bang -bar -complete=file -nargs=? Cp932
       \ edit<bang> ++enc=cp932 <args>
-command! -bang -bar -complete=file -nargs=? Latin
-      \ edit<bang> ++enc=latin1 <args>
 
 command! WUtf8 setlocal fenc=utf-8
 command! WCp932 setlocal fenc=cp932
-command! WLatin1 setlocal fenc=latin1
 
 command! -bang -complete=file -nargs=? WUnix
       \ write<bang> ++fileformat=unix <args> | edit <args>

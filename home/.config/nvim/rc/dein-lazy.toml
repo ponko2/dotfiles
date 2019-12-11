@@ -376,9 +376,6 @@ scss = '''
 less = '''
   let b:ale_fixers = ['prettier']
 '''
-yaml = '''
-  let b:ale_fixers = ['prettier']
-'''
 html = '''
   let b:ale_linters = []
 '''

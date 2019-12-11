@@ -343,9 +343,6 @@ set helplang& helplang=ja,en
 " Don't calc octal.
 set nrformats& nrformats-=octal
 
-" Default home directory.
-let t:cwd = getcwd()
-
 " Input Japanese
 if has('multi_byte_ime') || has('xim')
   " IME ON時のカーソルの色を設定
