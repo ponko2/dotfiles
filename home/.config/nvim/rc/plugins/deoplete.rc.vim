@@ -8,7 +8,7 @@ call deoplete#custom#option({
       \   'auto_preview': v:true,
       \   'auto_refresh_delay': 10,
       \   'camel_case': v:true,
-      \   'ignore_sources': {'_': ['buffer', 'LanguageClient']},
+      \   'ignore_sources': {'_': ['buffer']},
       \   'keyword_patterns': { '_': '[a-zA-Z_]\k*\(?' },
       \   'omni_patterns': { 'go': '[^. *\t]\.\w*' },
       \   'prev_completion_mode': 'length',

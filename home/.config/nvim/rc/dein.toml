@@ -62,6 +62,31 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'prabirshrestha/async.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+hook_add = '''
+  function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    nmap <buffer> gd <Plug>(lsp-definition)
+    nmap <buffer> <F2> <Plug>(lsp-rename)
+  endfunction
+
+  augroup lsp_install
+    autocmd!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+  augroup END
+
+  let g:lsp_diagnostics_enabled = 1
+  let g:lsp_diagnostics_echo_cursor = 1
+'''
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+
+[[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
   let g:gitgutter_diff_base = 'HEAD'
@@ -74,31 +99,3 @@ if = "!has('nvim')"
 [[plugins]]
 repo = 'roxma/vim-hug-neovim-rpc'
 if = "!has('nvim')"
-
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
-build = 'bash install.sh'
-hook_add = '''
-  let g:LanguageClient_fzfContextMenu = 0
-  let g:LanguageClient_diagnosticsEnable = 0
-  let g:LanguageClient_serverCommands = {
-        \   'javascript': ['typescript-language-server', '--stdio'],
-        \   'css': ['css-languageserver', '--stdio'],
-        \   'scss': ['css-languageserver', '--stdio'],
-        \   'less': ['css-languageserver', '--stdio'],
-        \   'html': ['html-languageserver', '--stdio'],
-        \   'vue': ['vls'],
-        \ }
-
-  function! s:LC_maps()
-    if has_key(g:LanguageClient_serverCommands, &filetype)
-      nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<CR>
-      nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
-      nnoremap <buffer> <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-      nnoremap <buffer> <silent> <F5> :call LanguageClient_contextMenu()<CR>
-    endif
-  endfunction
-
-  autocmd MyAutoCmd FileType * call s:LC_maps()
-'''

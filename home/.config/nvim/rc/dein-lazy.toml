@@ -336,6 +336,10 @@ on_source = 'deoplete.nvim'
 build = './install.sh'
 
 [[plugins]]
+repo = 'lighttiger2505/deoplete-vim-lsp'
+on_source = 'deoplete.nvim'
+
+[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 depends = 'context_filetype.vim'
 on_event = 'InsertEnter'
