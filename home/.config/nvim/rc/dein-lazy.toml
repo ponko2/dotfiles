@@ -240,92 +240,6 @@ hook_source = '''
 '''
 
 [[plugins]]
-repo = 'fatih/vim-go'
-on_ft = 'go'
-hook_source = '''
-  let g:go_def_mode = 'gopls'
-  let g:go_info_mode = 'gopls'
-
-  let g:go_highlight_functions = 1
-  let g:go_highlight_methods = 1
-  let g:go_highlight_fields = 1
-  let g:go_highlight_types = 1
-  let g:go_highlight_build_constraints = 1
-  let g:go_highlight_generate_tags = 1
-
-  let g:go_auto_sameids = 1
-  let g:go_auto_type_info = 0
-
-  let g:go_fmt_command = 'gofmt'
-  let g:go_fmt_fail_silently = 1
-  let g:go_fmt_options = {
-        \   'gofmt': '-s',
-        \   'goimports': '',
-        \ }
-
-  let g:go_snippet_engine = "neosnippet"
-
-  let g:go_gocode_unimported_packages = 1
-
-  let g:go_metalinter_enabled = [
-        \   'deadcode',
-        \   'dupl',
-        \   'errcheck',
-        \   'gas',
-        \   'goconst',
-        \   'gocyclo',
-        \   'golint',
-        \   'gosimple',
-        \   'gotype',
-        \   'gotypex',
-        \   'ineffassign',
-        \   'interfacer',
-        \   'maligned',
-        \   'megacheck',
-        \   'staticcheck',
-        \   'structcheck',
-        \   'unconvert',
-        \   'varcheck',
-        \   'vet',
-        \   'vetshadow',
-        \ ]
-'''
-[plugins.ftplugin]
-go = '''
-  " run :GoBuild or :GoTestCompile based on the go file
-  function! s:build_go_files()
-    let l:file = expand('%')
-    if l:file =~# '^\f\+_test\.go$'
-      call go#test#Test(0, 1)
-    elseif l:file =~# '^\f\+\.go$'
-      call go#cmd#Build(0)
-    endif
-  endfunction
-
-  nmap <buffer> K <Plug>(go-info)
-  nmap <buffer> <F2> <Plug>(go-rename)
-  nmap <buffer> <C-g> :<C-u>Denite decls<CR>
-  imap <buffer> <C-g> <ESC>:<C-u>Denite decls<CR>
-
-  nmap <buffer> <Leader>i <Plug>(go-imports)
-
-  nmap <buffer> <Leader>A <Plug>(go-alternate-edit)
-  nmap <buffer> <Leader>B :<C-u>call <SID>build_go_files()<CR>
-  nmap <buffer> <Leader>C <Plug>(go-coverage-toggle)
-  nmap <buffer> <Leader>I <Plug>(go-install)
-  nmap <buffer> <Leader>L <Plug>(go-metalinter)
-  nmap <buffer> <Leader>R <Plug>(go-run)
-  nmap <buffer> <Leader>S <Plug>(go-def-split)
-  nmap <buffer> <Leader>T <Plug>(go-test)
-  nmap <buffer> <Leader>V <Plug>(go-def-vertical)
-
-  command! -buffer -bang A call go#alternate#Switch(<bang>0, 'edit')
-  command! -buffer -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-  command! -buffer -bang AS call go#alternate#Switch(<bang>0, 'split')
-  command! -buffer -bang AT call go#alternate#Switch(<bang>0, 'tabe')
-'''
-
-[[plugins]]
 repo = 'dense-analysis/ale'
 on_event = 'BufRead'
 hook_source = '''
@@ -403,6 +317,10 @@ hook_add = '''
   let g:gfm_syntax_emoji_conceal = 1
   let g:markdown_fenced_languages = ['java', 'javascript', 'json', 'sh', 'sql', 'diff']
 '''
+
+[[plugins]]
+repo = 'mattn/vim-goimports'
+on_ft = 'go'
 
 [[plugins]]
 repo = 'Shougo/neco-vim'
