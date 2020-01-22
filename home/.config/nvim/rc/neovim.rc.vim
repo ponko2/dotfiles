@@ -7,6 +7,9 @@ if !has('nvim') | finish | endif
 "
 
 let g:loaded_python_provider = 0
+let g:loaded_ruby_provider = 0
+let g:loaded_node_provider = 0
+let g:loaded_perl_provider = 0
 
 if IsMac()
   let g:python3_host_prog = '/usr/local/bin/python3'

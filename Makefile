@@ -36,10 +36,7 @@ clean: ## Remove dotfiles
 	@$(foreach file, $(DOTFILES), $(RM) $(HOME)/$(file);)
 
 neovim:
-	pip2 install neovim
 	pip3 install neovim
-	pip3 install neovim-remote
-	gem install neovim
 	@nvim +CheckHealth
 
 gruvbox:
