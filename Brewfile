@@ -1,25 +1,26 @@
 # Tap
-tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
-tap 'cloudflare/cloudflare'
-tap 'golangci/tap'
 
 # Shell
-brew 'awscli'
-brew 'cloudflared'
+brew 'automake'
+brew 'cmake'
 brew 'curl'
 brew 'dos2unix'
 brew 'exiftool'
 brew 'fzf'
 brew 'fzy'
+brew 'gettext'
 brew 'httpie'
 brew 'hub'
 brew 'imagemagick'
 brew 'iproute2mac'
 brew 'jq'
+brew 'libtool'
 brew 'mysql-client'
+brew 'ninja'
 brew 'nkf'
 brew 'openssh'
+brew 'pkg-config'
 brew 'rsync'
 brew 'shellcheck'
 brew 'shfmt'
@@ -61,15 +62,11 @@ brew 'ruby-build'
 
 ## Golang
 brew 'go'
+tap 'golangci/tap'
 brew 'golangci-lint'
 
 ## Node.js
 brew 'nodebrew'
-
-## Java
-cask 'java8' unless system '/usr/libexec/java_home --failfast'
-brew 'maven'
-brew 'tomcat@8'
 
 ## Vim
 brew 'macvim', args: ['with-override-system-vim', 'with-lua', 'with-luajit']
@@ -81,14 +78,11 @@ cask '1password'
 cask 'appcleaner'
 cask 'docker'
 cask 'finicky'
-cask 'google-japanese-ime'
 cask 'insomnia'
 cask 'iterm2'
 cask 'karabiner-elements'
 cask 'keepingyouawake'
 cask 'mysqlworkbench'
-cask 'skype'
-cask 'sourcetree'
 cask 'the-unarchiver'
 cask 'vlc'
 
@@ -97,20 +91,14 @@ cask 'firefox'
 cask 'google-chrome'
 
 ## Fonts
+tap 'homebrew/cask-fonts'
+cask 'font-hackgen'
 cask 'font-ricty-diminished'
 cask 'font-hackgen'
-
-## VirtualBox
-cask 'virtualbox'
-cask 'virtualbox-extension-pack'
 
 ## Cloud Storage
 cask 'dropbox'
 cask 'google-drive-file-stream'
-
-## Database
-cask 'psequel'
-cask 'sequel-pro'
 
 # App Store
 brew 'mas'
@@ -118,4 +106,3 @@ mas 'Microsoft Remote Desktop', id: 715768417
 mas 'Monosnap', id: 540348655
 mas 'Slack', id: 803453959
 #mas 'ForkLift', id: 412448059
-#mas 'Reeder', id: 880001334
