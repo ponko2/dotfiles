@@ -2,6 +2,7 @@
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'cloudflare/cloudflare'
+tap 'golangci/tap'
 
 # Shell
 brew 'awscli'
@@ -60,7 +61,7 @@ brew 'ruby-build'
 
 ## Golang
 brew 'go'
-brew 'golangci/tap/golangci-lint'
+brew 'golangci-lint'
 
 ## Node.js
 brew 'nodebrew'
@@ -97,6 +98,7 @@ cask 'google-chrome'
 
 ## Fonts
 cask 'font-ricty-diminished'
+cask 'font-hackgen'
 
 ## VirtualBox
 cask 'virtualbox'
