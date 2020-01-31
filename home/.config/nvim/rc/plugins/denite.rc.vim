@@ -25,6 +25,9 @@ call denite#custom#option('default', {
       \   'highlight_filter_background': 'CursorLine',
       \   'source_names': 'short',
       \   'split': 'floating',
+      \   'filter_split_direction': 'floating',
+      \   'floating_preview': v:true,
+      \   'vertical_preview': v:true,
       \ })
 
 if executable('rg')

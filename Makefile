@@ -36,7 +36,7 @@ clean: ## Remove dotfiles
 	@$(foreach file, $(DOTFILES), $(RM) $(HOME)/$(file);)
 
 neovim:
-	pip3 install neovim
+	pip3 install pynvim
 	@nvim +CheckHealth
 
 gruvbox:

@@ -8,10 +8,9 @@ call deoplete#custom#option({
       \   'auto_preview': v:true,
       \   'auto_refresh_delay': 10,
       \   'camel_case': v:true,
-      \   'ignore_sources': {'_': ['buffer']},
+      \   'ignore_sources': {'_': ['buffer', 'denite']},
       \   'keyword_patterns': { '_': '[a-zA-Z_]\k*\(?' },
       \   'omni_patterns': { 'go': '[^. *\t]\.\w*' },
-      \   'prev_completion_mode': 'length',
       \   'skip_multibyte': v:true,
       \ })
 
@@ -39,10 +38,6 @@ call deoplete#custom#source('tabnine', {
       \   'max_num_results': 5,
       \   'min_pattern_length': 2,
       \   'rank': 300,
-      \ })
-
-call deoplete#custom#source('denite', {
-      \   'matchers': ['matcher_full_fuzzy', 'matcher_length']
       \ })
 
 call deoplete#custom#filter('attrs_order', {
