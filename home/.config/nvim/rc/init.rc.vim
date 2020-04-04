@@ -67,6 +67,14 @@ if IsGUI()
   set guioptions=Mc
 endif
 
+let g:no_vimrc_example  = 1
+let g:no_gvimrc_example = 1
+
+let g:did_install_default_menus = 1
+let g:did_install_syntax_menu   = 1
+
+let g:skip_loading_mswin = 1
+
 " Disable default plugins
 let g:loaded_2html_plugin      = 1
 let g:loaded_getscript         = 1
