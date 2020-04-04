@@ -62,11 +62,6 @@ if IsWindows()
   set shellslash
 endif
 
-" Disable menu.vim
-if IsGUI()
-  set guioptions=Mc
-endif
-
 let g:no_vimrc_example  = 1
 let g:no_gvimrc_example = 1
 
