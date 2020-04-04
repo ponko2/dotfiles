@@ -24,7 +24,7 @@ call vimrc#source_rc('init.rc.vim')
 " Dein:
 call vimrc#source_rc('dein.rc.vim')
 
-" Syntax
+" Syntax:
 call vimrc#source_rc('syntax.rc.vim')
 
 " Encoding:
