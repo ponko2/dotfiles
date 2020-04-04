@@ -325,10 +325,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'itchyny/vim-parenmatch'
-on_event = 'VimEnter'
-
-[[plugins]]
 repo = 'mattn/vim-goimports'
 on_ft = 'go'
 

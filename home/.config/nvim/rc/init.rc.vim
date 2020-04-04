@@ -68,7 +68,6 @@ let g:loaded_getscriptPlugin   = 1
 let g:loaded_gzip              = 1
 let g:loaded_logiPat           = 1
 let g:loaded_man               = 1
-let g:loaded_matchparen        = 1
 let g:loaded_netrw             = 1
 let g:loaded_netrwFileHandlers = 1
 let g:loaded_netrwPlugin       = 1
