@@ -23,6 +23,8 @@ function! IsCUI() abort
   return !IsGUI()
 endfunction
 
+set fileformat=unix
+
 " Setting of the encoding to use for a save and reading.
 " Make it normal in UTF-8 in Unix.
 if has('vim_starting') && &encoding !=# 'utf-8'
@@ -44,23 +46,12 @@ let &fileencodings = join([
       \   'cp932'
       \ ], ',')
 
-" Setting of terminal encoding.
-if IsWindows() && IsCUI()
-  " For system.
-  set termencoding=cp932
-endif
-
 " Use English interface.
 language message C
 
 " <Leader>
 let g:mapleader = "\<Space>"
 nnoremap <Space> <Nop>
-
-" Exchange path separator
-if IsWindows()
-  set shellslash
-endif
 
 let g:no_vimrc_example  = 1
 let g:no_gvimrc_example = 1

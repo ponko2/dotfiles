@@ -311,6 +311,10 @@ if !has('nvim')
   set viminfo& viminfo+=n$XDG_DATA_HOME/nvim/viminfo
 endif
 
+if exists('&termguicolors')
+  set termguicolors
+endif
+
 " Enable 256 color terminal.
 set t_Co=256
 
