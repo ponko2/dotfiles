@@ -28,7 +28,10 @@ set wrapscan
 
 " ファイルの変更を検知してバッファを再読み込み
 set autoread
-autocmd MyAutoCmd FocusGained * checktime
+autocmd MyAutoCmd FocusGained,WinEnter,CursorHold,CursorHoldI *
+      \ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
+autocmd MyAutoCmd FileChangedShellPost *
+      \ echohl WarningMsg | echomsg "File changed on disk. Buffer reloaded." | echohl None
 
 " タブをスペースにする
 set smarttab
@@ -93,6 +96,9 @@ elseif executable('ag')
   set grepprg=ag\ --vimgrep\ --smart-case
   set grepformat=%f:%l:%c:%m
 endif
+
+" quickfixウィンドウを自動で開く
+autocmd MyAutoCmd QuickFixCmdPost make,grep,grepadd,vimgrep tab cwindow
 
 " ファイル名やパス名に使われる文字の指定
 set isfname& isfname-==

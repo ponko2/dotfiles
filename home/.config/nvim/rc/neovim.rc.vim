@@ -6,6 +6,8 @@ if !has('nvim') | finish | endif
 " Neovim:
 "
 
+set nocompatible
+
 let g:loaded_python_provider = 0
 let g:loaded_ruby_provider = 0
 let g:loaded_node_provider = 0

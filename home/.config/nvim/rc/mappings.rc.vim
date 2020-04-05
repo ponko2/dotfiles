@@ -86,6 +86,9 @@ nnoremap x "_x
 " Better Y
 nnoremap Y y$
 
+" grep
+nnoremap <Leader>/ :<C-u>Grep<Space>
+
 
 "---------------------------------------------------------------------------
 " Command-line mode keymappings:

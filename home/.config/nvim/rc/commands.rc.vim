@@ -4,6 +4,10 @@ scriptencoding utf-8
 " Commands:
 "
 
+" grep
+command! -nargs=+ Grep execute 'silent grep! <args>' | redraw!
+command! -nargs=+ GrepAdd execute 'silent grepadd! <args>' | redraw!
+
 " Trim trailing whitespace
 command! -range=% TrimTrailingWhitespace
       \ call s:TrimTrailingWhitespace(<line1>, <line2>)

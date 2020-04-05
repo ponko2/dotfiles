@@ -62,6 +62,16 @@ hook_add = '''
 repo = 'prabirshrestha/async.vim'
 
 [[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+hook_add = '''
+  let g:asyncomplete_popup_delay = 200
+  let g:asyncomplete_auto_completeopt = 0
+'''
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+
+[[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
   function! s:on_lsp_buffer_enabled() abort
@@ -69,6 +79,9 @@ hook_add = '''
     setlocal signcolumn=yes
     nmap <buffer> gd <Plug>(lsp-definition)
     nmap <buffer> <F2> <Plug>(lsp-rename)
+    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+    inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
   endfunction
 
   augroup lsp_install
@@ -95,4 +108,53 @@ repo = 'hrsh7th/vim-vsnip-integ'
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
   let g:gitgutter_diff_base = 'HEAD'
+'''
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+if = "has('gui_running')"
+hook_add = '''
+  noremap <silent> <Leader>. :<C-u>CtrlPCurFile<CR>
+  noremap <silent> <Leader><Tab> :<C-u>CtrlPBuffer<CR>
+
+  let g:ctrlp_working_path_mode = 'wa'
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+  let g:ctrlp_prompt_mappings = {
+        \   'PrtSelectMove("j")': ['<C-j>', '<C-n>'],
+        \   'PrtSelectMove("k")': ['<C-k>', '<C-p>'],
+        \   'PrtHistory(-1)':     ['<Down>'],
+        \   'PrtHistory(1)':      ['<Up>'],
+        \ }
+'''
+
+[[plugins]]
+repo = 'mattn/ctrlp-ghq'
+if = "has('gui_running')"
+depends = 'ctrlp.vim'
+hook_add = '''
+  noremap <Leader><C-p> :<C-u>CtrlPGhq<CR>
+'''
+
+[[plugins]]
+repo = 'junegunn/fzf'
+if = "!has('gui_running')"
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+if = "!has('gui_running')"
+depends = 'fzf'
+hook_add = '''
+  noremap <silent> <C-p> :<C-u>execute
+        \ systemlist('git rev-parse --is-inside-work-tree')[0] ==# 'true'
+        \ ? 'GFiles' : 'Files' getcwd()<CR>
+  noremap <silent> <Leader>. :<C-u>execute
+        \ systemlist('git rev-parse --is-inside-work-tree')[0] ==# 'true'
+        \ ? 'GFiles' : 'Files' expand('%:p:h')<CR>
+  noremap <silent> <Leader><C-p> :<C-u>call fzf#run(fzf#wrap({
+        \   'source': 'ghq list --full-path',
+        \   'sink': 'lcd'
+        \ }))<CR>
+  noremap <silent> <Leader><Tab> :<C-u>Buffers<CR>
+
+  let g:fzf_preview_window = ''
 '''
