@@ -26,17 +26,6 @@ if type colordiff &> /dev/null; then
   alias diff='colordiff'
 fi
 
-# vim
-if [[ -v MYVIMRC ]] && type nvr &> /dev/null; then
-  alias vi='nvr --remote-silent'
-  alias vim='nvr --remote-silent'
-elif type nvim &> /dev/null; then
-  alias vi='nvim'
-  alias vim='nvim'
-else
-  alias vi='vim'
-fi
-
 # Git
 alias ga='git add'
 alias gaa='git add --all'

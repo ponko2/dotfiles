@@ -21,11 +21,7 @@ autoload -Uz zcalc
 autoload -Uz zmv
 
 # Editor
-if type nvim &> /dev/null; then
-  export EDITOR='nvim -u NONE -i NONE -N +"syn on" +"set cb+=unnamed"'
-else
-  export EDITOR='vim -u NONE -i NONE -N +"syn on" +"set cb+=unnamed"'
-fi
+export EDITOR='vim -u NONE -i NONE -N +"syn on" +"set cb+=unnamed"'
 export CVSEDITOR="${EDITOR}"
 export SVN_EDITOR="${EDITOR}"
 export GIT_EDITOR="${EDITOR}"
@@ -87,6 +83,3 @@ export PATH=./node_modules/.bin:$PATH
 export GOPATH=$HOME
 export PATH=$GOPATH/bin:$PATH
 export GO111MODULE=on
-
-# Neovim
-export PATH=$HOME/local/nvim/bin:$PATH
