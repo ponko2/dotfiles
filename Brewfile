@@ -69,7 +69,7 @@ brew 'golangci-lint'
 brew 'nodebrew'
 
 ## Vim
-brew 'macvim', args: ['with-override-system-vim', 'with-lua', 'with-luajit']
+brew 'vim', args: ['HEAD']
 brew 'neovim', args: ['HEAD']
 
 # Mac Apps
@@ -83,6 +83,7 @@ cask 'iterm2'
 cask 'karabiner-elements'
 cask 'keepingyouawake'
 cask 'mysqlworkbench'
+cask 'rectangle'
 cask 'the-unarchiver'
 cask 'vlc'
 
