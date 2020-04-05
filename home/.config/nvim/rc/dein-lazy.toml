@@ -6,9 +6,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'Shougo/context_filetype.vim'
-
-[[plugins]]
 repo = 'Shougo/deol.nvim'
 on_cmd = 'Deol'
 hook_add = '''
