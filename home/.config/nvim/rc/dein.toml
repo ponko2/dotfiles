@@ -89,6 +89,9 @@ repo = 'mattn/vim-lsp-settings'
 repo = 'hrsh7th/vim-vsnip'
 
 [[plugins]]
+repo = 'hrsh7th/vim-vsnip-integ'
+
+[[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
   let g:gitgutter_diff_base = 'HEAD'
