@@ -66,7 +66,11 @@ if !has('nvim')
 endif
 
 " BackSpaceの挙動を設定
-set backspace=indent,eol,start
+if has('patch-8.2.0590')
+  set backspace=indent,eol,nostop
+else
+  set backspace=indent,eol,start
+endif
 
 " 対応する括弧の表示
 set showmatch
