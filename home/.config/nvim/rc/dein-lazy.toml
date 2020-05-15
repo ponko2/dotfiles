@@ -146,18 +146,15 @@ html = '''
 '''
 text = '''
   let b:ale_linters = ['textlint']
-  let b:ale_fixers = ['textlint']
 '''
 markdown = '''
   let b:ale_linters = ['textlint']
-  let b:ale_fixers = ['textlint']
 '''
 
 [[plugins]]
 repo = 'rhysd/vim-gfm-syntax'
 on_ft = 'markdown'
 hook_add = '''
-  let g:gfm_syntax_emoji_conceal = 1
   let g:markdown_fenced_languages = ['java', 'javascript', 'json', 'sh', 'sql', 'diff']
 '''
 
