@@ -36,8 +36,3 @@ set wildoptions=tagfile,pum
 
 " Enable true color
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
-
-" Terminal setting.
-command! -bang Terminal terminal<bang> zsh
-autocmd MyAutoCmd TermOpen * setlocal modifiable
-autocmd MyAutoCmd TermClose * buffer #
