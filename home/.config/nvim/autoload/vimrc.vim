@@ -27,10 +27,3 @@ function! vimrc#source_rc(path, ...) abort
     endif
   endtry
 endfunction
-
-function! vimrc#on_filetype() abort
-  if execute('filetype') =~# 'OFF'
-    silent! filetype plugin indent on
-    filetype detect
-  endif
-endfunction
