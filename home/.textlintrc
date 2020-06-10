@@ -1,12 +1,7 @@
 {
   "filters": {},
   "rules": {
-    "preset-ja-spacing": {
-      "ja-space-between-half-and-full-width": false
-    },
-    "preset-ja-technical-writing": {
-      "no-exclamation-question-mark": false
-    },
+    "preset-japanese": true,
     "spellcheck-tech-word": true
   }
 }
