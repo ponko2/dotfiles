@@ -96,9 +96,6 @@ set commentstring=%s
 if executable('rg')
   set grepprg=rg\ --vimgrep\ --no-heading\ --with-filename\ --smart-case
   set grepformat=%f:%l:%c:%m
-elseif executable('ag')
-  set grepprg=ag\ --vimgrep\ --smart-case
-  set grepformat=%f:%l:%c:%m
 endif
 
 " quickfixウィンドウを自動で開く
