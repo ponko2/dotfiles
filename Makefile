@@ -27,7 +27,6 @@ init: | $(HOMEBREW) ## Setup dotfiles
 
 deploy: ## Create symlink to home directory
 	@$(foreach file, $(DOTFILES), $(LN) $(SRCDIR)/$(file) $(HOME)/$(file);)
-	@$(LN) $(SRCDIR)/Library/Preferences/TabNine $(HOME)/Library/Preferences/TabNine
 	@$(LN) $(SRCDIR)/Library/Application\ Support/Code $(HOME)/Library/Application\ Support/Code
 
 update: ## Fetch changes for this repo
