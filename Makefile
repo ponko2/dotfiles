@@ -19,8 +19,8 @@ help:
 		| sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 $(HOMEBREW):
-	/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	brew tap Homebrew/bundle
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	brew tap homebrew/bundle
 	brew bundle
 
 init: | $(HOMEBREW) ## Setup dotfiles

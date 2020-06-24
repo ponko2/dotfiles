@@ -49,16 +49,6 @@ brew 'terminal-notifier'
 
 ## Grep
 brew 'ripgrep'
-brew 'the_platinum_searcher'
-brew 'the_silver_searcher'
-
-## Python
-brew 'python'
-
-## Ruby
-brew 'rbenv'
-brew 'rbenv-default-gems'
-brew 'ruby-build'
 
 ## Golang
 brew 'go'
@@ -70,7 +60,7 @@ brew 'nodebrew'
 
 ## Vim
 brew 'vim', args: ['HEAD']
-brew 'neovim', args: ['HEAD']
+#brew 'neovim', args: ['HEAD']
 
 # Mac Apps
 cask 'xquartz'
@@ -78,32 +68,23 @@ cask '1password'
 cask 'appcleaner'
 cask 'docker'
 cask 'finicky'
-cask 'insomnia'
 cask 'iterm2'
 cask 'karabiner-elements'
 cask 'keepingyouawake'
 cask 'mysqlworkbench'
 cask 'rectangle'
 cask 'the-unarchiver'
-cask 'vlc'
-
-## Browser
-cask 'firefox'
-cask 'google-chrome'
 
 ## Fonts
 tap 'homebrew/cask-fonts'
 cask 'font-hackgen'
 cask 'font-ricty-diminished'
-cask 'font-hackgen'
 
 ## Cloud Storage
 cask 'dropbox'
 cask 'google-drive-file-stream'
 
 # App Store
-brew 'mas'
-mas 'Microsoft Remote Desktop', id: 715768417
-mas 'Monosnap', id: 540348655
-mas 'Slack', id: 803453959
+#brew 'mas'
+#mas 'Monosnap', id: 540348655
 #mas 'ForkLift', id: 412448059
