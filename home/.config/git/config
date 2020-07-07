@@ -4,7 +4,7 @@
 [color]
 	ui = auto
 [core]
-	pager = less
+	pager = delta --line-numbers --keep-plus-minus-markers
 	quotepath = false
 	precomposeunicode = true
 [push]
@@ -21,11 +21,8 @@
 [status]
 	showUntrackedFiles = all
 [interactive]
-	diffFilter = diff-highlight
+	diffFilter = delta --color-only
 [pager]
-	log = diff-highlight | LESS=-R less
-	show = diff-highlight | LESS=-R less
-	diff = diff-highlight | LESS=-R less
 	branch = false
 [ghq]
 	root = ~/src
