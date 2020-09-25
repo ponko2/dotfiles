@@ -13,6 +13,10 @@ if empty($XDG_DATA_HOME)
   let $XDG_DATA_HOME = expand('$HOME/.local/share')
 endif
 
+if filereadable(expand('~/.vimrc_secret'))
+  execute 'source' expand('~/.vimrc_secret')
+endif
+
 " Set augroup
 augroup MyAutoCmd
   autocmd!
