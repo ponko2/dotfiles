@@ -20,6 +20,3 @@ if exists('+macmeta')
   " MacVimでMETAキーを使えるようにする
   set macmeta
 endif
-
-set runtimepath+=/usr/local/opt/fzf
-set runtimepath+=~/.fzf

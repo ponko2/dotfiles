@@ -111,8 +111,13 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'mattn/ctrlp-matchfuzzy'
+hook_add = '''
+  let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+'''
+
+[[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
-if = "has('gui_running')"
 hook_add = '''
   noremap <silent> <Leader>. :<C-u>CtrlPCurFile<CR>
   noremap <silent> <Leader><Tab> :<C-u>CtrlPBuffer<CR>
@@ -129,32 +134,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'mattn/ctrlp-ghq'
-if = "has('gui_running')"
 depends = 'ctrlp.vim'
 hook_add = '''
   noremap <Leader><C-p> :<C-u>CtrlPGhq<CR>
-'''
-
-[[plugins]]
-repo = 'junegunn/fzf'
-if = "!has('gui_running')"
-
-[[plugins]]
-repo = 'junegunn/fzf.vim'
-if = "!has('gui_running')"
-depends = 'fzf'
-hook_add = '''
-  noremap <silent> <C-p> :<C-u>execute
-        \ systemlist('git rev-parse --is-inside-work-tree')[0] ==# 'true'
-        \ ? 'GFiles' : 'Files' getcwd()<CR>
-  noremap <silent> <Leader>. :<C-u>execute
-        \ systemlist('git rev-parse --is-inside-work-tree')[0] ==# 'true'
-        \ ? 'GFiles' : 'Files' expand('%:p:h')<CR>
-  noremap <silent> <Leader><C-p> :<C-u>call fzf#run(fzf#wrap({
-        \   'source': 'ghq list --full-path',
-        \   'sink': 'lcd'
-        \ }))<CR>
-  noremap <silent> <Leader><Tab> :<C-u>Buffers<CR>
-
-  let g:fzf_preview_window = ''
 '''
