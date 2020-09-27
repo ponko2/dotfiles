@@ -37,6 +37,8 @@ module.exports = {
           "com.microsoft.Word",
           // PowerPoint
           "com.microsoft.Powerpoint",
+          // Visual Studio Code
+          "com.microsoft.VSCode",
           // iTerm2
           "com.googlecode.iterm2",
           // Command Line Tools
