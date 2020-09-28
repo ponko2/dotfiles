@@ -111,6 +111,16 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'mattn/vim-molder'
+hook_add = '''
+  let g:molder_show_hidden = 1
+'''
+
+[[plugins]]
+repo = 'mattn/vim-molder-operations'
+depends = 'vim-molder'
+
+[[plugins]]
 repo = 'mattn/ctrlp-matchfuzzy'
 hook_add = '''
   let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
