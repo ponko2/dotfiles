@@ -215,12 +215,17 @@ set breakat=\ \	;:,!?
 " 折り返し設定
 set whichwrap& whichwrap+=h,l,<,>,[,],b,s,~
 set nowrap
-if exists('+breakindent')
-  set breakindent
-endif
+set breakindent
 
 " Do not display greetings message at the time of Vim start.
 set shortmess=aTI
+
+" Do not display the completion messages
+set noshowmode
+set shortmess+=c
+
+" Do not display the edit messages
+set shortmess+=F
 
 " ベルを無効にする
 set belloff=all
@@ -371,6 +376,12 @@ endif
 
 " 日本語ヘルプを優先
 set helplang& helplang=ja,en
+
+" Default fileformat.
+set fileformat=unix
+
+" Automatic recognition of a new line cord.
+set fileformats=unix,dos,mac
 
 " Don't calc octal.
 set nrformats& nrformats-=octal

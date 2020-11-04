@@ -80,6 +80,9 @@ if has('patch-8.0.1609')
   set guioptions+=!
 endif
 
+" Use dark mode.
+set guioptions+=d
+
 
 "---------------------------------------------------------------------------
 " View:

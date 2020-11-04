@@ -59,6 +59,9 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'vim-jp/syntax-vim-ex'
+
+[[plugins]]
 repo = 'prabirshrestha/async.vim'
 
 [[plugins]]

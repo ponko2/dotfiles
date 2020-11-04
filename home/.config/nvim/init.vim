@@ -31,9 +31,6 @@ call vimrc#source_rc('dein.rc.vim')
 " Syntax:
 call vimrc#source_rc('syntax.rc.vim')
 
-" Encoding:
-call vimrc#source_rc('encoding.rc.vim')
-
 " Options:
 call vimrc#source_rc('options.rc.vim')
 

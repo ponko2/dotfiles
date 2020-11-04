@@ -159,6 +159,10 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'mattn/vim-maketable'
+on_ft = 'markdown'
+
+[[plugins]]
 repo = 'mattn/vim-goaddtags'
 on_ft = 'go'
 
