@@ -32,7 +32,6 @@ brew 'wget'
 
 ## Git
 brew 'git'
-brew 'git-delta'
 brew 'git-flow-avh'
 brew 'git-lfs'
 brew 'source-highlight'
