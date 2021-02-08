@@ -177,11 +177,6 @@ setopt share_history
 # for, repeat, select, if, function support
 #setopt short_loops
 
-zshaddhistory() {
-  emulate -L zsh
-  whence ${${(z)1}[1]} >| /dev/null && [[ $1 != ${~HISTORY_IGNORE} ]] || return 1
-}
-
 # URL文字列を自動エスケープ
 zle -N self-insert url-quote-magic
 
