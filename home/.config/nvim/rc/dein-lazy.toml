@@ -167,6 +167,10 @@ repo = 'mattn/vim-goaddtags'
 on_ft = 'go'
 
 [[plugins]]
+repo = 'mattn/vim-godoc'
+on_ft = 'go'
+
+[[plugins]]
 repo = 'mattn/vim-goimpl'
 on_ft = 'go'
 

@@ -51,12 +51,16 @@ repo = 'sheerun/vim-polyglot'
 hook_add = '''
   let g:polyglot_disabled = [
         \   'csv',
+        \   'ftdetect',
         \   'go',
         \   'jsx',
         \   'markdown',
         \ ]
   let g:vim_json_syntax_conceal = 0
 '''
+
+[[plugins]]
+repo = 'mattn/vim-gomod'
 
 [[plugins]]
 repo = 'vim-jp/syntax-vim-ex'
