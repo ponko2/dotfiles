@@ -20,6 +20,9 @@ brew 'rsync'
 brew 'unrar'
 brew 'watch'
 
+## cat
+brew 'bat'
+
 ## find
 brew 'fd'
 
@@ -35,6 +38,7 @@ brew 'source-highlight'
 
 ## grep
 brew 'ripgrep'
+brew 'rga'
 
 ## ls
 brew 'exa'
