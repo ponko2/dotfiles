@@ -10,6 +10,3 @@ zplug 'b4b4r07/enhancd', use:init.sh
 zplug 'mollifier/anyframe'
 zplug 'mollifier/cd-gitroot'
 zplug 'zdharma/fast-syntax-highlighting', defer:2
-
-# local plugins
-zplug "$XDG_CONFIG_HOME/zplug/custom", from:local, use:'*.zsh'
