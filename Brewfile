@@ -1,68 +1,83 @@
-# Tap
+## Tap
+tap 'golangci/tap'
+tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 
-# Shell
+## Command
 brew 'automake'
 brew 'cmake'
-brew 'curl'
+brew 'colordiff'
 brew 'dos2unix'
 brew 'exiftool'
-brew 'fzf'
-brew 'fzy'
 brew 'gettext'
-brew 'httpie'
-brew 'hub'
 brew 'imagemagick'
-brew 'iproute2mac'
 brew 'jq'
 brew 'libtool'
-brew 'mysql-client'
 brew 'ninja'
 brew 'nkf'
-brew 'openssh'
 brew 'pkg-config'
 brew 'rsync'
-brew 'shellcheck'
-brew 'shfmt'
-brew 'sqlite'
-brew 'ssh-copy-id'
 brew 'unrar'
 brew 'watch'
-brew 'wget'
 
-## Git
+## git
+brew 'ghq'
 brew 'git'
 brew 'git-flow-avh'
 brew 'git-lfs'
-brew 'source-highlight'
-brew 'ghq'
 brew 'gnupg'
+brew 'hub'
 brew 'pinentry-mac'
+brew 'source-highlight'
 
-## Zsh
-brew 'zsh'
-brew 'zplug'
-brew 'colordiff'
-brew 'exa'
-brew 'peco'
-brew 'terminal-notifier'
-
-## Grep
+## grep
 brew 'ripgrep'
+
+## ls
+brew 'exa'
+
+## ssh
+brew 'openssh'
+brew 'ssh-copy-id'
+
+## vim
+brew 'vim', args: ['HEAD']
+#brew 'neovim', args: ['HEAD']
+
+## zsh
+brew 'terminal-notifier'
+brew 'zplug'
+brew 'zsh'
+
+## Database
+brew 'mysql-client'
+brew 'sqlite'
+
+## Format
+brew 'shfmt'
+
+## Fuzzy finder
+brew 'fzf'
+brew 'fzy'
+brew 'peco'
+
+## Lint
+brew 'shellcheck'
+
+## Network
+brew 'curl'
+brew 'httpie'
+brew 'iproute2mac'
+brew 'wget'
 
 ## Golang
 brew 'go'
-tap 'golangci/tap'
 brew 'golangci-lint'
 
 ## Node.js
 brew 'nodebrew'
 
-## Vim
-brew 'vim', args: ['HEAD']
-#brew 'neovim', args: ['HEAD']
-
-# Mac Apps
+## Mac Apps
 cask 'xquartz'
 cask '1password'
 cask 'appcleaner'
@@ -75,16 +90,15 @@ cask 'mysqlworkbench'
 cask 'rectangle'
 cask 'the-unarchiver'
 
-## Fonts
-tap 'homebrew/cask-fonts'
-cask 'font-hackgen'
-cask 'font-ricty-diminished'
-
 ## Cloud Storage
 cask 'dropbox'
 cask 'google-drive-file-stream'
 
+## Fonts
+cask 'font-hackgen'
+cask 'font-ricty-diminished'
+
 # App Store
 #brew 'mas'
-#mas 'Monosnap', id: 540348655
 #mas 'ForkLift', id: 412448059
+#mas 'Monosnap', id: 540348655
