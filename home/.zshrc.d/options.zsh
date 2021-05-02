@@ -185,9 +185,3 @@ add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':chpwd:*' recent-dirs-max 5000
 zstyle ':chpwd:*' recent-dirs-default yes
 zstyle ':completion:*' recent-dirs-insert both
-
-# anyframe
-if zinit report mollifier/anyframe &> /dev/null; then
-  zstyle ':anyframe:selector:' use peco
-  zstyle ':anyframe:selector:fzf:' command 'fzf --exact --no-sort --cycle --reverse --inline-info --ansi'
-fi
