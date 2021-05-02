@@ -100,6 +100,7 @@ cask 'dropbox'
 cask 'google-drive-file-stream'
 
 ## Fonts
+cask 'font-cica'
 cask 'font-hackgen'
 cask 'font-ricty-diminished'
 
