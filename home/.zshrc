@@ -33,7 +33,6 @@ zinit ice from"gh-r" as"program" atload'eval "$(starship init zsh)"'
 zinit light starship/starship
 
 zinit wait lucid for \
-  b4b4r07/enhancd \
   mollifier/cd-gitroot \
   atload"
     zstyle ':anyframe:selector:' use peco
@@ -42,7 +41,6 @@ zinit wait lucid for \
     bindkey '^s' anyframe-widget-put-history
     bindkey '^xg' anyframe-widget-cd-ghq-repository
     bindkey '^x^g' anyframe-widget-cd-ghq-repository
-    bindkey '^xb' anyframe-widget-cdr
     bindkey '^x^b' anyframe-widget-checkout-git-branch
     bindkey '^xr' anyframe-widget-execute-history
     bindkey '^x^r' anyframe-widget-execute-history
@@ -56,6 +54,10 @@ zinit wait lucid for \
     mollifier/anyframe \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma/fast-syntax-highlighting
+
+zinit wait lucid from"gh-r" as"program" for \
+  mv"zoxide-*/zoxide -> zoxide" atload'eval "$(zoxide init zsh)"' \
+    ajeetdsouza/zoxide
 
 function source_snippets() {
   local snippet

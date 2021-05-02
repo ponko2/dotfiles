@@ -179,9 +179,3 @@ setopt share_history
 
 # URL文字列を自動エスケープ
 zle -N self-insert url-quote-magic
-
-# cdr
-add-zsh-hook chpwd chpwd_recent_dirs
-zstyle ':chpwd:*' recent-dirs-max 5000
-zstyle ':chpwd:*' recent-dirs-default yes
-zstyle ':completion:*' recent-dirs-insert both
