@@ -35,6 +35,7 @@ brew 'ripgrep'
 
 ## ls
 brew 'exa'
+brew 'lsd'
 
 ## ssh
 brew 'openssh'

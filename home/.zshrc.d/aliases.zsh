@@ -17,7 +17,9 @@ alias mv='nocorrect mv'
 alias sudo='nocorrect sudo'
 
 # ls
-if type exa &> /dev/null; then
+if type lsd &> /dev/null; then
+  alias ls='lsd --date="+%Y-%m-%dT%H:%M:%S%z"'
+elif type exa &> /dev/null; then
   alias ls='exa --time-style="long-iso"'
 fi
 
