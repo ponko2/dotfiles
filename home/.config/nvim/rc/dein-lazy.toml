@@ -127,11 +127,6 @@ typescriptreact = '''
   let b:ale_linters = ['eslint']
   let b:ale_fixers = ['eslint']
 '''
-vue = '''
-  let b:ale_linter_aliases = ['javascript', 'vue']
-  let b:ale_linters = ['eslint', 'vls']
-  let b:ale_fixers = ['eslint']
-'''
 css = '''
   let b:ale_fixers = ['prettier']
 '''
