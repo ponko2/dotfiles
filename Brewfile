@@ -70,6 +70,7 @@ brew 'peco'
 
 ## Lint
 brew 'shellcheck'
+brew 'yamllint'
 
 ## Network
 brew 'curl'

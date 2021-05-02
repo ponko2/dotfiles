@@ -1,0 +1,28 @@
+---
+extends: default
+rules:
+  document-start:
+    ignore: |
+      .github/
+      docker-compose.yml
+      docker-compose.*.yml
+  line-length:
+    allow-non-breakable-inline-mappings: true
+  octal-values:
+    forbid-implicit-octal: true
+    forbid-explicit-octal: false
+  quoted-strings:
+    quote-type: double
+    required: only-when-needed
+    extra-required:
+      - ^0[0-9]+$
+    extra-allowed:
+      - ^[0-9]{2}:[0-9]{2}$
+  truthy:
+    allowed-values:
+      - "true"
+      - "false"
+      - "yes"
+      - "no"
+      - "on"
+      - "off"
