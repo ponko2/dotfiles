@@ -113,19 +113,19 @@ java = '''
 '''
 javascript = '''
   let b:ale_linters = ['eslint']
-  let b:ale_fixers = ['eslint']
+  let b:ale_fixers = ['eslint', 'prettier']
 '''
 javascriptreact = '''
   let b:ale_linters = ['eslint']
-  let b:ale_fixers = ['eslint']
+  let b:ale_fixers = ['eslint', 'prettier']
 '''
 typescript = '''
   let b:ale_linters = ['eslint']
-  let b:ale_fixers = ['eslint']
+  let b:ale_fixers = ['eslint', 'prettier']
 '''
 typescriptreact = '''
   let b:ale_linters = ['eslint']
-  let b:ale_fixers = ['eslint']
+  let b:ale_fixers = ['eslint', 'prettier']
 '''
 css = '''
   let b:ale_fixers = ['prettier']
