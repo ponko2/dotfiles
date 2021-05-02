@@ -104,6 +104,19 @@ hook_add = '''
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
+hook_add = '''
+  let g:lsp_settings = {
+        \   'yaml-language-server': {
+        \     'workspace_config': {
+        \       'yaml': {
+        \         'validate': v:false,
+        \         'hover': v:true,
+        \         'completion': v:true,
+        \       },
+        \     },
+        \   },
+        \ }
+'''
 
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip'
