@@ -29,8 +29,8 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
+zinit ice from"gh-r" as"program" atload'eval "$(starship init zsh)"'
+zinit light starship/starship
 
 zinit light-mode for \
   b4b4r07/enhancd \
