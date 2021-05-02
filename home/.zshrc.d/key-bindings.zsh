@@ -32,19 +32,10 @@ if zplug check 'mollifier/anyframe'; then
   bindkey '^r' anyframe-widget-put-history
   bindkey '^s' anyframe-widget-put-history
 
-  if zplug check 'b4b4r07/enhancd'; then
-    # do nothing.
-  elif is-at-least 4.3.11; then
-    add-zsh-hook chpwd chpwd_recent_dirs
-    zstyle ':chpwd:*' recent-dirs-max 5000
-    zstyle ':chpwd:*' recent-dirs-default yes
-    zstyle ':completion:*' recent-dirs-insert both
-    bindkey '^xb' anyframe-widget-cdr
-  fi
-
   bindkey '^xg' anyframe-widget-cd-ghq-repository
   bindkey '^x^g' anyframe-widget-cd-ghq-repository
 
+  bindkey '^xb' anyframe-widget-cdr
   bindkey '^x^b' anyframe-widget-checkout-git-branch
 
   bindkey '^xr' anyframe-widget-execute-history
