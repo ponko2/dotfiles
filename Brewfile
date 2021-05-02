@@ -21,12 +21,12 @@ brew 'unrar'
 brew 'watch'
 
 ## git
+brew 'gh'
 brew 'ghq'
 brew 'git'
 brew 'git-flow-avh'
 brew 'git-lfs'
 brew 'gnupg'
-brew 'hub'
 brew 'pinentry-mac'
 brew 'source-highlight'
 
