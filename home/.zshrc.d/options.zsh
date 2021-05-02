@@ -169,7 +169,7 @@ setopt rc_quotes
 setopt rm_star_wait
 
 # クォートなしの変数展開時に展開された値を空白文字で分割する
-setopt sh_word_split
+#setopt sh_word_split
 
 # 履歴を共有する
 setopt share_history
@@ -187,7 +187,7 @@ zstyle ':chpwd:*' recent-dirs-default yes
 zstyle ':completion:*' recent-dirs-insert both
 
 # anyframe
-if zplug check 'mollifier/anyframe'; then
+if zinit report mollifier/anyframe &> /dev/null; then
   zstyle ':anyframe:selector:' use peco
   zstyle ':anyframe:selector:fzf:' command 'fzf --exact --no-sort --cycle --reverse --inline-info --ansi'
 fi

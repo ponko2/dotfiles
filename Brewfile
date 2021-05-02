@@ -46,7 +46,6 @@ brew 'vim', args: ['HEAD']
 
 ## zsh
 brew 'terminal-notifier'
-brew 'zplug'
 brew 'zsh'
 
 ## Database

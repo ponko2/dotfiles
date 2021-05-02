@@ -46,5 +46,8 @@ textlint:
 	npm install -g textlint-rule-preset-japanese
 	npm install -g textlint-rule-spellcheck-tech-word
 
+zinit:
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+
 .PHONY: install
 install: init deploy ## Run make init, deploy

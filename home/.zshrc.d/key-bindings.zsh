@@ -28,7 +28,7 @@ bindkey '^[u' undo
 bindkey '^[r' redo
 
 # anyframe
-if zplug check 'mollifier/anyframe'; then
+if zinit report mollifier/anyframe &> /dev/null; then
   bindkey '^r' anyframe-widget-put-history
   bindkey '^s' anyframe-widget-put-history
 
