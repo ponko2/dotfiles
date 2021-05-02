@@ -34,7 +34,7 @@ setopt no_hist_beep
 setopt no_list_beep
 
 # {a-c} を a b c に展開する機能を使えるようにする
-setopt brace_ccl
+#setopt brace_ccl
 
 # Ignore case when glob
 setopt no_case_glob
