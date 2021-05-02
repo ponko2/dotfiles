@@ -67,6 +67,10 @@ function source_snippets() {
 source_snippets
 unset -f source_snippets
 
+if [[ -f ~/.fzf.zsh ]]; then
+  zinit snippet ~/.fzf.zsh
+fi
+
 if [[ -f ~/.zshrc.local ]]; then
   zinit snippet ~/.zshrc.local
 fi

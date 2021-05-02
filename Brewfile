@@ -20,6 +20,9 @@ brew 'rsync'
 brew 'unrar'
 brew 'watch'
 
+## find
+brew 'fd'
+
 ## git
 brew 'gh'
 brew 'ghq'
