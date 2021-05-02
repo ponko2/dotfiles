@@ -77,9 +77,6 @@ brew 'wget'
 brew 'go'
 brew 'golangci-lint'
 
-## Node.js
-brew 'nodebrew'
-
 ## Mac Apps
 cask 'xquartz'
 cask '1password'
