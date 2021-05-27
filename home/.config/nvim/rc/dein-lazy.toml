@@ -2,16 +2,16 @@
 repo = 'Shougo/junkfile.vim'
 on_cmd = 'JunkfileOpen'
 hook_add = '''
-  nnoremap <silent> <Leader>j <Cmd>JunkfileOpen<CR>
+  nnoremap <Leader>j <Cmd>JunkfileOpen<CR>
 '''
 
 [[plugins]]
 repo = 'Shougo/deol.nvim'
 on_cmd = 'Deol'
 hook_add = '''
-  nnoremap <silent> <Leader>s <Cmd>Deol zsh -split<CR>
-  nnoremap <silent> <Leader>S <Cmd>Deol zsh<CR>
-  " nnoremap <silent> <Leader>S <Cmd>call deol#new({'command': 'zsh'})<CR>
+  nnoremap <Leader>s <Cmd>Deol zsh -split<CR>
+  nnoremap <Leader>S <Cmd>Deol zsh<CR>
+  " nnoremap <Leader>S <Cmd>call deol#new({'command': 'zsh'})<CR>
 '''
 
 [[plugins]]
