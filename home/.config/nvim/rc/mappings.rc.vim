@@ -8,19 +8,19 @@ scriptencoding utf-8
 " Normal mode keymappings:
 
 " 検索の強調表示を無効化
-nnoremap <silent> <C-l> <Cmd>nohlsearch<CR><C-l>
+nnoremap <C-l> <Cmd>nohlsearch<CR><C-l>
 
 " 引数リスト移動
-nnoremap <silent> [a <Cmd>previous<CR>
-nnoremap <silent> ]a <Cmd>next<CR>
-nnoremap <silent> [A <Cmd>first<CR>
-nnoremap <silent> ]A <Cmd>last<CR>
+nnoremap [a <Cmd>previous<CR>
+nnoremap ]a <Cmd>next<CR>
+nnoremap [A <Cmd>first<CR>
+nnoremap ]A <Cmd>last<CR>
 
 " バッファリスト移動
-nnoremap <silent> [b <Cmd>bprevious<CR>
-nnoremap <silent> ]b <Cmd>bnext<CR>
-nnoremap <silent> [B <Cmd>bfirst<CR>
-nnoremap <silent> ]B <Cmd>blast<CR>
+nnoremap [b <Cmd>bprevious<CR>
+nnoremap ]b <Cmd>bnext<CR>
+nnoremap [B <Cmd>bfirst<CR>
+nnoremap ]B <Cmd>blast<CR>
 
 " ロケーションリスト移動
 function! s:Lprevious() abort
@@ -41,10 +41,10 @@ function! s:Lnext() abort
     echo v:exception
   endtry
 endfunction
-nnoremap <silent> [l <Cmd>call <SID>Lprevious()<CR>
-nnoremap <silent> ]l <Cmd>call <SID>Lnext()<CR>
-nnoremap <silent> [L <Cmd>lfirst<CR>
-nnoremap <silent> ]L <Cmd>llast<CR>
+nnoremap [l <Cmd>call <SID>Lprevious()<CR>
+nnoremap ]l <Cmd>call <SID>Lnext()<CR>
+nnoremap [L <Cmd>lfirst<CR>
+nnoremap ]L <Cmd>llast<CR>
 
 " エラーリスト移動
 function! s:Cprevious() abort
@@ -65,20 +65,20 @@ function! s:Cnext() abort
     echo v:exception
   endtry
 endfunction
-nnoremap <silent> [q <Cmd>call <SID>Cprevious()<CR>
-nnoremap <silent> ]q <Cmd>call <SID>Cnext()<CR>
-nnoremap <silent> [Q <Cmd>cfirst<CR>
-nnoremap <silent> ]Q <Cmd>clast<CR>
+nnoremap [q <Cmd>call <SID>Cprevious()<CR>
+nnoremap ]q <Cmd>call <SID>Cnext()<CR>
+nnoremap [Q <Cmd>cfirst<CR>
+nnoremap ]Q <Cmd>clast<CR>
 
 " タグリスト移動
-nnoremap <silent> [t <Cmd>tprevious<CR>
-nnoremap <silent> ]t <Cmd>tnext<CR>
-nnoremap <silent> [T <Cmd>tfirst<CR>
-nnoremap <silent> ]T <Cmd>tlast<CR>
+nnoremap [t <Cmd>tprevious<CR>
+nnoremap ]t <Cmd>tnext<CR>
+nnoremap [T <Cmd>tfirst<CR>
+nnoremap ]T <Cmd>tlast<CR>
 
 " Better n
-nnoremap <silent> n <Cmd>execute 'normal!' v:count1 . 'nzvzz'<CR>
-nnoremap <silent> N <Cmd>execute 'normal!' v:count1 . 'Nzvzz'<CR>
+nnoremap n <Cmd>execute 'normal!' v:count1 . 'nzvzz'<CR>
+nnoremap N <Cmd>execute 'normal!' v:count1 . 'Nzvzz'<CR>
 
 " Better x
 nnoremap x "_x

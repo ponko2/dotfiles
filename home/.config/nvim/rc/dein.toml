@@ -149,8 +149,8 @@ hook_add = '''
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
 hook_add = '''
-  noremap <silent> <Leader>. <Cmd>CtrlPCurFile<CR>
-  noremap <silent> <Leader><Tab> <Cmd>CtrlPBuffer<CR>
+  noremap <Leader>. <Cmd>CtrlPCurFile<CR>
+  noremap <Leader><Tab> <Cmd>CtrlPBuffer<CR>
 
   let g:ctrlp_working_path_mode = 'wa'
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
