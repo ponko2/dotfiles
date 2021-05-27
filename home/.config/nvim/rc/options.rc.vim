@@ -398,7 +398,7 @@ if has('multi_byte_ime') || has('xim')
   set imsearch=0
 
   " 挿入モードでのIME状態を記憶させない
-  inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+  inoremap <silent> <ESC> <ESC><Cmd>set iminsert=0<CR>
 endif
 if has('gui_macvim') && has('kaoriya')
   set noimdisable

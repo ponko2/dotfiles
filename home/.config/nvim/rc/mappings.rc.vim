@@ -8,19 +8,19 @@ scriptencoding utf-8
 " Normal mode keymappings:
 
 " 検索の強調表示を無効化
-nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+nnoremap <silent> <C-l> <Cmd>nohlsearch<CR><C-l>
 
 " 引数リスト移動
-nnoremap <silent> [a :<C-u>previous<CR>
-nnoremap <silent> ]a :<C-u>next<CR>
-nnoremap <silent> [A :<C-u>first<CR>
-nnoremap <silent> ]A :<C-u>last<CR>
+nnoremap <silent> [a <Cmd>previous<CR>
+nnoremap <silent> ]a <Cmd>next<CR>
+nnoremap <silent> [A <Cmd>first<CR>
+nnoremap <silent> ]A <Cmd>last<CR>
 
 " バッファリスト移動
-nnoremap <silent> [b :<C-u>bprevious<CR>
-nnoremap <silent> ]b :<C-u>bnext<CR>
-nnoremap <silent> [B :<C-u>bfirst<CR>
-nnoremap <silent> ]B :<C-u>blast<CR>
+nnoremap <silent> [b <Cmd>bprevious<CR>
+nnoremap <silent> ]b <Cmd>bnext<CR>
+nnoremap <silent> [B <Cmd>bfirst<CR>
+nnoremap <silent> ]B <Cmd>blast<CR>
 
 " ロケーションリスト移動
 function! s:Lprevious() abort
@@ -41,10 +41,10 @@ function! s:Lnext() abort
     echo v:exception
   endtry
 endfunction
-nnoremap <silent> [l :<C-u>call <SID>Lprevious()<CR>
-nnoremap <silent> ]l :<C-u>call <SID>Lnext()<CR>
-nnoremap <silent> [L :<C-u>lfirst<CR>
-nnoremap <silent> ]L :<C-u>llast<CR>
+nnoremap <silent> [l <Cmd>call <SID>Lprevious()<CR>
+nnoremap <silent> ]l <Cmd>call <SID>Lnext()<CR>
+nnoremap <silent> [L <Cmd>lfirst<CR>
+nnoremap <silent> ]L <Cmd>llast<CR>
 
 " エラーリスト移動
 function! s:Cprevious() abort
@@ -65,20 +65,20 @@ function! s:Cnext() abort
     echo v:exception
   endtry
 endfunction
-nnoremap <silent> [q :<C-u>call <SID>Cprevious()<CR>
-nnoremap <silent> ]q :<C-u>call <SID>Cnext()<CR>
-nnoremap <silent> [Q :<C-u>cfirst<CR>
-nnoremap <silent> ]Q :<C-u>clast<CR>
+nnoremap <silent> [q <Cmd>call <SID>Cprevious()<CR>
+nnoremap <silent> ]q <Cmd>call <SID>Cnext()<CR>
+nnoremap <silent> [Q <Cmd>cfirst<CR>
+nnoremap <silent> ]Q <Cmd>clast<CR>
 
 " タグリスト移動
-nnoremap <silent> [t :<C-u>tprevious<CR>
-nnoremap <silent> ]t :<C-u>tnext<CR>
-nnoremap <silent> [T :<C-u>tfirst<CR>
-nnoremap <silent> ]T :<C-u>tlast<CR>
+nnoremap <silent> [t <Cmd>tprevious<CR>
+nnoremap <silent> ]t <Cmd>tnext<CR>
+nnoremap <silent> [T <Cmd>tfirst<CR>
+nnoremap <silent> ]T <Cmd>tlast<CR>
 
 " Better n
-nnoremap <silent> n :<C-u>execute 'normal!' v:count1 . 'nzvzz'<CR>
-nnoremap <silent> N :<C-u>execute 'normal!' v:count1 . 'Nzvzz'<CR>
+nnoremap <silent> n <Cmd>execute 'normal!' v:count1 . 'nzvzz'<CR>
+nnoremap <silent> N <Cmd>execute 'normal!' v:count1 . 'Nzvzz'<CR>
 
 " Better x
 nnoremap x "_x
