@@ -149,8 +149,8 @@ hook_add = '''
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
 hook_add = '''
-  noremap <silent> <Leader>. :<C-u>CtrlPCurFile<CR>
-  noremap <silent> <Leader><Tab> :<C-u>CtrlPBuffer<CR>
+  noremap <silent> <Leader>. <Cmd>CtrlPCurFile<CR>
+  noremap <silent> <Leader><Tab> <Cmd>CtrlPBuffer<CR>
 
   let g:ctrlp_working_path_mode = 'wa'
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
@@ -166,5 +166,5 @@ hook_add = '''
 repo = 'mattn/ctrlp-ghq'
 depends = 'ctrlp.vim'
 hook_add = '''
-  noremap <Leader><C-p> :<C-u>CtrlPGhq<CR>
+  noremap <Leader><C-p> <Cmd>CtrlPGhq<CR>
 '''
