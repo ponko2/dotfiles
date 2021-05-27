@@ -75,6 +75,12 @@ if [[ -f ~/.fzf.zsh ]]; then
   zinit snippet ~/.fzf.zsh
 fi
 
+function awsp() {
+  local profile
+  profile=$(aws configure list-profiles | fzf -q "$1")
+  [ -n "$profile" ] && export AWS_PROFILE="$profile"
+}
+
 if [[ -f ~/.zshrc.local ]]; then
   zinit snippet ~/.zshrc.local
 fi
