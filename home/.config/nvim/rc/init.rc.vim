@@ -38,13 +38,7 @@ endif
 scriptencoding utf-8
 
 " Build encodings.
-let &fileencodings = join([
-      \   'ucs-bom',
-      \   'iso-2022-jp-3',
-      \   'utf-8',
-      \   'euc-jp',
-      \   'cp932'
-      \ ], ',')
+let &fileencodings = 'ucs-bom,utf-8,cp932'
 
 " Use English interface.
 language message C
