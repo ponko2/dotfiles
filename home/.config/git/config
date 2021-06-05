@@ -1,12 +1,11 @@
 [user]
 	name = Takahito Nakano
 	email = 901860+ponko2@users.noreply.github.com
-[color]
-	ui = auto
 [core]
+	editor = vim --clean -c \"set cb+=unnamed\"
 	pager = less
-	quotepath = false
-	precomposeunicode = true
+	quotePath = false
+	precomposeUnicode = true
 [push]
 	default = current
 	followTags = true
@@ -30,7 +29,7 @@
 [ghq]
 	root = ~/src
 [grep]
-	fullname = true
+	fullName = true
 [tag]
 	sort = version:refname
 [branch]
@@ -38,8 +37,9 @@
 [fetch]
 	prune = true
 [rebase]
-	autosquash = true
-	autostash = true
+	autoSquash = true
+	autoStash = true
+	abbreviateCommands = true
 [stash]
 	showPatch = true
 [init]
@@ -49,8 +49,6 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-[commit]
-	template = ~/.config/git/commit-template
 [includeIf "gitdir:~/src/github.*/**"]
 	path = ~/.config/git/work.inc
 [includeIf "gitdir:~/src/github.com/ponko2/**"]

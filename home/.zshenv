@@ -24,7 +24,6 @@ autoload -Uz zmv
 export EDITOR="vim --clean -c \"set cb+=unnamed\""
 export CVSEDITOR="${EDITOR}"
 export SVN_EDITOR="${EDITOR}"
-export GIT_EDITOR="${EDITOR}"
 
 # History
 if [ -d $HOME/Dropbox/History ]; then
