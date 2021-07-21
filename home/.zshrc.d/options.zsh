@@ -51,11 +51,11 @@ setopt no_complete_aliases
 # 語の途中でもカーソル位置で補完
 setopt complete_in_word
 
-# コマンドのスペル訂正を使用する
-setopt correct
+# コマンドのスペル訂正を使用しない
+setopt no_correct
 
-# コマンドの引数訂正を使用する
-setopt correct_all
+# コマンドの引数訂正を使用しない
+setopt no_correct_all
 
 # =command を command のパス名に展開する
 setopt equals

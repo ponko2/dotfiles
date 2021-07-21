@@ -9,13 +9,6 @@ case "${OSTYPE}" in
     ;;
 esac
 
-# Disable correction.
-alias cp='nocorrect cp'
-alias ln='nocorrect ln'
-alias mkdir='nocorrect mkdir'
-alias mv='nocorrect mv'
-alias sudo='nocorrect sudo'
-
 # ls
 if type lsd &> /dev/null; then
   alias ls='lsd --date="+%Y-%m-%dT%H:%M:%S%z"'
