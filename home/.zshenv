@@ -82,10 +82,6 @@ case ${OSTYPE} in
     ;;
 esac
 
-# Ruby
-export RBENV_ROOT=/usr/local/var/rbenv
-export PATH=$RBENV_ROOT/shims:$PATH
-
 # Node.js
 export PATH=./node_modules/.bin:$PATH
 
