@@ -11,9 +11,6 @@ repo = 'editorconfig/editorconfig-vim'
 repo = 'kana/vim-operator-user'
 
 [[plugins]]
-repo = 'kana/vim-tabpagecd'
-
-[[plugins]]
 repo = 'kana/vim-textobj-user'
 
 [[plugins]]
