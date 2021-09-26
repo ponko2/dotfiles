@@ -1,7 +1,6 @@
 {
   "filters": {},
   "rules": {
-    "preset-japanese": true,
-    "spellcheck-tech-word": true
+    "preset-japanese": true
   }
 }
