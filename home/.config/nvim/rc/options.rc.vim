@@ -232,6 +232,7 @@ set belloff=all
 
 " コマンドライン補完
 set nowildmenu
+set wildignorecase
 set wildmode=list:longest,full
 set wildoptions=tagfile
 
