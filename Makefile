@@ -46,7 +46,7 @@ textlint:
 	npm install -g textlint-rule-preset-japanese
 
 zinit:
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+	sh -c "$(curl -fsSL https://git.io/zinit-install)"
 
 .PHONY: install
 install: init deploy ## Run make init, deploy
