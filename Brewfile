@@ -15,9 +15,9 @@ brew 'jq'
 brew 'libtool'
 brew 'ninja'
 brew 'nkf'
+brew 'p7zip'
 brew 'pkg-config'
 brew 'rsync'
-brew 'unrar'
 brew 'watch'
 
 ## cat
