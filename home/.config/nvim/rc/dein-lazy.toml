@@ -128,6 +128,11 @@ markdown = '''
 '''
 
 [[plugins]]
+repo = 'rhysd/vim-lsp-ale'
+depends = 'vim-lsp'
+on_source = 'ale'
+
+[[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
 on_event = 'InsertEnter'
 hook_add = '''
