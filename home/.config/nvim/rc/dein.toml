@@ -8,9 +8,6 @@ repo = 'ciaranm/securemodelines'
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
-repo = 'kana/vim-operator-user'
-
-[[plugins]]
 repo = 'vim-jp/autofmt'
 
 [[plugins]]
@@ -48,62 +45,6 @@ repo = 'mattn/vim-gomod'
 repo = 'vim-jp/syntax-vim-ex'
 
 [[plugins]]
-repo = 'prabirshrestha/asyncomplete.vim'
-hook_add = '''
-  let g:asyncomplete_popup_delay = 200
-  let g:asyncomplete_auto_completeopt = 0
-'''
-
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete-lsp.vim'
-
-[[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-hook_add = '''
-  function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
-    nmap <buffer> gd <Plug>(lsp-definition)
-    nmap <buffer> <F2> <Plug>(lsp-rename)
-    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-    inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
-  endfunction
-
-  augroup lsp_install
-    autocmd!
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-  augroup END
-
-  let g:lsp_diagnostics_enabled = 1
-  let g:lsp_diagnostics_echo_cursor = 1
-  let g:lsp_text_edit_enabled = 1
-  let g:lsp_virtual_text_enabled = 0
-'''
-
-[[plugins]]
-repo = 'mattn/vim-lsp-settings'
-hook_add = '''
-  let g:lsp_settings = {
-        \   'yaml-language-server': {
-        \     'workspace_config': {
-        \       'yaml': {
-        \         'validate': v:false,
-        \         'hover': v:true,
-        \         'completion': v:true,
-        \       },
-        \     },
-        \   },
-        \ }
-'''
-
-[[plugins]]
-repo = 'hrsh7th/vim-vsnip'
-
-[[plugins]]
-repo = 'hrsh7th/vim-vsnip-integ'
-
-[[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
   let g:gitgutter_diff_base = 'HEAD'
@@ -117,32 +58,3 @@ hook_add = '''
 
 [[plugins]]
 repo = 'mattn/vim-molder-operations'
-
-[[plugins]]
-repo = 'mattn/ctrlp-matchfuzzy'
-hook_add = '''
-  let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
-'''
-
-[[plugins]]
-repo = 'ctrlpvim/ctrlp.vim'
-hook_add = '''
-  noremap <Leader>. <Cmd>CtrlPCurFile<CR>
-  noremap <Leader><Tab> <Cmd>CtrlPBuffer<CR>
-
-  let g:ctrlp_working_path_mode = 'wa'
-  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-  let g:ctrlp_lazy_update = 1
-  let g:ctrlp_prompt_mappings = {
-        \   'PrtSelectMove("j")': ['<C-j>', '<C-n>'],
-        \   'PrtSelectMove("k")': ['<C-k>', '<C-p>'],
-        \   'PrtHistory(-1)':     ['<Down>'],
-        \   'PrtHistory(1)':      ['<Up>'],
-        \ }
-'''
-
-[[plugins]]
-repo = 'mattn/ctrlp-ghq'
-hook_add = '''
-  noremap <Leader><C-p> <Cmd>CtrlPGhq<CR>
-'''

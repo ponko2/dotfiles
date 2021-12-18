@@ -1,4 +1,155 @@
 [[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+hook_add = '''
+  function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    nmap <buffer> gd <Plug>(lsp-definition)
+    nmap <buffer> <F2> <Plug>(lsp-rename)
+    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+    inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+  endfunction
+
+  augroup lsp_install
+    autocmd!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+  augroup END
+
+  let g:lsp_diagnostics_enabled = 1
+  let g:lsp_diagnostics_echo_cursor = 1
+  let g:lsp_text_edit_enabled = 1
+  let g:lsp_virtual_text_enabled = 0
+'''
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+on_source = 'vim-lsp'
+hook_add = '''
+  let g:lsp_settings = {
+        \   'yaml-language-server': {
+        \     'workspace_config': {
+        \       'yaml': {
+        \         'validate': v:false,
+        \         'hover': v:true,
+        \         'completion': v:true,
+        \       },
+        \     },
+        \   },
+        \ }
+'''
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+on_event = 'VimEnter'
+hook_add = '''
+  noremap <Leader>. <Cmd>CtrlPCurFile<CR>
+  noremap <Leader><Tab> <Cmd>CtrlPBuffer<CR>
+
+  let g:ctrlp_working_path_mode = 'wa'
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+  let g:ctrlp_lazy_update = 1
+  let g:ctrlp_prompt_mappings = {
+        \   'PrtSelectMove("j")': ['<C-j>', '<C-n>'],
+        \   'PrtSelectMove("k")': ['<C-k>', '<C-p>'],
+        \   'PrtHistory(-1)':     ['<Down>'],
+        \   'PrtHistory(1)':      ['<Up>'],
+        \ }
+'''
+
+[[plugins]]
+repo = 'mattn/ctrlp-matchfuzzy'
+on_source = 'ctrlp.vim'
+hook_add = '''
+  let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+'''
+
+[[plugins]]
+repo = 'mattn/ctrlp-ghq'
+on_source = 'ctrlp.vim'
+hook_add = '''
+  noremap <Leader><C-p> <Cmd>CtrlPGhq<CR>
+'''
+
+[[plugins]]
+repo = 'dense-analysis/ale'
+on_event = 'VimEnter'
+hook_source = '''
+  let g:ale_disable_lsp = 1
+  let g:ale_sign_column_always = 1
+  let g:ale_sign_error = '✖'
+  let g:ale_sign_warning = '⚠'
+  let g:ale_echo_msg_format = '[%linter%] %code: %%s [%severity%]'
+  let g:ale_virtualtext_cursor = 1
+  let g:ale_fix_on_save = 1
+'''
+[plugins.ftplugin]
+go = '''
+  let b:ale_linters = ['golangci-lint']
+  let b:ale_go_golangci_lint_options = ''
+  let b:ale_go_golangci_lint_package = 1
+'''
+java = '''
+  let b:ale_linters = []
+'''
+javascript = '''
+  let b:ale_linters = ['eslint']
+  let b:ale_fixers = ['eslint', 'prettier']
+'''
+javascriptreact = '''
+  let b:ale_linters = ['eslint']
+  let b:ale_fixers = ['eslint', 'prettier']
+'''
+typescript = '''
+  let b:ale_linters = ['eslint']
+  let b:ale_fixers = ['eslint', 'prettier']
+'''
+typescriptreact = '''
+  let b:ale_linters = ['eslint']
+  let b:ale_fixers = ['eslint', 'prettier']
+'''
+css = '''
+  let b:ale_fixers = ['prettier']
+'''
+scss = '''
+  let b:ale_fixers = ['prettier']
+'''
+less = '''
+  let b:ale_fixers = ['prettier']
+'''
+html = '''
+  let b:ale_linters = []
+'''
+text = '''
+  let b:ale_linters = ['textlint']
+'''
+markdown = '''
+  let b:ale_linters = ['textlint']
+'''
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+on_event = 'InsertEnter'
+hook_add = '''
+  let g:asyncomplete_popup_delay = 200
+  let g:asyncomplete_auto_completeopt = 0
+'''
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+depends = 'vim-lsp'
+on_source = 'asyncomplete.vim'
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip-integ'
+depends = 'vim-lsp'
+on_source = 'vim-vsnip'
+
+[[plugins]]
 repo = 'Shougo/junkfile.vim'
 on_cmd = 'JunkfileOpen'
 hook_add = '''
@@ -32,6 +183,9 @@ hook_add = '''
   xmap I <Plug>(niceblock-I)
   xmap A <Plug>(niceblock-A)
 '''
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
 
 [[plugins]]
 repo = 'kana/vim-operator-replace'
@@ -88,62 +242,6 @@ hook_source = '''
         \     'lang': 'ja',
         \   },
         \ }
-'''
-
-[[plugins]]
-repo = 'dense-analysis/ale'
-on_event = 'BufRead'
-hook_source = '''
-  let g:ale_disable_lsp = 1
-  let g:ale_sign_column_always = 1
-  let g:ale_sign_error = '✖'
-  let g:ale_sign_warning = '⚠'
-  let g:ale_echo_msg_format = '[%linter%] %code: %%s [%severity%]'
-  let g:ale_virtualtext_cursor = 1
-  let g:ale_fix_on_save = 1
-'''
-[plugins.ftplugin]
-go = '''
-  let b:ale_linters = ['golangci-lint']
-  let b:ale_go_golangci_lint_options = ''
-  let b:ale_go_golangci_lint_package = 1
-'''
-java = '''
-  let b:ale_linters = []
-'''
-javascript = '''
-  let b:ale_linters = ['eslint']
-  let b:ale_fixers = ['eslint', 'prettier']
-'''
-javascriptreact = '''
-  let b:ale_linters = ['eslint']
-  let b:ale_fixers = ['eslint', 'prettier']
-'''
-typescript = '''
-  let b:ale_linters = ['eslint']
-  let b:ale_fixers = ['eslint', 'prettier']
-'''
-typescriptreact = '''
-  let b:ale_linters = ['eslint']
-  let b:ale_fixers = ['eslint', 'prettier']
-'''
-css = '''
-  let b:ale_fixers = ['prettier']
-'''
-scss = '''
-  let b:ale_fixers = ['prettier']
-'''
-less = '''
-  let b:ale_fixers = ['prettier']
-'''
-html = '''
-  let b:ale_linters = []
-'''
-text = '''
-  let b:ale_linters = ['textlint']
-'''
-markdown = '''
-  let b:ale_linters = ['textlint']
 '''
 
 [[plugins]]
