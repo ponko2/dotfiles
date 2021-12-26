@@ -58,7 +58,7 @@ zinit wait lucid for \
 zinit wait lucid from"gh-r" as"program" for \
   atload'eval "$(fnm env)"' \
     Schniz/fnm \
-  mv"zoxide-*/zoxide -> zoxide" atload'eval "$(zoxide init zsh)"' \
+  atload'eval "$(zoxide init zsh)"' \
     ajeetdsouza/zoxide
 
 function source_snippets() {
