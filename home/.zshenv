@@ -73,9 +73,9 @@ case ${OSTYPE} in
     # Java
     export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
     export JRE_HOME=$JAVA_HOME/jre
-    export M2_HOME="/usr/local/opt/maven@3.3/libexec"
+    export M2_HOME="/usr/local/opt/maven@3.5/libexec"
     export MAVEN_HOME=$M2_HOME
-    export PATH="/usr/local/opt/maven@3.3/bin:$PATH"
+    export PATH="/usr/local/opt/maven@3.5/bin:$PATH"
 
     # MySQL
     export PATH=/usr/local/opt/mysql-client/bin:$PATH
