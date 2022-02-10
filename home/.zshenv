@@ -54,16 +54,6 @@ setopt no_global_rcs
 
 case ${OSTYPE} in
   darwin*)
-    # Git
-    export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
-
-    # Pager
-    export PAGER=less
-
-    # Less
-    export LESS='-R'
-    export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
-
     # Java
     export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
     export JRE_HOME=$JAVA_HOME/jre

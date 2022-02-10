@@ -3,7 +3,7 @@
 	email = 901860+ponko2@users.noreply.github.com
 [core]
 	editor = vim --clean -c \"set cb+=unnamed\"
-	pager = less
+	pager = delta
 	quotePath = false
 	precomposeUnicode = true
 [push]
@@ -15,16 +15,18 @@
 	rebase = merges
 [log]
 	date = iso8601-local
+[delta]
+	navigate = true
 [diff]
 	indentHeuristic = true
 [status]
 	showUntrackedFiles = all
 [interactive]
-	diffFilter = diff-highlight
+	diffFilter = delta --color-only
 [pager]
-	log = diff-highlight | LESS=-R less
-	show = diff-highlight | LESS=-R less
-	diff = diff-highlight | LESS=-R less
+	log = delta --diff-highlight --keep-plus-minus-markers
+	show = delta --diff-highlight --keep-plus-minus-markers
+	diff = delta --diff-highlight --keep-plus-minus-markers
 	branch = false
 [ghq]
 	root = ~/src

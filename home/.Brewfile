@@ -14,11 +14,11 @@ brew "bat"
 ## find
 brew "fd"
 
+## git
+brew "git-delta"
+
 ## grep
 brew "ripgrep"
-
-## less
-brew "source-highlight"
 
 ## ls
 brew "exa"
