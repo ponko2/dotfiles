@@ -1,5 +1,34 @@
 # vi: set ft=ruby :
 
+## Command
+brew "colordiff"
+brew "ghq"
+brew "jq"
+
+## cat
+brew "bat"
+
+## find
+brew "fd"
+
+## grep
+brew "ripgrep"
+
+## less
+brew "source-highlight"
+
+## ls
+brew "exa"
+brew "lsd"
+
+## vim
+brew "vim"
+
+## Fuzzy finder
+brew "fzf"
+brew "fzy"
+brew "peco"
+
 if OS.mac?
   ## Tap
   tap "golangci/tap"
@@ -9,12 +38,10 @@ if OS.mac?
   ## Command
   brew "automake"
   brew "cmake"
-  brew "colordiff"
   brew "dos2unix"
   brew "exiftool"
   brew "gettext"
   brew "imagemagick"
-  brew "jq"
   brew "libtool"
   brew "ninja"
   brew "nkf"
@@ -23,37 +50,23 @@ if OS.mac?
   brew "rsync"
   brew "watch"
 
-  ## cat
-  brew "bat"
-
-  ## find
-  brew "fd"
-
   ## git
   brew "gh"
-  brew "ghq"
   brew "git"
   brew "git-flow-avh"
   brew "git-lfs"
   brew "gnupg"
   brew "pinentry-mac"
-  brew "source-highlight"
 
   ## grep
-  brew "ripgrep"
-  brew "rga"
-
-  ## ls
-  brew "exa"
-  brew "lsd"
+  brew "ripgrep-all"
 
   ## ssh
   brew "openssh"
   brew "ssh-copy-id"
 
   ## vim
-  brew "vim", args: ["HEAD"]
-  #brew "neovim", args: ["HEAD"]
+  brew "neovim"
 
   ## zsh
   brew "terminal-notifier"
@@ -65,11 +78,6 @@ if OS.mac?
 
   ## Format
   brew "shfmt"
-
-  ## Fuzzy finder
-  brew "fzf"
-  brew "fzy"
-  brew "peco"
 
   ## Lint
   brew "shellcheck"
