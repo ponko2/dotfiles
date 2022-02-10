@@ -26,10 +26,12 @@ export CVSEDITOR="${EDITOR}"
 export SVN_EDITOR="${EDITOR}"
 
 # History
-if [ -d $HOME/Dropbox/History ]; then
-  export HISTFILE=$HOME/Dropbox/History/.zsh_history
+if [[ -d "/Volumes/GoogleDrive/マイドライブ/History" ]]; then
+  export HISTFILE="/Volumes/GoogleDrive/マイドライブ/History/.zsh_history"
+elif [[ -d "$HOME/Dropbox/History" ]]; then
+  export HISTFILE="$HOME/Dropbox/History/.zsh_history"
 else
-  export HISTFILE=$HOME/.zsh_history
+  export HISTFILE="$HOME/.zsh_history"
 fi
 export HISTSIZE=10000
 export SAVEHIST=10000
