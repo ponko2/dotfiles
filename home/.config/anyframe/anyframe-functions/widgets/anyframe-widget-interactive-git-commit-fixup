@@ -1,3 +1,5 @@
+# vi: set ft=sh :
+
 git log --oneline --decorate --color \
   | anyframe-selector-fzf \
   | awk '{print $1}' \
