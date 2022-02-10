@@ -12,5 +12,6 @@
 !karabiner/assets/complex_modifications/**
 !nvim/
 !nvim/**
+!starship.toml
 !yamllint/
 !yamllint/**

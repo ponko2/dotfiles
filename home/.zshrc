@@ -4,7 +4,7 @@ if [ "$TERM" != 'dumb' ]; then
   stty -ixon -ixoff
 fi
 
-fpath=($XDG_CONFIG_HOME/anyframe(N-/) $fpath)
+fpath=(${XDG_CONFIG_HOME:-$HOME/.config}/anyframe(N-/) $fpath)
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -29,9 +29,6 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-zinit ice from"gh-r" as"program" atload'eval "$(starship init zsh)"'
-zinit light starship/starship
-
 zinit wait lucid for \
   ponko2/cd-gitroot \
   atload"
@@ -55,11 +52,17 @@ zinit wait lucid for \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting
 
-zinit wait lucid from"gh-r" as"program" for \
-  atload'eval "$(fnm env)"' \
-    Schniz/fnm \
-  atload'eval "$(zoxide init zsh)"' \
-    ajeetdsouza/zoxide
+if command -v starship >/dev/null; then
+  eval "$(starship init zsh)"
+fi
+
+if command -v zoxide >/dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+
+if command -v fnm >/dev/null; then
+  eval "$(fnm env)"
+fi
 
 function source_snippets() {
   local snippet
@@ -71,8 +74,8 @@ function source_snippets() {
 source_snippets
 unset -f source_snippets
 
-if [[ -f ~/.fzf.zsh ]]; then
-  zinit snippet ~/.fzf.zsh
+if [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.zsh" ]]; then
+  source "${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.zsh"
 fi
 
 function awsp() {
