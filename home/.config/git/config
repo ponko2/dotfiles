@@ -51,5 +51,7 @@
 	clean = git-lfs clean -- %f
 [includeIf "gitdir:~/src/github.*/**"]
 	path = ~/.config/git/work.inc
+[includeIf "gitdir:~/dotfiles/"]
+	path = ~/.config/git/ponko2.inc
 [includeIf "gitdir:~/src/github.com/ponko2/**"]
 	path = ~/.config/git/ponko2.inc
