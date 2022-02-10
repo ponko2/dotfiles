@@ -1,106 +1,108 @@
+# vi: set ft=ruby :
+
 ## Tap
-tap 'golangci/tap'
-tap 'homebrew/cask-fonts'
-tap 'homebrew/cask-versions'
+tap "golangci/tap"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
 
 ## Command
-brew 'automake'
-brew 'cmake'
-brew 'colordiff'
-brew 'dos2unix'
-brew 'exiftool'
-brew 'gettext'
-brew 'imagemagick'
-brew 'jq'
-brew 'libtool'
-brew 'ninja'
-brew 'nkf'
-brew 'p7zip'
-brew 'pkg-config'
-brew 'rsync'
-brew 'watch'
+brew "automake"
+brew "cmake"
+brew "colordiff"
+brew "dos2unix"
+brew "exiftool"
+brew "gettext"
+brew "imagemagick"
+brew "jq"
+brew "libtool"
+brew "ninja"
+brew "nkf"
+brew "p7zip"
+brew "pkg-config"
+brew "rsync"
+brew "watch"
 
 ## cat
-brew 'bat'
+brew "bat"
 
 ## find
-brew 'fd'
+brew "fd"
 
 ## git
-brew 'gh'
-brew 'ghq'
-brew 'git'
-brew 'git-flow-avh'
-brew 'git-lfs'
-brew 'gnupg'
-brew 'pinentry-mac'
-brew 'source-highlight'
+brew "gh"
+brew "ghq"
+brew "git"
+brew "git-flow-avh"
+brew "git-lfs"
+brew "gnupg"
+brew "pinentry-mac"
+brew "source-highlight"
 
 ## grep
-brew 'ripgrep'
-brew 'rga'
+brew "ripgrep"
+brew "rga"
 
 ## ls
-brew 'exa'
-brew 'lsd'
+brew "exa"
+brew "lsd"
 
 ## ssh
-brew 'openssh'
-brew 'ssh-copy-id'
+brew "openssh"
+brew "ssh-copy-id"
 
 ## vim
-brew 'vim', args: ['HEAD']
-#brew 'neovim', args: ['HEAD']
+brew "vim", args: ["HEAD"]
+#brew "neovim", args: ["HEAD"]
 
 ## zsh
-brew 'terminal-notifier'
-brew 'zsh'
+brew "terminal-notifier"
+brew "zsh"
 
 ## Database
-brew 'mysql-client'
-brew 'sqlite'
+brew "mysql-client"
+brew "sqlite"
 
 ## Format
-brew 'shfmt'
+brew "shfmt"
 
 ## Fuzzy finder
-brew 'fzf'
-brew 'fzy'
-brew 'peco'
+brew "fzf"
+brew "fzy"
+brew "peco"
 
 ## Lint
-brew 'shellcheck'
-brew 'yamllint'
+brew "shellcheck"
+brew "yamllint"
 
 ## Network
-brew 'curl'
-brew 'httpie'
-brew 'iproute2mac'
-brew 'wget'
+brew "curl"
+brew "httpie"
+brew "iproute2mac"
+brew "wget"
 
 ## Golang
-brew 'go'
-brew 'golangci-lint'
+brew "go"
+brew "golangci-lint"
 
 ## Mac Apps
-cask 'xquartz'
-cask '1password'
-cask 'appcleaner'
-cask 'docker'
-cask 'finicky'
-cask 'iterm2'
-cask 'karabiner-elements'
-cask 'keepingyouawake'
-cask 'monitorcontrol'
-cask 'mysqlworkbench'
-cask 'rectangle'
-cask 'the-unarchiver'
+cask "xquartz"
+cask "1password"
+cask "appcleaner"
+cask "docker"
+cask "finicky"
+cask "iterm2"
+cask "karabiner-elements"
+cask "keepingyouawake"
+cask "monitorcontrol"
+cask "mysqlworkbench"
+cask "rectangle"
+cask "the-unarchiver"
 
 ## Fonts
-cask 'font-cica'
-cask 'font-hackgen'
-cask 'font-ricty-diminished'
+cask "font-cica"
+cask "font-hackgen"
+cask "font-ricty-diminished"
 
 # App Store
-#brew 'mas'
-#mas 'Monosnap', id: 540348655
+#brew "mas"
+#mas "Monosnap", id: 540348655
