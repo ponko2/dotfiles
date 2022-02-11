@@ -1,12 +1,15 @@
-#!/bin/bash -eux
+#!/bin/bash
 
-if [ -z "${SRCPATH:-}" ]; then
-  SRCPATH="$HOME/src/github.com/ponko2/dotfiles"
+set -euo pipefail
+
+if [ -z "${DOTFILES:-}" ]; then
+  DOTFILES="$HOME/dotfiles"
 fi
 
-if [ ! -d "$SRCPATH" ]; then
-  mkdir -p "$(dirname "$SRCPATH")" && cd "$_" || exit 1
-  git clone https://github.com/ponko2/dotfiles.git
+# Clone dotfiles repository.
+if [ ! -d "$DOTFILES" ]; then
+  mkdir -p "$(dirname "$DOTFILES")"
+  git clone https://github.com/ponko2/dotfiles.git "$DOTFILES"
 fi
 
-cd "$SRCPATH" && make install
+cd "$DOTFILES" && make install

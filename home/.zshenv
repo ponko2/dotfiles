@@ -54,11 +54,6 @@ setopt no_global_rcs
 
 case ${OSTYPE} in
   darwin*)
-    # Homebrew
-    export HOMEBREW_INSTALL_CLEANUP=1
-    export PATH=/usr/local/bin:$PATH
-    export PATH=/usr/local/sbin:$PATH
-
     # Git
     export GPG_TTY=$(tty)
     export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
