@@ -96,10 +96,6 @@ cask 'mysqlworkbench'
 cask 'rectangle'
 cask 'the-unarchiver'
 
-## Cloud Storage
-cask 'dropbox'
-cask 'google-drive-file-stream'
-
 ## Fonts
 cask 'font-cica'
 cask 'font-hackgen'
@@ -107,5 +103,4 @@ cask 'font-ricty-diminished'
 
 # App Store
 #brew 'mas'
-#mas 'ForkLift', id: 412448059
 #mas 'Monosnap', id: 540348655

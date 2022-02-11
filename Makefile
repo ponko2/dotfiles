@@ -20,11 +20,6 @@ endif
 HOMEBREW := $(HOMEBREW_PREFIX)/bin/brew
 HOMEBREW_BUNDLE := $(HOMEBREW_PREFIX)/Homebrew/Library/Taps/homebrew/homebrew-bundle
 
-.DEFAULT_GOAL := help
-
-.PHONY: all
-all:
-
 .PHONY: help
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
@@ -49,19 +44,6 @@ $(HOMEBREW):
 $(HOMEBREW_BUNDLE):
 	$(SHELL) --login -c "brew tap homebrew/bundle"
 
-.PHONY: update
-update: ## Fetch changes for this repo.
-	git pull origin main
-
-.PHONY: clean
-clean: ## Remove dotfiles.
-	@$(foreach file, $(DOTFILES), $(RM) $(HOME)/$(file);)
-
-.PHONY: neovim
-neovim:
-	pip3 install pynvim
-	@nvim +CheckHealth
-
 .PHONY: gruvbox
 gruvbox: ## Clone gruvbox-contrib repository.
 	ghq get morhetz/gruvbox-contrib
@@ -70,7 +52,3 @@ gruvbox: ## Clone gruvbox-contrib repository.
 textlint: ## Install textlint.
 	npm install -g textlint
 	npm install -g textlint-rule-preset-japanese
-
-.PHONY: zinit
-zinit:
-	sh -c "$$(curl -fsSL https://git.io/zinit-install)"
