@@ -2,8 +2,11 @@
 
 ## Command
 brew "colordiff"
+brew "fnm"
 brew "ghq"
 brew "jq"
+brew "starship"
+brew "zoxide"
 
 ## cat
 brew "bat"
