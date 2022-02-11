@@ -33,7 +33,7 @@ zinit ice from"gh-r" as"program" atload'eval "$(starship init zsh)"'
 zinit light starship/starship
 
 zinit wait lucid for \
-  mollifier/cd-gitroot \
+  ponko2/cd-gitroot \
   atload"
     zstyle ':anyframe:selector:' use peco
     zstyle ':anyframe:selector:fzf:' command 'fzf --exact --no-sort --cycle --reverse --inline-info --ansi'
