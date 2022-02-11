@@ -10,14 +10,14 @@ case "${OSTYPE}" in
 esac
 
 # ls
-if type lsd &> /dev/null; then
+if command -v lsd >/dev/null; then
   alias ls='lsd --date="+%Y-%m-%dT%H:%M:%S%z"'
-elif type exa &> /dev/null; then
+elif command -v exa >/dev/null; then
   alias ls='exa --time-style="long-iso"'
 fi
 
 # diff
-if type colordiff &> /dev/null; then
+if command -v colordiff >/dev/null; then
   alias diff='colordiff'
 fi
 
