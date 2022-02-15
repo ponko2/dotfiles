@@ -29,10 +29,5 @@ if exists('&winblend')
   set winblend=20
 endif
 
-" コマンドライン補完
-set wildmenu
-set wildmode=full
-set wildoptions=tagfile,pum
-
 " Enable true color
 let $NVIM_TUI_ENABLE_TRUE_COLOR = 1

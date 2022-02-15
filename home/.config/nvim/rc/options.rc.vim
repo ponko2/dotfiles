@@ -231,10 +231,10 @@ set shortmess+=F
 set belloff=all
 
 " コマンドライン補完
-set nowildmenu
 set wildignorecase
-set wildmode=list:longest,full
-set wildoptions=tagfile
+set wildmenu
+set wildmode=full
+set wildoptions+=pum
 
 " コマンドと以前に使った検索パターン履歴の保存個数
 set history=1000
