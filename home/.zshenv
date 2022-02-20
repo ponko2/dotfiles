@@ -56,10 +56,6 @@ setopt no_global_rcs
 
 case ${OSTYPE} in
   darwin*)
-    # Java
-    export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-    export JRE_HOME=$JAVA_HOME/jre
-
     # MySQL
     export PATH=/usr/local/opt/mysql-client/bin:$PATH
     ;;
