@@ -235,6 +235,9 @@ set wildignorecase
 set wildmenu
 set wildmode=full
 set wildoptions+=pum
+if has('patch-8.2.4463')
+  set wildoptions+=fuzzy
+endif
 
 " コマンドと以前に使った検索パターン履歴の保存個数
 set history=1000
