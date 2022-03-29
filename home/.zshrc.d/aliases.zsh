@@ -11,7 +11,7 @@ esac
 
 # ls
 if command -v lsd >/dev/null; then
-  alias ls='lsd --date="+%Y-%m-%dT%H:%M:%S%z"'
+  alias ls='lsd --icon=never --date="+%Y-%m-%dT%H:%M:%S%z"'
 elif command -v exa >/dev/null; then
   alias ls='exa --time-style="long-iso"'
 fi
