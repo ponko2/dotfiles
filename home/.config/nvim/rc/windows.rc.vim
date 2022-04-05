@@ -19,6 +19,6 @@ if exists('&completeslash')
 endif
 
 " PATHに$VIMが含まれていないときにexeを見つけ出せない問題を修正
-if $PATH !~? '\(^\|;\)' . escape($VIM, '\\') . '\(;\|$\)'
-  let $PATH = $VIM . ';' . $PATH
+if $PATH !~? '\(^\|;\)' .. escape($VIM, '\\') .. '\(;\|$\)'
+  let $PATH = $VIM .. ';' .. $PATH
 endif

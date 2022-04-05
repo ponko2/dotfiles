@@ -199,13 +199,13 @@ set titlelen=95
 set showtabline=1
 
 " Set statusline.
-let &g:statusline = "%{winnr('$') > 1 ? '['.winnr().'/'.winnr('$')"
-      \ . ".(winnr('#') ==# winnr() ? '#' : '').']' : ''}\ "
-      \ . "%{(&previewwindow ? '[Preview] ' : '').expand('%:t')}\ "
-      \ . "%=%{(winnr('$') ==# 1 || winnr('#') !=# winnr()) ? "
-      \ . "'['.(&filetype !=# '' ? &filetype.',' : '')"
-      \ . ".(&fenc !=# '' ? &fenc : &enc).','.&ff.']' : ''}"
-      \ . "%m%{printf('%'.(len(line('$')) + 2).'d/%d', line('.'), line('$'))}"
+let &g:statusline = "%{winnr('$') > 1 ? '[' .. winnr() .. '/' .. winnr('$')"
+      \ .. " .. (winnr('#') ==# winnr() ? '#' : '') .. ']' : ''}\ "
+      \ .. "%{(&previewwindow ? '[Preview] ' : '') .. expand('%:t')}\ "
+      \ .. "%=%{(winnr('$') ==# 1 || winnr('#') !=# winnr()) ? "
+      \ .. "'[' .. (&filetype !=# '' ? &filetype .. ',' : '')"
+      \ .. " .. (&fenc !=# '' ? &fenc : &enc) .. ',' .. &ff .. ']' : ''}"
+      \ .. "%m%{printf('%' .. (len(line('$')) + 2) .. 'd/%d', line('.'), line('$'))}"
 
 " 折り返し表示の設定
 set linebreak

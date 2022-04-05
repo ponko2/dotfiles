@@ -77,8 +77,8 @@ nnoremap [T <Cmd>tfirst<CR>
 nnoremap ]T <Cmd>tlast<CR>
 
 " Better n
-nnoremap n <Cmd>execute 'normal!' v:count1 . 'nzvzz'<CR>
-nnoremap N <Cmd>execute 'normal!' v:count1 . 'Nzvzz'<CR>
+nnoremap n <Cmd>execute 'normal!' v:count1 .. 'nzvzz'<CR>
+nnoremap N <Cmd>execute 'normal!' v:count1 .. 'Nzvzz'<CR>
 
 " Better x
 nnoremap x "_x
@@ -102,7 +102,7 @@ cnoremap <expr> <Up> pumvisible() ? "\<Up>" : "\<C-p>"
 cnoremap <expr> <C-p> pumvisible() ? "\<C-p>" : "\<Up>"
 
 " %% -> %:h/
-cnoremap <expr> %% getcmdtype() ==# ':' ? expand('%:h').'/' : '%%'
+cnoremap <expr> %% getcmdtype() ==# ':' ? expand('%:h') .. '/' : '%%'
 
 
 "---------------------------------------------------------------------------
