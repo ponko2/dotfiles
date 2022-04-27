@@ -15,7 +15,11 @@ brew "bat"
 brew "fd"
 
 ## git
+brew "gh"
+brew "git"
 brew "git-delta"
+brew "git-flow-avh"
+brew "git-lfs"
 
 ## grep
 brew "ripgrep"
@@ -54,10 +58,6 @@ if OS.mac?
   brew "watch"
 
   ## git
-  brew "gh"
-  brew "git"
-  brew "git-flow-avh"
-  brew "git-lfs"
   brew "gnupg"
   brew "pinentry-mac"
 
