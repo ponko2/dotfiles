@@ -28,6 +28,7 @@ module.exports = {
           // Slack
           "com.tinyspeck.slackmacgap",
           // 1Password
+          "com.1password.1password",
           "com.agilebits.onepassword7",
           // Thunderbird
           "org.mozilla.thunderbird",
