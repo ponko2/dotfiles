@@ -67,3 +67,8 @@ export PATH=./node_modules/.bin:$PATH
 # Golang
 export GOPATH=$HOME
 export PATH=$GOPATH/bin:$PATH
+
+# Rust
+if [[ -f "$HOME/.cargo/env" ]]; then
+  source "$HOME/.cargo/env"
+fi
