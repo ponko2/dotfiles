@@ -53,6 +53,7 @@ let g:no_gvimrc_example = 1
 let g:did_install_default_menus = 1
 let g:did_install_syntax_menu   = 1
 
+let g:skip_defaults_vim  = 1
 let g:skip_loading_mswin = 1
 
 " Disable default plugins
