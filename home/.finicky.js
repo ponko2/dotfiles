@@ -2,7 +2,7 @@ module.exports = {
   defaultBrowser: "Firefox",
   handlers: [
     {
-      match: options => {
+      match: (options) => {
         if (options.sourceBundleIdentifier !== "com.reederapp.macOS") {
           return false;
         }
@@ -11,16 +11,16 @@ module.exports = {
       },
       browser: {
         name: "Google Chrome",
-        openInBackground: true
-      }
+        openInBackground: true,
+      },
     },
     {
       match: ({ sourceBundleIdentifier }) =>
         sourceBundleIdentifier === "com.reederapp.macOS",
       browser: {
         name: "Firefox",
-        openInBackground: true
-      }
+        openInBackground: true,
+      },
     },
     {
       match: ({ sourceBundleIdentifier }) =>
@@ -42,9 +42,9 @@ module.exports = {
           // iTerm2
           "com.googlecode.iterm2",
           // Command Line Tools
-          null
+          null,
         ].includes(sourceBundleIdentifier),
-      browser: "Google Chrome"
-    }
-  ]
+      browser: "Google Chrome",
+    },
+  ],
 };
