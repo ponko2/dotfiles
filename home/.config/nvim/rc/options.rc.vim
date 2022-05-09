@@ -381,7 +381,7 @@ set fileformat=unix
 set fileformats=unix,dos,mac
 
 " Don't calc octal.
-set nrformats& nrformats-=octal
+set nrformats& nrformats-=octal nrformats+=unsigned
 
 " Input Japanese
 if has('multi_byte_ime') || has('xim')
