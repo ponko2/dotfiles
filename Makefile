@@ -1,11 +1,10 @@
 OS := $(shell uname -s)
 SHELL := /bin/bash
-
-LN := ln -sfnv
-RM := rm -fv
+XDG_CONFIG_HOME := $(HOME)/.config
 
 SRCDIR := $(abspath home)
 DOTFILES := $(foreach file, $(wildcard $(SRCDIR)/.??*), $(shell basename $(file)))
+XDG_CONFIGS := $(foreach file, $(wildcard $(SRCDIR)/_config/*), $(shell basename $(file)))
 
 ifeq ($(OS),Darwin)
 	ifeq ($(shell uname -m),arm64)
@@ -30,7 +29,9 @@ install: symlink bundle ## Run make symlink, bundle.
 
 .PHONY: symlink
 symlink: ## Create symlink to home directory.
-	@$(foreach file, $(DOTFILES), $(LN) $(SRCDIR)/$(file) $(HOME)/$(file);)
+	@mkdir -p $(XDG_CONFIG_HOME)
+	@$(foreach file, $(DOTFILES), ln -sfnv $(SRCDIR)/$(file) $(HOME)/$(file);)
+	@$(foreach file, $(XDG_CONFIGS), ln -sfnv $(SRCDIR)/_config/$(file) $(XDG_CONFIG_HOME)/$(file);)
 
 .PHONY: bundle
 bundle: | $(HOMEBREW) $(HOMEBREW_BUNDLE) ## Install and upgrade all dependencies from the ~/.Brewfile.
