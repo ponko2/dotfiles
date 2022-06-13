@@ -38,6 +38,7 @@ brew "peco"
 
 if OS.mac?
   ## Tap
+  tap "daipeihust/tap"
   tap "golangci/tap"
   tap "homebrew/cask-fonts"
   tap "homebrew/cask-versions"
@@ -48,6 +49,7 @@ if OS.mac?
   brew "dos2unix"
   brew "exiftool"
   brew "gettext"
+  brew "im-select"
   brew "imagemagick"
   brew "libtool"
   brew "ninja"
@@ -107,6 +109,7 @@ if OS.mac?
   cask "keepingyouawake"
   cask "monitorcontrol"
   cask "mysqlworkbench"
+  cask "raycast"
   cask "rectangle"
   cask "the-unarchiver"
 
