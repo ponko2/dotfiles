@@ -117,6 +117,8 @@ if OS.mac?
   cask "font-cica"
   cask "font-hackgen"
   cask "font-ricty-diminished"
+  cask "font-udev-gothic"
+  cask "font-udev-gothic-nf"
 
   # App Store
   #brew "mas"
