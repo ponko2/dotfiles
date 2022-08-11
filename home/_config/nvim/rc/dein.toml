@@ -58,3 +58,12 @@ hook_add = '''
 
 [[plugins]]
 repo = 'mattn/vim-molder-operations'
+
+[[plugins]]
+repo = 'rbtnn/vim-ambiwidth'
+hook_add = '''
+  let g:ambiwidth_add_list = [
+        \   [0x2025, 0x2026, 2],
+        \ ]
+  let g:ambiwidth_cica_enabled = v:false
+'''

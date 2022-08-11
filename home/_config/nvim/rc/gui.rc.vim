@@ -16,11 +16,6 @@ if IsWindows()
 
   " 行間隔の設定
   set linespace=1
-
-  " 一部のUCS文字の幅を自動計測して決める
-  if has('kaoriya')
-    set ambiwidth=auto
-  endif
 elseif IsMac()
   set guifont=Ricty\ Diminished\ Regular:h18
   set guifontwide=Ricty\ Diminished\ Regular:h18
