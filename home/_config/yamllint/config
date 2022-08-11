@@ -7,6 +7,7 @@ rules:
       .github/
       docker-compose.yml
       docker-compose.*.yml
+      openapi.yml
   line-length:
     allow-non-breakable-inline-mappings: true
   octal-values:
