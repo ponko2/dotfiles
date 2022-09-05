@@ -23,6 +23,8 @@
 	showUntrackedFiles = all
 [interactive]
 	diffFilter = delta --color-only
+[add.interactive]
+	useBuiltin = false
 [pager]
 	log = delta --diff-highlight --keep-plus-minus-markers
 	show = delta --diff-highlight --keep-plus-minus-markers
