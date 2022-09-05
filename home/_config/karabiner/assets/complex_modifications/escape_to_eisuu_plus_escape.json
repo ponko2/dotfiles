@@ -19,6 +19,7 @@
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
+                "^com\\.github\\.wez\\.wezterm",
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.microsoft\\.VSCode$",
                 "^com\\.qvacua\\.VimR$",
@@ -42,6 +43,7 @@
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
+                "^com\\.github\\.wez\\.wezterm",
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.microsoft\\.VSCode$",
                 "^com\\.qvacua\\.VimR$",

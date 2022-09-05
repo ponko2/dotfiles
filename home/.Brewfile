@@ -87,6 +87,7 @@ if OS.mac?
 
   ## Lint
   brew "shellcheck"
+  brew "stylua"
   brew "yamllint"
 
   ## Network
@@ -113,6 +114,7 @@ if OS.mac?
   cask "raycast"
   cask "rectangle"
   cask "the-unarchiver"
+  cask "wezterm"
 
   ## Fonts
   cask "font-cica"
