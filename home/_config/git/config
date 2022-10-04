@@ -6,11 +6,14 @@
 	pager = delta
 	quotePath = false
 	precomposeUnicode = true
+	fsmonitor = true
+	untrackedCache = true
 [push]
 	default = current
 	followTags = true
 [merge]
 	ff = false
+	conflictStyle = zdiff3
 [pull]
 	rebase = merges
 [log]
