@@ -37,6 +37,7 @@ return {
 		{ key = "UpArrow", mods = "SHIFT", action = wezterm.action.ScrollToPrompt(-1) },
 		{ key = "DownArrow", mods = "SHIFT", action = wezterm.action.ScrollToPrompt(1) },
 	},
+	normalize_to_nfc = true,
 	scrollback_lines = 10000,
 	text_background_opacity = 0.8,
 	treat_east_asian_ambiguous_width_as_wide = true,
