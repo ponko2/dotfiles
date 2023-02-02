@@ -82,6 +82,10 @@ if [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.zsh" ]]; then
   source "${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.zsh"
 fi
 
+if [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/op/plugins.sh" ]]; then
+  source "${XDG_CONFIG_HOME:-$HOME/.config}/op/plugins.sh"
+fi
+
 _prompt_executing=""
 function __prompt_precmd() {
     local ret="$?"
