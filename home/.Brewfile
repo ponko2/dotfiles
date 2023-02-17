@@ -40,7 +40,6 @@ if OS.mac?
   ## Tap
   tap "daipeihust/tap"
   tap "golangci/tap"
-  tap "homebrew/cask"
   tap "homebrew/cask-fonts"
   tap "homebrew/cask-versions"
 
