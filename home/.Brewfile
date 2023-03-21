@@ -42,6 +42,7 @@ if OS.mac?
   tap "golangci/tap"
   tap "homebrew/cask-fonts"
   tap "homebrew/cask-versions"
+  tap "wez/wezterm"
 
   ## Command
   brew "automake"
@@ -113,7 +114,7 @@ if OS.mac?
   cask "raycast"
   cask "rectangle"
   cask "the-unarchiver"
-  cask "wezterm"
+  cask "wez/wezterm/wezterm"
 
   ## Fonts
   cask "font-cica"
