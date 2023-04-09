@@ -103,6 +103,7 @@ if OS.mac?
   ## Mac Apps
   cask "xquartz"
   cask "1password"
+  cask "1password-cli"
   cask "appcleaner"
   cask "docker"
   cask "finicky"
@@ -117,6 +118,10 @@ if OS.mac?
   cask "wez/wezterm/wezterm"
 
   ## Fonts
+  cask "font-biz-udgothic"
+  cask "font-biz-udmincho"
+  cask "font-biz-udpgothic"
+  cask "font-biz-udpmincho"
   cask "font-cica"
   cask "font-hackgen"
   cask "font-ricty-diminished"
