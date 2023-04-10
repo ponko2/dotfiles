@@ -37,6 +37,7 @@ return {
 		{ key = "UpArrow", mods = "SHIFT", action = wezterm.action.ScrollToPrompt(-1) },
 		{ key = "DownArrow", mods = "SHIFT", action = wezterm.action.ScrollToPrompt(1) },
 	},
+	macos_forward_to_ime_modifier_mask = "SHIFT|CTRL",
 	normalize_output_to_unicode_nfc = true,
 	scrollback_lines = 10000,
 	text_background_opacity = 0.8,
