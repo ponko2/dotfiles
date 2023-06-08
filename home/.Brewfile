@@ -88,7 +88,7 @@ if OS.mac?
   brew "zsh"
 
   ## Database
-  brew "mysql-client"
+  brew "mysql-client@5.7"
   brew "sqlite"
 
   ## Format

@@ -76,7 +76,7 @@ export GOPATH=$HOME
 path=(
   ./node_modules/.bin # Node.js
   $GOPATH/bin(N-/) # Golang
-  /usr/local/opt/mysql-client/bin(N-/) # MySQL
+  /usr/local/opt/mysql-client@5.7/bin(N-/) # MySQL
   /usr/local/opt/coreutils/libexec/gnubin(N-/) # coreutils
   /usr/local/opt/ed/libexec/gnubin(N-/) # ed
   /usr/local/opt/findutils/libexec/gnubin(N-/) # findutils
