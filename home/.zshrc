@@ -1,3 +1,8 @@
+# in ~/.zshenv, executed `unsetopt GLOBAL_RCS` and ignored /etc/zshrc
+if [[ -r /etc/zshrc ]]; then
+  source /etc/zshrc
+fi
+
 umask 022
 
 if [ "$TERM" != 'dumb' ]; then
