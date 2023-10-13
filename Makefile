@@ -1,12 +1,13 @@
-OS := $(shell uname -s)
 SHELL := /bin/bash
+.SHELLFLAGS := -euo pipefail -c
+.DEFAULT_GOAL := help
+
 XDG_CONFIG_HOME := $(HOME)/.config
-
 SRCDIR := $(abspath home)
-DOTFILES := $(foreach file, $(wildcard $(SRCDIR)/.??*), $(shell basename $(file)))
-XDG_CONFIGS := $(foreach file, $(wildcard $(SRCDIR)/_config/*), $(shell basename $(file)))
+DOTFILES := $(foreach path, $(wildcard $(SRCDIR)/.??*), $(HOME)/$(notdir $(path)))
+XDG_CONFIGS := $(foreach path, $(wildcard $(SRCDIR)/_config/*), $(XDG_CONFIG_HOME)/$(notdir $(path)))
 
-ifeq ($(OS),Darwin)
+ifeq ($(shell uname -s),Darwin)
 	ifeq ($(shell uname -m),arm64)
 		HOMEBREW_PREFIX := /opt/homebrew
 	else
@@ -19,6 +20,17 @@ endif
 HOMEBREW := $(HOMEBREW_PREFIX)/bin/brew
 HOMEBREW_BUNDLE := $(HOMEBREW_PREFIX)/Homebrew/Library/Taps/homebrew/homebrew-bundle
 
+.PHONY: all
+all: install
+
+.PHONY: clean
+clean: ## Remove symlinks.
+	$(RM) $(DOTFILES) $(XDG_CONFIGS)
+
+.PHONY: test
+test: ## Run checkmake.
+	checkmake Makefile
+
 .PHONY: help
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
@@ -28,10 +40,16 @@ help:
 install: symlink bundle ## Run make symlink, bundle.
 
 .PHONY: symlink
-symlink: ## Create symlink to home directory.
-	@mkdir -p $(XDG_CONFIG_HOME)
-	@$(foreach file, $(DOTFILES), ln -sfnv $(SRCDIR)/$(file) $(HOME)/$(file);)
-	@$(foreach file, $(XDG_CONFIGS), ln -sfnv $(SRCDIR)/_config/$(file) $(XDG_CONFIG_HOME)/$(file);)
+symlink: | $(DOTFILES) $(XDG_CONFIGS) ## Create symlink to home directory.
+
+$(DOTFILES):
+	ln -s $(SRCDIR)/$(@F) $@
+
+$(XDG_CONFIGS): | $(XDG_CONFIG_HOME)
+	ln -s $(SRCDIR)/_config/$(@F) $@
+
+$(XDG_CONFIG_HOME):
+	mkdir $@
 
 .PHONY: bundle
 bundle: | $(HOMEBREW) $(HOMEBREW_BUNDLE) ## Install and upgrade all dependencies from the ~/.Brewfile.
@@ -39,17 +57,8 @@ bundle: | $(HOMEBREW) $(HOMEBREW_BUNDLE) ## Install and upgrade all dependencies
 	$(HOMEBREW_PREFIX)/opt/fzf/install --all --xdg --no-update-rc
 
 $(HOMEBREW):
-	$(SHELL) -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	NONINTERACTIVE=1 $(SHELL) -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	echo 'eval "$$($@ shellenv)"' >> $(HOME)/.profile
 
 $(HOMEBREW_BUNDLE):
 	$(SHELL) --login -c "brew tap homebrew/bundle"
-
-.PHONY: gruvbox
-gruvbox: ## Clone gruvbox-contrib repository.
-	ghq get morhetz/gruvbox-contrib
-
-.PHONY: textlint
-textlint: ## Install textlint.
-	npm install -g textlint
-	npm install -g textlint-rule-preset-japanese

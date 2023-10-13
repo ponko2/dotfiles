@@ -7,11 +7,9 @@
 curl -fsSL https://raw.githubusercontent.com/ponko2/dotfiles/master/install.sh | /bin/bash
 ```
 
-### Visual Studio Code Remote Containers
+### [Visual Studio Code Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers)
 ```json
 {
-  "dotfiles.installCommand": "~/dotfiles/install.sh",
-  "dotfiles.repository": "ponko2/dotfiles",
-  "dotfiles.targetPath": "~/dotfiles"
+  "dotfiles.repository": "ponko2/dotfiles"
 }
 ```

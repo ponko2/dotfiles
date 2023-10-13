@@ -2,7 +2,6 @@
   "recommendations": [
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
-    "ms-vscode-remote.vscode-remote-extensionpack",
-    "vscode-icons-team.vscode-icons"
+    "ms-vscode-remote.vscode-remote-extensionpack"
   ]
 }

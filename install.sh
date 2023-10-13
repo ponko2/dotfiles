@@ -12,4 +12,4 @@ if [ ! -d "$DOTFILES" ]; then
   git clone https://github.com/ponko2/dotfiles.git "$DOTFILES"
 fi
 
-cd "$DOTFILES" && make install
+make -C "$DOTFILES" clean all

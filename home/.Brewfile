@@ -95,6 +95,7 @@ if OS.mac?
   brew "shfmt"
 
   ## Lint
+  brew "checkmake"
   brew "shellcheck"
   brew "stylua"
   brew "yamllint"

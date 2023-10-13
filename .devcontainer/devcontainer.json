@@ -1,50 +1,37 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.217.4/containers/debian
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
 {
   "name": "Debian",
-  "build": {
-    "dockerfile": "Dockerfile",
-    // Update 'VARIANT' to pick an Debian version: bullseye, buster
-    // Use bullseye on local arm64/Apple Silicon.
-    "args": { "VARIANT": "bullseye" }
-  },
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/base:bullseye",
 
-  // Set *default* container specific settings.json values on container create.
-  "settings": {
-    "dotfiles.installCommand": "~/dotfiles/install.sh",
-    "dotfiles.repository": "ponko2/dotfiles",
-    "dotfiles.targetPath": "~/dotfiles",
-    "terminal.integrated.defaultProfile.linux": "zsh (login)",
-    "terminal.integrated.profiles.linux": {
-      "zsh (login)": {
-        "path": "zsh",
-        "args": ["-l"]
-      }
-    }
-  },
-
-  // Add the IDs of extensions you want installed when the container is created.
-  "extensions": [
-    "eamodio.gitlens",
-    "editorconfig.editorconfig",
-    "esbenp.prettier-vscode"
-  ],
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
 
-  // Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
-  // "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Set *default* container specific settings.json values on container create.
+      "settings": {
+        "dotfiles.repository": "ponko2/dotfiles",
+        "terminal.integrated.defaultProfile.linux": "zsh (login)",
+        "terminal.integrated.profiles.linux": {
+          "zsh (login)": {
+            "path": "zsh",
+            "args": ["-l"]
+          }
+        }
+      },
 
-  // Uncomment when using a ptrace-based debugger like C++, Go, and Rust
-  // "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
-
-  // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-  "remoteUser": "vscode",
-
-  "features": {
-    "git": "latest",
-    "git-lfs": "latest",
-    "github-cli": "latest"
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": ["editorconfig.editorconfig", "esbenp.prettier-vscode"]
+    }
   }
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 }
