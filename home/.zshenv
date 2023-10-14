@@ -5,6 +5,7 @@ export LANG=ja_JP.UTF-8
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
 
 # autoload
 autoload -Uz add-zsh-hook
@@ -26,13 +27,6 @@ export CVSEDITOR="${EDITOR}"
 export SVN_EDITOR="${EDITOR}"
 
 # History
-if [[ -d "/Volumes/GoogleDrive/マイドライブ/History" ]]; then
-  export HISTFILE="/Volumes/GoogleDrive/マイドライブ/History/.zsh_history"
-elif [[ -d "$HOME/Dropbox/History" ]]; then
-  export HISTFILE="$HOME/Dropbox/History/.zsh_history"
-else
-  export HISTFILE="$HOME/.zsh_history"
-fi
 export HISTSIZE=10000
 export SAVEHIST=10000
 export HISTORY_IGNORE='((cd|g[abcd]|gco|glo|gr|gsw|kill|ls|mv|rm|git (show|rebase -i|commit --fixup))( *)#|{*|exit|gss|pwd)'

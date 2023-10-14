@@ -9,6 +9,11 @@ if [ "$TERM" != 'dumb' ]; then
   stty -ixon -ixoff
 fi
 
+# History
+if [[ -d "${XDG_STATE_HOME:-$HOME/.local/state}/zsh" ]]; then
+  HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/zsh/history"
+fi
+
 fpath=(${XDG_CONFIG_HOME:-$HOME/.config}/anyframe(N-/) $fpath)
 
 ### Added by Zinit's installer
