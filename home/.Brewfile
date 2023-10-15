@@ -69,10 +69,6 @@ if OS.mac?
   brew "rsync"
   brew "watch"
 
-  ## git
-  brew "gnupg"
-  brew "pinentry-mac"
-
   ## grep
   brew "ripgrep-all"
 

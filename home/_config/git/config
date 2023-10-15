@@ -1,13 +1,11 @@
 [user]
 	name = Takahito Nakano
-	email = 901860+ponko2@users.noreply.github.com
+	email = kano@ponko2.jp
 [core]
 	editor = vim --clean -c \"set cb+=unnamed\"
 	pager = delta
 	quotePath = false
 	precomposeUnicode = true
-	fsmonitor = true
-	untrackedCache = true
 [push]
 	default = current
 	followTags = true
@@ -57,8 +55,8 @@
 	required = true
 	clean = git-lfs clean -- %f
 [includeIf "gitdir:~/src/github.*/**"]
-	path = ~/.config/git/work.inc
+	path = ~/.config/git/work/.gitconfig
 [includeIf "gitdir:~/dotfiles/"]
-	path = ~/.config/git/ponko2.inc
+	path = ~/.config/git/ponko2/.gitconfig
 [includeIf "gitdir:~/src/github.com/ponko2/**"]
-	path = ~/.config/git/ponko2.inc
+	path = ~/.config/git/ponko2/.gitconfig
