@@ -155,22 +155,6 @@ depends = 'vim-lsp'
 on_source = 'vim-vsnip'
 
 [[plugins]]
-repo = 'Shougo/junkfile.vim'
-on_cmd = 'JunkfileOpen'
-hook_add = '''
-  nnoremap <Leader>j <Cmd>JunkfileOpen<CR>
-'''
-
-[[plugins]]
-repo = 'Shougo/deol.nvim'
-on_cmd = 'Deol'
-hook_add = '''
-  nnoremap <Leader>s <Cmd>Deol zsh -split<CR>
-  nnoremap <Leader>S <Cmd>Deol zsh<CR>
-  " nnoremap <Leader>S <Cmd>call deol#new({'command': 'zsh'})<CR>
-'''
-
-[[plugins]]
 repo = 'junegunn/vim-easy-align'
 on_map = {xn = '<Plug>(EasyAlign)'}
 hook_add = '''
