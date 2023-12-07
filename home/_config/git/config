@@ -4,56 +4,56 @@
 [core]
 	editor = vim --clean -c \"set cb+=unnamed\"
 	pager = delta
-	quotePath = false
 	precomposeUnicode = true
+	quotePath = false
+[add.interactive]
+	useBuiltin = false
+[branch]
+	sort = -authordate
+[diff]
+	indentHeuristic = true
+[fetch]
+	prune = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process
+	required = true
+	smudge = git-lfs smudge -- %f
+[grep]
+	fullName = true
+[init]
+	defaultBranch = main
+[interactive]
+	diffFilter = delta --color-only
+[log]
+	date = iso8601-local
+[merge]
+	conflictStyle = zdiff3
+	ff = false
+[pull]
+	rebase = merges
 [push]
 	default = current
 	followTags = true
-[merge]
-	ff = false
-	conflictStyle = zdiff3
-[pull]
-	rebase = merges
-[log]
-	date = iso8601-local
-[delta]
-	navigate = true
-[diff]
-	indentHeuristic = true
-[status]
-	showUntrackedFiles = all
-[interactive]
-	diffFilter = delta --color-only
-[add.interactive]
-	useBuiltin = false
-[pager]
-	log = delta --diff-highlight --keep-plus-minus-markers
-	show = delta --diff-highlight --keep-plus-minus-markers
-	diff = delta --diff-highlight --keep-plus-minus-markers
-	branch = false
-[ghq]
-	root = ~/src
-[grep]
-	fullName = true
-[tag]
-	sort = version:refname
-[branch]
-	sort = -authordate
-[fetch]
-	prune = true
 [rebase]
+	abbreviateCommands = true
 	autoSquash = true
 	autoStash = true
-	abbreviateCommands = true
+[status]
+	showUntrackedFiles = all
 [stash]
 	showPatch = true
-[init]
-	defaultBranch = main
-[filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+[tag]
+	sort = version:refname
+[delta]
+	navigate = true
+[ghq]
+	root = ~/src
+[pager]
+	branch = false
+	diff = delta --diff-highlight --keep-plus-minus-markers
+	log = delta --diff-highlight --keep-plus-minus-markers
+	show = delta --diff-highlight --keep-plus-minus-markers
 [includeIf "gitdir:~/src/github.*/**"]
 	path = ~/.config/git/work/.gitconfig
 [includeIf "gitdir:~/dotfiles/"]
