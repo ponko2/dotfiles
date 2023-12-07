@@ -1,6 +1,7 @@
 [user]
 	name = Takahito Nakano
 	email = kano@ponko2.jp
+	signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM1vRbMLXd3C3xhcfdbRtrazLjbJUJbPrQGIIr5FdSHo
 [core]
 	editor = vim --clean -c \"set cb+=unnamed\"
 	pager = delta
@@ -10,6 +11,8 @@
 	useBuiltin = false
 [branch]
 	sort = -authordate
+[commit]
+	gpgSign = true
 [diff]
 	indentHeuristic = true
 [fetch]
@@ -21,6 +24,10 @@
 	smudge = git-lfs smudge -- %f
 [grep]
 	fullName = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
 [init]
 	defaultBranch = main
 [interactive]
@@ -56,7 +63,5 @@
 	show = delta --diff-highlight --keep-plus-minus-markers
 [includeIf "gitdir:~/src/github.*/**"]
 	path = ~/.config/git/work/.gitconfig
-[includeIf "gitdir:~/dotfiles/"]
-	path = ~/.config/git/ponko2/.gitconfig
 [includeIf "gitdir:~/src/github.com/ponko2/**"]
 	path = ~/.config/git/ponko2/.gitconfig
