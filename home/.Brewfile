@@ -25,7 +25,7 @@ brew "git-lfs"
 brew "ripgrep"
 
 ## ls
-brew "exa"
+brew "eza"
 brew "lsd"
 
 ## vim

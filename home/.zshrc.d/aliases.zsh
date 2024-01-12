@@ -12,8 +12,8 @@ esac
 # ls
 if command -v lsd >/dev/null; then
   alias ls='lsd --icon=never --date="+%Y-%m-%dT%H:%M:%S%z"'
-elif command -v exa >/dev/null; then
-  alias ls='exa --time-style="long-iso"'
+elif command -v eza >/dev/null; then
+  alias ls='eza --time-style="long-iso"'
 fi
 
 # diff
