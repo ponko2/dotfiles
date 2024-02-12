@@ -22,7 +22,7 @@ autoload -Uz zcalc
 autoload -Uz zmv
 
 # Editor
-export EDITOR="vim --clean -c \"set cb+=unnamed\""
+export EDITOR="vim --clean -c \"set enc=utf-8 cb+=unnamed\""
 export CVSEDITOR="${EDITOR}"
 export SVN_EDITOR="${EDITOR}"
 

@@ -3,7 +3,7 @@
 	email = kano@ponko2.jp
 	signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM1vRbMLXd3C3xhcfdbRtrazLjbJUJbPrQGIIr5FdSHo
 [core]
-	editor = vim --clean -c \"set cb+=unnamed\"
+	editor = vim --clean -c \"set enc=utf-8 cb+=unnamed\"
 	pager = delta
 	precomposeUnicode = true
 	quotePath = false
