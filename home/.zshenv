@@ -38,7 +38,7 @@ export CORRECT_IGNORE_FILE='.*'
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude ".git" --color=always'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS='--ansi'
+export FZF_DEFAULT_OPTS='--no-unicode --ansi'
 _fzf_compgen_path() {
   fd --hidden --follow --exclude ".git" --color=always . "$1"
 }

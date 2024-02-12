@@ -43,7 +43,7 @@ zinit wait lucid for \
   ponko2/cd-gitroot \
   atload"
     zstyle ':anyframe:selector:' use peco
-    zstyle ':anyframe:selector:fzf:' command 'fzf --exact --no-sort --cycle --reverse --inline-info --ansi'
+    zstyle ':anyframe:selector:fzf:' command 'fzf --exact --no-sort --cycle --reverse --no-unicode --ansi'
     bindkey '^r' anyframe-widget-put-history
     bindkey '^s' anyframe-widget-put-history
     bindkey '^xg' anyframe-widget-cd-ghq-repository
