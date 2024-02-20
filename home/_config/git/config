@@ -9,13 +9,18 @@
 [add.interactive]
 	useBuiltin = false
 [branch]
-	sort = -authordate
+	sort = -committerdate
 [commit]
 	gpgSign = true
+	verbose = true
 [diff]
 	indentHeuristic = true
+	algorithm = histogram
+	colorMoved = default
+	colorMovedWS = allow-indentation-change
 [fetch]
 	prune = true
+	pruneTags = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	process = git-lfs filter-process
@@ -37,12 +42,16 @@
 [pull]
 	rebase = merges
 [push]
+	autoSetupRemote = true
 	default = current
 	followTags = true
 [rebase]
-	abbreviateCommands = true
 	autoSquash = true
 	autoStash = true
+	missingCommitsCheck = error
+	abbreviateCommands = true
+[rerere]
+	enabled = true
 [status]
 	showUntrackedFiles = all
 [stash]
