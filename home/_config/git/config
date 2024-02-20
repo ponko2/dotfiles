@@ -4,7 +4,6 @@
 	signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM1vRbMLXd3C3xhcfdbRtrazLjbJUJbPrQGIIr5FdSHo
 [core]
 	editor = vim --clean -c \"set enc=utf-8 cb+=unnamed\"
-	pager = delta
 	precomposeUnicode = true
 	quotePath = false
 [add.interactive]
@@ -30,8 +29,6 @@
 	allowedSignersFile = ~/.ssh/allowed_signers
 [init]
 	defaultBranch = main
-[interactive]
-	diffFilter = delta --color-only
 [log]
 	date = iso8601-local
 [merge]
@@ -52,15 +49,10 @@
 	showPatch = true
 [tag]
 	sort = version:refname
-[delta]
-	navigate = true
 [ghq]
 	root = ~/src
 [pager]
 	branch = false
-	diff = delta --diff-highlight --keep-plus-minus-markers
-	log = delta --diff-highlight --keep-plus-minus-markers
-	show = delta --diff-highlight --keep-plus-minus-markers
 [includeIf "gitdir:~/src/github.*/**"]
 	path = ~/.config/git/work/.gitconfig
 [includeIf "gitdir:~/src/github.com/ponko2/**"]

@@ -17,7 +17,6 @@ brew "fd"
 ## git
 brew "gh"
 brew "git"
-brew "git-delta"
 brew "git-flow-avh"
 brew "git-lfs"
 
