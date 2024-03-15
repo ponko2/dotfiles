@@ -24,10 +24,12 @@ end)
 
 return {
 	adjust_window_size_when_changing_font_size = false,
+	audible_bell = "Disabled",
 	color_scheme = "GruvboxDarkHard",
 	colors = {
 		compose_cursor = "orange",
 		scrollbar_thumb = "#dddddd",
+		visual_bell = "#202020",
 	},
 	enable_scroll_bar = true,
 	font = wezterm.font("UDEV Gothic JPDOC"),
@@ -42,5 +44,11 @@ return {
 	scrollback_lines = 10000,
 	text_background_opacity = 0.8,
 	treat_east_asian_ambiguous_width_as_wide = true,
+	visual_bell = {
+		fade_in_duration_ms = 150,
+		fade_in_function = "EaseIn",
+		fade_out_duration_ms = 150,
+		fade_out_function = "EaseOut",
+	},
 	window_background_opacity = 0.8,
 }
