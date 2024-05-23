@@ -39,8 +39,6 @@ if OS.mac?
   ## Tap
   tap "daipeihust/tap"
   tap "golangci/tap"
-  tap "homebrew/cask-fonts"
-  tap "homebrew/cask-versions"
   tap "wez/wezterm"
 
   ## Command
@@ -83,7 +81,7 @@ if OS.mac?
   brew "zsh"
 
   ## Database
-  brew "mysql-client@5.7"
+  brew "mysql-client"
   brew "sqlite"
 
   ## Format
