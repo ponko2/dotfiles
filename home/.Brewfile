@@ -108,6 +108,7 @@ if OS.mac?
   cask "1password"
   cask "1password-cli"
   cask "appcleaner"
+  cask "devtoys"
   cask "docker"
   cask "finicky"
   cask "iterm2"
