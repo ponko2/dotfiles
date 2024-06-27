@@ -90,10 +90,6 @@ go = '''
 java = '''
   let b:ale_linters = []
 '''
-javascript = '''
-  let b:ale_linters = ['eslint']
-  let b:ale_fixers = ['eslint', 'prettier']
-'''
 javascriptreact = '''
   let b:ale_linters = ['eslint']
   let b:ale_fixers = ['eslint', 'prettier']
@@ -105,9 +101,6 @@ typescript = '''
 typescriptreact = '''
   let b:ale_linters = ['eslint']
   let b:ale_fixers = ['eslint', 'prettier']
-'''
-css = '''
-  let b:ale_fixers = ['prettier']
 '''
 scss = '''
   let b:ale_fixers = ['prettier']
