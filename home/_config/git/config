@@ -68,6 +68,8 @@
 [credential "https://gist.github.com"]
 	helper =
 	helper = !gh auth git-credential
+[include]
+	path = ~/.config/git/env/.gitconfig
 [includeIf "gitdir:~/src/github.*/**"]
 	path = ~/.config/git/work/.gitconfig
 [includeIf "gitdir:~/src/github.com/ponko2/**"]
