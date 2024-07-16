@@ -27,9 +27,6 @@ brew "ripgrep"
 brew "eza"
 brew "lsd"
 
-## vim
-brew "vim"
-
 ## Fuzzy finder
 brew "fzf"
 brew "fzy"
@@ -74,6 +71,7 @@ if OS.mac?
   brew "ssh-copy-id"
 
   ## vim
+  brew "vim"
   brew "neovim"
 
   ## zsh
