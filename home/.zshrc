@@ -12,6 +12,8 @@ fi
 # History
 if [[ -d "${XDG_STATE_HOME:-$HOME/.local/state}/zsh" ]]; then
   HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/zsh/history"
+else
+  HISTFILE=~/.zsh_history
 fi
 
 fpath=(${XDG_CONFIG_HOME:-$HOME/.config}/anyframe(N-/) $fpath)
