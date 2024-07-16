@@ -59,9 +59,9 @@ set nomodeline
 " クリップボードレジスタを使う
 if !has('nvim')
   if has('unnamedplus')
-    set clipboard& clipboard+=unnamedplus
+    set clipboard& clipboard^=unnamedplus
   else
-    set clipboard& clipboard+=unnamed
+    set clipboard& clipboard^=unnamed
   endif
 endif
 
