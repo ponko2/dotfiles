@@ -45,9 +45,11 @@ repo = 'mattn/vim-gomod'
 repo = 'vim-jp/syntax-vim-ex'
 
 [[plugins]]
-repo = 'airblade/vim-gitgutter'
+repo = 'mhinz/vim-signify'
 hook_add = '''
-  let g:gitgutter_diff_base = 'HEAD'
+  let g:signify_vcs_cmds = {
+        \   'git': 'git diff --no-color --no-ext-diff -U0 HEAD -- %f',
+        \ }
 '''
 
 [[plugins]]
