@@ -80,3 +80,6 @@ alias gs='git status'
 alias gss='git status -s'
 alias gsw='git switch'
 alias gt='cd-gitroot'
+
+# Vim
+alias vi='vim'
