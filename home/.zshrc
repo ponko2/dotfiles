@@ -49,6 +49,7 @@ zinit wait lucid for \
     bindkey '^r' anyframe-widget-put-history
     bindkey '^s' anyframe-widget-put-history
     bindkey '^x^b' anyframe-widget-checkout-git-branch
+    bindkey '^x^d' anyframe-widget-insert-git-diff-filename
     bindkey '^xf' anyframe-widget-insert-filename
     bindkey '^x^f' anyframe-widget-interactive-git-commit-fixup
     bindkey '^xg' anyframe-widget-cd-ghq-repository
