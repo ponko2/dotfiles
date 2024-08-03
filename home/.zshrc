@@ -48,17 +48,17 @@ zinit wait lucid for \
     zstyle ':anyframe:selector:fzf:' command 'fzf --exact --no-sort --cycle --reverse --no-unicode --ansi'
     bindkey '^r' anyframe-widget-put-history
     bindkey '^s' anyframe-widget-put-history
-    bindkey '^xg' anyframe-widget-cd-ghq-repository
-    bindkey '^x^g' anyframe-widget-cd-ghq-repository
     bindkey '^x^b' anyframe-widget-checkout-git-branch
-    bindkey '^xr' anyframe-widget-execute-history
-    bindkey '^x^r' anyframe-widget-execute-history
-    bindkey '^xk' anyframe-widget-kill
-    bindkey '^x^k' anyframe-widget-kill
-    bindkey '^xi' anyframe-widget-insert-git-branch
-    bindkey '^x^i' anyframe-widget-interactive-git-rebase
     bindkey '^xf' anyframe-widget-insert-filename
     bindkey '^x^f' anyframe-widget-interactive-git-commit-fixup
+    bindkey '^xg' anyframe-widget-cd-ghq-repository
+    bindkey '^x^g' anyframe-widget-cd-ghq-repository
+    bindkey '^xi' anyframe-widget-insert-git-branch
+    bindkey '^x^i' anyframe-widget-interactive-git-rebase
+    bindkey '^xk' anyframe-widget-kill
+    bindkey '^x^k' anyframe-widget-kill
+    bindkey '^xr' anyframe-widget-execute-history
+    bindkey '^x^r' anyframe-widget-execute-history
   " \
     mollifier/anyframe \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
