@@ -1,5 +1,6 @@
 # Use emacs key bindings
 bindkey -e
+bindkey '^[[3~' delete-char
 
 # historical backward/forward search with linehead string binded to ^P/^N
 zle -N history-beginning-search-backward-end history-search-end
