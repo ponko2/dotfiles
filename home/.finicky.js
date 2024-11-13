@@ -3,10 +3,15 @@ module.exports = {
   handlers: [
     {
       match: (options) => {
-        if (options.sourceBundleIdentifier !== "com.reederapp.macOS") {
+        if (options.opener.bundleId !== "com.reederapp.macOS") {
           return false;
         }
-        const domains = ["twitter.com", "github.com", "qiita.com"];
+        const domains = [
+          "github.com",
+          "qiita.com",
+          "twitter.com",
+          "youtube.com",
+        ];
         return finicky.matchDomains(domains)(options);
       },
       browser: {
@@ -15,15 +20,14 @@ module.exports = {
       },
     },
     {
-      match: ({ sourceBundleIdentifier }) =>
-        sourceBundleIdentifier === "com.reederapp.macOS",
+      match: ({ opener }) => opener.bundleId === "com.reederapp.macOS",
       browser: {
         name: "Firefox",
         openInBackground: true,
       },
     },
     {
-      match: ({ sourceBundleIdentifier }) =>
+      match: ({ opener }) =>
         [
           // Slack
           "com.tinyspeck.slackmacgap",
@@ -44,7 +48,7 @@ module.exports = {
           "com.googlecode.iterm2",
           // Command Line Tools
           null,
-        ].includes(sourceBundleIdentifier),
+        ].includes(opener.bundleId),
       browser: "Google Chrome",
     },
   ],
