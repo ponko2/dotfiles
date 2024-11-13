@@ -3,7 +3,8 @@
 {
   "name": "Debian",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/base:bullseye",
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  "runArgs": ["--platform=linux/amd64"],
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
@@ -21,14 +22,14 @@
         "terminal.integrated.defaultProfile.linux": "zsh (login)",
         "terminal.integrated.profiles.linux": {
           "zsh (login)": {
-            "path": "zsh",
+            "path": "/usr/bin/zsh",
             "args": ["-l"]
           }
         }
       },
 
       // Add the IDs of extensions you want installed when the container is created.
-      "extensions": ["editorconfig.editorconfig", "esbenp.prettier-vscode"]
+      "extensions": ["biomejs.biome", "editorconfig.editorconfig"]
     }
   }
 

@@ -4,7 +4,7 @@
 
 ### Local
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ponko2/dotfiles/master/install.sh | /bin/bash
+curl -fsSL https://raw.githubusercontent.com/ponko2/dotfiles/HEAD/install.sh | /bin/bash
 ```
 
 ### [Visual Studio Code Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers)

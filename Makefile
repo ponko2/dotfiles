@@ -58,7 +58,7 @@ bundle: | $(HOMEBREW) $(HOMEBREW_BUNDLE) ## Install and upgrade all dependencies
 
 $(HOMEBREW):
 	NONINTERACTIVE=1 $(SHELL) -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	echo 'eval "$$($@ shellenv)"' >> $(HOME)/.profile
+	printf '\neval "$$($@ shellenv)"' >> $(HOME)/.profile
 
 $(HOMEBREW_BUNDLE):
 	$(SHELL) --login -c "brew tap homebrew/bundle"
