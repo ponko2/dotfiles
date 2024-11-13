@@ -30,12 +30,12 @@ endif
 
 " Width of window.
 if &columns < 170
-   set columns=170
+  set columns=170
 endif
 
 " Height of window.
 if &lines < 40
-   set lines=40
+  set lines=40
 endif
 
 
