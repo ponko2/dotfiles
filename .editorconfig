@@ -17,5 +17,13 @@ indent_size = 4
 indent_style = tab
 indent_size = 4
 
+[.gitconfig]
+indent_style = tab
+indent_size = 4
+
+[home/_config/git/config]
+indent_style = tab
+indent_size = 4
+
 [*.md]
 trim_trailing_whitespace = false
