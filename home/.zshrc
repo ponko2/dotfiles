@@ -107,6 +107,10 @@ if [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/op/plugins.sh" ]]; then
   source "${XDG_CONFIG_HOME:-$HOME/.config}/op/plugins.sh"
 fi
 
+if [[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/../bin/env" ]]; then
+  source "${XDG_DATA_HOME:-$HOME/.local/share}/../bin/env"
+fi
+
 _prompt_executing=""
 function __prompt_precmd() {
     local ret="$?"
@@ -119,7 +123,7 @@ function __prompt_precmd() {
     fi
     if test "$_prompt_executing" != ""
     then
-       printf "\033]133;D;%s;aid=%s\007" "$ret" "$$"
+      printf "\033]133;D;%s;aid=%s\007" "$ret" "$$"
     fi
     printf "\033]133;A;cl=m;aid=%s\007" "$$"
     _prompt_executing=0
