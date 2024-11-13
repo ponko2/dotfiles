@@ -87,6 +87,7 @@ if OS.mac?
 
   ## Lint
   brew "checkmake"
+  brew "editorconfig-checker"
   brew "shellcheck"
   brew "stylua"
   brew "yamllint"
@@ -113,7 +114,6 @@ if OS.mac?
   cask "karabiner-elements"
   cask "keepingyouawake"
   cask "monitorcontrol"
-  cask "mysqlworkbench"
   cask "raycast"
   cask "rectangle"
   cask "the-unarchiver"
