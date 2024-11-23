@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 " My filetype file.
 
 if exists('did_load_filetypes')

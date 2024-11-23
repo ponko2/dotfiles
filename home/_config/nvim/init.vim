@@ -1,6 +1,8 @@
 " Skip initialization for vim-tiny or vim-small.
 if !1 | finish | endif
 
+scriptencoding utf-8
+
 if empty($XDG_CONFIG_HOME)
   let $XDG_CONFIG_HOME = expand('$HOME/.config')
 endif
