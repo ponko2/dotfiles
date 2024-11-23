@@ -2,7 +2,7 @@
 
 ## Command
 brew "colordiff"
-brew "fnm"
+brew "gh"
 brew "ghq"
 brew "jq"
 brew "starship"
@@ -15,13 +15,12 @@ brew "bat"
 brew "fd"
 
 ## git
-brew "gh"
 brew "git"
-brew "git-flow-avh"
 brew "git-lfs"
 
 ## grep
 brew "ripgrep"
+brew "ripgrep-all"
 
 ## ls
 brew "eza"
@@ -29,18 +28,10 @@ brew "lsd"
 
 ## Fuzzy finder
 brew "fzf"
-brew "fzy"
 brew "peco"
 
 if OS.mac?
-  ## Tap
-  tap "daipeihust/tap"
-  tap "golangci/tap"
-  tap "wez/wezterm"
-
   ## Command
-  brew "automake"
-  brew "cmake"
   brew "coreutils"
   brew "diffutils"
   brew "dos2unix"
@@ -48,23 +39,15 @@ if OS.mac?
   brew "exiftool"
   brew "findutils"
   brew "gawk"
-  brew "gettext"
   brew "gnu-sed"
   brew "gnu-tar"
   brew "grep"
   brew "gzip"
-  brew "im-select"
   brew "imagemagick"
-  brew "libtool"
-  brew "ninja"
   brew "nkf"
   brew "p7zip"
-  brew "pkg-config"
   brew "rsync"
   brew "watch"
-
-  ## grep
-  brew "ripgrep-all"
 
   ## ssh
   brew "openssh"
@@ -75,7 +58,6 @@ if OS.mac?
   brew "neovim"
 
   ## zsh
-  brew "terminal-notifier"
   brew "zsh"
 
   ## Database
@@ -84,12 +66,16 @@ if OS.mac?
 
   ## Format
   brew "shfmt"
+  brew "stylua"
+
+  ## Go
+  brew "go"
+  brew "golangci-lint"
 
   ## Lint
   brew "checkmake"
   brew "editorconfig-checker"
   brew "shellcheck"
-  brew "stylua"
   brew "yamllint"
 
   ## Network
@@ -98,14 +84,14 @@ if OS.mac?
   brew "iproute2mac"
   brew "wget"
 
-  ## Golang
-  brew "go"
-  brew "golangci-lint"
+  ## Node.js
+  brew "fnm"
 
   ## Mac Apps
   cask "xquartz"
   cask "1password"
   cask "1password-cli"
+  cask "adobe-acrobat-reader"
   cask "appcleaner"
   cask "devtoys"
   cask "docker"
@@ -114,19 +100,15 @@ if OS.mac?
   cask "karabiner-elements"
   cask "keepingyouawake"
   cask "monitorcontrol"
+  cask "mysqlworkbench"
   cask "raycast"
   cask "rectangle"
+  cask "sequel-ace"
   cask "the-unarchiver"
-  cask "wez/wezterm/wezterm"
+  cask "visual-studio-code"
+  cask "wezterm"
 
   ## Fonts
-  cask "font-biz-udgothic"
-  cask "font-biz-udmincho"
-  cask "font-biz-udpgothic"
-  cask "font-biz-udpmincho"
-  cask "font-cica"
-  cask "font-hackgen"
-  cask "font-ricty-diminished"
   cask "font-udev-gothic"
   cask "font-udev-gothic-nf"
 

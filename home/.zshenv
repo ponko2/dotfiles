@@ -70,25 +70,25 @@ export GOPATH=$HOME
 path=(
   ./node_modules/.bin # Node.js
   $GOPATH/bin(N-/) # Golang
-  /usr/local/opt/mysql-client@5.7/bin(N-/) # MySQL
-  /usr/local/opt/coreutils/libexec/gnubin(N-/) # coreutils
-  /usr/local/opt/ed/libexec/gnubin(N-/) # ed
-  /usr/local/opt/findutils/libexec/gnubin(N-/) # findutils
-  /usr/local/opt/gawk/libexec/gnubin(N-/) # awk
-  /usr/local/opt/gnu-sed/libexec/gnubin(N-/) # sed
-  /usr/local/opt/gnu-tar/libexec/gnubin(N-/) # tar
-  /usr/local/opt/grep/libexec/gnubin(N-/) # grep
+  /opt/homebrew/opt/mysql-client/bin(N-/) # MySQL Client
+  /opt/homebrew/opt/coreutils/libexec/gnubin(N-/) # coreutils
+  /opt/homebrew/opt/ed/libexec/gnubin(N-/) # ed
+  /opt/homebrew/opt/findutils/libexec/gnubin(N-/) # findutils
+  /opt/homebrew/opt/gawk/libexec/gnubin(N-/) # awk
+  /opt/homebrew/opt/gnu-sed/libexec/gnubin(N-/) # sed
+  /opt/homebrew/opt/gnu-tar/libexec/gnubin(N-/) # tar
+  /opt/homebrew/opt/grep/libexec/gnubin(N-/) # grep
   $path
 )
 
 manpath=(
-  /usr/local/opt/coreutils/libexec/gnuman(N-/) # coreutils
-  /usr/local/opt/ed/libexec/gnuman(N-/) # ed
-  /usr/local/opt/findutils/libexec/gnuman(N-/) # findutils
-  /usr/local/opt/gawk/libexec/gnuman(N-/) # awk
-  /usr/local/opt/gnu-sed/libexec/gnuman(N-/) # sed
-  /usr/local/opt/gnu-tar/libexec/gnuman(N-/) # tar
-  /usr/local/opt/grep/libexec/gnuman(N-/) # grep
+  /opt/homebrew/opt/coreutils/libexec/gnuman(N-/) # coreutils
+  /opt/homebrew/opt/ed/libexec/gnuman(N-/) # ed
+  /opt/homebrew/opt/findutils/libexec/gnuman(N-/) # findutils
+  /opt/homebrew/opt/gawk/libexec/gnuman(N-/) # awk
+  /opt/homebrew/opt/gnu-sed/libexec/gnuman(N-/) # sed
+  /opt/homebrew/opt/gnu-tar/libexec/gnuman(N-/) # tar
+  /opt/homebrew/opt/grep/libexec/gnuman(N-/) # grep
   $manpath
 )
 
