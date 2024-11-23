@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 if !has('vim_starting') | finish | endif
 
 "---------------------------------------------------------------------------
