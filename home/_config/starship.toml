@@ -15,7 +15,9 @@ deleted = "x"
 
 [aws]
 symbol = "aws "
-disabled = true
+
+[azure]
+symbol = "az "
 
 [bun]
 symbol = "bun "
@@ -65,8 +67,14 @@ symbol = "fnl "
 [fossil_branch]
 symbol = "fossil "
 
+[gcloud]
+symbol = "gcp "
+
 [git_branch]
 symbol = "git "
+
+[gleam]
+symbol = "gleam "
 
 [golang]
 symbol = "go "
@@ -101,6 +109,9 @@ symbol = "memory "
 [meson]
 symbol = "meson "
 
+[nats]
+symbol = "nats "
+
 [nim]
 symbol = "nim "
 
@@ -114,10 +125,14 @@ symbol = "ml "
 symbol = "opa "
 
 [os.symbols]
+AIX = "aix "
+Alpaquita = "alq "
+AlmaLinux = "alma "
 Alpine = "alp "
 Amazon = "amz "
 Android = "andr "
 Arch = "rch "
+Artix = "atx "
 CentOS = "cent "
 Debian = "deb "
 DragonFly = "dfbsd "
@@ -129,7 +144,9 @@ Garuda = "garu "
 Gentoo = "gent "
 HardenedBSD = "hbsd "
 Illumos = "lum "
+Kali = "kali "
 Linux = "lnx "
+Mabox = "mbox "
 Macos = "mac "
 Manjaro = "mjo "
 Mariner = "mrn "
@@ -146,11 +163,14 @@ Pop = "pop "
 Raspbian = "rasp "
 Redhat = "rhl "
 RedHatEnterprise = "rhel "
+RockyLinux = "rky "
 Redox = "redox "
 Solus = "sol "
 SUSE = "suse "
 Ubuntu = "ubnt "
+Ultramarine = "ultm "
 Unknown = "unk "
+Void = "void "
 Windows = "win "
 
 [package]
@@ -174,6 +194,9 @@ symbol = "purs "
 [python]
 symbol = "py "
 
+[quarto]
+symbol = "quarto "
+
 [raku]
 symbol = "raku "
 
@@ -189,6 +212,9 @@ symbol = "scala "
 [spack]
 symbol = "spack "
 
+[solidity]
+symbol = "solidity "
+
 [status]
 symbol = "[x](bold red) "
 
@@ -197,6 +223,9 @@ symbol = "sudo "
 
 [swift]
 symbol = "swift "
+
+[typst]
+symbol = "typst "
 
 [terraform]
 symbol = "terraform "
