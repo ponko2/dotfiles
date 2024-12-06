@@ -2,8 +2,9 @@
 export LANG=ja_JP.UTF-8
 
 # XDG Base Directory
-export XDG_CONFIG_HOME=$HOME/.config
+export XDG_BIN_HOME=$HOME/.local/bin
 export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
@@ -72,7 +73,8 @@ export GOPATH=$HOME
 
 path=(
   ./node_modules/.bin # Node.js
-  $GOPATH/bin(N-/) # Golang
+  $HOME/bin(N-/)
+  $XDG_BIN_HOME(N-/)
   /opt/homebrew/opt/mysql-client/bin(N-/) # MySQL Client
   /opt/homebrew/opt/coreutils/libexec/gnubin(N-/) # coreutils
   /opt/homebrew/opt/ed/libexec/gnubin(N-/) # ed
