@@ -77,10 +77,6 @@ if command -v fnm >/dev/null; then
   eval "$(fnm env)"
 fi
 
-# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
@@ -101,10 +97,6 @@ unset -f source_snippets
 
 if [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.zsh" ]]; then
   source "${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.zsh"
-fi
-
-if [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/op/plugins.sh" ]]; then
-  source "${XDG_CONFIG_HOME:-$HOME/.config}/op/plugins.sh"
 fi
 
 if [[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/../bin/env" ]]; then
@@ -136,12 +128,6 @@ function __prompt_preexec() {
 }
 preexec_functions+=(__prompt_preexec)
 precmd_functions+=(__prompt_precmd)
-
-function awsp() {
-  local profile
-  profile=$(aws configure list-profiles | fzf -q "$1")
-  [ -n "$profile" ] && export AWS_PROFILE="$profile"
-}
 
 if [[ -f ~/.zshrc.local ]]; then
   zinit snippet ~/.zshrc.local
