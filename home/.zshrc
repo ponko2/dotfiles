@@ -99,10 +99,6 @@ if [[ -f "$XDG_CONFIG_HOME/fzf/fzf.zsh" ]]; then
   source "$XDG_CONFIG_HOME/fzf/fzf.zsh"
 fi
 
-if [[ -f "$XDG_DATA_HOME/../bin/env" ]]; then
-  source "$XDG_DATA_HOME/../bin/env"
-fi
-
 _prompt_executing=""
 function __prompt_precmd() {
     local ret="$?"
