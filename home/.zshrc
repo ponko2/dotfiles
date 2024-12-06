@@ -77,14 +77,6 @@ if command -v fnm >/dev/null; then
   eval "$(fnm env)"
 fi
 
-# pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 function source_snippets() {
   local snippet
   local snippets=("$HOME"/.zshrc.d/*.zsh(.N))
@@ -97,6 +89,14 @@ unset -f source_snippets
 
 if [[ -f "$XDG_CONFIG_HOME/fzf/fzf.zsh" ]]; then
   source "$XDG_CONFIG_HOME/fzf/fzf.zsh"
+fi
+
+if [[ -d "$XDG_DATA_HOME/pnpm" ]]; then
+  export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+  case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+  esac
 fi
 
 _prompt_executing=""
