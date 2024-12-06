@@ -10,13 +10,13 @@ if [ "$TERM" != 'dumb' ]; then
 fi
 
 # History
-if [[ -d "${XDG_STATE_HOME:-$HOME/.local/state}/zsh" ]]; then
-  HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/zsh/history"
+if [[ -d "$XDG_STATE_HOME/zsh" ]]; then
+  HISTFILE="$XDG_STATE_HOME/zsh/history"
 else
   HISTFILE=~/.zsh_history
 fi
 
-fpath=(${XDG_CONFIG_HOME:-$HOME/.config}/anyframe(N-/) $fpath)
+fpath=($XDG_CONFIG_HOME/anyframe(N-/) $fpath)
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -95,12 +95,12 @@ function source_snippets() {
 source_snippets
 unset -f source_snippets
 
-if [[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.zsh" ]]; then
-  source "${XDG_CONFIG_HOME:-$HOME/.config}/fzf/fzf.zsh"
+if [[ -f "$XDG_CONFIG_HOME/fzf/fzf.zsh" ]]; then
+  source "$XDG_CONFIG_HOME/fzf/fzf.zsh"
 fi
 
-if [[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/../bin/env" ]]; then
-  source "${XDG_DATA_HOME:-$HOME/.local/share}/../bin/env"
+if [[ -f "$XDG_DATA_HOME/../bin/env" ]]; then
+  source "$XDG_DATA_HOME/../bin/env"
 fi
 
 _prompt_executing=""
