@@ -22,7 +22,6 @@
                 "^com\\.github\\.wez\\.wezterm",
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.microsoft\\.VSCode$",
-                "^com\\.qvacua\\.VimR$",
                 "^org\\.vim\\."
               ]
             }
@@ -46,7 +45,6 @@
                 "^com\\.github\\.wez\\.wezterm",
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.microsoft\\.VSCode$",
-                "^com\\.qvacua\\.VimR$",
                 "^org\\.vim\\."
               ]
             }
