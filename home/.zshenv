@@ -65,16 +65,16 @@ setopt no_global_rcs
 # copied from /etc/zprofile
 # system-wide environment settings for zsh(1)
 if [ -x /usr/libexec/path_helper ]; then
-  eval $(/usr/libexec/path_helper -s)
+  eval "$(/usr/libexec/path_helper -s)"
 fi
 
 # Golang
-export GOPATH=$HOME
+export GOPATH="$HOME"
 
 path=(
   ./node_modules/.bin # Node.js
-  $HOME/bin(N-/)
-  $XDG_BIN_HOME(N-/)
+  "$HOME/bin"(N-/)
+  "$XDG_BIN_HOME"(N-/)
   /opt/homebrew/opt/mysql-client/bin(N-/) # MySQL Client
   /opt/homebrew/opt/coreutils/libexec/gnubin(N-/) # coreutils
   /opt/homebrew/opt/ed/libexec/gnubin(N-/) # ed
