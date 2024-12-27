@@ -5,6 +5,7 @@ brew "colordiff"
 brew "gh"
 brew "ghq"
 brew "jq"
+brew "sheldon"
 brew "starship"
 brew "zoxide"
 
