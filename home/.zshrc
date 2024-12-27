@@ -19,8 +19,6 @@ fi
 # Use emacs key bindings
 bindkey -e
 
-fpath=("$XDG_CONFIG_HOME/anyframe"(N-/) $fpath)
-
 ### Added by Zinit's installer
 if [[ ! -f "$HOME/.local/share/zinit/zinit.git/zinit.zsh" ]]; then
   print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -46,26 +44,8 @@ zinit light-mode for \
 
 zinit wait lucid for \
   olets/zsh-abbr \
+  junegunn/fzf-git.sh \
   ponko2/cd-gitroot \
-  atload"
-    zstyle ':anyframe:selector:' use peco
-    zstyle ':anyframe:selector:fzf:' command 'fzf --exact --no-sort --cycle --reverse --no-unicode --ansi'
-    bindkey '^R' anyframe-widget-put-history
-    bindkey '^S' anyframe-widget-put-history
-    bindkey '^X^B' anyframe-widget-checkout-git-branch
-    bindkey '^X^D' anyframe-widget-insert-git-diff-filename
-    bindkey '^Xf' anyframe-widget-insert-filename
-    bindkey '^X^F' anyframe-widget-interactive-git-commit-fixup
-    bindkey '^Xg' anyframe-widget-cd-ghq-repository
-    bindkey '^X^G' anyframe-widget-cd-ghq-repository
-    bindkey '^Xi' anyframe-widget-insert-git-branch
-    bindkey '^X^I' anyframe-widget-interactive-git-rebase
-    bindkey '^Xk' anyframe-widget-kill
-    bindkey '^X^K' anyframe-widget-kill
-    bindkey '^Xr' anyframe-widget-execute-history
-    bindkey '^X^R' anyframe-widget-execute-history
-  " \
-    mollifier/anyframe \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting
 
@@ -90,10 +70,6 @@ function source_snippets() {
 }
 source_snippets
 unset -f source_snippets
-
-if [[ -f "$XDG_CONFIG_HOME/fzf/fzf.zsh" ]]; then
-  source "$XDG_CONFIG_HOME/fzf/fzf.zsh"
-fi
 
 if [[ -d "$XDG_DATA_HOME/pnpm" ]]; then
   export PNPM_HOME="$XDG_DATA_HOME/pnpm"

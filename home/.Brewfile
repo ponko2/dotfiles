@@ -29,7 +29,6 @@ brew "lsd"
 
 ## Fuzzy finder
 brew "fzf"
-brew "peco"
 
 if OS.mac?
   ## Command
