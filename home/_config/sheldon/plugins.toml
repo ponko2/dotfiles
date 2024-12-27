@@ -1,0 +1,146 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+[templates]
+defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
+
+[plugins]
+
+[plugins.defer]
+github = "romkatv/zsh-defer"
+
+[plugins.starship]
+inline = '''
+if command -v starship >/dev/null; then
+  eval "$(starship init zsh)"
+fi
+'''
+
+[plugins.fzf]
+inline = '''
+export FZF_DEFAULT_OPTS='--no-unicode --ansi'
+export FZF_CTRL_T_OPTS='--cycle'
+export FZF_CTRL_R_OPTS='--exact --cycle --reverse'
+export FZF_ALT_C_OPTS='--cycle'
+export FZF_COMPLETION_OPTS='--cycle'
+if command -v fd >/dev/null; then
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude ".git" --color=always'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  _fzf_compgen_path() {
+    fd --hidden --follow --exclude ".git" --color=always . "$1"
+  }
+  _fzf_compgen_dir() {
+    fd --type d --hidden --follow --exclude ".git" --color=always . "$1"
+  }
+fi
+if [[ -f "$XDG_CONFIG_HOME/fzf/fzf.zsh" ]]; then
+  source "$XDG_CONFIG_HOME/fzf/fzf.zsh"
+  bindkey "^S" fzf-history-widget
+fi
+'''
+
+[plugins.fzf-git]
+github = "junegunn/fzf-git.sh"
+
+[plugins.fzf-git.hooks]
+post = '''
+# git commit --fixup
+function fzf-git-commit_fixup-widget() {
+  setopt local_options pipefail no_aliases 2> /dev/null
+  local sha="$(_fzf_git_hashes --no-multi)"
+  if [[ -z "$sha" ]]; then
+    zle redisplay
+    return 0
+  fi
+  BUFFER="git commit --fixup $sha"
+  zle accept-line
+  local ret=$?
+  zle reset-prompt
+  return $ret
+}
+zle -N fzf-git-commit_fixup-widget
+bindkey '^Gc' fzf-git-commit_fixup-widget
+
+# git rebase --interactive
+function fzf-git-rebase_interactive-widget() {
+  setopt local_options pipefail no_aliases 2> /dev/null
+  local sha="$(_fzf_git_hashes --no-multi)"
+  if [[ -z "$sha" ]]; then
+    zle redisplay
+    return 0
+  fi
+  BUFFER="git rebase --interactive $sha^"
+  zle accept-line
+  local ret=$?
+  zle reset-prompt
+  return $ret
+}
+zle -N fzf-git-rebase_interactive-widget
+bindkey '^Gr' fzf-git-rebase_interactive-widget
+'''
+
+[plugins.cargo]
+inline = '''
+if [[ -f "$HOME/.cargo/env" ]]; then
+  source "$HOME/.cargo/env"
+fi
+'''
+
+[plugins.fnm]
+inline = '''
+if command -v fnm >/dev/null; then
+  eval "$(fnm env)"
+fi
+'''
+
+[plugins.pnpm]
+inline = '''
+if [[ -d "$XDG_DATA_HOME/pnpm" ]]; then
+  export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+  case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+  esac
+fi
+'''
+
+[plugins.ponko2]
+local = "~/.zshrc.d"
+use = ["*.zsh"]
+
+[plugins.local]
+inline = '''
+if [[ -f ~/.zshrc.local ]]; then
+  source ~/.zshrc.local
+fi
+'''
+
+[plugins.compinit]
+inline = "autoload -Uz compinit && zsh-defer compinit"
+
+[plugins.abbr]
+github = "olets/zsh-abbr"
+apply = ["defer"]
+
+[plugins.syntax-highlighting]
+github = "z-shell/F-Sy-H"
+apply = ["defer"]
+
+[plugins.zoxide]
+github = "z-shell/zsh-zoxide"
+apply = ["defer"]
+
+[plugins.cd-gitroot]
+github = "ponko2/cd-gitroot"
+apply = ["defer"]
