@@ -1,5 +1,0 @@
-# vi: set ft=sh :
-
-git diff --name-only --relative HEAD \
-  | anyframe-selector-auto \
-  | anyframe-action-insert -q

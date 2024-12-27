@@ -37,15 +37,21 @@ export CORRECT_IGNORE='_*'
 export CORRECT_IGNORE_FILE='.*'
 
 # fzf
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude ".git" --color=always'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--no-unicode --ansi'
-_fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" --color=always . "$1"
-}
-_fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" --color=always . "$1"
-}
+export FZF_CTRL_T_OPTS='--cycle'
+export FZF_CTRL_R_OPTS='--exact --cycle --reverse'
+export FZF_ALT_C_OPTS='--cycle'
+export FZF_COMPLETION_OPTS='--cycle'
+if command -v fd >/dev/null; then
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude ".git" --color=always'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  _fzf_compgen_path() {
+    fd --hidden --follow --exclude ".git" --color=always . "$1"
+  }
+  _fzf_compgen_dir() {
+    fd --type d --hidden --follow --exclude ".git" --color=always . "$1"
+  }
+fi
 
 # ripgrep
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
