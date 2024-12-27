@@ -17,13 +17,10 @@ repo = 'vim-jp/vimdoc-ja'
 repo = 'thinca/vim-zenspace'
 
 [[plugins]]
-repo = 'morhetz/gruvbox'
+repo = 'sainnhe/gruvbox-material'
 hook_add = '''
-  autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
-  if IsWindows()
-    " 斜体表示をしない
-    let g:gruvbox_italic = 0
-  endif
+  let g:gruvbox_material_foreground = 'original'
+  let g:gruvbox_material_transparent_background = 1
 '''
 
 [[plugins]]
