@@ -8,20 +8,6 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
-# autoload
-autoload -Uz add-zsh-hook
-autoload -Uz cdr
-autoload -Uz chpwd_recent_dirs
-autoload -Uz colors && colors
-autoload -Uz history-search-end
-autoload -Uz is-at-least
-autoload -Uz run-help
-autoload -Uz run-help-git
-autoload -Uz smart-insert-last-word
-autoload -Uz url-quote-magic
-autoload -Uz zcalc
-autoload -Uz zmv
-
 # Editor
 export EDITOR="vim --clean -c \"set enc=utf-8 cb+=unnamed\""
 export CVSEDITOR="${EDITOR}"
