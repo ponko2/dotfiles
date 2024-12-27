@@ -1,10 +1,10 @@
 local wezterm = require("wezterm")
 
-function basename(path)
+local function basename(path)
 	return string.gsub(path, "(.*[/\\])(.*)", "%2")
 end
 
-wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
+wezterm.on("format-window-title", function(tab, _pane, tabs, _panes, _config)
 	local zoomed = ""
 	if tab.active_pane.is_zoomed then
 		zoomed = "[Z] "
@@ -18,14 +18,14 @@ wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
 	return zoomed .. index .. basename(tab.active_pane.foreground_process_name)
 end)
 
-wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+wezterm.on("format-tab-title", function(tab, _tabs, _panes, _config, _hover, _max_width)
 	return tab.tab_index + 1 .. ": " .. basename(tab.active_pane.foreground_process_name) .. " "
 end)
 
 return {
 	adjust_window_size_when_changing_font_size = false,
 	audible_bell = "Disabled",
-	color_scheme = "GruvboxDarkHard",
+	color_scheme = "GruvboxDark",
 	colors = {
 		compose_cursor = "orange",
 		scrollbar_thumb = "#dddddd",
@@ -33,7 +33,7 @@ return {
 	},
 	enable_scroll_bar = true,
 	font = wezterm.font("UDEV Gothic JPDOC"),
-	font_size = 18.0,
+	font_size = 16.0,
 	hide_tab_bar_if_only_one_tab = true,
 	keys = {
 		{ key = "UpArrow", mods = "SHIFT", action = wezterm.action.ScrollToPrompt(-1) },
