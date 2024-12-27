@@ -16,6 +16,9 @@ else
   HISTFILE=~/.zsh_history
 fi
 
+# Use emacs key bindings
+bindkey -e
+
 fpath=("$XDG_CONFIG_HOME/anyframe"(N-/) $fpath)
 
 ### Added by Zinit's installer
@@ -47,20 +50,20 @@ zinit wait lucid for \
   atload"
     zstyle ':anyframe:selector:' use peco
     zstyle ':anyframe:selector:fzf:' command 'fzf --exact --no-sort --cycle --reverse --no-unicode --ansi'
-    bindkey '^r' anyframe-widget-put-history
-    bindkey '^s' anyframe-widget-put-history
-    bindkey '^x^b' anyframe-widget-checkout-git-branch
-    bindkey '^x^d' anyframe-widget-insert-git-diff-filename
-    bindkey '^xf' anyframe-widget-insert-filename
-    bindkey '^x^f' anyframe-widget-interactive-git-commit-fixup
-    bindkey '^xg' anyframe-widget-cd-ghq-repository
-    bindkey '^x^g' anyframe-widget-cd-ghq-repository
-    bindkey '^xi' anyframe-widget-insert-git-branch
-    bindkey '^x^i' anyframe-widget-interactive-git-rebase
-    bindkey '^xk' anyframe-widget-kill
-    bindkey '^x^k' anyframe-widget-kill
-    bindkey '^xr' anyframe-widget-execute-history
-    bindkey '^x^r' anyframe-widget-execute-history
+    bindkey '^R' anyframe-widget-put-history
+    bindkey '^S' anyframe-widget-put-history
+    bindkey '^X^B' anyframe-widget-checkout-git-branch
+    bindkey '^X^D' anyframe-widget-insert-git-diff-filename
+    bindkey '^Xf' anyframe-widget-insert-filename
+    bindkey '^X^F' anyframe-widget-interactive-git-commit-fixup
+    bindkey '^Xg' anyframe-widget-cd-ghq-repository
+    bindkey '^X^G' anyframe-widget-cd-ghq-repository
+    bindkey '^Xi' anyframe-widget-insert-git-branch
+    bindkey '^X^I' anyframe-widget-interactive-git-rebase
+    bindkey '^Xk' anyframe-widget-kill
+    bindkey '^X^K' anyframe-widget-kill
+    bindkey '^Xr' anyframe-widget-execute-history
+    bindkey '^X^R' anyframe-widget-execute-history
   " \
     mollifier/anyframe \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
