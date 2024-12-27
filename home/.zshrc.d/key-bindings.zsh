@@ -1,22 +1,22 @@
-# Use emacs key bindings
-bindkey -e
+# Use the delete key
 bindkey '^[[3~' delete-char
 
 # historical backward/forward search with linehead string binded to ^P/^N
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
-bindkey '^p' history-beginning-search-backward-end
-bindkey '^n' history-beginning-search-forward-end
+bindkey '^P' history-beginning-search-backward-end
+bindkey '^N' history-beginning-search-forward-end
 bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
 
 # history search
-if zle -la | grep -q '^history-incremental-pattern-search'; then
-  bindkey '^r' history-incremental-pattern-search-backward
-  bindkey '^s' history-incremental-pattern-search-forward
-else
-  bindkey '^r' history-incremental-search-backward
-  bindkey '^s' history-incremental-search-forward
+if bindkey | grep -q '^"\^R" history-incremental-search-backward$' && \
+  zle -la | grep -q '^history-incremental-pattern-search-backward$'; then
+  bindkey '^R' history-incremental-pattern-search-backward
+fi
+if bindkey | grep -q '^"\^S" history-incremental-search-forward$' && \
+  zle -la | grep -q '^history-incremental-pattern-search-forward$'; then
+  bindkey '^S' history-incremental-pattern-search-forward
 fi
 
 # 直前のコマンドの最後の単語を挿入
