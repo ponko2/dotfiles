@@ -328,7 +328,7 @@ endif
 if !exists('g:colors_name')
   try
     set background=dark
-    colorscheme gruvbox
+    colorscheme gruvbox-material
   catch
     colorscheme desert
   endtry
