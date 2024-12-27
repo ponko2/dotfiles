@@ -178,4 +178,5 @@ setopt share_history
 #setopt short_loops
 
 # URL文字列を自動エスケープ
+autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
