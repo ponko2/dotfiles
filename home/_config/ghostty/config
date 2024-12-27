@@ -1,0 +1,16 @@
+font-family = "UDEV Gothic JPDOC"
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+font-size = 16
+theme = GruvboxDark
+mouse-hide-while-typing = true
+background-opacity = 0.8
+background-blur-radius = 20
+keybind = ctrl+[=text:\x1B
+keybind = ctrl+i=text:\x09
+keybind = ctrl+m=text:\x0D
+keybind = super+ctrl+`=toggle_quick_terminal
+window-padding-x = 8
+window-padding-balance = true
+macos-option-as-alt = true

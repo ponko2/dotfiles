@@ -22,6 +22,7 @@
                 "^com\\.github\\.wez\\.wezterm",
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.microsoft\\.VSCode$",
+                "^com\\.mitchellh\\.ghostty$",
                 "^org\\.vim\\."
               ]
             }
@@ -45,6 +46,7 @@
                 "^com\\.github\\.wez\\.wezterm",
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.microsoft\\.VSCode$",
+                "^com\\.mitchellh\\.ghostty$",
                 "^org\\.vim\\."
               ]
             }
