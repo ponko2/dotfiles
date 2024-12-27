@@ -18,6 +18,13 @@ repo = 'thinca/vim-zenspace'
 
 [[plugins]]
 repo = 'morhetz/gruvbox'
+hook_add = '''
+  autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
+  if IsWindows()
+    " 斜体表示をしない
+    let g:gruvbox_italic = 0
+  endif
+'''
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'

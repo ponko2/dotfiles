@@ -326,11 +326,6 @@ endif
 
 " Color Scheme
 if !exists('g:colors_name')
-  if IsWindows()
-    " 斜体表示をしない
-    let g:gruvbox_italic = 0
-  endif
-
   try
     set background=dark
     colorscheme gruvbox
