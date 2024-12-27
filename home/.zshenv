@@ -30,7 +30,7 @@ export SVN_EDITOR="${EDITOR}"
 # History
 export HISTSIZE=10000
 export SAVEHIST=10000
-export HISTORY_IGNORE='((cd|g[abcd]|gco|glo|gr|gsw|kill|ls|mv|rm|git (show|rebase -i|commit --fixup))( *)#|{*|exit|gss|pwd)'
+export HISTORY_IGNORE='(* --help|(bat|cat|cd|chmod|chown|cp|echo|ls|man|mv|rm|which)(| *)|git (add|blame|checkout|cherry-pick|commit|diff|log|rebase|reset|revert|show|status) *|{*)'
 
 # Correction
 export CORRECT_IGNORE='_*'

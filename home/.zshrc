@@ -42,6 +42,7 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 zinit wait lucid for \
+  olets/zsh-abbr \
   ponko2/cd-gitroot \
   atload"
     zstyle ':anyframe:selector:' use peco
