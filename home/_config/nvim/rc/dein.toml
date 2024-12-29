@@ -51,8 +51,8 @@ repo = 'vim-jp/syntax-vim-ex'
 [[plugins]]
 repo = 'mhinz/vim-signify'
 hook_add = '''
-  let g:signify_vcs_cmds = {
-        \   'git': 'git diff --no-color --no-ext-diff -U0 HEAD -- %f',
+  let g:signify_vcs_cmds = #{
+        \   git: 'git diff --no-color --no-ext-diff -U0 HEAD -- %f',
         \ }
 '''
 
