@@ -26,13 +26,13 @@ hook_add = '''
 repo = 'mattn/vim-lsp-settings'
 on_source = 'vim-lsp'
 hook_add = '''
-  let g:lsp_settings = {
-        \   'yaml-language-server': {
-        \     'workspace_config': {
-        \       'yaml': {
-        \         'validate': v:false,
-        \         'hover': v:true,
-        \         'completion': v:true,
+  let g:lsp_settings = #{
+        \   yaml-language-server: #{
+        \     workspace_config: #{
+        \       yaml: #{
+        \         validate: v:false,
+        \         hover: v:true,
+        \         completion: v:true,
         \       },
         \     },
         \   },
@@ -61,7 +61,7 @@ hook_add = '''
 repo = 'mattn/ctrlp-matchfuzzy'
 on_source = 'ctrlp.vim'
 hook_add = '''
-  let g:ctrlp_match_func = {'match': 'ctrlp_matchfuzzy#matcher'}
+  let g:ctrlp_match_func = #{match: 'ctrlp_matchfuzzy#matcher'}
 '''
 
 [[plugins]]
@@ -224,11 +224,7 @@ hook_add = '''
 repo = 'mattn/emmet-vim'
 on_event = 'InsertEnter'
 hook_source = '''
-  let g:user_emmet_settings = {
-        \   'variables': {
-        \     'lang': 'ja',
-        \   },
-        \ }
+  let g:user_emmet_settings = #{variables: #{lang: 'ja'}}
 '''
 
 [[plugins]]
