@@ -2,9 +2,11 @@ SHELL := /bin/bash
 .SHELLFLAGS := -euo pipefail -c
 .DEFAULT_GOAL := help
 
+XDG_BIN_HOME := $(HOME)/.local/bin
 XDG_CONFIG_HOME := $(HOME)/.config
 SRCDIR := $(abspath home)
 DOTFILES := $(foreach path, $(wildcard $(SRCDIR)/.??*), $(HOME)/$(notdir $(path)))
+XDG_BINS := $(foreach path, $(wildcard $(SRCDIR)/.local/bin/*), $(XDG_BIN_HOME)/$(notdir $(path)))
 XDG_CONFIGS := $(foreach path, $(wildcard $(SRCDIR)/_config/*), $(XDG_CONFIG_HOME)/$(notdir $(path)))
 
 ifeq ($(shell uname -s),Darwin)
@@ -40,13 +42,19 @@ help:
 install: symlink bundle ## Run make symlink, bundle.
 
 .PHONY: symlink
-symlink: | $(DOTFILES) $(XDG_CONFIGS) ## Create symlink to home directory.
+symlink: | $(DOTFILES) $(XDG_BINS) $(XDG_CONFIGS) ## Create symlink to home directory.
 
 $(DOTFILES):
 	ln -s $(SRCDIR)/$(@F) $@
 
+$(XDG_BINS): | $(XDG_BIN_HOME)
+	ln -s $(SRCDIR)/.local/bin/$(@F) $@
+
 $(XDG_CONFIGS): | $(XDG_CONFIG_HOME)
 	ln -s $(SRCDIR)/_config/$(@F) $@
+
+$(XDG_BIN_HOME):
+	mkdir -p $@
 
 $(XDG_CONFIG_HOME):
 	mkdir $@

@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# ripgrep->fzf->vim [QUERY]
+rm -f /tmp/rg-fzf-{r,f}
+RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case"
+OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
+          vim {1} +{2}     # No selection. Open the current line in Vim.
+        else
+          vim +cw -q {+f}  # Build quickfix list for the selected items.
+        fi'
+INITIAL_QUERY="${*:-}"
+fzf --disabled --multi --ansi --query "$INITIAL_QUERY" \
+    --bind "start:reload:$RG_PREFIX {q}" \
+    --bind "change:reload:sleep 0.1; $RG_PREFIX {q} || :" \
+    --bind "enter:become:$OPENER" \
+    --bind "ctrl-o:execute:$OPENER" \
+    --bind 'alt-a:select-all,alt-d:deselect-all,ctrl-/:toggle-preview,ctrl-t:transform:[[ ! $FZF_PROMPT =~ ripgrep ]] &&
+      echo "rebind(change)+change-prompt(1. ripgrep> )+disable-search+transform-query:echo \{q} > /tmp/rg-fzf-f; cat /tmp/rg-fzf-r" ||
+      echo "unbind(change)+change-prompt(2. fzf> )+enable-search+transform-query:echo \{q} > /tmp/rg-fzf-r; cat /tmp/rg-fzf-f"' \
+    --color "hl:-1:underline,hl+:-1:underline:reverse" \
+    --prompt '1. ripgrep> ' \
+    --delimiter : \
+    --header 'CTRL-T: Switch between ripgrep/fzf' \
+    --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+    --preview-window 'up,60%,border-bottom,+{2}+3/3,~3'
