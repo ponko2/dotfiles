@@ -87,9 +87,6 @@ go = '''
   let b:ale_go_golangci_lint_options = ''
   let b:ale_go_golangci_lint_package = 1
 '''
-java = '''
-  let b:ale_linters = []
-'''
 javascript = '''
   let b:ale_linters = ['eslint']
   let b:ale_fixers = ['eslint', 'prettier']
@@ -110,9 +107,6 @@ css = '''
   let b:ale_fixers = ['prettier']
 '''
 scss = '''
-  let b:ale_fixers = ['prettier']
-'''
-less = '''
   let b:ale_fixers = ['prettier']
 '''
 html = '''
@@ -231,7 +225,7 @@ hook_source = '''
 repo = 'rhysd/vim-gfm-syntax'
 on_ft = 'markdown'
 hook_add = '''
-  let g:markdown_fenced_languages = ['java', 'javascript', 'json', 'sh', 'sql', 'diff']
+  let g:markdown_fenced_languages = ['javascript', 'json', 'sh', 'sql', 'diff']
 '''
 
 [[plugins]]
