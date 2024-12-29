@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+# Homebrew
+brew update --auto-update
+brew upgrade --fetch-HEAD
+
+# Sheldon
+sheldon lock --update
