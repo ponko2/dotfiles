@@ -225,7 +225,15 @@ hook_source = '''
 repo = 'rhysd/vim-gfm-syntax'
 on_ft = 'markdown'
 hook_add = '''
-  let g:markdown_fenced_languages = ['javascript', 'json', 'sh', 'sql', 'diff']
+  let g:markdown_fenced_languages = [
+        \   'diff',
+        \   'javascript',
+        \   'json',
+        \   'python',
+        \   'sh',
+        \   'sql',
+        \   'typescript',
+        \ ]
 '''
 
 [[plugins]]
