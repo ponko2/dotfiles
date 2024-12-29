@@ -29,8 +29,8 @@ let s:dein_lazy_toml = expand('$XDG_CONFIG_HOME/nvim/rc/dein-lazy.toml')
 
 call dein#begin(s:path, [expand('<sfile>'), s:dein_toml, s:dein_lazy_toml])
 
-call dein#load_toml(s:dein_toml, {'lazy': 0})
-call dein#load_toml(s:dein_lazy_toml, {'lazy' : 1})
+call dein#load_toml(s:dein_toml, #{lazy: 0})
+call dein#load_toml(s:dein_lazy_toml, #{lazy : 1})
 
 call dein#end()
 call dein#save_state()
