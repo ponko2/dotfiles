@@ -3,24 +3,24 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'ciaranm/securemodelines'
-
-[[plugins]]
-repo = 'editorconfig/editorconfig-vim'
-
-[[plugins]]
-repo = 'vim-jp/autofmt'
+hook_add = '''
+  set modelines=0
+  set nomodeline
+'''
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
-
-[[plugins]]
-repo = 'thinca/vim-zenspace'
+hook_add = '''
+  set helplang& helplang=ja,en
+'''
 
 [[plugins]]
 repo = 'sainnhe/gruvbox-material'
 hook_add = '''
+  set background=dark
   let g:gruvbox_material_foreground = 'original'
   let g:gruvbox_material_transparent_background = 1
+  colorscheme gruvbox-material
 '''
 
 [[plugins]]
@@ -44,9 +44,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'mattn/vim-gomod'
-
-[[plugins]]
-repo = 'vim-jp/syntax-vim-ex'
 
 [[plugins]]
 repo = 'mhinz/vim-signify'
