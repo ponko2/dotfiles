@@ -5,9 +5,9 @@ SHELL := /bin/bash
 XDG_BIN_HOME := $(HOME)/.local/bin
 XDG_CONFIG_HOME := $(HOME)/.config
 SRCDIR := $(abspath home)
-DOTFILES := $(foreach path, $(wildcard $(SRCDIR)/.??*), $(HOME)/$(notdir $(path)))
+DOTFILES := $(foreach path, $(filter-out $(SRCDIR)/.config, $(wildcard $(SRCDIR)/.??*)), $(HOME)/$(notdir $(path)))
 XDG_BINS := $(foreach path, $(wildcard $(SRCDIR)/.local/bin/*), $(XDG_BIN_HOME)/$(notdir $(path)))
-XDG_CONFIGS := $(foreach path, $(wildcard $(SRCDIR)/_config/*), $(XDG_CONFIG_HOME)/$(notdir $(path)))
+XDG_CONFIGS := $(foreach path, $(wildcard $(SRCDIR)/.config/*), $(XDG_CONFIG_HOME)/$(notdir $(path)))
 
 ifeq ($(shell uname -s),Darwin)
 	ifeq ($(shell uname -m),arm64)
@@ -51,7 +51,7 @@ $(XDG_BINS): | $(XDG_BIN_HOME)
 	ln -s $(SRCDIR)/.local/bin/$(@F) $@
 
 $(XDG_CONFIGS): | $(XDG_CONFIG_HOME)
-	ln -s $(SRCDIR)/_config/$(@F) $@
+	ln -s $(SRCDIR)/.config/$(@F) $@
 
 $(XDG_BIN_HOME):
 	mkdir -p $@
