@@ -1,0 +1,15 @@
+# Neovim
+- [x] File Explorer
+  - [ ] VSCode shortcut
+- [x] Fuzzy finder
+- [x] Git
+- [x] Indent Guide
+- [ ] LSP
+  - [x] nvim-cmp
+  - [x] nvim-lspconfig
+  - [ ] lspsaga.nvim
+  - [ ] mason.nvim
+  - [ ] mason-lspconfig.nvim
+- [ ] Lint
+- [x] Syntax
+- [ ] listchars

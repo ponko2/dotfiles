@@ -7,6 +7,7 @@ brew "ghq"
 brew "jq"
 brew "sheldon"
 brew "starship"
+brew "tree-sitter"
 brew "zoxide"
 
 ## cat
@@ -27,6 +28,10 @@ brew "ripgrep-all"
 ## ls
 brew "eza"
 brew "lsd"
+
+## lsp
+brew "basedpyright"
+brew "typescript-language-server"
 
 ## Fuzzy finder
 brew "fzf"
