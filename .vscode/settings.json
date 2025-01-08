@@ -18,6 +18,7 @@
   "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
+  "github.copilot.chat.localeOverride": "ja",
   "prettier.requireConfig": true,
   "terminal.integrated.fontFamily": "'UDEV Gothic JPDOC', Menlo, Monaco, 'Courier New', monospace",
   "terminal.integrated.fontSize": 16,
@@ -29,11 +30,12 @@
       "commands": ["undo"]
     },
     {
-      "before": ["c-r"],
+      "before": ["<C-r>"],
       "commands": ["redo"]
     }
   ],
   "vim.overrideCopy": true,
+  "vim.surround": true,
   "vim.useSystemClipboard": true,
   "vim.visualModeKeyBindingsNonRecursive": [
     {
