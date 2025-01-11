@@ -1,10 +1,10 @@
 scriptencoding utf-8
 
-"---------------------------------------------------------------------------
+"-------------------------------------------------------------------------------
 " Key-mappings:
-"
+"-------------------------------------------------------------------------------
 
-"---------------------------------------------------------------------------
+"-------------------------------------------------------------------------------
 " Normal mode keymappings:
 
 " 検索の強調表示を無効化
@@ -26,19 +26,15 @@ nnoremap ]B <Cmd>blast<CR>
 function! s:Lprevious() abort
   try
     lprevious
-  catch /^Vim\%((\a\+)\)\=:E553/
-    llast
   catch
-    echo v:exception
+    llast
   endtry
 endfunction
 function! s:Lnext() abort
   try
     lnext
-  catch /^Vim\%((\a\+)\)\=:E553/
-    lfirst
   catch
-    echo v:exception
+    lfirst
   endtry
 endfunction
 nnoremap [l <Cmd>call <SID>Lprevious()<CR>
@@ -50,19 +46,15 @@ nnoremap ]L <Cmd>llast<CR>
 function! s:Cprevious() abort
   try
     cprevious
-  catch /^Vim\%((\a\+)\)\=:E553/
-    clast
   catch
-    echo v:exception
+    clast
   endtry
 endfunction
 function! s:Cnext() abort
   try
     cnext
-  catch /^Vim\%((\a\+)\)\=:E553/
-    cfirst
   catch
-    echo v:exception
+    cfirst
   endtry
 endfunction
 nnoremap [q <Cmd>call <SID>Cprevious()<CR>
@@ -76,10 +68,6 @@ nnoremap ]t <Cmd>tnext<CR>
 nnoremap [T <Cmd>tfirst<CR>
 nnoremap ]T <Cmd>tlast<CR>
 
-" Better n
-nnoremap n <Cmd>execute 'normal!' v:count1 .. 'nzvzz'<CR>
-nnoremap N <Cmd>execute 'normal!' v:count1 .. 'Nzvzz'<CR>
-
 " Better x
 nnoremap x "_x
 
@@ -90,7 +78,7 @@ nnoremap Y y$
 nnoremap <Leader>/ :<C-u>Grep<Space>
 
 
-"---------------------------------------------------------------------------
+"-------------------------------------------------------------------------------
 " Command-line mode keymappings:
 
 " Next history.
@@ -105,14 +93,14 @@ cnoremap <expr> <C-p> pumvisible() ? "\<C-p>" : "\<Up>"
 cnoremap <expr> %% getcmdtype() ==# ':' ? expand('%:h') .. '/' : '%%'
 
 
-"---------------------------------------------------------------------------
+"-------------------------------------------------------------------------------
 " Visual mode keymappings:
 
 " Disable dos-standard-mappings
 silent! vunmap <C-x>
 
 
-"---------------------------------------------------------------------------
+"-------------------------------------------------------------------------------
 " Terminal keymappings:
 
 if exists(':tnoremap')
