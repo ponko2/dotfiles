@@ -1,8 +1,10 @@
 {
   "recommendations": [
+    "JohnnyMorganz.stylua",
+    "asvetliakov.vscode-neovim",
     "biomejs.biome",
     "editorconfig.editorconfig",
     "ms-vscode-remote.vscode-remote-extensionpack",
-    "vscodevim.vim"
+    "sumneko.lua"
   ]
 }

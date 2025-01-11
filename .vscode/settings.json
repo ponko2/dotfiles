@@ -18,32 +18,13 @@
   "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
   "github.copilot.chat.localeOverride": "ja",
   "prettier.requireConfig": true,
   "terminal.integrated.fontFamily": "'UDEV Gothic JPDOC', Menlo, Monaco, 'Courier New', monospace",
   "terminal.integrated.fontSize": 16,
-  "vim.enableNeovim": true,
-  "vim.leader": "<Space>",
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["u"],
-      "commands": ["undo"]
-    },
-    {
-      "before": ["<C-r>"],
-      "commands": ["redo"]
-    }
-  ],
-  "vim.overrideCopy": true,
-  "vim.surround": true,
-  "vim.useSystemClipboard": true,
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": ["p"],
-      "after": ["p", "g", "v", "y"]
-    }
-  ],
-  "vim.visualstar": true,
   "workbench.colorCustomizations": {
     "terminal.ansiBlack": "#3c3836",
     "terminal.ansiBlue": "#458588",
@@ -64,5 +45,8 @@
     "terminal.background": "#1d2021",
     "terminal.foreground": "#ebdbb2"
   },
-  "workbench.iconTheme": "vscode-icons"
+  "workbench.iconTheme": "vscode-icons",
+  "[lua]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  }
 }
