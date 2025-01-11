@@ -1,4 +1,40 @@
 [[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+on_event = 'VimEnter'
+hook_add = '''
+  set helplang& helplang=ja,en
+'''
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+on_event = ["BufReadPre", "BufNewFile"]
+hook_add = '''
+  let g:indent_guides_enable_on_vim_startup = 1
+'''
+
+[[plugins]]
+repo = 'mhinz/vim-signify'
+on_event = ["BufReadPost", "BufNewFile", "BufWritePre"]
+hook_add = '''
+  let g:signify_vcs_cmds = #{
+        \   git: 'git diff --no-color --no-ext-diff -U0 HEAD -- %f',
+        \ }
+'''
+
+[[plugins]]
+repo = 'rbtnn/vim-ambiwidth'
+on_event = ["BufReadPost", "BufNewFile", "BufWritePre"]
+hook_add = '''
+  let g:ambiwidth_add_list = [
+        \   [0x00B7, 0x00B7, 2],
+        \   [0x2018, 0x2019, 2],
+        \   [0x201c, 0x201d, 2],
+        \   [0x2025, 0x2026, 2],
+        \ ]
+  let g:ambiwidth_cica_enabled = v:false
+'''
+
+[[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
   function! s:on_lsp_buffer_enabled() abort
@@ -43,8 +79,9 @@ hook_add = '''
 repo = 'ctrlpvim/ctrlp.vim'
 on_event = 'VimEnter'
 hook_add = '''
-  noremap <Leader>. <Cmd>CtrlPCurFile<CR>
-  noremap <Leader><Tab> <Cmd>CtrlPBuffer<CR>
+  let g:ctrlp_map = '<Leader>ff'
+  noremap <Leader>f. <Cmd>CtrlPCurFile<CR>
+  noremap <Leader>fb <Cmd>CtrlPBuffer<CR>
 
   let g:ctrlp_working_path_mode = 'wa'
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
@@ -68,55 +105,41 @@ hook_add = '''
 repo = 'mattn/ctrlp-ghq'
 on_source = 'ctrlp.vim'
 hook_add = '''
-  noremap <Leader><C-p> <Cmd>CtrlPGhq<CR>
+  noremap <Leader>fr <Cmd>CtrlPGhq<CR>
 '''
 
 [[plugins]]
 repo = 'dense-analysis/ale'
-on_event = 'VimEnter'
+on_event = ["BufReadPost", "BufNewFile", "BufWritePre"]
 hook_source = '''
-  let g:ale_disable_lsp = 1
-  let g:ale_sign_column_always = 1
   let g:ale_echo_msg_format = '[%linter%] %code: %%s [%severity%]'
-  let g:ale_virtualtext_cursor = 'disabled'
+  let g:ale_fixers = #{
+        \   css: ['biome', 'prettier'],
+        \   javascript: ['biome', 'eslint', 'prettier'],
+        \   javascriptreact: ['biome', 'eslint', 'prettier'],
+        \   markdown: ['textlint'],
+        \   python: ['ruff_format', 'ruff'],
+        \   text: ['textlint'],
+        \   typescript: ['biome', 'eslint', 'prettier'],
+        \   typescriptreact: ['biome', 'eslint', 'prettier'],
+        \ }
   let g:ale_fix_on_save = 1
-'''
-[plugins.ftplugin]
-go = '''
-  let b:ale_linters = ['golangci-lint']
-  let b:ale_go_golangci_lint_options = ''
-  let b:ale_go_golangci_lint_package = 1
-'''
-javascript = '''
-  let b:ale_linters = ['eslint']
-  let b:ale_fixers = ['eslint', 'prettier']
-'''
-javascriptreact = '''
-  let b:ale_linters = ['eslint']
-  let b:ale_fixers = ['eslint', 'prettier']
-'''
-typescript = '''
-  let b:ale_linters = ['eslint']
-  let b:ale_fixers = ['eslint', 'prettier']
-'''
-typescriptreact = '''
-  let b:ale_linters = ['eslint']
-  let b:ale_fixers = ['eslint', 'prettier']
-'''
-css = '''
-  let b:ale_fixers = ['prettier']
-'''
-scss = '''
-  let b:ale_fixers = ['prettier']
-'''
-html = '''
-  let b:ale_linters = []
-'''
-text = '''
-  let b:ale_linters = ['textlint']
-'''
-markdown = '''
-  let b:ale_linters = ['textlint']
+  let g:ale_linters = #{
+        \   go: ['golangci-lint'],
+        \   javascript: ['biome', 'eslint'],
+        \   javascriptreact: ['biome', 'eslint'],
+        \   markdown: ['textlint'],
+        \   python: ['ruff'],
+        \   text: ['textlint'],
+        \   typescript: ['biome', 'eslint'],
+        \   typescriptreact: ['biome', 'eslint'],
+        \ }
+  let g:ale_linters_explicit = 1
+  let g:ale_sign_column_always = 1
+
+  " Go
+  let g:ale_go_golangci_lint_options = ''
+  let g:ale_go_golangci_lint_package = 1
 '''
 
 [[plugins]]
@@ -150,19 +173,8 @@ on_source = 'vim-vsnip'
 repo = 'junegunn/vim-easy-align'
 on_map = {xn = '<Plug>(EasyAlign)'}
 hook_add = '''
-  " Start interactive EasyAlign in visual mode (e.g. vipga)
   xmap ga <Plug>(EasyAlign)
-
-  " Start interactive EasyAlign for a motion/text object (e.g. gaip)
   nmap ga <Plug>(EasyAlign)
-'''
-
-[[plugins]]
-repo = 'kana/vim-niceblock'
-on_map = {x = '<Plug>'}
-hook_add = '''
-  xmap I <Plug>(niceblock-I)
-  xmap A <Plug>(niceblock-A)
 '''
 
 [[plugins]]
@@ -177,41 +189,50 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'osyo-manga/vim-jplus'
-on_map = {nv = '<Plug>'}
+repo = 'AndrewRadev/splitjoin.vim'
+on_map = {n = '<Plug>'}
 hook_add = '''
-  nmap J <Plug>(jplus)
-  vmap J <Plug>(jplus)
-  nmap <Leader>J <Plug>(jplus-input)
-  vmap <Leader>J <Plug>(jplus-input)
+  let g:splitjoin_join_mapping = ''
+  let g:splitjoin_split_mapping = ''
+  nmap <Leader>j :SplitjoinJoin<CR>
+  nmap <Leader>s :SplitjoinSplit<CR>
 '''
 
 [[plugins]]
 repo = 'rhysd/accelerated-jk'
 on_map = {n = '<Plug>'}
 hook_add = '''
-  nmap <silent> j <Plug>(accelerated_jk_gj)
-  nmap <silent> k <Plug>(accelerated_jk_gk)
+  nmap j <Plug>(accelerated_jk_gj)
+  nmap k <Plug>(accelerated_jk_gk)
 '''
 
 [[plugins]]
-repo = 'rhysd/vim-operator-surround'
-depends = 'vim-operator-user'
-on_map = '<Plug>(operator-surround-'
+repo = 'machakann/vim-sandwich'
+on_event = 'VimEnter'
 hook_add = '''
-  map <silent> sa <Plug>(operator-surround-append)
-  map <silent> sd <Plug>(operator-surround-delete)
-  map <silent> sr <Plug>(operator-surround-replace)
+  let g:operator_sandwich_no_default_key_mappings = 1
 '''
 
 [[plugins]]
-repo = 'thinca/vim-visualstar'
-on_map = {v = '<Plug>(visualstar-'}
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+depends = 'vim-repeat'
+on_event = 'VimEnter'
+
+[[plugins]]
+repo = 'haya14busa/vim-asterisk'
+on_map = {nvo = '<Plug>(asterisk-'}
 hook_add = '''
-  vmap *  <Plug>(visualstar-*)zvzz
-  vmap #  <Plug>(visualstar-#)zvzz
-  vmap g* <Plug>(visualstar-g*)zvzz
-  vmap g# <Plug>(visualstar-g#)zvzz
+  map *   <Plug>(asterisk-*)
+  map #   <Plug>(asterisk-#)
+  map g*  <Plug>(asterisk-g*)
+  map g#  <Plug>(asterisk-g#)
+  map z*  <Plug>(asterisk-z*)
+  map gz* <Plug>(asterisk-gz*)
+  map z#  <Plug>(asterisk-z#)
+  map gz# <Plug>(asterisk-gz#)
 '''
 
 [[plugins]]

@@ -2,9 +2,9 @@ scriptencoding utf-8
 
 if !executable('git') | finish | endif
 
-"---------------------------------------------------------------------------
+"-------------------------------------------------------------------------------
 " Dein.vim:
-"
+"-------------------------------------------------------------------------------
 
 " Load dein.
 if has('vim_starting')
@@ -34,6 +34,9 @@ call dein#load_toml(s:dein_lazy_toml, #{lazy : 1})
 
 call dein#end()
 call dein#save_state()
+
+filetype plugin indent on
+syntax enable
 
 " Installation check.
 if dein#check_install()

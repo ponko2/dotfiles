@@ -3,30 +3,18 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'ciaranm/securemodelines'
-
-[[plugins]]
-repo = 'editorconfig/editorconfig-vim'
-
-[[plugins]]
-repo = 'vim-jp/autofmt'
-
-[[plugins]]
-repo = 'vim-jp/vimdoc-ja'
-
-[[plugins]]
-repo = 'thinca/vim-zenspace'
+hook_add = '''
+  set modelines=0
+  set nomodeline
+'''
 
 [[plugins]]
 repo = 'sainnhe/gruvbox-material'
 hook_add = '''
+  set background=dark
   let g:gruvbox_material_foreground = 'original'
   let g:gruvbox_material_transparent_background = 1
-'''
-
-[[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
-hook_add = '''
-  let g:indent_guides_enable_on_vim_startup = 1
+  colorscheme gruvbox-material
 '''
 
 [[plugins]]
@@ -39,22 +27,10 @@ hook_add = '''
         \   'jsx',
         \   'markdown',
         \ ]
-  let g:vim_json_syntax_conceal = 0
 '''
 
 [[plugins]]
 repo = 'mattn/vim-gomod'
-
-[[plugins]]
-repo = 'vim-jp/syntax-vim-ex'
-
-[[plugins]]
-repo = 'mhinz/vim-signify'
-hook_add = '''
-  let g:signify_vcs_cmds = #{
-        \   git: 'git diff --no-color --no-ext-diff -U0 HEAD -- %f',
-        \ }
-'''
 
 [[plugins]]
 repo = 'mattn/vim-molder'
@@ -65,14 +41,3 @@ hook_add = '''
 [[plugins]]
 repo = 'mattn/vim-molder-operations'
 
-[[plugins]]
-repo = 'rbtnn/vim-ambiwidth'
-hook_add = '''
-  let g:ambiwidth_add_list = [
-        \   [0x00B7, 0x00B7, 2],
-        \   [0x2018, 0x2019, 2],
-        \   [0x201c, 0x201d, 2],
-        \   [0x2025, 0x2026, 2],
-        \ ]
-  let g:ambiwidth_cica_enabled = v:false
-'''
