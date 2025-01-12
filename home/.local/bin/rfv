@@ -2,13 +2,13 @@
 
 set -euo pipefail
 
-# ripgrep->fzf->vim [QUERY]
+# ripgrep->fzf->Neovim [QUERY]
 rm -f /tmp/rg-fzf-{r,f}
 RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case"
 OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
-          vim {1} +{2}     # No selection. Open the current line in Vim.
+          nvim {1} +{2}     # No selection. Open the current line in Neovim.
         else
-          vim +cw -q {+f}  # Build quickfix list for the selected items.
+          nvim +cw -q {+f}  # Build quickfix list for the selected items.
         fi'
 INITIAL_QUERY="${*:-}"
 fzf --disabled --multi --ansi --query "$INITIAL_QUERY" \

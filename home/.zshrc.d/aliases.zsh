@@ -61,5 +61,6 @@ if command -v colordiff >/dev/null; then
   alias diff='colordiff'
 fi
 
-# Vim
-alias vi='vim'
+# Neovim
+alias vi='nvim'
+alias vim='nvim'

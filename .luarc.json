@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+  "runtime": {
+    "version": "LuaJIT"
+  },
+  "workspace": {
+    "library": [
+      "$HOMEBREW_PREFIX/share/nvim/runtime/lua",
+      "${3rd}/busted/library",
+      "${3rd}/luv/library",
+      "$XDG_DATA_HOME/nvim/lazy/Comment.nvim/lua",
+      "$XDG_DATA_HOME/nvim/lazy/cmp-nvim-lsp/lua",
+      "$XDG_DATA_HOME/nvim/lazy/dial.nvim/lua",
+      "$XDG_DATA_HOME/nvim/lazy/gitsigns.nvim/lua",
+      "$XDG_DATA_HOME/nvim/lazy/lazy.nvim/lua",
+      "$XDG_DATA_HOME/nvim/lazy/nvim-cmp/lua",
+      "$XDG_DATA_HOME/nvim/lazy/oil.nvim/lua",
+      "$XDG_DATA_HOME/nvim/lazy/telescope.nvim/lua"
+    ],
+    "checkThirdParty": "Disable"
+  },
+  "diagnostics": {
+    "globals": ["vim"],
+    "groupFileStatus": {
+      "strict": "Opened",
+      "strong": "Opened"
+    },
+    "groupSeverity": {
+      "strong": "Warning",
+      "strict": "Warning"
+    },
+    "unusedLocalExclude": ["_*"]
+  }
+}
