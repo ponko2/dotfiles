@@ -106,7 +106,6 @@ if OS.mac?
   #cask "appcleaner"
   cask "devtoys"
   #cask "docker"
-  #cask "finicky"
   cask "ghostty"
   cask "iterm2"
   cask "karabiner-elements"
