@@ -117,7 +117,6 @@ if OS.mac?
   cask "sequel-ace"
   #cask "the-unarchiver"
   cask "visual-studio-code"
-  #cask "wezterm"
 
   ## Fonts
   cask "font-udev-gothic"
