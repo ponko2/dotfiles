@@ -9,7 +9,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
 # Editor
-export EDITOR="vim --clean -c \"set enc=utf-8 cb+=unnamed\""
+export EDITOR="nvim --clean -c \"set enc=utf-8 cb+=unnamed\""
 export CVSEDITOR="${EDITOR}"
 export SVN_EDITOR="${EDITOR}"
 

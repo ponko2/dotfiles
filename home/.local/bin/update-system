@@ -11,3 +11,6 @@ sheldon lock --update
 
 # fzf
 ${HOMEBREW_PREFIX}/opt/fzf/install --all --xdg --no-update-rc
+
+# Neovim
+nvim --headless "+Lazy! update" +qa

@@ -7,6 +7,7 @@ brew "ghq"
 brew "jq"
 brew "sheldon"
 brew "starship"
+brew "tree-sitter"
 brew "zoxide"
 
 ## cat
@@ -27,8 +28,18 @@ brew "ripgrep-all"
 brew "eza"
 brew "lsd"
 
+## lsp
+brew "basedpyright"
+brew "lua-language-server"
+brew "typescript-language-server"
+brew "vue-language-server"
+
 ## Fuzzy finder
 brew "fzf"
+
+## Neovim
+brew "luarocks"
+brew "neovim"
 
 if OS.mac?
   ## Command
@@ -55,7 +66,6 @@ if OS.mac?
 
   ## vim
   brew "vim"
-  brew "neovim"
 
   ## zsh
   brew "zsh"
@@ -75,6 +85,7 @@ if OS.mac?
   ## Lint
   brew "checkmake"
   brew "editorconfig-checker"
+  brew "luacheck"
   brew "shellcheck"
   brew "yamllint"
 
