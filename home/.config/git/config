@@ -3,7 +3,7 @@
 	email = kano@ponko2.jp
 	signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM1vRbMLXd3C3xhcfdbRtrazLjbJUJbPrQGIIr5FdSHo
 [core]
-	editor = vim --clean -c \"set enc=utf-8 cb+=unnamed\"
+	editor = nvim --clean -c 'set enc=utf-8 cb+=unnamed'
 	precomposeUnicode = true
 	quotePath = false
 [add.interactive]
@@ -70,7 +70,3 @@
 	helper = !gh auth git-credential
 [include]
 	path = ~/.config/git/env/.gitconfig
-[includeIf "gitdir:~/src/github.*/**"]
-	path = ~/.config/git/work/.gitconfig
-[includeIf "gitdir:~/src/github.com/ponko2/**"]
-	path = ~/.config/git/ponko2/.gitconfig
