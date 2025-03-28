@@ -42,6 +42,11 @@ hook_add = '''
     setlocal signcolumn=yes
     nmap <buffer> gd <Plug>(lsp-definition)
     nmap <buffer> <F2> <Plug>(lsp-rename)
+    nmap <buffer> grn <Plug>(lsp-rename)
+    nmap <buffer> grr <plug>(lsp-references)
+    nmap <buffer> gri <plug>(lsp-implementation)
+    nmap <buffer> gO <plug>(lsp-document-symbol)
+    nmap <buffer> gra <Plug>(lsp-code-action)
     inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
     inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
     inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"

@@ -63,7 +63,7 @@ set hidden
 
 " :grep で使われるプログラムの指定
 if executable('rg')
-  set grepprg=rg\ --vimgrep\ --no-heading\ --with-filename\ --smart-case
+  set grepprg=rg\ --vimgrep\ -uu
   set grepformat=%f:%l:%c:%m
 endif
 
