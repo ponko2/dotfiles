@@ -43,12 +43,6 @@ if vim.fn.exists('g:loaded_matchit') == 0 then
   vim.cmd([[packadd! matchit]])
 end
 
--- :grep で使われるプログラムの指定
-if vim.fn.executable('rg') == 1 then
-  vim.opt.grepprg = 'rg --vimgrep --no-heading --with-filename --smart-case'
-  vim.opt.grepformat = '%f:%l:%c:%m'
-end
-
 -- バックアップ設定
 vim.opt.backup = true
 vim.opt.backupdir:remove('.')

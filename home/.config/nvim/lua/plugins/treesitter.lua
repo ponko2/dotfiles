@@ -1,12 +1,9 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      'RRethy/nvim-treesitter-textsubjects',
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    },
+    dependencies = 'nvim-treesitter/nvim-treesitter-textobjects',
     event = { 'BufReadPost', 'BufNewFile', 'BufWritePre', 'VeryLazy' },
-    build = ':TSUpdate',
+    build = ':TSUpdateSync',
     main = 'nvim-treesitter.configs',
     opts = {
       -- A list of parser names, or "all"
@@ -33,15 +30,6 @@ return {
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
         -- Instead of true it can also be a list of languages
         additional_vim_regex_highlighting = false,
-      },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = 'gnn',
-          node_incremental = 'grn',
-          scope_incremental = 'grc',
-          node_decremental = 'grm',
-        },
       },
       indent = {
         enable = true,
@@ -76,15 +64,6 @@ return {
             ['[M'] = '@function.outer',
             ['[]'] = '@class.outer',
           },
-        },
-      },
-      textsubjects = {
-        enable = true,
-        prev_selection = ',',
-        keymaps = {
-          ['.'] = 'textsubjects-smart',
-          [';'] = 'textsubjects-container-outer',
-          ['i;'] = 'textsubjects-container-inner',
         },
       },
     },

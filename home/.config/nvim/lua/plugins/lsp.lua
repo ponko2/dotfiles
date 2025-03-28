@@ -113,12 +113,16 @@ return {
             return
           end
           local kopts = { buffer = ev.buf }
+          if client.supports_method('textDocument/codeAction') then
+            vim.keymap.set('n', 'gra', [[<Cmd>Lspsaga code_action<CR>]], kopts)
+          end
           if client.supports_method('textDocument/definition') then
             vim.keymap.set('n', '<F12>', [[<Cmd>Lspsaga peek_definition<CR>]], kopts)
             vim.keymap.set('n', 'gd', [[<Cmd>Lspsaga peek_definition<CR>]], kopts)
           end
           if client.supports_method('textDocument/rename') then
             vim.keymap.set('n', '<F2>', [[<Cmd>Lspsaga rename<CR>]], kopts)
+            vim.keymap.set('n', 'grn', [[<Cmd>Lspsaga rename<CR>]], kopts)
           end
         end,
       })
