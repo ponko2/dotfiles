@@ -5,12 +5,8 @@ return {
     optional = true,
     dependencies = 'neovim/nvim-lspconfig',
     config = function()
-      -- Set up lspconfig.
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
       -- JavaScript/TypeScript
-      require('lspconfig')['ts_ls'].setup({
-        capabilities = capabilities,
+      vim.lsp.config('ts_ls', {
         init_options = {
           plugins = {
             {
@@ -34,8 +30,7 @@ return {
       })
 
       -- Lua
-      require('lspconfig')['lua_ls'].setup({
-        capabilities = capabilities,
+      vim.lsp.config('lua_ls', {
         settings = {
           Lua = {
             diagnostics = {
@@ -63,8 +58,7 @@ return {
       })
 
       -- Python
-      require('lspconfig')['basedpyright'].setup({
-        capabilities = capabilities,
+      vim.lsp.config('basedpyright', {
         settings = {
           basedpyright = {
             typeCheckingMode = 'off',
@@ -72,9 +66,15 @@ return {
         },
       })
 
-      -- Vue
-      require('lspconfig')['volar'].setup({
-        capabilities = capabilities,
+      vim.lsp.config('*', {
+        capabilities = require('cmp_nvim_lsp').default_capabilities(),
+      })
+
+      vim.lsp.enable({
+        'basedpyright',
+        'lua_ls',
+        'ts_ls',
+        'volar',
       })
     end,
   },
@@ -108,19 +108,16 @@ return {
       vim.api.nvim_create_autocmd('LspAttach', {
         ---@param ev { buf: integer, data: { client_id: integer } }
         callback = function(ev)
-          local client = vim.lsp.get_client_by_id(ev.data.client_id)
-          if not client then
-            return
-          end
+          local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
           local kopts = { buffer = ev.buf }
-          if client.supports_method('textDocument/codeAction') then
+          if client:supports_method('textDocument/codeAction') then
             vim.keymap.set('n', 'gra', [[<Cmd>Lspsaga code_action<CR>]], kopts)
           end
-          if client.supports_method('textDocument/definition') then
+          if client:supports_method('textDocument/definition') then
             vim.keymap.set('n', '<F12>', [[<Cmd>Lspsaga peek_definition<CR>]], kopts)
             vim.keymap.set('n', 'gd', [[<Cmd>Lspsaga peek_definition<CR>]], kopts)
           end
-          if client.supports_method('textDocument/rename') then
+          if client:supports_method('textDocument/rename') then
             vim.keymap.set('n', '<F2>', [[<Cmd>Lspsaga rename<CR>]], kopts)
             vim.keymap.set('n', 'grn', [[<Cmd>Lspsaga rename<CR>]], kopts)
           end

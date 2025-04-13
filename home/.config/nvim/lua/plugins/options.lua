@@ -116,7 +116,6 @@ return {
             gitsigns.nav_hunk('next', { target = 'all' })
           end
         end, { desc = 'Next hunk' })
-
         map('n', '[c', function()
           if vim.wo.diff then
             vim.cmd.normal({ '[c', bang = true })
@@ -135,26 +134,33 @@ return {
           gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
         end, { desc = 'Reset hunk' })
         map('n', '<Leader>hS', gitsigns.stage_buffer, { desc = 'Stage buffer' })
-        map('n', '<Leader>hu', gitsigns.undo_stage_hunk, { desc = 'Undo stage hunk' })
         map('n', '<Leader>hR', gitsigns.reset_buffer, { desc = 'Reset buffer' })
         map('n', '<Leader>hp', gitsigns.preview_hunk, { desc = 'Preview hunk' })
+        map('n', '<Leader>hi', gitsigns.preview_hunk_inline, { desc = 'Preview hunk inline' })
         map('n', '<Leader>hb', function()
           gitsigns.blame_line({ full = true })
         end, { desc = 'Blame line' })
+        map('n', '<Leader>hd', gitsigns.diffthis, { desc = 'Diff against the index' })
+        map('n', '<Leader>hD', function()
+          gitsigns.diffthis('~')
+        end, { desc = 'Diff against the ~' })
+        map('n', '<Leader>hQ', function()
+          gitsigns.setqflist('all')
+        end, { desc = 'Set quickfix list for all' })
+        map('n', '<Leader>hq', gitsigns.setqflist, { desc = 'Set quickfix list' })
+
+        -- Toggles
         map(
           'n',
           '<Leader>tb',
           gitsigns.toggle_current_line_blame,
           { desc = 'Toggle current line blame' }
         )
-        map('n', '<Leader>hd', gitsigns.diffthis, { desc = 'Diff against the index' })
-        map('n', '<Leader>hD', function()
-          gitsigns.diffthis('~')
-        end, { desc = 'Diff against the ~' })
         map('n', '<Leader>td', gitsigns.toggle_deleted, { desc = 'Toggle deleted' })
+        map('n', '<Leader>tw', gitsigns.toggle_word_diff, { desc = 'Toggle word diff' })
 
         -- Text object
-        map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+        map({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
       end,
     },
   },
