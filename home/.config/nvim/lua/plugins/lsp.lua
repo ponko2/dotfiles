@@ -5,67 +5,6 @@ return {
     optional = true,
     dependencies = 'neovim/nvim-lspconfig',
     config = function()
-      -- JavaScript/TypeScript
-      vim.lsp.config('ts_ls', {
-        init_options = {
-          plugins = {
-            {
-              name = '@vue/typescript-plugin',
-              location = '/opt/homebrew/opt/vue-language-server/libexec/lib/'
-                .. 'node_modules/@vue/language-server/'
-                .. 'node_modules/@vue/typescript-plugin',
-              languages = { 'javascript', 'typescript', 'vue' },
-            },
-          },
-        },
-        filetypes = {
-          'javascript',
-          'javascriptreact',
-          'javascript.jsx',
-          'typescript',
-          'typescriptreact',
-          'typescript.tsx',
-          'vue',
-        },
-      })
-
-      -- Lua
-      vim.lsp.config('lua_ls', {
-        settings = {
-          Lua = {
-            diagnostics = {
-              -- Get the language server to recognize the `vim` global
-              globals = {
-                'vim',
-                'require',
-              },
-            },
-            runtime = {
-              -- Tell the language server which version of Lua you're using
-              -- (most likely LuaJIT in the case of Neovim)
-              version = 'LuaJIT',
-            },
-            -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-              enable = false,
-            },
-            workspace = {
-              -- Make the server aware of Neovim runtime files
-              library = vim.api.nvim_get_runtime_file('', true),
-            },
-          },
-        },
-      })
-
-      -- Python
-      vim.lsp.config('basedpyright', {
-        settings = {
-          basedpyright = {
-            typeCheckingMode = 'off',
-          },
-        },
-      })
-
       vim.lsp.config('*', {
         capabilities = require('cmp_nvim_lsp').default_capabilities(),
       })
