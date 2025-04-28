@@ -1,5 +1,7 @@
 # dotfiles
 
+[![Actions Status](https://github.com/ponko2/dotfiles/actions/workflows/test.yml/badge.svg)](https://github.com/ponko2/dotfiles/actions/workflows/test.yml)
+
 ## Install
 
 ### Local

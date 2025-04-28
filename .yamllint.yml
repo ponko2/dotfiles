@@ -1,6 +1,10 @@
 ---
 extends: default
+ignore: |
+  node_modules/
 rules:
+  comments:
+    min-spaces-from-content: 1
   comments-indentation: disable
   document-start:
     ignore: |
