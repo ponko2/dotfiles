@@ -33,9 +33,9 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 export HISTORY_IGNORE='(* --help|(bat|cat|cd|chmod|chown|cp|echo|ls|man|mv|rm|which)(| *)|git (add|blame|checkout|cherry-pick|commit|diff|log|rebase|reset|revert|show|status) *|{*)'
 if [[ -d "$XDG_STATE_HOME/zsh" ]]; then
-  HISTFILE="$XDG_STATE_HOME/zsh/history"
+  export HISTFILE="$XDG_STATE_HOME/zsh/history"
 else
-  HISTFILE=~/.zsh_history
+  export HISTFILE=~/.zsh_history
 fi
 
 # Golang
