@@ -14,7 +14,6 @@ jobs:
       - biome
       - changed-files
       - editorconfig
-      - ghalint
       - luacheck
       - stylua
       - triggering-actor
@@ -109,11 +108,12 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
-      - uses: reviewdog/action-actionlint@a5524e1c19e62881d79c1f1b9b6f09f16356e281 # v1.65.2
+      - name: Add problem matchers
+        run: echo "::add-matcher::.github/actionlint-matcher.json"
+      - name: Run actionlint
+        uses: docker://rhysd/actionlint:1.7.7@sha256:887a259a5a534f3c4f36cb02dca341673c6089431057242cdc931e9f133147e9
         with:
-          fail_level: warning
-          filter_mode: nofilter
-          reporter: github-pr-annotations
+          args: -color
   biome:
     name: Biome
     if: ${{ needs.changed-files.outputs.biome == 'true' }}
@@ -146,31 +146,6 @@ jobs:
           persist-credentials: false
       - uses: editorconfig-checker/action-editorconfig-checker@d2ed4fd072ae6f887e9407c909af0f585d2ad9f4 # v2
       - run: editorconfig-checker
-  ghalint:
-    name: ghalint
-    if: ${{ needs.changed-files.outputs.workflows == 'true' }}
-    needs:
-      - changed-files
-      - triggering-actor
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          persist-credentials: false
-      - name: Set up ghalint
-        env:
-          GHALINT_VERSION: v1.3.0
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          TMPDIR=$(mktemp -d)
-          gh release download "$GHALINT_VERSION" -R suzuki-shunsuke/ghalint -p "ghalint_*_linux_amd64.tar.gz" -O "$TMPDIR/ghalint.tar.gz"
-          gh attestation verify "$TMPDIR/ghalint.tar.gz" -R suzuki-shunsuke/ghalint --signer-workflow suzuki-shunsuke/go-release-workflow/.github/workflows/release.yaml
-          tar -C /usr/local/bin -xzf "$TMPDIR/ghalint.tar.gz"
-      - name: Run ghalint
-        run: ghalint run
   luacheck:
     name: Luacheck
     if: ${{ needs.changed-files.outputs.luacheck == 'true' }}
@@ -237,17 +212,14 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
-      actions: read
       contents: read
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
-      - name: Install uv
-        uses: astral-sh/setup-uv@6b9c6063abd6010835644d4c2e1bef4cf5cd0fca # v6.0.1
-        with:
-          enable-cache: false
       - name: Run zizmor
+        uses: docker://ghcr.io/woodruffw/zizmor:1.7.0@sha256:3d53be4e0f48952112aa4ca00f45e724b70598082e7202c5c412a6779ca38134
         env:
           GH_TOKEN: ${{ github.token }}
-        run: uvx zizmor@1.6.0 -p --format=github --min-severity=low .github/workflows
+        with:
+          args: -p --format=github --min-severity=low .github/workflows
