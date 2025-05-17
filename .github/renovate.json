@@ -8,6 +8,10 @@
     ":semanticCommits"
   ],
   "labels": ["dependencies"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  },
   "packageRules": [
     {
       "matchManagers": ["github-actions"],
