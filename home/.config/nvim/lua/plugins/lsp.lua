@@ -13,7 +13,7 @@ return {
         'basedpyright',
         'lua_ls',
         'ts_ls',
-        'volar',
+        'vue_ls',
       })
     end,
   },
