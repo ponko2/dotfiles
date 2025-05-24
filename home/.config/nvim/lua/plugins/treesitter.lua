@@ -1,10 +1,13 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    dependencies = 'nvim-treesitter/nvim-treesitter-textobjects',
+    branch = 'main',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+      branch = 'main',
+    },
     event = { 'BufReadPost', 'BufNewFile', 'BufWritePre', 'VeryLazy' },
     build = ':TSUpdateSync',
-    main = 'nvim-treesitter.configs',
     opts = {
       -- A list of parser names, or "all"
       ensure_installed = 'all',

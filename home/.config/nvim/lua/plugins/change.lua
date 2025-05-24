@@ -1,7 +1,10 @@
 return {
   {
     'Wansmer/treesj',
-    dependencies = 'nvim-treesitter/nvim-treesitter',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      branch = 'main',
+    },
     keys = { '<Leader>j', '<Leader>m', '<Leader>s' },
     config = true,
   },
