@@ -13,7 +13,7 @@ return {
         'basedpyright',
         'lua_ls',
         'ts_ls',
-        'volar',
+        'vue_ls',
       })
     end,
   },
@@ -28,7 +28,10 @@ return {
     cond = not vim.g.vscode,
     dependencies = {
       'nvim-tree/nvim-web-devicons',
-      'nvim-treesitter/nvim-treesitter',
+      {
+        'nvim-treesitter/nvim-treesitter',
+        branch = 'main',
+      },
     },
     event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' },
     opts = {

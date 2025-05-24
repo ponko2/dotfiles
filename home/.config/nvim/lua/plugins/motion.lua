@@ -9,8 +9,14 @@ return {
   {
     'kylechui/nvim-surround',
     dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'nvim-treesitter/nvim-treesitter-textobjects',
+      {
+        'nvim-treesitter/nvim-treesitter',
+        branch = 'main',
+      },
+      {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        branch = 'main',
+      },
     },
     event = 'VeryLazy',
     config = true,
