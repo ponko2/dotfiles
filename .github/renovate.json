@@ -7,6 +7,18 @@
     ":gitSignOff",
     ":semanticCommits"
   ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$/",
+        "/(^|/)action\\.ya?ml$/"
+      ],
+      "matchStrings": ["GHALINT_VERSION: (?<currentValue>.*?)\\n"],
+      "datasourceTemplate": "github-releases",
+      "packageNameTemplate": "suzuki-shunsuke/ghalint"
+    }
+  ],
   "labels": ["dependencies"],
   "lockFileMaintenance": {
     "enabled": true,
@@ -15,6 +27,13 @@
   "packageRules": [
     {
       "matchManagers": ["github-actions"],
+      "minimumReleaseAge": "3 days",
+      "addLabels": ["github_actions"],
+      "automerge": false
+    },
+    {
+      "matchManagers": ["custom.regex"],
+      "matchPackageNames": ["suzuki-shunsuke/ghalint"],
       "minimumReleaseAge": "3 days",
       "addLabels": ["github_actions"],
       "automerge": false
