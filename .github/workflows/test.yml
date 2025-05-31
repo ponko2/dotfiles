@@ -250,7 +250,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Run zizmor
-        uses: docker://ghcr.io/zizmorcore/zizmor:1.8.0@sha256:4d3128ae1370da9507bdd42a62d72b8304d4d0f290147aaac3eb0ebf51d70890
+        uses: docker://ghcr.io/zizmorcore/zizmor:1.9.0@sha256:ecb5e81e47bdb9e61ffa26b3def736ef4a6842d25e106986fd9dc579da0c9a68
         env:
           GH_TOKEN: ${{ github.token }}
         with:
