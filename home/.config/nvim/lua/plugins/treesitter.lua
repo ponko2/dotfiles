@@ -7,7 +7,7 @@ return {
       branch = 'main',
     },
     event = { 'BufReadPost', 'BufNewFile', 'BufWritePre', 'VeryLazy' },
-    build = ':TSUpdateSync',
+    build = ':TSUpdate',
     opts = {
       -- A list of parser names, or "all"
       ensure_installed = 'all',
