@@ -2,9 +2,21 @@
   "name": "dotfiles",
   "version": "0.1.0",
   "devDependencies": {
-    "@biomejs/biome": "1.9.4"
+    "@biomejs/biome": "1.9.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "npm-run-all2": "^8.0.4"
   },
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "fix": "run-p --aggregate-output -c -l fix:*",
+    "fix:biome": "biome check --write",
+    "fix:stylua": "stylua .",
+    "lint": "run-p --aggregate-output -c -l lint:*",
+    "lint:biome": "biome check",
+    "lint:luacheck": "luacheck .",
+    "lint:yamllint": "yamllint .",
+    "prepare": "node .husky/install.mjs"
+  },
   "type": "module"
 }
