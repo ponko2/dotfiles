@@ -15,12 +15,33 @@
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [120],
   "editor.suggestSelection": "first",
-  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.unicodeHighlight.ambiguousCharacters": true,
+  "editor.unicodeHighlight.invisibleCharacters": true,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Commit messages must follow the Conventional Commits specification (e.g., feat: Add new API, fix: Correct typo)."
+    },
+    {
+      "text": "Commit messages must be written in English."
+    },
+    {
+      "text": "Commit summaries should be 50 characters or less when possible, but may extend up to 72 characters maximum."
+    },
+    {
+      "text": "Commit summaries must start with a capital letter."
+    },
+    {
+      "text": "Place any extra information in the commit body, which must be separated from the commit summary by a blank line."
+    },
+    {
+      "text": "The commit body must be written in Japanese."
+    }
+  ],
   "github.copilot.chat.localeOverride": "ja",
   "prettier.requireConfig": true,
   "terminal.integrated.fontFamily": "'UDEV Gothic JPDOC', Menlo, Monaco, 'Courier New', monospace",
