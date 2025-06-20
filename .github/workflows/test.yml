@@ -11,61 +11,46 @@ jobs:
     name: "Required Checks: Test"
     if: ${{ always() }}
     needs:
-      - actionlint
-      - biome
+      - verify-author
       - changed-files
-      - editorconfig
+      - actionlint
       - ghalint
+      - zizmor
+      - biome
+      - editorconfig
       - luacheck
       - stylua
-      - triggering-actor
       - yamllint
-      - zizmor
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-      - name: Determine status
-        id: status
-        run: |
-          results=$(tr -d '\n' <<< '${{ toJSON(needs.*.result) }}')
-          if ! grep -q -v -E '(failure|cancelled)' <<< "$results"; then
-            result="failed"
-          else
-            result="success"
-          fi
-          {
-            echo "result=${result}"
-            echo "results=${results}"
-          } | tee -a "$GITHUB_OUTPUT"
-      - name: Check for failed status
-        if: ${{ always() && steps.status.outputs.result != 'success' }}
-        run: |
-          echo "One or more required build workflows failed: ${{ steps.status.outputs.results }}"
-          exit 1
-  triggering-actor:
-    name: Validate triggering actor
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    steps:
-      - name: Fail if the triggering actor is a bot
-        if: ${{ github.event_name == 'pull_request' &&
-          endsWith(github.triggering_actor, '[bot]') &&
-          contains(github.event.pull_request.labels.*.name, 'dependencies') &&
-          contains(github.event.pull_request.labels.*.name, 'github_actions') }}
+      - name: Fail if any required jobs failed or cancelled
+        if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
         run: exit 1
+  verify-author:
+    name: Verify author
+    environment: ${{ github.event_name == 'pull_request' &&
+      endsWith(github.event.pull_request.user.login, '[bot]') &&
+      contains(github.event.pull_request.labels.*.name, 'dependencies') &&
+      contains(github.event.pull_request.labels.*.name, 'github_actions') && 'ci' || null }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Author has been verified
+        run: exit 0
   changed-files:
     name: Get changed files
-    needs: triggering-actor
+    needs: verify-author
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
       contents: read
     outputs:
       # reference: https://github.com/tj-actions/changed-files#outputs-
+      actions: ${{ steps.changed-files.outputs.actions_any_modified == 'true' }}
       biome: ${{ steps.changed-files.outputs.biome_any_modified == 'true' }}
       luacheck: ${{ steps.changed-files.outputs.luacheck_any_modified == 'true' }}
       stylua: ${{ steps.changed-files.outputs.stylua_any_modified == 'true' }}
-      workflows: ${{ steps.changed-files.outputs.workflows_any_modified == 'true' }}
       yamllint: ${{ steps.changed-files.outputs.yamllint_any_modified == 'true' }}
     steps:
       - name: Checkout
@@ -80,6 +65,9 @@ jobs:
           files_yaml: |
             common: &common
               - .github/workflows/test.yml
+            actions:
+              - "**/action.{yaml,yml}"
+              - ".github/workflows/*.{yaml,yml}"
             biome:
               - *common
               - "**.{cjs,cts,js,json,jsonc,jsx,mjs,mts,ts,tsx}"
@@ -94,17 +82,13 @@ jobs:
               - "**.lua"
               - .luarc.json
               - .stylua.toml
-            workflows:
-              - ".github/workflows/*.{yaml,yml}"
             yamllint:
               - *common
               - "**.{yaml,yml}"
   actionlint:
     name: actionlint
-    if: ${{ needs.changed-files.outputs.workflows == 'true' }}
-    needs:
-      - changed-files
-      - triggering-actor
+    if: ${{ needs.changed-files.outputs.actions == 'true' }}
+    needs: changed-files
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
@@ -120,45 +104,10 @@ jobs:
         uses: docker://rhysd/actionlint:1.7.7@sha256:887a259a5a534f3c4f36cb02dca341673c6089431057242cdc931e9f133147e9
         with:
           args: -color
-  biome:
-    name: Biome
-    if: ${{ needs.changed-files.outputs.biome == 'true' }}
-    needs:
-      - changed-files
-      - triggering-actor
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          persist-credentials: false
-      - name: Setup Biome
-        uses: biomejs/setup-biome@f382a98e582959e6aaac8e5f8b17b31749018780 # v2.5.0
-      - name: Run Biome
-        run: biome ci
-  editorconfig:
-    name: EditorConfig
-    needs: triggering-actor
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          persist-credentials: false
-      - uses: editorconfig-checker/action-editorconfig-checker@d2ed4fd072ae6f887e9407c909af0f585d2ad9f4 # v2
-      - run: editorconfig-checker
   ghalint:
     name: ghalint
-    if: ${{ needs.changed-files.outputs.workflows == 'true' }}
-    needs:
-      - changed-files
-      - triggering-actor
+    if: ${{ needs.changed-files.outputs.actions == 'true' }}
+    needs: changed-files
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
@@ -178,13 +127,63 @@ jobs:
           gh attestation verify "$TMPDIR/ghalint.tar.gz" -R suzuki-shunsuke/ghalint --signer-workflow suzuki-shunsuke/go-release-workflow/.github/workflows/release.yaml
           tar -C /usr/local/bin -xzf "$TMPDIR/ghalint.tar.gz"
       - name: Run ghalint
-        run: ghalint run
+        run: |
+          ghalint run
+          ghalint act
+  zizmor:
+    name: zizmor
+    if: ${{ needs.changed-files.outputs.actions == 'true' }}
+    needs: changed-files
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Run zizmor
+        uses: docker://ghcr.io/zizmorcore/zizmor:1.9.0@sha256:ecb5e81e47bdb9e61ffa26b3def736ef4a6842d25e106986fd9dc579da0c9a68
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: -p --format=github --min-severity=low .
+  biome:
+    name: Biome
+    if: ${{ needs.changed-files.outputs.biome == 'true' }}
+    needs: changed-files
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Setup Biome
+        uses: biomejs/setup-biome@f382a98e582959e6aaac8e5f8b17b31749018780 # v2.5.0
+      - name: Run Biome
+        run: biome ci
+  editorconfig:
+    name: EditorConfig
+    needs: verify-author
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: editorconfig-checker/action-editorconfig-checker@d2ed4fd072ae6f887e9407c909af0f585d2ad9f4 # v2
+      - run: editorconfig-checker
   luacheck:
     name: Luacheck
     if: ${{ needs.changed-files.outputs.luacheck == 'true' }}
-    needs:
-      - changed-files
-      - triggering-actor
+    needs: changed-files
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
@@ -199,9 +198,7 @@ jobs:
   stylua:
     name: StyLua
     if: ${{ needs.changed-files.outputs.stylua == 'true' }}
-    needs:
-      - changed-files
-      - triggering-actor
+    needs: changed-files
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
@@ -220,9 +217,7 @@ jobs:
   yamllint:
     name: yamllint
     if: ${{ needs.changed-files.outputs.yamllint == 'true' }}
-    needs:
-      - changed-files
-      - triggering-actor
+    needs: changed-files
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
@@ -234,24 +229,3 @@ jobs:
           persist-credentials: false
       - name: Run yamllint
         run: yamllint --format=github --strict .
-  zizmor:
-    name: zizmor
-    if: ${{ needs.changed-files.outputs.workflows == 'true' }}
-    needs:
-      - changed-files
-      - triggering-actor
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          persist-credentials: false
-      - name: Run zizmor
-        uses: docker://ghcr.io/zizmorcore/zizmor:1.9.0@sha256:ecb5e81e47bdb9e61ffa26b3def736ef4a6842d25e106986fd9dc579da0c9a68
-        env:
-          GH_TOKEN: ${{ github.token }}
-        with:
-          args: -p --format=github --min-severity=low .github/workflows
