@@ -170,7 +170,7 @@ jobs:
           persist-credentials: false
       - name: Set up ghalint
         env:
-          GHALINT_VERSION: v1.4.1
+          GHALINT_VERSION: v1.5.1
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TMPDIR=$(mktemp -d)
