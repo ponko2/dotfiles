@@ -4,7 +4,7 @@
  */
 export default {
   "*.lua": ["luacheck", "stylua"],
-  "*.{cjs,cts,js,json,jsonc,jsx,mjs,mts,ts,tsx}":
+  "*.{js,jsx,ts,tsx,cjs,cts,mjs,mts,json,jsonc,css,svelte,vue,astro,graphql,gql}":
     "biome check --write --files-ignore-unknown=true --no-errors-on-unmatched",
   "*.{yaml,yml}": "yamllint",
 };
