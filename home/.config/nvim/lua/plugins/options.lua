@@ -156,7 +156,6 @@ return {
           gitsigns.toggle_current_line_blame,
           { desc = 'Toggle current line blame' }
         )
-        map('n', '<Leader>td', gitsigns.toggle_deleted, { desc = 'Toggle deleted' })
         map('n', '<Leader>tw', gitsigns.toggle_word_diff, { desc = 'Toggle word diff' })
 
         -- Text object
@@ -199,6 +198,7 @@ return {
   },
   {
     'romgrk/barbar.nvim',
+    enabled = false,
     cond = not vim.g.vscode,
     dependencies = {
       'lewis6991/gitsigns.nvim',
