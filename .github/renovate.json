@@ -26,6 +26,13 @@
   },
   "packageRules": [
     {
+      "groupName": "biome packages",
+      "matchSourceUrls": [
+        "https://github.com/biomejs/biome",
+        "https://github.com/biomejs/setup-biome"
+      ]
+    },
+    {
       "matchManagers": ["github-actions"],
       "minimumReleaseAge": "3 days",
       "addLabels": ["github_actions"],
