@@ -97,12 +97,8 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
-      - name: Add problem matchers
-        run: echo "::add-matcher::.github/actionlint-matcher.json"
       - name: Run actionlint
-        uses: docker://rhysd/actionlint:1.7.7@sha256:887a259a5a534f3c4f36cb02dca341673c6089431057242cdc931e9f133147e9
-        with:
-          args: -color
+        uses: ponko2/actions/actionlint@main
   ghalint:
     name: ghalint
     if: ${{ needs.changed-files.outputs.actions == 'true' }}
@@ -116,19 +112,8 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
-      - name: Set up ghalint
-        env:
-          GHALINT_VERSION: v1.4.1
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          TMPDIR=$(mktemp -d)
-          gh release download "$GHALINT_VERSION" -R suzuki-shunsuke/ghalint -p "ghalint_*_linux_amd64.tar.gz" -O "$TMPDIR/ghalint.tar.gz"
-          gh attestation verify "$TMPDIR/ghalint.tar.gz" -R suzuki-shunsuke/ghalint --signer-workflow suzuki-shunsuke/go-release-workflow/.github/workflows/release.yaml
-          tar -C /usr/local/bin -xzf "$TMPDIR/ghalint.tar.gz"
       - name: Run ghalint
-        run: |
-          ghalint run
-          ghalint act
+        uses: ponko2/actions/ghalint@main
   zizmor:
     name: zizmor
     if: ${{ needs.changed-files.outputs.actions == 'true' }}
@@ -143,11 +128,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Run zizmor
-        uses: docker://ghcr.io/zizmorcore/zizmor:1.9.0@sha256:ecb5e81e47bdb9e61ffa26b3def736ef4a6842d25e106986fd9dc579da0c9a68
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          args: -p --format=github --min-severity=low .
+        uses: ponko2/actions/zizmor@main
   biome:
     name: Biome
     if: ${{ needs.changed-files.outputs.biome == 'true' }}
