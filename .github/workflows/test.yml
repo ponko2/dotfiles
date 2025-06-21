@@ -70,21 +70,21 @@ jobs:
               - ".github/workflows/*.{yaml,yml}"
             biome:
               - *common
-              - "**.{cjs,cts,js,json,jsonc,jsx,mjs,mts,ts,tsx}"
+              - "**/*.{cjs,cts,js,json,jsonc,jsx,mjs,mts,ts,tsx}"
               - biome.json
             luacheck:
               - *common
-              - "**.lua"
+              - "**/*.lua"
               - .luacheckrc
               - .luarc.json
             stylua:
               - *common
-              - "**.lua"
+              - "**/*.lua"
               - .luarc.json
               - .stylua.toml
             yamllint:
               - *common
-              - "**.{yaml,yml}"
+              - "**/*.{yaml,yml}"
   actionlint:
     name: actionlint
     if: ${{ needs.changed-files.outputs.actions == 'true' }}
