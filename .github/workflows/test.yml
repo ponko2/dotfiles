@@ -70,8 +70,7 @@ jobs:
               - ".github/workflows/*.{yaml,yml}"
             biome:
               - *common
-              - "**/*.{cjs,cts,js,json,jsonc,jsx,mjs,mts,ts,tsx}"
-              - biome.json
+              - "**/*.{js,jsx,ts,tsx,cjs,cts,mjs,mts,json,jsonc,css,svelte,vue,astro,graphql,gql}"
             luacheck:
               - *common
               - "**/*.lua"
