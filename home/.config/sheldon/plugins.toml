@@ -44,8 +44,8 @@ if command -v fd >/dev/null; then
     fd --type d --hidden --follow --exclude ".git" --color=always . "$1"
   }
 fi
-if [[ -f "$XDG_CONFIG_HOME/fzf/fzf.zsh" ]]; then
-  source "$XDG_CONFIG_HOME/fzf/fzf.zsh"
+if command -v fzf >/dev/null; then
+  source <(fzf --zsh)
   bindkey "^S" fzf-history-widget
 fi
 '''
