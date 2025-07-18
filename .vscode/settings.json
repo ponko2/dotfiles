@@ -1,7 +1,12 @@
 {
-  "biome.enabled": true,
+  "biome.requireConfiguration": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
   "editor.cursorStyle": "line",
   "editor.defaultFormatter": "biomejs.biome",
+  "editor.editContext": false,
   "editor.fontFamily": "'UDEV Gothic JPDOC', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 16,
   "editor.formatOnPaste": true,
