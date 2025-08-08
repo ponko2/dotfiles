@@ -150,7 +150,7 @@ jobs:
       - name: Setup Biome
         uses: biomejs/setup-biome@454fa0d884737805f48d7dc236c1761a0ac3cc13 # v2.6.0
       - name: Run Biome
-        run: biome ci
+        run: biome ci --error-on-warnings
   editorconfig:
     name: EditorConfig
     needs: verify-author
