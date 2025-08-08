@@ -3,7 +3,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     branch = 'main',
     event = { 'BufReadPost', 'BufNewFile', 'BufWritePre', 'VeryLazy' },
-    build = ':TSUpdate',
+    build = ":lua require('nvim-treesitter').update():wait(300000)",
     config = function()
       vim.api.nvim_create_autocmd('FileType', {
         pattern = {
