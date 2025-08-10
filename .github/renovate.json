@@ -5,7 +5,8 @@
     ":automergePatch",
     ":disableRateLimiting",
     ":gitSignOff",
-    ":semanticCommits"
+    ":semanticCommits",
+    "customManagers:biomeVersions"
   ],
   "customManagers": [
     {
