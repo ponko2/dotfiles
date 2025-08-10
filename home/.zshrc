@@ -39,14 +39,19 @@ else
 fi
 
 # Golang
-export GOPATH="$HOME"
+export GOBIN="$XDG_BIN_HOME"
+export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
+export GOPATH="$XDG_DATA_HOME/go"
+
+# Rust
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 
 # ripgrep
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 path=(
   ./node_modules/.bin # Node.js
-  "$HOME/bin"(N-/)
   "$XDG_BIN_HOME"(N-/)
   "$HOMEBREW_PREFIX/opt/mysql-client/bin"(N-/) # MySQL Client
   "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin"(N-/) # coreutils
