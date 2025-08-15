@@ -1,6 +1,7 @@
 # dotfiles
 
-[![Actions Status](https://github.com/ponko2/dotfiles/actions/workflows/test.yml/badge.svg)](https://github.com/ponko2/dotfiles/actions/workflows/test.yml)
+[![CI](https://github.com/ponko2/dotfiles/actions/workflows/ci.yml/badge.svg)](https://github.com/ponko2/dotfiles/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/ponko2/dotfiles/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/ponko2/dotfiles/actions/workflows/github-code-scanning/codeql)
 
 ## Install
 

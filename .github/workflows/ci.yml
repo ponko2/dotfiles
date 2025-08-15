@@ -1,4 +1,4 @@
-name: Test
+name: CI
 on:
   merge_group: {}
   pull_request: {}
@@ -8,7 +8,7 @@ on:
 permissions: {}
 jobs:
   required:
-    name: "Required Checks: Test"
+    name: "Required Checks: CI"
     if: ${{ always() }}
     needs:
       - verify-author
@@ -65,7 +65,7 @@ jobs:
         with:
           files_yaml: |
             common: &common
-              - .github/workflows/test.yml
+              - .github/workflows/ci.yml
             actions:
               - "**/action.{yaml,yml}"
               - ".github/workflows/*.{yaml,yml}"
