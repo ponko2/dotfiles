@@ -3,7 +3,7 @@
   "files": {
     "includes": [
       "**",
-      "!**/home/.config/karabiner/**",
+      "!**/home/.config/karabiner",
       "!**/home/.config/nvim/lazy-lock.json"
     ],
     "ignoreUnknown": true
