@@ -100,7 +100,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Run actionlint
-        uses: ponko2/actions/actionlint@main
+        uses: ponko2/actions/actionlint@be93b68d5e3f066ace73e6664864315dc925b0f3 # v1.0.0
   ghalint:
     name: ghalint
     if: ${{ always() && !failure() && !cancelled() &&
@@ -116,7 +116,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Run ghalint
-        uses: ponko2/actions/ghalint@main
+        uses: ponko2/actions/ghalint@be93b68d5e3f066ace73e6664864315dc925b0f3 # v1.0.0
   zizmor:
     name: zizmor
     if: ${{ always() && !failure() && !cancelled() &&
@@ -132,7 +132,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Run zizmor
-        uses: ponko2/actions/zizmor@main
+        uses: ponko2/actions/zizmor@be93b68d5e3f066ace73e6664864315dc925b0f3 # v1.0.0
   biome:
     name: Biome
     if: ${{ always() && !failure() && !cancelled() &&
