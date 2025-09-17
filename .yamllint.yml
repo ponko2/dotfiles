@@ -3,7 +3,6 @@ extends: default
 ignore: |
   node_modules/
   pnpm-lock.yaml
-  pnpm-workspace.yaml
 rules:
   comments:
     level: error
@@ -12,6 +11,7 @@ rules:
   document-start:
     ignore: |
       .github/
+      pnpm-workspace.yaml
     level: error
   line-length: disable
   octal-values:
