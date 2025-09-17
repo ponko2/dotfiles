@@ -163,8 +163,10 @@ jobs:
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           persist-credentials: false
-      - uses: editorconfig-checker/action-editorconfig-checker@d2ed4fd072ae6f887e9407c909af0f585d2ad9f4 # v2
-      - run: editorconfig-checker
+      - name: Set up EditorConfig checker
+        uses: editorconfig-checker/action-editorconfig-checker@d2ed4fd072ae6f887e9407c909af0f585d2ad9f4 # v2
+      - name: Run EditorConfig checker
+        run: editorconfig-checker
   luacheck:
     name: Luacheck
     if: ${{ always() && !failure() && !cancelled() &&
