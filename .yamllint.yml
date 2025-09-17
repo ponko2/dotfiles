@@ -2,6 +2,8 @@
 extends: default
 ignore: |
   node_modules/
+  pnpm-lock.yaml
+  pnpm-workspace.yaml
 rules:
   comments:
     level: error
