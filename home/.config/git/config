@@ -14,10 +14,10 @@
 	gpgSign = true
 	verbose = true
 [diff]
-	indentHeuristic = true
 	algorithm = histogram
 	colorMoved = default
 	colorMovedWS = allow-indentation-change
+	indentHeuristic = true
 [fetch]
 	prune = true
 	pruneTags = true
@@ -46,10 +46,10 @@
 	default = current
 	followTags = true
 [rebase]
+	abbreviateCommands = true
 	autoSquash = true
 	autoStash = true
 	missingCommitsCheck = error
-	abbreviateCommands = true
 [rerere]
 	enabled = true
 [status]
