@@ -2,6 +2,7 @@
 
 ## Command
 brew "colordiff"
+brew "difftastic"
 brew "gh"
 brew "ghq"
 brew "jq"

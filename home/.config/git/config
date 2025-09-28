@@ -17,7 +17,13 @@
 	algorithm = histogram
 	colorMoved = default
 	colorMovedWS = allow-indentation-change
+	external = difft
 	indentHeuristic = true
+	tool = difftastic
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+    cmd = difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
 [fetch]
 	prune = true
 	pruneTags = true
@@ -62,6 +68,7 @@
 	root = ~/src
 [pager]
 	branch = false
+	difftool = true
 [credential "https://github.com"]
 	helper =
 	helper = !gh auth git-credential
