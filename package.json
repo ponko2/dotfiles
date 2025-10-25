@@ -4,7 +4,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.2.6",
     "husky": "9.1.7",
-    "lint-staged": "16.2.5",
+    "lint-staged": "16.2.6",
     "npm-run-all2": "8.0.4"
   },
   "packageManager": "pnpm@10.19.0",
