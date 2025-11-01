@@ -29,6 +29,9 @@ require('config.mappings')
 -- Commands:
 require('config.commands')
 
+-- Diagnostic:
+require('config.diagnostic')
+
 -- Plugins:
 require('config.lazy')
 

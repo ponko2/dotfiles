@@ -10,13 +10,14 @@ read_globals = {
 globals = {
   'vim.b',
   'vim.bo',
+  'vim.diagnostic',
   'vim.env',
   'vim.g',
   'vim.go',
   'vim.o',
   'vim.opt',
-  'vim.opt_local',
   'vim.opt_global',
+  'vim.opt_local',
   'vim.w',
   'vim.wo',
 }
