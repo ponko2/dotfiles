@@ -21,11 +21,4 @@ vim.diagnostic.config({
   jump = {
     float = true,
   },
-  ---@type vim.diagnostic.setloclist.Opts
-  loclist = {
-    open = true,
-    severity = {
-      min = vim.diagnostic.severity.WARN,
-    },
-  },
 })
