@@ -24,7 +24,7 @@ jobs:
       - luacheck
       - stylua
       - yamllint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     timeout-minutes: 60
     steps:
       - name: Fail if any required jobs failed or cancelled
@@ -36,7 +36,7 @@ jobs:
       endsWith(github.event.pull_request.user.login, '[bot]') &&
       contains(github.event.pull_request.labels.*.name, 'dependencies') &&
       contains(github.event.pull_request.labels.*.name, 'github_actions') && 'ci' || null }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     timeout-minutes: 60
     steps:
       - name: Author has been verified
@@ -45,7 +45,7 @@ jobs:
     name: Get changed files
     if: ${{ github.event_name == 'pull_request' }}
     needs: verify-author
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     timeout-minutes: 60
     permissions:
       contents: read
@@ -109,7 +109,7 @@ jobs:
     if: ${{ always() && !failure() && !cancelled() &&
       (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.actions == 'true') }}
     needs: changed-files
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     timeout-minutes: 60
     permissions:
       contents: read
@@ -141,7 +141,7 @@ jobs:
     if: ${{ always() && !failure() && !cancelled() &&
       (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.biome == 'true') }}
     needs: changed-files
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     timeout-minutes: 60
     permissions:
       contents: read
@@ -157,7 +157,7 @@ jobs:
   editorconfig:
     name: EditorConfig
     needs: verify-author
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     timeout-minutes: 60
     permissions:
       contents: read
@@ -191,7 +191,7 @@ jobs:
     if: ${{ always() && !failure() && !cancelled() &&
       (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.stylua == 'true') }}
     needs: changed-files
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     timeout-minutes: 60
     permissions:
       contents: read
