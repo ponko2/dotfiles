@@ -1,11 +1,11 @@
-SHELL := /bin/bash
+SHELL := /bin/zsh
 .SHELLFLAGS := -euo pipefail -c
 .DEFAULT_GOAL := help
 
 XDG_BIN_HOME := $(HOME)/.local/bin
 XDG_CONFIG_HOME := $(HOME)/.config
 SRCDIR := $(abspath home)
-DOTFILES := $(foreach path, $(filter-out $(SRCDIR)/.config, $(wildcard $(SRCDIR)/.??*)), $(HOME)/$(notdir $(path)))
+DOTFILES := $(foreach path, $(filter-out $(SRCDIR)/.config $(SRCDIR)/.local, $(wildcard $(SRCDIR)/.??*)), $(HOME)/$(notdir $(path)))
 XDG_BINS := $(foreach path, $(wildcard $(SRCDIR)/.local/bin/*), $(XDG_BIN_HOME)/$(notdir $(path)))
 XDG_CONFIGS := $(foreach path, $(wildcard $(SRCDIR)/.config/*), $(XDG_CONFIG_HOME)/$(notdir $(path)))
 
@@ -20,7 +20,6 @@ else
 endif
 
 HOMEBREW := $(HOMEBREW_PREFIX)/bin/brew
-HOMEBREW_BUNDLE := $(HOMEBREW_PREFIX)/Homebrew/Library/Taps/homebrew/homebrew-bundle
 
 .PHONY: all
 all: install
@@ -60,13 +59,8 @@ $(XDG_CONFIG_HOME):
 	mkdir $@
 
 .PHONY: bundle
-bundle: | $(HOMEBREW) $(HOMEBREW_BUNDLE) ## Install and upgrade all dependencies from the ~/.Brewfile.
-	$(SHELL) --login -c "brew bundle --global"
-	$(HOMEBREW_PREFIX)/opt/fzf/install --all --xdg --no-update-rc
+bundle: | $(HOMEBREW) ## Install and upgrade all dependencies from the ~/.config/homebrew/Brewfile.
+	$(SHELL) -ic "brew bundle --global"
 
 $(HOMEBREW):
-	NONINTERACTIVE=1 $(SHELL) -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	printf '\neval "$$($@ shellenv)"' >> $(HOME)/.profile
-
-$(HOMEBREW_BUNDLE):
-	$(SHELL) --login -c "brew tap homebrew/bundle"
+	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
