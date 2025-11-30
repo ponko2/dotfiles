@@ -4,6 +4,7 @@
 brew "colordiff"
 brew "gh"
 brew "ghq"
+brew "httpie"
 brew "jq"
 brew "sheldon"
 brew "starship"
@@ -16,6 +17,10 @@ brew "bat"
 ## find
 brew "fd"
 
+## Format
+brew "shfmt"
+brew "stylua"
+
 ## git
 brew "git"
 brew "git-lfs"
@@ -23,6 +28,14 @@ brew "git-lfs"
 ## grep
 brew "ripgrep"
 brew "ripgrep-all"
+
+## Lint
+brew "checkmake"
+brew "editorconfig-checker"
+brew "golangci-lint"
+brew "luacheck"
+brew "shellcheck"
+brew "yamllint"
 
 ## ls
 brew "eza"
@@ -74,24 +87,11 @@ if OS.mac?
   brew "mysql-client"
   brew "sqlite"
 
-  ## Format
-  brew "shfmt"
-  brew "stylua"
-
   ## Go
   brew "go"
-  brew "golangci-lint"
-
-  ## Lint
-  brew "checkmake"
-  brew "editorconfig-checker"
-  brew "luacheck"
-  brew "shellcheck"
-  brew "yamllint"
 
   ## Network
   brew "curl"
-  brew "httpie"
   brew "iproute2mac"
   brew "wget"
 
