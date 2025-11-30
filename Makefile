@@ -45,7 +45,7 @@ $(HOMEBREW):
 
 .PHONY: switch
 switch: | /nix $(HOMEBREW) ## Build and switch to the new configuration.
-	$(SHELL) -ic "sudo nix run nix-darwin/master#darwin-rebuild -- switch"
+	$(SHELL) -ic "sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#ponko2"
 
 .PHONY: install
 install: symlink switch ## Run make symlink, switch.

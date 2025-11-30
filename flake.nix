@@ -22,7 +22,6 @@
     }:
     let
       username = "kano";
-      hostname = "ponko2-vm";
       configuration =
         { pkgs, ... }:
         {
@@ -34,64 +33,34 @@
             enable = true;
 
             brews = [
-              "basedpyright"
-              "bat"
-              "checkmake"
-              "colordiff"
               "coreutils"
               "curl"
               "diffutils"
               "dos2unix"
               "ed"
-              "editorconfig-checker"
               "exiftool"
-              "eza"
-              "fd"
               "findutils"
               "fnm"
-              "fzf"
               "gawk"
-              "gh"
-              "ghq"
-              "git"
-              "git-lfs"
               "gnu-sed"
               "gnu-tar"
               "go"
-              "golangci-lint"
               "grep"
               "gzip"
               "httpie"
               "imagemagick"
               "iproute2mac"
-              "jq"
-              "lsd"
-              "lua-language-server"
               "luacheck"
-              "luarocks"
               "mysql-client"
-              "neovim"
               "nkf"
               "openssh"
               "p7zip"
-              "ripgrep"
-              "ripgrep-all"
               "rsync"
-              "sheldon"
-              "shellcheck"
-              "shfmt"
               "sqlite"
               "ssh-copy-id"
-              "starship"
-              "stylua"
-              "tree-sitter"
-              "typescript-language-server"
               "vim"
-              "vue-language-server"
               "watch"
               "wget"
-              "yamllint"
-              "zoxide"
               "zsh"
             ];
 
@@ -270,18 +239,55 @@
               home.file = dotfiles;
 
               home.packages = with pkgs; [
+                bat
+                colordiff
+                editorconfig-checker
+                eza
+                fd
+                fzf
+                gh
+                ghq
+                git
+                git-lfs
+                jq
+                lsd
                 nixfmt-rfc-style
+                ripgrep
+                ripgrep-all
+                sheldon
+                starship
+                zoxide
               ];
 
               # The state version is required and should stay at the version you originally installed.
               home.stateVersion = "25.11";
+
+              programs = {
+                neovim = {
+                  enable = true;
+                  extraPackages = with pkgs; [
+                    basedpyright
+                    checkmake
+                    golangci-lint
+                    lua-language-server
+                    luarocks
+                    shellcheck
+                    shfmt
+                    stylua
+                    tree-sitter
+                    typescript-language-server
+                    vue-language-server
+                    yamllint
+                  ];
+                };
+              };
             };
         };
     in
     {
       # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#<hostname>
-      darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
+      # $ darwin-rebuild build --flake .#ponko2
+      darwinConfigurations.ponko2 = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
           home-manager.darwinModules.home-manager
