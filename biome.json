@@ -4,7 +4,8 @@
     "includes": [
       "**",
       "!**/home/.config/karabiner",
-      "!**/home/.config/nvim/lazy-lock.json"
+      "!**/home/.config/nvim/lazy-lock.json",
+      "!flake.lock"
     ],
     "ignoreUnknown": true
   },
