@@ -20,14 +20,14 @@ brew "ripgrep-all"
 brew "sheldon"
 brew "sqlite"
 brew "starship"
-brew "tree-sitter"
 brew "zoxide"
 
-## Format
+## Formatter
+brew "nixfmt"
 brew "shfmt"
 brew "stylua"
 
-## Lint
+## Linter
 brew "checkmake"
 brew "editorconfig-checker"
 brew "golangci-lint"
@@ -44,6 +44,7 @@ brew "vue-language-server"
 ## Neovim
 brew "luarocks"
 brew "neovim"
+brew "tree-sitter"
 
 if OS.mac?
   ## Command
@@ -71,19 +72,19 @@ if OS.mac?
   brew "wget"
 
   ## Mac Apps
-  #cask "1password"
-  #cask "1password-cli"
-  #cask "adobe-acrobat-reader"
-  #cask "appcleaner"
+  cask "1password"
+  cask "1password-cli"
+  cask "adobe-acrobat-reader"
+  cask "appcleaner"
   cask "devtoys"
-  #cask "docker"
+  cask "docker"
   cask "ghostty"
   cask "iterm2"
   cask "karabiner-elements"
   cask "monitorcontrol"
   cask "mysqlworkbench"
   cask "rectangle"
-  #cask "the-unarchiver"
+  cask "the-unarchiver"
   cask "visual-studio-code"
 
   ## Fonts
