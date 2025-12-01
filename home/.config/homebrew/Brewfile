@@ -71,7 +71,7 @@ if OS.mac?
   cask "adobe-acrobat-reader"
   cask "appcleaner"
   cask "devtoys"
-  cask "docker"
+  cask "docker-desktop"
   cask "ghostty"
   cask "iterm2"
   cask "karabiner-elements"
@@ -84,8 +84,4 @@ if OS.mac?
   ## Fonts
   cask "font-udev-gothic"
   cask "font-udev-gothic-nf"
-
-  # App Store
-  #brew "mas"
-  #mas "Monosnap", id: 540348655
 end
