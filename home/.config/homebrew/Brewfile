@@ -1,33 +1,31 @@
 # vi: set ft=ruby :
 
 ## Command
+brew "bat"
 brew "colordiff"
+brew "eza"
+brew "fd"
+brew "fnm"
+brew "fzf"
 brew "gh"
 brew "ghq"
+brew "git"
+brew "git-lfs"
+brew "go"
 brew "httpie"
 brew "jq"
+brew "lsd"
+brew "ripgrep"
+brew "ripgrep-all"
 brew "sheldon"
+brew "sqlite"
 brew "starship"
 brew "tree-sitter"
 brew "zoxide"
 
-## cat
-brew "bat"
-
-## find
-brew "fd"
-
 ## Format
 brew "shfmt"
 brew "stylua"
-
-## git
-brew "git"
-brew "git-lfs"
-
-## grep
-brew "ripgrep"
-brew "ripgrep-all"
 
 ## Lint
 brew "checkmake"
@@ -37,18 +35,11 @@ brew "luacheck"
 brew "shellcheck"
 brew "yamllint"
 
-## ls
-brew "eza"
-brew "lsd"
-
-## lsp
+## LSP
 brew "basedpyright"
 brew "lua-language-server"
 brew "typescript-language-server"
 brew "vue-language-server"
-
-## Fuzzy finder
-brew "fzf"
 
 ## Neovim
 brew "luarocks"
@@ -57,6 +48,7 @@ brew "neovim"
 if OS.mac?
   ## Command
   brew "coreutils"
+  brew "curl"
   brew "diffutils"
   brew "dos2unix"
   brew "ed"
@@ -68,38 +60,17 @@ if OS.mac?
   brew "grep"
   brew "gzip"
   brew "imagemagick"
+  brew "iproute2mac"
+  brew "mysql-client"
   brew "nkf"
+  brew "openssh"
   brew "p7zip"
   brew "rsync"
-  brew "watch"
-
-  ## ssh
-  brew "openssh"
   brew "ssh-copy-id"
-
-  ## vim
-  brew "vim"
-
-  ## zsh
-  brew "zsh"
-
-  ## Database
-  brew "mysql-client"
-  brew "sqlite"
-
-  ## Go
-  brew "go"
-
-  ## Network
-  brew "curl"
-  brew "iproute2mac"
+  brew "watch"
   brew "wget"
 
-  ## Node.js
-  brew "fnm"
-
   ## Mac Apps
-  #cask "xquartz"
   #cask "1password"
   #cask "1password-cli"
   #cask "adobe-acrobat-reader"
@@ -112,7 +83,6 @@ if OS.mac?
   cask "monitorcontrol"
   cask "mysqlworkbench"
   cask "rectangle"
-  cask "sequel-ace"
   #cask "the-unarchiver"
   cask "visual-studio-code"
 
