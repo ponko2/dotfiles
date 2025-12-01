@@ -2,7 +2,9 @@
 
 ## Command
 brew "bat"
+brew "checkmake"
 brew "colordiff"
+brew "editorconfig-checker"
 brew "eza"
 brew "fd"
 brew "fnm"
@@ -12,39 +14,31 @@ brew "ghq"
 brew "git"
 brew "git-lfs"
 brew "go"
+brew "golangci-lint"
 brew "httpie"
 brew "jq"
 brew "lsd"
+brew "luacheck"
+brew "nixfmt"
 brew "ripgrep"
 brew "ripgrep-all"
 brew "sheldon"
+brew "shellcheck"
+brew "shfmt"
 brew "sqlite"
 brew "starship"
+brew "stylua"
+brew "yamllint"
 brew "zoxide"
 
-## Formatter
-brew "nixfmt"
-brew "shfmt"
-brew "stylua"
-
-## Linter
-brew "checkmake"
-brew "editorconfig-checker"
-brew "golangci-lint"
-brew "luacheck"
-brew "shellcheck"
-brew "yamllint"
-
-## LSP
+## Neovim
 brew "basedpyright"
 brew "lua-language-server"
-brew "typescript-language-server"
-brew "vue-language-server"
-
-## Neovim
 brew "luarocks"
 brew "neovim"
 brew "tree-sitter"
+brew "typescript-language-server"
+brew "vue-language-server"
 
 if OS.mac?
   ## Command
@@ -71,7 +65,7 @@ if OS.mac?
   brew "watch"
   brew "wget"
 
-  ## Mac Apps
+  ## GUI Applications
   cask "1password"
   cask "1password-cli"
   cask "adobe-acrobat-reader"
