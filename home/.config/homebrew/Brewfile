@@ -77,12 +77,6 @@ if OS.mac?
   brew "openssh"
   brew "ssh-copy-id"
 
-  ## vim
-  brew "vim"
-
-  ## zsh
-  brew "zsh"
-
   ## Database
   brew "mysql-client"
   brew "sqlite"
@@ -99,7 +93,6 @@ if OS.mac?
   brew "fnm"
 
   ## Mac Apps
-  #cask "xquartz"
   #cask "1password"
   #cask "1password-cli"
   #cask "adobe-acrobat-reader"
@@ -112,7 +105,6 @@ if OS.mac?
   cask "monitorcontrol"
   cask "mysqlworkbench"
   cask "rectangle"
-  cask "sequel-ace"
   #cask "the-unarchiver"
   cask "visual-studio-code"
 
