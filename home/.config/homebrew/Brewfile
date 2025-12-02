@@ -46,14 +46,11 @@ if OS.mac?
   brew "dos2unix"
   brew "exiftool"
   brew "imagemagick"
-  brew "iproute2mac"
-  brew "mysql-client"
   brew "nkf"
   brew "openssh"
   brew "p7zip"
   brew "rsync"
   brew "ssh-copy-id"
-  brew "watch"
   brew "wget"
 
   ## GUI Applications
@@ -67,7 +64,6 @@ if OS.mac?
   cask "iterm2"
   cask "karabiner-elements"
   cask "monitorcontrol"
-  cask "mysqlworkbench"
   cask "rectangle"
   cask "the-unarchiver"
   cask "visual-studio-code"
