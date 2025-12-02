@@ -54,25 +54,7 @@ path=(
   ./node_modules/.bin # Node.js
   "$XDG_BIN_HOME"(N-/)
   "$HOMEBREW_PREFIX/opt/mysql-client/bin"(N-/) # MySQL Client
-  "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin"(N-/) # coreutils
-  "$HOMEBREW_PREFIX/opt/ed/libexec/gnubin"(N-/) # ed
-  "$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin"(N-/) # findutils
-  "$HOMEBREW_PREFIX/opt/gawk/libexec/gnubin"(N-/) # awk
-  "$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin"(N-/) # sed
-  "$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin"(N-/) # tar
-  "$HOMEBREW_PREFIX/opt/grep/libexec/gnubin"(N-/) # grep
   $path
-)
-
-manpath=(
-  "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnuman"(N-/) # coreutils
-  "$HOMEBREW_PREFIX/opt/ed/libexec/gnuman"(N-/) # ed
-  "$HOMEBREW_PREFIX/opt/findutils/libexec/gnuman"(N-/) # findutils
-  "$HOMEBREW_PREFIX/opt/gawk/libexec/gnuman"(N-/) # awk
-  "$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnuman"(N-/) # sed
-  "$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnuman"(N-/) # tar
-  "$HOMEBREW_PREFIX/opt/grep/libexec/gnuman"(N-/) # grep
-  $manpath
 )
 
 # Use emacs key bindings
