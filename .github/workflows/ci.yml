@@ -150,7 +150,7 @@ jobs:
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           persist-credentials: false
-      - name: Setup Biome
+      - name: Set up Biome
         uses: biomejs/setup-biome@454fa0d884737805f48d7dc236c1761a0ac3cc13 # v2.6.0
       - name: Run Biome
         run: biome ci --error-on-warnings
