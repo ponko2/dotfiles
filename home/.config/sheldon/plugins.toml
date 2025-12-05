@@ -92,8 +92,10 @@ bindkey '^Gr' fzf-git-rebase_interactive-widget
 
 [plugins.cargo]
 inline = '''
-if [[ -f "$HOME/.cargo/env" ]]; then
-  source "$HOME/.cargo/env"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+if [[ -f "$CARGO_HOME/env" ]]; then
+  source "$CARGO_HOME/env"
 fi
 '''
 
@@ -102,6 +104,21 @@ inline = '''
 if command -v fnm >/dev/null; then
   eval "$(fnm env)"
 fi
+'''
+
+[plugins.go]
+inline = '''
+export GOBIN="$XDG_BIN_HOME"
+export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
+export GOPATH="$XDG_DATA_HOME/go"
+'''
+
+[plugins.nodejs]
+inline = '''
+path=(
+  ./node_modules/.bin
+  $path
+)
 '''
 
 [plugins.pnpm]
@@ -113,6 +130,11 @@ if [[ -d "$XDG_DATA_HOME/pnpm" ]]; then
     *) export PATH="$PNPM_HOME:$PATH" ;;
   esac
 fi
+'''
+
+[plugins.ripgrep]
+inline = '''
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 '''
 
 [plugins.ponko2]
