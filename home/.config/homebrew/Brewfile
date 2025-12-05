@@ -47,6 +47,7 @@ brew "lua-language-server"
 brew "luarocks"
 brew "neovim"
 brew "tree-sitter"
+brew "tree-sitter-cli"
 brew "typescript-language-server"
 brew "vue-language-server"
 
