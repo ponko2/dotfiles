@@ -3,9 +3,10 @@ return {
     plugins = {
       {
         name = '@vue/typescript-plugin',
-        location = '/opt/homebrew/opt/vue-language-server/libexec/lib/'
-          .. 'node_modules/@vue/language-server/'
-          .. 'node_modules/@vue/typescript-plugin',
+        location = vim.env.HOMEBREW_PREFIX
+          .. '/opt/vue-language-server/libexec/lib'
+          .. '/node_modules/@vue/language-server'
+          .. '/node_modules/@vue/typescript-plugin',
         languages = { 'javascript', 'typescript', 'vue' },
       },
     },
