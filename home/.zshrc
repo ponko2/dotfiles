@@ -53,7 +53,6 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 path=(
   ./node_modules/.bin # Node.js
   "$XDG_BIN_HOME"(N-/)
-  "$HOMEBREW_PREFIX/opt/mysql-client/bin"(N-/) # MySQL Client
   $path
 )
 
