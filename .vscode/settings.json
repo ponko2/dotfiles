@@ -74,5 +74,8 @@
   "workbench.iconTheme": "vscode-icons",
   "[lua]": {
     "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  },
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
   }
 }

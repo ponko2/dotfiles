@@ -47,12 +47,27 @@ $(XDG_CONFIGS): | $(XDG_CONFIG_HOME)
 .PHONY: symlink
 symlink: | $(DOTFILES) $(XDG_BINS) $(XDG_CONFIGS) ## Create symlink to home directory.
 
+/nix:
+	curl --proto '=https' --tlsv1.2 -sSLf https://artifacts.nixos.org/experimental-installer | sh -s -- install
+
 $(HOMEBREW):
 	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+/etc/nix/nix.conf.before-nix-darwin:
+	sudo mv /etc/nix/nix.conf $@
+
+/etc/nix-darwin/flake.nix:
+	sudo mkdir -p $(@D)
+	sudo ln -s $(abspath $(@F)) $@
 
 .PHONY: bundle
 bundle: | $(HOMEBREW) ## Install and upgrade all dependencies from the ~/.config/homebrew/Brewfile.
 	$(SHELL) -ic "brew bundle --global"
+
+.PHONY: switch
+switch: | /nix $(HOMEBREW) /etc/nix/nix.conf.before-nix-darwin /etc/nix-darwin/flake.nix ## Build and switch to the new configuration.
+	perl -i -pe "s/kano/$$(whoami)/g" flake.nix
+	$(SHELL) -ic 'sudo nix --extra-experimental-features "nix-command flakes" run nix-darwin/master#darwin-rebuild -- switch --flake .#ponko2'
 
 .PHONY: install
 install: symlink bundle ## Run make symlink, bundle.
