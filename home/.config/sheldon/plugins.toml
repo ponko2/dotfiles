@@ -99,13 +99,6 @@ if [[ -f "$CARGO_HOME/env" ]]; then
 fi
 '''
 
-[plugins.fnm]
-inline = '''
-if command -v fnm >/dev/null; then
-  eval "$(fnm env)"
-fi
-'''
-
 [plugins.go]
 inline = '''
 export GOBIN="$XDG_BIN_HOME"

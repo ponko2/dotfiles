@@ -7,6 +7,13 @@
     "lint-staged": "16.2.7",
     "npm-run-all2": "8.0.4"
   },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^24.11.1",
+      "onFail": "download"
+    }
+  },
   "packageManager": "pnpm@10.24.0",
   "private": true,
   "scripts": {
