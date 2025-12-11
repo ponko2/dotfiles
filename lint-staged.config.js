@@ -4,6 +4,7 @@
  */
 export default {
   "*.lua": ["luacheck", "stylua"],
+  "*.nix": "nixfmt",
   "*.{js,jsx,ts,tsx,cjs,cts,mjs,mts,json,jsonc,css,svelte,vue,astro,graphql,gql}":
     "biome check --write --files-ignore-unknown=true --no-errors-on-unmatched",
   "*.{yaml,yml}": "yamllint",
