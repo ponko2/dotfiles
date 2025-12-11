@@ -4,6 +4,7 @@
     "asvetliakov.vscode-neovim",
     "biomejs.biome",
     "editorconfig.editorconfig",
+    "jnoortheen.nix-ide",
     "ms-vscode-remote.vscode-remote-extensionpack",
     "sumneko.lua"
   ]
