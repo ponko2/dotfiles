@@ -55,20 +55,13 @@
       darwinConfiguration =
         { config, pkgs, ... }:
         {
-          # List packages installed in system profile. To search by name, run:
-          # $ nix-env -qaP | grep wget
-          # environment.systemPackages = with pkgs; [ ];
-
           environment.etc.nix-darwin.source = "/Users/${username}/dotfiles";
-
           fonts.packages = with pkgs; [
             udev-gothic
             udev-gothic-nf
           ];
-
           homebrew = {
             enable = true;
-
             casks = [
               "1password"
               "1password-cli"
@@ -85,30 +78,19 @@
               "the-unarchiver"
               "visual-studio-code"
             ];
-
             onActivation = {
               autoUpdate = true;
               cleanup = "uninstall";
             };
-
             taps = builtins.attrNames config.nix-homebrew.taps;
           };
-
-          # Necessary for using flakes on this system.
           nix.settings.experimental-features = "nix-command flakes";
-
-          # Enable alternative shell support in nix-darwin.
-          # programs.fish.enable = true;
-
           security.pam.services.sudo_local = {
             touchIdAuth = true;
             watchIdAuth = true;
           };
-
           system = {
-            # Set Git commit hash for darwin-version.
             configurationRevision = self.rev or self.dirtyRev or null;
-
             defaults = {
               ".GlobalPreferences" = {
                 # マウス軌道の速さを最速化
@@ -195,24 +177,15 @@
                 EnableStandardClickToShowDesktop = false;
               };
             };
-
             keyboard = {
               # キーの再マップを有効化
               enableKeyMapping = true;
               # Caps Lock キーを Control キーに再マップ
               remapCapsLockToControl = true;
             };
-
-            # The user used for options that previously applied to the user running darwin-rebuild.
-            # This is a transition mechanism as nix-darwin reorganizes its options and will eventually be unnecessary and removed.
             primaryUser = username;
-
-            # Used for backwards compatibility, please read the changelog before changing.
-            # $ darwin-rebuild changelog
             stateVersion = 6;
           };
-
-          # The platform the configuration will be used on.
           nixpkgs.hostPlatform = "aarch64-darwin";
         };
       homeConfiguration =
@@ -222,7 +195,6 @@
             name = username;
             home = "/Users/${username}";
           };
-
           home-manager.users.${username} =
             { config, pkgs, ... }:
             {
@@ -257,7 +229,6 @@
                     ".zshrc.d"
                   ]
               );
-
               home.packages = with pkgs; [
                 bat
                 colordiff
@@ -290,10 +261,7 @@
                 wget
                 zoxide
               ];
-
-              # The state version is required and should stay at the version you originally installed.
               home.stateVersion = "25.11";
-
               programs = {
                 direnv = {
                   enable = true;
@@ -339,12 +307,10 @@
               # Command
               nodejs
               pnpm
-
               # Formatter
               nixfmt-rfc-style
               shfmt
               stylua
-
               # Linter
               checkmake
               editorconfig-checker
