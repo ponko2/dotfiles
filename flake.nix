@@ -100,6 +100,11 @@
           # Enable alternative shell support in nix-darwin.
           # programs.fish.enable = true;
 
+          security.pam.services.sudo_local = {
+            touchIdAuth = true;
+            watchIdAuth = true;
+          };
+
           system = {
             # Set Git commit hash for darwin-version.
             configurationRevision = self.rev or self.dirtyRev or null;
@@ -128,6 +133,8 @@
                   { app = "/Applications/DevToys.app"; }
                   { app = "/Applications/1Password.app"; }
                 ];
+                # 最近使用したアプリケーションを非表しない
+                show-recents = false;
               };
               finder = {
                 # すべてのファイル名拡張子を表示
@@ -142,6 +149,8 @@
                 NewWindowTarget = "Home";
                 # パスバーを表示
                 ShowPathbar = true;
+                # ステータスバーを表示
+                ShowStatusBar = true;
               };
               # メニューバーの時計
               menuExtraClock = {
