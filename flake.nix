@@ -39,6 +39,7 @@
     }:
     let
       username = "kano";
+      hostname = "ponko2";
       homebrewConfiguration = {
         nix-homebrew = {
           enable = true;
@@ -330,7 +331,7 @@
           formatter = pkgs.nixfmt-tree;
         };
       flake = {
-        darwinConfigurations."ponko2" = nix-darwin.lib.darwinSystem {
+        darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
           modules = [
             nix-homebrew.darwinModules.nix-homebrew
             homebrewConfiguration
