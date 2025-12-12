@@ -250,7 +250,6 @@
               );
 
               home.packages = with pkgs; [
-                # Command
                 bat
                 colordiff
                 curl
@@ -279,18 +278,6 @@
                 starship
                 wget
                 zoxide
-
-                # Formatter
-                nixfmt-rfc-style
-                shfmt
-                stylua
-
-                # Linter
-                checkmake
-                editorconfig-checker
-                lua51Packages.luacheck
-                shellcheck
-                yamllint
               ];
 
               # The state version is required and should stay at the version you originally installed.
@@ -326,7 +313,35 @@
       ];
       perSystem =
         { pkgs, ... }:
+        let
+          packageJSON = pkgs.lib.importJSON ./package.json;
+          nodejs =
+            pkgs."nodejs_${pkgs.lib.versions.major (pkgs.lib.removePrefix "^" packageJSON.devEngines.runtime.version)}";
+          pnpm = pkgs.runCommand "pnpm" { buildInputs = [ nodejs ]; } ''
+            mkdir -p $out/bin
+            corepack enable pnpm --install-directory=$out/bin
+          '';
+        in
         {
+          devShells.default = pkgs.mkShell {
+            packages = with pkgs; [
+              # Command
+              nodejs
+              pnpm
+
+              # Formatter
+              nixfmt-rfc-style
+              shfmt
+              stylua
+
+              # Linter
+              checkmake
+              editorconfig-checker
+              lua51Packages.luacheck
+              shellcheck
+              yamllint
+            ];
+          };
           formatter = pkgs.nixfmt-tree;
         };
       flake = {
