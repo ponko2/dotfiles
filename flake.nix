@@ -35,7 +35,7 @@
       homebrew-core,
       nix-darwin,
       nix-homebrew,
-      nixpkgs,
+      ...
     }:
     let
       username = "kano";
@@ -192,104 +192,102 @@
             stateVersion = 6;
           };
         };
-      homeConfiguration =
-        { config, pkgs, ... }:
-        {
-          users.users.${username} = {
-            name = username;
-            home = "/Users/${username}";
-          };
-          home-manager = {
-            users.${username} =
-              { config, pkgs, ... }:
-              {
-                home = {
-                  file = builtins.listToAttrs (
-                    map
-                      (path: {
-                        name = path;
-                        value = {
-                          source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/${path}";
-                        };
-                      })
-                      [
-                        ".config/atcoder-cli-nodejs"
-                        ".config/bat"
-                        ".config/ghostty"
-                        ".config/git"
-                        ".config/karabiner"
-                        ".config/nvim"
-                        ".config/sheldon"
-                        ".config/starship.toml"
-                        ".config/yamllint"
-                        ".config/zsh-abbr"
-                        ".local/bin/rfv"
-                        ".local/bin/update-system"
-                        ".ripgreprc"
-                        ".textlintrc.json"
-                        ".vim"
-                        ".vimrc"
-                        ".zprofile"
-                        ".zshenv"
-                        ".zshrc"
-                        ".zshrc.d"
-                      ]
-                  );
-                  packages = with pkgs; [
-                    bat
-                    colordiff
-                    curl
-                    dos2unix
-                    exiftool
-                    eza
-                    fd
-                    fzf
-                    gh
-                    ghq
-                    git
-                    git-lfs
-                    httpie
-                    imagemagick
-                    jq
-                    lsd
-                    nh
-                    nix-output-monitor
-                    nkf
-                    openssh
-                    p7zip
-                    ripgrep
-                    ripgrep-all
-                    rsync
-                    sheldon
-                    sqlite
-                    ssh-copy-id
-                    starship
-                    wget
-                    zoxide
-                  ];
-                  stateVersion = "25.11";
+      homeConfiguration = {
+        users.users.${username} = {
+          name = username;
+          home = "/Users/${username}";
+        };
+        home-manager = {
+          users.${username} =
+            { config, pkgs, ... }:
+            {
+              home = {
+                file = builtins.listToAttrs (
+                  map
+                    (path: {
+                      name = path;
+                      value = {
+                        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/${path}";
+                      };
+                    })
+                    [
+                      ".config/atcoder-cli-nodejs"
+                      ".config/bat"
+                      ".config/ghostty"
+                      ".config/git"
+                      ".config/karabiner"
+                      ".config/nvim"
+                      ".config/sheldon"
+                      ".config/starship.toml"
+                      ".config/yamllint"
+                      ".config/zsh-abbr"
+                      ".local/bin/rfv"
+                      ".local/bin/update-system"
+                      ".ripgreprc"
+                      ".textlintrc.json"
+                      ".vim"
+                      ".vimrc"
+                      ".zprofile"
+                      ".zshenv"
+                      ".zshrc"
+                      ".zshrc.d"
+                    ]
+                );
+                packages = with pkgs; [
+                  bat
+                  colordiff
+                  curl
+                  dos2unix
+                  exiftool
+                  eza
+                  fd
+                  fzf
+                  gh
+                  ghq
+                  git
+                  git-lfs
+                  httpie
+                  imagemagick
+                  jq
+                  lsd
+                  nh
+                  nix-output-monitor
+                  nkf
+                  openssh
+                  p7zip
+                  ripgrep
+                  ripgrep-all
+                  rsync
+                  sheldon
+                  sqlite
+                  ssh-copy-id
+                  starship
+                  wget
+                  zoxide
+                ];
+                stateVersion = "25.11";
+              };
+              programs = {
+                direnv = {
+                  enable = true;
+                  nix-direnv.enable = true;
+                  silent = true;
                 };
-                programs = {
-                  direnv = {
-                    enable = true;
-                    nix-direnv.enable = true;
-                    silent = true;
-                  };
-                  neovim = {
-                    enable = true;
-                    extraPackages = with pkgs; [
-                      basedpyright
-                      lua-language-server
-                      luarocks
-                      tree-sitter
-                      typescript-language-server
-                      vue-language-server
-                    ];
-                  };
+                neovim = {
+                  enable = true;
+                  extraPackages = with pkgs; [
+                    basedpyright
+                    lua-language-server
+                    luarocks
+                    tree-sitter
+                    typescript-language-server
+                    vue-language-server
+                  ];
                 };
               };
-          };
+            };
         };
+      };
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
