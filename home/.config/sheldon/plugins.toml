@@ -27,6 +27,13 @@ if command -v starship >/dev/null; then
 fi
 '''
 
+[plugins.direnv]
+inline = '''
+if command -v direnv >/dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+'''
+
 [plugins.fzf]
 inline = '''
 export FZF_DEFAULT_OPTS='--no-unicode --ansi'
@@ -104,6 +111,11 @@ inline = '''
 export GOBIN="$XDG_BIN_HOME"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 export GOPATH="$XDG_DATA_HOME/go"
+'''
+
+[plugins.nh]
+inline = '''
+export NH_FLAKE="$HOME/dotfiles"
 '''
 
 [plugins.pnpm]

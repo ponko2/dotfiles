@@ -16,10 +16,13 @@
       flake = false;
     };
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/master";
+      url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    nix-homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
@@ -32,10 +35,11 @@
       homebrew-core,
       nix-darwin,
       nix-homebrew,
-      nixpkgs,
+      ...
     }:
     let
       username = "kano";
+      hostname = "ponko2";
       homebrewConfiguration = {
         nix-homebrew = {
           enable = true;
@@ -51,17 +55,14 @@
       darwinConfiguration =
         { config, pkgs, ... }:
         {
-          # List packages installed in system profile. To search by name, run:
-          # $ nix-env -qaP | grep wget
-          # environment.systemPackages = with pkgs; [ ];
-
           environment.etc.nix-darwin.source = "/Users/${username}/dotfiles";
-
+          fonts.packages = with pkgs; [
+            udev-gothic
+            udev-gothic-nf
+          ];
           homebrew = {
             enable = true;
-
             casks = [
-              # GUI Applications
               "1password"
               "1password-cli"
               "adobe-acrobat-reader"
@@ -76,30 +77,28 @@
               "rectangle"
               "the-unarchiver"
               "visual-studio-code"
-
-              # Fonts
-              "font-udev-gothic"
-              "font-udev-gothic-nf"
             ];
-
             onActivation = {
               autoUpdate = true;
               cleanup = "uninstall";
             };
-
             taps = builtins.attrNames config.nix-homebrew.taps;
           };
-
-          # Necessary for using flakes on this system.
-          nix.settings.experimental-features = "nix-command flakes";
-
-          # Enable alternative shell support in nix-darwin.
-          # programs.fish.enable = true;
-
+          nix = {
+            nixPath = [ "nixpkgs=flake:nixpkgs" ];
+            registry.nixpkgs.flake = inputs.nixpkgs;
+            settings.experimental-features = "nix-command flakes";
+          };
+          nixpkgs = {
+            config.allowUnfree = true;
+            hostPlatform = "aarch64-darwin";
+          };
+          security.pam.services.sudo_local = {
+            touchIdAuth = true;
+            watchIdAuth = true;
+          };
           system = {
-            # Set Git commit hash for darwin-version.
             configurationRevision = self.rev or self.dirtyRev or null;
-
             defaults = {
               ".GlobalPreferences" = {
                 # マウス軌道の速さを最速化
@@ -124,6 +123,8 @@
                   { app = "/Applications/DevToys.app"; }
                   { app = "/Applications/1Password.app"; }
                 ];
+                # 最近使用したアプリケーションを非表しない
+                show-recents = false;
               };
               finder = {
                 # すべてのファイル名拡張子を表示
@@ -138,6 +139,8 @@
                 NewWindowTarget = "Home";
                 # パスバーを表示
                 ShowPathbar = true;
+                # ステータスバーを表示
+                ShowStatusBar = true;
               };
               # メニューバーの時計
               menuExtraClock = {
@@ -182,122 +185,97 @@
                 EnableStandardClickToShowDesktop = false;
               };
             };
-
             keyboard = {
               # キーの再マップを有効化
               enableKeyMapping = true;
               # Caps Lock キーを Control キーに再マップ
               remapCapsLockToControl = true;
             };
-
-            # The user used for options that previously applied to the user running darwin-rebuild.
-            # This is a transition mechanism as nix-darwin reorganizes its options and will eventually be unnecessary and removed.
             primaryUser = username;
-
-            # Used for backwards compatibility, please read the changelog before changing.
-            # $ darwin-rebuild changelog
             stateVersion = 6;
           };
-
-          # The platform the configuration will be used on.
-          nixpkgs.hostPlatform = "aarch64-darwin";
         };
-      homeConfiguration =
-        { config, pkgs, ... }:
-        {
-          users.users.${username} = {
-            name = username;
-            home = "/Users/${username}";
-          };
-
-          home-manager.users.${username} =
+      homeConfiguration = {
+        users.users.${username} = {
+          name = username;
+          home = "/Users/${username}";
+        };
+        home-manager = {
+          useGlobalPkgs = true;
+          users.${username} =
             { config, pkgs, ... }:
             {
-              home.file = builtins.listToAttrs (
-                map
-                  (path: {
-                    name = path;
-                    value = {
-                      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/${path}";
-                    };
-                  })
-                  [
-                    ".config/atcoder-cli-nodejs"
-                    ".config/bat"
-                    ".config/ghostty"
-                    ".config/git"
-                    ".config/karabiner"
-                    ".config/nvim"
-                    ".config/sheldon"
-                    ".config/starship.toml"
-                    ".config/yamllint"
-                    ".config/zsh-abbr"
-                    ".local/bin/rfv"
-                    ".local/bin/update-system"
-                    ".ripgreprc"
-                    ".textlintrc.json"
-                    ".vim"
-                    ".vimrc"
-                    ".zprofile"
-                    ".zshenv"
-                    ".zshrc"
-                    ".zshrc.d"
-                  ]
-              );
-
-              home.packages = with pkgs; [
-                # Command
-                bat
-                colordiff
-                curl
-                dos2unix
-                exiftool
-                eza
-                fd
-                fzf
-                gh
-                ghq
-                git
-                git-lfs
-                httpie
-                imagemagick
-                jq
-                lsd
-                nkf
-                openssh
-                p7zip
-                ripgrep
-                ripgrep-all
-                rsync
-                sheldon
-                sqlite
-                ssh-copy-id
-                starship
-                wget
-                zoxide
-
-                # Formatter
-                nixfmt-rfc-style
-                shfmt
-                stylua
-
-                # Linter
-                checkmake
-                editorconfig-checker
-                golangci-lint
-                lua51Packages.luacheck
-                shellcheck
-                yamllint
-              ];
-
-              # The state version is required and should stay at the version you originally installed.
-              home.stateVersion = "25.11";
-
+              home = {
+                file = builtins.listToAttrs (
+                  map
+                    (path: {
+                      name = path;
+                      value = {
+                        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/${path}";
+                      };
+                    })
+                    [
+                      ".config/atcoder-cli-nodejs"
+                      ".config/bat"
+                      ".config/ghostty"
+                      ".config/git"
+                      ".config/karabiner"
+                      ".config/nvim"
+                      ".config/sheldon"
+                      ".config/starship.toml"
+                      ".config/yamllint"
+                      ".config/zsh-abbr"
+                      ".local/bin/rfv"
+                      ".local/bin/update-system"
+                      ".ripgreprc"
+                      ".textlintrc.json"
+                      ".vim"
+                      ".vimrc"
+                      ".zprofile"
+                      ".zshenv"
+                      ".zshrc"
+                      ".zshrc.d"
+                    ]
+                );
+                packages = with pkgs; [
+                  bat
+                  colordiff
+                  curl
+                  dos2unix
+                  exiftool
+                  eza
+                  fd
+                  fzf
+                  gh
+                  ghq
+                  git
+                  git-lfs
+                  httpie
+                  imagemagick
+                  jq
+                  lsd
+                  nh
+                  nix-output-monitor
+                  nkf
+                  openssh
+                  p7zip
+                  ripgrep
+                  ripgrep-all
+                  rsync
+                  sheldon
+                  sqlite
+                  ssh-copy-id
+                  starship
+                  wget
+                  zoxide
+                ];
+                stateVersion = "25.11";
+              };
               programs = {
                 direnv = {
                   enable = true;
-                  enableZshIntegration = true;
                   nix-direnv.enable = true;
+                  silent = true;
                 };
                 neovim = {
                   enable = true;
@@ -313,6 +291,7 @@
               };
             };
         };
+      };
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
@@ -323,11 +302,39 @@
       ];
       perSystem =
         { pkgs, ... }:
+        let
+          packageJSON = pkgs.lib.importJSON ./package.json;
+          nodejs =
+            pkgs."nodejs_${pkgs.lib.versions.major (pkgs.lib.removePrefix "^" packageJSON.devEngines.runtime.version)}";
+          pnpm = pkgs.runCommand "pnpm" { buildInputs = [ nodejs ]; } ''
+            mkdir -p $out/bin
+            corepack enable pnpm --install-directory=$out/bin
+          '';
+        in
         {
+          devShells.default = pkgs.mkShell {
+            packages = with pkgs; [
+              # Command
+              nodejs
+              pnpm
+              # Formatter
+              nixfmt-rfc-style
+              shfmt
+              stylua
+              # Linter
+              checkmake
+              deadnix
+              editorconfig-checker
+              lua51Packages.luacheck
+              shellcheck
+              statix
+              yamllint
+            ];
+          };
           formatter = pkgs.nixfmt-tree;
         };
       flake = {
-        darwinConfigurations."ponko2" = nix-darwin.lib.darwinSystem {
+        darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
           modules = [
             nix-homebrew.darwinModules.nix-homebrew
             homebrewConfiguration
