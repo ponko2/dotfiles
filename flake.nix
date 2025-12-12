@@ -61,11 +61,15 @@
 
           environment.etc.nix-darwin.source = "/Users/${username}/dotfiles";
 
+          fonts.packages = with pkgs; [
+            udev-gothic
+            udev-gothic-nf
+          ];
+
           homebrew = {
             enable = true;
 
             casks = [
-              # GUI Applications
               "1password"
               "1password-cli"
               "adobe-acrobat-reader"
@@ -80,10 +84,6 @@
               "rectangle"
               "the-unarchiver"
               "visual-studio-code"
-
-              # Fonts
-              "font-udev-gothic"
-              "font-udev-gothic-nf"
             ];
 
             onActivation = {
