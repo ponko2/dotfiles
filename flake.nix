@@ -288,7 +288,6 @@
                 # Linter
                 checkmake
                 editorconfig-checker
-                golangci-lint
                 lua51Packages.luacheck
                 shellcheck
                 yamllint

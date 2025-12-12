@@ -38,7 +38,6 @@ brew "stylua"
 ## Linter
 brew "checkmake"
 brew "editorconfig-checker"
-brew "golangci-lint"
 brew "luacheck"
 brew "shellcheck"
 brew "yamllint"
