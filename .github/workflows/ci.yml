@@ -20,9 +20,11 @@ jobs:
       - ghalint
       - zizmor
       - biome
+      - deadnix
       - editorconfig
       - luacheck
       - nixfmt
+      - statix
       - stylua
       - yamllint
     runs-on: ubuntu-slim
@@ -54,8 +56,10 @@ jobs:
       # reference: https://github.com/tj-actions/changed-files#outputs-
       actions: ${{ steps.changed-files.outputs.actions_any_modified == 'true' }}
       biome: ${{ steps.changed-files.outputs.biome_any_modified == 'true' }}
+      deadnix: ${{ steps.changed-files.outputs.deadnix_any_modified == 'true' }}
       luacheck: ${{ steps.changed-files.outputs.luacheck_any_modified == 'true' }}
       nixfmt: ${{ steps.changed-files.outputs.nixfmt_any_modified == 'true' }}
+      statix: ${{ steps.changed-files.outputs.statix_any_modified == 'true' }}
       stylua: ${{ steps.changed-files.outputs.stylua_any_modified == 'true' }}
       yamllint: ${{ steps.changed-files.outputs.yamllint_any_modified == 'true' }}
     steps:
@@ -77,12 +81,18 @@ jobs:
             biome:
               - *common
               - "**/*.{js,jsx,ts,tsx,cjs,cts,mjs,mts,json,jsonc,css,svelte,vue,astro,graphql,gql}"
+            deadnix:
+              - *common
+              - "**/*.nix"
             luacheck:
               - *common
               - "**/*.lua"
               - .luacheckrc
               - .luarc.json
             nixfmt:
+              - *common
+              - "**/*.nix"
+            statix:
               - *common
               - "**/*.nix"
             stylua:
@@ -159,6 +169,24 @@ jobs:
         uses: biomejs/setup-biome@454fa0d884737805f48d7dc236c1761a0ac3cc13 # v2.6.0
       - name: Run Biome
         run: biome ci --error-on-warnings
+  deadnix:
+    name: deadnix
+    if: ${{ always() && !failure() && !cancelled() &&
+      (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.deadnix == 'true') }}
+    needs: changed-files
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Nix
+        uses: cachix/install-nix-action@0b0e072294b088b73964f1d72dfdac0951439dbd # v31.8.4
+      - name: Run deadnix
+        run: nix develop --command deadnix
   editorconfig:
     name: EditorConfig
     needs: verify-author
@@ -209,6 +237,24 @@ jobs:
         uses: cachix/install-nix-action@0b0e072294b088b73964f1d72dfdac0951439dbd # v31.8.4
       - name: Run Nixfmt
         run: nix fmt -- --ci
+  statix:
+    name: statix
+    if: ${{ always() && !failure() && !cancelled() &&
+      (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.statix == 'true') }}
+    needs: changed-files
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Nix
+        uses: cachix/install-nix-action@0b0e072294b088b73964f1d72dfdac0951439dbd # v31.8.4
+      - name: Run statix
+        run: nix develop --command statix check
   stylua:
     name: StyLua
     if: ${{ always() && !failure() && !cancelled() &&

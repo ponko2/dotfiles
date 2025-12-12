@@ -323,9 +323,11 @@
               stylua
               # Linter
               checkmake
+              deadnix
               editorconfig-checker
               lua51Packages.luacheck
               shellcheck
+              statix
               yamllint
             ];
           };
