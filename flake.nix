@@ -85,9 +85,12 @@
             taps = builtins.attrNames config.nix-homebrew.taps;
           };
           nix = {
+            nixPath = [ "nixpkgs=flake:nixpkgs" ];
+            registry.nixpkgs.flake = inputs.nixpkgs;
             settings.experimental-features = "nix-command flakes";
           };
           nixpkgs = {
+            config.allowUnfree = true;
             hostPlatform = "aarch64-darwin";
           };
           security.pam.services.sudo_local = {
@@ -198,6 +201,7 @@
           home = "/Users/${username}";
         };
         home-manager = {
+          useGlobalPkgs = true;
           users.${username} =
             { config, pkgs, ... }:
             {
