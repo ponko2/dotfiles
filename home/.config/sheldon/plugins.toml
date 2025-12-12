@@ -113,6 +113,11 @@ export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 export GOPATH="$XDG_DATA_HOME/go"
 '''
 
+[plugins.nh]
+inline = '''
+export NH_FLAKE="$HOME/dotfiles"
+'''
+
 [plugins.pnpm]
 inline = '''
 if [[ -d "$XDG_DATA_HOME/pnpm" ]]; then

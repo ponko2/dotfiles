@@ -266,6 +266,8 @@
                 imagemagick
                 jq
                 lsd
+                nh
+                nix-output-monitor
                 nkf
                 openssh
                 p7zip

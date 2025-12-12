@@ -5,7 +5,7 @@ set -euxo pipefail
 if command -v darwin-rebuild >/dev/null; then
   # Nix
   nix flake update --flake ~/dotfiles
-  sudo darwin-rebuild switch
+  nh darwin switch
   /bin/ls -dt1 /nix/var/nix/profiles/system-*-link | /usr/bin/head -2 | /usr/bin/tail -r | xargs nix store diff-closures
 else
   # Homebrew
