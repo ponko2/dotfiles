@@ -84,6 +84,7 @@ jobs:
             deadnix:
               - *common
               - "**/*.nix"
+              - flake.lock
             luacheck:
               - *common
               - "**/*.lua"
@@ -92,9 +93,11 @@ jobs:
             nixfmt:
               - *common
               - "**/*.nix"
+              - flake.lock
             statix:
               - *common
               - "**/*.nix"
+              - flake.lock
             stylua:
               - *common
               - "**/*.lua"
