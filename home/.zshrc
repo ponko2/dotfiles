@@ -9,24 +9,9 @@ if [[ "$TERM" != 'dumb' ]]; then
   stty -ixon -ixoff
 fi
 
-# Language
-export LANG=ja_JP.UTF-8
-
-# XDG Base Directory
-export XDG_BIN_HOME=$HOME/.local/bin
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_STATE_HOME=$HOME/.local/state
-
 # Correction
 CORRECT_IGNORE='_*'
 CORRECT_IGNORE_FILE='.*'
-
-# Editor
-export EDITOR="nvim --clean -c 'set enc=utf-8 cb+=unnamed'"
-export CVSEDITOR="${EDITOR}"
-export SVN_EDITOR="${EDITOR}"
 
 # History
 HISTSIZE=10000
