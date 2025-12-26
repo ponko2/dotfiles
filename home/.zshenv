@@ -1,3 +1,7 @@
+# Prevent this file from being sourced by child shells.
+if [ -n "${__HOME_ZSHENV_SOURCED-}" ]; then return; fi
+export __HOME_ZSHENV_SOURCED=1
+
 # Language
 export LANG=ja_JP.UTF-8
 
@@ -25,3 +29,17 @@ setopt no_global_rcs
 if [[ -x /usr/libexec/path_helper ]]; then
   eval "$(/usr/libexec/path_helper -s)"
 fi
+
+# Homebrew
+if [[ -f /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -f /usr/local/bin/brew ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+elif [[ -f /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+path=(
+  "$XDG_BIN_HOME"(N-/)
+  $path
+)

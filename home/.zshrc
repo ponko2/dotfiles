@@ -23,11 +23,6 @@ else
   export HISTFILE=~/.zsh_history
 fi
 
-path=(
-  "$XDG_BIN_HOME"(N-/)
-  $path
-)
-
 # Use emacs key bindings
 bindkey -e
 
