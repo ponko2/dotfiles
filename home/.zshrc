@@ -20,8 +20,8 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 
 # Correction
-export CORRECT_IGNORE='_*'
-export CORRECT_IGNORE_FILE='.*'
+CORRECT_IGNORE='_*'
+CORRECT_IGNORE_FILE='.*'
 
 # Editor
 export EDITOR="nvim --clean -c 'set enc=utf-8 cb+=unnamed'"
@@ -29,9 +29,9 @@ export CVSEDITOR="${EDITOR}"
 export SVN_EDITOR="${EDITOR}"
 
 # History
-export HISTSIZE=10000
-export SAVEHIST=10000
-export HISTORY_IGNORE='(* --help|(bat|cat|cd|chmod|chown|cp|echo|ls|man|mv|rm|which)(| *)|git (add|blame|checkout|cherry-pick|commit|diff|log|rebase|reset|revert|show|status) *|{*)'
+HISTSIZE=10000
+SAVEHIST=10000
+HISTORY_IGNORE='(* --help|(bat|cat|cd|chmod|chown|cp|echo|ls|man|mv|rm|which)(| *)|git (add|blame|checkout|cherry-pick|commit|diff|log|rebase|reset|revert|show|status) *|{*)'
 if [[ -d "$XDG_STATE_HOME/zsh" ]]; then
   export HISTFILE="$XDG_STATE_HOME/zsh/history"
 else
