@@ -5,7 +5,7 @@ fi
 
 umask 022
 
-if [ "$TERM" != 'dumb' ]; then
+if [[ "$TERM" != 'dumb' ]]; then
   stty -ixon -ixoff
 fi
 

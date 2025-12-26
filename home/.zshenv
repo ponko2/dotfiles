@@ -12,6 +12,6 @@ setopt no_global_rcs
 
 # copied from /etc/zprofile
 # system-wide environment settings for zsh(1)
-if [ -x /usr/libexec/path_helper ]; then
+if [[ -x /usr/libexec/path_helper ]]; then
   eval "$(/usr/libexec/path_helper -s)"
 fi
