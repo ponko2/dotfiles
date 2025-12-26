@@ -41,5 +41,8 @@ fi
 
 path=(
   "$XDG_BIN_HOME"(N-/)
+  "$HOME/.nix-profile/bin"(N-/)
+  /run/current-system/sw/bin(N-/)
+  /nix/var/nix/profiles/default/bin(N-/)
   $path
 )
