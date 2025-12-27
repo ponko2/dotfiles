@@ -41,6 +41,9 @@
         nix-homebrew = {
           enable = true;
           enableRosetta = false;
+          enableBashIntegration = false;
+          enableFishIntegration = false;
+          enableZshIntegration = false;
           user = username;
           taps = {
             "homebrew/homebrew-core" = homebrew-core;
