@@ -1,0 +1,31 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: Biome
+      run: pnpm exec biome check --write --files-ignore-unknown=true --no-errors-on-unmatched {staged_files}
+      glob: "*.{js,jsx,ts,tsx,cjs,cts,mjs,mts,json,jsonc,css,svelte,vue,astro,graphql,gql}"
+      stage_fixed: true
+    - name: deadnix
+      run: deadnix --edit {staged_files}
+      glob: "*.nix"
+      stage_fixed: true
+    - name: EditorConfig
+      run: editorconfig-checker {staged_files}
+    - name: Luacheck
+      run: luacheck {staged_files}
+      glob: "*.lua"
+    - name: Nixfmt
+      run: nixfmt {staged_files}
+      glob: "*.nix"
+      stage_fixed: true
+    - name: statix
+      run: statix fix {staged_files}
+      glob: "*.nix"
+      stage_fixed: true
+    - name: StyLua
+      run: stylua {staged_files}
+      glob: "*.lua"
+      stage_fixed: true
+    - name: yamllint
+      run: yamllint --list-files --strict {staged_files}
+      glob: "*.{yaml,yml}"

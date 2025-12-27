@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "devDependencies": {
     "@biomejs/biome": "2.3.10",
-    "husky": "9.1.7",
-    "lint-staged": "16.2.7",
+    "lefthook": "2.0.13",
     "npm-run-all2": "8.0.4"
   },
   "devEngines": {
@@ -23,8 +22,7 @@
     "lint": "run-p --aggregate-output -c -l lint:*",
     "lint:biome": "biome check",
     "lint:luacheck": "luacheck .",
-    "lint:yamllint": "yamllint .",
-    "prepare": "node .husky/install.mjs"
+    "lint:yamllint": "yamllint ."
   },
   "type": "module"
 }
