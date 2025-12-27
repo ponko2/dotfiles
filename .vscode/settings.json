@@ -1,5 +1,15 @@
 {
+  "accessibility.openChatEditedFiles": true,
+  "accessibility.signals.chatResponseReceived": {
+    "sound": "on"
+  },
+  "accessibility.signals.chatUserActionRequired": {
+    "sound": "on"
+  },
   "biome.requireConfiguration": true,
+  "chat.agentSessionsViewLocation": "view",
+  "chat.viewSessions.orientation": "stacked",
+  "editor.aiStats.enabled": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
@@ -19,6 +29,7 @@
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [120],
+  "editor.stickyScroll.enabled": false,
   "editor.suggestSelection": "first",
   "editor.unicodeHighlight.ambiguousCharacters": true,
   "editor.unicodeHighlight.invisibleCharacters": true,
@@ -48,9 +59,16 @@
     }
   ],
   "github.copilot.chat.localeOverride": "ja",
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "prettier.requireConfig": true,
+  "python.analysis.autoImportCompletions": true,
   "terminal.integrated.fontFamily": "'UDEV Gothic JPDOC', Menlo, Monaco, 'Courier New', monospace",
   "terminal.integrated.fontSize": 16,
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.suggest.enabled": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorCustomizations": {
     "terminal.ansiBlack": "#3c3836",
     "terminal.ansiBlue": "#458588",
