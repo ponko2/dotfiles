@@ -37,22 +37,7 @@
     let
       username = "kano";
       hostname = "ponko2";
-      homebrewConfiguration = {
-        nix-homebrew = {
-          enable = true;
-          enableRosetta = false;
-          enableBashIntegration = false;
-          enableFishIntegration = false;
-          enableZshIntegration = false;
-          user = username;
-          taps = {
-            "homebrew/homebrew-core" = homebrew-core;
-            "homebrew/homebrew-cask" = homebrew-cask;
-          };
-          mutableTaps = false;
-        };
-      };
-      darwinConfiguration =
+      configuration =
         { config, pkgs, ... }:
         {
           environment.etc.nix-darwin.source = "/Users/${username}/dotfiles";
@@ -60,6 +45,97 @@
             udev-gothic
             udev-gothic-nf
           ];
+          home-manager = {
+            useGlobalPkgs = true;
+            users.${username} =
+              { config, pkgs, ... }:
+              {
+                home = {
+                  file = builtins.listToAttrs (
+                    map
+                      (path: {
+                        name = path;
+                        value = {
+                          source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/${path}";
+                        };
+                      })
+                      [
+                        ".config/atcoder-cli-nodejs"
+                        ".config/bat"
+                        ".config/ghostty"
+                        ".config/git"
+                        ".config/karabiner"
+                        ".config/nvim"
+                        ".config/sheldon"
+                        ".config/starship.toml"
+                        ".config/yamllint"
+                        ".config/zsh-abbr"
+                        ".local/bin/rfv"
+                        ".local/bin/update-system"
+                        ".ripgreprc"
+                        ".textlintrc.json"
+                        ".vim"
+                        ".vimrc"
+                        ".zprofile"
+                        ".zshenv"
+                        ".zshrc"
+                        ".zshrc.d"
+                      ]
+                  );
+                  packages = with pkgs; [
+                    bat
+                    colordiff
+                    curl
+                    dos2unix
+                    exiftool
+                    eza
+                    fd
+                    fzf
+                    gh
+                    ghq
+                    git
+                    git-lfs
+                    httpie
+                    imagemagick
+                    jq
+                    lsd
+                    nh
+                    nix-output-monitor
+                    nkf
+                    openssh
+                    p7zip
+                    ripgrep
+                    ripgrep-all
+                    rsync
+                    sheldon
+                    sqlite
+                    ssh-copy-id
+                    starship
+                    wget
+                    zoxide
+                  ];
+                  stateVersion = "25.11";
+                };
+                programs = {
+                  direnv = {
+                    enable = true;
+                    nix-direnv.enable = true;
+                    silent = true;
+                  };
+                  neovim = {
+                    enable = true;
+                    extraPackages = with pkgs; [
+                      basedpyright
+                      lua-language-server
+                      luarocks
+                      tree-sitter
+                      typescript-language-server
+                      vue-language-server
+                    ];
+                  };
+                };
+              };
+          };
           homebrew = {
             enable = true;
             casks = [
@@ -88,6 +164,19 @@
             nixPath = [ "nixpkgs=flake:nixpkgs" ];
             registry.nixpkgs.flake = inputs.nixpkgs;
             settings.experimental-features = "nix-command flakes";
+          };
+          nix-homebrew = {
+            enable = true;
+            enableRosetta = false;
+            enableBashIntegration = false;
+            enableFishIntegration = false;
+            enableZshIntegration = false;
+            user = username;
+            taps = {
+              "homebrew/homebrew-core" = homebrew-core;
+              "homebrew/homebrew-cask" = homebrew-cask;
+            };
+            mutableTaps = false;
           };
           nixpkgs = {
             config.allowUnfree = true;
@@ -205,104 +294,11 @@
             primaryUser = username;
             stateVersion = 6;
           };
+          users.users.${username} = {
+            name = username;
+            home = "/Users/${username}";
+          };
         };
-      homeConfiguration = {
-        users.users.${username} = {
-          name = username;
-          home = "/Users/${username}";
-        };
-        home-manager = {
-          useGlobalPkgs = true;
-          users.${username} =
-            { config, pkgs, ... }:
-            {
-              home = {
-                file = builtins.listToAttrs (
-                  map
-                    (path: {
-                      name = path;
-                      value = {
-                        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/${path}";
-                      };
-                    })
-                    [
-                      ".config/atcoder-cli-nodejs"
-                      ".config/bat"
-                      ".config/ghostty"
-                      ".config/git"
-                      ".config/karabiner"
-                      ".config/nvim"
-                      ".config/sheldon"
-                      ".config/starship.toml"
-                      ".config/yamllint"
-                      ".config/zsh-abbr"
-                      ".local/bin/rfv"
-                      ".local/bin/update-system"
-                      ".ripgreprc"
-                      ".textlintrc.json"
-                      ".vim"
-                      ".vimrc"
-                      ".zprofile"
-                      ".zshenv"
-                      ".zshrc"
-                      ".zshrc.d"
-                    ]
-                );
-                packages = with pkgs; [
-                  bat
-                  colordiff
-                  curl
-                  dos2unix
-                  exiftool
-                  eza
-                  fd
-                  fzf
-                  gh
-                  ghq
-                  git
-                  git-lfs
-                  httpie
-                  imagemagick
-                  jq
-                  lsd
-                  nh
-                  nix-output-monitor
-                  nkf
-                  openssh
-                  p7zip
-                  ripgrep
-                  ripgrep-all
-                  rsync
-                  sheldon
-                  sqlite
-                  ssh-copy-id
-                  starship
-                  wget
-                  zoxide
-                ];
-                stateVersion = "25.11";
-              };
-              programs = {
-                direnv = {
-                  enable = true;
-                  nix-direnv.enable = true;
-                  silent = true;
-                };
-                neovim = {
-                  enable = true;
-                  extraPackages = with pkgs; [
-                    basedpyright
-                    lua-language-server
-                    luarocks
-                    tree-sitter
-                    typescript-language-server
-                    vue-language-server
-                  ];
-                };
-              };
-            };
-        };
-      };
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
@@ -351,10 +347,8 @@
         darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
           modules = [
             nix-homebrew.darwinModules.nix-homebrew
-            homebrewConfiguration
-            darwinConfiguration
             home-manager.darwinModules.home-manager
-            homeConfiguration
+            configuration
           ];
         };
       };
