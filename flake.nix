@@ -53,10 +53,10 @@
                 home = {
                   file = builtins.listToAttrs (
                     map
-                      (path: {
-                        name = path;
+                      (name: {
+                        inherit name;
                         value = {
-                          source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/${path}";
+                          source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/${name}";
                         };
                       })
                       [
@@ -128,6 +128,7 @@
                       basedpyright
                       lua-language-server
                       luarocks
+                      nixd
                       tree-sitter
                       typescript-language-server
                       vue-language-server
@@ -336,6 +337,8 @@
               shellcheck
               statix
               yamllint
+              # LSP
+              nixd
             ];
             shellHook = ''
               pnpm install
