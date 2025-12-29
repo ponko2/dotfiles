@@ -61,6 +61,20 @@
   "github.copilot.chat.localeOverride": "ja",
   "github.copilot.nextEditSuggestions.enabled": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nixd",
+  "nix.serverSettings": {
+    "nixd": {
+      "formatting": {
+        "command": ["nixfmt"]
+      },
+      "options": {
+        "nix-darwin": {
+          "expr": "(builtins.getFlake \"${workspaceFolder}\").darwinConfigurations.ponko2.options"
+        }
+      }
+    }
+  },
   "prettier.requireConfig": true,
   "python.analysis.autoImportCompletions": true,
   "terminal.integrated.fontFamily": "'UDEV Gothic JPDOC', Menlo, Monaco, 'Courier New', monospace",

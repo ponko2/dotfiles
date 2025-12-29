@@ -128,6 +128,7 @@
                       basedpyright
                       lua-language-server
                       luarocks
+                      nixd
                       tree-sitter
                       typescript-language-server
                       vue-language-server
@@ -336,6 +337,8 @@
               shellcheck
               statix
               yamllint
+              # LSP
+              nixd
             ];
             shellHook = ''
               pnpm install

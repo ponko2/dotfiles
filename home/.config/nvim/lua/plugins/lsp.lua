@@ -12,6 +12,7 @@ return {
       vim.lsp.enable({
         'basedpyright',
         'lua_ls',
+        'nixd',
         'ts_ls',
         'vue_ls',
       })
