@@ -80,8 +80,17 @@
         darwinConfigurations."ponko2" = nix-darwin.lib.darwinSystem {
           modules = [
             nix-homebrew.darwinModules.nix-homebrew
-            home-manager.darwinModules.home-manager
             ./configuration.nix
+            home-manager.darwinModules.home-manager
+            (
+              { user, ... }:
+              {
+                home-manager = {
+                  useGlobalPkgs = true;
+                  users.${user.name} = ./home.nix;
+                };
+              }
+            )
           ];
           specialArgs = {
             inherit inputs;
