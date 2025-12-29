@@ -19,7 +19,7 @@ pre-commit:
       glob: "*.nix"
       stage_fixed: true
     - name: statix
-      run: statix fix {staged_files}
+      run: statix fix
       glob: "*.nix"
       stage_fixed: true
     - name: StyLua
