@@ -35,19 +35,22 @@
       ...
     }:
     let
-      username = "kano";
-      hostname = "ponko2";
       configuration =
-        { config, pkgs, ... }:
         {
-          environment.etc.nix-darwin.source = "/Users/${username}/dotfiles";
+          config,
+          pkgs,
+          user,
+          ...
+        }:
+        {
+          environment.etc.nix-darwin.source = "${user.home}/dotfiles";
           fonts.packages = with pkgs; [
             udev-gothic
             udev-gothic-nf
           ];
           home-manager = {
             useGlobalPkgs = true;
-            users.${username} =
+            users.${user.name} =
               { config, pkgs, ... }:
               {
                 home = {
@@ -172,7 +175,7 @@
             enableBashIntegration = false;
             enableFishIntegration = false;
             enableZshIntegration = false;
-            user = username;
+            user = user.name;
             taps = {
               "homebrew/homebrew-core" = homebrew-core;
               "homebrew/homebrew-cask" = homebrew-cask;
@@ -292,13 +295,10 @@
               # Caps Lock キーを Control キーに再マップ
               remapCapsLockToControl = true;
             };
-            primaryUser = username;
+            primaryUser = user.name;
             stateVersion = 6;
           };
-          users.users.${username} = {
-            name = username;
-            home = "/Users/${username}";
-          };
+          users.users.${user.name} = user;
         };
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
@@ -347,12 +347,19 @@
           formatter = pkgs.nixfmt-tree;
         };
       flake = {
-        darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
+        darwinConfigurations."ponko2" = nix-darwin.lib.darwinSystem {
           modules = [
             nix-homebrew.darwinModules.nix-homebrew
             home-manager.darwinModules.home-manager
             configuration
           ];
+          specialArgs = {
+            inherit inputs;
+            user = rec {
+              name = "kano";
+              home = "/Users/${name}";
+            };
+          };
         };
       };
     };
