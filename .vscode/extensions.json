@@ -5,6 +5,7 @@
     "biomejs.biome",
     "editorconfig.editorconfig",
     "jnoortheen.nix-ide",
+    "mkhl.direnv",
     "ms-vscode-remote.vscode-remote-extensionpack",
     "sumneko.lua"
   ]

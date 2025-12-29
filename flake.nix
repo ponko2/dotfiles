@@ -341,6 +341,9 @@
               statix
               yamllint
             ];
+            shellHook = ''
+              pnpm install
+            '';
           };
           formatter = pkgs.nixfmt-tree;
         };

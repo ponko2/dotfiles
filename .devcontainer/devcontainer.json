@@ -3,11 +3,16 @@
 {
   "name": "Debian",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
-  "runArgs": ["--platform=linux/amd64"],
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
 
   // Features to add to the dev container. More info: https://containers.dev/features.
-  // "features": {},
+  "features": {
+    "ghcr.io/devcontainers/features/nix:1": {
+      "extraNixConfig": "experimental-features = nix-command flakes"
+    }
+  },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
@@ -20,16 +25,7 @@
     // Configure properties specific to VS Code.
     "vscode": {
       // Set *default* container specific settings.json values on container create.
-      "settings": {
-        "dotfiles.repository": "ponko2/dotfiles",
-        "terminal.integrated.defaultProfile.linux": "zsh (login)",
-        "terminal.integrated.profiles.linux": {
-          "zsh (login)": {
-            "path": "/usr/bin/zsh",
-            "args": ["-l"]
-          }
-        }
-      },
+      "settings": {},
 
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
@@ -37,6 +33,8 @@
         "asvetliakov.vscode-neovim",
         "biomejs.biome",
         "editorconfig.editorconfig",
+        "jnoortheen.nix-ide",
+        "mkhl.direnv",
         "sumneko.lua"
       ]
     }

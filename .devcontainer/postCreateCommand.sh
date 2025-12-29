@@ -2,15 +2,10 @@
 
 set -euo pipefail
 
-git config --global --add safe.directory /workspaces/dotfiles
+nix profile add nixpkgs#nix-direnv
+mkdir -p ~/.config/direnv
+echo "source ~/.nix-profile/share/nix-direnv/direnvrc" >> ~/.config/direnv/direnvrc
 
-sudo apt update
-sudo apt install -y yamllint
+nix print-dev-env >/dev/null
 
-npm uninstall -g pnpm
-wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
-export PNPM_HOME="$HOME/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-pnpm config set store-dir "$HOME/.local/share/pnpm/store"
-
-pnpm install --force
+direnv allow
