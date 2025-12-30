@@ -111,6 +111,26 @@
               };
             }
           );
+          homeConfigurations."vscode" = withSystem "aarch64-linux" (
+            { pkgs, ... }:
+            home-manager.lib.homeManagerConfiguration {
+              inherit pkgs;
+              modules = [
+                ./home.nix
+                (
+                  { lib, ... }:
+                  {
+                    home = rec {
+                      username = "vscode";
+                      homeDirectory = "/home/${username}";
+                      file.".config/git".enable = lib.mkForce false;
+                    };
+                    programs.home-manager.enable = true;
+                  }
+                )
+              ];
+            }
+          );
         };
       }
     );
