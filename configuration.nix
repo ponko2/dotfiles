@@ -8,6 +8,7 @@
   environment = {
     etc.nix-darwin.source = "${user.home}/dotfiles";
     systemPackages = with pkgs; [
+      antigravity
       appcleaner
       brewCasks.devtoys
       brewCasks.docker-desktop
@@ -59,6 +60,7 @@
           { app = "${pkgs.google-chrome}/Applications/Google Chrome.app"; }
           { app = "${pkgs.ghostty-bin}/Applications/Ghostty.app"; }
           { app = "${pkgs.vscode}/Applications/Visual Studio Code.app"; }
+          { app = "${pkgs.antigravity}/Applications/Antigravity.app"; }
           { app = "${pkgs.brewCasks.devtoys}/Applications/DevToys.app"; }
           { app = "${pkgs._1password-gui}/Applications/1Password.app"; }
         ];
