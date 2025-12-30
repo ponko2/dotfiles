@@ -56,17 +56,6 @@
   nixpkgs = {
     config.allowUnfree = true;
     hostPlatform = "aarch64-darwin";
-    overlays = [
-      (_final: prev: {
-        vue-language-server = prev.vue-language-server.overrideAttrs (old: {
-          pnpmDeps = prev.fetchPnpmDeps {
-            inherit (old) pname version src;
-            fetcherVersion = 1;
-            hash = "sha256-XShlARuAePPnPi9zTGYWAUq0xwBCLaoHW4487NM1tFs=";
-          };
-        });
-      })
-    ];
   };
   security.pam.services.sudo_local = {
     touchIdAuth = true;
