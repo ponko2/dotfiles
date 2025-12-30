@@ -40,18 +40,18 @@
         ];
         perSystem =
           { pkgs, system, ... }:
+          let
+            pnpm = pkgs.runCommand "pnpm" { buildInputs = [ pkgs.corepack ]; } ''
+              mkdir -p $out/bin
+              corepack enable pnpm --install-directory=$out/bin
+            '';
+          in
           {
             _module.args.pkgs = import inputs.nixpkgs {
               inherit system;
               config.allowUnfree = true;
               overlays = [
                 inputs.brew-nix.overlays.default
-                (final: _prev: {
-                  pnpm = final.runCommand "pnpm" { buildInputs = [ final.corepack ]; } ''
-                    mkdir -p $out/bin
-                    corepack enable pnpm --install-directory=$out/bin
-                  '';
-                })
               ];
             };
             devShells.default = pkgs.mkShellNoCC {
