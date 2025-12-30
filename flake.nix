@@ -2,6 +2,14 @@
   description = "nix-darwin system flake";
 
   inputs = {
+    brew-api = {
+      url = "github:BatteredBunny/brew-api";
+      flake = false;
+    };
+    brew-nix = {
+      url = "github:BatteredBunny/brew-nix";
+      inputs.brew-api.follows = "brew-api";
+    };
     flake-parts.url = "github:hercules-ci/flake-parts";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -55,6 +63,9 @@
             _module.args.pkgs = import inputs.nixpkgs {
               inherit system;
               config.allowUnfree = true;
+              overlays = [
+                inputs.brew-nix.overlays.default
+              ];
             };
             devShells.default = pkgs.mkShellNoCC {
               packages = with pkgs; [

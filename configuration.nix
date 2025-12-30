@@ -6,26 +6,27 @@
   ...
 }:
 {
-  environment.etc.nix-darwin.source = "${user.home}/dotfiles";
+  environment = {
+    etc.nix-darwin.source = "${user.home}/dotfiles";
+    systemPackages = with pkgs; [
+      appcleaner
+      brewCasks.devtoys
+      brewCasks.docker-desktop
+      ghostty-bin
+      google-chrome
+      karabiner-elements
+      monitorcontrol
+      rectangle
+      vscode
+    ];
+  };
   fonts.packages = with pkgs; [
     udev-gothic
     udev-gothic-nf
   ];
   homebrew = {
     enable = true;
-    casks = [
-      "1password"
-      "1password-cli"
-      "appcleaner"
-      "devtoys"
-      "docker-desktop"
-      "ghostty"
-      "google-chrome"
-      "karabiner-elements"
-      "monitorcontrol"
-      "rectangle"
-      "visual-studio-code"
-    ];
+    casks = [ ];
     onActivation = {
       autoUpdate = true;
       cleanup = "uninstall";
@@ -49,6 +50,10 @@
       "homebrew/homebrew-cask" = inputs.homebrew-cask;
     };
     mutableTaps = false;
+  };
+  programs = {
+    _1password.enable = true;
+    _1password-gui.enable = true;
   };
   security.pam.services.sudo_local = {
     touchIdAuth = true;
@@ -74,11 +79,11 @@
         orientation = "right";
         # 永続的なアプリケーション
         persistent-apps = [
-          { app = "/Applications/Google Chrome.app"; }
-          { app = "/Applications/Ghostty.app"; }
-          { app = "/Applications/Visual Studio Code.app"; }
-          { app = "/Applications/DevToys.app"; }
-          { app = "/Applications/1Password.app"; }
+          { app = "${pkgs.google-chrome}/Applications/Google Chrome.app"; }
+          { app = "${pkgs.ghostty-bin}/Applications/Ghostty.app"; }
+          { app = "${pkgs.vscode}/Applications/Visual Studio Code.app"; }
+          { app = "${pkgs.brewCasks.devtoys}/Applications/DevToys.app"; }
+          { app = "${pkgs._1password-gui}/Applications/1Password.app"; }
         ];
         # 最近使用したアプリケーションを非表しない
         show-recents = false;
