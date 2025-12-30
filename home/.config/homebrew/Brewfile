@@ -60,6 +60,7 @@ if OS.mac?
   cask "devtoys"
   cask "docker-desktop"
   cask "ghostty"
+  cask "google-chrome"
   cask "karabiner-elements"
   cask "monitorcontrol"
   cask "rectangle"
