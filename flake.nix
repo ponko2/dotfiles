@@ -2,24 +2,23 @@
   description = "nix-darwin system flake";
 
   inputs = {
+    brew-api = {
+      url = "github:BatteredBunny/brew-api";
+      flake = false;
+    };
+    brew-nix = {
+      url = "github:BatteredBunny/brew-nix";
+      inputs.brew-api.follows = "brew-api";
+    };
     flake-parts.url = "github:hercules-ci/flake-parts";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    homebrew-cask = {
-      url = "github:homebrew/homebrew-cask";
-      flake = false;
-    };
-    homebrew-core = {
-      url = "github:homebrew/homebrew-core";
-      flake = false;
-    };
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
@@ -28,7 +27,6 @@
       flake-parts,
       home-manager,
       nix-darwin,
-      nix-homebrew,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } (
@@ -42,24 +40,23 @@
         ];
         perSystem =
           { pkgs, system, ... }:
-          let
-            packageJSON = pkgs.lib.importJSON ./package.json;
-            nodejs =
-              pkgs."nodejs_${pkgs.lib.versions.major (pkgs.lib.removePrefix "^" packageJSON.devEngines.runtime.version)}";
-            pnpm = pkgs.runCommand "pnpm" { buildInputs = [ nodejs ]; } ''
-              mkdir -p $out/bin
-              corepack enable pnpm --install-directory=$out/bin
-            '';
-          in
           {
             _module.args.pkgs = import inputs.nixpkgs {
               inherit system;
               config.allowUnfree = true;
+              overlays = [
+                inputs.brew-nix.overlays.default
+                (final: _prev: {
+                  pnpm = final.runCommand "pnpm" { buildInputs = [ final.corepack ]; } ''
+                    mkdir -p $out/bin
+                    corepack enable pnpm --install-directory=$out/bin
+                  '';
+                })
+              ];
             };
             devShells.default = pkgs.mkShellNoCC {
               packages = with pkgs; [
                 # Command
-                nodejs
                 pnpm
                 # Formatter
                 nixfmt-rfc-style
@@ -88,7 +85,6 @@
             nix-darwin.lib.darwinSystem {
               inherit pkgs;
               modules = [
-                nix-homebrew.darwinModules.nix-homebrew
                 ./configuration.nix
                 home-manager.darwinModules.home-manager
                 (

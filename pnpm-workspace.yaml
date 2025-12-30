@@ -2,3 +2,5 @@ minimumReleaseAge: 1440
 
 onlyBuiltDependencies:
   - lefthook
+
+scriptsPrependNodePath: true
