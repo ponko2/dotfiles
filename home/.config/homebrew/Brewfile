@@ -56,16 +56,14 @@ if OS.mac?
   ## GUI Applications
   cask "1password"
   cask "1password-cli"
-  cask "adobe-acrobat-reader"
   cask "appcleaner"
   cask "devtoys"
   cask "docker-desktop"
   cask "ghostty"
-  cask "iterm2"
+  cask "google-chrome"
   cask "karabiner-elements"
   cask "monitorcontrol"
   cask "rectangle"
-  cask "the-unarchiver"
   cask "visual-studio-code"
 
   ## Fonts

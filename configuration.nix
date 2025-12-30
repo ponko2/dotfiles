@@ -16,17 +16,14 @@
     casks = [
       "1password"
       "1password-cli"
-      "adobe-acrobat-reader"
       "appcleaner"
       "devtoys"
       "docker-desktop"
       "ghostty"
       "google-chrome"
-      "iterm2"
       "karabiner-elements"
       "monitorcontrol"
       "rectangle"
-      "the-unarchiver"
       "visual-studio-code"
     ];
     onActivation = {
