@@ -15,19 +15,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    homebrew-cask = {
-      url = "github:homebrew/homebrew-cask";
-      flake = false;
-    };
-    homebrew-core = {
-      url = "github:homebrew/homebrew-core";
-      flake = false;
-    };
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
@@ -36,7 +27,6 @@
       flake-parts,
       home-manager,
       nix-darwin,
-      nix-homebrew,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } (
@@ -99,7 +89,6 @@
             nix-darwin.lib.darwinSystem {
               inherit pkgs;
               modules = [
-                nix-homebrew.darwinModules.nix-homebrew
                 ./configuration.nix
                 home-manager.darwinModules.home-manager
                 (

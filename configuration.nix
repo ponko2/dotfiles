@@ -1,5 +1,4 @@
 {
-  config,
   inputs,
   pkgs,
   user,
@@ -24,32 +23,10 @@
     udev-gothic
     udev-gothic-nf
   ];
-  homebrew = {
-    enable = true;
-    casks = [ ];
-    onActivation = {
-      autoUpdate = true;
-      cleanup = "uninstall";
-    };
-    taps = builtins.attrNames config.nix-homebrew.taps;
-  };
   nix = {
     nixPath = [ "nixpkgs=flake:nixpkgs" ];
     registry.nixpkgs.flake = inputs.nixpkgs;
     settings.experimental-features = "nix-command flakes";
-  };
-  nix-homebrew = {
-    enable = true;
-    enableRosetta = false;
-    enableBashIntegration = false;
-    enableFishIntegration = false;
-    enableZshIntegration = false;
-    user = user.name;
-    taps = {
-      "homebrew/homebrew-core" = inputs.homebrew-core;
-      "homebrew/homebrew-cask" = inputs.homebrew-cask;
-    };
-    mutableTaps = false;
   };
   programs = {
     _1password.enable = true;
