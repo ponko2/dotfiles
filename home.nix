@@ -1,14 +1,8 @@
 { config, pkgs, ... }:
 {
   home = {
-    file = builtins.listToAttrs (
-      map
-        (name: {
-          inherit name;
-          value = {
-            source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/${name}";
-          };
-        })
+    file =
+      pkgs.lib.genAttrs
         [
           ".config/atcoder-cli-nodejs"
           ".config/bat"
@@ -31,7 +25,9 @@
           ".zshrc"
           ".zshrc.d"
         ]
-    );
+        (name: {
+          source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/${name}";
+        });
     packages = with pkgs; [
       bat
       colordiff

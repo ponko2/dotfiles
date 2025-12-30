@@ -7,4 +7,6 @@ RUN set -eux; \
   apt-get install -y --no-install-recommends \
     direnv \
   ; \
-  rm -rf /var/lib/apt/lists/*
+  rm -rf /var/lib/apt/lists/*; \
+  perl -i -pe 's/^#\s// if /^# ja_JP\.UTF-8 UTF-8/' /etc/locale.gen; \
+  locale-gen
