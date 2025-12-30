@@ -31,76 +31,87 @@
       nix-homebrew,
       ...
     }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [
-        "aarch64-darwin"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "x86_64-linux"
-      ];
-      perSystem =
-        { pkgs, ... }:
-        let
-          packageJSON = pkgs.lib.importJSON ./package.json;
-          nodejs =
-            pkgs."nodejs_${pkgs.lib.versions.major (pkgs.lib.removePrefix "^" packageJSON.devEngines.runtime.version)}";
-          pnpm = pkgs.runCommand "pnpm" { buildInputs = [ nodejs ]; } ''
-            mkdir -p $out/bin
-            corepack enable pnpm --install-directory=$out/bin
-          '';
-        in
-        {
-          devShells.default = pkgs.mkShellNoCC {
-            packages = with pkgs; [
-              # Command
-              nodejs
-              pnpm
-              # Formatter
-              nixfmt-rfc-style
-              shfmt
-              stylua
-              # Linter
-              checkmake
-              deadnix
-              editorconfig-checker
-              lua51Packages.luacheck
-              shellcheck
-              statix
-              yamllint
-              # LSP
-              nixd
-            ];
-            shellHook = ''
-              pnpm install
+    flake-parts.lib.mkFlake { inherit inputs; } (
+      { withSystem, ... }:
+      {
+        systems = [
+          "aarch64-darwin"
+          "aarch64-linux"
+          "x86_64-darwin"
+          "x86_64-linux"
+        ];
+        perSystem =
+          { pkgs, system, ... }:
+          let
+            packageJSON = pkgs.lib.importJSON ./package.json;
+            nodejs =
+              pkgs."nodejs_${pkgs.lib.versions.major (pkgs.lib.removePrefix "^" packageJSON.devEngines.runtime.version)}";
+            pnpm = pkgs.runCommand "pnpm" { buildInputs = [ nodejs ]; } ''
+              mkdir -p $out/bin
+              corepack enable pnpm --install-directory=$out/bin
             '';
-          };
-          formatter = pkgs.nixfmt-tree;
-        };
-      flake = {
-        darwinConfigurations."ponko2" = nix-darwin.lib.darwinSystem {
-          modules = [
-            nix-homebrew.darwinModules.nix-homebrew
-            ./configuration.nix
-            home-manager.darwinModules.home-manager
-            (
-              { user, ... }:
-              {
-                home-manager = {
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
-                  users.${user.name} = ./home.nix;
-                };
-              }
-            )
-          ];
-          specialArgs = {
-            inherit inputs;
-            user = rec {
-              name = "kano";
-              home = "/Users/${name}";
+          in
+          {
+            _module.args.pkgs = import inputs.nixpkgs {
+              inherit system;
+              config.allowUnfree = true;
             };
+            devShells.default = pkgs.mkShellNoCC {
+              packages = with pkgs; [
+                # Command
+                nodejs
+                pnpm
+                # Formatter
+                nixfmt-rfc-style
+                shfmt
+                stylua
+                # Linter
+                checkmake
+                deadnix
+                editorconfig-checker
+                lua51Packages.luacheck
+                shellcheck
+                statix
+                yamllint
+                # LSP
+                nixd
+              ];
+              shellHook = ''
+                pnpm install
+              '';
+            };
+            formatter = pkgs.nixfmt-tree;
           };
+        flake = {
+          darwinConfigurations."ponko2" = withSystem "aarch64-darwin" (
+            { pkgs, ... }:
+            nix-darwin.lib.darwinSystem {
+              inherit pkgs;
+              modules = [
+                nix-homebrew.darwinModules.nix-homebrew
+                ./configuration.nix
+                home-manager.darwinModules.home-manager
+                (
+                  { user, ... }:
+                  {
+                    home-manager = {
+                      useGlobalPkgs = true;
+                      useUserPackages = true;
+                      users.${user.name} = ./home.nix;
+                    };
+                  }
+                )
+              ];
+              specialArgs = {
+                inherit inputs;
+                user = rec {
+                  name = "kano";
+                  home = "/Users/${name}";
+                };
+              };
+            }
+          );
         };
-      };
-    };
+      }
+    );
 }
