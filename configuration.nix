@@ -1,12 +1,6 @@
-{
-  inputs,
-  pkgs,
-  user,
-  ...
-}:
+{ inputs, pkgs, ... }:
 {
   environment = {
-    etc.nix-darwin.source = "${user.home}/dotfiles";
     systemPackages = with pkgs; [
       antigravity
       appcleaner
@@ -132,8 +126,6 @@
       # Caps Lock キーを Control キーに再マップ
       remapCapsLockToControl = true;
     };
-    primaryUser = user.name;
     stateVersion = 6;
   };
-  users.users.${user.name} = user;
 }
