@@ -6,8 +6,8 @@ if command -v darwin-rebuild >/dev/null; then
   # Nix
   nix flake update --flake ~/dotfiles
   nh darwin switch
-  /bin/ls -dt1 /nix/var/nix/profiles/system-*-link | /usr/bin/head -2 | /usr/bin/tail -r | xargs nix store diff-closures
   nh clean all --keep 3 --keep-since 4d
+  # /bin/ls -dt1 /nix/var/nix/profiles/system-*-link | /usr/bin/head -2 | /usr/bin/tail -r | xargs nix store diff-closures
 else
   # Homebrew
   brew update --auto-update
