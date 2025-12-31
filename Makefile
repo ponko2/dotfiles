@@ -62,7 +62,7 @@ clean: ## Remove symlinks.
 	$(RM) $(DOTFILES) $(XDG_BINS) $(XDG_CONFIGS)
 
 /nix:
-	curl --proto '=https' --tlsv1.2 -sSLf https://artifacts.nixos.org/experimental-installer | sh -s -- install --no-confirm
+	curl --proto '=https' --tlsv1.2 -fsSL https://artifacts.nixos.org/experimental-installer | sh -s -- install --no-confirm
 
 /etc/nix/nix.conf.before-nix-darwin:
 	sudo mv /etc/nix/nix.conf $@
