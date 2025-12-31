@@ -88,22 +88,26 @@
                 ./configuration.nix
                 home-manager.darwinModules.home-manager
                 (
-                  { user, ... }:
+                  let
+                    user = rec {
+                      name = "kano";
+                      home = "/Users/${name}";
+                    };
+                  in
                   {
+                    environment.etc.nix-darwin.source = "${user.home}/dotfiles";
                     home-manager = {
                       useGlobalPkgs = true;
                       useUserPackages = true;
                       users.${user.name} = ./home.nix;
                     };
+                    system.primaryUser = user.name;
+                    users.users.${user.name} = user;
                   }
                 )
               ];
               specialArgs = {
                 inherit inputs;
-                user = rec {
-                  name = "kano";
-                  home = "/Users/${name}";
-                };
               };
             }
           );
