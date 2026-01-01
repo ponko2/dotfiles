@@ -31,10 +31,10 @@
 
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
+        "EditorConfig.EditorConfig",
         "JohnnyMorganz.stylua",
         "asvetliakov.vscode-neovim",
         "biomejs.biome",
-        "editorconfig.editorconfig",
         "jnoortheen.nix-ide",
         "mkhl.direnv",
         "sumneko.lua"
