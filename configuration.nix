@@ -51,12 +51,12 @@
         orientation = "right";
         # 永続的なアプリケーション
         persistent-apps = [
-          { app = "${pkgs.google-chrome}/Applications/Google Chrome.app"; }
-          { app = "${pkgs.ghostty-bin}/Applications/Ghostty.app"; }
-          { app = "${pkgs.vscode}/Applications/Visual Studio Code.app"; }
-          { app = "${pkgs.antigravity}/Applications/Antigravity.app"; }
-          { app = "${pkgs.brewCasks.devtoys}/Applications/DevToys.app"; }
-          { app = "${pkgs._1password-gui}/Applications/1Password.app"; }
+          { app = "/Applications/Nix Apps/Google Chrome.app"; }
+          { app = "/Applications/Nix Apps/Ghostty.app"; }
+          { app = "/Applications/Nix Apps/Visual Studio Code.app"; }
+          { app = "/Applications/Nix Apps/Antigravity.app"; }
+          { app = "/Applications/Nix Apps/DevToys.app"; }
+          { app = "/Applications/1Password.app"; }
         ];
         # 最近使用したアプリケーションを非表しない
         show-recents = false;
