@@ -1,9 +1,9 @@
 {
   "recommendations": [
+    "EditorConfig.EditorConfig",
     "JohnnyMorganz.stylua",
     "asvetliakov.vscode-neovim",
     "biomejs.biome",
-    "editorconfig.editorconfig",
     "jnoortheen.nix-ide",
     "mkhl.direnv",
     "ms-vscode-remote.vscode-remote-extensionpack",
