@@ -1,4 +1,4 @@
-SHELL := /bin/zsh
+SHELL := /bin/bash
 .SHELLFLAGS := -euo pipefail -c
 .DEFAULT_GOAL := help
 
@@ -50,9 +50,11 @@ symlink: | $(DOTFILES) $(XDG_BINS) $(XDG_CONFIGS) ## Create symlink to home dire
 $(HOMEBREW):
 	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+.ONESHELL: bundle
 .PHONY: bundle
 bundle: | $(HOMEBREW) ## Install and upgrade all dependencies from the ~/.config/homebrew/Brewfile.
-	$(SHELL) -ic "brew bundle --global"
+	eval "$$($(HOMEBREW) shellenv)"
+	XDG_CONFIG_HOME="$(XDG_CONFIG_HOME)" $(HOMEBREW) bundle --global
 
 .PHONY: install
 install: symlink bundle ## Run make symlink, bundle.
@@ -67,11 +69,13 @@ clean: ## Remove symlinks.
 /etc/nix/nix.conf.before-nix-darwin:
 	sudo mv /etc/nix/nix.conf $@
 
+.ONESHELL: switch
 .PHONY: switch
 switch: | /nix /etc/nix/nix.conf.before-nix-darwin ## Build and switch to the new configuration.
 	perl -i -pe "s/\"kano\"/\"$$(whoami)\"/g" flake.nix
 	perl -i -pe "s/\"ponko2\"/\"$$(scutil --get LocalHostName)\"/g" flake.nix
-	$(SHELL) -ic 'sudo nix --extra-experimental-features "nix-command flakes" run nix-darwin/master#darwin-rebuild -- switch --flake ~/dotfiles'
+	. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+	sudo nix --extra-experimental-features "nix-command flakes" run nix-darwin/master#darwin-rebuild -- switch --flake ~/dotfiles
 
 .PHONY: test
 test: ## Run checkmake.
