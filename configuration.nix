@@ -2,6 +2,11 @@
 {
   environment = {
     systemPackages = with pkgs; [
+      # CUI
+      git
+      gnumake
+      python3
+      # GUI
       antigravity
       appcleaner
       brewCasks.devtoys
