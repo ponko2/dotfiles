@@ -39,9 +39,7 @@
       fzf
       gh
       ghq
-      git
       git-lfs
-      gnumake
       httpie
       imagemagick
       jq
