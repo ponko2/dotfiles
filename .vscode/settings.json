@@ -38,6 +38,7 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
+  "git.blame.ignoreWhitespace": true,
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
       "text": "Commit messages must follow the Conventional Commits specification (e.g., feat: Add new API, fix: Correct typo)."
@@ -81,7 +82,6 @@
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.stickyScroll.enabled": false,
-  "terminal.integrated.suggest.enabled": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorCustomizations": {
     "terminal.ansiBlack": "#3c3836",
