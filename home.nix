@@ -8,6 +8,7 @@
           ".config/bat"
           ".config/ghostty"
           ".config/git"
+          ".config/jj"
           ".config/karabiner"
           ".config/nvim"
           ".config/sheldon"
@@ -43,6 +44,7 @@
       httpie
       imagemagick
       jq
+      jujutsu
       lsd
       nh
       nix-output-monitor

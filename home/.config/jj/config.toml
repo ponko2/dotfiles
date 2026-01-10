@@ -1,0 +1,13 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "Takahito Nakano"
+email = "kano@ponko2.jp"
+
+[ui]
+editor = [
+  "nvim",
+  "--clean",
+  "-c",
+  "set enc=utf-8 cb+=unnamed",
+]
