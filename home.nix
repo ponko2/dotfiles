@@ -18,6 +18,7 @@
           ".config/zsh-abbr"
           ".local/bin/rfv"
           ".local/bin/update-system"
+          ".nbrc"
           ".ripgreprc"
           ".textlintrc.json"
           ".vim"
@@ -47,6 +48,7 @@
       jq
       jujutsu
       lsd
+      nb
       nh
       nix-output-monitor
       nkf
