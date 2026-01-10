@@ -4,6 +4,7 @@
     file =
       pkgs.lib.genAttrs
         [
+          ".config/aerospace"
           ".config/atcoder-cli-nodejs"
           ".config/bat"
           ".config/ghostty"

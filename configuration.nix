@@ -7,6 +7,7 @@
       gnumake
       python3
       # GUI
+      aerospace
       antigravity
       appcleaner
       brewCasks.devtoys
