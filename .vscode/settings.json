@@ -109,5 +109,8 @@
   },
   "[nix]": {
     "editor.defaultFormatter": "jnoortheen.nix-ide"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
   }
 }
