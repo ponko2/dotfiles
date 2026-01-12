@@ -56,6 +56,23 @@
               config.allowUnfree = true;
               overlays = [
                 inputs.brew-nix.overlays.default
+                (_final: prev: {
+                  vscode =
+                    let
+                      version = "1.108.0";
+                    in
+                    if system == "aarch64-darwin" then
+                      prev.vscode.overrideAttrs {
+                        src = builtins.fetchurl {
+                          name = "VSCode_${version}_darwin-arm64.zip";
+                          url = "https://update.code.visualstudio.com/${version}/darwin-arm64/stable";
+                          sha256 = "12bcqxwl9i9wb9lsdnd0r2bim6k4hl6ic03pz40c55vr5wgk0sii";
+                        };
+                        inherit version;
+                      }
+                    else
+                      prev.vscode;
+                })
               ];
             };
             devShells.default = pkgs.mkShellNoCC {
