@@ -13,4 +13,7 @@ keybind = ctrl+m=text:\x0D
 keybind = global:super+ctrl+backquote=toggle_quick_terminal
 window-padding-x = 8
 window-padding-balance = true
+quick-terminal-position = right
+quick-terminal-size = 40%
+quick-terminal-autohide = false
 macos-option-as-alt = true
