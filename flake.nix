@@ -8,7 +8,11 @@
     };
     brew-nix = {
       url = "github:BatteredBunny/brew-nix";
-      inputs.brew-api.follows = "brew-api";
+      inputs = {
+        brew-api.follows = "brew-api";
+        nix-darwin.follows = "nix-darwin";
+        nixpkgs.follows = "nixpkgs";
+      };
     };
     flake-parts.url = "github:hercules-ci/flake-parts";
     home-manager = {
