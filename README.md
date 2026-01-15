@@ -24,18 +24,18 @@ curl -fsSL https://raw.githubusercontent.com/ponko2/dotfiles/HEAD/install.sh | /
 #### Step 1: Install Nix
 
 ```sh
-curl --proto '=https' --tlsv1.2 -fsSL https://artifacts.nixos.org/experimental-installer | sh -s -- install --no-confirm
+curl --proto '=https' --tlsv1.2 -fsSL https://artifacts.nixos.org/nix-installer | sh -s -- install --no-confirm
 . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 ```
 
 #### Step 2: Create a flake-based dotfiles configuration
 
 ```sh
-nix flake new -t github:ponko2/dotfiles ~/dotfiles
+nix --extra-experimental-features "nix-command flakes" flake new -t github:ponko2/dotfiles ~/dotfiles
 ```
 
 #### Step 3: Apply the configuration with [nix-darwin](https://nix-darwin.org)
 
 ```sh
-nix run nixpkgs#gnumake -- -C ~/dotfiles switch
+nix --extra-experimental-features "nix-command flakes" run nixpkgs#gnumake -- -C ~/dotfiles switch
 ```
