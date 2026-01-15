@@ -59,14 +59,14 @@
                 (_final: prev: {
                   vscode =
                     let
-                      version = "1.108.0";
+                      version = "1.108.1";
                     in
                     if system == "aarch64-darwin" then
                       prev.vscode.overrideAttrs {
                         src = builtins.fetchurl {
                           name = "VSCode_${version}_darwin-arm64.zip";
                           url = "https://update.code.visualstudio.com/${version}/darwin-arm64/stable";
-                          sha256 = "12bcqxwl9i9wb9lsdnd0r2bim6k4hl6ic03pz40c55vr5wgk0sii";
+                          sha256 = "0ih34yvg47lzwqhvk7jr8h6mr617bhs2q43adrnhfjqikg796yb1";
                         };
                         inherit version;
                       }
