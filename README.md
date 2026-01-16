@@ -24,7 +24,7 @@ curl -fsSL https://raw.githubusercontent.com/ponko2/dotfiles/HEAD/install.sh | /
 #### Step 1: Install Nix
 
 ```sh
-curl --proto '=https' --tlsv1.2 -fsSL https://artifacts.nixos.org/nix-installer | sh -s -- install --no-confirm
+curl --proto '=https' --tlsv1.2 -fsSL https://artifacts.nixos.org/nix-installer | sh -s -- install --no-confirm --skip-nix-conf
 . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 ```
 

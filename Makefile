@@ -64,17 +64,11 @@ clean: ## Remove symlinks.
 	$(RM) $(DOTFILES) $(XDG_BINS) $(XDG_CONFIGS)
 
 /nix:
-	curl --proto '=https' --tlsv1.2 -fsSL https://artifacts.nixos.org/nix-installer | sh -s -- install --no-confirm
-
-/etc/nix/nix.conf.before-nix-darwin:
-	sudo mv /etc/nix/nix.conf $@
-
-/etc/nix/nix.custom.conf.before-nix-darwin:
-	sudo mv /etc/nix/nix.custom.conf $@
+	curl --proto '=https' --tlsv1.2 -fsSL https://artifacts.nixos.org/nix-installer | sh -s -- install --no-confirm --skip-nix-conf
 
 .ONESHELL: switch
 .PHONY: switch
-switch: | /nix /etc/nix/nix.conf.before-nix-darwin /etc/nix/nix.custom.conf.before-nix-darwin ## Build and switch to the new configuration.
+switch: | /nix ## Build and switch to the new configuration.
 	perl -i -pe "s/\"kano\"/\"$$(whoami)\"/g" flake.nix
 	perl -i -pe "s/\"ponko2\"/\"$$(scutil --get LocalHostName)\"/g" flake.nix
 	. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
