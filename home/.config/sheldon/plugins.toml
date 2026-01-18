@@ -131,10 +131,7 @@ export NH_FLAKE="$HOME/dotfiles"
 inline = '''
 if [[ -d "$XDG_DATA_HOME/pnpm" ]]; then
   export PNPM_HOME="$XDG_DATA_HOME/pnpm"
-  case ":$PATH:" in
-    *":$PNPM_HOME:"*) ;;
-    *) export PATH="$PNPM_HOME:$PATH" ;;
-  esac
+  path=("$PNPM_HOME"(N-/) $path)
 fi
 '''
 
