@@ -57,16 +57,30 @@
               overlays = [
                 inputs.brew-nix.overlays.default
                 (_final: prev: {
+                  _1password-gui =
+                    let
+                      version = "8.12.0";
+                    in
+                    if system == "aarch64-darwin" then
+                      prev._1password-gui.overrideAttrs {
+                        src = builtins.fetchurl {
+                          url = "https://downloads.1password.com/mac/1Password-${version}-aarch64.zip";
+                          sha256 = "fpu+CZ3iLXcGevWHLh/HVa2uoS/a1w/m0s4+awBzNI0=";
+                        };
+                        inherit version;
+                      }
+                    else
+                      prev._1password-gui;
                   vscode =
                     let
-                      version = "1.108.1";
+                      version = "1.108.2";
                     in
                     if system == "aarch64-darwin" then
                       prev.vscode.overrideAttrs {
                         src = builtins.fetchurl {
                           name = "VSCode_${version}_darwin-arm64.zip";
                           url = "https://update.code.visualstudio.com/${version}/darwin-arm64/stable";
-                          sha256 = "0ih34yvg47lzwqhvk7jr8h6mr617bhs2q43adrnhfjqikg796yb1";
+                          sha256 = "1kgvkhnv5pgmm0ah81nai6lnflmh6x9nmi5lazvqqh85m4m117b4";
                         };
                         inherit version;
                       }
