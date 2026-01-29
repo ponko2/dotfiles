@@ -57,20 +57,6 @@
               overlays = [
                 inputs.brew-nix.overlays.default
                 (_final: prev: {
-                  _1password-gui =
-                    let
-                      version = "8.12.0";
-                    in
-                    if system == "aarch64-darwin" then
-                      prev._1password-gui.overrideAttrs {
-                        src = builtins.fetchurl {
-                          url = "https://downloads.1password.com/mac/1Password-${version}-aarch64.zip";
-                          sha256 = "fpu+CZ3iLXcGevWHLh/HVa2uoS/a1w/m0s4+awBzNI0=";
-                        };
-                        inherit version;
-                      }
-                    else
-                      prev._1password-gui;
                   vscode =
                     let
                       version = "1.108.2";
@@ -86,6 +72,18 @@
                       }
                     else
                       prev.vscode;
+                })
+                (_final: _prev: {
+                  # Workaround for https://github.com/NixOS/nixpkgs/issues/483584
+                  inherit
+                    (import (fetchTarball {
+                      name = "nixos-unstable-2026-01-23";
+                      url = "https://github.com/NixOS/nixpkgs/archive/70801e06d9730c4f1704fbd3bbf5b8e11c03a2a7.tar.gz";
+                      sha256 = "075kc4zlwrdpdvcw75kgv7zxpsv0ss0clcsfhqvdxpzal3l1cbkh";
+                    }) { inherit system; })
+                    swift
+                    swiftPackages
+                    ;
                 })
               ];
             };
