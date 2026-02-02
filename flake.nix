@@ -73,18 +73,6 @@
                     else
                       prev.vscode;
                 })
-                (_final: _prev: {
-                  # Workaround for https://github.com/NixOS/nixpkgs/issues/483584
-                  inherit
-                    (import (fetchTarball {
-                      name = "nixos-unstable-2026-01-23";
-                      url = "https://github.com/NixOS/nixpkgs/archive/70801e06d9730c4f1704fbd3bbf5b8e11c03a2a7.tar.gz";
-                      sha256 = "075kc4zlwrdpdvcw75kgv7zxpsv0ss0clcsfhqvdxpzal3l1cbkh";
-                    }) { inherit system; })
-                    swift
-                    swiftPackages
-                    ;
-                })
               ];
             };
             devShells.default = pkgs.mkShellNoCC {
