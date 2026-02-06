@@ -13,7 +13,6 @@
       brewCasks.devtoys
       brewCasks.docker-desktop
       ghostty-bin
-      google-chrome
       karabiner-elements
       monitorcontrol
       rectangle
@@ -57,7 +56,7 @@
         orientation = "right";
         # 永続的なアプリケーション
         persistent-apps = [
-          { app = "/Applications/Nix Apps/Google Chrome.app"; }
+          { app = "/Applications/Google Chrome.app"; }
           { app = "/Applications/Nix Apps/Ghostty.app"; }
           { app = "/Applications/Nix Apps/Visual Studio Code.app"; }
           { app = "/Applications/Nix Apps/Antigravity.app"; }
