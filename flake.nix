@@ -2,27 +2,28 @@
   description = "nix-darwin system flake";
 
   inputs = {
-    brew-api = {
-      url = "github:BatteredBunny/brew-api";
-      flake = false;
-    };
-    brew-nix = {
-      url = "github:BatteredBunny/brew-nix";
-      inputs = {
-        brew-api.follows = "brew-api";
-        nix-darwin.follows = "nix-darwin";
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
     flake-parts.url = "github:hercules-ci/flake-parts";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    nikitabobko-tap = {
+      url = "github:nikitabobko/homebrew-tap";
+      flake = false;
+    };
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
@@ -31,6 +32,7 @@
       flake-parts,
       home-manager,
       nix-darwin,
+      nix-homebrew,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } (
@@ -54,26 +56,7 @@
             _module.args.pkgs = import inputs.nixpkgs {
               inherit system;
               config.allowUnfree = true;
-              overlays = [
-                inputs.brew-nix.overlays.default
-                (_final: prev: {
-                  vscode =
-                    let
-                      version = "1.109.0";
-                    in
-                    if system == "aarch64-darwin" then
-                      prev.vscode.overrideAttrs {
-                        src = builtins.fetchurl {
-                          name = "VSCode_${version}_darwin-arm64.zip";
-                          url = "https://update.code.visualstudio.com/${version}/darwin-arm64/stable";
-                          sha256 = "09xjwwgqsz1yv4k83dkvsh3a3cc9xv0011nm3nvma9nnyc681xk9";
-                        };
-                        inherit version;
-                      }
-                    else
-                      prev.vscode;
-                })
-              ];
+              overlays = [ ];
             };
             devShells.default = pkgs.mkShellNoCC {
               packages = with pkgs; [
@@ -106,6 +89,7 @@
             nix-darwin.lib.darwinSystem {
               inherit pkgs;
               modules = [
+                nix-homebrew.darwinModules.nix-homebrew
                 ./configuration.nix
                 home-manager.darwinModules.home-manager
                 (
@@ -122,6 +106,7 @@
                       useUserPackages = true;
                       users.${user.name} = ./home.nix;
                     };
+                    nix-homebrew.user = user.name;
                     system.primaryUser = user.name;
                     users.users.${user.name} = user;
                   }

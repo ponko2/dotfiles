@@ -1,36 +1,60 @@
-{ inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 {
   environment = {
     systemPackages = with pkgs; [
-      # CUI
       git
       gnumake
       python3
-      # GUI
-      aerospace
-      antigravity
-      appcleaner
-      brewCasks.devtoys
-      brewCasks.docker-desktop
-      ghostty-bin
-      karabiner-elements
-      monitorcontrol
-      rectangle
-      vscode
     ];
   };
   fonts.packages = with pkgs; [
     udev-gothic
     udev-gothic-nf
   ];
+  homebrew = {
+    enable = true;
+    casks = [
+      "1password"
+      "1password-cli"
+      "aerospace"
+      "antigravity"
+      "appcleaner"
+      "devtoys"
+      "docker-desktop"
+      "ghostty"
+      "google-chrome"
+      "karabiner-elements"
+      "monitorcontrol"
+      "visual-studio-code"
+    ];
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "uninstall";
+    };
+    taps = builtins.attrNames config.nix-homebrew.taps;
+  };
   nix = {
     nixPath = [ "nixpkgs=flake:nixpkgs" ];
     registry.nixpkgs.flake = inputs.nixpkgs;
     settings.experimental-features = "nix-command flakes";
   };
-  programs = {
-    _1password.enable = true;
-    _1password-gui.enable = true;
+  nix-homebrew = {
+    enable = true;
+    enableRosetta = false;
+    enableBashIntegration = false;
+    enableFishIntegration = false;
+    enableZshIntegration = false;
+    taps = {
+      "homebrew/homebrew-cask" = inputs.homebrew-cask;
+      "homebrew/homebrew-core" = inputs.homebrew-core;
+      "nikitabobko/homebrew-tap" = inputs.nikitabobko-tap;
+    };
+    mutableTaps = false;
   };
   security.pam.services.sudo_local = {
     touchIdAuth = true;
@@ -57,10 +81,10 @@
         # 永続的なアプリケーション
         persistent-apps = [
           { app = "/Applications/Google Chrome.app"; }
-          { app = "/Applications/Nix Apps/Ghostty.app"; }
-          { app = "/Applications/Nix Apps/Visual Studio Code.app"; }
-          { app = "/Applications/Nix Apps/Antigravity.app"; }
-          { app = "/Applications/Nix Apps/DevToys.app"; }
+          { app = "/Applications/Ghostty.app"; }
+          { app = "/Applications/Visual Studio Code.app"; }
+          { app = "/Applications/Antigravity.app"; }
+          { app = "/Applications/DevToys.app"; }
           { app = "/Applications/1Password.app"; }
         ];
         # 最近使用したアプリケーションを非表しない
