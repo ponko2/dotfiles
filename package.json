@@ -13,7 +13,7 @@
       "onFail": "download"
     }
   },
-  "packageManager": "pnpm@10.29.2",
+  "packageManager": "pnpm@10.29.3",
   "private": true,
   "scripts": {
     "fix": "run-p --aggregate-output -c -l fix:*",
