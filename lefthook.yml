@@ -1,10 +1,6 @@
 pre-commit:
   parallel: true
   jobs:
-    - name: Biome
-      run: pnpm exec biome check --write --files-ignore-unknown=true --no-errors-on-unmatched {staged_files}
-      glob: "*.{js,jsx,ts,tsx,cjs,cts,mjs,mts,json,jsonc,css,svelte,vue,astro,graphql,gql}"
-      stage_fixed: true
     - name: deadnix
       run: deadnix --edit {staged_files}
       glob: "*.nix"
@@ -17,6 +13,9 @@ pre-commit:
     - name: Nixfmt
       run: nixfmt {staged_files}
       glob: "*.nix"
+      stage_fixed: true
+    - name: Oxfmt
+      run: pnpm exec oxfmt --no-error-on-unmatched-pattern {staged_files}
       stage_fixed: true
     - name: statix
       run: statix fix

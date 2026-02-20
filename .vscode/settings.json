@@ -6,7 +6,6 @@
   "accessibility.signals.chatUserActionRequired": {
     "sound": "on"
   },
-  "biome.requireConfiguration": true,
   "chat.agentSessionsViewLocation": "view",
   "chat.viewSessions.orientation": "stacked",
   "editor.aiStats.enabled": true,
@@ -15,7 +14,7 @@
     "source.organizeImports": "explicit"
   },
   "editor.cursorStyle": "line",
-  "editor.defaultFormatter": "biomejs.biome",
+  "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.editContext": false,
   "editor.fontFamily": "'UDEV Gothic JPDOC', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 16,
@@ -76,6 +75,7 @@
       }
     }
   },
+  "oxc.requireConfig": true,
   "prettier.requireConfig": true,
   "python.analysis.autoImportCompletions": true,
   "terminal.integrated.fontFamily": "'UDEV Gothic JPDOC', Menlo, Monaco, 'Courier New', monospace",
