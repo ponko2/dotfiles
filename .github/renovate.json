@@ -1,4 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>ponko2/renovate-config", "customManagers:biomeVersions"]
+  "extends": ["github>ponko2/renovate-config"]
 }

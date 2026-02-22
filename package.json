@@ -1,10 +1,21 @@
 {
   "name": "dotfiles",
   "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fix": "run-p --aggregate-output -c -l fix:*",
+    "fix:oxfmt": "oxfmt",
+    "fix:stylua": "stylua .",
+    "lint": "run-p --aggregate-output -c -l lint:*",
+    "lint:luacheck": "luacheck .",
+    "lint:oxfmt": "oxfmt --check",
+    "lint:yamllint": "yamllint ."
+  },
   "devDependencies": {
-    "@biomejs/biome": "2.4.2",
     "lefthook": "2.1.1",
-    "npm-run-all2": "8.0.4"
+    "npm-run-all2": "8.0.4",
+    "oxfmt": "0.33.0"
   },
   "devEngines": {
     "runtime": {
@@ -13,16 +24,5 @@
       "onFail": "download"
     }
   },
-  "packageManager": "pnpm@10.30.0",
-  "private": true,
-  "scripts": {
-    "fix": "run-p --aggregate-output -c -l fix:*",
-    "fix:biome": "biome check --write",
-    "fix:stylua": "stylua .",
-    "lint": "run-p --aggregate-output -c -l lint:*",
-    "lint:biome": "biome check",
-    "lint:luacheck": "luacheck .",
-    "lint:yamllint": "yamllint ."
-  },
-  "type": "module"
+  "packageManager": "pnpm@10.30.0"
 }

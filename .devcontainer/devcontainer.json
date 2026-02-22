@@ -34,9 +34,9 @@
         "EditorConfig.EditorConfig",
         "JohnnyMorganz.stylua",
         "asvetliakov.vscode-neovim",
-        "biomejs.biome",
         "jnoortheen.nix-ide",
         "mkhl.direnv",
+        "oxc.oxc-vscode",
         "sumneko.lua"
       ]
     }

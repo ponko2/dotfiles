@@ -3,10 +3,10 @@
     "EditorConfig.EditorConfig",
     "JohnnyMorganz.stylua",
     "asvetliakov.vscode-neovim",
-    "biomejs.biome",
     "jnoortheen.nix-ide",
     "mkhl.direnv",
     "ms-vscode-remote.vscode-remote-extensionpack",
+    "oxc.oxc-vscode",
     "sumneko.lua"
   ]
 }
