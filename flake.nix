@@ -47,7 +47,7 @@
         perSystem =
           { pkgs, system, ... }:
           let
-            pnpm = pkgs.runCommand "pnpm" { buildInputs = [ pkgs.corepack ]; } ''
+            pnpm = pkgs.runCommand "pnpm" { buildInputs = [ pkgs.nodejs_24 ]; } ''
               mkdir -p $out/bin
               corepack enable pnpm --install-directory=$out/bin
             '';
