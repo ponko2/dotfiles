@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1@sha256:b6afd42430b15f2d2a4c5a02b919e98a525b785b1aaff16747d2f623364e39b6
 
-FROM mcr.microsoft.com/devcontainers/base:trixie@sha256:a30da48cdf5f9144ff7f2156622e701e752fc258d77ca7bb00120624f1a95938
+FROM mcr.microsoft.com/devcontainers/base:trixie@sha256:aa263c6fdd7c1bc990eead3922224fe8afbf5d85eaf3b6b9260786ab94d74933
 
 RUN set -eux; \
   rm -f /etc/apt/apt.conf.d/docker-clean; \
