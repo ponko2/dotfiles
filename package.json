@@ -15,7 +15,7 @@
   "devDependencies": {
     "lefthook": "2.1.4",
     "npm-run-all2": "8.0.4",
-    "oxfmt": "0.40.0"
+    "oxfmt": "0.41.0"
   },
   "devEngines": {
     "runtime": {
