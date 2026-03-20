@@ -72,6 +72,10 @@
           # ネットワークフォルダに .DS_Store を作成しない
           DSDontWriteNetworkStores = true;
         };
+        NSGlobalDomain = {
+          # スペル自動修正を無効化 (WebView)
+          WebAutomaticSpellingCorrectionEnabled = false;
+        };
       };
       dock = {
         # 自動的に非表示
