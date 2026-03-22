@@ -58,6 +58,16 @@
               config.allowUnfree = true;
               overlays = [ ];
             };
+            apps = {
+              deadnix = {
+                type = "app";
+                program = "${pkgs.deadnix}/bin/deadnix";
+              };
+              statix = {
+                type = "app";
+                program = "${pkgs.statix}/bin/statix";
+              };
+            };
             devShells.default = pkgs.mkShellNoCC {
               packages = with pkgs; [
                 # Command
