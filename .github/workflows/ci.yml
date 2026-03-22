@@ -159,7 +159,7 @@ jobs:
           name: ponko2
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - name: Run deadnix
-        run: nix develop --command deadnix
+        run: nix --quiet run .#deadnix
   editorconfig:
     name: EditorConfig
     runs-on: ubuntu-slim
@@ -257,7 +257,7 @@ jobs:
           name: ponko2
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - name: Run statix
-        run: nix develop --command statix check
+        run: nix --quiet run .#statix -- check
   stylua:
     name: StyLua
     if: ${{ always() && !failure() && !cancelled() &&
