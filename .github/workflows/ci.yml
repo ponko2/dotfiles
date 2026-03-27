@@ -152,12 +152,9 @@ jobs:
         with:
           persist-credentials: false
       - name: Set up Nix
-        uses: cachix/install-nix-action@51f3067b56fe8ae331890c77d4e454f6d60615ff # v31.10.2
-      - name: Set up Cachix
-        uses: cachix/cachix-action@1eb2ef646ac0255473d23a5907ad7b04ce94065c # v17
+        uses: ./.github/actions/setup-nix
         with:
-          name: ponko2
-          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - name: Run deadnix
         run: nix --quiet run .#deadnix
   editorconfig:
@@ -206,12 +203,9 @@ jobs:
         with:
           persist-credentials: false
       - name: Set up Nix
-        uses: cachix/install-nix-action@51f3067b56fe8ae331890c77d4e454f6d60615ff # v31.10.2
-      - name: Set up Cachix
-        uses: cachix/cachix-action@1eb2ef646ac0255473d23a5907ad7b04ce94065c # v17
+        uses: ./.github/actions/setup-nix
         with:
-          name: ponko2
-          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - name: Run Nixfmt
         run: nix fmt -- --ci
   oxfmt:
@@ -250,12 +244,9 @@ jobs:
         with:
           persist-credentials: false
       - name: Set up Nix
-        uses: cachix/install-nix-action@51f3067b56fe8ae331890c77d4e454f6d60615ff # v31.10.2
-      - name: Set up Cachix
-        uses: cachix/cachix-action@1eb2ef646ac0255473d23a5907ad7b04ce94065c # v17
+        uses: ./.github/actions/setup-nix
         with:
-          name: ponko2
-          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
       - name: Run statix
         run: nix --quiet run .#statix -- check
   stylua:
