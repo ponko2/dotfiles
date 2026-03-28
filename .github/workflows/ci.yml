@@ -104,7 +104,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Run actionlint
-        uses: ponko2/actions/actionlint@957f0cbafbd663effe5868464cbea63d7aca5067 # v1.3.1
+        uses: ponko2/actions/actionlint@45ebec66f968b0811f3802c46ae9de99e960a02d # v1.4.0
   ghalint:
     name: ghalint
     if: ${{ always() && !failure() && !cancelled() &&
@@ -120,7 +120,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Run ghalint
-        uses: ponko2/actions/ghalint@957f0cbafbd663effe5868464cbea63d7aca5067 # v1.3.1
+        uses: ponko2/actions/ghalint@45ebec66f968b0811f3802c46ae9de99e960a02d # v1.4.0
   zizmor:
     name: zizmor
     if: ${{ always() && !failure() && !cancelled() &&
@@ -136,7 +136,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Run zizmor
-        uses: ponko2/actions/zizmor@957f0cbafbd663effe5868464cbea63d7aca5067 # v1.3.1
+        uses: ponko2/actions/zizmor@45ebec66f968b0811f3802c46ae9de99e960a02d # v1.4.0
   deadnix:
     name: deadnix
     if: ${{ always() && !failure() && !cancelled() &&
