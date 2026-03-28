@@ -152,9 +152,10 @@ jobs:
         with:
           persist-credentials: false
       - name: Set up Nix
-        uses: ./.github/actions/setup-nix
+        uses: ponko2/actions/setup-nix@45ebec66f968b0811f3802c46ae9de99e960a02d # v1.4.0
         with:
           cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          prefetch-dependencies: false
       - name: Run deadnix
         run: nix --quiet run .#deadnix
   editorconfig:
@@ -203,9 +204,10 @@ jobs:
         with:
           persist-credentials: false
       - name: Set up Nix
-        uses: ./.github/actions/setup-nix
+        uses: ponko2/actions/setup-nix@45ebec66f968b0811f3802c46ae9de99e960a02d # v1.4.0
         with:
           cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          prefetch-dependencies: false
       - name: Run Nixfmt
         run: nix fmt -- --ci
   oxfmt:
@@ -244,9 +246,10 @@ jobs:
         with:
           persist-credentials: false
       - name: Set up Nix
-        uses: ./.github/actions/setup-nix
+        uses: ponko2/actions/setup-nix@45ebec66f968b0811f3802c46ae9de99e960a02d # v1.4.0
         with:
           cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          prefetch-dependencies: false
       - name: Run statix
         run: nix --quiet run .#statix -- check
   stylua:
