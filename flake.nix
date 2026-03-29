@@ -53,6 +53,10 @@
               overlays = [ ];
             };
             apps = {
+              commitlint = {
+                type = "app";
+                program = "${pkgs.commitlint}/bin/commitlint";
+              };
               deadnix = {
                 type = "app";
                 program = "${pkgs.deadnix}/bin/deadnix";
@@ -77,6 +81,7 @@
                 stylua
                 # Linter
                 checkmake
+                commitlint
                 deadnix
                 editorconfig-checker
                 lua51Packages.luacheck
