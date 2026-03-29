@@ -46,12 +46,6 @@
         ];
         perSystem =
           { pkgs, system, ... }:
-          let
-            pnpm = pkgs.runCommand "pnpm" { buildInputs = [ pkgs.nodejs_24 ]; } ''
-              mkdir -p $out/bin
-              corepack enable pnpm --install-directory=$out/bin
-            '';
-          in
           {
             _module.args.pkgs = import inputs.nixpkgs {
               inherit system;
@@ -63,6 +57,10 @@
                 type = "app";
                 program = "${pkgs.deadnix}/bin/deadnix";
               };
+              oxfmt = {
+                type = "app";
+                program = "${pkgs.oxfmt}/bin/oxfmt";
+              };
               statix = {
                 type = "app";
                 program = "${pkgs.statix}/bin/statix";
@@ -71,9 +69,10 @@
             devShells.default = pkgs.mkShellNoCC {
               packages = with pkgs; [
                 # Command
-                pnpm
+                lefthook
                 # Formatter
                 nixfmt-rfc-style
+                oxfmt
                 shfmt
                 stylua
                 # Linter
@@ -88,8 +87,7 @@
                 nixd
               ];
               shellHook = ''
-                pnpm install
-                export PATH="$PWD/node_modules/.bin:$PATH"
+                lefthook install
               '';
             };
             formatter = pkgs.nixfmt-tree;
