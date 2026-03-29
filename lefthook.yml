@@ -15,7 +15,7 @@ pre-commit:
       glob: "*.nix"
       stage_fixed: true
     - name: Oxfmt
-      run: pnpm exec oxfmt --no-error-on-unmatched-pattern {staged_files}
+      run: oxfmt --no-error-on-unmatched-pattern {staged_files}
       stage_fixed: true
     - name: statix
       run: statix fix
