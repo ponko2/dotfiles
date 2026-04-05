@@ -19,6 +19,17 @@ vim.diagnostic.config({
     source = true,
   },
   jump = {
-    float = true,
+    --- @param diagnostic? vim.Diagnostic
+    --- @param bufnr integer
+    on_jump = function(diagnostic, bufnr)
+      if not diagnostic then
+        return
+      end
+      vim.diagnostic.open_float({
+        bufnr = bufnr,
+        scope = 'cursor',
+        focus = false,
+      })
+    end,
   },
 })
