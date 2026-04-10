@@ -6,7 +6,6 @@
   "accessibility.signals.chatUserActionRequired": {
     "sound": "on"
   },
-  "chat.agentSessionsViewLocation": "view",
   "chat.viewSessions.orientation": "stacked",
   "editor.aiStats.enabled": true,
   "editor.codeActionsOnSave": {
@@ -60,7 +59,7 @@
   ],
   "github.copilot.chat.localeOverride": "ja",
   "github.copilot.nextEditSuggestions.enabled": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.updateImportsOnFileMove.enabled": "always",
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nixd",
   "nix.serverSettings": {
@@ -76,13 +75,11 @@
     }
   },
   "oxc.requireConfig": true,
-  "prettier.requireConfig": true,
   "python.analysis.autoImportCompletions": true,
   "terminal.integrated.fontFamily": "'UDEV Gothic JPDOC', Menlo, Monaco, 'Courier New', monospace",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.stickyScroll.enabled": false,
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorCustomizations": {
     "terminal.ansiBlack": "#3c3836",
     "terminal.ansiBlue": "#458588",
