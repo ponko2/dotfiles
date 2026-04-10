@@ -5,25 +5,29 @@ commit-msg:
 pre-commit:
   parallel: true
   jobs:
-    - name: deadnix
-      run: deadnix --edit {staged_files}
-      glob: "*.nix"
-      stage_fixed: true
     - name: EditorConfig
       run: editorconfig-checker {staged_files}
     - name: Luacheck
       run: luacheck {staged_files}
       glob: "*.lua"
-    - name: Nixfmt
-      run: nixfmt {staged_files}
-      glob: "*.nix"
-      stage_fixed: true
+    - name: Nix
+      group:
+        parallel: false
+        jobs:
+          - name: deadnix
+            run: deadnix --edit {staged_files}
+            glob: "*.nix"
+            stage_fixed: true
+          - name: statix
+            run: statix fix
+            glob: "*.nix"
+            stage_fixed: true
+          - name: Nixfmt
+            run: nixfmt {staged_files}
+            glob: "*.nix"
+            stage_fixed: true
     - name: Oxfmt
       run: oxfmt --no-error-on-unmatched-pattern {staged_files}
-      stage_fixed: true
-    - name: statix
-      run: statix fix
-      glob: "*.nix"
       stage_fixed: true
     - name: StyLua
       run: stylua {staged_files}
