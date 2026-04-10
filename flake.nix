@@ -96,6 +96,12 @@
               '';
             };
             formatter = pkgs.nixfmt-tree;
+            packages = {
+              inherit (pkgs)
+                direnv
+                nix-direnv
+                ;
+            };
           };
         flake = {
           darwinConfigurations."ponko2" = withSystem "aarch64-darwin" (
