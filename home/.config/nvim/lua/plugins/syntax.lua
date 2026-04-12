@@ -8,7 +8,7 @@ return {
       vim.g.gruvbox_material_foreground = 'original'
       vim.g.gruvbox_material_transparent_background = 1
       vim.g.gruvbox_material_ui_contrast = 'high'
-      vim.g.gruvbox_material_visual = 'reverse'
+      vim.g.gruvbox_material_visual = 'blue background'
     end,
     config = function()
       vim.opt.background = 'dark'
