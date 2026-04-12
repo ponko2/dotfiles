@@ -140,6 +140,14 @@ inline = '''
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 '''
 
+[plugins.vite-plus]
+inline = '''
+# Vite+ bin (https://viteplus.dev)
+if [[ -f "$HOME/.vite-plus/env" ]]; then
+  source "$HOME/.vite-plus/env"
+fi
+'''
+
 [plugins.ponko2]
 local = "~/.zshrc.d"
 use = ["*.zsh"]
