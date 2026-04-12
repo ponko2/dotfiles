@@ -1,6 +1,7 @@
 return {
   {
     'dmtrKovalenko/fff.nvim',
+    cond = not vim.g.vscode,
     build = function()
       require('fff.download').download_or_build_binary()
     end,
