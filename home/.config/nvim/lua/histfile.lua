@@ -59,22 +59,24 @@ end
 
 local M = {}
 
-function M.read()
-  local file = assert(io.open(vim.fn.expand('%:p'), 'rb'))
+---@param buf integer
+function M.read(buf)
+  local file = assert(io.open(vim.api.nvim_buf_get_name(buf), 'rb'))
   local data = file:read('*all')
   file:close()
   local lines = vim.split(unmetafy(data):gsub('\n$', ''), '\n')
-  vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
-  vim.bo.modified = false
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+  vim.api.nvim_set_option_value('modified', false, { buf = buf })
 end
 
-function M.write()
-  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+---@param buf integer
+function M.write(buf)
+  local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
   local data = metafy(table.concat(lines, '\n')) .. '\n'
-  local file = assert(io.open(vim.fn.expand('%:p'), 'wb'))
+  local file = assert(io.open(vim.api.nvim_buf_get_name(buf), 'wb'))
   file:write(data)
   file:close()
-  vim.bo.modified = false
+  vim.api.nvim_set_option_value('modified', false, { buf = buf })
 end
 
 return M
