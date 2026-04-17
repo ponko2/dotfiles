@@ -83,6 +83,7 @@
         typescript-language-server
         vue-language-server
       ];
+      sideloadInitLua = true;
     };
   };
 }
