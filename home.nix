@@ -62,6 +62,7 @@
       ssh-copy-id
       starship
       wget
+      yazi
       zoxide
     ];
     stateVersion = "25.11";
