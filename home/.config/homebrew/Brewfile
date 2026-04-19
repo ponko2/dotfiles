@@ -30,6 +30,7 @@ brew "sqlite"
 brew "ssh-copy-id"
 brew "starship"
 brew "wget"
+brew "yazi"
 brew "zoxide"
 
 ## Formatter
