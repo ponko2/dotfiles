@@ -69,6 +69,7 @@ vim.api.nvim_create_autocmd({ 'FileType', 'Syntax', 'BufEnter', 'BufWinEnter' },
 })
 
 -- LSP
+-- refs: https://neovim.io/doc/user/lsp/#lsp-attach
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('my.lsp', {}),
   callback = function(ev)
