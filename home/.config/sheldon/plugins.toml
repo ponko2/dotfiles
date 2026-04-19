@@ -117,8 +117,6 @@ export GOPATH="$XDG_DATA_HOME/go"
 inline = '''
 if command -v nvim >/dev/null; then
   export EDITOR="nvim --clean -c 'set enc=utf-8 cb+=unnamed'"
-  export CVSEDITOR="${EDITOR}"
-  export SVN_EDITOR="${EDITOR}"
 fi
 '''
 
