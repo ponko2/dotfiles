@@ -12,6 +12,8 @@ return {
       vim.lsp.enable({
         'lua_ls',
         'nixd',
+        'oxfmt',
+        'oxlint',
         'ruff',
         'stylua',
         'ts_ls',
