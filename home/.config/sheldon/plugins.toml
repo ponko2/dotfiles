@@ -116,7 +116,7 @@ export GOPATH="$XDG_DATA_HOME/go"
 [plugins.neovim]
 inline = '''
 if command -v nvim >/dev/null; then
-  export EDITOR="nvim --clean -c 'set enc=utf-8 cb+=unnamed'"
+  export EDITOR="nvim"
 fi
 '''
 
