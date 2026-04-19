@@ -88,6 +88,8 @@
         vue-language-server
       ];
       sideloadInitLua = true;
+      withPython3 = true;
+      withRuby = true;
     };
   };
 }
