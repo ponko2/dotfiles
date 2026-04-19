@@ -22,15 +22,6 @@ return {
         desc = 'Live grep',
       },
       {
-        '<Leader>f.',
-        function()
-          require('fff').find_files({
-            cwd = vim.fn.expand('%:p:h'),
-          })
-        end,
-        desc = 'Find files (current directory)',
-      },
-      {
         '<Leader>f/',
         function()
           require('fff').live_grep({
@@ -55,6 +46,35 @@ return {
     end,
   },
   {
+    'mikavilpas/yazi.nvim',
+    cond = not vim.g.vscode,
+    dependencies = 'nvim-lua/plenary.nvim',
+    event = 'VeryLazy',
+    keys = {
+      {
+        '<Leader>fe',
+        '<Cmd>Yazi cwd<CR>',
+        desc = 'Open yazi in the current working directory',
+      },
+      {
+        '<Leader>f.',
+        '<Cmd>Yazi<CR>',
+        mode = { 'n', 'v' },
+        desc = 'Open yazi at the current file',
+      },
+    },
+    ---@type YaziConfig | {}
+    opts = {
+      keymaps = {
+        show_help = '<F1>',
+      },
+      open_for_directories = true,
+    },
+    init = function()
+      vim.g.loaded_netrwPlugin = 1
+    end,
+  },
+  {
     'nvim-neo-tree/neo-tree.nvim',
     cond = not vim.g.vscode,
     dependencies = {
@@ -63,9 +83,6 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     cmd = 'Neotree',
-    keys = {
-      { '<Leader>fe', [[<Cmd>Neotree toggle reveal<CR>]], desc = 'Toggle file browser' },
-    },
     opts = {
       filesystem = {
         filtered_items = {
