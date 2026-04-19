@@ -12,6 +12,7 @@ return {
       vim.lsp.enable({
         'lua_ls',
         'nixd',
+        'ruff',
         'stylua',
         'ts_ls',
         'ty',

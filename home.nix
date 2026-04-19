@@ -78,6 +78,7 @@
         lua-language-server
         luarocks
         nixd
+        ruff
         stylua
         tree-sitter
         ty
