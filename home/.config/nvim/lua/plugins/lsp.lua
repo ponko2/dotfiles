@@ -10,11 +10,11 @@ return {
     cond = not vim.g.vscode,
     config = function()
       vim.lsp.enable({
-        'basedpyright',
         'lua_ls',
         'nixd',
         'stylua',
         'ts_ls',
+        'ty',
         'vue_ls',
       })
     end,
