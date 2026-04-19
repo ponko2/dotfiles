@@ -6,27 +6,24 @@ return {
     init = function()
       vim.g.ale_echo_msg_format = '[%linter%] %code: %%s [%severity%]'
       vim.g.ale_fixers = {
-        css = { 'biome', 'prettier' },
-        javascript = { 'biome', 'eslint', 'prettier' },
-        javascriptreact = { 'biome', 'eslint', 'prettier' },
-        lua = { 'stylua' },
+        css = { 'prettier' },
+        javascript = { 'eslint', 'prettier' },
+        javascriptreact = { 'eslint', 'prettier' },
         markdown = { 'textlint' },
-        python = { 'ruff_format', 'ruff' },
         text = { 'textlint' },
-        typescript = { 'biome', 'eslint', 'prettier' },
-        typescriptreact = { 'biome', 'eslint', 'prettier' },
+        typescript = { 'eslint', 'prettier' },
+        typescriptreact = { 'eslint', 'prettier' },
       }
       vim.g.ale_fix_on_save = 1
       vim.g.ale_linters = {
         go = { 'golangci-lint' },
-        javascript = { 'biome', 'eslint' },
-        javascriptreact = { 'biome', 'eslint' },
+        javascript = { 'eslint' },
+        javascriptreact = { 'eslint' },
         lua = { 'luacheck' },
         markdown = { 'textlint' },
-        python = { 'ruff' },
         text = { 'textlint' },
-        typescript = { 'biome', 'eslint' },
-        typescriptreact = { 'biome', 'eslint' },
+        typescript = { 'eslint' },
+        typescriptreact = { 'eslint' },
       }
       vim.g.ale_linters_explicit = 1
       vim.g.ale_sign_column_always = 1

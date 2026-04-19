@@ -5,19 +5,18 @@
   },
   "workspace": {
     "library": [
-      "$HOMEBREW_PREFIX/share/nvim/runtime/lua",
+      "${env:VIMRUNTIME}/lua",
       "${3rd}/busted/library",
       "${3rd}/luv/library",
-      "$XDG_DATA_HOME/nvim/lazy/Comment.nvim/lua",
-      "$XDG_DATA_HOME/nvim/lazy/cmp-nvim-lsp/lua",
-      "$XDG_DATA_HOME/nvim/lazy/dial.nvim/lua",
-      "$XDG_DATA_HOME/nvim/lazy/gitsigns.nvim/lua",
-      "$XDG_DATA_HOME/nvim/lazy/lazy.nvim/lua",
-      "$XDG_DATA_HOME/nvim/lazy/nvim-cmp/lua",
-      "$XDG_DATA_HOME/nvim/lazy/oil.nvim/lua",
-      "$XDG_DATA_HOME/nvim/lazy/telescope.nvim/lua"
+      "${env:XDG_DATA_HOME}/nvim/lazy/cmp-nvim-lsp/lua",
+      "${env:XDG_DATA_HOME}/nvim/lazy/dial.nvim/lua",
+      "${env:XDG_DATA_HOME}/nvim/lazy/gitsigns.nvim/lua",
+      "${env:XDG_DATA_HOME}/nvim/lazy/lazy.nvim/lua",
+      "${env:XDG_DATA_HOME}/nvim/lazy/nvim-cmp/lua",
+      "${env:XDG_DATA_HOME}/nvim/lazy/oil.nvim/lua",
+      "${env:XDG_DATA_HOME}/nvim/lazy/telescope.nvim/lua"
     ],
-    "checkThirdParty": "Disable"
+    "checkThirdParty": false
   },
   "diagnostics": {
     "globals": ["vim"],
@@ -30,5 +29,10 @@
       "strict": "Warning"
     },
     "unusedLocalExclude": ["_*"]
+  },
+  "Lua": {
+    "format": {
+      "enable": false
+    }
   }
 }

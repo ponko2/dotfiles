@@ -75,11 +75,15 @@
     neovim = {
       enable = true;
       extraPackages = with pkgs; [
-        basedpyright
         lua-language-server
         luarocks
         nixd
+        oxfmt
+        oxlint
+        ruff
+        stylua
         tree-sitter
+        ty
         typescript-language-server
         vue-language-server
       ];
