@@ -75,24 +75,6 @@ return {
     end,
   },
   {
-    'nvim-neo-tree/neo-tree.nvim',
-    cond = not vim.g.vscode,
-    dependencies = {
-      'MunifTanjim/nui.nvim',
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons',
-    },
-    cmd = 'Neotree',
-    opts = {
-      filesystem = {
-        filtered_items = {
-          hide_dotfiles = false,
-          never_show = { '.git' },
-        },
-      },
-    },
-  },
-  {
     'nvim-telescope/telescope.nvim',
     cond = not vim.g.vscode,
     dependencies = {
@@ -116,17 +98,5 @@ return {
       telescope.setup(opts)
       telescope.load_extension('ghq')
     end,
-  },
-  {
-    'stevearc/oil.nvim',
-    cond = not vim.g.vscode,
-    dependencies = {
-      'echasnovski/mini.icons',
-      'nvim-tree/nvim-web-devicons',
-    },
-    event = 'VeryLazy',
-    ---@module 'oil'
-    ---@type oil.SetupOpts
-    opts = {},
   },
 }
