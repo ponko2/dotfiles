@@ -79,6 +79,7 @@
         lua-language-server
         luarocks
         nixd
+        stylua
         tree-sitter
         typescript-language-server
         vue-language-server

@@ -9,7 +9,6 @@ return {
         css = { 'biome', 'prettier' },
         javascript = { 'biome', 'eslint', 'prettier' },
         javascriptreact = { 'biome', 'eslint', 'prettier' },
-        lua = { 'stylua' },
         markdown = { 'textlint' },
         python = { 'ruff_format', 'ruff' },
         text = { 'textlint' },

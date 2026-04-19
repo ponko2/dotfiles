@@ -13,6 +13,7 @@ return {
         'basedpyright',
         'lua_ls',
         'nixd',
+        'stylua',
         'ts_ls',
         'vue_ls',
       })

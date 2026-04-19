@@ -35,7 +35,6 @@ brew "zoxide"
 ## Formatter
 brew "nixfmt"
 brew "shfmt"
-brew "stylua"
 
 ## Linter
 brew "checkmake"
@@ -49,6 +48,7 @@ brew "basedpyright"
 brew "lua-language-server"
 brew "luarocks"
 brew "neovim"
+brew "stylua"
 brew "tree-sitter"
 brew "tree-sitter-cli"
 brew "typescript-language-server"
