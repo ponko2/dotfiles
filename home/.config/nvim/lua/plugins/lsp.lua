@@ -1,14 +1,14 @@
 return {
   {
-    'hrsh7th/cmp-nvim-lsp',
+    'j-hui/fidget.nvim',
     cond = not vim.g.vscode,
-    optional = true,
-    dependencies = 'neovim/nvim-lspconfig',
+    event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' },
+    config = true,
+  },
+  {
+    'neovim/nvim-lspconfig',
+    cond = not vim.g.vscode,
     config = function()
-      vim.lsp.config('*', {
-        capabilities = require('cmp_nvim_lsp').default_capabilities(),
-      })
-
       vim.lsp.enable({
         'basedpyright',
         'lua_ls',
@@ -17,11 +17,5 @@ return {
         'vue_ls',
       })
     end,
-  },
-  {
-    'j-hui/fidget.nvim',
-    cond = not vim.g.vscode,
-    event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' },
-    config = true,
   },
 }

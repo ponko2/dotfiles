@@ -105,12 +105,29 @@ if vim.opt.verbose:get() == 0 then
 end
 
 -- 補完定設
+vim.opt.autocomplete = true
 vim.opt.completeopt:remove('menu')
 vim.opt.completeopt:prepend({ 'menu', 'menuone' })
 vim.opt.completeopt:append({ 'noselect', 'popup' })
 
 -- 補完のポップアップメニュー最大表示件数
 vim.opt.pumheight = 20
+
+-- ポップアップメニューの角を丸くする
+-- refs: https://github.com/neovim/neovim/issues/38248
+vim.opt.pumborder = 'rounded'
+if vim.api.nvim__complete_set then
+  local complete_set = vim.api.nvim__complete_set
+  ---@diagnostic disable-next-line: duplicate-set-field
+  vim.api.nvim__complete_set = function(...) -- luacheck: ignore 122
+    ---@type { winid: number, bufnr: number }
+    local windata = complete_set(...)
+    if windata and windata.winid >= 0 and vim.api.nvim_win_is_valid(windata.winid) then
+      pcall(vim.api.nvim_win_set_config, windata.winid, { border = 'rounded' })
+    end
+    return windata
+  end
+end
 
 -- 変更された行の数を報告
 vim.opt.report = 0
