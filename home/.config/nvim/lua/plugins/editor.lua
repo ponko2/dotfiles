@@ -22,15 +22,6 @@ return {
         desc = 'Live grep',
       },
       {
-        '<Leader>f.',
-        function()
-          require('fff').find_files({
-            cwd = vim.fn.expand('%:p:h'),
-          })
-        end,
-        desc = 'Find files (current directory)',
-      },
-      {
         '<Leader>f/',
         function()
           require('fff').live_grep({
@@ -55,25 +46,33 @@ return {
     end,
   },
   {
-    'nvim-neo-tree/neo-tree.nvim',
+    'mikavilpas/yazi.nvim',
     cond = not vim.g.vscode,
-    dependencies = {
-      'MunifTanjim/nui.nvim',
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons',
-    },
-    cmd = 'Neotree',
+    dependencies = 'nvim-lua/plenary.nvim',
+    event = 'VeryLazy',
     keys = {
-      { '<Leader>fe', [[<Cmd>Neotree toggle reveal<CR>]], desc = 'Toggle file browser' },
-    },
-    opts = {
-      filesystem = {
-        filtered_items = {
-          hide_dotfiles = false,
-          never_show = { '.git' },
-        },
+      {
+        '<Leader>fe',
+        '<Cmd>Yazi cwd<CR>',
+        desc = 'Open yazi in the current working directory',
+      },
+      {
+        '<Leader>f.',
+        '<Cmd>Yazi<CR>',
+        mode = { 'n', 'v' },
+        desc = 'Open yazi at the current file',
       },
     },
+    ---@type YaziConfig | {}
+    opts = {
+      keymaps = {
+        show_help = '<F1>',
+      },
+      open_for_directories = true,
+    },
+    init = function()
+      vim.g.loaded_netrwPlugin = 1
+    end,
   },
   {
     'nvim-telescope/telescope.nvim',
@@ -99,17 +98,5 @@ return {
       telescope.setup(opts)
       telescope.load_extension('ghq')
     end,
-  },
-  {
-    'stevearc/oil.nvim',
-    cond = not vim.g.vscode,
-    dependencies = {
-      'echasnovski/mini.icons',
-      'nvim-tree/nvim-web-devicons',
-    },
-    event = 'VeryLazy',
-    ---@module 'oil'
-    ---@type oil.SetupOpts
-    opts = {},
   },
 }
