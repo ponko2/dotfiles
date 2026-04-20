@@ -79,10 +79,6 @@
         lua-language-server
         luarocks
         nixd
-        oxfmt
-        oxlint
-        ruff
-        stylua
         tree-sitter
         ty
         typescript-language-server
