@@ -15,6 +15,7 @@
           ".config/sheldon"
           ".config/starship.toml"
           ".config/yamllint"
+          ".config/yazi"
           ".config/zsh-abbr"
           ".local/bin/rfv"
           ".local/bin/update-system"

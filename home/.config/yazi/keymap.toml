@@ -1,0 +1,9 @@
+[[mgr.prepend_keymap]]
+on = "<C-n>"
+run = "arrow next"
+desc = "Next file"
+
+[[mgr.prepend_keymap]]
+on = "<C-p>"
+run = "arrow prev"
+desc = "Previous file"
