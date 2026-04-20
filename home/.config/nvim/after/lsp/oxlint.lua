@@ -1,36 +1,22 @@
---- Returns a predicate for vim.fs.root() that matches a directory containing
---- any of `names` with at least one of `patterns` in its content.
---- @param names string[]
---- @param patterns string[]
---- @return fun(name: string, path: string): boolean
-local function file_contains_any(names, patterns)
-  local name_set = {} --- @type table<string, true>
-  for _, filename in ipairs(names) do
-    name_set[filename] = true
-  end
-  return function(name, path)
-    if not name_set[name] then
-      return false
-    end
-    local file = io.open(vim.fs.joinpath(path, name), 'r')
-    if not file then
-      return false
-    end
-    local matched = false
-    for line in file:lines() do
-      if vim.iter(patterns):any(function(pattern)
-        return line:find(pattern)
-      end) then
-        matched = true
-        break
-      end
-    end
-    file:close()
-    return matched
-  end
-end
+local util = require 'lsp.util'
 
 return {
+  cmd = function(dispatchers, config)
+    local cmd = 'oxlint'
+    if (config or {}).root_dir then
+      local package_root = vim.fs.root(
+        config.root_dir,
+        util.file_contains_any({ 'package.json', 'package.json5' }, { 'oxlint', 'vite%-plus' })
+      )
+      if package_root then
+        local local_cmd = vim.fs.joinpath(package_root, 'node_modules/.bin', cmd)
+        if vim.fn.executable(local_cmd) == 1 then
+          cmd = local_cmd
+        end
+      end
+    end
+    return vim.lsp.rpc.start({ cmd, '--lsp' }, dispatchers)
+  end,
   root_dir = function(bufnr, on_dir)
     --- Each marker is tried depth-first (all ancestors before next marker),
     --- matching the behavior of `root_markers` in vim.lsp.start().
@@ -39,8 +25,8 @@ return {
       '.oxlintrc.json',
       '.oxlintrc.jsonc',
       'oxlint.config.ts',
-      file_contains_any({ 'vite.config.js', 'vite.config.ts' }, { 'vite%-plus' }),
-      file_contains_any({ 'package.json', 'package.json5' }, { 'oxlint', 'vite%-plus' }),
+      util.file_contains_any({ 'vite.config.js', 'vite.config.ts' }, { 'vite%-plus' }),
+      util.file_contains_any({ 'package.json', 'package.json5' }, { 'oxlint', 'vite%-plus' }),
     }
     for _, marker in ipairs(root_markers) do
       local root = vim.fs.root(bufnr, marker)
