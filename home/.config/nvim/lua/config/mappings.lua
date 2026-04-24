@@ -17,6 +17,20 @@ vim.keymap.set('n', 'Y', [[y$]])
 -- grep
 vim.keymap.set('n', '<Leader>/', [[:<C-u>Grep<Space>]], { desc = 'Grep' })
 
+-- Yank agent context
+vim.keymap.set(
+  { 'n', 'x' },
+  '<Leader>ay',
+  '<Cmd>YankAgentContext<CR>',
+  { desc = 'Yank agent context (range)' }
+)
+vim.keymap.set(
+  { 'n', 'x' },
+  '<Leader>aY',
+  '<Cmd>YankAgentContext!<CR>',
+  { desc = 'Yank agent context (file)' }
+)
+
 --------------------------------------------------------------------------------
 -- Command-line mode keymappings:
 
