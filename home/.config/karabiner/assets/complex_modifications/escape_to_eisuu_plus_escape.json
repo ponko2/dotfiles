@@ -9,6 +9,7 @@
             {
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
+                "^com\\.cmuxterm\\.app$",
                 "^com\\.google\\.antigravity$",
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.microsoft\\.VSCode$",
@@ -30,6 +31,7 @@
             {
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
+                "^com\\.cmuxterm\\.app$",
                 "^com\\.google\\.antigravity$",
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.microsoft\\.VSCode$",

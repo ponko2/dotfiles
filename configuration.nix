@@ -24,6 +24,7 @@
       "aerospace"
       "antigravity"
       "appcleaner"
+      "cmux"
       "devtoys"
       "docker-desktop"
       "ghostty"
@@ -86,6 +87,7 @@
         persistent-apps = [
           { app = "/Applications/Google Chrome.app"; }
           { app = "/Applications/Ghostty.app"; }
+          { app = "/Applications/cmux.app"; }
           { app = "/Applications/Visual Studio Code.app"; }
           { app = "/Applications/Antigravity.app"; }
           { app = "/Applications/DevToys.app"; }

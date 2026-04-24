@@ -60,6 +60,7 @@ if OS.mac?
   cask "1password-cli"
   cask "antigravity"
   cask "appcleaner"
+  cask "cmux"
   cask "devtoys"
   cask "docker-desktop"
   cask "ghostty"
