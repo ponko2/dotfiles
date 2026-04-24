@@ -68,6 +68,17 @@ vim.api.nvim_create_autocmd({ 'FileType', 'Syntax', 'BufEnter', 'BufWinEnter' },
   command = [[setlocal formatoptions-=r formatoptions-=o formatoptions+=mM]],
 })
 
+-- promptバッファでは組み込み補完を無効化
+vim.api.nvim_create_autocmd('OptionSet', {
+  group = id,
+  pattern = 'buftype',
+  callback = function()
+    if vim.v.option_new == 'prompt' then
+      vim.opt_local.autocomplete = false
+    end
+  end,
+})
+
 -- LSP
 -- refs: https://neovim.io/doc/user/lsp/#lsp-attach
 vim.api.nvim_create_autocmd('LspAttach', {
