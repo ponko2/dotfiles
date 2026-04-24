@@ -2,6 +2,29 @@
 -- Commands:
 --------------------------------------------------------------------------------
 
+--- Like the yank operator.
+---@param value string
+local function yank(value)
+  vim.cmd([[normal! "_y]])
+  vim.fn.setreg('+', value)
+  vim.notify(value:gsub('%%', '%%%%'))
+end
+
+--- Prefer the visual selection over the command range in visual mode.
+---@param opts { line1: integer, line2: integer }
+---@return integer, integer
+local function get_range(opts)
+  local mode = vim.fn.mode()
+  if mode == 'v' or mode == 'V' or mode == '\22' then
+    local a, b = vim.fn.line('v'), vim.fn.line('.')
+    if a > b then
+      return b, a
+    end
+    return a, b
+  end
+  return opts.line1, opts.line2
+end
+
 -- grep
 vim.api.nvim_create_user_command('Grep', function(opts)
   vim.cmd(([[silent grep! "%s"]]):format(vim.fn.escape(opts.args, '"')))
@@ -18,3 +41,22 @@ vim.api.nvim_create_user_command('TrimTrailingWhitespace', function(opts)
   vim.cmd(([[keepjumps keeppatterns %d,%ds/[[:space:]　]\+$//e]]):format(opts.line1, opts.line2))
   vim.fn.winrestview(view)
 end, { range = '%' })
+
+-- Yank agent context
+vim.api.nvim_create_user_command('YankAgentContext', function(opts)
+  local path = vim.fn.expand('%:.')
+  if path == '' or vim.bo.buftype ~= '' then
+    vim.notify('Not a file buffer', vim.log.levels.WARN)
+    return
+  end
+  if opts.bang then
+    yank(('@%s'):format(path))
+    return
+  end
+  local line1, line2 = get_range(opts)
+  if line1 == line2 then
+    yank(('@%s:%d'):format(path, line1))
+  else
+    yank(('@%s:%d-%d'):format(path, line1, line2))
+  end
+end, { bang = true, range = true })
