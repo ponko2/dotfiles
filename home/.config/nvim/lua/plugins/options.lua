@@ -96,7 +96,6 @@ return {
   },
   {
     'rbtnn/vim-ambiwidth',
-    event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' },
     init = function()
       vim.g.ambiwidth_add_list = {
         { 0x00B7, 0x00B7, 2 },
