@@ -50,7 +50,18 @@
             _module.args.pkgs = import inputs.nixpkgs {
               inherit system;
               config.allowUnfree = true;
-              overlays = [ ];
+              overlays = [
+                (_final: prev: {
+                  # refs: https://github.com/NixOS/nixpkgs/issues/513019
+                  direnv =
+                    if system == "aarch64-darwin" then
+                      prev.direnv.overrideAttrs {
+                        doCheck = false;
+                      }
+                    else
+                      prev.direnv;
+                })
+              ];
             };
             apps = {
               commitlint = {
