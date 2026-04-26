@@ -1,5 +1,4 @@
 {
-  config,
   inputs,
   pkgs,
   ...
@@ -37,7 +36,9 @@
       autoUpdate = true;
       cleanup = "uninstall";
     };
-    taps = builtins.attrNames config.nix-homebrew.taps;
+    taps = [
+      "nikitabobko/tap"
+    ];
   };
   nix = {
     nixPath = [ "nixpkgs=flake:nixpkgs" ];
@@ -50,12 +51,6 @@
     enableBashIntegration = false;
     enableFishIntegration = false;
     enableZshIntegration = false;
-    taps = {
-      "homebrew/homebrew-cask" = inputs.homebrew-cask;
-      "homebrew/homebrew-core" = inputs.homebrew-core;
-      "nikitabobko/homebrew-tap" = inputs.nikitabobko-tap;
-    };
-    mutableTaps = false;
   };
   security.pam.services.sudo_local = {
     touchIdAuth = true;
