@@ -1,0 +1,47 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "ac82af3"
+hash = "6849444b7c2df08eace83f3f86fb55a3"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:vcs-files"
+rev = "ac82af3"
+hash = "6b141fbed3c74b45558fbc7088c805ee"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "ac82af3"
+hash = "187cc58ba7ac3befd49c342129e6f1b6"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "ac82af3"
+hash = "eff8ff12fa4e5f035a10d8aeeb4c258d"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:toggle-pane"
+rev = "ac82af3"
+hash = "4c0260feb50ea2437380690ffc241da7"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:jump-to-char"
+rev = "ac82af3"
+hash = "7a4b4237223aaa94e589d1c01a23542a"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-filter"
+rev = "ac82af3"
+hash = "c887903a63a2ff520081b6d90a4b3392"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "ac82af3"
+hash = "f0c8c378184d5f8abd1b095a443d336d"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-paste"
+rev = "ac82af3"
+hash = "3f8d49413bc8691b4c652eb417a20178"
+
+[flavor]
+deps = []
