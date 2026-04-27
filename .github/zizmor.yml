@@ -1,4 +1,5 @@
 rules:
   secrets-outside-env:
-    ignore:
-      - ci.yml
+    config:
+      allow:
+        - CACHIX_AUTH_TOKEN
