@@ -31,6 +31,9 @@ vim.keymap.set(
   { desc = 'Yank agent context (file)' }
 )
 
+-- cd to git root
+vim.keymap.set('n', '<Leader>gt', '<Cmd>CdGitRoot<CR>', { desc = 'cd to git root' })
+
 --------------------------------------------------------------------------------
 -- Command-line mode keymappings:
 

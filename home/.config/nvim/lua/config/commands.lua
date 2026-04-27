@@ -25,6 +25,21 @@ local function get_range(opts)
   return opts.line1, opts.line2
 end
 
+-- cd to git root
+vim.api.nvim_create_user_command('CdGitRoot', function()
+  local result = vim.system({ 'git', 'rev-parse', '--show-toplevel' }, { text = true }):wait()
+  if result.code ~= 0 then
+    vim.notify(vim.trim(result.stderr), vim.log.levels.ERROR)
+    return
+  end
+  local root = vim.trim(result.stdout)
+  if root == vim.uv.cwd() then
+    return
+  end
+  vim.api.nvim_set_current_dir(root)
+  vim.notify(vim.fn.fnamemodify(root, ':~'))
+end, {})
+
 -- grep
 vim.api.nvim_create_user_command('Grep', function(opts)
   vim.cmd(([[silent grep! "%s"]]):format(vim.fn.escape(opts.args, '"')))
