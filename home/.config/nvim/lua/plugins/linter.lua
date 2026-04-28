@@ -4,6 +4,7 @@ return {
     cond = not vim.g.vscode,
     event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' },
     init = function()
+      vim.g.ale_disable_lsp = 1
       vim.g.ale_echo_msg_format = '[%linter%] %code: %%s [%severity%]'
       vim.g.ale_fixers = {
         css = { 'prettier' },
