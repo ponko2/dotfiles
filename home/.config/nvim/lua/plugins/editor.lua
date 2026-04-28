@@ -2,6 +2,7 @@ return {
   {
     'dmtrKovalenko/fff.nvim',
     cond = not vim.g.vscode,
+    dependencies = 'sainnhe/gruvbox-material',
     build = function()
       require('fff.download').download_or_build_binary()
     end,
@@ -31,6 +32,30 @@ return {
         desc = 'Live grep (current directory)',
       },
     },
+    opts = {
+      hl = {
+        cursor = 'FFFCursor',
+      },
+    },
+    init = function()
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        group = vim.api.nvim_create_augroup('custom_highlights_gruvboxmaterial', {}),
+        pattern = 'gruvbox-material',
+        callback = function()
+          ---@type { background: string, foreground: string, colors_override: table<string, [string, string]> }
+          local config = vim.fn['gruvbox_material#get_configuration']()
+          ---@type { none: [string, string], bg5: [string, string] }
+          local palette = vim.fn['gruvbox_material#get_palette'](
+            config.background,
+            config.foreground,
+            config.colors_override
+          )
+          ---@type fun(group: string, fg: [string, string], bg: [string, string]): nil
+          local set_hl = vim.fn['gruvbox_material#highlight']
+          set_hl('FFFCursor', palette.none, palette.bg5)
+        end,
+      })
+    end,
   },
   {
     'junegunn/vim-easy-align',
