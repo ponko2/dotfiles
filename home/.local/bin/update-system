@@ -21,4 +21,5 @@ ya pkg upgrade
 sheldon lock --update
 
 # Neovim
+git -C ~/.local/share/nvim/lazy/vimdoc-ja restore doc/tags-ja
 nvim --headless "+Lazy! update" +qa
