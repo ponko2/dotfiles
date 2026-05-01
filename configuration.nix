@@ -20,7 +20,6 @@
     casks = [
       "1password"
       "1password-cli"
-      "aerospace"
       "antigravity"
       "appcleaner"
       "cmux"
@@ -30,15 +29,13 @@
       "google-chrome"
       "karabiner-elements"
       "monitorcontrol"
+      "nikitabobko/tap/aerospace"
       "visual-studio-code"
     ];
     onActivation = {
       autoUpdate = true;
       cleanup = "uninstall";
     };
-    taps = [
-      "nikitabobko/tap"
-    ];
   };
   nix = {
     nixPath = [ "nixpkgs=flake:nixpkgs" ];
