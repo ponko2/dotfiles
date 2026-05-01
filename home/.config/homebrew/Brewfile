@@ -52,6 +52,7 @@ brew "tree-sitter"
 brew "tree-sitter-cli"
 brew "ty"
 brew "typescript-language-server"
+brew "vscode-langservers-extracted"
 brew "vue-language-server"
 
 if OS.mac?
