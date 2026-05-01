@@ -1,5 +1,98 @@
 return {
   {
+    'folke/snacks.nvim',
+    cond = not vim.g.vscode,
+    keys = {
+      {
+        '<Leader>fb',
+        function()
+          require('snacks').picker.buffers()
+        end,
+        desc = 'Buffers',
+      },
+      {
+        '<Leader>ff',
+        function()
+          require('snacks').picker.files()
+        end,
+        desc = 'Find files',
+      },
+      {
+        '<Leader>fg',
+        function()
+          require('snacks').picker.grep()
+        end,
+        desc = 'Live grep',
+      },
+      {
+        '<Leader>fh',
+        function()
+          require('snacks').picker.help()
+        end,
+        desc = 'Help tags',
+      },
+      {
+        '<Leader>fr',
+        function()
+          require('snacks').picker.pick({
+            title = 'Find repositories',
+            finder = 'proc',
+            cmd = 'ghq',
+            args = { 'list', '--full-path' },
+            format = 'text',
+            ---@param item snacks.picker.finder.Item
+            transform = function(item)
+              item.dir = true
+              item.file = item.text
+            end,
+            confirm = { 'tcd', 'close' },
+          })
+        end,
+        desc = 'Find repositories',
+      },
+      {
+        '<Leader>f/',
+        function()
+          require('snacks').picker.grep({
+            cwd = vim.fn.expand('%:p:h'),
+          })
+        end,
+        desc = 'Live grep (current directory)',
+      },
+    },
+    ---@type snacks.Config
+    opts = {
+      picker = {
+        formatters = {
+          file = {
+            filename_first = true,
+          },
+        },
+        layout = {
+          preset = 'telescope',
+        },
+        sources = {
+          files = {
+            hidden = true,
+            ---@class snacks.picker.matcher.Config
+            matcher = {
+              cwd_bonus = true,
+              frecency = true,
+            },
+          },
+          grep = {
+            hidden = true,
+            ---@class snacks.picker.matcher.Config
+            matcher = {
+              cwd_bonus = true,
+              frecency = true,
+            },
+          },
+        },
+      },
+    },
+  },
+  {
     'junegunn/vim-easy-align',
     keys = {
       { 'ga', [[<Plug>(EasyAlign)]], mode = { 'n', 'x' } },
@@ -39,42 +132,6 @@ return {
     },
     init = function()
       vim.g.loaded_netrwPlugin = 1
-    end,
-  },
-  {
-    'nvim-telescope/telescope.nvim',
-    cond = not vim.g.vscode,
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope-ghq.nvim',
-    },
-    keys = {
-      { '<Leader>ff', [[<Cmd>Telescope find_files<CR>]], desc = 'Find files' },
-      { '<Leader>fg', [[<Cmd>Telescope live_grep<CR>]], desc = 'Live grep' },
-      { '<Leader>fb', [[<Cmd>Telescope buffers<CR>]], desc = 'Buffers' },
-      { '<Leader>fh', [[<Cmd>Telescope help_tags<CR>]], desc = 'Help tags' },
-      { '<Leader>fr', [[<Cmd>Telescope ghq<CR>]], desc = 'Find repositories' },
-      {
-        '<Leader>f/',
-        function()
-          require('telescope.builtin').live_grep({
-            cwd = vim.fn.expand('%:p:h'),
-          })
-        end,
-        desc = 'Live grep (current directory)',
-      },
-    },
-    opts = {
-      defaults = {
-        path_display = {
-          'filename_first',
-        },
-      },
-    },
-    config = function(_, opts)
-      local telescope = require('telescope')
-      telescope.setup(opts)
-      telescope.load_extension('ghq')
     end,
   },
 }
