@@ -96,6 +96,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
     end
 
+    if client:supports_method('textDocument/definition') then
+      vim.keymap.set(
+        'n',
+        'gd',
+        vim.lsp.buf.definition,
+        { buffer = ev.buf, desc = 'vim.lsp.buf.definition()' }
+      )
+    end
+
     -- Auto-format ("lint") on save.
     -- Usually not needed if server supports "textDocument/willSaveWaitUntil".
     if
