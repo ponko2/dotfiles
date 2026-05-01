@@ -11,7 +11,7 @@
       "${env:XDG_DATA_HOME}/nvim/lazy/dial.nvim/lua",
       "${env:XDG_DATA_HOME}/nvim/lazy/gitsigns.nvim/lua",
       "${env:XDG_DATA_HOME}/nvim/lazy/lazy.nvim/lua",
-      "${env:XDG_DATA_HOME}/nvim/lazy/telescope.nvim/lua",
+      "${env:XDG_DATA_HOME}/nvim/lazy/snacks.nvim/lua",
       "${env:XDG_DATA_HOME}/nvim/lazy/yazi.nvim/lua"
     ],
     "checkThirdParty": false
