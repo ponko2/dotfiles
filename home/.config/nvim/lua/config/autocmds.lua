@@ -154,7 +154,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
               end
             end
           end
-          for _, kind in ipairs({ 'source.fixAll', 'source.organizeImports' }) do
+          local code_actions_on_save = {
+            javascript = { 'source.fixAll', 'source.organizeImports' },
+            javascriptreact = { 'source.fixAll', 'source.organizeImports' },
+            python = { 'source.fixAll', 'source.organizeImports' },
+            typescript = { 'source.fixAll', 'source.organizeImports' },
+            typescriptreact = { 'source.fixAll', 'source.organizeImports' },
+            vue = { 'source.fixAll', 'source.organizeImports' },
+          }
+          local kinds = code_actions_on_save[vim.bo[ev.buf].filetype] or {}
+          for _, kind in ipairs(kinds) do
             apply_actions(kind)
           end
         end,
@@ -193,6 +202,31 @@ vim.api.nvim_create_autocmd('LspAttach', {
           vim.lsp.buf.format({ bufnr = ev.buf, id = client.id, timeout_ms = 1000 })
         end,
       })
+    end
+
+    if client:supports_method('textDocument/inlineCompletion', ev.buf) then
+      vim.lsp.inline_completion.enable(true, { bufnr = ev.buf })
+      vim.keymap.set('i', '<Tab>', function()
+        if vim.lsp.inline_completion.get() then
+          if vim.fn.pumvisible() == 1 then
+            return '<C-e>'
+          end
+          return ''
+        end
+        if vim.fn.pumvisible() == 1 then
+          return '<C-n>'
+        end
+        return '<Tab>'
+      end, { buffer = ev.buf, desc = 'Accept inline completion', expr = true })
+      vim.keymap.set(
+        'i',
+        '<A-]>',
+        vim.lsp.inline_completion.select,
+        { buffer = ev.buf, desc = 'Show next inline completion' }
+      )
+      vim.keymap.set('i', '<A-[>', function()
+        vim.lsp.inline_completion.select({ count = -1 })
+      end, { buffer = ev.buf, desc = 'Show previous inline completion' })
     end
   end,
 })

@@ -41,41 +41,36 @@ vim.keymap.set('n', '<Leader>gt', '<Cmd>CdGitRoot<CR>', { desc = 'cd to git root
 vim.keymap.set('c', '<Down>', function()
   if vim.fn.pumvisible() == 1 then
     return '<Down>'
-  else
-    return '<C-n>'
   end
+  return '<C-n>'
 end, { expr = true })
 vim.keymap.set('c', '<C-n>', function()
   if vim.fn.pumvisible() == 1 then
     return '<C-n>'
-  else
-    return '<Down>'
   end
+  return '<Down>'
 end, { expr = true })
 
 -- Previous history.
 vim.keymap.set('c', '<Up>', function()
   if vim.fn.pumvisible() == 1 then
     return '<Up>'
-  else
-    return '<C-p>'
   end
+  return '<C-p>'
 end, { expr = true })
 vim.keymap.set('c', '<C-p>', function()
   if vim.fn.pumvisible() == 1 then
     return '<C-p>'
-  else
-    return '<Up>'
   end
+  return '<Up>'
 end, { expr = true })
 
 -- %% -> %:h/
 vim.keymap.set('c', '%%', function()
   if vim.fn.getcmdtype() == ':' then
     return vim.fn.expand('%:h') .. '/'
-  else
-    return '%%'
   end
+  return '%%'
 end, { expr = true })
 
 --------------------------------------------------------------------------------

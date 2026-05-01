@@ -23,6 +23,7 @@ return {
         end)(vim.lsp.config.eslint.root_dir),
       })
       vim.lsp.enable({
+        'copilot',
         'eslint',
         'lua_ls',
         'nixd',
@@ -34,6 +35,7 @@ return {
         'ty',
         'vue_ls',
       })
+      vim.lsp.on_type_formatting.enable()
     end,
   },
 }

@@ -45,6 +45,7 @@ brew "shellcheck"
 brew "yamllint"
 
 ## Neovim
+brew "copilot-language-server"
 brew "lua-language-server"
 brew "luarocks"
 brew "neovim"

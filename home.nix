@@ -77,6 +77,7 @@
     neovim = {
       enable = true;
       extraPackages = with pkgs; [
+        copilot-language-server
         lua-language-server
         luarocks
         nixd
