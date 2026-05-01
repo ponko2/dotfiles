@@ -35,6 +35,7 @@ return {
         'ty',
         'vue_ls',
       })
+      vim.lsp.on_type_formatting.enable()
     end,
   },
 }
