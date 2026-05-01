@@ -83,6 +83,7 @@
         tree-sitter
         ty
         typescript-language-server
+        vscode-langservers-extracted
         vue-language-server
       ];
       sideloadInitLua = true;
