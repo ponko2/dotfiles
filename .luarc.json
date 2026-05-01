@@ -8,9 +8,11 @@
       "${env:VIMRUNTIME}/lua",
       "${3rd}/busted/library",
       "${3rd}/luv/library",
+      "${env:XDG_DATA_HOME}/nvim/lazy/conform.nvim/lua",
       "${env:XDG_DATA_HOME}/nvim/lazy/dial.nvim/lua",
       "${env:XDG_DATA_HOME}/nvim/lazy/gitsigns.nvim/lua",
       "${env:XDG_DATA_HOME}/nvim/lazy/lazy.nvim/lua",
+      "${env:XDG_DATA_HOME}/nvim/lazy/nvim-lint/lua",
       "${env:XDG_DATA_HOME}/nvim/lazy/snacks.nvim/lua",
       "${env:XDG_DATA_HOME}/nvim/lazy/yazi.nvim/lua"
     ],
