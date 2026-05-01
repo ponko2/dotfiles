@@ -1,63 +1,5 @@
 return {
   {
-    'dmtrKovalenko/fff.nvim',
-    cond = not vim.g.vscode,
-    dependencies = 'sainnhe/gruvbox-material',
-    build = function()
-      require('fff.download').download_or_build_binary()
-    end,
-    lazy = false,
-    keys = {
-      {
-        '<Leader>ff',
-        function()
-          require('fff').find_files()
-        end,
-        desc = 'Find files',
-      },
-      {
-        '<Leader>fg',
-        function()
-          require('fff').live_grep()
-        end,
-        desc = 'Live grep',
-      },
-      {
-        '<Leader>f/',
-        function()
-          require('fff').live_grep({
-            cwd = vim.fn.expand('%:p:h'),
-          })
-        end,
-        desc = 'Live grep (current directory)',
-      },
-    },
-    opts = {
-      hl = {
-        cursor = 'FFFCursor',
-      },
-    },
-    init = function()
-      vim.api.nvim_create_autocmd('ColorScheme', {
-        group = vim.api.nvim_create_augroup('custom_highlights_gruvboxmaterial', {}),
-        pattern = 'gruvbox-material',
-        callback = function()
-          ---@type { background: string, foreground: string, colors_override: table<string, [string, string]> }
-          local config = vim.fn['gruvbox_material#get_configuration']()
-          ---@type { none: [string, string], bg5: [string, string] }
-          local palette = vim.fn['gruvbox_material#get_palette'](
-            config.background,
-            config.foreground,
-            config.colors_override
-          )
-          ---@type fun(group: string, fg: [string, string], bg: [string, string]): nil
-          local set_hl = vim.fn['gruvbox_material#highlight']
-          set_hl('FFFCursor', palette.none, palette.bg5)
-        end,
-      })
-    end,
-  },
-  {
     'junegunn/vim-easy-align',
     keys = {
       { 'ga', [[<Plug>(EasyAlign)]], mode = { 'n', 'x' } },
@@ -107,9 +49,20 @@ return {
       'nvim-telescope/telescope-ghq.nvim',
     },
     keys = {
+      { '<Leader>ff', [[<Cmd>Telescope find_files<CR>]], desc = 'Find files' },
+      { '<Leader>fg', [[<Cmd>Telescope live_grep<CR>]], desc = 'Live grep' },
       { '<Leader>fb', [[<Cmd>Telescope buffers<CR>]], desc = 'Buffers' },
       { '<Leader>fh', [[<Cmd>Telescope help_tags<CR>]], desc = 'Help tags' },
       { '<Leader>fr', [[<Cmd>Telescope ghq<CR>]], desc = 'Find repositories' },
+      {
+        '<Leader>f/',
+        function()
+          require('telescope.builtin').live_grep({
+            cwd = vim.fn.expand('%:p:h'),
+          })
+        end,
+        desc = 'Live grep (current directory)',
+      },
     },
     opts = {
       defaults = {
