@@ -154,7 +154,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
               end
             end
           end
-          for _, kind in ipairs({ 'source.fixAll', 'source.organizeImports' }) do
+          local code_actions_on_save = {
+            javascript = { 'source.fixAll', 'source.organizeImports' },
+            javascriptreact = { 'source.fixAll', 'source.organizeImports' },
+            python = { 'source.fixAll', 'source.organizeImports' },
+            typescript = { 'source.fixAll', 'source.organizeImports' },
+            typescriptreact = { 'source.fixAll', 'source.organizeImports' },
+            vue = { 'source.fixAll', 'source.organizeImports' },
+          }
+          local kinds = code_actions_on_save[vim.bo[ev.buf].filetype] or {}
+          for _, kind in ipairs(kinds) do
             apply_actions(kind)
           end
         end,
