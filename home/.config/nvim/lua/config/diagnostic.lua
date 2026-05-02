@@ -40,8 +40,8 @@ vim.diagnostic.config({
     source = true,
   },
   jump = {
-    --- @param diagnostic? vim.Diagnostic
-    --- @param bufnr integer
+    ---@param diagnostic? vim.Diagnostic
+    ---@param bufnr integer
     on_jump = function(diagnostic, bufnr)
       if not diagnostic then
         return
