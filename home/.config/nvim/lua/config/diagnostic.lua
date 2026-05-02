@@ -19,19 +19,6 @@ vim.diagnostic.handlers.loclist = {
       vim.api.nvim_set_current_win(winid)
     end
   end,
-  ---@param bufnr integer
-  hide = function(_, bufnr)
-    if vim.bo.buftype ~= '' then
-      return
-    end
-    local winIds = vim.fn.win_findbuf(bufnr)
-    if #winIds > 0 then
-      local winid = vim.api.nvim_get_current_win()
-      vim.api.nvim_set_current_win(winIds[1])
-      vim.diagnostic.setloclist({ open = false })
-      vim.api.nvim_set_current_win(winid)
-    end
-  end,
 }
 
 vim.diagnostic.config({
