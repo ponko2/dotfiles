@@ -114,7 +114,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
             local a_cmd = action.command
             if a_cmd then
               local command = type(a_cmd) == 'table' and a_cmd or action
-              --- @cast command lsp.Command
+              ---@cast command lsp.Command
               client:exec_cmd(command, { bufnr = ev.buf })
             end
           end

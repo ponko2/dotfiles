@@ -2,11 +2,11 @@ local M = {}
 
 --- Returns a predicate for vim.fs.root() that matches a directory containing
 --- any of `names` with at least one of `patterns` in its content.
---- @param names string[]
---- @param patterns string[]
---- @return fun(name: string, path: string): boolean
+---@param names string[]
+---@param patterns string[]
+---@return fun(name: string, path: string): boolean
 function M.file_contains_any(names, patterns)
-  local name_set = {} --- @type table<string, true>
+  local name_set = {} ---@type table<string, true>
   for _, filename in ipairs(names) do
     name_set[filename] = true
   end
@@ -34,10 +34,10 @@ end
 
 --- Resolves cmd to a local binary path under bin_dir if available,
 --- otherwise falls back to the global command name.
---- @param cmd string command name
---- @param bin_dir string relative path to the bin directory
---- @param source string? path to search from
---- @return string
+---@param cmd string command name
+---@param bin_dir string relative path to the bin directory
+---@param source string? path to search from
+---@return string
 local function resolve_cmd(cmd, bin_dir, source)
   if not source then
     return cmd
@@ -52,18 +52,18 @@ end
 
 --- Returns the resolved command path under node_modules/.bin if available,
 --- otherwise falls back to the global command name.
---- @param cmd string command name
---- @param source string? path to search from
---- @return string
+---@param cmd string command name
+---@param source string? path to search from
+---@return string
 function M.resolve_node_cmd(cmd, source)
   return resolve_cmd(cmd, 'node_modules/.bin', source)
 end
 
 --- Returns the resolved command path under .venv/bin if available,
 --- otherwise falls back to the global command name.
---- @param cmd string command name
---- @param source string? path to search from
---- @return string
+---@param cmd string command name
+---@param source string? path to search from
+---@return string
 function M.resolve_venv_cmd(cmd, source)
   return resolve_cmd(cmd, '.venv/bin', source)
 end
