@@ -4,34 +4,14 @@ return {
     cond = not vim.g.vscode,
     cmd = 'ConformInfo',
     event = 'BufWritePre',
+    ---@param opts conform.setupOpts
     opts = function(_, opts)
-      local util = require('conform.util')
       opts.format_on_save = {
         lsp_format = 'fallback',
         timeout_ms = 3000,
       }
       opts.formatters = {
-        textlint = {
-          command = util.from_node_modules('textlint'),
-          args = {
-            '--fix',
-            '--dry-run',
-            '--stdin',
-            '--stdin-filename',
-            '$FILENAME',
-            '--format',
-            'fixed-result',
-          },
-          cwd = util.root_file({
-            -- refs: https://textlint.github.io/docs/configuring.html
-            '.textlintrc',
-            '.textlintrc.js',
-            '.textlintrc.json',
-            '.textlintrc.yml',
-            '.textlintrc.yaml',
-          }),
-          require_cwd = true,
-        },
+        textlint = require('ponko2.conform.formatters.textlint'),
       }
       opts.formatters_by_ft = {
         css = { 'prettier' },
