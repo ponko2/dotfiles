@@ -79,20 +79,6 @@ vim.api.nvim_create_autocmd('OptionSet', {
   end,
 })
 
--- バッファ切り替え時にloclistを同期
-vim.api.nvim_create_autocmd('BufEnter', {
-  group = id,
-  callback = function()
-    if
-      vim.bo.buftype == ''
-      and vim.fn.win_gettype() ~= 'loclist'
-      and vim.fn.getloclist(0, { winid = 0 }).winid ~= 0
-    then
-      vim.diagnostic.setloclist({ open = false })
-    end
-  end,
-})
-
 -- LSP
 -- refs: https://neovim.io/doc/user/lsp/#lsp-attach
 vim.api.nvim_create_autocmd('LspAttach', {
