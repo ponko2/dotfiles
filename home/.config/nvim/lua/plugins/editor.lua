@@ -2,6 +2,8 @@ return {
   {
     'folke/snacks.nvim',
     cond = not vim.g.vscode,
+    lazy = false,
+    priority = 1000,
     keys = {
       {
         '<Leader>fb',

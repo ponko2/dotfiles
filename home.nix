@@ -79,6 +79,7 @@
       extraPackages = with pkgs; [
         clippy
         copilot-language-server
+        coreutils-prefixed
         lua-language-server
         luarocks
         nixd
