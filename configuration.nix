@@ -17,6 +17,9 @@
   ];
   homebrew = {
     enable = true;
+    brews = [
+      "gemini-cli"
+    ];
     casks = [
       "1password"
       "1password-cli"
@@ -31,6 +34,7 @@
       "monitorcontrol"
       "nikitabobko/tap/aerospace"
       "visual-studio-code"
+      "zed"
     ];
     onActivation = {
       autoUpdate = true;

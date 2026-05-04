@@ -9,6 +9,7 @@ brew "exiftool"
 brew "eza"
 brew "fd"
 brew "fzf"
+brew "gemini-cli"
 brew "gh"
 brew "ghq"
 brew "git"
@@ -75,6 +76,7 @@ if OS.mac?
   cask "nikitabobko/tap/aerospace"
   cask "rectangle"
   cask "visual-studio-code"
+  cask "zed"
 
   ## Fonts
   cask "font-udev-gothic"
