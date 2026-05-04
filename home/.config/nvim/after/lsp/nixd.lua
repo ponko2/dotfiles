@@ -1,4 +1,5 @@
 return {
+  ---@type lspconfig.settings.nixd
   settings = {
     nixd = {
       nixpkgs = {

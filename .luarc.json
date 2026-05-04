@@ -13,6 +13,7 @@
       "${env:XDG_DATA_HOME}/nvim/lazy/gitsigns.nvim/lua",
       "${env:XDG_DATA_HOME}/nvim/lazy/lazy.nvim/lua",
       "${env:XDG_DATA_HOME}/nvim/lazy/nvim-lint/lua",
+      "${env:XDG_DATA_HOME}/nvim/lazy/nvim-lspconfig/lua",
       "${env:XDG_DATA_HOME}/nvim/lazy/snacks.nvim/lua",
       "${env:XDG_DATA_HOME}/nvim/lazy/yazi.nvim/lua"
     ],

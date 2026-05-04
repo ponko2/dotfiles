@@ -77,10 +77,12 @@
     neovim = {
       enable = true;
       extraPackages = with pkgs; [
+        clippy
         copilot-language-server
         lua-language-server
         luarocks
         nixd
+        rust-analyzer
         tree-sitter
         ty
         typescript-language-server
