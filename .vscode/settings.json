@@ -76,7 +76,7 @@
   },
   "oxc.requireConfig": true,
   "python.analysis.autoImportCompletions": true,
-  "terminal.integrated.fontFamily": "'UDEV Gothic', Menlo, Monaco, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "'UDEV Gothic NF', Menlo, Monaco, 'Courier New', monospace",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.stickyScroll.enabled": false,
