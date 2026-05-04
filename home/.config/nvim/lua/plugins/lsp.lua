@@ -30,6 +30,7 @@ return {
         'oxfmt',
         'oxlint',
         'ruff',
+        'rust_analyzer',
         'stylua',
         'ts_ls',
         'ty',

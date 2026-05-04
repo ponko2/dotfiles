@@ -146,6 +146,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
       })
     end
 
+    if client:supports_method('textDocument/inlayHint', ev.buf) then
+      vim.keymap.set('n', 'grh', function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+      end, { desc = 'Toggle inlay hints' })
+    end
+
     if client:supports_method('textDocument/inlineCompletion', ev.buf) then
       vim.lsp.inline_completion.enable(true, { bufnr = ev.buf })
       vim.keymap.set('i', '<Tab>', function()
