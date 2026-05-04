@@ -40,7 +40,7 @@
   "vim-operator-replace": { "branch": "master", "commit": "1345a556a321a092716e149d4765a5e17c0e9f0f" },
   "vim-operator-user": { "branch": "master", "commit": "c3dfd41c1ed516b4b901c97562e644de62c367aa" },
   "vim-sandwich": { "branch": "master", "commit": "74cf93d58ccc567d8e2310a69860f1b93af19403" },
-  "vimdoc-ja": { "branch": "master", "commit": "0c6f6d00d130a13b8319934c951bbc12cdc14810" },
+  "vimdoc-ja": { "branch": "master", "commit": "a6a9d3f7e61c9a9328aa5d7f7455ccdb6ee5f4dd" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
-  "yazi.nvim": { "branch": "main", "commit": "ad672fc3ba99920bc5db408ff25c0cb2e8201a8e" }
+  "yazi.nvim": { "branch": "main", "commit": "37290c539dbc5ea6f4c4ef10ffe1de25cab33015" }
 }
