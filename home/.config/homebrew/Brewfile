@@ -47,6 +47,7 @@ brew "yamllint"
 ## Neovim
 brew "clippy"
 brew "copilot-language-server"
+brew "coreutils"
 brew "lua-language-server"
 brew "luarocks"
 brew "neovim"
