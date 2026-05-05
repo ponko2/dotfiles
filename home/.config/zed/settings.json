@@ -1,0 +1,36 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "auto_install_extensions": {
+    "nix": true,
+    "oxc": true,
+    "toml": true
+  },
+  "buffer_font_family": "UDEV Gothic",
+  "buffer_font_size": 16.0,
+  "cli_default_open_behavior": "new_window",
+  "inlay_hints": {
+    "toggle_on_modifiers_press": {
+      "alt": true,
+      "control": true
+    }
+  },
+  "show_whitespaces": "boundary",
+  "terminal": {
+    "font_family": "UDEV Gothic NF",
+    "max_scroll_history_lines": 10000
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Gruvbox Dark"
+  },
+  "vim_mode": true,
+  "wrap_guides": [120]
+}

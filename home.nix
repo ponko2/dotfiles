@@ -16,6 +16,7 @@
           ".config/starship.toml"
           ".config/yamllint"
           ".config/yazi"
+          ".config/zed"
           ".config/zsh-abbr"
           ".local/bin/rfv"
           ".local/bin/update-system"
