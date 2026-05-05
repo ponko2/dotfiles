@@ -60,3 +60,7 @@ Temporary Items
 
 # Visio autosave temporary files
 *.~vsd*
+
+### Neovim ###
+.nvim.lua
+.nvim/
