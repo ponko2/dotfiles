@@ -92,15 +92,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
         buffer = ev.buf,
         callback = function()
           local buf = require('ponko2.lsp.buf')
-          local code_actions_on_save = {
-            javascript = { 'source.fixAll', 'source.organizeImports' },
-            javascriptreact = { 'source.fixAll', 'source.organizeImports' },
-            python = { 'source.fixAll', 'source.organizeImports' },
-            typescript = { 'source.fixAll', 'source.organizeImports' },
-            typescriptreact = { 'source.fixAll', 'source.organizeImports' },
-            vue = { 'source.fixAll', 'source.organizeImports' },
-          }
-          local kinds = code_actions_on_save[vim.bo[ev.buf].filetype] or {}
+          ---@type string[]
+          local kinds = vim.tbl_get(
+            vim.g,
+            'project_settings',
+            'filetypes',
+            vim.bo[ev.buf].filetype,
+            'code_actions_on_save'
+          ) or { 'source.fixAll', 'source.organizeImports' }
           for _, kind in ipairs(kinds) do
             buf.code_action({
               diagnostics = {},
