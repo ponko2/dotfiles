@@ -35,4 +35,5 @@ require('config.diagnostic')
 -- Plugins:
 require('config.lazy')
 
+vim.opt.exrc = true
 vim.opt.secure = true

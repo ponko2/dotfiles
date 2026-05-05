@@ -3,6 +3,7 @@ local M = {}
 ---@param action lsp.Command|lsp.CodeAction
 ---@param client vim.lsp.Client
 ---@param context lsp.HandlerContext
+---@see https://github.com/neovim/neovim/blob/v0.12.2/runtime/lua/vim/lsp/buf.lua#L1247-L1260
 local function apply_action(action, client, context)
   if action.edit then
     vim.lsp.util.apply_workspace_edit(action.edit, client.offset_encoding)
@@ -17,6 +18,7 @@ end
 
 ---@param action lsp.Command|lsp.CodeAction
 ---@param context lsp.CodeActionContext
+---@see https://github.com/neovim/neovim/blob/v0.12.2/runtime/lua/vim/lsp/buf.lua#L1198-L1231
 local function action_filter(action, context)
   if context.only then
     if not action.kind then
@@ -42,7 +44,7 @@ end
 ---@param context lsp.CodeActionContext
 ---@see https://github.com/neovim/neovim/issues/25259
 ---@see https://github.com/neovim/neovim/issues/31176
----@see https://github.com/neovim/neovim/blob/v0.12.2/runtime/lua/vim/lsp/buf.lua#L1247-L1260
+---@see https://github.com/neovim/neovim/blob/v0.12.2/runtime/lua/vim/lsp/buf.lua#L1345-L1419
 function M.code_action(context)
   vim.validate('context', context, 'table')
 
@@ -66,29 +68,33 @@ function M.code_action(context)
     local client = assert(vim.lsp.get_client_by_id(entry.context.client_id))
     local bufnr = assert(entry.context.bufnr, 'Must have buffer number')
     for _, action in pairs(entry.result or {}) do
-      if action_filter(action, context) then
+      (function()
+        if not action_filter(action, context) then
+          return
+        end
         if type(action.title) == 'string' and type(action.command) == 'string' then
           apply_action(action, client, entry.context)
-        elseif
-          not (action.edit and action.command)
-          and client:supports_method('codeAction/resolve')
-        then
-          local resolved =
-            assert(client:request_sync('codeAction/resolve', action, timeout_ms, bufnr))
-          local err, resolved_action = resolved.err, resolved.result
-          if err then
-            if action.edit or action.command then
-              apply_action(action, client, entry.context)
-            else
-              vim.notify(err.code .. ': ' .. err.message, vim.log.levels.ERROR)
-            end
-          else
-            apply_action(resolved_action, client, entry.context)
-          end
-        else
-          apply_action(action, client, entry.context)
+          return
         end
-      end
+        local needs_resolve = not (action.edit and action.command)
+          and client:supports_method('codeAction/resolve')
+        if not needs_resolve then
+          apply_action(action, client, entry.context)
+          return
+        end
+        local resolved =
+          assert(client:request_sync('codeAction/resolve', action, timeout_ms, bufnr))
+        local err, resolved_action = resolved.err, resolved.result
+        if err then
+          if action.edit or action.command then
+            apply_action(action, client, entry.context)
+            return
+          end
+          vim.notify(err.code .. ': ' .. err.message, vim.log.levels.ERROR)
+          return
+        end
+        apply_action(resolved_action, client, entry.context)
+      end)()
     end
   end
 end
