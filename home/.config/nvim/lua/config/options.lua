@@ -108,7 +108,7 @@ end
 vim.opt.autocomplete = true
 vim.opt.completeopt:remove('menu')
 vim.opt.completeopt:prepend({ 'menu', 'menuone' })
-vim.opt.completeopt:append({ 'noselect', 'popup' })
+vim.opt.completeopt:append({ 'nearest', 'noselect', 'popup' })
 
 -- 補完のポップアップメニュー最大表示件数
 vim.opt.pumheight = 20
