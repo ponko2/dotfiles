@@ -35,5 +35,8 @@ require('config.diagnostic')
 -- Plugins:
 require('config.lazy')
 
+-- UI2:
+require('vim._core.ui2').enable()
+
 vim.opt.exrc = true
 vim.opt.secure = true
