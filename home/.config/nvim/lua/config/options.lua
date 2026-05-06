@@ -116,6 +116,7 @@ vim.opt.pumheight = 20
 -- ポップアップメニューの角を丸くする
 -- refs: https://github.com/neovim/neovim/issues/38248
 vim.opt.pumborder = 'rounded'
+vim.opt.winborder = 'rounded'
 if vim.api.nvim__complete_set then
   local complete_set = vim.api.nvim__complete_set
   ---@diagnostic disable-next-line: duplicate-set-field
