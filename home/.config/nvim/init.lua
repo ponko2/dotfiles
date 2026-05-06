@@ -34,6 +34,7 @@ require('config.diagnostic')
 
 -- Plugins:
 require('config.lazy')
+vim.cmd('packadd nohlsearch')
 vim.cmd('packadd nvim.undotree')
 
 -- UI2:
