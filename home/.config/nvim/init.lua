@@ -34,6 +34,7 @@ require('config.diagnostic')
 
 -- Plugins:
 require('config.lazy')
+vim.cmd('packadd nvim.undotree')
 
 -- UI2:
 require('vim._core.ui2').enable()

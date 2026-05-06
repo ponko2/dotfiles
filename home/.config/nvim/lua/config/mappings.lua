@@ -34,6 +34,9 @@ vim.keymap.set(
 -- cd to git root
 vim.keymap.set('n', '<Leader>gt', '<Cmd>CdGitRoot<CR>', { desc = 'cd to git root' })
 
+-- undotree
+vim.keymap.set('n', '<Leader>u', '<Cmd>Undotree<CR>', { desc = 'undotree' })
+
 --------------------------------------------------------------------------------
 -- Command-line mode keymappings:
 
