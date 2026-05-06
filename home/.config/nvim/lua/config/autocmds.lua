@@ -41,20 +41,23 @@ vim.api.nvim_create_autocmd('InsertLeave', {
 })
 
 -- Make directory automatically.
-vim.api.nvim_create_autocmd('BufWritePre', {
+-- refs: https://neovim.io/doc/user/editing/#%2B%2Bp
+vim.api.nvim_create_autocmd({ 'BufWritePre', 'FileWritePre' }, {
   group = id,
   pattern = '*',
   callback = function()
+    if vim.fn.expand('%'):match('://') or vim.bo.buftype ~= '' then
+      return
+    end
     local dir = vim.fn.expand('<afile>:p:h')
+    if vim.fn.isdirectory(dir) == 1 then
+      return
+    end
     if
-      vim.fn.isdirectory(dir) == 0
-      and vim.opt_local.buftype:get() == ''
-      and (
-        vim.v.cmdbang == 1
-        or vim
-          .regex([[\c^y\%[es]$]])
-          :match_str(vim.fn.input(('"%s" does not exist. Create? [y/N]: '):format(dir)))
-      )
+      vim.v.cmdbang == 1
+      or vim
+        .regex([[\c^y\%[es]$]])
+        :match_str(vim.fn.input(('"%s" does not exist. Create? [y/N]: '):format(dir)))
     then
       vim.fn.mkdir(dir, 'p')
     end
