@@ -2,12 +2,30 @@
 -- Commands:
 --------------------------------------------------------------------------------
 
+---@param msg string Content of the notification to show to the user.
+---@param level integer|nil One of the values from |vim.log.levels|.
+local function notify(msg, level)
+  vim.notify(msg, level or vim.log.levels.INFO)
+end
+
+--- @param cmd string[] Command to execute
+--- @param opts? { cwd?: string, on_exit?: fun(out: vim.SystemCompleted) }
+--- @return vim.SystemObj
+local function run_cmd(cmd, opts)
+  opts = opts or {}
+  return vim.system(
+    cmd,
+    { cwd = opts.cwd or vim.fn.getcwd(), text = true },
+    vim.schedule_wrap(opts.on_exit or function() end)
+  )
+end
+
 --- Like the yank operator.
 ---@param value string
 local function yank(value)
   vim.cmd([[normal! "_y]])
   vim.fn.setreg('+', value)
-  vim.notify(value:gsub('%%', '%%%%'))
+  notify(value:gsub('%%', '%%%%'))
 end
 
 --- Prefer the visual selection over the command range in visual mode.
@@ -27,9 +45,9 @@ end
 
 -- cd to git root
 vim.api.nvim_create_user_command('CdGitRoot', function()
-  local result = vim.system({ 'git', 'rev-parse', '--show-toplevel' }, { text = true }):wait()
+  local result = run_cmd({ 'git', 'rev-parse', '--show-toplevel' }):wait()
   if result.code ~= 0 then
-    vim.notify(vim.trim(result.stderr), vim.log.levels.ERROR)
+    notify(vim.trim(result.stderr), vim.log.levels.ERROR)
     return
   end
   local root = vim.trim(result.stdout)
@@ -37,7 +55,7 @@ vim.api.nvim_create_user_command('CdGitRoot', function()
     return
   end
   vim.api.nvim_set_current_dir(root)
-  vim.notify(vim.fn.fnamemodify(root, ':~'))
+  notify(vim.fn.fnamemodify(root, ':~'))
 end, {})
 
 -- grep
@@ -61,7 +79,7 @@ end, { range = '%' })
 vim.api.nvim_create_user_command('YankAgentContext', function(opts)
   local path = vim.fn.expand('%:.')
   if path == '' or vim.bo.buftype ~= '' then
-    vim.notify('Not a file buffer', vim.log.levels.WARN)
+    notify('Not a file buffer', vim.log.levels.WARN)
     return
   end
   if opts.bang then
