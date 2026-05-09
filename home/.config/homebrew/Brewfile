@@ -56,8 +56,8 @@ brew "rust-analyzer"
 brew "tree-sitter"
 brew "tree-sitter-cli"
 brew "ty"
-brew "typescript-language-server"
 brew "vscode-langservers-extracted"
+brew "vtsls"
 brew "vue-language-server"
 
 if OS.mac?

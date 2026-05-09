@@ -34,8 +34,8 @@ return {
         'ruff',
         'rust_analyzer',
         'stylua',
-        'ts_ls',
         'ty',
+        'vtsls',
         'vue_ls',
       })
       vim.lsp.on_type_formatting.enable()

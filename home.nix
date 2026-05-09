@@ -87,8 +87,8 @@
         rust-analyzer
         tree-sitter
         ty
-        typescript-language-server
         vscode-langservers-extracted
+        vtsls
         vue-language-server
       ];
       sideloadInitLua = true;
