@@ -89,32 +89,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
 
-    if client:supports_method('textDocument/codeAction') then
-      vim.api.nvim_create_autocmd('BufWritePre', {
-        group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
-        buffer = ev.buf,
-        callback = function()
-          local buf = require('ponko2.lsp.buf')
-          ---@type string[]
-          local kinds = vim.tbl_get(
-            vim.g,
-            'project_settings',
-            'filetypes',
-            vim.bo[ev.buf].filetype,
-            'code_actions_on_save'
-          ) or { 'source.fixAll', 'source.organizeImports' }
-          for _, kind in ipairs(kinds) do
-            buf.apply_code_action({
-              bufnr = ev.buf,
-              kind = kind,
-              timeout_ms = 3000,
-              triggerKind = vim.lsp.protocol.CodeActionTriggerKind.Automatic,
-            })
-          end
-        end,
-      })
-    end
-
     if client:supports_method('textDocument/codeLens') then
       vim.lsp.codelens.enable(true, { bufnr = ev.buf })
     end
