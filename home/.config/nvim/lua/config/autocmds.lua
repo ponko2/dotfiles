@@ -104,9 +104,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
             'code_actions_on_save'
           ) or { 'source.fixAll', 'source.organizeImports' }
           for _, kind in ipairs(kinds) do
-            buf.code_action({
-              diagnostics = {},
-              only = { kind },
+            buf.apply_code_action({
+              bufnr = ev.buf,
+              kind = kind,
+              timeout_ms = 3000,
               triggerKind = vim.lsp.protocol.CodeActionTriggerKind.Automatic,
             })
           end
