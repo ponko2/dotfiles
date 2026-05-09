@@ -2,7 +2,7 @@ local M = {}
 
 ---@param action lsp.Command|lsp.CodeAction
 ---@param client vim.lsp.Client
----@param context lsp.HandlerContext
+---@param context {bufnr: integer}
 ---@see https://github.com/neovim/neovim/blob/v0.12.2/runtime/lua/vim/lsp/buf.lua#L1247-L1260
 local function apply_action(action, client, context)
   if action.edit then
@@ -10,8 +10,7 @@ local function apply_action(action, client, context)
   end
   local action_command = action.command
   if action_command then
-    local command = type(action_command) == 'table' and action_command or action
-    ---@cast command lsp.Command
+    local command = type(action_command) == 'table' and action_command or action ---@cast command lsp.Command
     client:exec_cmd(command, context)
   end
 end
@@ -58,8 +57,7 @@ function M.code_action(context)
 
   ---@type table<integer, vim.lsp.CodeActionResultEntry>
   local results = assert(vim.lsp.buf_request_sync(buf, 'textDocument/codeAction', function(client)
-    ---@type lsp.CodeActionParams
-    local params = vim.lsp.util.make_range_params(win, client.offset_encoding)
+    local params = vim.lsp.util.make_range_params(win, client.offset_encoding) ---@type lsp.CodeActionParams
     params.context = context
     return params
   end, timeout_ms))

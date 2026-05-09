@@ -6,6 +6,7 @@ local function resolve_cmd(source)
   return fs.resolve_node_cmd('oxfmt', source)
 end
 
+---@type vim.lsp.Config
 return {
   cmd = function(dispatchers, config)
     local cmd = resolve_cmd((config or {}).root_dir)
