@@ -1,5 +1,49 @@
 local M = {}
 
+---@param clients vim.lsp.Client[]
+---@param method vim.lsp.protocol.Method.ClientToServer.Request
+---@param params? table|(fun(client: vim.lsp.Client, bufnr: integer): table?)
+---@param timeout_ms? integer
+---@return table<integer, {err: lsp.ResponseError?, result: any}>?
+---@return string?
+local function clients_request_sync(clients, method, params, bufnr, timeout_ms)
+  local client_request_ids = {} ---@type table<integer,integer>
+  local remaining = #clients
+  local responses = {} ---@type table<integer, {err: lsp.ResponseError?, result: any}>
+
+  for _, client in ipairs(clients) do
+    local cparams = type(params) == 'function' and params(client, bufnr) or params --[[@as table?]]
+    local request_success, request_id = client:request(
+      method,
+      cparams,
+      function(err, result, context)
+        responses[context.client_id] = { err = err, result = result }
+        remaining = remaining - 1
+      end,
+      bufnr
+    )
+    if request_success then
+      client_request_ids[client.id] = request_id
+    end
+  end
+
+  local wait_result, reason = vim.wait(timeout_ms or 1000, function()
+    return remaining == 0
+  end, 10)
+
+  if not wait_result then
+    for client_id, request_id in pairs(client_request_ids) do
+      local client = vim.lsp.get_client_by_id(client_id)
+      if client and client.requests[request_id] then
+        client:cancel_request(request_id)
+      end
+    end
+    return nil, ({ [-1] = 'timeout', [-2] = 'interrupted', [-3] = 'error' })[reason]
+  end
+
+  return responses
+end
+
 ---@class ponko2.lsp.buf.apply_code_action.Opts
 ---@field bufnr integer
 ---@field kind string
@@ -56,19 +100,30 @@ function M.apply_code_action(opts)
   local timeout_ms = opts.timeout_ms or 1000
   local win = vim.api.nvim_get_current_win()
 
-  vim.iter(clients):each(function(client) ---@param client vim.lsp.Client
-    local params = vim.lsp.util.make_range_params(win, client.offset_encoding) ---@type lsp.CodeActionParams
-    params.context = {
-      diagnostics = {},
-      only = { opts.kind },
-      triggerKind = opts.triggerKind or vim.lsp.protocol.CodeActionTriggerKind.Invoked,
-    }
+  ---@type table<integer, {err: lsp.ResponseError?, result: (lsp.Command|lsp.CodeAction)[]?}>?, string?
+  local responses, requests_fail_reason = clients_request_sync(
+    clients,
+    'textDocument/codeAction',
+    function(client)
+      local params = vim.lsp.util.make_range_params(win, client.offset_encoding) ---@type lsp.CodeActionParams
+      params.context = {
+        diagnostics = {},
+        only = { opts.kind },
+        triggerKind = opts.triggerKind or vim.lsp.protocol.CodeActionTriggerKind.Invoked,
+      }
+      return params
+    end,
+    bufnr,
+    timeout_ms
+  )
+  if not responses then
+    vim.notify(requests_fail_reason, vim.log.levels.ERROR)
+    return
+  end
 
-    ---@type {err: lsp.ResponseError?, result: (lsp.Command|lsp.CodeAction)[]?}?, string?
-    local response, request_fail_reason =
-      client:request_sync('textDocument/codeAction', params, timeout_ms, bufnr)
+  vim.iter(clients):each(function(client) ---@param client vim.lsp.Client
+    local response = responses[client.id]
     if not response then
-      vim.notify(('%s: %s'):format(client.name, request_fail_reason), vim.log.levels.ERROR)
       return
     end
     if response.err then
