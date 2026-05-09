@@ -45,7 +45,7 @@ local function resolve_cmd(cmd, bin_dir, source)
   local bin_path = vim.fs.joinpath(vim.fs.normalize(bin_dir), cmd)
   local root_dir = vim.fs.root(source, function(name, path)
     return vim.startswith(bin_path, name .. '/')
-      and vim.uv.fs_access(vim.fs.joinpath(path, bin_path), 'X')
+      and vim.uv.fs_access(vim.fs.joinpath(path, bin_path), 'X') == true
   end)
   return root_dir and vim.fs.joinpath(root_dir, bin_path) or cmd
 end

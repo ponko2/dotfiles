@@ -8,6 +8,7 @@ local M = {}
 function M.apply_for_venv(linter)
   return function()
     if type(linter) == 'function' then
+      ---@type lint.Linter
       linter = linter()
     end
     local cmd = fs.resolve_venv_cmd(linter.cmd, vim.api.nvim_buf_get_name(0))
