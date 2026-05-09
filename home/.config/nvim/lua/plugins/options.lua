@@ -24,6 +24,7 @@ return {
           if vim.wo.diff then
             vim.cmd.normal({ ']c', bang = true })
           else
+            ---@diagnostic disable-next-line: missing-fields
             gitsigns.nav_hunk('next', { target = 'all' })
           end
         end, { desc = 'Next hunk' })
@@ -31,6 +32,7 @@ return {
           if vim.wo.diff then
             vim.cmd.normal({ '[c', bang = true })
           else
+            ---@diagnostic disable-next-line: missing-fields
             gitsigns.nav_hunk('prev', { target = 'all' })
           end
         end, { desc = 'Previous hunk' })
