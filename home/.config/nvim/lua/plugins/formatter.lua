@@ -15,13 +15,14 @@ return {
       }
       opts.formatters_by_ft = {
         css = { 'prettier' },
-        javascript = { 'prettier' },
-        javascriptreact = { 'prettier' },
+        javascript = { 'prettier', name = 'oxfmt' },
+        javascriptreact = { 'prettier', name = 'oxfmt' },
+        lua = { name = 'stylua' },
         markdown = { 'textlint' },
         text = { 'textlint' },
-        typescript = { 'prettier' },
-        typescriptreact = { 'prettier' },
-        vue = { 'prettier' },
+        typescript = { 'prettier', name = 'oxfmt' },
+        typescriptreact = { 'prettier', name = 'oxfmt' },
+        vue = { 'prettier', name = 'oxfmt' },
       }
     end,
   },
