@@ -56,7 +56,7 @@ function M.apply_code_action(opts)
   local timeout_ms = opts.timeout_ms or 1000
   local win = vim.api.nvim_get_current_win()
 
-  vim.iter(clients):each(function(client)
+  vim.iter(clients):each(function(client) ---@param client vim.lsp.Client
     local params = vim.lsp.util.make_range_params(win, client.offset_encoding) ---@type lsp.CodeActionParams
     params.context = {
       diagnostics = {},
@@ -64,7 +64,7 @@ function M.apply_code_action(opts)
       triggerKind = opts.triggerKind or vim.lsp.protocol.CodeActionTriggerKind.Invoked,
     }
 
-    ---@type {err: lsp.ResponseError?, result: (lsp.Command|lsp.CodeAction)[]?}, string?
+    ---@type {err: lsp.ResponseError?, result: (lsp.Command|lsp.CodeAction)[]?}?, string?
     local response, request_fail_reason =
       client:request_sync('textDocument/codeAction', params, timeout_ms, bufnr)
     if not response then
@@ -76,6 +76,7 @@ function M.apply_code_action(opts)
       return
     end
 
+    ---@param action lsp.Command|lsp.CodeAction
     vim.iter(response.result or {}):each(function(action)
       if action.disabled or not action.kind or not matches_requested(action.kind) then
         return
@@ -88,7 +89,7 @@ function M.apply_code_action(opts)
         apply(action, client)
         return
       end
-      ---@type {err: lsp.ResponseError?, result: (lsp.Command|lsp.CodeAction)?}, string?
+      ---@type {err: lsp.ResponseError?, result: (lsp.Command|lsp.CodeAction)?}?, string?
       local resolved, resolve_fail_reason =
         client:request_sync('codeAction/resolve', action, timeout_ms, bufnr)
       if not resolved then
