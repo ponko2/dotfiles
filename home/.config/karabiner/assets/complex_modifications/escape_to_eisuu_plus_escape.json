@@ -14,6 +14,7 @@
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.microsoft\\.VSCode$",
                 "^com\\.mitchellh\\.ghostty$",
+                "^dev\\.zed\\.Zed$",
                 "^org\\.vim\\."
               ],
               "type": "frontmost_application_if"
@@ -36,6 +37,7 @@
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.microsoft\\.VSCode$",
                 "^com\\.mitchellh\\.ghostty$",
+                "^dev\\.zed\\.Zed$",
                 "^org\\.vim\\."
               ],
               "type": "frontmost_application_if"
