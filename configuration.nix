@@ -83,6 +83,7 @@
         persistent-apps = [
           { app = "/Applications/Google Chrome.app"; }
           { app = "/Applications/cmux.app"; }
+          { app = "/Applications/Zed.app"; }
           { app = "/Applications/Antigravity.app"; }
           { app = "/Applications/DevToys.app"; }
           { app = "/Applications/1Password.app"; }
