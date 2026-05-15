@@ -7,6 +7,11 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
   "auto_install_extensions": {
     "nix": true,
     "oxc": true,
@@ -15,11 +20,23 @@
   "buffer_font_family": "UDEV Gothic",
   "buffer_font_size": 16.0,
   "cli_default_open_behavior": "new_window",
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "inlay_hints": {
     "toggle_on_modifiers_press": {
       "alt": true,
       "control": true
     }
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "project_panel": {
+    "dock": "left"
   },
   "show_whitespaces": "boundary",
   "terminal": {
