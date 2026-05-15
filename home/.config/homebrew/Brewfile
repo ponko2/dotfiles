@@ -64,7 +64,6 @@ if OS.mac?
   ## GUI Applications
   cask "1password"
   cask "1password-cli"
-  cask "antigravity"
   cask "appcleaner"
   cask "cmux"
   cask "devtoys"

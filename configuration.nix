@@ -23,7 +23,6 @@
     casks = [
       "1password"
       "1password-cli"
-      "antigravity"
       "appcleaner"
       "cmux"
       "devtoys"
@@ -82,10 +81,8 @@
         # 永続的なアプリケーション
         persistent-apps = [
           { app = "/Applications/Google Chrome.app"; }
-          { app = "/Applications/Ghostty.app"; }
           { app = "/Applications/cmux.app"; }
-          { app = "/Applications/Visual Studio Code.app"; }
-          { app = "/Applications/Antigravity.app"; }
+          { app = "/Applications/Zed.app"; }
           { app = "/Applications/DevToys.app"; }
           { app = "/Applications/1Password.app"; }
         ];

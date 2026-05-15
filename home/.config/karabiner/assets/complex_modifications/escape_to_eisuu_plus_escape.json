@@ -10,10 +10,10 @@
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.cmuxterm\\.app$",
-                "^com\\.google\\.antigravity$",
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.microsoft\\.VSCode$",
                 "^com\\.mitchellh\\.ghostty$",
+                "^dev\\.zed\\.Zed$",
                 "^org\\.vim\\."
               ],
               "type": "frontmost_application_if"
@@ -32,10 +32,10 @@
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.cmuxterm\\.app$",
-                "^com\\.google\\.antigravity$",
                 "^com\\.googlecode\\.iterm2$",
                 "^com\\.microsoft\\.VSCode$",
                 "^com\\.mitchellh\\.ghostty$",
+                "^dev\\.zed\\.Zed$",
                 "^org\\.vim\\."
               ],
               "type": "frontmost_application_if"
