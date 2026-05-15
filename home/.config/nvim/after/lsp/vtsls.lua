@@ -7,9 +7,11 @@ return {
     'typescriptreact',
     'vue',
   },
+  ---@type lspconfig.settings.vtsls
   settings = {
     vtsls = {
       tsserver = {
+        autoUseWorkspaceTsdk = true,
         globalPlugins = {
           {
             name = '@vue/typescript-plugin',
@@ -27,6 +29,7 @@ return {
             end)(),
             languages = { 'vue' },
             configNamespace = 'typescript',
+            enableForWorkspaceTypeScriptVersions = true,
           },
         },
       },
