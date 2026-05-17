@@ -14,7 +14,7 @@
   "nvim-bqf": { "branch": "main", "commit": "c282a62bec6c0621a1ef5132aa3f4c9fc4dcc2c7" },
   "nvim-hlslens": { "branch": "main", "commit": "be2d7b2be01860b5445a007ff2bc72b29896db6b" },
   "nvim-lint": { "branch": "master", "commit": "665525810630701b84181e4d9eefd24b49845b29" },
-  "nvim-lspconfig": { "branch": "master", "commit": "8f7e64066e2641d5e7d494962a9c7051e3d38dd5" },
+  "nvim-lspconfig": { "branch": "master", "commit": "f9349d4d99e7d66403ae8bf4fbd357b154dca7a7" },
   "nvim-surround": { "branch": "main", "commit": "2e93e154de9ff326def6480a4358bfc149d5da2c" },
   "nvim-treesitter": { "branch": "main", "commit": "4916d6592ede8c07973490d9322f187e07dfefac" },
   "nvim-treesitter-textobjects": { "branch": "main", "commit": "851e865342e5a4cb1ae23d31caf6e991e1c99f1e" },
@@ -40,7 +40,7 @@
   "vim-operator-replace": { "branch": "master", "commit": "1345a556a321a092716e149d4765a5e17c0e9f0f" },
   "vim-operator-user": { "branch": "master", "commit": "c3dfd41c1ed516b4b901c97562e644de62c367aa" },
   "vim-sandwich": { "branch": "master", "commit": "74cf93d58ccc567d8e2310a69860f1b93af19403" },
-  "vimdoc-ja": { "branch": "master", "commit": "d5c1e8301f46cd861875a5c46c69c5fc9103085d" },
+  "vimdoc-ja": { "branch": "master", "commit": "daec182473773298baf08cddb71451b7ed5c639a" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
-  "yazi.nvim": { "branch": "main", "commit": "7e480efd8821fc7ef5ae6a9a1edd37ad9c7eedec" }
+  "yazi.nvim": { "branch": "main", "commit": "f953c346088b6f95b3239d91b5e53280ca4fa202" }
 }
