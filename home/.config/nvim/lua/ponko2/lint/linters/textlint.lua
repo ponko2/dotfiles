@@ -55,36 +55,35 @@ return {
       vim.notify_once(trimmed_output, vim.log.levels.WARN)
       return {}
     end
+    ---@type vim.json.decode.Opts
     local decode_opts = { luanil = { object = true, array = true } }
+    ---@type boolean, ponko2.lint.linters.textlint.Result[]?
     local ok, data = pcall(vim.json.decode, output, decode_opts)
     if not ok then
-      ---@type vim.Diagnostic[]
-      local diagnostics = {
-        {
-          bufnr = bufnr,
-          lnum = 0,
-          end_lnum = 0,
-          col = 0,
-          end_col = 0,
-          severity = vim.diagnostic.severity.ERROR,
-          message = 'Could not parse linter output due to: ' .. data .. '\noutput: ' .. output,
-        },
+      ---@type vim.Diagnostic
+      local diagnostic = {
+        bufnr = bufnr,
+        lnum = 0,
+        end_lnum = 0,
+        col = 0,
+        end_col = 0,
+        severity = vim.diagnostic.severity.ERROR,
+        message = ('Could not parse linter output due to: %s\noutput: %s'):format(data, output),
       }
-      return diagnostics
+      return { diagnostic }
     end
     local severities = {
       [0] = vim.diagnostic.severity.INFO,
       [1] = vim.diagnostic.severity.WARN,
       [2] = vim.diagnostic.severity.ERROR,
     }
-    ---@type vim.Diagnostic[]
-    local diagnostics = {}
-    ---@type ponko2.lint.linters.textlint.Result[]
-    local results = data or {}
-    for _, result in ipairs(results) do
-      ---@type ponko2.lint.linters.textlint.Message[]
-      local messages = result.messages or {}
-      for _, message in ipairs(messages) do
+    return vim
+      .iter(data or {})
+      :map(function(result) ---@param result ponko2.lint.linters.textlint.Result
+        return result.messages or {}
+      end)
+      :flatten()
+      :map(function(message) ---@param message ponko2.lint.linters.textlint.Message
         ---@type vim.Diagnostic
         local diagnostic = {
           bufnr = bufnr,
@@ -97,9 +96,8 @@ return {
           severity = severities[message.severity],
           source = 'textlint',
         }
-        table.insert(diagnostics, diagnostic_cmd_to_vim(diagnostic, bufnr))
-      end
-    end
-    return diagnostics
+        return diagnostic_cmd_to_vim(diagnostic, bufnr)
+      end)
+      :totable()
   end,
 }
