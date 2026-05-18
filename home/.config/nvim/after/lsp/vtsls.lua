@@ -10,8 +10,8 @@ return {
   ---@type lspconfig.settings.vtsls
   settings = {
     vtsls = {
+      autoUseWorkspaceTsdk = true,
       tsserver = {
-        autoUseWorkspaceTsdk = true,
         globalPlugins = {
           {
             name = '@vue/typescript-plugin',
