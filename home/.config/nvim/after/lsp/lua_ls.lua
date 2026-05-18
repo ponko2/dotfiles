@@ -46,6 +46,10 @@ return {
   ---@type lspconfig.settings.lua_ls
   settings = {
     Lua = {
+      -- Disable code lens
+      codeLens = {
+        enable = false,
+      },
       -- Disable the built-in formatter
       format = {
         enable = false,
