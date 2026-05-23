@@ -9,8 +9,6 @@ return {
     '--stdin',
     '--stdin-filename',
     '$FILENAME',
-    '--output-file',
-    '/dev/stdout',
     '--format',
     'fixed-result',
   },
