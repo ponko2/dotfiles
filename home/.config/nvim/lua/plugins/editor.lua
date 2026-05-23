@@ -1,5 +1,63 @@
 return {
   {
+    'dmtrKovalenko/fff',
+    cond = not vim.g.vscode,
+    dependencies = 'sainnhe/gruvbox-material',
+    build = function()
+      require('fff.download').download_or_build_binary()
+    end,
+    lazy = false,
+    keys = {
+      {
+        '<Leader>ff',
+        function()
+          require('fff').find_files()
+        end,
+        desc = 'Find files',
+      },
+      {
+        '<Leader>fg',
+        function()
+          require('fff').live_grep()
+        end,
+        desc = 'Live grep',
+      },
+      {
+        '<Leader>f/',
+        function()
+          require('fff').live_grep({
+            cwd = vim.fn.expand('%:p:h'),
+          })
+        end,
+        desc = 'Live grep (current directory)',
+      },
+    },
+    opts = {
+      hl = {
+        cursor = 'FFFCursor',
+      },
+    },
+    init = function()
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        group = vim.api.nvim_create_augroup('custom_highlights_gruvboxmaterial', {}),
+        pattern = 'gruvbox-material',
+        callback = function()
+          ---@type { background: string, foreground: string, colors_override: table<string, [string, string]> }
+          local config = vim.fn['gruvbox_material#get_configuration']()
+          ---@type { none: [string, string], bg5: [string, string] }
+          local palette = vim.fn['gruvbox_material#get_palette'](
+            config.background,
+            config.foreground,
+            config.colors_override
+          )
+          ---@type fun(group: string, fg: [string, string], bg: [string, string]): nil
+          local set_hl = vim.fn['gruvbox_material#highlight']
+          set_hl('FFFCursor', palette.none, palette.bg5)
+        end,
+      })
+    end,
+  },
+  {
     'folke/snacks.nvim',
     cond = not vim.g.vscode,
     lazy = false,
@@ -11,20 +69,6 @@ return {
           require('snacks').picker.buffers()
         end,
         desc = 'Buffers',
-      },
-      {
-        '<Leader>ff',
-        function()
-          require('snacks').picker.files()
-        end,
-        desc = 'Find files',
-      },
-      {
-        '<Leader>fg',
-        function()
-          require('snacks').picker.grep()
-        end,
-        desc = 'Live grep',
       },
       {
         '<Leader>fh',
@@ -51,15 +95,6 @@ return {
           })
         end,
         desc = 'Find repositories',
-      },
-      {
-        '<Leader>f/',
-        function()
-          require('snacks').picker.grep({
-            cwd = vim.fn.expand('%:p:h'),
-          })
-        end,
-        desc = 'Live grep (current directory)',
       },
     },
     ---@type snacks.Config
