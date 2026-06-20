@@ -63,7 +63,7 @@
                 # Command
                 lefthook
                 # Formatter
-                nixfmt-rfc-style
+                nixfmt
                 oxfmt
                 shfmt
                 stylua
