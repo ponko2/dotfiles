@@ -79,6 +79,57 @@ function fzf-git-commit_fixup-widget() {
 zle -N fzf-git-commit_fixup-widget
 bindkey '^Gc' fzf-git-commit_fixup-widget
 
+# git history fixup
+function fzf-git-history-fixup-widget() {
+  setopt local_options pipefail no_aliases 2> /dev/null
+  local sha="$(_fzf_git_hashes --no-multi)"
+  if [[ -z "$sha" ]]; then
+    zle redisplay
+    return 0
+  fi
+  BUFFER="git history fixup $sha"
+  zle accept-line
+  local ret=$?
+  zle reset-prompt
+  return $ret
+}
+zle -N fzf-git-history-fixup-widget
+bindkey '^Ghf' fzf-git-history-fixup-widget
+
+# git history reword
+function fzf-git-history-reword-widget() {
+  setopt local_options pipefail no_aliases 2> /dev/null
+  local sha="$(_fzf_git_hashes --no-multi)"
+  if [[ -z "$sha" ]]; then
+    zle redisplay
+    return 0
+  fi
+  BUFFER="git history reword $sha"
+  zle accept-line
+  local ret=$?
+  zle reset-prompt
+  return $ret
+}
+zle -N fzf-git-history-reword-widget
+bindkey '^Ghr' fzf-git-history-reword-widget
+
+# git history split
+function fzf-git-history-split-widget() {
+  setopt local_options pipefail no_aliases 2> /dev/null
+  local sha="$(_fzf_git_hashes --no-multi)"
+  if [[ -z "$sha" ]]; then
+    zle redisplay
+    return 0
+  fi
+  BUFFER="git history split $sha"
+  zle accept-line
+  local ret=$?
+  zle reset-prompt
+  return $ret
+}
+zle -N fzf-git-history-split-widget
+bindkey '^Ghs' fzf-git-history-split-widget
+
 # git rebase --interactive
 function fzf-git-rebase_interactive-widget() {
   setopt local_options pipefail no_aliases 2> /dev/null
