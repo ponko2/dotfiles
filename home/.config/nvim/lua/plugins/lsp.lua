@@ -10,7 +10,6 @@ return {
     cond = not vim.g.vscode,
     config = function()
       vim.lsp.enable({
-        'copilot',
         'eslint',
         'lua_ls',
         'nixd',
