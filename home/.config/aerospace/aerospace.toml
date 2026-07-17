@@ -255,4 +255,4 @@ alt-shift-l = ['join-with right', 'mode main']
 # Ghostty
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = 'layout floating'
+run = 'layout tiling'
