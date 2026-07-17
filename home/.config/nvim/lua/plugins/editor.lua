@@ -1,6 +1,7 @@
 return {
   {
     'dmtrKovalenko/fff',
+    tag = 'v0.10.0',
     cond = not vim.g.vscode,
     dependencies = 'sainnhe/gruvbox-material',
     build = function()
