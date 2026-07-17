@@ -1,7 +1,3 @@
-# Prevent this file from being sourced by child shells.
-if [ -n "${__HOME_ZSHENV_SOURCED-}" ]; then return; fi
-export __HOME_ZSHENV_SOURCED=1
-
 # Language
 export LANG=ja_JP.UTF-8
 
@@ -23,6 +19,10 @@ typeset -U PATH path MANPATH manpath
 # ref. http://zsh.sourceforge.net/Doc/Release/Files.html
 # ref. http://zsh.sourceforge.net/Doc/Release/Options.html#index-GLOBALRCS
 setopt no_global_rcs
+
+# path_helper reorders PATH each time it runs, so child shells skip the rest of this block.
+if [ -n "${__HOME_ZSHENV_SOURCED-}" ]; then return; fi
+export __HOME_ZSHENV_SOURCED=1
 
 # copied from /etc/zprofile
 # system-wide environment settings for zsh(1)
