@@ -6,7 +6,6 @@
 {
   environment = {
     systemPackages = with pkgs; [
-      git
       gnumake
       python3
     ];
@@ -19,6 +18,7 @@
     enable = true;
     brews = [
       "gemini-cli"
+      "git"
     ];
     casks = [
       "1password"
