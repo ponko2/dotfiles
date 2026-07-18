@@ -96,7 +96,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Run actionlint
-        uses: ponko2/actions/actionlint@0c3c7a8f3e9c65b4adfc18a5ab0f67f40ffd5814 # v1.5.0
+        uses: ponko2/actions/actionlint@236efcf85fdbe785d92e646d4003f3bb2cb069c4 # v1.6.0
   ghalint:
     name: ghalint
     if: ${{ always() && !failure() && !cancelled() &&
@@ -112,7 +112,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Run ghalint
-        uses: ponko2/actions/ghalint@0c3c7a8f3e9c65b4adfc18a5ab0f67f40ffd5814 # v1.5.0
+        uses: ponko2/actions/ghalint@236efcf85fdbe785d92e646d4003f3bb2cb069c4 # v1.6.0
   zizmor:
     name: zizmor
     if: ${{ always() && !failure() && !cancelled() &&
@@ -128,7 +128,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Run zizmor
-        uses: ponko2/actions/zizmor@0c3c7a8f3e9c65b4adfc18a5ab0f67f40ffd5814 # v1.5.0
+        uses: ponko2/actions/zizmor@236efcf85fdbe785d92e646d4003f3bb2cb069c4 # v1.6.0
   commitlint:
     name: commitlint
     if: ${{ github.event_name == 'pull_request' }}
@@ -144,7 +144,7 @@ jobs:
           filter: blob:none
           persist-credentials: false
       - name: Set up Nix
-        uses: ponko2/actions/setup-nix@0c3c7a8f3e9c65b4adfc18a5ab0f67f40ffd5814 # v1.5.0
+        uses: ponko2/actions/setup-nix@236efcf85fdbe785d92e646d4003f3bb2cb069c4 # v1.6.0
         with:
           cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
           prefetch-dependencies: false
@@ -168,7 +168,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Set up Nix
-        uses: ponko2/actions/setup-nix@0c3c7a8f3e9c65b4adfc18a5ab0f67f40ffd5814 # v1.5.0
+        uses: ponko2/actions/setup-nix@236efcf85fdbe785d92e646d4003f3bb2cb069c4 # v1.6.0
         with:
           cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
           prefetch-dependencies: false
@@ -220,7 +220,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Set up Nix
-        uses: ponko2/actions/setup-nix@0c3c7a8f3e9c65b4adfc18a5ab0f67f40ffd5814 # v1.5.0
+        uses: ponko2/actions/setup-nix@236efcf85fdbe785d92e646d4003f3bb2cb069c4 # v1.6.0
         with:
           cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
           prefetch-dependencies: false
@@ -238,7 +238,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Set up Nix
-        uses: ponko2/actions/setup-nix@0c3c7a8f3e9c65b4adfc18a5ab0f67f40ffd5814 # v1.5.0
+        uses: ponko2/actions/setup-nix@236efcf85fdbe785d92e646d4003f3bb2cb069c4 # v1.6.0
         with:
           cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
           prefetch-dependencies: false
@@ -259,7 +259,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Set up Nix
-        uses: ponko2/actions/setup-nix@0c3c7a8f3e9c65b4adfc18a5ab0f67f40ffd5814 # v1.5.0
+        uses: ponko2/actions/setup-nix@236efcf85fdbe785d92e646d4003f3bb2cb069c4 # v1.6.0
         with:
           cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
           prefetch-dependencies: false
