@@ -58,6 +58,7 @@ return {
         lua = { name = 'stylua' },
         markdown = { 'textlint', lsp_format = 'never' },
         text = { 'textlint', lsp_format = 'never' },
+        toml = { lsp_format = 'never' },
         typescript = { 'prettier', name = 'oxfmt' },
         typescriptreact = { 'prettier', name = 'oxfmt' },
         vue = { 'prettier', name = 'oxfmt' },
