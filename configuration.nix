@@ -19,12 +19,12 @@
     brews = [
       "gemini-cli"
       "git"
+      "herdr"
     ];
     casks = [
       "1password"
       "1password-cli"
       "appcleaner"
-      "cmux"
       "devtoys"
       "docker-desktop"
       "ghostty"
@@ -81,7 +81,7 @@
         # 永続的なアプリケーション
         persistent-apps = [
           { app = "/Applications/Google Chrome.app"; }
-          { app = "/Applications/cmux.app"; }
+          { app = "/Applications/Ghostty.app"; }
           { app = "/Applications/Zed.app"; }
           { app = "/Applications/DevToys.app"; }
           { app = "/Applications/1Password.app"; }
