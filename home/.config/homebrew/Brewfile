@@ -74,6 +74,7 @@ if OS.mac?
   cask "monitorcontrol"
   cask "nikitabobko/tap/aerospace"
   cask "rectangle"
+  cask "snapzy"
   cask "visual-studio-code"
   cask "zed"
 

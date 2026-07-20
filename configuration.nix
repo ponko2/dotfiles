@@ -33,6 +33,7 @@
       "karabiner-elements"
       "monitorcontrol"
       "nikitabobko/tap/aerospace"
+      "snapzy"
       "visual-studio-code"
       "zed"
     ];

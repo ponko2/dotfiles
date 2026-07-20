@@ -14,6 +14,7 @@
           ".config/karabiner"
           ".config/nvim"
           ".config/sheldon"
+          ".config/snapzy"
           ".config/starship.toml"
           ".config/yamllint"
           ".config/yazi"
