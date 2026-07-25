@@ -9,6 +9,7 @@
           ".config/bat"
           ".config/ghostty"
           ".config/git"
+          ".config/herdr"
           ".config/jj"
           ".config/karabiner"
           ".config/nvim"
