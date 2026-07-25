@@ -7,12 +7,14 @@ theme = Gruvbox Dark
 mouse-hide-while-typing = true
 background-opacity = 0.8
 background-blur = true
+initial-command = zsh -lc 'command -v herdr >/dev/null 2>&1 && exec herdr; exec zsh -l'
 notify-on-command-finish = unfocused
 notify-on-command-finish-action = bell,notify
 keybind = ctrl+bracket_left=text:\x1B
 keybind = ctrl+i=text:\x09
 keybind = ctrl+m=text:\x0D
 keybind = global:super+ctrl+backquote=toggle_quick_terminal
+keybind = super+b=text:\x1b[24~
 window-padding-x = 8
 window-padding-balance = true
 window-inherit-working-directory = false
