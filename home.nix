@@ -13,6 +13,7 @@
           ".config/jj"
           ".config/karabiner"
           ".config/nvim"
+          ".config/process-compose"
           ".config/sheldon"
           ".config/starship.toml"
           ".config/yamllint"
@@ -57,6 +58,7 @@
       nkf
       openssh
       p7zip
+      process-compose
       ripgrep
       ripgrep-all
       rsync
