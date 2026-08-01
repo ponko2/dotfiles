@@ -15,6 +15,7 @@
           ".config/nvim"
           ".config/process-compose"
           ".config/sheldon"
+          ".config/snapzy"
           ".config/starship.toml"
           ".config/yamllint"
           ".config/yazi"
