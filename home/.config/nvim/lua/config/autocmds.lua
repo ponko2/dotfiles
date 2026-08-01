@@ -89,10 +89,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
 
-    if client:supports_method('textDocument/codeLens') then
-      vim.lsp.codelens.enable(true, { bufnr = ev.buf })
-    end
-
     -- Enable auto-completion. Note: Use CTRL-Y to select an item. |complete_CTRL-Y|
     if client:supports_method('textDocument/completion') then
       local chars = {}
