@@ -15,9 +15,9 @@
   "nvim-bqf": { "branch": "main", "commit": "c282a62bec6c0621a1ef5132aa3f4c9fc4dcc2c7" },
   "nvim-hlslens": { "branch": "main", "commit": "be2d7b2be01860b5445a007ff2bc72b29896db6b" },
   "nvim-lint": { "branch": "master", "commit": "a219b2c9e5b4765e5c845aba119dad55806fcaf1" },
-  "nvim-lspconfig": { "branch": "master", "commit": "9ae2b3b63b924b1329724dae76e9d2c5c40b389c" },
+  "nvim-lspconfig": { "branch": "master", "commit": "1c0d8f70dbc8827263eedc3cf7021ceba0f68689" },
   "nvim-surround": { "branch": "main", "commit": "8b47db616ef658b8fc27e61db2896aa2f40134de" },
-  "nvim-treesitter": { "branch": "main", "commit": "0f32dff7f19476629c77467f887b95e5e2d33509" },
+  "nvim-treesitter": { "branch": "main", "commit": "7b6cc8949f9999c5ed91436cbe24aa5f99c42025" },
   "nvim-treesitter-textobjects": { "branch": "main", "commit": "898ee307df58f854d11cd7edd06472574d48014e" },
   "nvim-web-devicons": { "branch": "master", "commit": "2ae6958df7ced50baac5035cec0c15799eedfbf7" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
@@ -43,5 +43,5 @@
   "vim-sandwich": { "branch": "master", "commit": "74cf93d58ccc567d8e2310a69860f1b93af19403" },
   "vimdoc-ja": { "branch": "master", "commit": "839934dc4095b45a45870d5daa6764565cde99c2" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
-  "yazi.nvim": { "branch": "main", "commit": "840b9792a6ec97afce384f6821e64409510d6246" }
+  "yazi.nvim": { "branch": "main", "commit": "fb72059eec58cffae9fcfc0105c71d5fbe69a214" }
 }
