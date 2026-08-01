@@ -49,6 +49,7 @@ return {
       }
       opts.formatters = {
         textlint = require('ponko2.conform.formatters.textlint'),
+        topcoat = require('ponko2.conform.formatters.topcoat'),
       }
       opts.formatters_by_ft = {
         css = { 'prettier' },
@@ -56,6 +57,7 @@ return {
         javascriptreact = { 'prettier', name = 'oxfmt' },
         lua = { name = 'stylua' },
         markdown = { 'textlint', lsp_format = 'never' },
+        rust = { 'topcoat', lsp_format = 'first' },
         text = { 'textlint', lsp_format = 'never' },
         toml = { lsp_format = 'never' },
         typescript = { 'prettier', name = 'oxfmt' },
