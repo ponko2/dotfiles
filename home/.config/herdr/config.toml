@@ -156,6 +156,9 @@ height = "80%"
 # Maximum sidebar width when expanded (columns)
 # sidebar_max_width = 36
 
+# Start with the sidebar collapsed. Changes take effect on the next launch.
+# sidebar_start_collapsed = false
+
 # Collapsed sidebar presentation: "compact" keeps the narrow status rail, "hidden" uses zero width.
 # sidebar_collapsed_mode = "compact"
 
@@ -168,8 +171,9 @@ height = "80%"
 # Pane apps like lazygit and btop can still receive mouse when they request it.
 # mouse_capture = true
 
-# Copy text selected by mouse drag or double-click.
-# Set false to disable mouse text selection and copying.
+# Automatically copy text selected with the mouse.
+# Set false to retain drag or double-click word selection until Ctrl+C,
+# or Cmd+C when the host forwards it, copies and clears it.
 # copy_on_select = true
 
 # Host cursor policy: "auto", "native", or "drawn".
@@ -197,8 +201,15 @@ height = "80%"
 # prompt_new_tab_name = true
 prompt_new_tab_name = false
 
+# Ask for a workspace name before interactive creation.
+# prompt_new_workspace_name = false
+
 # Draw borders around split panes.
 # pane_borders = true
+
+# Draw interactive scrollbars beside terminal panes.
+# Set false to reclaim the scrollbar column and keep it out of terminal-native selections.
+# pane_scrollbars = true
 
 # Keep split panes visually separated instead of sharing divider borders.
 # pane_gaps = true
@@ -211,6 +222,9 @@ show_agent_labels_on_pane_borders = true
 # New tabs can still be created with the configured keybinding.
 # hide_tab_bar_when_single_tab = false
 
+# Desktop tab row placement: "top" or "bottom".
+# tab_bar_position = "top"
+
 # Agent panel ordering: "spaces" (grouped by space) or "priority" (attention queue).
 # "workspaces" is accepted as an alias for "spaces".
 # agent_panel_sort = "spaces"
@@ -218,6 +232,8 @@ show_agent_labels_on_pane_borders = true
 # Expanded agent rows. Built-ins are state_icon, state_text, workspace, tab, pane, agent,
 # terminal_title, and terminal_title_stripped.
 # Custom values reported through pane metadata use a $name token.
+# A token occurrence may be styled with { token = "workspace", fg = "#89b4fa", bold = true, dim = false }.
+# Omitted style fields preserve the contextual default.
 # [ui.sidebar.agents]
 # Blank rows between agent entries. Set to 1 to restore the previous spacing.
 # row_gap = 0
@@ -228,6 +244,7 @@ show_agent_labels_on_pane_borders = true
 
 # Expanded space rows. Built-ins are state_icon, state_text, workspace, branch, and git_status.
 # Custom values reported through workspace metadata use a $name token, for example $jj_status.
+# Inline token styles accept strict #RGB/#RRGGBB foregrounds plus bold and dim booleans.
 # [ui.sidebar.spaces]
 # Blank rows between space entries. Set to 1 to restore the previous spacing.
 # row_gap = 0
@@ -291,10 +308,12 @@ delivery = "terminal"
 # kitty_graphics = false
 # Save recent pane screen history across full server restarts.
 pane_history = false
-# While prefix mode is active, temporarily switch the macOS host input
-# source to an ASCII-capable keyboard layout so prefix commands register
-# even when a CJK IME is active, then restore the previous input source
-# when prefix mode exits. macOS only; best-effort. Default: false.
+# While prefix mode is active, temporarily switch the host input source to
+# an ASCII-capable mode so prefix commands register even when an IME is
+# active, then restore the previous input source when prefix mode exits. On
+# macOS this selects the ASCII-capable keyboard layout; on Windows it toggles
+# a Korean IME between Hangul and English (other IME languages are left
+# unchanged). macOS and Windows only; best-effort. Default: false.
 # switch_ascii_input_source_in_prefix = false
 switch_ascii_input_source_in_prefix = true
 # Expose the focused pane's cursor to the outer terminal so macOS input
