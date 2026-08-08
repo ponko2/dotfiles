@@ -17,6 +17,7 @@
           ".config/sheldon"
           ".config/snapzy"
           ".config/starship.toml"
+          ".config/tuicr"
           ".config/yamllint"
           ".config/yazi"
           ".config/zed"

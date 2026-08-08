@@ -20,7 +20,7 @@
       "gemini-cli"
       "git"
       "herdr"
-      "modem-dev/tap/hunk"
+      "tuicr"
     ];
     casks = [
       "1password"
