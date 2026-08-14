@@ -209,7 +209,11 @@ fi
 '''
 
 [plugins.compinit]
-inline = "autoload -Uz compinit && zsh-defer compinit"
+inline = '''
+autoload -Uz compinit
+mkdir -p "$XDG_CACHE_HOME/zsh"
+zsh-defer compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
+'''
 
 [plugins.abbr]
 github = "olets/zsh-abbr"

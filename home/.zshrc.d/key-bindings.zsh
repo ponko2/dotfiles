@@ -11,12 +11,12 @@ bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
 
 # history search
-if bindkey | grep -q '^"\^R" history-incremental-search-backward$' && \
-  zle -la | grep -q '^history-incremental-pattern-search-backward$'; then
+if [[ "$(bindkey '^R')" == *' history-incremental-search-backward' && \
+  -n $widgets[history-incremental-pattern-search-backward] ]]; then
   bindkey '^R' history-incremental-pattern-search-backward
 fi
-if bindkey | grep -q '^"\^S" history-incremental-search-forward$' && \
-  zle -la | grep -q '^history-incremental-pattern-search-forward$'; then
+if [[ "$(bindkey '^S')" == *' history-incremental-search-forward' && \
+  -n $widgets[history-incremental-pattern-search-forward] ]]; then
   bindkey '^S' history-incremental-pattern-search-forward
 fi
 
