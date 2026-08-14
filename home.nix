@@ -29,7 +29,6 @@
           ".textlintrc.json"
           ".vim"
           ".vimrc"
-          ".zprofile"
           ".zshenv"
           ".zshrc"
           ".zshrc.d"
