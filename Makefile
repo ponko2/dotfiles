@@ -12,15 +12,13 @@ XDG_CONFIGS := $(foreach path, $(wildcard $(SRC_ROOT)/.config/*), $(XDG_CONFIG_H
 
 ifeq ($(shell uname -s),Darwin)
 	ifeq ($(shell uname -m),arm64)
-		HOMEBREW_PREFIX := /opt/homebrew
+		HOMEBREW := /opt/homebrew/bin/brew
 	else
-		HOMEBREW_PREFIX := /usr/local
+		HOMEBREW := /usr/local/bin/brew
 	endif
 else
-	HOMEBREW_PREFIX := /home/linuxbrew/.linuxbrew
+	HOMEBREW := /home/linuxbrew/.linuxbrew/bin/brew
 endif
-
-HOMEBREW := $(HOMEBREW_PREFIX)/bin/brew
 
 .PHONY: help
 help:
