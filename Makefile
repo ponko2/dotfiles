@@ -70,7 +70,7 @@ clean: ## Remove symlinks.
 switch: | /nix ## Build and switch to the new configuration.
 	perl -i -pe "s/\"kano\"/\"$$(whoami)\"/g" flake.nix
 	perl -i -pe "s/\"ponko2\"/\"$$(scutil --get LocalHostName)\"/g" flake.nix
-	sudo /nix/var/nix/profiles/default/bin/nix --extra-experimental-features "nix-command flakes" run nix-darwin/master#darwin-rebuild -- switch --flake ~/dotfiles
+	sudo /nix/var/nix/profiles/default/bin/nix --extra-experimental-features "nix-command flakes" run nix-darwin/master#darwin-rebuild -- switch --flake ~/.dotfiles
 
 .PHONY: test
 test: ## Run checkmake.
