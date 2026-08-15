@@ -2,8 +2,9 @@ SHELL := /bin/bash
 .SHELLFLAGS := -euo pipefail -c
 .DEFAULT_GOAL := help
 
-XDG_BIN_HOME := $(HOME)/.local/bin
-XDG_CONFIG_HOME := $(HOME)/.config
+export XDG_BIN_HOME := $(HOME)/.local/bin
+export XDG_CONFIG_HOME := $(HOME)/.config
+
 SRC_ROOT := $(abspath home)
 DOTFILES := $(foreach path, $(filter-out $(SRC_ROOT)/.config $(SRC_ROOT)/.local, $(wildcard $(SRC_ROOT)/.??*)), $(HOME)/$(notdir $(path)))
 XDG_BINS := $(foreach path, $(wildcard $(SRC_ROOT)/.local/bin/*), $(XDG_BIN_HOME)/$(notdir $(path)))
@@ -54,7 +55,7 @@ $(HOMEBREW):
 .PHONY: bundle
 bundle: | $(HOMEBREW) ## Install and upgrade all dependencies from the ~/.config/homebrew/Brewfile.
 	eval "$$($(HOMEBREW) shellenv)"
-	XDG_CONFIG_HOME="$(XDG_CONFIG_HOME)" $(HOMEBREW) bundle --global
+	$(HOMEBREW) bundle --global
 
 .PHONY: install
 install: symlink bundle ## Run make symlink, bundle.
