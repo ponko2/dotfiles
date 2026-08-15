@@ -108,7 +108,7 @@
                     };
                   in
                   {
-                    environment.etc.nix-darwin.source = "${user.home}/dotfiles";
+                    environment.etc.nix-darwin.source = "${user.home}/.dotfiles";
                     home-manager = {
                       useGlobalPkgs = true;
                       useUserPackages = true;

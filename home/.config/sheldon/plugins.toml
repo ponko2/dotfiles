@@ -173,7 +173,7 @@ fi
 
 [plugins.nh]
 inline = '''
-export NH_FLAKE="$HOME/dotfiles"
+export NH_FLAKE="$HOME/.dotfiles"
 '''
 
 [plugins.pnpm]

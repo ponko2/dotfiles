@@ -34,7 +34,7 @@
           ".zshrc.d"
         ]
         (name: {
-          source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/${name}";
+          source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/${name}";
         });
     packages = with pkgs; [
       bat

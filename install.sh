@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-DOTFILES="${DOTFILES:-$HOME/dotfiles}"
+DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
 
 make_targets=(clean all)
 
