@@ -7,7 +7,7 @@ brew "curl"
 brew "dos2unix"
 brew "exiftool"
 brew "eza"
-brew "f1bonacc1/tap/process-compose"
+brew "f1bonacc1/tap/process-compose", trusted: true
 brew "fd"
 brew "fzf"
 brew "gh"
@@ -73,7 +73,7 @@ if OS.mac?
   cask "google-chrome"
   cask "karabiner-elements"
   cask "monitorcontrol"
-  cask "nikitabobko/tap/aerospace"
+  cask "nikitabobko/tap/aerospace", trusted: true
   cask "rectangle"
   cask "snapzy"
   cask "visual-studio-code"
