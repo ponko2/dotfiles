@@ -1,0 +1,192 @@
+[bootstrap.hooks]
+post-defaults = "killall Dock Finder SystemUIServer 2> /dev/null || true"
+
+[bootstrap.macos.defaults]
+".GlobalPreferences" = {
+  # マウス軌道の速さを最速化
+  "com.apple.mouse.scaling" = 3.0,
+}
+"com.apple.desktopservices" = {
+  # ネットワークフォルダに .DS_Store を作成しない
+  DSDontWriteNetworkStores = true,
+}
+"com.apple.dock" = {
+  # 自動的に非表示
+  autohide = true,
+  # 位置を右側に設定
+  orientation = "right",
+  # 最近使用したアプリケーションを非表しない
+  show-recents = false,
+}
+"com.apple.finder" = {
+  # すべてのファイル名拡張子を表示
+  AppleShowAllExtensions = true,
+  # 検索範囲を現在のフォルダに変更
+  FXDefaultSearchScope = "SCcf",
+  # 拡張子を変更する際の警告を無効化
+  FXEnableExtensionChangeWarning = false,
+  # デフォルト表示をリストビューに設定
+  FXPreferredViewStyle = "Nlsv",
+  # 新規ウィンドウのデフォルト表示をHOMEに設定
+  NewWindowTarget = "Home",
+  # パスバーを表示
+  ShowPathbar = true,
+  # ステータスバーを表示
+  ShowStatusBar = true,
+}
+# メニューバーの時計
+"com.apple.menuextra.clock" = {
+  # 24時間表示に設定
+  Show24Hour = true,
+}
+# スクリーンキャプチャ
+"com.apple.screencapture" = {
+  # ドロップシャドウを無効化
+  disable-shadow = true,
+  # スクリーンキャプチャの保存先を変更
+  location = "~/Downloads/",
+  # スクリーンキャプチャのサムネイル表示を無効化
+  show-thumbnail = false,
+}
+# WindowManager
+"com.apple.WindowManager" = {
+  # 壁紙クリック時のデスクトップ表示を無効化
+  EnableStandardClickToShowDesktop = false,
+}
+NSGlobalDomain = {
+  # F1やF2などのキーを標準のファンクションキーとして使用
+  "com.apple.keyboard.fnState" = true,
+  # ナチュラルなスクロールを無効化
+  "com.apple.swipescrolldirection" = false,
+  # アクセント付き文字の「長押し入力」を無効化
+  ApplePressAndHoldEnabled = false,
+  # すべてのファイル名拡張子を表示
+  AppleShowAllExtensions = true,
+  # キーリピート開始までの待機時間を最短化
+  InitialKeyRepeat = 15,
+  # キーリピートの速度を最速化
+  KeyRepeat = 2,
+  # 自動大文字変換を無効化
+  NSAutomaticCapitalizationEnabled = false,
+  # スマートダッシュ置換を無効化
+  NSAutomaticDashSubstitutionEnabled = false,
+  # スマートピリオド置換を無効化
+  NSAutomaticPeriodSubstitutionEnabled = false,
+  # スマート引用符置換を無効化
+  NSAutomaticQuoteSubstitutionEnabled = false,
+  # 自動スペル修正を無効化
+  NSAutomaticSpellingCorrectionEnabled = false,
+  # スペル自動修正を無効化 (WebView)
+  WebAutomaticSpellingCorrectionEnabled = false,
+}
+
+[bootstrap.packages]
+# Command
+"brew:bat" = "latest"
+"brew:colordiff" = "latest"
+"brew:curl" = "latest"
+"brew:dos2unix" = "latest"
+"brew:exiftool" = "latest"
+"brew:eza" = "latest"
+"brew:fd" = "latest"
+"brew:fzf" = "latest"
+"brew:gh" = "latest"
+"brew:ghq" = "latest"
+"brew:git" = "latest"
+"brew:git-lfs" = "latest"
+"brew:herdr" = "latest"
+"brew:httpie" = "latest"
+"brew:imagemagick" = "latest"
+"brew:jj" = "latest"
+"brew:jq" = "latest"
+"brew:lsd" = "latest"
+"brew:nb" = "latest"
+"brew:nkf" = "latest"
+"brew:openssh" = "latest"
+"brew:p7zip" = "latest"
+"brew:ripgrep" = "latest"
+"brew:ripgrep-all" = "latest"
+"brew:rsync" = "latest"
+"brew:sheldon" = "latest"
+"brew:sqlite" = "latest"
+"brew:ssh-copy-id" = "latest"
+"brew:starship" = "latest"
+"brew:tuicr" = "latest"
+"brew:wget" = "latest"
+"brew:yazi" = "latest"
+"brew:zoxide" = "latest"
+# Formatter
+"brew:nixfmt" = "latest"
+"brew:shfmt" = "latest"
+# Linter
+"brew:checkmake" = "latest"
+"brew:editorconfig-checker" = "latest"
+"brew:luacheck" = "latest"
+"brew:shellcheck" = "latest"
+"brew:yamllint" = "latest"
+# Neovim
+"brew:clippy" = "latest"
+"brew:coreutils" = "latest"
+"brew:lua-language-server" = "latest"
+"brew:luarocks" = "latest"
+"brew:neovim" = "latest"
+"brew:rust-analyzer" = "latest"
+"brew:tree-sitter" = "latest"
+"brew:tree-sitter-cli" = "latest"
+"brew:ty" = "latest"
+"brew:vscode-langservers-extracted" = "latest"
+"brew:vtsls" = "latest"
+"brew:vue-language-server" = "latest"
+# GUI Applications
+"brew-cask:1password" = "latest"
+"brew-cask:1password-cli" = "latest"
+"brew-cask:antigravity-cli" = "latest"
+"brew-cask:appcleaner" = "latest"
+"brew-cask:devtoys" = "latest"
+"brew-cask:docker-desktop" = "latest"
+"brew-cask:ghostty" = "latest"
+"brew-cask:google-chrome" = "latest"
+"brew-cask:karabiner-elements" = "latest"
+"brew-cask:monitorcontrol" = "latest"
+"brew-cask:snapzy" = "latest"
+"brew-cask:visual-studio-code" = "latest"
+"brew-cask:zed" = "latest"
+# Fonts
+"brew-cask:font-udev-gothic" = "latest"
+"brew-cask:font-udev-gothic-nf" = "latest"
+
+[dotfiles]
+"~/.config/aerospace" = {}
+"~/.config/atcoder-cli-nodejs" = {}
+"~/.config/bat" = {}
+"~/.config/ghostty" = {}
+"~/.config/git" = {}
+"~/.config/herdr" = {}
+"~/.config/homebrew" = {}
+"~/.config/jj" = {}
+"~/.config/karabiner" = {}
+"~/.config/mise" = {}
+"~/.config/nvim" = {}
+"~/.config/process-compose" = {}
+"~/.config/sheldon" = {}
+"~/.config/snapzy" = {}
+"~/.config/starship.toml" = {}
+"~/.config/tuicr" = {}
+"~/.config/yamllint" = {}
+"~/.config/yazi" = {}
+"~/.config/zed" = {}
+"~/.config/zsh-abbr" = {}
+"~/.local/bin/rfv" = {}
+"~/.local/bin/update-system" = {}
+"~/.nbrc" = {}
+"~/.ripgreprc" = {}
+"~/.textlintrc.json" = {}
+"~/.vim" = {}
+"~/.vimrc" = {}
+"~/.zprofile" = {}
+"~/.zshenv" = {}
+"~/.zshrc" = {}
+"~/.zshrc.d" = {}
+
+[settings]
+dotfiles.root = "~/.dotfiles/home"

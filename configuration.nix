@@ -19,6 +19,7 @@
     brews = [
       "git"
       "herdr"
+      "mise"
       "tuicr"
     ];
     casks = [

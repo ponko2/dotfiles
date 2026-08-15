@@ -197,6 +197,13 @@ if [[ -f "$HOME/.vite-plus/env" ]]; then
 fi
 '''
 
+[plugins.mise]
+inline = '''
+if command -v mise >/dev/null; then
+  eval "$(mise activate zsh)"
+fi
+'''
+
 [plugins.ponko2]
 local = "~/.zshrc.d"
 use = ["*.zsh"]

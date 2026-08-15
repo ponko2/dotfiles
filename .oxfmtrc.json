@@ -1,3 +1,7 @@
 {
-  "ignorePatterns": ["home/.config/nvim/lazy-lock.json", "home/.config/snapzy/config.toml"]
+  "ignorePatterns": [
+    "home/.config/mise/config.toml",
+    "home/.config/nvim/lazy-lock.json",
+    "home/.config/snapzy/config.toml"
+  ]
 }
