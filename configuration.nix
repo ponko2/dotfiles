@@ -17,7 +17,6 @@
   homebrew = {
     enable = true;
     brews = [
-      "gemini-cli"
       "git"
       "herdr"
       "tuicr"
@@ -25,6 +24,7 @@
     casks = [
       "1password"
       "1password-cli"
+      "antigravity-cli"
       "appcleaner"
       "devtoys"
       "docker-desktop"
