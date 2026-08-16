@@ -5,7 +5,7 @@
 
 ## Install
 
-### Using [Homebrew](https://brew.sh)
+### Using [mise](https://mise.jdx.dev)
 
 #### Step 1: Install [Xcode Command Line Tools](https://developer.apple.com/documentation/xcode/installing-the-command-line-tools)
 

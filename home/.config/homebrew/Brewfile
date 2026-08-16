@@ -1,84 +1,9 @@
 # vi: set ft=ruby :
 
 ## Command
-brew "bat"
-brew "colordiff"
-brew "curl"
-brew "dos2unix"
-brew "exiftool"
-brew "eza"
 brew "f1bonacc1/tap/process-compose", trusted: true
-brew "fd"
-brew "fzf"
-brew "gh"
-brew "ghq"
-brew "git"
-brew "git-lfs"
-brew "herdr"
-brew "httpie"
-brew "imagemagick"
-brew "jj"
-brew "jq"
-brew "lsd"
-brew "nb"
-brew "nkf"
-brew "openssh"
-brew "p7zip"
-brew "ripgrep"
-brew "ripgrep-all"
-brew "rsync"
-brew "sheldon"
-brew "sqlite"
-brew "ssh-copy-id"
-brew "starship"
-brew "tuicr"
-brew "wget"
-brew "yazi"
-brew "zoxide"
-
-## Formatter
-brew "nixfmt"
-brew "shfmt"
-
-## Linter
-brew "checkmake"
-brew "editorconfig-checker"
-brew "luacheck"
-brew "shellcheck"
-brew "yamllint"
-
-## Neovim
-brew "clippy"
-brew "coreutils"
-brew "lua-language-server"
-brew "luarocks"
-brew "neovim"
-brew "rust-analyzer"
-brew "tree-sitter"
-brew "tree-sitter-cli"
-brew "ty"
-brew "vscode-langservers-extracted"
-brew "vtsls"
-brew "vue-language-server"
 
 if OS.mac?
   ## GUI Applications
-  cask "1password"
-  cask "1password-cli"
-  cask "antigravity-cli"
-  cask "appcleaner"
-  cask "devtoys"
-  cask "docker-desktop"
-  cask "ghostty"
-  cask "google-chrome"
-  cask "karabiner-elements"
-  cask "monitorcontrol"
   cask "nikitabobko/tap/aerospace", trusted: true
-  cask "snapzy"
-  cask "visual-studio-code"
-  cask "zed"
-
-  ## Fonts
-  cask "font-udev-gothic"
-  cask "font-udev-gothic-nf"
 end

@@ -4,11 +4,7 @@ SHELL := /bin/bash
 
 export XDG_BIN_HOME := $(HOME)/.local/bin
 export XDG_CONFIG_HOME := $(HOME)/.config
-
-SRC_ROOT := $(abspath home)
-DOTFILES := $(foreach path, $(filter-out $(SRC_ROOT)/.config $(SRC_ROOT)/.local, $(wildcard $(SRC_ROOT)/.??*)), $(HOME)/$(notdir $(path)))
-XDG_BINS := $(foreach path, $(wildcard $(SRC_ROOT)/.local/bin/*), $(XDG_BIN_HOME)/$(notdir $(path)))
-XDG_CONFIGS := $(foreach path, $(wildcard $(SRC_ROOT)/.config/*), $(XDG_CONFIG_HOME)/$(notdir $(path)))
+export MISE_GLOBAL_CONFIG_FILE := $(abspath home/.config/mise/config.toml)
 
 ifeq ($(shell uname -s),Darwin)
 	ifeq ($(shell uname -m),arm64)
@@ -20,6 +16,8 @@ else
 	HOMEBREW := /home/linuxbrew/.linuxbrew/bin/brew
 endif
 
+MISE := $(shell command -v mise 2> /dev/null || echo $(HOME)/.local/bin/mise)
+
 .PHONY: help
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
@@ -28,23 +26,22 @@ help:
 .PHONY: all
 all: install
 
-$(DOTFILES):
-	ln -s $(SRC_ROOT)/$(@F) $@
-
 $(XDG_BIN_HOME):
 	mkdir -p $@
-
-$(XDG_BINS): | $(XDG_BIN_HOME)
-	ln -s $(SRC_ROOT)/.local/bin/$(@F) $@
 
 $(XDG_CONFIG_HOME):
 	mkdir -p $@
 
-$(XDG_CONFIGS): | $(XDG_CONFIG_HOME)
-	ln -s $(SRC_ROOT)/.config/$(@F) $@
+$(MISE):
+	curl -fsSL https://mise.run | sh
+
+.PHONY: bootstrap
+bootstrap: | $(MISE) ## Run mise bootstrap.
+	$(MISE) bootstrap
 
 .PHONY: symlink
-symlink: | $(DOTFILES) $(XDG_BINS) $(XDG_CONFIGS) ## Create symlink to home directory.
+symlink: | $(MISE) ## Create symlink to home directory.
+	$(MISE) bootstrap dotfiles apply
 
 $(HOMEBREW):
 	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -56,11 +53,11 @@ bundle: | $(HOMEBREW) ## Install and upgrade all dependencies from the ~/.config
 	$(HOMEBREW) bundle --global
 
 .PHONY: install
-install: symlink bundle ## Run make symlink, bundle.
+install: bootstrap bundle ## Run make bootstrap, bundle.
 
 .PHONY: clean
-clean: ## Remove symlinks.
-	$(RM) $(DOTFILES) $(XDG_BINS) $(XDG_CONFIGS)
+clean: | $(MISE) ## Remove symlinks.
+	$(MISE) bootstrap dotfiles unapply
 
 /nix:
 	curl -fsSL https://artifacts.nixos.org/nix-installer | sh -s -- install --no-confirm
