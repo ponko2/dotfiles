@@ -131,6 +131,7 @@ NSGlobalDomain = {
 "brew:luarocks" = "latest"
 "brew:neovim" = "latest"
 "brew:rust-analyzer" = "latest"
+"brew:stylua" = "latest"
 "brew:tree-sitter" = "latest"
 "brew:tree-sitter-cli" = "latest"
 "brew:ty" = "latest"
