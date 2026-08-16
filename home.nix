@@ -90,6 +90,7 @@
         luarocks
         nixd
         rust-analyzer
+        stylua
         tree-sitter
         ty
         vscode-langservers-extracted
