@@ -5,9 +5,11 @@
 }:
 {
   environment = {
+    shells = [ pkgs.zsh ];
     systemPackages = with pkgs; [
       gnumake
       python3
+      zsh
     ];
   };
   fonts.packages = with pkgs; [

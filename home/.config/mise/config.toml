@@ -115,6 +115,7 @@ NSGlobalDomain = {
 "brew:wget" = "latest"
 "brew:yazi" = "latest"
 "brew:zoxide" = "latest"
+"brew:zsh" = "latest"
 # Formatter
 "brew:nixfmt" = "latest"
 "brew:shfmt" = "latest"
@@ -155,6 +156,9 @@ NSGlobalDomain = {
 # Fonts
 "brew-cask:font-udev-gothic" = "latest"
 "brew-cask:font-udev-gothic-nf" = "latest"
+
+[bootstrap.user]
+login_shell = "/opt/homebrew/bin/zsh"
 
 [dotfiles]
 "~/.config/aerospace" = {}
