@@ -105,6 +105,8 @@
                     user = rec {
                       name = "kano";
                       home = "/Users/${name}";
+                      uid = 501;
+                      shell = pkgs.zsh;
                     };
                   in
                   {
@@ -116,7 +118,10 @@
                     };
                     nix-homebrew.user = user.name;
                     system.primaryUser = user.name;
-                    users.users.${user.name} = user;
+                    users = {
+                      knownUsers = [ user.name ];
+                      users.${user.name} = user;
+                    };
                   }
                 )
               ];
