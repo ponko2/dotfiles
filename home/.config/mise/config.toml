@@ -80,6 +80,17 @@ NSGlobalDomain = {
   WebAutomaticSpellingCorrectionEnabled = false,
 }
 
+[bootstrap.macos.launchd.agents]
+# あらゆるSSHクライアントから1PasswordのSSHエージェントを使えるようにする
+SSH_AUTH_SOCK = {
+  program = "/bin/sh",
+  args = [
+    "-c",
+    '/bin/ln -sf "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$SSH_AUTH_SOCK"',
+  ],
+  run_at_load = true,
+}
+
 [bootstrap.packages]
 # Command
 "brew:bat" = "latest"
@@ -102,7 +113,6 @@ NSGlobalDomain = {
 "brew:lsd" = "latest"
 "brew:nb" = "latest"
 "brew:nkf" = "latest"
-"brew:openssh" = "latest"
 "brew:p7zip" = "latest"
 "brew:ripgrep" = "latest"
 "brew:ripgrep-all" = "latest"
