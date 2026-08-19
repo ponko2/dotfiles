@@ -59,7 +59,6 @@
       nh
       nix-output-monitor
       nkf
-      openssh
       p7zip
       process-compose
       ripgrep

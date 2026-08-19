@@ -102,7 +102,6 @@ NSGlobalDomain = {
 "brew:lsd" = "latest"
 "brew:nb" = "latest"
 "brew:nkf" = "latest"
-"brew:openssh" = "latest"
 "brew:p7zip" = "latest"
 "brew:ripgrep" = "latest"
 "brew:ripgrep-all" = "latest"
