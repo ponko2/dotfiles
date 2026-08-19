@@ -74,6 +74,20 @@
     ];
     stateVersion = "25.11";
   };
+  launchd.agents = {
+    # あらゆるSSHクライアントから1PasswordのSSHエージェントを使えるようにする
+    SSH_AUTH_SOCK = {
+      enable = true;
+      config = {
+        ProgramArguments = [
+          "/bin/sh"
+          "-c"
+          ''/bin/ln -sf "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$SSH_AUTH_SOCK"''
+        ];
+        RunAtLoad = true;
+      };
+    };
+  };
   programs = {
     direnv = {
       enable = true;
