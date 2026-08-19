@@ -4,7 +4,7 @@ SHELL := /bin/bash
 
 export XDG_BIN_HOME := $(HOME)/.local/bin
 export XDG_CONFIG_HOME := $(HOME)/.config
-export MISE_GLOBAL_CONFIG_FILE := $(abspath home/.config/mise/config.toml)
+export MISE_GLOBAL_CONFIG_FILE := $(HOME)/.dotfiles/home/.config/mise/config.toml
 
 ifeq ($(shell uname -s),Darwin)
 	ifeq ($(shell uname -m),arm64)
@@ -64,11 +64,11 @@ clean: | $(MISE) ## Remove symlinks.
 
 .PHONY: switch
 switch: | /nix ## Build and switch to the new configuration.
-	perl -i -pe "s/\"kano\"/\"$$(whoami)\"/g" flake.nix
-	perl -i -pe "s/\"ponko2\"/\"$$(scutil --get LocalHostName)\"/g" flake.nix
-	perl -i -pe "s/uid = \d+;/uid = $$(id -u);/g" flake.nix
+	perl -i -pe "s/\"kano\"/\"$$(whoami)\"/g" ~/.dotfiles/flake.nix
+	perl -i -pe "s/\"ponko2\"/\"$$(scutil --get LocalHostName)\"/g" ~/.dotfiles/flake.nix
+	perl -i -pe "s/uid = \d+;/uid = $$(id -u);/g" ~/.dotfiles/flake.nix
 	sudo /nix/var/nix/profiles/default/bin/nix --extra-experimental-features "nix-command flakes" run nix-darwin/master#darwin-rebuild -- switch --flake ~/.dotfiles
 
 .PHONY: test
 test: ## Run checkmake.
-	checkmake Makefile
+	checkmake $(abspath $(firstword $(MAKEFILE_LIST)))
