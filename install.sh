@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-DOTFILES="${DOTFILES:-$HOME/.dotfiles}"
+DOTFILES="$HOME/.dotfiles"
 
 make_targets=(clean all)
 
@@ -21,7 +21,6 @@ done
 
 # Clone dotfiles repository.
 if [ ! -d "$DOTFILES" ]; then
-  mkdir -p "$(dirname "$DOTFILES")"
   git clone https://github.com/ponko2/dotfiles.git "$DOTFILES"
 fi
 
