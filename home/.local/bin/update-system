@@ -11,6 +11,9 @@ else
   # Homebrew
   brew update --auto-update
   brew upgrade --fetch-HEAD
+  # mise
+  mise self-update --yes
+  mise bootstrap --yes --update -C ~/.dotfiles
 fi
 
 # Yazi

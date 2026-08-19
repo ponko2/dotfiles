@@ -195,3 +195,6 @@ login_shell = "/opt/homebrew/bin/zsh"
 
 [settings]
 dotfiles.root = "~/.dotfiles/home"
+
+[tools]
+lua = "5.1"
