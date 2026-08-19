@@ -37,7 +37,7 @@ $(MISE):
 
 .PHONY: bootstrap
 bootstrap: | $(MISE) ## Run mise bootstrap.
-	$(MISE) bootstrap
+	$(MISE) bootstrap --yes -C ~/.dotfiles
 
 .PHONY: symlink
 symlink: | $(MISE) ## Create symlink to home directory.
