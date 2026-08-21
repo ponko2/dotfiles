@@ -211,6 +211,7 @@ copy_on_select = false
 
 # Ask for confirmation before closing a workspace
 # confirm_close = true
+confirm_close = false
 
 # Ask for a tab name before creating a new tab.
 # Set false to create tabs immediately with generated names.
@@ -308,6 +309,7 @@ delivery = "terminal"
 [ui.toast.clipboard]
 # enabled = true
 # position = "bottom-center"
+enabled = false
 
 # Play sounds when agents change state in background workspaces
 [ui.sound]
