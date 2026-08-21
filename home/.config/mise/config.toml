@@ -1,3 +1,6 @@
+[bootstrap.brew]
+adopt = true
+
 [bootstrap.hooks]
 post-defaults = "killall Dock Finder SystemUIServer 2> /dev/null || true"
 
