@@ -15,8 +15,10 @@
   "auto_install_extensions": {
     "nix": true,
     "oxc": true,
-    "toml": true
+    "toml": true,
+    "vue": true
   },
+  "base_keymap": "Zed",
   "buffer_font_family": "UDEV Gothic",
   "buffer_font_size": 16.0,
   "cli_default_open_behavior": "new_window",
@@ -25,6 +27,11 @@
   },
   "git_panel": {
     "dock": "left"
+  },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
   },
   "inlay_hints": {
     "toggle_on_modifiers_press": {
@@ -45,7 +52,7 @@
   },
   "theme": {
     "mode": "system",
-    "light": "One Light",
+    "light": "Gruvbox Light",
     "dark": "Gruvbox Dark"
   },
   "vim_mode": true,
