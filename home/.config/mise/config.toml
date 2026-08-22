@@ -136,6 +136,7 @@ SSH_AUTH_SOCK = {
 "brew:checkmake" = "latest"
 "brew:editorconfig-checker" = "latest"
 "brew:luacheck" = "latest"
+"brew:selene" = "latest"
 "brew:shellcheck" = "latest"
 "brew:yamllint" = "latest"
 # Neovim
