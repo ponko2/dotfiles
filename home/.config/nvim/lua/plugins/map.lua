@@ -1,7 +1,6 @@
 return {
   {
     'folke/which-key.nvim',
-    cond = not vim.g.vscode,
     event = 'VeryLazy',
     keys = {
       {

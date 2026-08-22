@@ -1,7 +1,6 @@
 return {
   {
     'dmtrKovalenko/fff',
-    cond = not vim.g.vscode,
     dependencies = 'sainnhe/gruvbox-material',
     build = function()
       require('fff.download').download_or_build_binary()
@@ -59,7 +58,6 @@ return {
   },
   {
     'folke/snacks.nvim',
-    cond = not vim.g.vscode,
     lazy = false,
     priority = 1000,
     keys = {
@@ -144,7 +142,6 @@ return {
   },
   {
     'mikavilpas/yazi.nvim',
-    cond = not vim.g.vscode,
     dependencies = 'nvim-lua/plenary.nvim',
     event = 'VeryLazy',
     keys = {

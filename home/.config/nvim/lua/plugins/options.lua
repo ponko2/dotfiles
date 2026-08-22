@@ -8,7 +8,6 @@ return {
   },
   {
     'lewis6991/gitsigns.nvim',
-    cond = not vim.g.vscode,
     event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' },
     opts = {
       on_attach = function(bufnr)
@@ -78,14 +77,12 @@ return {
   },
   {
     'nathanaelkane/vim-indent-guides',
-    cond = not vim.g.vscode,
     init = function()
       vim.g.indent_guides_enable_on_vim_startup = 1
     end,
   },
   {
     'nvim-lualine/lualine.nvim',
-    cond = not vim.g.vscode,
     dependencies = 'nvim-tree/nvim-web-devicons',
     event = 'VeryLazy',
     opts = {
@@ -105,7 +102,6 @@ return {
   },
   {
     'shellRaining/hlchunk.nvim',
-    cond = not vim.g.vscode,
     event = { 'BufReadPre', 'BufNewFile' },
     opts = {
       chunk = {

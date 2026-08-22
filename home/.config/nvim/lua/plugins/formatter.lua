@@ -1,7 +1,6 @@
 return {
   {
     'stevearc/conform.nvim',
-    cond = not vim.g.vscode,
     cmd = 'ConformInfo',
     event = 'BufWritePre',
     ---@param opts conform.setupOpts

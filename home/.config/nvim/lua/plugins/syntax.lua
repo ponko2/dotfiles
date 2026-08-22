@@ -1,7 +1,6 @@
 return {
   {
     'sainnhe/gruvbox-material',
-    cond = not vim.g.vscode,
     lazy = false,
     priority = 1000,
     init = function()
@@ -17,7 +16,6 @@ return {
   },
   {
     'uga-rosa/ccc.nvim',
-    cond = not vim.g.vscode,
     event = { 'BufReadPost', 'BufNewFile', 'BufWritePre' },
     opts = {
       highlighter = {
