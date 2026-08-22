@@ -164,7 +164,6 @@ SSH_AUTH_SOCK = {
 "brew-cask:karabiner-elements" = "latest"
 "brew-cask:monitorcontrol" = "latest"
 "brew-cask:snapzy" = "latest"
-"brew-cask:visual-studio-code" = "latest"
 "brew-cask:zed" = "latest"
 # Fonts
 "brew-cask:font-udev-gothic" = "latest"
