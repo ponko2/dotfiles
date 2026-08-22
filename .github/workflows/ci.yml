@@ -203,8 +203,13 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - name: Set up Nix
+        uses: ponko2/actions/setup-nix@236efcf85fdbe785d92e646d4003f3bb2cb069c4 # v1.6.0
+        with:
+          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          prefetch-dependencies: false
       - name: Run Luacheck
-        uses: lunarmodules/luacheck@cc089e3f65acdd1ef8716cc73a3eca24a6b845e4 # v1.2.0
+        run: nix --quiet run .#luacheck -- .
   nixfmt:
     name: Nixfmt
     if: ${{ always() && !failure() && !cancelled() &&
