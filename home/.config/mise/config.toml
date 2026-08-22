@@ -173,7 +173,6 @@ SSH_AUTH_SOCK = {
 login_shell = "/opt/homebrew/bin/zsh"
 
 [dotfiles]
-"~/.config/aerospace" = {}
 "~/.config/atcoder-cli-nodejs" = {}
 "~/.config/bat" = {}
 "~/.config/ghostty" = {}
@@ -184,6 +183,7 @@ login_shell = "/opt/homebrew/bin/zsh"
 "~/.config/karabiner" = {}
 "~/.config/mise" = {}
 "~/.config/nvim" = {}
+"~/.config/omniwm" = {}
 "~/.config/process-compose" = {}
 "~/.config/sheldon" = {}
 "~/.config/snapzy" = {}
