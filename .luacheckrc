@@ -21,3 +21,8 @@ globals = {
   'vim.w',
   'vim.wo',
 }
+
+exclude_files = {
+  '.direnv/**',
+  'home/.config/yazi/plugins/**',
+}

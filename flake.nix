@@ -49,6 +49,10 @@
                 type = "app";
                 program = "${pkgs.deadnix}/bin/deadnix";
               };
+              luacheck = {
+                type = "app";
+                program = "${pkgs.lua51Packages.luacheck}/bin/luacheck";
+              };
               oxfmt = {
                 type = "app";
                 program = "${pkgs.oxfmt}/bin/oxfmt";
