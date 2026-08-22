@@ -176,7 +176,7 @@ jobs:
         run: nix --quiet run .#deadnix
   editorconfig:
     name: EditorConfig
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
       contents: read
@@ -185,10 +185,13 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - name: Set up EditorConfig checker
-        uses: editorconfig-checker/action-editorconfig-checker@d2ed4fd072ae6f887e9407c909af0f585d2ad9f4 # v2
+      - name: Set up Nix
+        uses: ponko2/actions/setup-nix@236efcf85fdbe785d92e646d4003f3bb2cb069c4 # v1.6.0
+        with:
+          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          prefetch-dependencies: false
       - name: Run EditorConfig checker
-        run: editorconfig-checker
+        run: nix --quiet run .#editorconfig-checker
   luacheck:
     name: Luacheck
     if: ${{ always() && !failure() && !cancelled() &&
