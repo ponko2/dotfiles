@@ -275,7 +275,7 @@ jobs:
     if: ${{ always() && !failure() && !cancelled() &&
       (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.stylua == 'true') }}
     needs: changed-files
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
       contents: read
@@ -284,12 +284,13 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - name: Run StyLua
-        uses: JohnnyMorganz/stylua-action@76fd70c03e6340ceaf673366712db9b20560b402 # v5.0.0
+      - name: Set up Nix
+        uses: ponko2/actions/setup-nix@236efcf85fdbe785d92e646d4003f3bb2cb069c4 # v1.6.0
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          version: latest
-          args: --allow-hidden --check .
+          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+          prefetch-dependencies: false
+      - name: Run StyLua
+        run: nix --quiet run .#stylua -- --allow-hidden --check .
   yamllint:
     name: yamllint
     if: ${{ always() && !failure() && !cancelled() &&

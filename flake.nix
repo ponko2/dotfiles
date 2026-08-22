@@ -61,6 +61,10 @@
                 type = "app";
                 program = "${pkgs.statix}/bin/statix";
               };
+              stylua = {
+                type = "app";
+                program = "${pkgs.stylua}/bin/stylua";
+              };
             };
             devShells.default = pkgs.mkShellNoCC {
               packages = with pkgs; [
