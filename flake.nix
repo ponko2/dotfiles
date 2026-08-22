@@ -49,6 +49,10 @@
                 type = "app";
                 program = "${pkgs.deadnix}/bin/deadnix";
               };
+              editorconfig-checker = {
+                type = "app";
+                program = "${pkgs.editorconfig-checker}/bin/editorconfig-checker";
+              };
               luacheck = {
                 type = "app";
                 program = "${pkgs.lua51Packages.luacheck}/bin/luacheck";
