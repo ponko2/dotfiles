@@ -64,6 +64,7 @@
       ripgrep
       ripgrep-all
       rsync
+      selene
       sheldon
       sqlite
       ssh-copy-id

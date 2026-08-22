@@ -61,6 +61,10 @@
                 type = "app";
                 program = "${pkgs.oxfmt}/bin/oxfmt";
               };
+              selene = {
+                type = "app";
+                program = "${pkgs.selene}/bin/selene";
+              };
               statix = {
                 type = "app";
                 program = "${pkgs.statix}/bin/statix";
@@ -85,6 +89,7 @@
                 deadnix
                 editorconfig-checker
                 lua51Packages.luacheck
+                selene
                 shellcheck
                 statix
                 yamllint

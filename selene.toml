@@ -1,0 +1,5 @@
+std = 'lua51+nvim'
+exclude = ['.direnv/**', 'home/.config/yazi/plugins/**']
+
+[lints]
+mixed_table = "allow"

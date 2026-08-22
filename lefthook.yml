@@ -7,9 +7,19 @@ pre-commit:
   jobs:
     - name: EditorConfig
       run: editorconfig-checker {staged_files}
-    - name: Luacheck
-      run: luacheck {staged_files}
-      glob: "*.lua"
+    - name: Lua
+      group:
+        jobs:
+          - name: Luacheck
+            run: luacheck {staged_files}
+            glob: "*.lua"
+          - name: StyLua
+            run: stylua {staged_files}
+            glob: "*.lua"
+            stage_fixed: true
+          - name: selene
+            run: selene {staged_files}
+            glob: "*.lua"
     - name: Nix
       group:
         parallel: false
@@ -28,10 +38,6 @@ pre-commit:
             stage_fixed: true
     - name: Oxfmt
       run: oxfmt --no-error-on-unmatched-pattern {staged_files}
-      stage_fixed: true
-    - name: StyLua
-      run: stylua {staged_files}
-      glob: "*.lua"
       stage_fixed: true
     - name: yamllint
       run: yamllint --list-files --strict {staged_files}
