@@ -158,7 +158,6 @@ SSH_AUTH_SOCK = {
 "brew-cask:antigravity-cli" = "latest"
 "brew-cask:appcleaner" = "latest"
 "brew-cask:devtoys" = "latest"
-"brew-cask:docker-desktop" = "latest"
 "brew-cask:ghostty" = "latest"
 "brew-cask:google-chrome" = "latest"
 "brew-cask:karabiner-elements" = "latest"

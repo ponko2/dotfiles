@@ -16,7 +16,7 @@ xcode-select --install
 #### Step 2: Run the dotfiles installer
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ponko2/dotfiles/HEAD/install.sh | /bin/bash
+curl -fsSL https://raw.githubusercontent.com/ponko2/dotfiles/trial/install.sh | /bin/bash
 ```
 
 ### Using [Nix](https://nixos.org)
@@ -30,5 +30,5 @@ xcode-select --install
 #### Step 2: Build and switch to the [nix-darwin](https://nix-darwin.org) configuration
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ponko2/dotfiles/HEAD/install.sh | /bin/bash -s -- --use-nix
+curl -fsSL https://raw.githubusercontent.com/ponko2/dotfiles/trial/install.sh | /bin/bash -s -- --use-nix
 ```
