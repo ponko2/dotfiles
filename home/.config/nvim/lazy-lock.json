@@ -20,6 +20,7 @@
   "nvim-treesitter": { "branch": "main", "commit": "e82ef6ae2c3eeb96c6916b29917f96bf630b2cdb" },
   "nvim-treesitter-textobjects": { "branch": "main", "commit": "898ee307df58f854d11cd7edd06472574d48014e" },
   "nvim-web-devicons": { "branch": "master", "commit": "2ae6958df7ced50baac5035cec0c15799eedfbf7" },
+  "pkl-neovim": { "branch": "main", "commit": "7907b89958d06fa5a5dc72eeb26d8289605595c3" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
   "securemodelines": { "branch": "master", "commit": "9751f29699186a47743ff6c06e689f483058d77a" },
   "snacks.nvim": { "branch": "main", "commit": "882c996cf28183f4d63640de0b4c02ec886d01f2" },

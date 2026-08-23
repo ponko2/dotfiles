@@ -50,6 +50,7 @@
       gh
       ghq
       git-lfs
+      hk
       httpie
       imagemagick
       jq
@@ -103,6 +104,8 @@
         lua-language-server
         luarocks
         nixd
+        pkl
+        pkl-lsp
         rust-analyzer
         stylua
         tree-sitter

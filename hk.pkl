@@ -1,0 +1,63 @@
+amends "package://github.com/jdx/hk/releases/download/v1.55.0/hk@1.55.0#/Config.pkl"
+
+import "package://github.com/jdx/hk/releases/download/v1.55.0/hk@1.55.0#/Builtins.pkl"
+import "package://github.com/jdx/hk/releases/download/v1.55.0/hk@1.55.0#/Config.pkl"
+
+local linters = new Mapping<String, Step> {
+  ["deadnix"] = Builtins.deadnix
+  ["editorconfig_checker"] = (Builtins.editorconfig_checker) {
+    check = new Config.CommandSpec {
+      command = new Config.Command { argv = List("editorconfig-checker", "{{files}}") }
+      effect = "read"
+    }
+  }
+  ["luacheck"] = Builtins.luacheck
+  ["nixfmt"] {
+    glob = "**/*.nix"
+    check = new Config.CommandSpec {
+      command = new Config.Command { argv = List("nixfmt", "--check", "{{files}}") }
+      effect = "read"
+    }
+    fix = new Config.CommandSpec {
+      command = new Config.Command { argv = List("nixfmt", "{{files}}") }
+      effect = "write"
+    }
+  }
+  ["oxfmt"] = Builtins.oxfmt
+  ["selene"] = Builtins.selene
+  ["statix"] {
+    glob = "**/*.nix"
+    check = new Config.CommandSpec {
+      command = new Config.Command { argv = List("statix", "check") }
+      effect = "read"
+    }
+    fix = new Config.CommandSpec {
+      command = new Config.Command { argv = List("statix", "fix") }
+      effect = "write"
+    }
+  }
+  ["stylua"] = Builtins.stylua
+  ["yamllint"] = Builtins.yamllint
+}
+
+hooks {
+  ["check"] {
+    steps = linters
+  }
+  ["commit-msg"] {
+    steps {
+      ["commitlint"] {
+        check = "commitlint --edit {{commit_msg_file}}"
+      }
+    }
+  }
+  ["fix"] {
+    fix = true
+    steps = linters
+  }
+  ["pre-commit"] {
+    fix = true
+    stash = "git"
+    steps = linters
+  }
+}
