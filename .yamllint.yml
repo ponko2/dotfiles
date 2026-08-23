@@ -8,7 +8,6 @@ rules:
   document-start:
     ignore: |
       .github/
-      lefthook.yml
     level: error
   line-length: disable
   octal-values:

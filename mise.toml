@@ -1,5 +1,5 @@
 [tools]
 "npm:@commitlint/cli" = "latest"
-lefthook = "latest"
+hk = "latest"
 node = "latest"
 oxfmt = "latest"

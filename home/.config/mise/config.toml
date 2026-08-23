@@ -145,6 +145,8 @@ SSH_AUTH_SOCK = {
 "brew:lua-language-server" = "latest"
 "brew:luarocks" = "latest"
 "brew:neovim" = "latest"
+"brew:pkl" = "latest"
+"brew:pkl-lsp" = "latest"
 "brew:rust-analyzer" = "latest"
 "brew:stylua" = "latest"
 "brew:tree-sitter" = "latest"
@@ -210,4 +212,5 @@ login_shell = "/opt/homebrew/bin/zsh"
 dotfiles.root = "~/.dotfiles/home"
 
 [tools]
+hk = "latest"
 lua = "5.1"

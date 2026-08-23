@@ -77,7 +77,7 @@
             devShells.default = pkgs.mkShellNoCC {
               packages = with pkgs; [
                 # Command
-                lefthook
+                hk
                 # Formatter
                 nixfmt
                 oxfmt
@@ -96,9 +96,6 @@
                 # LSP
                 nixd
               ];
-              shellHook = ''
-                lefthook install
-              '';
             };
             formatter = pkgs.nixfmt-tree;
             packages = {

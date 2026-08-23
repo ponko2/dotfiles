@@ -14,6 +14,7 @@ return {
           'json',
           'lua',
           'markdown',
+          'pkl',
           'python',
           'scss',
           'toml',

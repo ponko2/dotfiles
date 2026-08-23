@@ -13,6 +13,7 @@ return {
         'nixd',
         'oxfmt',
         'oxlint',
+        'pkl',
         'ruff',
         'rust_analyzer',
         'stylua',
