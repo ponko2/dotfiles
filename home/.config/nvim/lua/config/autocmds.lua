@@ -82,6 +82,17 @@ vim.api.nvim_create_autocmd('OptionSet', {
   end,
 })
 
+-- Lazy
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'LazyUpdatePre',
+  callback = function()
+    local vimdoc_ja = require('lazy.core.config').plugins['vimdoc-ja']
+    if vimdoc_ja then
+      vim.system({ 'git', '-C', vimdoc_ja.dir, 'restore', '--', 'doc/tags-ja' }):wait()
+    end
+  end,
+})
+
 -- LSP
 -- refs: https://neovim.io/doc/user/lsp/#lsp-attach
 vim.api.nvim_create_autocmd('LspAttach', {

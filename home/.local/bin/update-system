@@ -24,5 +24,4 @@ sheldon lock --update
 rm -rf "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 
 # Neovim
-git -C ~/.local/share/nvim/lazy/vimdoc-ja restore doc/tags-ja
 nvim --headless "+Lazy! update" +qa
