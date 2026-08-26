@@ -231,8 +231,11 @@ github = "z-shell/F-Sy-H"
 apply = ["defer"]
 
 [plugins.zoxide]
-github = "z-shell/zsh-zoxide"
-apply = ["defer"]
+inline = '''
+if command -v zoxide >/dev/null; then
+  zsh-defer -c 'eval "$(zoxide init zsh)"'
+fi
+'''
 
 [plugins.cd-gitroot]
 github = "ponko2/cd-gitroot"
