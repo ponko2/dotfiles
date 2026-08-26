@@ -77,6 +77,7 @@ prefix = "f12"
 # workspace_picker = "prefix+w"
 # goto = "prefix+g"
 # new_workspace = "prefix+shift+n"
+new_workspace = ""
 # new_worktree = "prefix+shift+g"
 # open_worktree = ""    # optional, unset by default
 # remove_worktree = ""  # optional, unset by default; opens confirmation
@@ -89,6 +90,7 @@ prefix = "f12"
 # focus_agent = ""        # optional indexed binding, e.g. "prefix+alt+1..9"
 # remote_image_paste = "ctrl+v" # only active in herdr --remote; empty disables raw-key image paste
 # new_tab = "prefix+c"
+new_tab = ""
 # rename_tab = "prefix+shift+t"
 # previous_tab = "prefix+p"
 # next_tab = "prefix+n"
@@ -144,6 +146,18 @@ type = "popup"
 command = "exec zsh -l"
 width = "80%"
 height = "80%"
+
+[[keys.command]]
+key = "prefix+c"
+type = "shell"
+command = '"$HERDR_BIN_PATH" tab create --cwd "$HOME" --focus'
+description = "New tab in $HOME"
+
+[[keys.command]]
+key = "prefix+shift+n"
+type = "shell"
+command = '"$HERDR_BIN_PATH" workspace create --cwd "$HOME" --focus'
+description = "New workspace in $HOME"
 
 # Legacy indexed shortcut config is still parsed for compatibility.
 # Prefer switch_tab, switch_workspace, and focus_agent for new configs.
@@ -300,16 +314,16 @@ show_agent_labels_on_pane_borders = true
 # terminal = ask the outer terminal to show a desktop notification
 # system = ask the OS notification service directly
 # delivery = "off"
-# delay_seconds = 1
 delivery = "terminal"
+# delay_seconds = 1
 
 [ui.toast.herdr]
 # position = "bottom-right"
 
 [ui.toast.clipboard]
 # enabled = true
-# position = "bottom-center"
 enabled = false
+# position = "bottom-center"
 
 # Play sounds when agents change state in background workspaces
 [ui.sound]
