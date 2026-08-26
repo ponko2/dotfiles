@@ -14,6 +14,8 @@ else
   # mise
   mise self-update --yes
   mise bootstrap --yes --update -C ~/.dotfiles
+  mise upgrade --yes
+  mise prune --yes
 fi
 
 # Yazi
