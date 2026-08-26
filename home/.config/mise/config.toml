@@ -209,6 +209,7 @@ login_shell = "/opt/homebrew/bin/zsh"
 "~/.zshrc.d" = {}
 
 [settings]
+auto_update = true
 dotfiles.root = "~/.dotfiles/home"
 
 [tools]
