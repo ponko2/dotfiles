@@ -219,7 +219,7 @@ fi
 inline = '''
 autoload -Uz compinit
 mkdir -p "$XDG_CACHE_HOME/zsh"
-zsh-defer compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
+zsh-defer compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 '''
 
 [plugins.zsh-abbr]
