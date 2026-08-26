@@ -21,7 +21,8 @@ ya pkg upgrade
 
 # Zsh
 sheldon lock --update
-rm -rf "${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+rm -rf "${XDG_CACHE_HOME:-$HOME/.cache}/zsh" && mkdir -p "$_"
+zsh -c 'autoload -Uz compinit; compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"'
 
 # Neovim
 nvim --headless "+Lazy! update" +qa

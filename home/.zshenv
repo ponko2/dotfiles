@@ -13,7 +13,7 @@ export MANPATH
 
 # -U: keep only the first occurrence of each duplicated value
 # ref. http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-typeset
-typeset -U PATH path MANPATH manpath
+typeset -U PATH path MANPATH manpath FPATH fpath
 
 # ignore /etc/zprofile, /etc/zshrc, /etc/zlogin, and /etc/zlogout
 # ref. http://zsh.sourceforge.net/Doc/Release/Files.html
