@@ -10,13 +10,20 @@ background-blur = true
 initial-command = ${SHELL:-zsh} -lc 'command -v herdr >/dev/null 2>&1 && exec herdr; exec ${SHELL:-zsh} -l'
 notify-on-command-finish = unfocused
 notify-on-command-finish-action = bell,notify
-keybind = ctrl+bracket_left=text:\x1B
+keybind = ctrl+[=text:\x1B
 keybind = ctrl+i=text:\x09
 keybind = ctrl+m=text:\x0D
+keybind = ctrl+shift+tab=text:\x1b[24~p
+keybind = ctrl+tab=text:\x1b[24~n
 keybind = global:super+ctrl+backquote=toggle_quick_terminal
 keybind = super+[=text:\x1b[24~\x1b[Z
 keybind = super+]=text:\x1b[24~\x09
+keybind = super+alt+w=text:\x1b[24~X
 keybind = super+b=text:\x1b[24~
+keybind = super+ctrl+[=text:\x1b[24~\x10
+keybind = super+ctrl+]=text:\x1b[24~\x0e
+keybind = super+ctrl+shift+[=text:\x1b[24~\x1b[112;6u
+keybind = super+ctrl+shift+]=text:\x1b[24~\x1b[110;6u
 keybind = super+d=text:\x1b[24~v
 keybind = super+digit_1=text:\x1b[24~1
 keybind = super+digit_2=text:\x1b[24~2
@@ -45,5 +52,5 @@ quit-after-last-window-closed = true
 quick-terminal-position = right
 quick-terminal-size = 40%
 quick-terminal-autohide = false
-macos-titlebar-style = hidden
+macos-dock-drop-behavior = new-window
 macos-option-as-alt = true
