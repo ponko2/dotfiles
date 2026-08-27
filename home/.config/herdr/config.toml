@@ -145,6 +145,12 @@ new_tab = ""
 # width = "80%"
 # height = "80%"
 [[keys.command]]
+key = "prefix+="
+type = "plugin_action"
+command = "ponko2.equalize-panes.equalize"
+description = "Equalize panes"
+
+[[keys.command]]
 key = "prefix+ctrl+backtick"
 type = "popup"
 command = "exec zsh -l"
