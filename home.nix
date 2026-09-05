@@ -4,7 +4,6 @@
     file =
       pkgs.lib.genAttrs
         [
-          ".config/aerospace"
           ".config/atcoder-cli-nodejs"
           ".config/bat"
           ".config/ghostty"
@@ -14,6 +13,7 @@
           ".config/karabiner"
           ".config/mise"
           ".config/nvim"
+          ".config/omniwm"
           ".config/process-compose"
           ".config/sheldon"
           ".config/snapzy"

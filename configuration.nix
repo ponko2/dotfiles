@@ -29,13 +29,13 @@
       "1password-cli"
       "antigravity-cli"
       "appcleaner"
+      "BarutSRB/tap/omniwm"
       "devtoys"
       "docker-desktop"
       "ghostty"
       "google-chrome"
       "karabiner-elements"
       "monitorcontrol"
-      "nikitabobko/tap/aerospace"
       "snapzy"
       "zed"
     ];
@@ -57,7 +57,7 @@
     enableZshIntegration = false;
     trust = {
       casks = [
-        "nikitabobko/tap/aerospace"
+        "BarutSRB/tap/omniwm"
       ];
     };
   };
