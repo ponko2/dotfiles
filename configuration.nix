@@ -35,7 +35,7 @@
       "google-chrome"
       "karabiner-elements"
       "monitorcontrol"
-      "nikitabobko/tap/aerospace"
+      "omniwm"
       "snapzy"
       "zed"
     ];
@@ -55,11 +55,6 @@
     enableBashIntegration = false;
     enableFishIntegration = false;
     enableZshIntegration = false;
-    trust = {
-      casks = [
-        "nikitabobko/tap/aerospace"
-      ];
-    };
   };
   security.pam.services.sudo_local = {
     touchIdAuth = true;

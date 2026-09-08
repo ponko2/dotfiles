@@ -2,8 +2,3 @@
 
 ## Command
 brew "f1bonacc1/tap/process-compose", trusted: true
-
-if OS.mac?
-  ## GUI Applications
-  cask "nikitabobko/tap/aerospace", trusted: true
-end
