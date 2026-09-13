@@ -81,6 +81,15 @@ NSGlobalDomain = {
   WebAutomaticSpellingCorrectionEnabled = false,
 }
 
+[bootstrap.macos.dock]
+apps = [
+  "/Applications/Google Chrome.app",
+  "/Applications/Ghostty.app",
+  "/Applications/Zed.app",
+  "/Applications/DevToys.app",
+  "/Applications/1Password.app",
+]
+
 [bootstrap.macos.launchd.agents]
 # あらゆるSSHクライアントから1PasswordのSSHエージェントを使えるようにする
 SSH_AUTH_SOCK = {
