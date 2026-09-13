@@ -5,10 +5,6 @@ adopt = true
 post-defaults = "killall Dock Finder SystemUIServer 2> /dev/null || true"
 
 [bootstrap.macos.defaults]
-".GlobalPreferences" = {
-  # マウス軌道の速さを最速化
-  "com.apple.mouse.scaling" = 3.0,
-}
 "com.apple.desktopservices" = {
   # ネットワークフォルダに .DS_Store を作成しない
   DSDontWriteNetworkStores = true,
@@ -59,6 +55,8 @@ post-defaults = "killall Dock Finder SystemUIServer 2> /dev/null || true"
 NSGlobalDomain = {
   # F1やF2などのキーを標準のファンクションキーとして使用
   "com.apple.keyboard.fnState" = true,
+  # マウス軌道の速さを最速化
+  "com.apple.mouse.scaling" = 3.0,
   # ナチュラルなスクロールを無効化
   "com.apple.swipescrolldirection" = false,
   # アクセント付き文字の「長押し入力」を無効化
