@@ -44,5 +44,5 @@
   "vim-sandwich": { "branch": "master", "commit": "74cf93d58ccc567d8e2310a69860f1b93af19403" },
   "vimdoc-ja": { "branch": "master", "commit": "b683ec22936b6c79f1be0cc2856d2df52017f224" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
-  "yazi.nvim": { "branch": "main", "commit": "b71d6aadef22d8373931d9aeb2b604c322e07c8c" }
+  "yazi.nvim": { "branch": "main", "commit": "7c670e05a6a3a1367adcb6a776edac1d8a72934a" }
 }
