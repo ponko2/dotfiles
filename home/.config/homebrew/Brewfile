@@ -1,4 +1,1 @@
 # vi: set ft=ruby :
-
-## Command
-brew "f1bonacc1/tap/process-compose", trusted: true
