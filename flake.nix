@@ -38,7 +38,22 @@
             _module.args.pkgs = import inputs.nixpkgs {
               inherit system;
               config.allowUnfree = true;
-              overlays = [ ];
+              overlays = [
+                (final: prev: {
+                  hk = prev.hk.overrideAttrs (oldAttrs: rec {
+                    version = "2.0.0";
+                    src = prev.fetchFromGitHub {
+                      inherit (oldAttrs.src) owner repo;
+                      tag = "v${version}";
+                      hash = "sha256-71uzlm4/YAUNtFufut8gxFei9QGo19kdKCLKch186VY=";
+                    };
+                    cargoDeps = final.rustPlatform.fetchCargoVendor {
+                      inherit src;
+                      hash = "sha256-X9NQmhXuCYVFe+Qm4UxYl3T/VG/FGt9PvfFAMT8Heww=";
+                    };
+                  });
+                })
+              ];
             };
             apps = {
               commitlint = {
