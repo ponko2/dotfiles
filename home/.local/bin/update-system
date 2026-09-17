@@ -14,7 +14,8 @@ else
   # mise
   mise self-update --yes
   mise bootstrap --yes --update -C ~/.dotfiles
-  mise upgrade --yes
+  mise bootstrap packages upgrade --yes -C ~/.dotfiles
+  mise upgrade --yes -C ~/.dotfiles
   mise prune --yes
 fi
 
