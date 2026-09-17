@@ -1,5 +1,7 @@
 ---
 extends: default
+ignore: |
+  .mise/locks/
 rules:
   comments:
     level: error
