@@ -223,6 +223,9 @@ login_shell = "/opt/homebrew/bin/zsh"
 auto_update = true
 dotfiles.root = "~/.dotfiles/home"
 
+[settings.github]
+use_git_credentials = true
+
 [tools]
 hk = "latest"
 lua = "5.1"
