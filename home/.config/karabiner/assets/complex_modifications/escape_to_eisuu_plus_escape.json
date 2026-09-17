@@ -9,8 +9,6 @@
             {
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
-                "^com\\.googlecode\\.iterm2$",
-                "^com\\.microsoft\\.VSCode$",
                 "^com\\.mitchellh\\.ghostty$",
                 "^dev\\.zed\\.Zed$",
                 "^org\\.vim\\."
@@ -30,8 +28,6 @@
             {
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
-                "^com\\.googlecode\\.iterm2$",
-                "^com\\.microsoft\\.VSCode$",
                 "^com\\.mitchellh\\.ghostty$",
                 "^dev\\.zed\\.Zed$",
                 "^org\\.vim\\."
