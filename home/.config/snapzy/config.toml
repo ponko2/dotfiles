@@ -1,5 +1,5 @@
 schema_version = 1
-snapzy_min_version = "1.31.0"
+snapzy_min_version = "1.32.0"
 
 [general]
 language = "en"
@@ -197,22 +197,22 @@ key = "5"
 modifiers = ["command", "shift"]
 
 [shortcuts.global.pause_resume_recording]
-enabled = true
+enabled = false
 key = ""
 modifiers = []
 
 [shortcuts.global.toggle_pen_recording]
-enabled = true
+enabled = false
 key = ""
 modifiers = []
 
 [shortcuts.global.restart_recording]
-enabled = true
+enabled = false
 key = ""
 modifiers = []
 
 [shortcuts.global.delete_recording]
-enabled = true
+enabled = false
 key = ""
 modifiers = []
 
@@ -268,8 +268,8 @@ modifiers = []
 
 [shortcuts.quick_access.edit_latest_capture]
 enabled = false
-key = "↩"
-modifiers = ["command"]
+key = ""
+modifiers = []
 
 [shortcuts.quick_access.card_actions]
 enabled = true
