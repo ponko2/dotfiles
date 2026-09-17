@@ -19,6 +19,22 @@ blue = 0.979300037944676
 green = 1.0
 red = 0.08458520228437894
 
+[borders.gradient]
+direction = "topLeftToBottomRight"
+enabled = true
+
+[borders.gradient.end]
+alpha = 1.0
+blue = 0.7
+green = 1.0
+red = 0.0
+
+[borders.gradient.start]
+alpha = 1.0
+blue = 1.0
+green = 0.4
+red = 0.0
+
 [clipboard]
 historyEnabled = false
 maxItemBytes = 8388608
