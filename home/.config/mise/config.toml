@@ -154,7 +154,6 @@ SSH_AUTH_SOCK = {
 "brew:clippy" = "latest"
 "brew:coreutils" = "latest"
 "brew:lua-language-server" = "latest"
-"brew:luarocks" = "latest"
 "brew:neovim" = "latest"
 "brew:pkl" = "latest"
 "brew:pkl-lsp" = "latest"
@@ -227,3 +226,4 @@ dotfiles.root = "~/.dotfiles/home"
 [tools]
 hk = "latest"
 lua = "5.1"
+ruby = "latest"
