@@ -1,9 +1,6 @@
 [bootstrap.brew]
 adopt = true
 
-[bootstrap.brew.taps]
-"f1bonacc1/tap" = "https://github.com/f1bonacc1/homebrew-tap.git"
-
 [bootstrap.hooks]
 post-defaults = "killall Dock Finder SystemUIServer 2> /dev/null || true"
 
