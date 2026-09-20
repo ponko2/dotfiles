@@ -30,6 +30,11 @@ if [[ -x /usr/libexec/path_helper ]]; then
   eval "$(/usr/libexec/path_helper -s)"
 fi
 
+# Nix
+if [[ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
+    source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+fi
+
 # Homebrew
 if [[ -f /opt/homebrew/bin/brew ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"

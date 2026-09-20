@@ -60,7 +60,7 @@ clean: | $(MISE) ## Remove symlinks.
 	$(MISE) bootstrap dotfiles unapply
 
 /nix:
-	curl -fsSL https://artifacts.nixos.org/nix-installer | sh -s -- install --no-confirm
+	curl -fsSL https://artifacts.nixos.org/nix-installer | sh -s -- install --enable-flakes --no-confirm --no-modify-profile
 
 .PHONY: switch
 switch: | /nix ## Build and switch to the new configuration.
