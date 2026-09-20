@@ -2,6 +2,93 @@
 
 lockfile_version = 2
 
+[[tools.editorconfig-checker]]
+version = "4.0.1"
+backend = "github:editorconfig-checker/editorconfig-checker"
+specifiers = ["latest"]
+
+[tools.editorconfig-checker."platforms.linux-arm64"]
+checksum = "sha256:f162c749ade763ed4954de678ebb786c99431b9a615a964c284605e68dbbd3f9"
+url = "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v4.0.1/editorconfig-checker-linux-arm64.tar.gz"
+url_api = "https://api.github.com/repos/editorconfig-checker/editorconfig-checker/releases/assets/543952366"
+provenance = "github-attestations"
+
+[tools.editorconfig-checker."platforms.linux-arm64-musl"]
+checksum = "sha256:f162c749ade763ed4954de678ebb786c99431b9a615a964c284605e68dbbd3f9"
+url = "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v4.0.1/editorconfig-checker-linux-arm64.tar.gz"
+url_api = "https://api.github.com/repos/editorconfig-checker/editorconfig-checker/releases/assets/543952366"
+provenance = "github-attestations"
+
+[tools.editorconfig-checker."platforms.linux-x64"]
+checksum = "sha256:90139c6ed52373c0acfc9deb2a07aa812e5184753afd4bc8252bf44eb4909155"
+url = "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v4.0.1/editorconfig-checker-linux-amd64.tar.gz"
+url_api = "https://api.github.com/repos/editorconfig-checker/editorconfig-checker/releases/assets/543952355"
+provenance = "github-attestations"
+
+[tools.editorconfig-checker."platforms.linux-x64-musl"]
+checksum = "sha256:90139c6ed52373c0acfc9deb2a07aa812e5184753afd4bc8252bf44eb4909155"
+url = "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v4.0.1/editorconfig-checker-linux-amd64.tar.gz"
+url_api = "https://api.github.com/repos/editorconfig-checker/editorconfig-checker/releases/assets/543952355"
+provenance = "github-attestations"
+
+[tools.editorconfig-checker."platforms.macos-arm64"]
+checksum = "sha256:9ed547505176d7384e1fb861ecfdd13df8c15e37d4bbcc2bd40e52e81ab32176"
+url = "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v4.0.1/editorconfig-checker-darwin-all.tar.gz"
+url_api = "https://api.github.com/repos/editorconfig-checker/editorconfig-checker/releases/assets/543952367"
+provenance = "github-attestations"
+
+[tools.editorconfig-checker."platforms.macos-x64"]
+checksum = "sha256:9ed547505176d7384e1fb861ecfdd13df8c15e37d4bbcc2bd40e52e81ab32176"
+url = "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v4.0.1/editorconfig-checker-darwin-all.tar.gz"
+url_api = "https://api.github.com/repos/editorconfig-checker/editorconfig-checker/releases/assets/543952367"
+provenance = "github-attestations"
+
+[tools.editorconfig-checker."platforms.windows-x64"]
+checksum = "sha256:a5f1eb57b62a3499b920f6ddb1561c7f8b0276289ff0c4fefc03a5225d721c11"
+url = "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v4.0.1/editorconfig-checker-windows-amd64.zip"
+url_api = "https://api.github.com/repos/editorconfig-checker/editorconfig-checker/releases/assets/543952342"
+provenance = "github-attestations"
+
+[[tools."github:Kampfkarren/selene"]]
+version = "0.31.0"
+backend = "github:Kampfkarren/selene"
+specifiers = ["latest"]
+
+[tools."github:Kampfkarren/selene"."platforms.linux-arm64"]
+checksum = "sha256:dac452422747999ec4919bbb8bb52992b66aae533b60022bf005669de8616671"
+url = "https://github.com/Kampfkarren/selene/releases/download/0.31.0/selene-0.31.0-linux.zip"
+url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/425779991"
+
+[tools."github:Kampfkarren/selene"."platforms.linux-arm64-musl"]
+checksum = "sha256:dac452422747999ec4919bbb8bb52992b66aae533b60022bf005669de8616671"
+url = "https://github.com/Kampfkarren/selene/releases/download/0.31.0/selene-0.31.0-linux.zip"
+url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/425779991"
+
+[tools."github:Kampfkarren/selene"."platforms.linux-x64"]
+checksum = "sha256:dac452422747999ec4919bbb8bb52992b66aae533b60022bf005669de8616671"
+url = "https://github.com/Kampfkarren/selene/releases/download/0.31.0/selene-0.31.0-linux.zip"
+url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/425779991"
+
+[tools."github:Kampfkarren/selene"."platforms.linux-x64-musl"]
+checksum = "sha256:dac452422747999ec4919bbb8bb52992b66aae533b60022bf005669de8616671"
+url = "https://github.com/Kampfkarren/selene/releases/download/0.31.0/selene-0.31.0-linux.zip"
+url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/425779991"
+
+[tools."github:Kampfkarren/selene"."platforms.macos-arm64"]
+checksum = "sha256:67f644e57e14ccb74a0c272bc44af0dc7909d8bdff58e4e59bb3524717da5741"
+url = "https://github.com/Kampfkarren/selene/releases/download/0.31.0/selene-0.31.0-macos.zip"
+url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/425780014"
+
+[tools."github:Kampfkarren/selene"."platforms.macos-x64"]
+checksum = "sha256:67f644e57e14ccb74a0c272bc44af0dc7909d8bdff58e4e59bb3524717da5741"
+url = "https://github.com/Kampfkarren/selene/releases/download/0.31.0/selene-0.31.0-macos.zip"
+url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/425780014"
+
+[tools."github:Kampfkarren/selene"."platforms.windows-x64"]
+checksum = "sha256:c5d5d087daa8e38bd71680b2202a407e5d4bc00fd584a648dec17ef9b29a2b73"
+url = "https://github.com/Kampfkarren/selene/releases/download/0.31.0/selene-0.31.0-windows.zip"
+url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/425780002"
+
 [[tools.hk]]
 version = "2.0.1"
 backend = "packslip:github.com/jdx/hk"
@@ -36,6 +123,32 @@ signer = "sigstore-oidc:https://github.com/jdx/hk/.github/workflows/release.yml"
 checksum = "sha256:b3cb8ab5958393faacefabfb3a402060eb256b1fda8e1f83c74c3fc877ebff8f"
 url = "https://github.com/jdx/hk/releases/download/v2.0.1/hk-x86_64-pc-windows-msvc.zip"
 signer = "sigstore-oidc:https://github.com/jdx/hk/.github/workflows/release.yml"
+
+[[tools.lua]]
+version = "5.1"
+backend = "vfox:mise-plugins/vfox-lua"
+specifiers = ["5.1"]
+
+[tools.lua."platforms.linux-arm64"]
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
+
+[tools.lua."platforms.linux-arm64-musl"]
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
+
+[tools.lua."platforms.linux-x64"]
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
+
+[tools.lua."platforms.linux-x64-musl"]
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
+
+[tools.lua."platforms.macos-arm64"]
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
+
+[tools.lua."platforms.macos-x64"]
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
+
+[tools.lua."platforms.windows-x64"]
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
 
 [[tools.node]]
 version = "24.21.0"
@@ -81,3 +194,136 @@ version = "0.68.0"
 aube = { path = ".mise/locks/oxfmt/0.68.0", digest = "sha256:77b5f0babfeae0bf16bc5f66996d6554cbb5ab2b6c30ae27db057f3b5f111355" }
 backend = "npm:oxfmt"
 specifiers = ["latest"]
+
+[[tools.python]]
+version = "3.14.7"
+backend = "core:python"
+specifiers = ["latest"]
+
+[tools.python."platforms.linux-arm64"]
+checksum = "sha256:8a0798baa8a2c27b5751d590aced543eaa85e20b3f73d93c1af049688acdc9c5"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.14.7+20260901-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.linux-arm64-musl"]
+checksum = "sha256:701c31d72187242302922a29f3bc6023ceb68b6b68fb8d4ed7568d1e6ef34548"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.14.7+20260901-aarch64-unknown-linux-musl-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.linux-x64"]
+checksum = "sha256:3959f92825141e04adf44982d3a83ee57af0877e893b0796e04c1468749d9b04"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.14.7+20260901-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.linux-x64-musl"]
+checksum = "sha256:c773f8a7357c0d1a29e208a14bc16386731ca9c0d2e51f1b6741967fb0632cdc"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.14.7+20260901-x86_64-unknown-linux-musl-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.macos-arm64"]
+checksum = "sha256:4632cb1a6edad9e73d3c81b6d2e69131637d995173e3e85005df14102b0592ba"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.14.7+20260901-aarch64-apple-darwin-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.macos-x64"]
+checksum = "sha256:7e151a7c9028855b61a7d6e78381f2020a1ef185281399f3b1aafc5e1c9a1a64"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.14.7+20260901-x86_64-apple-darwin-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[tools.python."platforms.windows-x64"]
+checksum = "sha256:ca3c33ca924dfcab3b74205a7a58a88b0255135c53f95497b26b5e60700fd66d"
+url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260901/cpython-3.14.7+20260901-x86_64-pc-windows-msvc-install_only_stripped.tar.gz"
+provenance = "github-attestations"
+
+[[tools.stylua]]
+version = "2.5.2"
+backend = "aqua:JohnnyMorganz/StyLua"
+specifiers = ["latest"]
+
+[tools.stylua."platforms.linux-arm64"]
+checksum = "sha256:0ef2ebf0b7e5a652b65c4cb96c6d9ffb3981a98547de3c764465bbf54a8d761a"
+url = "https://github.com/JohnnyMorganz/StyLua/releases/download/v2.5.2/stylua-linux-aarch64.zip"
+url_api = "https://api.github.com/repos/JohnnyMorganz/StyLua/releases/assets/421900973"
+
+[tools.stylua."platforms.linux-arm64-musl"]
+checksum = "sha256:b948df6b4bae41af9a70948174372f96a3c14d44e3e017288701539f3db8fb75"
+url = "https://github.com/JohnnyMorganz/StyLua/releases/download/v2.5.2/stylua-linux-aarch64-musl.zip"
+url_api = "https://api.github.com/repos/JohnnyMorganz/StyLua/releases/assets/421900982"
+
+[tools.stylua."platforms.linux-x64"]
+checksum = "sha256:ca6f1cf52eaf69e6632b81acef9c197aa24b85eb30d2455a35e7dbe28ae77c72"
+url = "https://github.com/JohnnyMorganz/StyLua/releases/download/v2.5.2/stylua-linux-x86_64-musl.zip"
+url_api = "https://api.github.com/repos/JohnnyMorganz/StyLua/releases/assets/421901066"
+
+[tools.stylua."platforms.linux-x64-musl"]
+checksum = "sha256:ca6f1cf52eaf69e6632b81acef9c197aa24b85eb30d2455a35e7dbe28ae77c72"
+url = "https://github.com/JohnnyMorganz/StyLua/releases/download/v2.5.2/stylua-linux-x86_64-musl.zip"
+url_api = "https://api.github.com/repos/JohnnyMorganz/StyLua/releases/assets/421901066"
+
+[tools.stylua."platforms.macos-arm64"]
+checksum = "sha256:92ff0889e16324801bc072692974bb67f8161e62010fc90f96c62a17f81f32c7"
+url = "https://github.com/JohnnyMorganz/StyLua/releases/download/v2.5.2/stylua-macos-aarch64.zip"
+url_api = "https://api.github.com/repos/JohnnyMorganz/StyLua/releases/assets/421901102"
+
+[tools.stylua."platforms.macos-x64"]
+checksum = "sha256:53c50a1605d0a6345d160a1a5a21db40bcf2bf9cd23c17f7c277a63a1bff3a7f"
+url = "https://github.com/JohnnyMorganz/StyLua/releases/download/v2.5.2/stylua-macos-x86_64.zip"
+url_api = "https://api.github.com/repos/JohnnyMorganz/StyLua/releases/assets/421901085"
+
+[tools.stylua."platforms.windows-x64"]
+checksum = "sha256:e77d0ea1226b8b389b43f702240091249a96eea25857281f90ea24d0eb9eb969"
+url = "https://github.com/JohnnyMorganz/StyLua/releases/download/v2.5.2/stylua-windows-x86_64.zip"
+url_api = "https://api.github.com/repos/JohnnyMorganz/StyLua/releases/assets/421902292"
+
+[[tools.uv]]
+version = "0.12.17"
+backend = "aqua:astral-sh/uv"
+specifiers = ["latest"]
+
+[tools.uv."platforms.linux-arm64"]
+checksum = "sha256:d636d1b678e9e7f367ecb22b46bd1cabbed234d6bc3b4d96365d2b507f72f86c"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.17/uv-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/573252936"
+provenance = "github-attestations"
+
+[tools.uv."platforms.linux-arm64-musl"]
+checksum = "sha256:a6096da273d548cb9f277d237a01ac7344a39ef0f455c0e148e4dc9737c1596b"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.17/uv-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/573252947"
+provenance = "github-attestations"
+
+[tools.uv."platforms.linux-x64"]
+checksum = "sha256:fa82fd8dde8e8eefdecada6aa0889666556cfceb690d06e0c3bca49eb3070a63"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.17/uv-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/573253080"
+provenance = "github-attestations"
+
+[tools.uv."platforms.linux-x64-musl"]
+checksum = "sha256:6401c4665d8fa2a9893e087c91f585430738e3170f5398a1141483efb4a93310"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.17/uv-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/573253085"
+provenance = "github-attestations"
+
+[tools.uv."platforms.macos-arm64"]
+checksum = "sha256:85f00cbdc6dd3e97eba4c31b4d014375a9fdfe8f570023b84e5102fc3456896b"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.17/uv-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/573252913"
+provenance = "github-attestations"
+
+[tools.uv."platforms.macos-x64"]
+checksum = "sha256:8dcf05a8c809bb3c471d2b614788ba27a6e41298fc8c31ac84b5f4339fd468e5"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.17/uv-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/573253060"
+provenance = "github-attestations"
+
+[tools.uv."platforms.windows-x64"]
+checksum = "sha256:a252121d5b59398fcb137c6ea448176459a44010f33f67e0072305a637119ca7"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.17/uv-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/573253071"
+provenance = "github-attestations"
+
+[[tools.yamllint]]
+version = "1.38.0"
+backend = "pypi:yamllint"
+specifiers = ["latest"]
+uv = { path = ".mise/locks/yamllint/1.38.0", digest = "sha256:43dae66ee339bcfd6718a2b0013b8a1df05473f3a4cb168a04161ea3385eee70" }
