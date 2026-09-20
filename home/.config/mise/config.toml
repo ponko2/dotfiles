@@ -180,6 +180,8 @@ SSH_AUTH_SOCK = {
 "brew-cask:font-udev-gothic-nf" = "latest"
 # Nix
 "nix:deadnix" = "latest"
+"nix:direnv" = "latest"
+"nix:nix-direnv" = "latest"
 "nix:nixfmt" = "latest"
 "nix:statix" = "latest"
 
@@ -188,6 +190,7 @@ login_shell = "/opt/homebrew/bin/zsh"
 
 [dotfiles]
 "~/.config/bat" = {}
+"~/.config/direnv" = {}
 "~/.config/ghostty" = {}
 "~/.config/git" = {}
 "~/.config/herdr" = {}
