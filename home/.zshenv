@@ -45,5 +45,9 @@ path=(
   "/etc/profiles/per-user/$USER/bin"(N-/)
   /run/current-system/sw/bin(N-/)
   /nix/var/nix/profiles/default/bin(N-/)
+  /opt/homebrew/bin(N-/)
+  /opt/homebrew/sbin(N-/)
+  /home/linuxbrew/.linuxbrew/bin(N-/)
+  /home/linuxbrew/.linuxbrew/sbin(N-/)
   $path
 )
