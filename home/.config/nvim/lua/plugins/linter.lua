@@ -11,6 +11,7 @@ return {
         go = { 'golangcilint' },
         lua = { 'luacheck' },
         markdown = { 'textlint' },
+        nix = { 'deadnix', 'statix' },
         python = { 'mypy' },
         text = { 'textlint' },
       }

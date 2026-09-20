@@ -108,8 +108,6 @@
                 shellcheck
                 statix
                 yamllint
-                # LSP
-                nixd
               ];
             };
             formatter = pkgs.nixfmt-tree;

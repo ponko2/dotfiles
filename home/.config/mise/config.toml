@@ -138,7 +138,6 @@ SSH_AUTH_SOCK = {
 "brew:zoxide" = "latest"
 "brew:zsh" = "latest"
 # Formatter
-"brew:nixfmt" = "latest"
 "brew:shfmt" = "latest"
 # Linter
 "brew:checkmake" = "latest"
@@ -179,6 +178,10 @@ SSH_AUTH_SOCK = {
 # Fonts
 "brew-cask:font-udev-gothic" = "latest"
 "brew-cask:font-udev-gothic-nf" = "latest"
+# Nix
+"nix:deadnix" = "latest"
+"nix:nixfmt" = "latest"
+"nix:statix" = "latest"
 
 [bootstrap.user]
 login_shell = "/opt/homebrew/bin/zsh"
