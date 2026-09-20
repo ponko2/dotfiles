@@ -182,6 +182,7 @@ SSH_AUTH_SOCK = {
 "nix:deadnix" = "latest"
 "nix:direnv" = "latest"
 "nix:nix-direnv" = "latest"
+"nix:nixd" = "latest"
 "nix:nixfmt" = "latest"
 "nix:statix" = "latest"
 
