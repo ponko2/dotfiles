@@ -56,7 +56,6 @@ return {
         javascriptreact = { 'prettier', name = 'oxfmt' },
         lua = { name = 'stylua' },
         markdown = { 'textlint', lsp_format = 'never' },
-        nix = { 'nixfmt' },
         text = { 'textlint', lsp_format = 'never' },
         toml = { lsp_format = 'never' },
         typescript = { 'prettier', name = 'oxfmt' },
