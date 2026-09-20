@@ -1,10 +1,13 @@
 [tools]
 "npm:@commitlint/cli" = "latest"
+checkmake = "latest"
 editorconfig-checker = "latest"
 hk = "latest"
 node = "lts"
 oxfmt = "latest"
 python = "latest"
+shellcheck = "latest"
+shfmt = "latest"
 stylua = "latest"
 uv = "latest"
 
