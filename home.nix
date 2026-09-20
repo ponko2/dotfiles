@@ -5,6 +5,7 @@
       pkgs.lib.genAttrs
         [
           ".config/bat"
+          ".config/direnv"
           ".config/ghostty"
           ".config/git"
           ".config/herdr"
@@ -41,6 +42,7 @@
       bat
       colordiff
       curl
+      direnv
       dos2unix
       exiftool
       eza
@@ -57,6 +59,7 @@
       lsd
       nb
       nh
+      nix-direnv
       nix-output-monitor
       nkf
       p7zip
@@ -90,11 +93,6 @@
     };
   };
   programs = {
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-      silent = true;
-    };
     neovim = {
       enable = true;
       extraPackages = with pkgs; [
