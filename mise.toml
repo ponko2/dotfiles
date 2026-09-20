@@ -1,12 +1,21 @@
 [tools]
-"github:Kampfkarren/selene" = { version = "latest", bin = "selene" }
 "npm:@commitlint/cli" = "latest"
 editorconfig-checker = "latest"
 hk = "latest"
-lua = { version = "5.1", postinstall = "luarocks install luacheck" }
 node = "lts"
 oxfmt = "latest"
 python = "latest"
 stylua = "latest"
 uv = "latest"
-yamllint = "latest"
+
+[tools."github:Kampfkarren/selene"]
+version = "latest"
+bin = "selene"
+
+[tools.lua]
+version = "5.1"
+postinstall = "luarocks install luacheck"
+
+[tools.yamllint]
+version = "latest"
+depends = ["python", "uv"]
