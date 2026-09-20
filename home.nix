@@ -4,7 +4,6 @@
     file =
       pkgs.lib.genAttrs
         [
-          ".config/atcoder-cli-nodejs"
           ".config/bat"
           ".config/ghostty"
           ".config/git"

@@ -184,7 +184,6 @@ SSH_AUTH_SOCK = {
 login_shell = "/opt/homebrew/bin/zsh"
 
 [dotfiles]
-"~/.config/atcoder-cli-nodejs" = {}
 "~/.config/bat" = {}
 "~/.config/ghostty" = {}
 "~/.config/git" = {}
