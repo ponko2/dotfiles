@@ -217,7 +217,9 @@ login_shell = "/opt/homebrew/bin/zsh"
 
 [settings]
 auto_update = true
-dotfiles.root = "~/.dotfiles/home"
+
+[settings.dotfiles]
+root = "~/.dotfiles/home"
 
 [settings.github]
 use_git_credentials = true
