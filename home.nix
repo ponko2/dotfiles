@@ -102,7 +102,6 @@
         coreutils-prefixed
         lua-language-server
         luarocks
-        nixd
         pkl
         pkl-lsp
         rust-analyzer
