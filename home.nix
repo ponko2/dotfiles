@@ -40,10 +40,13 @@
         });
     packages = with pkgs; [
       bat
+      checkmake
       colordiff
       curl
+      deadnix
       direnv
       dos2unix
+      editorconfig-checker
       exiftool
       eza
       fd
@@ -57,10 +60,12 @@
       jq
       jujutsu
       lsd
+      lua51Packages.luacheck
       nb
       nh
       nix-direnv
       nix-output-monitor
+      nixfmt
       nkf
       p7zip
       process-compose
@@ -69,10 +74,14 @@
       rsync
       selene
       sheldon
+      shellcheck
+      shfmt
       sqlite
       ssh-copy-id
       starship
+      statix
       wget
+      yamllint
       yazi
       zoxide
     ];
