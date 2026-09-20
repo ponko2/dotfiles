@@ -5,6 +5,7 @@ SHELL := /bin/bash
 export XDG_BIN_HOME := $(HOME)/.local/bin
 export XDG_CONFIG_HOME := $(HOME)/.config
 export MISE_GLOBAL_CONFIG_FILE := $(HOME)/.dotfiles/home/.config/mise/config.toml
+export MISE_TRUSTED_CONFIG_PATHS := $(HOME)/.dotfiles
 
 ifeq ($(shell uname -s),Darwin)
 	ifeq ($(shell uname -m),arm64)
