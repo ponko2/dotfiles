@@ -2,6 +2,11 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>ponko2/renovate-config"],
   "ignorePaths": [".mise/locks/**"],
+  "mise": {
+    "lockFileMaintenance": {
+      "enabled": false
+    }
+  },
   "nix": {
     "lockFileMaintenance": {
       "enabled": false
