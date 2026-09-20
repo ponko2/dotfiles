@@ -185,7 +185,7 @@ url = "https://nodejs.org/dist/v24.21.0/node-v24.21.0-win-x64.zip"
 
 [[tools."npm:@commitlint/cli"]]
 version = "21.2.2"
-aube = { path = ".mise/locks/npm-commitlint-cli/21.2.2", digest = "sha256:9b069c60a94a48547899aaba0a948e2842e27a4642be3f504d18c3519590d136" }
+aube = { path = ".mise/locks/npm-commitlint-cli/21.2.2", digest = "sha256:f4eb4edf1cfba7dc1b7e070659269bc55a4a5495ba0ba3341f3cec86cc1c910d" }
 backend = "npm:@commitlint/cli"
 specifiers = ["latest"]
 
