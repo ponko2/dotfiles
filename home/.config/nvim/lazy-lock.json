@@ -4,7 +4,7 @@
   "conform.nvim": { "branch": "master", "commit": "016802de402556da54c36bd7359b441266b01cdd" },
   "dial.nvim": { "branch": "master", "commit": "f2634758455cfa52a8acea6f142dcd6271a1bf57" },
   "emmet-vim": { "branch": "master", "commit": "92ef2f74f4093edc99db5e9e4cf7e40116a85bd6" },
-  "fff": { "branch": "main", "commit": "6b46693c8c6442877a3ee078955d0c36eaff4625" },
+  "fff": { "branch": "main", "commit": "e542d8a79e30837bba1b342d02ac39403190776e" },
   "fidget.nvim": { "branch": "main", "commit": "9e0201673e08e997e7cf52afca5565c70bd117f3" },
   "gitlinker.nvim": { "branch": "master", "commit": "a1b74070bbd5e50128190c85b09f1431ea5fbd83" },
   "gitsigns.nvim": { "branch": "main", "commit": "8d79f2410c76e62b92e51c28c82e28c1c5a3daeb" },
@@ -44,5 +44,5 @@
   "vim-sandwich": { "branch": "master", "commit": "74cf93d58ccc567d8e2310a69860f1b93af19403" },
   "vimdoc-ja": { "branch": "master", "commit": "4164dee5b55da60f9fbd5c5e518323eb3d57c009" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
-  "yazi.nvim": { "branch": "main", "commit": "7fa3a7059a338678e0da0e4647a87c3e40871448" }
+  "yazi.nvim": { "branch": "main", "commit": "3d381c0c8600b1bf025a304ace93d5d6a9055749" }
 }
