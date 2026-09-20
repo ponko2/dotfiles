@@ -153,12 +153,6 @@
         EnableStandardClickToShowDesktop = false;
       };
     };
-    keyboard = {
-      # キーの再マップを有効化
-      enableKeyMapping = true;
-      # Caps Lock キーを Control キーに再マップ
-      remapCapsLockToControl = true;
-    };
     stateVersion = 6;
   };
 }
