@@ -1,3 +1,0 @@
-[global]
-log_filter = "^$"
-log_format = "-"
