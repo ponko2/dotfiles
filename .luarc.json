@@ -16,6 +16,7 @@
   },
   "workspace": {
     "checkThirdParty": false,
+    "ignoreDir": ["home/.config/yazi/plugins"],
     "library": [
       "${env:HOMEBREW_PREFIX}/opt/neovim/share/nvim/runtime/lua",
       "${3rd}/busted/library",
