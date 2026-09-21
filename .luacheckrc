@@ -23,6 +23,5 @@ globals = {
 }
 
 exclude_files = {
-  '.direnv/**',
   'home/.config/yazi/plugins/**',
 }
