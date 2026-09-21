@@ -224,8 +224,8 @@ checksum = "sha256:158f7685b44de51f6c0df1d153526cbcd3e1bc739a8dfc607721cef75de9e
 url = "https://nodejs.org/dist/v24.21.0/node-v24.21.0-win-x64.zip"
 
 [[tools."npm:@commitlint/cli"]]
-version = "21.2.2"
-aube = { path = ".mise/locks/npm-commitlint-cli/21.2.2", digest = "sha256:9b069c60a94a48547899aaba0a948e2842e27a4642be3f504d18c3519590d136" }
+version = "21.2.3"
+aube = { path = ".mise/locks/npm-commitlint-cli/21.2.3", digest = "sha256:e18fbf22c2112c32cd89686b95c41b7320811d813181e8e30160b8309b4bb5c1" }
 backend = "npm:@commitlint/cli"
 specifiers = ["latest"]
 
