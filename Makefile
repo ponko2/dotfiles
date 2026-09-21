@@ -36,8 +36,11 @@ $(XDG_CONFIG_HOME):
 $(MISE):
 	curl -fsSL https://mise.run | sh
 
+/nix:
+	curl -fsSL https://artifacts.nixos.org/nix-installer | sh -s -- install --enable-flakes --no-confirm --no-modify-profile
+
 .PHONY: bootstrap
-bootstrap: | $(MISE) ## Run mise bootstrap.
+bootstrap: | $(MISE) /nix ## Run mise bootstrap.
 	$(MISE) bootstrap --yes -C ~/.dotfiles
 
 .PHONY: symlink
@@ -59,16 +62,6 @@ install: bootstrap bundle ## Run make bootstrap, bundle.
 .PHONY: clean
 clean: | $(MISE) ## Remove symlinks.
 	$(MISE) bootstrap dotfiles unapply
-
-/nix:
-	curl -fsSL https://artifacts.nixos.org/nix-installer | sh -s -- install --enable-flakes --no-confirm --no-modify-profile
-
-.PHONY: switch
-switch: | /nix ## Build and switch to the new configuration.
-	perl -i -pe "s/\"kano\"/\"$$(whoami)\"/g" ~/.dotfiles/flake.nix
-	perl -i -pe "s/\"ponko2\"/\"$$(scutil --get LocalHostName)\"/g" ~/.dotfiles/flake.nix
-	perl -i -pe "s/uid = \d+;/uid = $$(id -u);/g" ~/.dotfiles/flake.nix
-	sudo /nix/var/nix/profiles/default/bin/nix --extra-experimental-features "nix-command flakes" run nix-darwin/master#darwin-rebuild -- switch --flake ~/.dotfiles
 
 .PHONY: test
 test: ## Run checkmake.

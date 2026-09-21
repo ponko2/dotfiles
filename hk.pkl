@@ -3,23 +3,10 @@ amends "package://github.com/jdx/hk/releases/download/v2.0.1/hk@2.0.1#/Config.pk
 import "package://github.com/jdx/hk/releases/download/v2.0.1/hk@2.0.1#/Builtins.pkl"
 
 steps {
-  ["deadnix"] = Builtins.deadnix
   ["editorconfig_checker"] = Builtins.editorconfig_checker
   ["luacheck"] = Builtins.luacheck
-  ["nix_fmt"] = Builtins.nix_fmt
   ["oxfmt"] = Builtins.oxfmt
   ["selene"] = Builtins.selene
-  ["statix"] {
-    glob = "**/*.nix"
-    check = new CommandSpec {
-      command = new Command { argv = List("statix", "check") }
-      effect = "read"
-    }
-    fix = new CommandSpec {
-      command = new Command { argv = List("statix", "fix") }
-      effect = "write"
-    }
-  }
   ["stylua"] = Builtins.stylua
   ["yamllint"] = Builtins.yamllint
 }
