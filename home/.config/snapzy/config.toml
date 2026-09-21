@@ -1,5 +1,5 @@
 schema_version = 1
-snapzy_min_version = "1.32.1"
+snapzy_min_version = "1.32.3"
 
 [general]
 language = "en"
@@ -99,6 +99,7 @@ hold_duration = 0.3
 
 [quick_access]
 enabled = true
+play_sounds = true
 position = "bottomRight"
 auto_dismiss = true
 auto_dismiss_delay = 10.0
