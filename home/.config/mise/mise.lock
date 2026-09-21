@@ -37,32 +37,6 @@ checksum = "sha256:b3cb8ab5958393faacefabfb3a402060eb256b1fda8e1f83c74c3fc877ebf
 url = "https://github.com/jdx/hk/releases/download/v2.0.1/hk-x86_64-pc-windows-msvc.zip"
 signer = "sigstore-oidc:https://github.com/jdx/hk/.github/workflows/release.yml"
 
-[[tools.lua]]
-version = "5.1"
-backend = "vfox:mise-plugins/vfox-lua"
-specifiers = ["5.1"]
-
-[tools.lua."platforms.linux-arm64"]
-url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
-
-[tools.lua."platforms.linux-arm64-musl"]
-url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
-
-[tools.lua."platforms.linux-x64"]
-url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
-
-[tools.lua."platforms.linux-x64-musl"]
-url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
-
-[tools.lua."platforms.macos-arm64"]
-url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
-
-[tools.lua."platforms.macos-x64"]
-url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
-
-[tools.lua."platforms.windows-x64"]
-url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
-
 [[tools.ruby]]
 version = "4.0.7"
 backend = "core:ruby"
