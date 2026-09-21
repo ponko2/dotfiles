@@ -19,13 +19,10 @@ jobs:
       - ghalint
       - zizmor
       - commitlint
-      - deadnix
       - editorconfig
       - luacheck
-      - nixfmt
       - oxfmt
       - selene
-      - statix
       - stylua
       - yamllint
     runs-on: ubuntu-slim
@@ -45,7 +42,6 @@ jobs:
       # reference: https://github.com/tj-actions/changed-files#outputs-
       actions: ${{ steps.changed-files.outputs.actions_any_modified == 'true' }}
       luacheck: ${{ steps.changed-files.outputs.luacheck_any_modified == 'true' }}
-      nix: ${{ steps.changed-files.outputs.nix_any_modified == 'true' }}
       selene: ${{ steps.changed-files.outputs.selene_any_modified == 'true' }}
       stylua: ${{ steps.changed-files.outputs.stylua_any_modified == 'true' }}
       yamllint: ${{ steps.changed-files.outputs.yamllint_any_modified == 'true' }}
@@ -72,10 +68,6 @@ jobs:
               - *common
               - *lua
               - .luacheckrc
-            nix:
-              - *common
-              - "**/*.nix"
-              - flake.lock
             selene:
               - *common
               - *lua
@@ -150,37 +142,13 @@ jobs:
           fetch-depth: 50 # Assume PRs are less than 50 commits
           filter: blob:none
           persist-credentials: false
-      - name: Set up Nix
-        uses: ponko2/actions/setup-nix@7bd9f0fca49fd0950a9425c1889520d43077b497 # v1.8.0
-        with:
-          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
-          prefetch-dependencies: false
+      - name: Set up mise
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
       - name: Validate all commits from PR
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-        run: nix --quiet run .#commitlint -- --from "$BASE_SHA" --to "$HEAD_SHA" --verbose
-  deadnix:
-    name: deadnix
-    if: ${{ always() && !failure() && !cancelled() &&
-      (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.nix == 'true') }}
-    needs: changed-files
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - name: Set up Nix
-        uses: ponko2/actions/setup-nix@7bd9f0fca49fd0950a9425c1889520d43077b497 # v1.8.0
-        with:
-          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
-          prefetch-dependencies: false
-      - name: Run deadnix
-        run: nix --quiet run .#deadnix
+        run: commitlint --from "$BASE_SHA" --to "$HEAD_SHA" --verbose
   editorconfig:
     name: EditorConfig
     runs-on: ubuntu-latest
@@ -192,13 +160,10 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - name: Set up Nix
-        uses: ponko2/actions/setup-nix@7bd9f0fca49fd0950a9425c1889520d43077b497 # v1.8.0
-        with:
-          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
-          prefetch-dependencies: false
+      - name: Set up mise
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
       - name: Run EditorConfig checker
-        run: nix --quiet run .#editorconfig-checker
+        run: editorconfig-checker
   luacheck:
     name: Luacheck
     if: ${{ always() && !failure() && !cancelled() &&
@@ -213,34 +178,14 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - name: Set up Nix
-        uses: ponko2/actions/setup-nix@7bd9f0fca49fd0950a9425c1889520d43077b497 # v1.8.0
-        with:
-          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
-          prefetch-dependencies: false
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libreadline-dev
+      - name: Set up mise
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
       - name: Run Luacheck
-        run: nix --quiet run .#luacheck -- .
-  nixfmt:
-    name: Nixfmt
-    if: ${{ always() && !failure() && !cancelled() &&
-      (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.nix == 'true') }}
-    needs: changed-files
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - name: Set up Nix
-        uses: ponko2/actions/setup-nix@7bd9f0fca49fd0950a9425c1889520d43077b497 # v1.8.0
-        with:
-          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
-          prefetch-dependencies: false
-      - name: Run Nixfmt
-        run: nix fmt -- --ci
+        run: luacheck .
   oxfmt:
     name: Oxfmt
     runs-on: ubuntu-latest
@@ -252,13 +197,10 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - name: Set up Nix
-        uses: ponko2/actions/setup-nix@7bd9f0fca49fd0950a9425c1889520d43077b497 # v1.8.0
-        with:
-          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
-          prefetch-dependencies: false
+      - name: Set up mise
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
       - name: Run Oxfmt
-        run: nix --quiet run .#oxfmt -- --check
+        run: oxfmt --check
   selene:
     name: selene
     if: ${{ always() && !failure() && !cancelled() &&
@@ -273,34 +215,10 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - name: Set up Nix
-        uses: ponko2/actions/setup-nix@7bd9f0fca49fd0950a9425c1889520d43077b497 # v1.8.0
-        with:
-          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
-          prefetch-dependencies: false
+      - name: Set up mise
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
       - name: Run selene
-        run: nix --quiet run .#selene -- .
-  statix:
-    name: statix
-    if: ${{ always() && !failure() && !cancelled() &&
-      (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.nix == 'true') }}
-    needs: changed-files
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - name: Set up Nix
-        uses: ponko2/actions/setup-nix@7bd9f0fca49fd0950a9425c1889520d43077b497 # v1.8.0
-        with:
-          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
-          prefetch-dependencies: false
-      - name: Run statix
-        run: nix --quiet run .#statix -- check
+        run: selene .
   stylua:
     name: StyLua
     if: ${{ always() && !failure() && !cancelled() &&
@@ -315,13 +233,10 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - name: Set up Nix
-        uses: ponko2/actions/setup-nix@7bd9f0fca49fd0950a9425c1889520d43077b497 # v1.8.0
-        with:
-          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
-          prefetch-dependencies: false
+      - name: Set up mise
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
       - name: Run StyLua
-        run: nix --quiet run .#stylua -- --allow-hidden --check .
+        run: stylua --allow-hidden --check .
   yamllint:
     name: yamllint
     if: ${{ always() && !failure() && !cancelled() &&

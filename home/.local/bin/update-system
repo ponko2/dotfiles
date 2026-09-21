@@ -2,22 +2,16 @@
 
 set -euo pipefail
 
-if command -v darwin-rebuild >/dev/null; then
-  # Nix
-  NIX_CONFIG="access-tokens = github.com=$(gh auth token)" nix flake update --flake ~/.dotfiles
-  nh darwin switch
-  nh clean all --keep 3 --keep-since 4d
-else
-  # mise
-  mise self-update --yes
-  mise bootstrap --yes --update -C ~/.dotfiles
-  mise bootstrap packages upgrade --yes -C ~/.dotfiles
-  mise upgrade --yes -C ~/.dotfiles
-  mise prune --yes
-  # Homebrew
-  brew update --auto-update
-  brew upgrade --fetch-HEAD
-fi
+# mise
+mise self-update --yes
+mise bootstrap --yes --update -C ~/.dotfiles
+mise bootstrap packages upgrade --yes -C ~/.dotfiles
+mise upgrade --yes -C ~/.dotfiles
+mise prune --yes
+
+# Homebrew
+brew update --auto-update
+brew upgrade --fetch-HEAD
 
 # Yazi
 ya pkg upgrade

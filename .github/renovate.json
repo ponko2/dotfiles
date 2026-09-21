@@ -6,10 +6,5 @@
     "lockFileMaintenance": {
       "enabled": false
     }
-  },
-  "nix": {
-    "lockFileMaintenance": {
-      "enabled": false
-    }
   }
 }
