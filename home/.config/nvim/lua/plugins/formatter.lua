@@ -62,6 +62,7 @@ return {
         typescript = { 'prettier', name = 'oxfmt' },
         typescriptreact = { 'prettier', name = 'oxfmt' },
         vue = { 'prettier', name = 'oxfmt' },
+        zsh = { 'shfmt' },
       }
     end,
   },
