@@ -5,12 +5,14 @@ set -euo pipefail
 # ripgrep->fzf->Neovim [QUERY]
 rm -f /tmp/rg-fzf-{r,f}
 RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case"
+# shellcheck disable=SC2016
 OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
           nvim {1} +{2}     # No selection. Open the current line in Neovim.
         else
           nvim +cw -q {+f}  # Build quickfix list for the selected items.
         fi'
 INITIAL_QUERY="${*:-}"
+# shellcheck disable=SC2016
 fzf --disabled --multi --ansi --query "$INITIAL_QUERY" \
   --bind "start:reload:$RG_PREFIX {q}" \
   --bind "change:reload:sleep 0.1; $RG_PREFIX {q} || :" \
