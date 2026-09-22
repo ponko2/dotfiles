@@ -180,8 +180,8 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 [plugins.vite-plus]
 inline = '''
 # Vite+ bin (https://viteplus.dev)
-if [[ -f "$HOME/.vite-plus/env" ]]; then
-  source "$HOME/.vite-plus/env"
+if [[ -f "$XDG_CONFIG_HOME/vite-plus/env" ]]; then
+  source "$XDG_CONFIG_HOME/vite-plus/env"
 fi
 '''
 
