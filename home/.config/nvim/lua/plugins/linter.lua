@@ -9,7 +9,7 @@ return {
       lint.linters.textlint = require('ponko2.lint.linters.textlint')
       lint.linters_by_ft = {
         go = { 'golangcilint' },
-        lua = { 'luacheck' },
+        lua = { 'luacheck', 'selene' },
         markdown = { 'textlint' },
         nix = { 'deadnix', 'statix' },
         python = { 'mypy' },
