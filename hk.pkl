@@ -10,6 +10,8 @@ steps {
   ["luacheck"] = Builtins.luacheck
   ["oxfmt"] = Builtins.oxfmt
   ["selene"] = Builtins.selene
+  ["shellcheck"] = Builtins.shellcheck
+  ["shfmt"] = Builtins.shfmt
   ["stylua"] = Builtins.stylua
   ["yamllint"] = Builtins.yamllint
   ["zizmor"] = Builtins.zizmor
