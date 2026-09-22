@@ -1,3 +1,6 @@
+[plugins]
+luarocks = "https://github.com/ponko2/mise-luarocks"
+
 [settings]
 lockfile = true
 
@@ -6,6 +9,7 @@ lockfile = true
 checkmake = "latest"
 editorconfig-checker = "latest"
 hk = "latest"
+lua = "5.4"
 node = "lts"
 oxfmt = "latest"
 python = "latest"
@@ -18,9 +22,9 @@ uv = "latest"
 version = "latest"
 bin = "selene"
 
-[tools.lua]
-version = "5.4"
-postinstall = "luarocks install luacheck"
+[tools."luarocks:luacheck"]
+version = "latest"
+depends = ["lua"]
 
 [tools.yamllint]
 version = "latest"
