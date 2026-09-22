@@ -6,8 +6,10 @@ lockfile = true
 
 [tools]
 "npm:@commitlint/cli" = "latest"
+actionlint = "latest"
 checkmake = "latest"
 editorconfig-checker = "latest"
+ghalint = "latest"
 hk = "latest"
 lua = "5.4"
 node = "lts"
@@ -17,6 +19,7 @@ shellcheck = "latest"
 shfmt = "latest"
 stylua = "latest"
 uv = "latest"
+zizmor = "latest"
 
 [tools."github:Kampfkarren/selene"]
 version = "latest"
