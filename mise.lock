@@ -190,6 +190,11 @@ url = "https://www.lua.org/ftp/lua-5.4.9.tar.gz"
 [tools.lua."platforms.windows-x64"]
 url = "https://www.lua.org/ftp/lua-5.4.9.tar.gz"
 
+[[tools."luarocks:luacheck"]]
+version = "1.2.0-1"
+backend = "luarocks:luacheck"
+specifiers = ["latest"]
+
 [[tools.node]]
 version = "24.21.0"
 backend = "core:node"
