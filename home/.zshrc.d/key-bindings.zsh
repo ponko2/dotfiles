@@ -11,12 +11,12 @@ bindkey "\\ep" history-beginning-search-backward-end
 bindkey "\\en" history-beginning-search-forward-end
 
 # history search
-if [[ "$(bindkey '^R')" == *' history-incremental-search-backward' && \
-  -n $widgets[history-incremental-pattern-search-backward] ]]; then
+if [[ "$(bindkey '^R')" == *' history-incremental-search-backward' &&
+-n $widgets[history - incremental - pattern - search - backward] ]]; then
   bindkey '^R' history-incremental-pattern-search-backward
 fi
-if [[ "$(bindkey '^S')" == *' history-incremental-search-forward' && \
-  -n $widgets[history-incremental-pattern-search-forward] ]]; then
+if [[ "$(bindkey '^S')" == *' history-incremental-search-forward' &&
+-n $widgets[history - incremental - pattern - search - forward] ]]; then
   bindkey '^S' history-incremental-pattern-search-forward
 fi
 
@@ -32,7 +32,7 @@ bindkey '^[r' redo
 
 # ghq
 function fzf-cd_ghq_list-widget() {
-  setopt local_options pipefail no_aliases 2> /dev/null
+  setopt local_options pipefail no_aliases 2>/dev/null
   local dir="$(ghq list --full-path | fzf --scheme=path --no-multi --cycle --reverse)"
   if [[ -z "$dir" ]]; then
     zle redisplay
