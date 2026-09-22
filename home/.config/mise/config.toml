@@ -138,24 +138,13 @@ SSH_AUTH_SOCK = {
 "brew:yazi" = "latest"
 "brew:zoxide" = "latest"
 "brew:zsh" = "latest"
-# Formatter
-"brew:shfmt" = "latest"
-# Linter
-"brew:checkmake" = "latest"
-"brew:editorconfig-checker" = "latest"
-"brew:luacheck" = "latest"
-"brew:selene" = "latest"
-"brew:shellcheck" = "latest"
-"brew:yamllint" = "latest"
 # Neovim
-"brew:clippy" = "latest"
 "brew:coreutils" = "latest"
 "brew:lua-language-server" = "latest"
 "brew:neovim" = "latest"
 "brew:pkl" = "latest"
 "brew:pkl-lsp" = "latest"
 "brew:rust-analyzer" = "latest"
-"brew:stylua" = "latest"
 "brew:tree-sitter" = "latest"
 "brew:tree-sitter-cli" = "latest"
 "brew:ty" = "latest"
@@ -180,10 +169,8 @@ SSH_AUTH_SOCK = {
 "brew-cask:font-udev-gothic" = "latest"
 "brew-cask:font-udev-gothic-nf" = "latest"
 # Nix
-"nix:deadnix" = "latest"
 "nix:nixd" = "latest"
 "nix:nixfmt" = "latest"
-"nix:statix" = "latest"
 
 [bootstrap.user]
 login_shell = "/opt/homebrew/bin/zsh"
@@ -204,7 +191,6 @@ login_shell = "/opt/homebrew/bin/zsh"
 "~/.config/snapzy" = {}
 "~/.config/starship.toml" = {}
 "~/.config/tuicr" = {}
-"~/.config/yamllint" = {}
 "~/.config/yazi" = {}
 "~/.config/zed" = {}
 "~/.config/zsh-abbr" = {}
@@ -212,7 +198,6 @@ login_shell = "/opt/homebrew/bin/zsh"
 "~/.local/bin/update-system" = {}
 "~/.nbrc" = {}
 "~/.ripgreprc" = {}
-"~/.textlintrc.json" = {}
 "~/.vim" = {}
 "~/.vimrc" = {}
 "~/.zprofile" = {}
