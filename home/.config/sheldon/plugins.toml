@@ -164,14 +164,6 @@ if command -v nvim >/dev/null; then
 fi
 '''
 
-[plugins.pnpm]
-inline = '''
-if [[ -d "$XDG_DATA_HOME/pnpm" ]]; then
-  export PNPM_HOME="$XDG_DATA_HOME/pnpm"
-  path=("$PNPM_HOME"(N-/) $path)
-fi
-'''
-
 [plugins.ripgrep]
 inline = '''
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
