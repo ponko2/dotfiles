@@ -1,3 +1,6 @@
+[env]
+VIMRUNTIME = { value = "{{ tools.neovim.path }}/share/nvim/runtime", tools = true }
+
 [plugins]
 luarocks = "https://github.com/ponko2/mise-luarocks"
 
@@ -13,6 +16,7 @@ ghalint = "latest"
 hk = "latest"
 lua = "5.4"
 lua-language-server = "latest"
+neovim = "latest"
 oxfmt = "latest"
 python = "latest"
 shellcheck = "latest"

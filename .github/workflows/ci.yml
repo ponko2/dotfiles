@@ -222,18 +222,12 @@ jobs:
             echo "XDG_DATA_HOME=$HOME/.local/share"
             echo "XDG_STATE_HOME=$HOME/.local/state"
           } >> "$GITHUB_ENV"
-      - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@848c272c7bfe984a197bd4d16383f4c106ec61e6 # 2026.09.21.1
       - name: Set up mise
         uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
-      - name: Install Neovim
-        run: brew install neovim
       - name: Restore Neovim plugins
         run: nvim --headless "+Lazy! restore" +qa
       - name: Run LuaLS
-        run: |
-          eval "$(brew shellenv)"
-          lua-language-server --check .
+        run: lua-language-server --check .
   oxfmt:
     name: Oxfmt
     runs-on: ubuntu-latest
