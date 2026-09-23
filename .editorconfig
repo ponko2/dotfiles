@@ -23,6 +23,4 @@ indent_size = 4
 
 [*.md]
 indent_size = unset
-
-[*.{md,vim}]
 trim_trailing_whitespace = false
