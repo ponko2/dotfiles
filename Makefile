@@ -8,11 +8,7 @@ export MISE_GLOBAL_CONFIG_FILE := $(HOME)/.dotfiles/home/.config/mise/config.tom
 export MISE_TRUSTED_CONFIG_PATHS := $(HOME)/.dotfiles
 
 ifeq ($(shell uname -s),Darwin)
-	ifeq ($(shell uname -m),arm64)
-		HOMEBREW := /opt/homebrew/bin/brew
-	else
-		HOMEBREW := /usr/local/bin/brew
-	endif
+	HOMEBREW := /opt/homebrew/bin/brew
 else
 	HOMEBREW := /home/linuxbrew/.linuxbrew/bin/brew
 endif
