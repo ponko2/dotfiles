@@ -8,6 +8,13 @@ steps {
   ["ghalint_action"] = Builtins.ghalint_action
   ["ghalint_workflow"] = Builtins.ghalint_workflow
   ["luacheck"] = Builtins.luacheck
+  ["luals"] {
+    types = List("lua")
+    check = new CommandSpec {
+      command = new Command { argv = List("lua-language-server", "--check", ".") }
+      effect = "read"
+    }
+  }
   ["oxfmt"] = Builtins.oxfmt
   ["selene"] = Builtins.selene
   ["shellcheck"] = Builtins.shellcheck
