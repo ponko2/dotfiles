@@ -18,7 +18,7 @@
     "checkThirdParty": false,
     "ignoreDir": ["home/.config/yazi/plugins"],
     "library": [
-      "${env:HOMEBREW_PREFIX}/opt/neovim/share/nvim/runtime/lua",
+      "${env:VIMRUNTIME}/lua",
       "${3rd}/busted/library",
       "${3rd}/luv/library",
       "${env:XDG_DATA_HOME}/nvim/lazy/conform.nvim/lua",

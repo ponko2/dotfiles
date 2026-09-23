@@ -16,9 +16,8 @@ return {
           {
             name = '@vue/typescript-plugin',
             location = vim.fs.joinpath(
-              vim.env.HOMEBREW_PREFIX,
-              '/opt/vue-language-server/libexec/lib',
-              '/node_modules/@vue/language-server'
+              vim.fs.dirname(vim.fn.exepath('vue-language-server')),
+              '/../@vue/language-server'
             ),
             languages = { 'vue' },
             configNamespace = 'typescript',

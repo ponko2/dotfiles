@@ -140,17 +140,7 @@ SSH_AUTH_SOCK = {
 "brew:zsh" = "latest"
 # Neovim
 "brew:coreutils" = "latest"
-"brew:lua-language-server" = "latest"
-"brew:neovim" = "latest"
-"brew:pkl" = "latest"
 "brew:pkl-lsp" = "latest"
-"brew:rust-analyzer" = "latest"
-"brew:tree-sitter" = "latest"
-"brew:tree-sitter-cli" = "latest"
-"brew:ty" = "latest"
-"brew:vscode-langservers-extracted" = "latest"
-"brew:vtsls" = "latest"
-"brew:vue-language-server" = "latest"
 # GUI Applications
 "brew-cask:1password" = "latest"
 "brew-cask:1password-cli" = "latest"
@@ -213,5 +203,14 @@ root = "~/.dotfiles/home"
 use_git_credentials = true
 
 [tools]
+"npm:@vtsls/language-server" = "latest"
+"npm:@vue/language-server" = "latest"
+"npm:vscode-langservers-extracted" = "latest"
 hk = "latest"
+lua-language-server = "latest"
+neovim = "latest"
+pkl = "latest"
 ruby = "latest"
+rust-analyzer = "latest"
+tree-sitter = "latest"
+ty = "latest"
