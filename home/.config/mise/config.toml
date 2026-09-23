@@ -162,9 +162,6 @@ SSH_AUTH_SOCK = {
 "nix:nixd" = "latest"
 "nix:nixfmt" = "latest"
 
-[bootstrap.user]
-login_shell = "/opt/homebrew/bin/zsh"
-
 [dotfiles]
 "~/.config/bat" = {}
 "~/.config/ghostty" = {}
