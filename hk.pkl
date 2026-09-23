@@ -17,8 +17,33 @@ steps {
   }
   ["oxfmt"] = Builtins.oxfmt
   ["selene"] = Builtins.selene
-  ["shellcheck"] = Builtins.shellcheck
-  ["shfmt"] = Builtins.shfmt
+  ["shellcheck"] = (Builtins.shellcheck) {
+    match_any =
+      Builtins.shellcheck.match_any
+        + List(new FileSelector {
+          glob =
+            List(
+              "home/.local/bin/rfv",
+              "home/.local/bin/update-system",
+              "home/.nbrc",
+            )
+        })
+  }
+  ["shfmt"] = (Builtins.shfmt) {
+    match_any =
+      Builtins.shfmt.match_any
+        + List(new FileSelector {
+          glob =
+            List(
+              "home/.local/bin/rfv",
+              "home/.local/bin/update-system",
+              "home/.nbrc",
+              "home/.zprofile",
+              "home/.zshenv",
+              "home/.zshrc",
+            )
+        })
+  }
   ["stylua"] = Builtins.stylua
   ["yamllint"] = Builtins.yamllint
   ["zizmor"] = Builtins.zizmor
