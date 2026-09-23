@@ -5,9 +5,9 @@ export default {
     "header-max-length": [2, "always", 50],
   },
   ignores: [
-    (commit) => /^Signed-off-by: dependabot\[bot] <support@github\.com>$/m.test(commit),
+    (commit) => /^Signed-off-by: dependabot\[bot\] <support@github\.com>$/mu.test(commit),
     (commit) =>
-      /^Signed-off-by: renovate\[bot] <29139614\+renovate\[bot]@users\.noreply\.github\.com>$/m.test(
+      /^Signed-off-by: renovate\[bot\] <29139614\+renovate\[bot\]@users\.noreply\.github\.com>$/mu.test(
         commit,
       ),
   ],
