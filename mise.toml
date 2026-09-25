@@ -8,6 +8,7 @@ luarocks = "https://github.com/ponko2/mise-luarocks"
 lockfile = true
 
 [tools]
+"aqua:owenlamont/ryl" = "latest"
 "npm:@commitlint/cli" = "latest"
 actionlint = "latest"
 checkmake = "latest"
@@ -18,11 +19,9 @@ lua = "5.4"
 lua-language-server = "latest"
 neovim = "latest"
 oxfmt = "latest"
-python = "latest"
 shellcheck = "latest"
 shfmt = "latest"
 stylua = "latest"
-uv = "latest"
 zizmor = "latest"
 
 [tools."github:Kampfkarren/selene"]
@@ -32,7 +31,3 @@ bin = "selene"
 [tools."luarocks:luacheck"]
 version = "latest"
 depends = ["lua"]
-
-[tools.yamllint]
-version = "latest"
-depends = ["python", "uv"]

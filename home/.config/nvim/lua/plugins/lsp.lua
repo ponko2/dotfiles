@@ -16,6 +16,7 @@ return {
         'pkl',
         'ruff',
         'rust_analyzer',
+        'ryl',
         'stylua',
         'ty',
         'vtsls',

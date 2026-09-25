@@ -16,6 +16,7 @@ steps {
     }
   }
   ["oxfmt"] = Builtins.oxfmt
+  ["ryl"] = Builtins.ryl
   ["selene"] = Builtins.selene
   ["shellcheck"] = (Builtins.shellcheck) {
     match_any =
@@ -45,7 +46,6 @@ steps {
         })
   }
   ["stylua"] = Builtins.stylua
-  ["yamllint"] = Builtins.yamllint
   ["zizmor"] = Builtins.zizmor
 }
 

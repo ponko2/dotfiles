@@ -200,6 +200,7 @@ root = "~/.dotfiles/home"
 use_git_credentials = true
 
 [tools]
+"aqua:owenlamont/ryl" = "latest"
 "npm:@vtsls/language-server" = "latest"
 "npm:@vue/language-server" = "latest"
 "npm:vscode-langservers-extracted" = "latest"
