@@ -24,11 +24,5 @@ rules:
     extra-allowed:
       - ^[0-9]{2}:[0-9]{2}$
   truthy:
-    allowed-values:
-      - "true"
-      - "false"
-      - "yes"
-      - "no"
-      - "on"
-      - "off"
+    check-keys: false
     level: error
