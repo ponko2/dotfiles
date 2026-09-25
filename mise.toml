@@ -4,9 +4,6 @@ VIMRUNTIME = { value = "{{ tools.neovim.path }}/share/nvim/runtime", tools = tru
 [plugins]
 luarocks = "https://github.com/ponko2/mise-luarocks"
 
-[settings]
-lockfile = true
-
 [tools]
 "aqua:owenlamont/ryl" = "latest"
 "npm:@commitlint/cli" = "latest"
