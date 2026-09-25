@@ -23,9 +23,9 @@ jobs:
       - luacheck
       - luals
       - oxfmt
+      - ryl
       - selene
       - stylua
-      - yamllint
     runs-on: ubuntu-slim
     timeout-minutes: 60
     steps:
@@ -44,9 +44,9 @@ jobs:
       actions: ${{ steps.changed-files.outputs.actions_any_modified == 'true' }}
       luacheck: ${{ steps.changed-files.outputs.luacheck_any_modified == 'true' }}
       luals: ${{ steps.changed-files.outputs.luals_any_modified == 'true' }}
+      ryl: ${{ steps.changed-files.outputs.ryl_any_modified == 'true' }}
       selene: ${{ steps.changed-files.outputs.selene_any_modified == 'true' }}
       stylua: ${{ steps.changed-files.outputs.stylua_any_modified == 'true' }}
-      yamllint: ${{ steps.changed-files.outputs.yamllint_any_modified == 'true' }}
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -74,6 +74,9 @@ jobs:
               - *lua
               - .luarc.json
               - home/.config/nvim/lazy-lock.json
+            ryl:
+              - *common
+              - "**/*.{yaml,yml}"
             selene:
               - *common
               - *lua
@@ -83,9 +86,6 @@ jobs:
               - *common
               - *lua
               - .stylua.toml
-            yamllint:
-              - *common
-              - "**/*.{yaml,yml}"
   actionlint:
     name: actionlint
     if: ${{ always() && !failure() && !cancelled() &&
@@ -244,6 +244,24 @@ jobs:
         uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
       - name: Run Oxfmt
         run: oxfmt --check
+  ryl:
+    name: ryl
+    if: ${{ always() && !failure() && !cancelled() &&
+      (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.ryl == 'true') }}
+    needs: changed-files
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up mise
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
+      - name: Run ryl
+        run: ryl --format=github --strict .
   selene:
     name: selene
     if: ${{ always() && !failure() && !cancelled() &&
@@ -280,21 +298,3 @@ jobs:
         uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
       - name: Run StyLua
         run: stylua --allow-hidden --check .
-  yamllint:
-    name: yamllint
-    if: ${{ always() && !failure() && !cancelled() &&
-      (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.yamllint == 'true') }}
-    needs: changed-files
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - name: Set up mise
-        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
-      - name: Run yamllint
-        run: yamllint --format=github --strict .

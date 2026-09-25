@@ -16,7 +16,6 @@ return {
         python = { 'mypy' },
         sh = { 'shellcheck' },
         text = { 'textlint' },
-        yaml = { 'yamllint' },
       }
       vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufWritePost', 'InsertLeave' }, {
         group = vim.api.nvim_create_augroup('my.linter', {}),
