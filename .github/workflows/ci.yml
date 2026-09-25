@@ -73,6 +73,7 @@ jobs:
               - *common
               - *lua
               - .luarc.json
+              - home/.config/nvim/lazy-lock.json
             selene:
               - *common
               - *lua
