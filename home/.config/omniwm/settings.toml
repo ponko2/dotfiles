@@ -37,6 +37,7 @@ red = 0.0
 
 [clipboard]
 historyEnabled = false
+ignoredTypes = []
 maxItemBytes = 8388608
 maxItems = 200
 maxTotalBytes = 67108864
