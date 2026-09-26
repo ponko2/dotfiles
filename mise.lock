@@ -314,30 +314,30 @@ url = "https://github.com/jdx/hk/releases/download/v2.1.0/hk-x86_64-pc-windows-m
 signer = "sigstore-oidc:https://github.com/jdx/hk/.github/workflows/release.yml"
 
 [[tools.lua]]
-version = "5.4.9"
+version = "5.1"
 backend = "vfox:mise-plugins/vfox-lua"
-specifiers = ["5.4"]
+specifiers = ["5.1"]
 
 [tools.lua."platforms.linux-arm64"]
-url = "https://www.lua.org/ftp/lua-5.4.9.tar.gz"
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
 
 [tools.lua."platforms.linux-arm64-musl"]
-url = "https://www.lua.org/ftp/lua-5.4.9.tar.gz"
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
 
 [tools.lua."platforms.linux-x64"]
-url = "https://www.lua.org/ftp/lua-5.4.9.tar.gz"
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
 
 [tools.lua."platforms.linux-x64-musl"]
-url = "https://www.lua.org/ftp/lua-5.4.9.tar.gz"
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
 
 [tools.lua."platforms.macos-arm64"]
-url = "https://www.lua.org/ftp/lua-5.4.9.tar.gz"
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
 
 [tools.lua."platforms.macos-x64"]
-url = "https://www.lua.org/ftp/lua-5.4.9.tar.gz"
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
 
 [tools.lua."platforms.windows-x64"]
-url = "https://www.lua.org/ftp/lua-5.4.9.tar.gz"
+url = "https://www.lua.org/ftp/lua-5.1.tar.gz"
 
 [[tools.lua-language-server]]
 version = "3.19.1"

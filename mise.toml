@@ -12,7 +12,6 @@ checkmake = "latest"
 editorconfig-checker = "latest"
 ghalint = "latest"
 hk = "latest"
-lua = "5.4"
 lua-language-server = "latest"
 neovim = "latest"
 oxfmt = "latest"
@@ -28,3 +27,10 @@ bin = "selene"
 [tools."luarocks:luacheck"]
 version = "latest"
 depends = ["lua"]
+lazy = true
+lazy_bins = ["luacheck"]
+
+[tools.lua]
+version = "5.1"
+lazy = true
+lazy_bins = ["lua", "luac", "luarocks"]
