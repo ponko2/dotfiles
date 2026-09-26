@@ -30,25 +30,18 @@ if [[ -x /usr/libexec/path_helper ]]; then
   eval "$(/usr/libexec/path_helper -s)"
 fi
 
+# mise
+# ref. https://mise.jdx.dev/bootstrap/packages/brew.html#the-prefix
+# ref. https://docs.brew.sh/Tips-and-Tricks#load-homebrew-from-the-same-dotfiles-on-different-operating-systems
+path=(/opt/homebrew/bin(N-/) /home/linuxbrew/.linuxbrew/bin(N-/) $path)
+
+# Homebrew
+command -v brew && eval "$(brew shellenv)"
+
 # Nix
 if [[ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
   source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 fi
 
-# Homebrew
-# ref. https://docs.brew.sh/Tips-and-Tricks#load-homebrew-from-the-same-dotfiles-on-different-operating-systems
-command -v brew || path=(/opt/homebrew/bin(N-/) /home/linuxbrew/.linuxbrew/bin(N-/) $path)
-command -v brew && eval "$(brew shellenv)"
-
-path=(
-  "$XDG_BIN_HOME"(N-/)
-  "$HOME/.nix-profile/bin"(N-/)
-  "/etc/profiles/per-user/$USER/bin"(N-/)
-  /run/current-system/sw/bin(N-/)
-  /nix/var/nix/profiles/default/bin(N-/)
-  /opt/homebrew/bin(N-/)
-  /opt/homebrew/sbin(N-/)
-  /home/linuxbrew/.linuxbrew/bin(N-/)
-  /home/linuxbrew/.linuxbrew/sbin(N-/)
-  $path
-)
+# Prefer user-local binaries over other globally installed tools.
+path=("$XDG_BIN_HOME"(N-/) $path)
