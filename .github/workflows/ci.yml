@@ -60,30 +60,39 @@ jobs:
           files_yaml: |
             common: &common
               - .github/workflows/ci.yml
+            dependencies: &dependencies
+              - mise.lock
+              - mise.toml
             lua: &lua
               - "**/*.lua"
             actions:
+              - *dependencies
               - "**/action.{yaml,yml}"
               - ".github/workflows/*.{yaml,yml}"
             luacheck:
               - *common
+              - *dependencies
               - *lua
               - .luacheckrc
             luals:
               - *common
+              - *dependencies
               - *lua
               - .luarc.json
               - home/.config/nvim/lazy-lock.json
             ryl:
               - *common
+              - *dependencies
               - "**/*.{yaml,yml}"
             selene:
               - *common
+              - *dependencies
               - *lua
               - nvim.yml
               - selene.toml
             stylua:
               - *common
+              - *dependencies
               - *lua
               - .stylua.toml
   actionlint:
