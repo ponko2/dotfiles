@@ -15,9 +15,11 @@ return {
         globalPlugins = {
           {
             name = '@vue/typescript-plugin',
-            location = vim.fs.joinpath(
-              vim.fs.dirname(vim.fn.exepath('vue-language-server')),
-              '/../@vue/language-server'
+            location = vim.uv.fs_realpath(
+              vim.fs.joinpath(
+                vim.fs.dirname(vim.fn.exepath('vue-language-server')),
+                '../@vue/language-server'
+              )
             ),
             languages = { 'vue' },
             configNamespace = 'typescript',
