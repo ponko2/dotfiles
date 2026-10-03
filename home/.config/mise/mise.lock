@@ -183,8 +183,8 @@ backend = "npm:@vtsls/language-server"
 specifiers = ["latest"]
 
 [[tools."npm:@vue/language-server"]]
-version = "3.3.11"
-aube = { path = "locks/npm-vue-language-server/3.3.11", digest = "sha256:700fa67763f1d43fab8e09b57e9fdd5d0cded57ad2ecfecb039a74405c6fbf6b" }
+version = "3.3.12"
+aube = { path = "locks/npm-vue-language-server/3.3.12", digest = "sha256:4b6b0fe73af7e381dcc2c88670db76f444c8012602888d1370ea75dc2f917be2" }
 backend = "npm:@vue/language-server"
 specifiers = ["latest"]
 
