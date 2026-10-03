@@ -3,7 +3,6 @@
     ".mise/locks/**",
     "home/.config/mise/config.toml",
     "home/.config/mise/locks/**",
-    "home/.config/nvim/lazy-lock.json",
-    "home/.config/snapzy/config.toml"
+    "home/.config/nvim/lazy-lock.json"
   ]
 }
