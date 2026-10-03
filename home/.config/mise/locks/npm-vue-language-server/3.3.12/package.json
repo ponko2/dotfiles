@@ -2,6 +2,6 @@
   "name": "mise-npm-install",
   "private": true,
   "dependencies": {
-    "@vue/language-server": "3.3.11"
+    "@vue/language-server": "3.3.12"
   }
 }
