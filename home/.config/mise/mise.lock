@@ -188,10 +188,10 @@ aube = { path = "locks/npm-vue-language-server/3.3.11", digest = "sha256:700fa67
 backend = "npm:@vue/language-server"
 specifiers = ["latest"]
 
-[[tools."npm:vscode-langservers-extracted"]]
-version = "4.10.0"
-aube = { path = "locks/npm-vscode-langservers-extracted/4.10.0", digest = "sha256:904d09d805abeb2ac88c84a215c4c3dc31d90b3a627ae0a0b06bcee5a50a2892" }
-backend = "npm:vscode-langservers-extracted"
+[[tools."npm:@zed-industries/vscode-langservers-extracted"]]
+version = "4.10.8"
+aube = { path = "locks/npm-zed-industries-vscode-langservers-extracted/4.10.8", digest = "sha256:313ec4e3e7d27916f34273cfdb33d26c5d251d958260193821bd8557c41a8391" }
+backend = "npm:@zed-industries/vscode-langservers-extracted"
 specifiers = ["latest"]
 
 [[tools.pkl]]
