@@ -2,6 +2,6 @@
   "name": "mise-npm-install",
   "private": true,
   "dependencies": {
-    "vscode-langservers-extracted": "4.10.0"
+    "@zed-industries/vscode-langservers-extracted": "4.10.8"
   }
 }
