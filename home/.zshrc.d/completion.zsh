@@ -17,7 +17,6 @@ zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 
 # Directory
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # default: --
 zstyle ':completion:*' list-separator '-->'
