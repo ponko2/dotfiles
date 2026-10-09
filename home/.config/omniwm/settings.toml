@@ -177,10 +177,14 @@ mode = "macOS"
 
 [statusBar]
 showAppNames = false
+showIcon = true
 showWorkspaceName = false
 useWorkspaceId = false
 
 [workspaceBar]
+autoHide = true
+autoHideHideDelayMilliseconds = 0.0
+autoHideRevealDelayMilliseconds = 0.0
 backgroundOpacity = 0.1
 deduplicateAppIcons = false
 enabled = true
@@ -1006,6 +1010,10 @@ id = "openCommandPalette"
 [[hotkeys]]
 binding = "Option+Shift+R"
 id = "raiseAllFloatingWindows"
+
+[[hotkeys]]
+binding = "Unassigned"
+id = "toggleFloatingFocus"
 
 [[hotkeys]]
 binding = "Unassigned"
