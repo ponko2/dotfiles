@@ -32,6 +32,7 @@ jobs:
       - name: Fail if any required jobs failed or cancelled
         if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
         run: exit 1
+        shell: bash
   changed-files:
     name: Get changed files
     if: ${{ github.event_name == 'pull_request' }}
@@ -115,6 +116,7 @@ jobs:
         run: |
           ghalint run
           ghalint act
+        shell: bash
   jactionlint:
     name: jactionlint
     if: ${{ always() && !failure() && !cancelled() &&
@@ -133,6 +135,7 @@ jobs:
         uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5.1.1
       - name: Run jactionlint
         run: jactionlint --format=github
+        shell: bash
   zizmor:
     name: zizmor
     if: ${{ always() && !failure() && !cancelled() &&
@@ -153,6 +156,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: zizmor -p --format=github --min-severity=low .
+        shell: bash
   commitlint:
     name: commitlint
     if: ${{ github.event_name == 'pull_request' }}
@@ -174,6 +178,7 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: commitlint --from "$BASE_SHA" --to "$HEAD_SHA" --verbose
+        shell: bash
   editorconfig:
     name: EditorConfig
     runs-on: ubuntu-26.04
@@ -189,6 +194,7 @@ jobs:
         uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5.1.1
       - name: Run EditorConfig checker
         run: editorconfig-checker
+        shell: bash
   luacheck:
     name: Luacheck
     if: ${{ always() && !failure() && !cancelled() &&
@@ -207,10 +213,12 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y libreadline-dev
+        shell: bash
       - name: Set up mise
         uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5.1.1
       - name: Run Luacheck
         run: luacheck .
+        shell: bash
   luals:
     name: LuaLS
     if: ${{ always() && !failure() && !cancelled() &&
@@ -234,12 +242,15 @@ jobs:
             echo "XDG_DATA_HOME=$HOME/.local/share"
             echo "XDG_STATE_HOME=$HOME/.local/state"
           } >> "$GITHUB_ENV"
+        shell: bash
       - name: Set up mise
         uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5.1.1
       - name: Restore Neovim plugins
         run: nvim --headless "+Lazy! restore" +qa
+        shell: bash
       - name: Run LuaLS
         run: lua-language-server --check .
+        shell: bash
   oxfmt:
     name: Oxfmt
     runs-on: ubuntu-26.04
@@ -255,6 +266,7 @@ jobs:
         uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5.1.1
       - name: Run Oxfmt
         run: oxfmt --check
+        shell: bash
   ryl:
     name: ryl
     if: ${{ always() && !failure() && !cancelled() &&
@@ -273,6 +285,7 @@ jobs:
         uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5.1.1
       - name: Run ryl
         run: ryl --format=github --strict .
+        shell: bash
   selene:
     name: selene
     if: ${{ always() && !failure() && !cancelled() &&
@@ -291,6 +304,7 @@ jobs:
         uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5.1.1
       - name: Run selene
         run: selene .
+        shell: bash
   stylua:
     name: StyLua
     if: ${{ always() && !failure() && !cancelled() &&
@@ -309,3 +323,4 @@ jobs:
         uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5.1.1
       - name: Run StyLua
         run: stylua --allow-hidden --check .
+        shell: bash
