@@ -382,7 +382,7 @@ url_api = "https://api.github.com/repos/LuaLS/lua-language-server/releases/asset
 [[tools."luarocks:luacheck"]]
 version = "1.2.0-1"
 backend = "luarocks:luacheck"
-specifiers = ["latest"]
+specifiers = ["1.2.0-1"]
 
 [[tools.neovim]]
 version = "0.12.6"

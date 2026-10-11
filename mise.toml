@@ -25,7 +25,7 @@ version = "latest"
 bin = "selene"
 
 [tools."luarocks:luacheck"]
-version = "latest"
+version = "1.2.0-1"
 depends = ["lua"]
 lazy = true
 lazy_bins = ["luacheck"]
