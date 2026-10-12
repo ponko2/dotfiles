@@ -120,7 +120,7 @@ jobs:
     if: ${{ always() && !failure() && !cancelled() &&
       (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.actions == 'true') }}
     needs: changed-files
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 60
     permissions:
       contents: read
@@ -138,7 +138,7 @@ jobs:
     if: ${{ always() && !failure() && !cancelled() &&
       (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.actions == 'true') }}
     needs: changed-files
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 60
     permissions:
       contents: read
@@ -156,7 +156,7 @@ jobs:
   commitlint:
     name: commitlint
     if: ${{ github.event_name == 'pull_request' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 60
     permissions:
       contents: read
@@ -176,7 +176,7 @@ jobs:
         run: commitlint --from "$BASE_SHA" --to "$HEAD_SHA" --verbose
   editorconfig:
     name: EditorConfig
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 60
     permissions:
       contents: read
@@ -194,7 +194,7 @@ jobs:
     if: ${{ always() && !failure() && !cancelled() &&
       (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.luacheck == 'true') }}
     needs: changed-files
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 60
     permissions:
       contents: read
@@ -216,7 +216,7 @@ jobs:
     if: ${{ always() && !failure() && !cancelled() &&
       (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.luals == 'true') }}
     needs: changed-files
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 60
     permissions:
       contents: read
@@ -242,7 +242,7 @@ jobs:
         run: lua-language-server --check .
   oxfmt:
     name: Oxfmt
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 60
     permissions:
       contents: read
@@ -260,7 +260,7 @@ jobs:
     if: ${{ always() && !failure() && !cancelled() &&
       (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.ryl == 'true') }}
     needs: changed-files
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 60
     permissions:
       contents: read
@@ -278,7 +278,7 @@ jobs:
     if: ${{ always() && !failure() && !cancelled() &&
       (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.selene == 'true') }}
     needs: changed-files
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 60
     permissions:
       contents: read
@@ -296,7 +296,7 @@ jobs:
     if: ${{ always() && !failure() && !cancelled() &&
       (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.stylua == 'true') }}
     needs: changed-files
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     timeout-minutes: 60
     permissions:
       contents: read
