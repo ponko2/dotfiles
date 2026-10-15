@@ -4,7 +4,7 @@ set -euo pipefail
 
 # mise
 mise self-update --yes
-mise -C ~/.dotfiles bootstrap --yes --update
+mise -C ~/.dotfiles bootstrap --yes --skip repos --update
 mise -C ~/.dotfiles bootstrap packages upgrade --yes
 mise -C ~/.dotfiles upgrade --yes
 mise -C ~/.dotfiles lock
