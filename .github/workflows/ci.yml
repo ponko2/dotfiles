@@ -15,9 +15,7 @@ jobs:
     if: ${{ always() }}
     needs:
       - changed-files
-      - ghalint
       - jactionlint
-      - zizmor
       - commitlint
       - editorconfig
       - luacheck
@@ -27,7 +25,7 @@ jobs:
       - selene
       - stylua
     runs-on: ubuntu-slim
-    timeout-minutes: 60
+    timeout-minutes: 15
     steps:
       - name: Fail if any required jobs failed or cancelled
         if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
@@ -37,12 +35,12 @@ jobs:
     name: Get changed files
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-slim
-    timeout-minutes: 60
+    timeout-minutes: 15
     permissions:
       contents: read
     outputs:
       # reference: https://github.com/tj-actions/changed-files#outputs-
-      actions: ${{ steps.changed-files.outputs.actions_any_modified == 'true' }}
+      jactionlint: ${{ steps.changed-files.outputs.jactionlint_any_modified == 'true' }}
       luacheck: ${{ steps.changed-files.outputs.luacheck_any_modified == 'true' }}
       luals: ${{ steps.changed-files.outputs.luals_any_modified == 'true' }}
       ryl: ${{ steps.changed-files.outputs.ryl_any_modified == 'true' }}
@@ -66,10 +64,11 @@ jobs:
               - mise.toml
             lua: &lua
               - "**/*.lua"
-            actions:
+            jactionlint:
               - *dependencies
               - "**/action.{yaml,yml}"
               - ".github/workflows/*.{yaml,yml}"
+              - .github/jactionlint.yaml
             luacheck:
               - *common
               - *dependencies
@@ -96,31 +95,10 @@ jobs:
               - *dependencies
               - *lua
               - .stylua.toml
-  ghalint:
-    name: ghalint
-    if: ${{ always() && !failure() && !cancelled() &&
-      (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.actions == 'true') }}
-    needs: changed-files
-    runs-on: ubuntu-slim
-    timeout-minutes: 60
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - name: Set up mise
-        uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5.1.1
-      - name: Run ghalint
-        run: |
-          ghalint run
-          ghalint act
-        shell: bash
   jactionlint:
     name: jactionlint
     if: ${{ always() && !failure() && !cancelled() &&
-      (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.actions == 'true') }}
+      (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.jactionlint == 'true') }}
     needs: changed-files
     runs-on: ubuntu-26.04
     timeout-minutes: 60
@@ -135,27 +113,6 @@ jobs:
         uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5.1.1
       - name: Run jactionlint
         run: jactionlint --format=github --color
-        shell: bash
-  zizmor:
-    name: zizmor
-    if: ${{ always() && !failure() && !cancelled() &&
-      (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.actions == 'true') }}
-    needs: changed-files
-    runs-on: ubuntu-26.04
-    timeout-minutes: 60
-    permissions:
-      contents: read
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - name: Set up mise
-        uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5.1.1
-      - name: Run zizmor
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: zizmor -p --format=github --min-severity=low .
         shell: bash
   commitlint:
     name: commitlint
