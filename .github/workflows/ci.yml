@@ -27,7 +27,7 @@ jobs:
       - selene
       - stylua
     runs-on: ubuntu-slim
-    timeout-minutes: 60
+    timeout-minutes: 15
     steps:
       - name: Fail if any required jobs failed or cancelled
         if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
@@ -37,7 +37,7 @@ jobs:
     name: Get changed files
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-slim
-    timeout-minutes: 60
+    timeout-minutes: 15
     permissions:
       contents: read
     outputs:
