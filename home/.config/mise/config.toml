@@ -3,6 +3,7 @@ adopt = true
 
 [bootstrap.hooks]
 post-defaults = "killall Dock Finder SystemUIServer 2> /dev/null || true"
+pre-packages = "[ -d /nix ] || curl -fsSL https://artifacts.nixos.org/nix-installer | sh -s -- install --enable-flakes --no-confirm --no-modify-profile"
 
 [bootstrap.macos.defaults]
 "com.apple.desktopservices" = {
@@ -201,6 +202,20 @@ root = "~/.dotfiles/home"
 [settings.github]
 use_git_credentials = true
 
+[tasks.bootstrap]
+depends = ["bootstrap:**"]
+
+[tasks."bootstrap:homebrew:bundle"]
+hide = true
+depends = ["bootstrap:homebrew:install"]
+run = '"{{vars.homebrew_prefix}}/bin/brew" bundle --file="{{xdg_config_home}}/homebrew/Brewfile"'
+
+[tasks."bootstrap:homebrew:install"]
+hide = true
+skip_if = 'test -x "{{vars.homebrew_prefix}}/bin/brew"'
+interactive = true
+run = '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+
 [tools]
 "aqua:owenlamont/ryl" = "latest"
 "npm:@vtsls/language-server" = "latest"
@@ -215,3 +230,6 @@ ruby = "latest"
 rust-analyzer = "latest"
 tree-sitter = "latest"
 ty = "latest"
+
+[vars]
+homebrew_prefix = "/opt/homebrew"

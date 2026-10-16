@@ -1,2 +1,5 @@
 [bootstrap.user]
 login_shell = "/home/linuxbrew/.linuxbrew/bin/zsh"
+
+[vars]
+homebrew_prefix = "/home/linuxbrew/.linuxbrew"
