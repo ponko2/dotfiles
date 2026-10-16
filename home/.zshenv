@@ -36,7 +36,9 @@ fi
 path=(/opt/homebrew/bin(N-/) /home/linuxbrew/.linuxbrew/bin(N-/) $path)
 
 # Homebrew
-command -v brew && eval "$(brew shellenv)"
+if command -v brew >/dev/null; then
+  eval "$(brew shellenv)"
+fi
 
 # Nix
 if [[ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
