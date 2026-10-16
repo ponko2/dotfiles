@@ -44,10 +44,6 @@ bundle: | $(HOMEBREW) ## Install and upgrade all dependencies from the ~/.config
 .PHONY: install
 install: bootstrap bundle ## Run make bootstrap, bundle.
 
-.PHONY: clean
-clean: | $(MISE) ## Remove symlinks.
-	$(MISE) bootstrap dotfiles unapply
-
 .PHONY: test
 test: ## Run checkmake.
 	checkmake $(abspath $(firstword $(MAKEFILE_LIST)))
