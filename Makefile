@@ -23,12 +23,6 @@ help:
 .PHONY: all
 all: install
 
-$(XDG_BIN_HOME):
-	mkdir -p $@
-
-$(XDG_CONFIG_HOME):
-	mkdir -p $@
-
 $(MISE):
 	curl -fsSL https://mise.run | sh
 
