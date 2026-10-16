@@ -2,7 +2,6 @@ SHELL := /bin/bash
 .SHELLFLAGS := -euo pipefail -c
 .DEFAULT_GOAL := help
 
-export XDG_BIN_HOME := $(HOME)/.local/bin
 export XDG_CONFIG_HOME := $(HOME)/.config
 export MISE_GLOBAL_CONFIG_FILE := $(HOME)/.dotfiles/home/.config/mise/config.toml
 export MISE_TRUSTED_CONFIG_PATHS := $(HOME)/.dotfiles
