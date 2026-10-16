@@ -32,10 +32,6 @@ $(MISE):
 bootstrap: | $(MISE) /nix ## Run mise bootstrap.
 	$(MISE) bootstrap --yes -C ~/.dotfiles
 
-.PHONY: symlink
-symlink: | $(MISE) ## Create symlink to home directory.
-	$(MISE) bootstrap dotfiles apply
-
 $(HOMEBREW):
 	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
