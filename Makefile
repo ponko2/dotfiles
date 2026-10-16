@@ -30,7 +30,7 @@ $(MISE):
 
 .PHONY: bootstrap
 bootstrap: | $(MISE) /nix ## Run mise bootstrap.
-	$(MISE) bootstrap --yes -C ~/.dotfiles
+	$(MISE) -C ~/.dotfiles bootstrap --yes
 
 $(HOMEBREW):
 	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
