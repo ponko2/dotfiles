@@ -16,6 +16,7 @@ jobs:
     needs:
       - changed-files
       - jactionlint
+      - checkmake
       - commitlint
       - editorconfig
       - luacheck
@@ -40,6 +41,7 @@ jobs:
       contents: read
     outputs:
       # reference: https://github.com/tj-actions/changed-files#outputs-
+      checkmake: ${{ steps.changed-files.outputs.checkmake_any_modified == 'true' }}
       jactionlint: ${{ steps.changed-files.outputs.jactionlint_any_modified == 'true' }}
       luacheck: ${{ steps.changed-files.outputs.luacheck_any_modified == 'true' }}
       luals: ${{ steps.changed-files.outputs.luals_any_modified == 'true' }}
@@ -64,6 +66,10 @@ jobs:
               - mise.toml
             lua: &lua
               - "**/*.lua"
+            checkmake:
+              - *common
+              - *dependencies
+              - Makefile
             jactionlint:
               - *dependencies
               - "**/action.{yaml,yml}"
@@ -95,6 +101,25 @@ jobs:
               - *dependencies
               - *lua
               - .stylua.toml
+  checkmake:
+    name: checkmake
+    if: ${{ always() && !failure() && !cancelled() &&
+      (needs.changed-files.result == 'skipped' || needs.changed-files.outputs.checkmake == 'true') }}
+    needs: changed-files
+    runs-on: ubuntu-26.04
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up mise
+        uses: jdx/mise-action@08ae2a091c038e1e05ec6f5115dc5c69d5a2a6b8 # v5.1.2
+      - name: Run checkmake
+        run: make test
+        shell: bash
   jactionlint:
     name: jactionlint
     if: ${{ always() && !failure() && !cancelled() &&

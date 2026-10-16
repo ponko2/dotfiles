@@ -9,4 +9,4 @@ if [ ! -d "$DOTFILES" ]; then
   git clone https://github.com/ponko2/dotfiles.git "$DOTFILES"
 fi
 
-make -C "$DOTFILES" clean all
+make -C "$DOTFILES" all

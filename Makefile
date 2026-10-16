@@ -2,7 +2,6 @@ SHELL := /bin/bash
 .SHELLFLAGS := -euo pipefail -c
 .DEFAULT_GOAL := help
 
-export XDG_BIN_HOME := $(HOME)/.local/bin
 export XDG_CONFIG_HOME := $(HOME)/.config
 export MISE_GLOBAL_CONFIG_FILE := $(HOME)/.dotfiles/home/.config/mise/config.toml
 export MISE_TRUSTED_CONFIG_PATHS := $(HOME)/.dotfiles
@@ -23,12 +22,6 @@ help:
 .PHONY: all
 all: install
 
-$(XDG_BIN_HOME):
-	mkdir -p $@
-
-$(XDG_CONFIG_HOME):
-	mkdir -p $@
-
 $(MISE):
 	curl -fsSL https://mise.run | sh
 
@@ -37,11 +30,7 @@ $(MISE):
 
 .PHONY: bootstrap
 bootstrap: | $(MISE) /nix ## Run mise bootstrap.
-	$(MISE) bootstrap --yes -C ~/.dotfiles
-
-.PHONY: symlink
-symlink: | $(MISE) ## Create symlink to home directory.
-	$(MISE) bootstrap dotfiles apply
+	$(MISE) -C ~/.dotfiles bootstrap --yes
 
 $(HOMEBREW):
 	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -54,10 +43,6 @@ bundle: | $(HOMEBREW) ## Install and upgrade all dependencies from the ~/.config
 
 .PHONY: install
 install: bootstrap bundle ## Run make bootstrap, bundle.
-
-.PHONY: clean
-clean: | $(MISE) ## Remove symlinks.
-	$(MISE) bootstrap dotfiles unapply
 
 .PHONY: test
 test: ## Run checkmake.
