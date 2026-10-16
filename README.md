@@ -14,5 +14,5 @@ xcode-select --install
 ### Step 2: Run the dotfiles installer
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ponko2/dotfiles/HEAD/install.sh | /bin/bash
+curl -fsSL https://raw.githubusercontent.com/ponko2/dotfiles/trial/install.sh | /bin/bash
 ```

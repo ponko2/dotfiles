@@ -6,7 +6,7 @@ DOTFILES="$HOME/.dotfiles"
 
 # Clone dotfiles repository.
 if [ ! -d "$DOTFILES" ]; then
-  git clone https://github.com/ponko2/dotfiles.git "$DOTFILES"
+  git clone -b trial https://github.com/ponko2/dotfiles.git "$DOTFILES"
 fi
 
 make -C "$DOTFILES" all
