@@ -173,7 +173,6 @@ login_shell = "{{ system_brew_prefix }}/bin/zsh"
 "~/.config/homebrew" = {}
 "~/.config/jj" = {}
 "~/.config/karabiner" = {}
-"~/.config/mise" = {}
 "~/.config/nvim" = {}
 "~/.config/omniwm" = {}
 "~/.config/process-compose" = {}
@@ -197,10 +196,13 @@ login_shell = "{{ system_brew_prefix }}/bin/zsh"
 auto_update = true
 
 [settings.dotfiles]
-root = "~/.dotfiles/home"
+root = "~/.config/mise/home"
 
 [settings.github]
 use_git_credentials = true
+
+[settings.history]
+sync = "manual"
 
 [tasks.bootstrap]
 depends = ["bootstrap:**"]

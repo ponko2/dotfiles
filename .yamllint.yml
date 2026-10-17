@@ -2,7 +2,7 @@
 extends: default
 ignore: |
   .mise/locks/
-  home/.config/mise/locks/
+  locks/
 rules:
   comments:
     level: error
