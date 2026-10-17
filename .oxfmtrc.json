@@ -1,8 +1,8 @@
 {
   "ignorePatterns": [
     ".mise/locks/**",
-    "home/.config/mise/config.toml",
-    "home/.config/mise/locks/**",
+    "config.toml",
+    "locks/**",
     "home/.config/nvim/lazy-lock.json"
   ]
 }

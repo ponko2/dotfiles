@@ -4,9 +4,9 @@ set -euo pipefail
 
 # mise
 mise self-update --yes
-mise -C ~/.dotfiles bootstrap --yes --skip repos --update --upgrade
-mise -C ~/.dotfiles lock
-mise -C ~/.dotfiles lock --global
+mise -C ~/.config/mise bootstrap --yes --skip repos --update --upgrade
+mise -C ~/.config/mise lock
+mise -C ~/.config/mise lock --global
 mise prune --yes
 
 # Homebrew
