@@ -254,7 +254,7 @@ provenance = "github-attestations"
 
 [[tools.lua]]
 version = "5.1"
-backend = "vfox:mise-plugins/vfox-lua"
+backend = "vfox:jdx/vfox-lua"
 specifiers = ["5.1"]
 
 [tools.lua."platforms.linux-arm64"]
@@ -325,7 +325,7 @@ specifiers = ["1.2.0-1"]
 
 [[tools.neovim]]
 version = "0.12.6"
-backend = "vfox:mise-plugins/vfox-neovim"
+backend = "vfox:jdx/vfox-neovim"
 specifiers = ["latest"]
 
 [tools.neovim."platforms.linux-arm64"]

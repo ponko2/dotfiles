@@ -80,7 +80,7 @@ signer = "sigstore-oidc:https://github.com/jdx/hk/.github/workflows/release.yml"
 
 [[tools.lua]]
 version = "5.1"
-backend = "vfox:mise-plugins/vfox-lua"
+backend = "vfox:jdx/vfox-lua"
 specifiers = ["5.1"]
 
 [tools.lua."platforms.linux-arm64"]
@@ -146,7 +146,7 @@ url_api = "https://api.github.com/repos/LuaLS/lua-language-server/releases/asset
 
 [[tools.neovim]]
 version = "0.12.6"
-backend = "vfox:mise-plugins/vfox-neovim"
+backend = "vfox:jdx/vfox-neovim"
 specifiers = ["latest"]
 
 [tools.neovim."platforms.linux-arm64"]
@@ -178,7 +178,7 @@ specifiers = ["latest"]
 
 [[tools."npm:@vue/language-server"]]
 version = "3.3.13"
-aube = { path = "locks/npm-vue-language-server/3.3.13", digest = "sha256:7dc05f59e1d8f94f0c6f579faa4263a380830922b9bcf8d5c13aac6d5606a5fe" }
+aube = { path = "locks/npm-vue-language-server/3.3.13", digest = "sha256:509e66e22772b17a6c453b0dade03fe5ada7867d5de6857b14fe19cff1ce2642" }
 backend = "npm:@vue/language-server"
 specifiers = ["latest"]
 
