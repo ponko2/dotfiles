@@ -162,7 +162,7 @@ SSH_AUTH_SOCK = {
 "nix:nixfmt" = "latest"
 
 [bootstrap.user]
-login_shell = "/opt/homebrew/bin/zsh"
+login_shell = "{{ system_brew_prefix }}/bin/zsh"
 
 [dotfiles]
 "~/.config/bat" = {}
