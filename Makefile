@@ -20,7 +20,7 @@ $(MISE):
 
 .PHONY: install
 install: | $(MISE) ## Run mise bootstrap.
-	$(MISE) -C ~/.dotfiles bootstrap --yes
+	PATH="/nix/var/nix/profiles/default/bin:$(PATH)" $(MISE) -C ~/.dotfiles bootstrap --yes
 
 .PHONY: test
 test: ## Run checkmake.
