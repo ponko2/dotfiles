@@ -1,6 +1,21 @@
-[bootstrap.hooks]
-pre-packages = "[ -d /nix ] || curl -fsSL https://artifacts.nixos.org/nix-installer | sh -s -- install --enable-flakes --no-confirm --no-modify-profile"
-
 [bootstrap.packages]
 "nix:nixd" = "latest"
 "nix:nixfmt" = "latest"
+
+[tasks.bootstrap]
+depends = ["bootstrap:**"]
+
+[tasks."bootstrap:nix:install"]
+hide = true
+skip_if = "test -d /nix"
+interactive = true
+run = "curl -fsSL https://artifacts.nixos.org/nix-installer | sh -s -- install --enable-flakes --no-confirm --no-modify-profile"
+
+[tasks."bootstrap:nix:packages"]
+hide = true
+depends = ["bootstrap:nix:install"]
+skip_if = "command -v nix"
+run = """
+source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+"{{mise_bin}}" bootstrap packages apply --manager nix --yes
+"""
