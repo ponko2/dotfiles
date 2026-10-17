@@ -43,46 +43,6 @@ url = "https://github.com/owenlamont/ryl/releases/download/v0.25.1/ryl-x86_64-pc
 url_api = "https://api.github.com/repos/owenlamont/ryl/releases/assets/647111977"
 provenance = "github-attestations"
 
-[[tools.checkmake]]
-version = "0.3.2"
-backend = "aqua:checkmake/checkmake"
-specifiers = ["latest"]
-
-[tools.checkmake."platforms.linux-arm64"]
-checksum = "sha256:409167c4abb99407bd232c3bbd351b8a39df57997feafde5a08bddffb0f2dcb4"
-url = "https://github.com/checkmake/checkmake/releases/download/v0.3.2/checkmake-v0.3.2.linux.arm64"
-url_api = "https://api.github.com/repos/checkmake/checkmake/releases/assets/338779065"
-
-[tools.checkmake."platforms.linux-arm64-musl"]
-checksum = "sha256:409167c4abb99407bd232c3bbd351b8a39df57997feafde5a08bddffb0f2dcb4"
-url = "https://github.com/checkmake/checkmake/releases/download/v0.3.2/checkmake-v0.3.2.linux.arm64"
-url_api = "https://api.github.com/repos/checkmake/checkmake/releases/assets/338779065"
-
-[tools.checkmake."platforms.linux-x64"]
-checksum = "sha256:e2effb876913f3ee2caef0ba35f6202c5e8a3cd55a077d8d2b9ce2034257b6af"
-url = "https://github.com/checkmake/checkmake/releases/download/v0.3.2/checkmake-v0.3.2.linux.amd64"
-url_api = "https://api.github.com/repos/checkmake/checkmake/releases/assets/338779060"
-
-[tools.checkmake."platforms.linux-x64-musl"]
-checksum = "sha256:e2effb876913f3ee2caef0ba35f6202c5e8a3cd55a077d8d2b9ce2034257b6af"
-url = "https://github.com/checkmake/checkmake/releases/download/v0.3.2/checkmake-v0.3.2.linux.amd64"
-url_api = "https://api.github.com/repos/checkmake/checkmake/releases/assets/338779060"
-
-[tools.checkmake."platforms.macos-arm64"]
-checksum = "sha256:d5dab7169d1cb246b380ed5e7fc1e6aded301d453db258f858e774422d25961f"
-url = "https://github.com/checkmake/checkmake/releases/download/v0.3.2/checkmake-v0.3.2.darwin.arm64"
-url_api = "https://api.github.com/repos/checkmake/checkmake/releases/assets/338779063"
-
-[tools.checkmake."platforms.macos-x64"]
-checksum = "sha256:82942043a4766b9fb3ffe6c77584df7d6c832bfa00571f234d257799f492fdd7"
-url = "https://github.com/checkmake/checkmake/releases/download/v0.3.2/checkmake-v0.3.2.darwin.amd64"
-url_api = "https://api.github.com/repos/checkmake/checkmake/releases/assets/338779062"
-
-[tools.checkmake."platforms.windows-x64"]
-checksum = "sha256:6adf4bde2dbfe8001ecf2918abfe02f7a57191568f1d185537eccd9c59625dca"
-url = "https://github.com/checkmake/checkmake/releases/download/v0.3.2/checkmake-v0.3.2.windows.amd64.exe"
-url_api = "https://api.github.com/repos/checkmake/checkmake/releases/assets/338779103"
-
 [[tools.editorconfig-checker]]
 version = "4.0.2"
 backend = "github:editorconfig-checker/editorconfig-checker"
