@@ -2,15 +2,17 @@ SHELL := /bin/bash
 .SHELLFLAGS := -euo pipefail -c
 .DEFAULT_GOAL := help
 
-export XDG_CONFIG_HOME := $(HOME)/.config
 export MISE_GLOBAL_CONFIG_FILE := $(HOME)/.dotfiles/home/.config/mise/config.toml
 export MISE_TRUSTED_CONFIG_PATHS := $(HOME)/.dotfiles
 
-ifeq ($(shell uname -s),Darwin)
-	HOMEBREW := /opt/homebrew/bin/brew
-else
-	HOMEBREW := /home/linuxbrew/.linuxbrew/bin/brew
-endif
+# TODO: Remove this version pin once the fixes are included in the default installer release.
+# ref: https://github.com/jdx/mise/pull/14570
+# ref: https://github.com/jdx/mise/pull/14572
+export MISE_VERSION := v2026.10.13
+
+# TODO: Remove this workaround once the fix is released.
+# ref: https://github.com/jdx/mise/pull/14596
+export PATH := /nix/var/nix/profiles/default/bin:$(PATH)
 
 MISE := $(shell command -v mise 2> /dev/null || echo $(HOME)/.local/bin/mise)
 
@@ -25,24 +27,9 @@ all: install
 $(MISE):
 	curl -fsSL https://mise.run | sh
 
-/nix:
-	curl -fsSL https://artifacts.nixos.org/nix-installer | sh -s -- install --enable-flakes --no-confirm --no-modify-profile
-
-.PHONY: bootstrap
-bootstrap: | $(MISE) /nix ## Run mise bootstrap.
-	$(MISE) -C ~/.dotfiles bootstrap --yes
-
-$(HOMEBREW):
-	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-.ONESHELL: bundle
-.PHONY: bundle
-bundle: | $(HOMEBREW) ## Install and upgrade all dependencies from the ~/.config/homebrew/Brewfile.
-	eval "$$($(HOMEBREW) shellenv)"
-	$(HOMEBREW) bundle --global
-
 .PHONY: install
-install: bootstrap bundle ## Run make bootstrap, bundle.
+install: | $(MISE) ## Run mise bootstrap.
+	$(MISE) -C ~/.dotfiles bootstrap --yes
 
 .PHONY: test
 test: ## Run checkmake.
