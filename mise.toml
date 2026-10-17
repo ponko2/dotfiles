@@ -7,7 +7,6 @@ luarocks = "https://github.com/ponko2/mise-luarocks"
 [tools]
 "aqua:owenlamont/ryl" = "latest"
 "npm:@commitlint/cli" = "latest"
-checkmake = "latest"
 editorconfig-checker = "latest"
 hk = "latest"
 jactionlint = "latest"

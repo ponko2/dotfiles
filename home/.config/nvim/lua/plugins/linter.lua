@@ -10,7 +10,6 @@ return {
       lint.linters_by_ft = {
         go = { 'golangcilint' },
         lua = { 'luacheck', 'selene' },
-        make = { 'checkmake' },
         markdown = { 'textlint' },
         nix = { 'deadnix', 'statix' },
         python = { 'mypy' },
