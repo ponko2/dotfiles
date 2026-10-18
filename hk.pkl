@@ -24,7 +24,6 @@ steps {
             List(
               "home/.local/bin/rfv",
               "home/.local/bin/update-system",
-              "home/.nbrc",
             )
         })
   }
@@ -36,7 +35,6 @@ steps {
             List(
               "home/.local/bin/rfv",
               "home/.local/bin/update-system",
-              "home/.nbrc",
               "home/.zprofile",
               "home/.zshenv",
               "home/.zshrc",

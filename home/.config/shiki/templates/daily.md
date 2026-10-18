@@ -1,0 +1,7 @@
+# {{date}}
+
+## Tasks
+
+- [ ]
+
+## Notes
