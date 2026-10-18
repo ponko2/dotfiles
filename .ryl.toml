@@ -1,0 +1,48 @@
+exclude = [".mise/locks/", "locks/"]
+
+[files]
+yaml = ["*.yaml", "*.yml", ".yamllint"]
+
+[lint.rules]
+anchors = "enable"
+braces = "enable"
+brackets = "enable"
+colons = "enable"
+commas = "enable"
+comments-indentation = "disable"
+document-end = "disable"
+empty-lines = "enable"
+empty-values = "disable"
+float-values = "disable"
+hyphens = "enable"
+indentation = "enable"
+key-duplicates = "enable"
+key-ordering = "disable"
+line-length = "disable"
+new-line-at-end-of-file = "enable"
+new-lines = "enable"
+trailing-spaces = "enable"
+
+[lint.rules.comments]
+level = "error"
+min-spaces-from-content = 1
+
+[lint.rules.document-start]
+ignore = """
+.github/
+"""
+level = "error"
+
+[lint.rules.octal-values]
+forbid-explicit-octal = false
+forbid-implicit-octal = true
+
+[lint.rules.quoted-strings]
+extra-allowed = ["^[0-9]{2}:[0-9]{2}$"]
+extra-required = ["^0[0-9]+$"]
+quote-type = "double"
+required = "only-when-needed"
+
+[lint.rules.truthy]
+check-keys = false
+level = "error"

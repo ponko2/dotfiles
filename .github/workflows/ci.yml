@@ -84,6 +84,7 @@ jobs:
               - *common
               - *dependencies
               - "**/*.{yaml,yml}"
+              - .ryl.toml
             selene:
               - *common
               - *dependencies
