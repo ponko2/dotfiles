@@ -123,7 +123,6 @@ SSH_AUTH_SOCK = {
 "brew:jj" = "latest"
 "brew:jq" = "latest"
 "brew:lsd" = "latest"
-"brew:nb" = "latest"
 "brew:nkf" = "latest"
 "brew:p7zip" = "latest"
 "brew:ripgrep" = "latest"
@@ -138,6 +137,9 @@ SSH_AUTH_SOCK = {
 "brew:yazi" = "latest"
 "brew:zoxide" = "latest"
 "brew:zsh" = "latest"
+# nb
+"brew:bash" = "latest"
+"brew:nb" = "latest"
 # Neovim
 "brew:coreutils" = "latest"
 "brew:pkl-lsp" = "latest"
