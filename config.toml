@@ -135,11 +135,9 @@ SSH_AUTH_SOCK = {
 "brew:tuicr" = "latest"
 "brew:wget" = "latest"
 "brew:yazi" = "latest"
+"brew:zk" = "latest"
 "brew:zoxide" = "latest"
 "brew:zsh" = "latest"
-# nb
-"brew:bash" = "latest"
-"brew:nb" = "latest"
 # Neovim
 "brew:coreutils" = "latest"
 "brew:pkl-lsp" = "latest"
@@ -184,10 +182,10 @@ login_shell = "{{ system_brew_prefix }}/bin/zsh"
 "~/.config/tuicr" = {}
 "~/.config/yazi" = {}
 "~/.config/zed" = {}
+"~/.config/zk" = {}
 "~/.config/zsh-abbr" = {}
 "~/.local/bin/rfv" = {}
 "~/.local/bin/update-system" = {}
-"~/.nbrc" = {}
 "~/.ripgreprc" = {}
 "~/.zprofile" = {}
 "~/.zshenv" = {}
