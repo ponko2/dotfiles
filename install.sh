@@ -2,14 +2,9 @@
 
 set -euo pipefail
 
-# TODO: Remove this version pin once the fixes are included in the default installer release.
-# ref: https://github.com/jdx/mise/pull/14570
-# ref: https://github.com/jdx/mise/pull/14572
-export MISE_VERSION="v2026.10.13"
-
-# TODO: Remove this workaround once the fix is released.
+# TODO: Remove this version pin once the fixes are available in the default installer.
 # ref: https://github.com/jdx/mise/pull/14596
-export PATH="/nix/var/nix/profiles/default/bin:$PATH"
+export MISE_VERSION="v2026.10.14"
 
 # Resolve mise executable.
 MISE="$(command -v mise 2>/dev/null || echo "$HOME/.local/bin/mise")"
