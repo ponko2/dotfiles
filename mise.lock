@@ -3,44 +3,44 @@
 lockfile_version = 3
 
 [[tools."aqua:owenlamont/ryl"]]
-version = "0.25.1"
+version = "0.26.0"
 backend = "aqua:owenlamont/ryl"
 specifiers = ["latest"]
 
 [tools."aqua:owenlamont/ryl"."platforms.linux-arm64"]
-checksum = "sha256:0d4cb3454fdab4123219a23fbafb2c9b1eb4eb01d8f5faf9dd6adbdff8f17f2e"
-url = "https://github.com/owenlamont/ryl/releases/download/v0.25.1/ryl-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/owenlamont/ryl/releases/assets/647111947"
+checksum = "sha256:4531dd796d2c8e1661be0155eeaacf18861d3abe23b7720ff3369c0fd6a057c0"
+url = "https://github.com/owenlamont/ryl/releases/download/v0.26.0/ryl-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/owenlamont/ryl/releases/assets/653435333"
 provenance = "github-attestations"
 
 [tools."aqua:owenlamont/ryl"."platforms.linux-arm64-musl"]
-checksum = "sha256:807422fee674616baf2354f934a34ec57a79e05a55ba5b89183eb1b04c7f84cc"
-url = "https://github.com/owenlamont/ryl/releases/download/v0.25.1/ryl-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/owenlamont/ryl/releases/assets/647111946"
+checksum = "sha256:df2ef83585de0171cefed3656a2e66639c28e275c0d00997178c6fc6ecc2a4ce"
+url = "https://github.com/owenlamont/ryl/releases/download/v0.26.0/ryl-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/owenlamont/ryl/releases/assets/653435335"
 provenance = "github-attestations"
 
 [tools."aqua:owenlamont/ryl"."platforms.linux-x64"]
-checksum = "sha256:96cb18b04e2154a56c2569995fa0118237b2864c1bd122eff88cb45504c40c8c"
-url = "https://github.com/owenlamont/ryl/releases/download/v0.25.1/ryl-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/owenlamont/ryl/releases/assets/647112023"
+checksum = "sha256:011e1395eab5506254ccaaa4e1c126e083a5250ab3e8f4b6a53b717f01c9c027"
+url = "https://github.com/owenlamont/ryl/releases/download/v0.26.0/ryl-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/owenlamont/ryl/releases/assets/653435382"
 provenance = "github-attestations"
 
 [tools."aqua:owenlamont/ryl"."platforms.linux-x64-musl"]
-checksum = "sha256:bd140631f8e7a2a84704d6375157b06fa15f51543e950807d788bb04e672dd3a"
-url = "https://github.com/owenlamont/ryl/releases/download/v0.25.1/ryl-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/owenlamont/ryl/releases/assets/647112026"
+checksum = "sha256:09b6ee9ba3d526b4ed8e2c6b180d7da4689e7e765c2aab94734ab1461db3c66e"
+url = "https://github.com/owenlamont/ryl/releases/download/v0.26.0/ryl-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/owenlamont/ryl/releases/assets/653435384"
 provenance = "github-attestations"
 
 [tools."aqua:owenlamont/ryl"."platforms.macos-arm64"]
-checksum = "sha256:1544f213b3b675a444a45a5a9d24ea62d6d1c8ab2894210bd92448fec4e9a91a"
-url = "https://github.com/owenlamont/ryl/releases/download/v0.25.1/ryl-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/owenlamont/ryl/releases/assets/647111943"
+checksum = "sha256:5f15a725e1d698fca150cf61050187cdcd046882badef5baf619b987c5896936"
+url = "https://github.com/owenlamont/ryl/releases/download/v0.26.0/ryl-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/owenlamont/ryl/releases/assets/653435334"
 provenance = "github-attestations"
 
 [tools."aqua:owenlamont/ryl"."platforms.windows-x64"]
-checksum = "sha256:08655f908e03ce4ccac77320c4e1092f4db423aef5de759bcba4065f6189a8b9"
-url = "https://github.com/owenlamont/ryl/releases/download/v0.25.1/ryl-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/owenlamont/ryl/releases/assets/647111977"
+checksum = "sha256:31b5792360c2ed5678f9ba960d380a9a0cc41930e444e6c4b33eadc4ef29a037"
+url = "https://github.com/owenlamont/ryl/releases/download/v0.26.0/ryl-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/owenlamont/ryl/releases/assets/653435360"
 provenance = "github-attestations"
 
 [[tools.editorconfig-checker]]
@@ -344,31 +344,31 @@ url = "https://nodejs.org/dist/v24.22.0/node-v24.22.0-win-x64.zip"
 
 [[tools."npm:@commitlint/cli"]]
 version = "21.2.3"
-aube = { path = "locks/npm-commitlint-cli/21.2.3", digest = "sha256:6db68ace37a710e0a38eb6b41c32e8e6aa49d620f5cbb0d9e812ce2180b84b06" }
+aube = { path = ".mise/locks/npm-commitlint-cli/21.2.3", digest = "sha256:6db68ace37a710e0a38eb6b41c32e8e6aa49d620f5cbb0d9e812ce2180b84b06" }
 backend = "npm:@commitlint/cli"
 specifiers = ["latest"]
 
 [[tools."npm:@vtsls/language-server"]]
 version = "0.3.0"
-aube = { path = "locks/npm-vtsls-language-server/0.3.0", digest = "sha256:1ece210c69f840f97e29b17051df7588ba36c194fab6d5d78fb1cfba7d22bd50" }
+aube = { path = ".mise/locks/npm-vtsls-language-server/0.3.0", digest = "sha256:1ece210c69f840f97e29b17051df7588ba36c194fab6d5d78fb1cfba7d22bd50" }
 backend = "npm:@vtsls/language-server"
 specifiers = ["latest"]
 
 [[tools."npm:@vue/language-server"]]
 version = "3.3.13"
-aube = { path = "locks/npm-vue-language-server/3.3.13", digest = "sha256:509e66e22772b17a6c453b0dade03fe5ada7867d5de6857b14fe19cff1ce2642" }
+aube = { path = ".mise/locks/npm-vue-language-server/3.3.13", digest = "sha256:509e66e22772b17a6c453b0dade03fe5ada7867d5de6857b14fe19cff1ce2642" }
 backend = "npm:@vue/language-server"
 specifiers = ["latest"]
 
 [[tools."npm:@zed-industries/vscode-langservers-extracted"]]
 version = "4.10.8"
-aube = { path = "locks/npm-zed-industries-vscode-langservers-extracted/4.10.8", digest = "sha256:313ec4e3e7d27916f34273cfdb33d26c5d251d958260193821bd8557c41a8391" }
+aube = { path = ".mise/locks/npm-zed-industries-vscode-langservers-extracted/4.10.8", digest = "sha256:313ec4e3e7d27916f34273cfdb33d26c5d251d958260193821bd8557c41a8391" }
 backend = "npm:@zed-industries/vscode-langservers-extracted"
 specifiers = ["latest"]
 
 [[tools.oxfmt]]
 version = "0.73.0"
-aube = { path = "locks/oxfmt/0.73.0", digest = "sha256:e42eeebedd060ec6393c40caa35362b541991453b9aab2de3d33d41a0c245a62" }
+aube = { path = ".mise/locks/oxfmt/0.73.0", digest = "sha256:e42eeebedd060ec6393c40caa35362b541991453b9aab2de3d33d41a0c245a62" }
 backend = "npm:oxfmt"
 specifiers = ["latest"]
 
