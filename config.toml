@@ -194,9 +194,6 @@ login_shell = "zsh"
 "~/.zshrc" = {}
 "~/.zshrc.d" = {}
 
-[settings]
-auto_update = true
-
 [settings.dotfiles]
 root = "~/.config/mise/home"
 
@@ -205,6 +202,9 @@ use_git_credentials = true
 
 [settings.history]
 sync = "manual"
+
+[settings.self_update]
+auto = true
 
 [tasks.bootstrap]
 depends = ["bootstrap:**"]
