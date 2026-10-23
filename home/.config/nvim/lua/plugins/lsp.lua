@@ -10,6 +10,7 @@ return {
       vim.lsp.enable({
         'eslint',
         'lua_ls',
+        'mise',
         'nixd',
         'oxfmt',
         'oxlint',
