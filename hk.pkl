@@ -1,6 +1,6 @@
-amends "package://github.com/jdx/hk/releases/download/v2.7.1/hk@2.7.1#/Config.pkl"
+amends "package://github.com/jdx/hk/releases/download/v2.8.1/hk@2.8.1#/Config.pkl"
 
-import "package://github.com/jdx/hk/releases/download/v2.7.1/hk@2.7.1#/Builtins.pkl"
+import "package://github.com/jdx/hk/releases/download/v2.8.1/hk@2.8.1#/Builtins.pkl"
 
 steps {
   ["editorconfig_checker"] = Builtins.editorconfig_checker
@@ -13,6 +13,7 @@ steps {
       effect = "read"
     }
   }
+  ["mise"] = Builtins.mise_config_dir
   ["oxfmt"] = Builtins.oxfmt
   ["ryl"] = Builtins.ryl
   ["selene"] = Builtins.selene
