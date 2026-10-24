@@ -413,15 +413,16 @@ url = "https://github.com/apple/pkl/releases/download/0.32.2/pkl-windows-amd64.e
 url_api = "https://api.github.com/repos/apple/pkl/releases/assets/663854370"
 
 [[tools.ruby]]
-version = "4.0.8"
+version = "4.0.9"
 backend = "core:ruby"
 specifiers = ["latest"]
 
 [tools.ruby."platforms.windows-x64"]
-url = "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-4.0.8-1/rubyinstaller-4.0.8-1-x64.7z"
+checksum = "sha256:1dc0715916251a13c4f6a550a3da1f2c726bff869371fd573a65234c008f47b4"
+url = "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-4.0.9-1/rubyinstaller-4.0.9-1-x64.7z"
 
 [[tools.ruby]]
-version = "4.0.8"
+version = "4.0.9"
 backend = "core:ruby"
 specifiers = ["latest"]
 
@@ -432,31 +433,31 @@ ruby_build_repo = "https://github.com/rbenv/ruby-build.git"
 ruby_install = "false"
 
 [tools.ruby."platforms.linux-arm64"]
-checksum = "sha256:c29fe402304afb6248f09fa83e91766a70fb3bcb427a0f7945e94dee11fc0126"
-url = "https://github.com/jdx/ruby/releases/download/4.0.8-1/ruby-4.0.8.arm64_linux.tar.gz"
+checksum = "sha256:e115ae4dce7193d862e1f105d7969472f0fcead4a440bbb08c9af92528ed0dd9"
+url = "https://github.com/jdx/ruby/releases/download/4.0.9-1/ruby-4.0.9.arm64_linux.tar.gz"
 provenance = "github-attestations"
 
 [tools.ruby."platforms.linux-arm64-musl"]
-checksum = "sha256:0968e2ac4cbd6f1fd85d3092aed66cd3c2d8ba4a5e2493d6e6c6cb0c431897d2"
-url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.tar.gz"
+checksum = "sha256:c35350682ff050b79702d57ade4516e7336063f510155d19fb2fb5b3f3909511"
+url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.tar.gz"
 
 [tools.ruby."platforms.linux-x64"]
-checksum = "sha256:2e54bc3e0c518c222febffa07da2e84e780198beae433415f32d62b40597e3e8"
-url = "https://github.com/jdx/ruby/releases/download/4.0.8-1/ruby-4.0.8.x86_64_linux.tar.gz"
+checksum = "sha256:7e74db7ddb8f44f534fa4937d98b6d1691e053c5c190af6d130464b0467e87c4"
+url = "https://github.com/jdx/ruby/releases/download/4.0.9-1/ruby-4.0.9.x86_64_linux.tar.gz"
 provenance = "github-attestations"
 
 [tools.ruby."platforms.linux-x64-musl"]
-checksum = "sha256:0968e2ac4cbd6f1fd85d3092aed66cd3c2d8ba4a5e2493d6e6c6cb0c431897d2"
-url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.tar.gz"
+checksum = "sha256:c35350682ff050b79702d57ade4516e7336063f510155d19fb2fb5b3f3909511"
+url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.tar.gz"
 
 [tools.ruby."platforms.macos-arm64"]
-checksum = "sha256:b5b977610dbe5a5e14c958269ec6e81825420c1b080c90b13e601b0638871a6c"
-url = "https://github.com/jdx/ruby/releases/download/4.0.8-1/ruby-4.0.8.macos.tar.gz"
+checksum = "sha256:6eca5d2aaf6bb6c805daa31b4139a3c974526f41dae990ab0cef0ee3db8ea5d1"
+url = "https://github.com/jdx/ruby/releases/download/4.0.9-1/ruby-4.0.9.macos.tar.gz"
 provenance = "github-attestations"
 
 [tools.ruby."platforms.macos-x64"]
-checksum = "sha256:0968e2ac4cbd6f1fd85d3092aed66cd3c2d8ba4a5e2493d6e6c6cb0c431897d2"
-url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.tar.gz"
+checksum = "sha256:c35350682ff050b79702d57ade4516e7336063f510155d19fb2fb5b3f3909511"
+url = "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.9.tar.gz"
 
 [[tools.rust-analyzer]]
 version = "2026-10-19"
