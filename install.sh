@@ -16,4 +16,4 @@ fi
 
 "$MISE" exec gh@latest -- gh auth setup-git --hostname github.com
 
-"$MISE" bootstrap --adopt ponko2/dotfiles --yes
+"$MISE" bootstrap --from https://github.com/ponko2/dotfiles.git --from-dir ~/.dotfiles --config-dir .config/mise --yes

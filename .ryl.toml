@@ -1,4 +1,4 @@
-exclude = [".mise/locks/", "locks/"]
+exclude = [".config/mise/locks/", ".mise/locks/"]
 
 [files]
 yaml = ["*.yaml", "*.yml", ".yamllint"]

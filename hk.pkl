@@ -13,7 +13,7 @@ steps {
       effect = "read"
     }
   }
-  ["mise"] = Builtins.mise_config_dir
+  ["mise"] = Builtins.mise
   ["oxfmt"] = Builtins.oxfmt
   ["ryl"] = Builtins.ryl
   ["selene"] = Builtins.selene

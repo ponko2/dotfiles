@@ -1,5 +1,5 @@
 std = 'lua51+nvim'
-exclude = ['home/.config/yazi/plugins/**']
+exclude = ['.config/yazi/plugins/**']
 
 [lints]
 mixed_table = "allow"
