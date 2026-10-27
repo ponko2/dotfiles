@@ -23,5 +23,5 @@ globals = {
 }
 
 exclude_files = {
-  'home/.config/yazi/plugins/**',
+  '.config/yazi/plugins/**',
 }

@@ -13,11 +13,11 @@ insert_final_newline = true
 indent_style = tab
 indent_size = 4
 
-[.gitconfig]
+[.config/git/config]
 indent_style = tab
 indent_size = 4
 
-[home/.config/git/config]
+[.gitconfig]
 indent_style = tab
 indent_size = 4
 

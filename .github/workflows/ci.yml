@@ -78,8 +78,8 @@ jobs:
               - *common
               - *dependencies
               - *lua
+              - .config/nvim/lazy-lock.json
               - .luarc.json
-              - home/.config/nvim/lazy-lock.json
             ryl:
               - *common
               - *dependencies
@@ -196,7 +196,7 @@ jobs:
           {
             echo "XDG_BIN_HOME=$HOME/.local/bin"
             echo "XDG_CACHE_HOME=$HOME/.cache"
-            echo "XDG_CONFIG_HOME=$GITHUB_WORKSPACE/home/.config"
+            echo "XDG_CONFIG_HOME=$GITHUB_WORKSPACE/.config"
             echo "XDG_DATA_HOME=$HOME/.local/share"
             echo "XDG_STATE_HOME=$HOME/.local/state"
           } >> "$GITHUB_ENV"
