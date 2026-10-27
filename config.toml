@@ -193,7 +193,7 @@ login_shell = "zsh"
 "~/.zshrc.d" = {}
 
 [settings.dotfiles]
-root = "~/.config/mise/home"
+root = "{{ mise_config_dir }}/home"
 
 [settings.github]
 use_git_credentials = true
