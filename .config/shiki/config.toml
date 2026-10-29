@@ -1,0 +1,141 @@
+[general]
+default_notebook = "personal"
+editor = "nvim"
+daily_template = "daily"
+use_favorite_editor = true
+enable_capture_daemon = true
+mouse_drag_selection = true
+show_hints = true
+remember_last_session = true
+show_coffee_link = true
+skip_delete_confirm = false
+show_dates = false
+wikilink_autocomplete = true
+due_date_autocomplete = true
+daily_agenda = true
+compact_footer = false
+show_borders = true
+status_message_timeout_secs = 2
+drawer_width = 30
+tasks_show_done_default = false
+default_note_sort = "filename"
+log_history_limit = 500
+trash_retention_days = 0
+reading_wpm = 200
+page_step = 10
+preview_images = true
+chafa_path = ""
+preview_image_scale = 0.5
+attachments_dir = "attachments"
+auto_pull_on_switch = false
+enable_reminders = true
+reminder_check_interval_secs = 300
+
+[keybindings]
+leader = "space"
+quit = "q"
+
+[keybindings.global]
+theme_picker = "c"
+global_search = "g"
+tags_panel = "T"
+logs = "l"
+toggle_favorite_editor = "e"
+check_update = "U"
+drawer = "b"
+undo_delete = "u"
+settings = "s"
+scratchpad = "p"
+links = "B"
+tasks_panel = "t"
+query_panel = "q"
+publish = "P"
+export = "x"
+zen_mode = "z"
+
+[keybindings.notebooks]
+new = "a"
+rename = "r"
+delete = "d"
+sync = "s"
+pull = "p"
+pull_all = "P"
+set_remote = "R"
+push = "u"
+git_dash = "G"
+
+[keybindings.notes]
+new = "a"
+rename = "r"
+delete = "d"
+edit_inline = "i"
+edit_external = "E"
+search = "/"
+daily_note = "t"
+move_to_notebook = "m"
+sort = "o"
+tree_view = "T"
+toggle_dates = "D"
+new_folder = "f"
+visual = "v"
+copy_entries = "y"
+metadata = "M"
+
+[keybindings.preview]
+edit_inline = "i"
+edit_external = "E"
+history = "H"
+diff = "d"
+links = "L"
+outline = "o"
+metadata = "M"
+
+[theme]
+name = "gruvbox-dark"
+icons = true
+
+[theme.notebooks]
+
+[git]
+auto_commit = true
+auto_push = false
+commit_prefix = "shiki: "
+remote = "origin"
+branch = "main"
+sign_commits = false
+auto_sync = false
+auto_sync_every = 5
+remote_template = ""
+
+[editor]
+mouse_selection = true
+find_replace = true
+os_clipboard = false
+select_all_ctrl_a = false
+line_numbers = false
+multi_cursor = false
+auto_list_continue = true
+format_shortcuts = true
+auto_pair_brackets = true
+paste_url_as_link = true
+paste_images = true
+snippet_expand_tab = true
+typewriter_scroll = false
+move_line = true
+duplicate_line = true
+block_indent_select = true
+insert_timestamp = true
+timestamp_with_time = false
+spellcheck = false
+spellcheck_lang = ""
+
+[export]
+pdf_theme = "default"
+export_dir = ""
+ask_export_path = false
+
+[notebooks]
+
+[snippets]
+
+[queries]

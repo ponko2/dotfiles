@@ -126,6 +126,7 @@ run_at_load = true
 "brew:ripgrep" = "latest"
 "brew:ripgrep-all" = "latest"
 "brew:rsync" = "latest"
+"brew:sazardev/shiki/shiki" = "latest"
 "brew:sheldon" = "latest"
 "brew:sqlite" = "latest"
 "brew:ssh-copy-id" = "latest"
@@ -135,9 +136,6 @@ run_at_load = true
 "brew:yazi" = "latest"
 "brew:zoxide" = "latest"
 "brew:zsh" = "latest"
-# nb
-"brew:bash" = "latest"
-"brew:nb" = "latest"
 # Neovim
 "brew:coreutils" = "latest"
 "brew:pkl-lsp" = "latest"
@@ -183,7 +181,6 @@ login_shell = "zsh"
 "~/.config/zsh-abbr" = {}
 "~/.local/bin/rfv" = {}
 "~/.local/bin/update-system" = {}
-"~/.nbrc" = {}
 "~/.ripgreprc" = {}
 "~/.zprofile" = {}
 "~/.zshenv" = {}
