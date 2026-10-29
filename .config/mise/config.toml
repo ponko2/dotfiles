@@ -140,6 +140,7 @@ coreutils = "latest"
 pkl-lsp = "latest"
 # Homebrew taps
 "brew:f1bonacc1/tap/process-compose" = "latest"
+"brew:sazardev/shiki/shiki" = "latest"
 # GUI Applications
 "brew-cask:1password" = "latest"
 "brew-cask:1password-cli" = "latest"
@@ -175,6 +176,7 @@ login_shell = "zsh"
 "~/.config/process-compose" = {}
 "~/.config/rex" = {}
 "~/.config/sheldon" = {}
+"~/.config/shiki" = {}
 "~/.config/snapzy" = {}
 "~/.config/starship.toml" = {}
 "~/.config/tuicr" = {}
@@ -183,7 +185,6 @@ login_shell = "zsh"
 "~/.config/zsh-abbr" = {}
 "~/.local/bin/rfv" = {}
 "~/.local/bin/update-system" = {}
-"~/.nbrc" = {}
 "~/.ripgreprc" = {}
 "~/.zprofile" = {}
 "~/.zshenv" = {}
