@@ -86,6 +86,7 @@ NSGlobalDomain = {
 apps = [
   "/Applications/Google Chrome.app",
   "/Applications/Ghostty.app",
+  "/Applications/Rex Beta.app",
   "/Applications/Zed.app",
   "/Applications/DevToys.app",
   "/Applications/1Password.app",
@@ -176,6 +177,7 @@ login_shell = "zsh"
 "~/.config/nvim" = {}
 "~/.config/omniwm" = {}
 "~/.config/process-compose" = {}
+"~/.config/rex" = {}
 "~/.config/sheldon" = {}
 "~/.config/snapzy" = {}
 "~/.config/starship.toml" = {}
