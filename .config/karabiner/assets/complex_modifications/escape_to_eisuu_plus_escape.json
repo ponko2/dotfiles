@@ -10,6 +10,7 @@
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.mitchellh\\.ghostty$",
+                "^com\\.superlogical\\.rex$",
                 "^dev\\.zed\\.Zed$"
               ],
               "type": "frontmost_application_if"
@@ -28,6 +29,7 @@
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.mitchellh\\.ghostty$",
+                "^com\\.superlogical\\.rex$",
                 "^dev\\.zed\\.Zed$"
               ],
               "type": "frontmost_application_if"
