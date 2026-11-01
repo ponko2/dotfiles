@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@vue/language-server':
-        specifier: 3.3.13
-        version: 3.3.13(typescript@7.0.2)
+        specifier: 3.3.14
+        version: 3.3.14(typescript@7.0.2)
 
 packages:
 
@@ -22,8 +22,8 @@ packages:
     resolution: {integrity: sha512-qehxGkRj55h/ff8EMaJ+cYhyaKlHIxqYDn682wQD7RNp9UujOQsHog2uS0r2vzr4pW+sXf90NeeayjcNaX3fFg==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/parser@7.29.11':
-    resolution: {integrity: sha512-OZ6+oaK7GMyg3IfCpj8JOmn8n+w2rJbDT0LLfVDTLb1ZFeKDh3AiNELgCMUw175IJHSkLl74hG0M0VLsvx+gag==}
+  '@babel/parser@7.29.12':
+    resolution: {integrity: sha512-WJ7JBp/Q4+z/ImydtI7jS6NVco5++632ExBemSX+Ysb+G1lCwQ5BVo3SY+jGGOcZXI4ZccbZSUSJLNBW6eEpJg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -175,20 +175,38 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@volar/language-core@2.4.28':
-    resolution: {integrity: sha512-w4qhIJ8ZSitgLAkVay6AbcnC7gP3glYM3fYwKV3srj8m494E3xtrCv6E+bWviiK/8hs6e6t1ij1s2Endql7vzQ==}
+  '@volar/language-core@2.4.30':
+    resolution: {integrity: sha512-73fjwEV8wat6aOZ6U/y/hqtE30ocrIWECg67b0txGczOMNw+MffLmvJ5fnFfN9drVUEYZzLdaNo6VAy6G6avMw==}
 
-  '@volar/language-server@2.4.28':
-    resolution: {integrity: sha512-NqcLnE5gERKuS4PUFwlhMxf6vqYo7hXtbMFbViXcbVkbZ905AIVWhnSo0ZNBC2V127H1/2zP7RvVOVnyITFfBw==}
+  '@volar/language-server@2.4.30':
+    resolution: {integrity: sha512-tcP9fzzUBbsLIFHhgnRU4ncQjMn9G9Vax0ffkQmdCrXVEYqRroUepmyC5AVgiju5bCiLD6a55qen5iOTQHkb3g==}
+    peerDependencies:
+      typescript: <7
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
-  '@volar/language-service@2.4.28':
-    resolution: {integrity: sha512-Rh/wYCZJrI5vCwMk9xyw/Z+MsWxlJY1rmMZPsxUoJKfzIRjS/NF1NmnuEcrMbEVGja00aVpCsInJfixQTMdvLw==}
+  '@volar/language-service@2.4.30':
+    resolution: {integrity: sha512-w/xDsASiqC71ggCOm7sTDXDNk/l72XEptodeRC68tgZ0e5QM4hM3zAqBGC7mBctvhrpYwKfMG+t9xcUo2hEFtA==}
+    peerDependencies:
+      typescript: <7
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   '@volar/source-map@2.4.28':
     resolution: {integrity: sha512-yX2BDBqJkRXfKw8my8VarTyjv48QwxdJtvRgUpNE5erCsgEUdI2DsLbpa+rOQVAJYshY99szEcRDmyHbF10ggQ==}
 
-  '@volar/typescript@2.4.28':
-    resolution: {integrity: sha512-Ja6yvWrbis2QtN4ClAKreeUZPVYMARDYZl9LMEv1iQ1QdepB6wn0jTRxA9MftYmYa4DQ4k/DaSZpFPUfxl8giw==}
+  '@volar/source-map@2.4.30':
+    resolution: {integrity: sha512-zym1ob/KwDDyN+0jGVtxwbxJSRRnUvv5HspCtz3yEfVVdCG4/dzxJktMGPAgemqRuVs81O0o/y0q3qOUErR8kg==}
+
+  '@volar/typescript@2.4.30':
+    resolution: {integrity: sha512-/DgA5tgYFPfrLFuSjIMXMGHk1LQv2+P8eny6+BhGNzFJELWIW7UZlc56ZLIRFhLsPpMfIFxM8/HvOPBggrjTZg==}
+    peerDependencies:
+      typescript: <7
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   '@vscode/emmet-helper@2.11.0':
     resolution: {integrity: sha512-QLxjQR3imPZPQltfbWRnHU6JecWTF1QSWhx3GAKQpslx7y3Dp6sIIXhKjiUJ/BR9FX8PVthjr9PD6pNwOJfAzw==}
@@ -202,26 +220,26 @@ packages:
   '@vue/compiler-dom@3.5.44':
     resolution: {integrity: sha512-W5AoBFWdw1lQAKiHowkfgFKFab82oSRT6sGsPfw/q1GRjsy/ZJFLHGhJyBRIFN9APLTUduDH9U2JAiPOIyKuYg==}
 
-  '@vue/language-core@3.3.13':
-    resolution: {integrity: sha512-axA0Xemn5LuUKuKWob0/kVq7xQ2mJJM6VqA9Exvt35nM9yRC31goWVve/G/Zb2ZCLsXC8FHYjjfXlnshknSCew==}
+  '@vue/language-core@3.3.14':
+    resolution: {integrity: sha512-kRB+3hHg0c+BdD1XLAvwjVMQd5pC05zijSlPDRI3ERvC/s04JlRs5upy2KjeMg/9m9oD5zuMVh9yVvkKfZqoJg==}
 
   '@vue/language-plugin-pug@3.2.9':
     resolution: {integrity: sha512-EaRtg3/1TQo9D20nBex1G3NtWElJbSgiiisZe6TwiNKpSCRwFmmvuAkz+AfMmsQc53si3zbkApU8RF0o6ULQag==}
 
-  '@vue/language-server@3.3.13':
-    resolution: {integrity: sha512-6r7lkSxoG9KvppQIHifQ7b7SopFCLhnnRlyGjZxkf+pxiOhUhSQZ8Qzv9OXE9tu2BdIQ5Iaw+p/3Ho+QGHbppQ==}
+  '@vue/language-server@3.3.14':
+    resolution: {integrity: sha512-sB/Ie3mP8J+ua7ECipTPtiov7bOtpMtJVj3rEcrxpkns1MxQN5k6pL08oTOQHFS5Ol+U7cEzO6mOu2llASdRNA==}
     hasBin: true
     peerDependencies:
       typescript: '*'
 
-  '@vue/language-service@3.3.13':
-    resolution: {integrity: sha512-HmRQz3bEZ0k8wfrydgPCNlnLxW4dHqATb01oQ4pr+tftHE6HxacknrAlzReIbPSZ4Y5d4r/s0AfpUnHtYoDZjA==}
+  '@vue/language-service@3.3.14':
+    resolution: {integrity: sha512-KJKIcuDJcLWpRTbm2N3Lc+Ri+/9mp7OnWwEBWJit7at8ultnYV09pvTTzh8rpDniEAoTIBt+Blli/b4n07HqDA==}
 
   '@vue/shared@3.5.44':
     resolution: {integrity: sha512-H82XLH0DjmSOdbEwO15x3QTo1f5PWEtv237eLpYKc0mqLu+B8hnq16lFWmuBmNurkeiG3wr+oM1FhOll/YVFRg==}
 
-  '@vue/typescript-plugin@3.3.13':
-    resolution: {integrity: sha512-L/ht0WIIB5GOPYx0ooWoVQztsI/v1h7lW2/ND0YBuoBYHTteGPfRFzM5j0/uD1nf/rYezqWHhNDDmww2Co53KA==}
+  '@vue/typescript-plugin@3.3.14':
+    resolution: {integrity: sha512-+PUukA0VmMDWqNcuGEhoW6aoc1vgMHGkOMVVdYjgDV1jdJJPqqMIPHy23GHM1Lb+VHZqiGIrchvhqg6kDjQpqw==}
 
   acorn@7.4.1:
     resolution: {integrity: sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==}
@@ -451,8 +469,8 @@ packages:
   vscode-uri@3.2.0:
     resolution: {integrity: sha512-m2gXo3bn0G1kT9InzMf07fTbqMbGtyckj3bH5ktLO+1Ssv+yiATZ4dhwaQv9UZWxJh6E9IFGnQyjgWVDWVBDrg==}
 
-  vue-component-meta@3.3.13:
-    resolution: {integrity: sha512-VnqcGTxB4n56qWfsuroOL+cEvjkV8uEffGy57bqlzePAQKQMLBXAjIKIntyngunmMnxWHMLzkYgRxdx9I1H/hg==}
+  vue-component-meta@3.3.14:
+    resolution: {integrity: sha512-OQT0AVGbFjmo/aIsyrNN8M3zR3D7U3SNyQPzVlotl89dxIdhhy95wYALiiFrHkBWyvTLRxMRQ3cqkbOMHEh8DQ==}
     peerDependencies:
       typescript: '*'
     peerDependenciesMeta:
@@ -465,7 +483,7 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.29.7': {}
 
-  '@babel/parser@7.29.11':
+  '@babel/parser@7.29.12':
     dependencies:
       '@babel/types': 7.29.11
 
@@ -559,36 +577,45 @@ snapshots:
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
 
-  '@volar/language-core@2.4.28':
+  '@volar/language-core@2.4.30':
     dependencies:
-      '@volar/source-map': 2.4.28
+      '@volar/source-map': 2.4.30
 
-  '@volar/language-server@2.4.28':
+  '@volar/language-server@2.4.30(typescript@7.0.2)':
     dependencies:
-      '@volar/language-core': 2.4.28
-      '@volar/language-service': 2.4.28
-      '@volar/typescript': 2.4.28
+      '@volar/language-core': 2.4.30
+      '@volar/language-service': 2.4.30(typescript@7.0.2)
+      '@volar/typescript': 2.4.30(typescript@7.0.2)
       path-browserify: 1.0.1
       request-light: 0.7.0
       vscode-languageserver: 9.0.1
       vscode-languageserver-protocol: 3.18.5
       vscode-languageserver-textdocument: 1.0.16
       vscode-uri: 3.2.0
+    optionalDependencies:
+      typescript: 7.0.2
 
-  '@volar/language-service@2.4.28':
+  '@volar/language-service@2.4.30(typescript@7.0.2)':
     dependencies:
-      '@volar/language-core': 2.4.28
+      '@volar/language-core': 2.4.30
       vscode-languageserver-protocol: 3.18.5
       vscode-languageserver-textdocument: 1.0.16
       vscode-uri: 3.2.0
+    optionalDependencies:
+      typescript: 7.0.2
 
   '@volar/source-map@2.4.28': {}
 
-  '@volar/typescript@2.4.28':
+  '@volar/source-map@2.4.30': {}
+
+  '@volar/typescript@2.4.30(typescript@7.0.2)':
     dependencies:
-      '@volar/language-core': 2.4.28
+      '@volar/language-core': 2.4.30
+      '@volar/language-service': 2.4.30(typescript@7.0.2)
       path-browserify: 1.0.1
       vscode-uri: 3.2.0
+    optionalDependencies:
+      typescript: 7.0.2
 
   '@vscode/emmet-helper@2.11.0':
     dependencies:
@@ -602,7 +629,7 @@ snapshots:
 
   '@vue/compiler-core@3.5.44':
     dependencies:
-      '@babel/parser': 7.29.11
+      '@babel/parser': 7.29.12
       '@vue/shared': 3.5.44
       entities: 7.0.1
       estree-walker: 2.0.2
@@ -613,9 +640,9 @@ snapshots:
       '@vue/compiler-core': 3.5.44
       '@vue/shared': 3.5.44
 
-  '@vue/language-core@3.3.13':
+  '@vue/language-core@3.3.14':
     dependencies:
-      '@volar/language-core': 2.4.28
+      '@volar/language-core': 2.4.30
       '@vue/compiler-dom': 3.5.44
       '@vue/shared': 3.5.44
       alien-signals: 3.2.1
@@ -631,40 +658,42 @@ snapshots:
       pug-parser: 6.0.0
       vscode-languageserver-textdocument: 1.0.16
 
-  '@vue/language-server@3.3.13(typescript@7.0.2)':
+  '@vue/language-server@3.3.14(typescript@7.0.2)':
     dependencies:
-      '@volar/language-server': 2.4.28
-      '@vue/language-core': 3.3.13
-      '@vue/language-service': 3.3.13
-      '@vue/typescript-plugin': 3.3.13(typescript@7.0.2)
+      '@volar/language-server': 2.4.30(typescript@7.0.2)
+      '@vue/language-core': 3.3.14
+      '@vue/language-service': 3.3.14(typescript@7.0.2)
+      '@vue/typescript-plugin': 3.3.14(typescript@7.0.2)
       typescript: 7.0.2
       vscode-uri: 3.2.0
 
-  '@vue/language-service@3.3.13':
+  '@vue/language-service@3.3.14(typescript@7.0.2)':
     dependencies:
-      '@volar/language-service': 2.4.28
-      '@vue/language-core': 3.3.13
+      '@volar/language-service': 2.4.30(typescript@7.0.2)
+      '@vue/language-core': 3.3.14
       '@vue/shared': 3.5.44
       path-browserify: 1.0.1
-      volar-service-css: 0.0.71(@volar/language-service@2.4.28)
-      volar-service-emmet: 0.0.71(@volar/language-service@2.4.28)
-      volar-service-html: 0.0.71(@volar/language-service@2.4.28)
-      volar-service-json: 0.0.71(@volar/language-service@2.4.28)
-      volar-service-pug: 0.0.71
-      volar-service-pug-beautify: 0.0.71(@volar/language-service@2.4.28)
-      volar-service-typescript: 0.0.71(@volar/language-service@2.4.28)
+      volar-service-css: 0.0.71(@volar/language-service@2.4.30(typescript@7.0.2))
+      volar-service-emmet: 0.0.71(@volar/language-service@2.4.30(typescript@7.0.2))
+      volar-service-html: 0.0.71(@volar/language-service@2.4.30(typescript@7.0.2))
+      volar-service-json: 0.0.71(@volar/language-service@2.4.30(typescript@7.0.2))
+      volar-service-pug: 0.0.71(typescript@7.0.2)
+      volar-service-pug-beautify: 0.0.71(@volar/language-service@2.4.30(typescript@7.0.2))
+      volar-service-typescript: 0.0.71(@volar/language-service@2.4.30(typescript@7.0.2))
       vscode-html-languageservice: 5.6.2
       vscode-uri: 3.2.0
+    transitivePeerDependencies:
+      - typescript
 
   '@vue/shared@3.5.44': {}
 
-  '@vue/typescript-plugin@3.3.13(typescript@7.0.2)':
+  '@vue/typescript-plugin@3.3.14(typescript@7.0.2)':
     dependencies:
-      '@volar/typescript': 2.4.28
-      '@vue/language-core': 3.3.13
+      '@volar/typescript': 2.4.30(typescript@7.0.2)
+      '@vue/language-core': 3.3.14
       '@vue/shared': 3.5.44
       path-browserify: 1.0.1
-      vue-component-meta: 3.3.13(typescript@7.0.2)
+      vue-component-meta: 3.3.14(typescript@7.0.2)
     transitivePeerDependencies:
       - typescript
 
@@ -815,53 +844,55 @@ snapshots:
       '@typescript/typescript-win32-arm64': 7.0.2
       '@typescript/typescript-win32-x64': 7.0.2
 
-  volar-service-css@0.0.71(@volar/language-service@2.4.28):
+  volar-service-css@0.0.71(@volar/language-service@2.4.30(typescript@7.0.2)):
     dependencies:
       vscode-css-languageservice: 6.3.10
       vscode-languageserver-textdocument: 1.0.16
       vscode-uri: 3.2.0
     optionalDependencies:
-      '@volar/language-service': 2.4.28
+      '@volar/language-service': 2.4.30(typescript@7.0.2)
 
-  volar-service-emmet@0.0.71(@volar/language-service@2.4.28):
+  volar-service-emmet@0.0.71(@volar/language-service@2.4.30(typescript@7.0.2)):
     dependencies:
       '@emmetio/css-parser': 0.4.1
       '@emmetio/html-matcher': 1.3.0
       '@vscode/emmet-helper': 2.11.0
       vscode-uri: 3.2.0
     optionalDependencies:
-      '@volar/language-service': 2.4.28
+      '@volar/language-service': 2.4.30(typescript@7.0.2)
 
-  volar-service-html@0.0.71(@volar/language-service@2.4.28):
+  volar-service-html@0.0.71(@volar/language-service@2.4.30(typescript@7.0.2)):
     dependencies:
       vscode-html-languageservice: 5.6.2
       vscode-languageserver-textdocument: 1.0.16
       vscode-uri: 3.2.0
     optionalDependencies:
-      '@volar/language-service': 2.4.28
+      '@volar/language-service': 2.4.30(typescript@7.0.2)
 
-  volar-service-json@0.0.71(@volar/language-service@2.4.28):
+  volar-service-json@0.0.71(@volar/language-service@2.4.30(typescript@7.0.2)):
     dependencies:
       vscode-json-languageservice: 5.7.2
       vscode-uri: 3.2.0
     optionalDependencies:
-      '@volar/language-service': 2.4.28
+      '@volar/language-service': 2.4.30(typescript@7.0.2)
 
-  volar-service-pug-beautify@0.0.71(@volar/language-service@2.4.28):
+  volar-service-pug-beautify@0.0.71(@volar/language-service@2.4.30(typescript@7.0.2)):
     dependencies:
       '@johnsoncodehk/pug-beautify': 0.2.2
     optionalDependencies:
-      '@volar/language-service': 2.4.28
+      '@volar/language-service': 2.4.30(typescript@7.0.2)
 
-  volar-service-pug@0.0.71:
+  volar-service-pug@0.0.71(typescript@7.0.2):
     dependencies:
-      '@volar/language-service': 2.4.28
+      '@volar/language-service': 2.4.30(typescript@7.0.2)
       '@vue/language-plugin-pug': 3.2.9
-      volar-service-html: 0.0.71(@volar/language-service@2.4.28)
+      volar-service-html: 0.0.71(@volar/language-service@2.4.30(typescript@7.0.2))
       vscode-html-languageservice: 5.6.2
       vscode-languageserver-textdocument: 1.0.16
+    transitivePeerDependencies:
+      - typescript
 
-  volar-service-typescript@0.0.71(@volar/language-service@2.4.28):
+  volar-service-typescript@0.0.71(@volar/language-service@2.4.30(typescript@7.0.2)):
     dependencies:
       path-browserify: 1.0.1
       semver: 7.8.5
@@ -870,7 +901,7 @@ snapshots:
       vscode-nls: 5.2.0
       vscode-uri: 3.2.0
     optionalDependencies:
-      '@volar/language-service': 2.4.28
+      '@volar/language-service': 2.4.30(typescript@7.0.2)
 
   vscode-css-languageservice@6.3.10:
     dependencies:
@@ -922,10 +953,10 @@ snapshots:
 
   vscode-uri@3.2.0: {}
 
-  vue-component-meta@3.3.13(typescript@7.0.2):
+  vue-component-meta@3.3.14(typescript@7.0.2):
     dependencies:
-      '@volar/typescript': 2.4.28
-      '@vue/language-core': 3.3.13
+      '@volar/typescript': 2.4.30(typescript@7.0.2)
+      '@vue/language-core': 3.3.14
       path-browserify: 1.0.1
     optionalDependencies:
       typescript: 7.0.2
