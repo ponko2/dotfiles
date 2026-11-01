@@ -5,6 +5,7 @@ VIMRUNTIME = { value = "{{ tools.neovim.path }}/share/nvim/runtime", tools = tru
 luarocks = "https://github.com/ponko2/mise-luarocks"
 
 [tools]
+"aqua:Kampfkarren/selene/light" = "latest"
 "aqua:owenlamont/ryl" = "latest"
 "npm:@commitlint/cli" = "latest"
 editorconfig-checker = "latest"
@@ -16,10 +17,6 @@ oxfmt = "latest"
 shellcheck = "latest"
 shfmt = "latest"
 stylua = "latest"
-
-[tools."github:Kampfkarren/selene"]
-version = "latest"
-bin = "selene"
 
 [tools."luarocks:luacheck"]
 version = "1.2.0-1"

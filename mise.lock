@@ -2,6 +2,35 @@
 
 lockfile_version = 3
 
+[[tools."aqua:Kampfkarren/selene/light"]]
+version = "0.32.0"
+backend = "aqua:Kampfkarren/selene/light"
+specifiers = ["latest"]
+
+[tools."aqua:Kampfkarren/selene/light"."platforms.linux-x64"]
+checksum = "sha256:ee5b3050dfff782f5c624b5f5eec9f205098333e1f8f55b7977ef75e5c594b1a"
+checksum_source = "mise-versions"
+url = "https://github.com/Kampfkarren/selene/releases/download/0.32.0/selene-light-0.32.0-linux.zip"
+url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/604285135"
+
+[tools."aqua:Kampfkarren/selene/light"."platforms.linux-x64-musl"]
+checksum = "sha256:ee5b3050dfff782f5c624b5f5eec9f205098333e1f8f55b7977ef75e5c594b1a"
+checksum_source = "mise-versions"
+url = "https://github.com/Kampfkarren/selene/releases/download/0.32.0/selene-light-0.32.0-linux.zip"
+url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/604285135"
+
+[tools."aqua:Kampfkarren/selene/light"."platforms.macos-arm64"]
+checksum = "sha256:667e2d9fedaf2d0f2d83f21dafaca8dcd04ab9f25f7aa7fd0da9988eea1d0c47"
+checksum_source = "mise-versions"
+url = "https://github.com/Kampfkarren/selene/releases/download/0.32.0/selene-light-0.32.0-macos.zip"
+url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/604285201"
+
+[tools."aqua:Kampfkarren/selene/light"."platforms.windows-x64"]
+checksum = "sha256:dfe9eb37c66cd3833afb148510e67cf38941393dce918728f1f36cedb57a4d06"
+checksum_source = "mise-versions"
+url = "https://github.com/Kampfkarren/selene/releases/download/0.32.0/selene-light-0.32.0-windows.zip"
+url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/604285170"
+
 [[tools."aqua:owenlamont/ryl"]]
 version = "0.27.0"
 backend = "aqua:owenlamont/ryl"
@@ -83,47 +112,6 @@ checksum = "sha256:857f8f74dfc259d73dac93573e37cf3ce01150787d7b139bf839549cc6b5b
 url = "https://github.com/editorconfig-checker/editorconfig-checker/releases/download/v4.0.2/editorconfig-checker-windows-amd64.zip"
 url_api = "https://api.github.com/repos/editorconfig-checker/editorconfig-checker/releases/assets/574675794"
 provenance = "github-attestations"
-
-[[tools."github:Kampfkarren/selene"]]
-version = "0.32.0"
-backend = "github:Kampfkarren/selene"
-specifiers = ["latest"]
-
-[tools."github:Kampfkarren/selene"."platforms.linux-arm64"]
-checksum = "sha256:d3773393578580074386e69337d35b7acddfbaa9fc38964c07fa3e28436ade9b"
-checksum_source = "mise-versions"
-url = "https://github.com/Kampfkarren/selene/releases/download/0.32.0/selene-0.32.0-linux.zip"
-url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/604285118"
-
-[tools."github:Kampfkarren/selene"."platforms.linux-arm64-musl"]
-checksum = "sha256:d3773393578580074386e69337d35b7acddfbaa9fc38964c07fa3e28436ade9b"
-checksum_source = "mise-versions"
-url = "https://github.com/Kampfkarren/selene/releases/download/0.32.0/selene-0.32.0-linux.zip"
-url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/604285118"
-
-[tools."github:Kampfkarren/selene"."platforms.linux-x64"]
-checksum = "sha256:d3773393578580074386e69337d35b7acddfbaa9fc38964c07fa3e28436ade9b"
-checksum_source = "mise-versions"
-url = "https://github.com/Kampfkarren/selene/releases/download/0.32.0/selene-0.32.0-linux.zip"
-url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/604285118"
-
-[tools."github:Kampfkarren/selene"."platforms.linux-x64-musl"]
-checksum = "sha256:d3773393578580074386e69337d35b7acddfbaa9fc38964c07fa3e28436ade9b"
-checksum_source = "mise-versions"
-url = "https://github.com/Kampfkarren/selene/releases/download/0.32.0/selene-0.32.0-linux.zip"
-url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/604285118"
-
-[tools."github:Kampfkarren/selene"."platforms.macos-arm64"]
-checksum = "sha256:d8aa4701530a81334836f9c5e3bf38b91f633d9ad88f4d15cf29f63fe8589dc0"
-checksum_source = "mise-versions"
-url = "https://github.com/Kampfkarren/selene/releases/download/0.32.0/selene-0.32.0-macos.zip"
-url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/604285189"
-
-[tools."github:Kampfkarren/selene"."platforms.windows-x64"]
-checksum = "sha256:c8b693de81d0ddc11490d8e1170dd98d775c2b21431144bd8286f738ef416109"
-checksum_source = "mise-versions"
-url = "https://github.com/Kampfkarren/selene/releases/download/0.32.0/selene-0.32.0-windows.zip"
-url_api = "https://api.github.com/repos/Kampfkarren/selene/releases/assets/604285158"
 
 [[tools.hk]]
 version = "2.11.0"
