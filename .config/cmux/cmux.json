@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
+  "schemaVersion": 1,
+  "shortcuts": {
+    "bindings": {
+      "closeWindow": null,
+      "showWindowHints": null,
+      "selectSurfaceByNumber": "cmd+1",
+      "focusHistoryBack": null,
+      "focusHistoryForward": null,
+      "selectWorkspaceByNumber": "cmd+opt+1",
+      "groupSelectedWorkspaces": null,
+      "focusPreviousPane": "cmd+[",
+      "focusNextPane": "cmd+]",
+      "increaseWorkspaceTerminalFontSize": null,
+      "equalizeSplits": "cmd+ctrl+=",
+      "canvasZoomReset": "cmd+opt+0",
+      "findInDirectory": null,
+      "findPrevious": "cmd+shift+g",
+      "hideFind": "cmd+shift+f",
+      "toggleReactGrab": null
+    },
+    "when": {
+      "focusPreviousPane": "!browserFocus",
+      "focusNextPane": "!browserFocus"
+    }
+  }
+}

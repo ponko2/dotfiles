@@ -9,6 +9,7 @@
             {
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
+                "^com\\.cmuxterm\\.app$",
                 "^com\\.mitchellh\\.ghostty$",
                 "^com\\.superlogical\\.rex$",
                 "^dev\\.zed\\.Zed$"
@@ -28,6 +29,7 @@
             {
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
+                "^com\\.cmuxterm\\.app$",
                 "^com\\.mitchellh\\.ghostty$",
                 "^com\\.superlogical\\.rex$",
                 "^dev\\.zed\\.Zed$"

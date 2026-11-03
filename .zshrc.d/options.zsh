@@ -41,6 +41,7 @@ setopt no_case_glob
 
 # リダイレクト(>, >&, <>)で既存ファイルを上書きしない
 setopt no_clobber
+setopt append_create
 
 # OSX濁点半濁点
 setopt combining_chars

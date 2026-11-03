@@ -87,6 +87,7 @@ apps = [
   "/Applications/Google Chrome.app",
   "/Applications/Ghostty.app",
   "/Applications/Rex Beta.app",
+  "/Applications/cmux.app",
   "/Applications/Zed.app",
   "/Applications/DevToys.app",
   "/Applications/1Password.app",
@@ -116,7 +117,6 @@ run_at_load = true
 "brew:ghq" = "latest"
 "brew:git" = "latest"
 "brew:git-lfs" = "latest"
-"brew:herdr" = "latest"
 "brew:httpie" = "latest"
 "brew:imagemagick" = "latest"
 "brew:jj" = "latest"
@@ -147,6 +147,7 @@ run_at_load = true
 "brew-cask:1password-cli" = "latest"
 "brew-cask:antigravity-cli" = "latest"
 "brew-cask:appcleaner" = "latest"
+"brew-cask:cmux" = "latest"
 "brew-cask:devtoys" = "latest"
 "brew-cask:docker-desktop" = "latest"
 "brew-cask:ghostty" = "latest"
@@ -168,9 +169,9 @@ login_shell = "zsh"
 
 [dotfiles]
 "~/.config/bat" = {}
+"~/.config/cmux" = {}
 "~/.config/ghostty" = {}
 "~/.config/git" = {}
-"~/.config/herdr" = {}
 "~/.config/homebrew" = {}
 "~/.config/jj" = {}
 "~/.config/karabiner" = {}
