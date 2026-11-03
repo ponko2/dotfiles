@@ -86,6 +86,7 @@ NSGlobalDomain = {
 apps = [
   "/Applications/Google Chrome.app",
   "/Applications/Ghostty.app",
+  "/Applications/Herdr.app",
   "/Applications/Rex Beta.app",
   "/Applications/Zed.app",
   "/Applications/DevToys.app",
@@ -116,7 +117,6 @@ run_at_load = true
 "brew:ghq" = "latest"
 "brew:git" = "latest"
 "brew:git-lfs" = "latest"
-"brew:herdr" = "latest"
 "brew:httpie" = "latest"
 "brew:imagemagick" = "latest"
 "brew:jj" = "latest"
@@ -151,6 +151,7 @@ run_at_load = true
 "brew-cask:docker-desktop" = "latest"
 "brew-cask:ghostty" = "latest"
 "brew-cask:google-chrome" = "latest"
+"brew-cask:herdr-app" = "latest"
 "brew-cask:karabiner-elements" = "latest"
 "brew-cask:monitorcontrol" = "latest"
 "brew-cask:omniwm" = "latest"
@@ -170,7 +171,7 @@ login_shell = "zsh"
 "~/.config/bat" = {}
 "~/.config/ghostty" = {}
 "~/.config/git" = {}
-"~/.config/herdr" = {}
+"~/.config/herdr-app" = {}
 "~/.config/homebrew" = {}
 "~/.config/jj" = {}
 "~/.config/karabiner" = {}

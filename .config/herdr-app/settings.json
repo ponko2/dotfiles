@@ -1,0 +1,12 @@
+{
+  "font": "UDEV Gothic NF",
+  "font_size": 16,
+  "minimum_contrast": 1,
+  "option_as_alt": "on",
+  "sounds": {
+    "enabled": true
+  },
+  "telemetry": false,
+  "ui_font": "UDEV Gothic",
+  "zoom": 1.0
+}
