@@ -116,7 +116,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           JACTIONLINT_ONLINE: 1
-        run: jactionlint --format=github --color
+        run: jactionlint --format=github --color --strict-exit
         shell: bash
   commitlint:
     name: commitlint
