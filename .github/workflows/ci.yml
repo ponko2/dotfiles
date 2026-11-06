@@ -113,7 +113,10 @@ jobs:
       - name: Set up mise
         uses: jdx/mise-action@v5.2.5
       - name: Run jactionlint
-        run: jactionlint --format=github --color
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          JACTIONLINT_ONLINE: 1
+        run: jactionlint --format=github --color --strict-exit
         shell: bash
   commitlint:
     name: commitlint
