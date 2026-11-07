@@ -3,6 +3,10 @@ exclude = [".config/mise/locks/", ".mise/locks/"]
 [files]
 yaml = ["*.yaml", "*.yml", ".yamllint"]
 
+[format]
+comment-spacing = 1
+quote-style = "double"
+
 [lint.rules]
 anchors = "enable"
 braces = "enable"
@@ -38,8 +42,7 @@ forbid-explicit-octal = false
 forbid-implicit-octal = true
 
 [lint.rules.quoted-strings]
-extra-allowed = ["^[0-9]{2}:[0-9]{2}$"]
-extra-required = ["^0[0-9]+$"]
+allow-quoted-quotes = true
 quote-type = "double"
 required = "only-when-needed"
 
