@@ -16,6 +16,7 @@ steps {
   ["mise"] = Builtins.mise
   ["oxfmt"] = Builtins.oxfmt
   ["ryl"] = Builtins.ryl
+  ["ryl_format"] = Builtins.ryl_format
   ["selene"] = Builtins.selene
   ["shellcheck"] = Builtins.shellcheck
   ["shfmt"] = Builtins.shfmt
