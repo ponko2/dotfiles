@@ -5,7 +5,7 @@ version: 'v0.0.3'
 workflows:
     '.github/workflows/ci.yml':
         - 'actions/checkout@v7.0.1'
-        - 'jdx/mise-action@v5.2.6'
+        - 'jdx/mise-action@v5.2.7'
         - 'tj-actions/changed-files@v47.0.6'
 dependencies:
     'actions/checkout@v7.0.1':
@@ -13,9 +13,9 @@ dependencies:
         commit: 'sha1-3d3c42e5aac5ba805825da76410c181273ba90b1'
         owner_id: 44036562
         repo_id: 197814629
-    'jdx/mise-action@v5.2.6':
-        ref: 'v5.2.6'
-        commit: 'sha1-f5be966e4a917d54244728e6a5fdcd1d93a35e6c'
+    'jdx/mise-action@v5.2.7':
+        ref: 'v5.2.7'
+        commit: 'sha1-b44d12e7d0d8ee7461bb893e1b1993500433185b'
         owner_id: 216188
         repo_id: 738284564
     'tj-actions/changed-files@v47.0.6':
