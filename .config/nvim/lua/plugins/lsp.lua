@@ -11,7 +11,6 @@ return {
         'eslint',
         'lua_ls',
         'mise',
-        'nixd',
         'oxfmt',
         'oxlint',
         'pkl',
