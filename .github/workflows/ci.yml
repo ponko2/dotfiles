@@ -105,6 +105,8 @@ jobs:
     timeout-minutes: 60
     permissions:
       contents: read
+    env:
+      MISE_ENABLE_TOOLS: jactionlint,shellcheck
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.1
@@ -112,6 +114,8 @@ jobs:
           persist-credentials: false
       - name: Set up mise
         uses: jdx/mise-action@v5.2.7
+        with:
+          cache_key_prefix: mise-v1-${{ github.job }}
       - name: Run jactionlint
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -125,6 +129,8 @@ jobs:
     timeout-minutes: 60
     permissions:
       contents: read
+    env:
+      MISE_ENABLE_TOOLS: npm:@commitlint/cli
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.1
@@ -134,6 +140,8 @@ jobs:
           persist-credentials: false
       - name: Set up mise
         uses: jdx/mise-action@v5.2.7
+        with:
+          cache_key_prefix: mise-v1-${{ github.job }}
       - name: Validate all commits from PR
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
@@ -146,6 +154,8 @@ jobs:
     timeout-minutes: 60
     permissions:
       contents: read
+    env:
+      MISE_ENABLE_TOOLS: editorconfig-checker
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.1
@@ -153,6 +163,8 @@ jobs:
           persist-credentials: false
       - name: Set up mise
         uses: jdx/mise-action@v5.2.7
+        with:
+          cache_key_prefix: mise-v1-${{ github.job }}
       - name: Run EditorConfig checker
         run: editorconfig-checker
         shell: bash
@@ -165,6 +177,8 @@ jobs:
     timeout-minutes: 60
     permissions:
       contents: read
+    env:
+      MISE_ENABLE_TOOLS: luarocks:luacheck,lua
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.1
@@ -177,6 +191,8 @@ jobs:
         shell: bash
       - name: Set up mise
         uses: jdx/mise-action@v5.2.7
+        with:
+          cache_key_prefix: mise-v1-${{ github.job }}
       - name: Run Luacheck
         run: luacheck .
         shell: bash
@@ -189,6 +205,8 @@ jobs:
     timeout-minutes: 60
     permissions:
       contents: read
+    env:
+      MISE_ENABLE_TOOLS: lua-language-server
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.1
@@ -206,6 +224,8 @@ jobs:
         shell: bash
       - name: Set up mise
         uses: jdx/mise-action@v5.2.7
+        with:
+          cache_key_prefix: mise-v1-${{ github.job }}
       - name: Restore Neovim plugins
         run: nvim --headless "+Lazy! restore" +qa
         shell: bash
@@ -218,6 +238,8 @@ jobs:
     timeout-minutes: 60
     permissions:
       contents: read
+    env:
+      MISE_ENABLE_TOOLS: oxfmt
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.1
@@ -225,6 +247,8 @@ jobs:
           persist-credentials: false
       - name: Set up mise
         uses: jdx/mise-action@v5.2.7
+        with:
+          cache_key_prefix: mise-v1-${{ github.job }}
       - name: Run Oxfmt
         run: oxfmt --check
         shell: bash
@@ -237,6 +261,8 @@ jobs:
     timeout-minutes: 60
     permissions:
       contents: read
+    env:
+      MISE_ENABLE_TOOLS: aqua:owenlamont/ryl
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.1
@@ -244,6 +270,8 @@ jobs:
           persist-credentials: false
       - name: Set up mise
         uses: jdx/mise-action@v5.2.7
+        with:
+          cache_key_prefix: mise-v1-${{ github.job }}
       - name: Run ryl
         run: ryl --format=github --strict .
         shell: bash
@@ -259,6 +287,8 @@ jobs:
     timeout-minutes: 60
     permissions:
       contents: read
+    env:
+      MISE_ENABLE_TOOLS: aqua:Kampfkarren/selene/light
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.1
@@ -266,6 +296,8 @@ jobs:
           persist-credentials: false
       - name: Set up mise
         uses: jdx/mise-action@v5.2.7
+        with:
+          cache_key_prefix: mise-v1-${{ github.job }}
       - name: Run selene
         run: selene .
         shell: bash
@@ -278,6 +310,8 @@ jobs:
     timeout-minutes: 60
     permissions:
       contents: read
+    env:
+      MISE_ENABLE_TOOLS: stylua
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.1
@@ -285,6 +319,8 @@ jobs:
           persist-credentials: false
       - name: Set up mise
         uses: jdx/mise-action@v5.2.7
+        with:
+          cache_key_prefix: mise-v1-${{ github.job }}
       - name: Run StyLua
         run: stylua --allow-hidden --check .
         shell: bash
