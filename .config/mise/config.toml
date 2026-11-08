@@ -3,7 +3,6 @@ adopt = true
 
 [bootstrap.hooks]
 post-defaults = "killall Dock Finder SystemUIServer 2> /dev/null || true"
-pre-packages = "[ -d /nix ] || curl -fsSL https://artifacts.nixos.org/nix-installer | sh -s -- install --enable-flakes --no-confirm --no-modify-profile"
 
 [bootstrap.macos.defaults]
 "com.apple.desktopservices" = {
@@ -159,9 +158,6 @@ run_at_load = true
 # Fonts
 "brew-cask:font-udev-gothic" = "latest"
 "brew-cask:font-udev-gothic-nf" = "latest"
-# Nix
-"nix:nixd" = "latest"
-"nix:nixfmt" = "latest"
 
 [bootstrap.user]
 login_shell = "zsh"

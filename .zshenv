@@ -38,8 +38,5 @@ if command -v brew >/dev/null; then
   eval "$(brew shellenv)"
 fi
 
-# Nix
-test -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh && source "$_"
-
 # Prefer user-local binaries over other globally installed tools.
 path=("$XDG_BIN_HOME"(N-/) $path)

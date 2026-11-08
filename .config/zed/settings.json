@@ -13,7 +13,6 @@
     "model_parameters": []
   },
   "auto_install_extensions": {
-    "nix": true,
     "oxc": true,
     "toml": true,
     "vue": true
