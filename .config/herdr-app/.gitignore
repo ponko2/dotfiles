@@ -1,0 +1,12 @@
+*
+!.gitignore
+!keys.json
+!themes/
+themes/*
+!themes/gruvbox-dark.json
+!themes/gruvbox-dark-hard.json
+!themes/gruvbox-light.json
+!themes/gruvbox-light-hard.json
+!themes/gruvbox-material.json
+!themes/gruvbox-material-dark.json
+!themes/gruvbox-material-light.json
