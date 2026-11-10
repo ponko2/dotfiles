@@ -338,10 +338,13 @@ backend = "npm:@commitlint/cli"
 specifiers = ["latest"]
 
 [[tools.oxfmt]]
-version = "0.77.0"
-aube = { path = ".mise/locks/oxfmt/0.77.0", digest = "sha256:4739d3f16fce0c69c05833ef7722617f51e3e99182d239b0d5c21b35b579738a" }
+version = "0.78.0"
+aube = { path = ".mise/locks/oxfmt/0.78.0", digest = "sha256:0da2508ef998e667c28c917c70d56e9d70b8513831de5663f0e0bdfae343bf2b" }
 backend = "npm:oxfmt"
 specifiers = ["latest"]
+
+[tools.oxfmt.provenance]
+repository = "github.com/oxc-project/oxc"
 
 [[tools.shellcheck]]
 version = "0.11.0"
