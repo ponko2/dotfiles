@@ -14,7 +14,7 @@ post-defaults = "killall Dock Finder SystemUIServer 2> /dev/null || true"
   autohide = true,
   # 位置を右側に設定
   orientation = "right",
-  # 最近使用したアプリケーションを非表しない
+  # 最近使用したアプリケーションを表示しない
   show-recents = false,
 }
 "com.apple.finder" = {
