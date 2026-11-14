@@ -4,7 +4,7 @@ adopt = true
 [bootstrap.hooks]
 post-defaults = "killall Dock Finder SystemUIServer 2> /dev/null || true"
 
-[bootstrap.macos.defaults]
+[bootstrap.settings.macos.defaults]
 "com.apple.desktopservices" = {
   # ネットワークフォルダに .DS_Store を作成しない
   DSDontWriteNetworkStores = true,
@@ -14,7 +14,7 @@ post-defaults = "killall Dock Finder SystemUIServer 2> /dev/null || true"
   autohide = true,
   # 位置を右側に設定
   orientation = "right",
-  # 最近使用したアプリケーションを非表しない
+  # 最近使用したアプリケーションを表示しない
   show-recents = false,
 }
 "com.apple.finder" = {
@@ -27,7 +27,7 @@ post-defaults = "killall Dock Finder SystemUIServer 2> /dev/null || true"
   # デフォルト表示をリストビューに設定
   FXPreferredViewStyle = "Nlsv",
   # 新規ウィンドウのデフォルト表示をHOMEに設定
-  NewWindowTarget = "Home",
+  NewWindowTarget = "PfHm",
   # パスバーを表示
   ShowPathbar = true,
   # ステータスバーを表示
@@ -81,7 +81,7 @@ NSGlobalDomain = {
   WebAutomaticSpellingCorrectionEnabled = false,
 }
 
-[bootstrap.macos.dock]
+[bootstrap.settings.macos.dock]
 apps = [
   "/Applications/Google Chrome.app",
   "/Applications/Herdr.app",
