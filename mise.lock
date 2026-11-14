@@ -333,7 +333,7 @@ url = "https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-win64.zip
 
 [[tools."npm:@commitlint/cli"]]
 version = "21.2.4"
-aube = { path = ".mise/locks/npm-commitlint-cli/21.2.4", digest = "sha256:254471f5b757da9fe7ee1ff7f03307689fb8509584f69ae4306b499df364746d" }
+aube = { path = ".mise/locks/npm-commitlint-cli/21.2.4", digest = "sha256:cf0252dfc3f16a4b0ebadc9b1e5bc5d46f3531694a1b490e573409dec6f219a6" }
 backend = "npm:@commitlint/cli"
 specifiers = ["latest"]
 
