@@ -4,7 +4,7 @@ adopt = true
 [bootstrap.hooks]
 post-defaults = "killall Dock Finder SystemUIServer 2> /dev/null || true"
 
-[bootstrap.macos.defaults]
+[bootstrap.settings.macos.defaults]
 "com.apple.desktopservices" = {
   # ネットワークフォルダに .DS_Store を作成しない
   DSDontWriteNetworkStores = true,
@@ -81,7 +81,7 @@ NSGlobalDomain = {
   WebAutomaticSpellingCorrectionEnabled = false,
 }
 
-[bootstrap.macos.dock]
+[bootstrap.settings.macos.dock]
 apps = [
   "/Applications/Google Chrome.app",
   "/Applications/Herdr.app",
