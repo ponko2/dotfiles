@@ -236,9 +236,12 @@ aube = { path = "locks/npm-vtsls-language-server/0.3.0", digest = "sha256:c0efb9
 backend = "npm:@vtsls/language-server"
 specifiers = ["latest"]
 
+[tools."npm:@vtsls/language-server".provenance]
+repository = "github.com/yioneko/vtsls"
+
 [[tools."npm:@vue/language-server"]]
 version = "3.3.14"
-aube = { path = "locks/npm-vue-language-server/3.3.14", digest = "sha256:06339a13087427102bbe84ab0be5a1fedc66c2ab0e6719d6e71a043114040dd6" }
+aube = { path = "locks/npm-vue-language-server/3.3.14", digest = "sha256:bc15af7f80bdd95dbe7f3376e8a11a63feef0f8484ab7679aaa0ad774888f46f" }
 backend = "npm:@vue/language-server"
 specifiers = ["latest"]
 
@@ -370,6 +373,7 @@ url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/
 
 [tools.rust-analyzer."platforms.macos-arm64"]
 checksum = "sha256:e43a65008f8f4291320f33c0545dd577ad7623a7407b584a27155833d3722dfb"
+checksum_source = "mise-versions"
 url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-09/rust-analyzer-aarch64-apple-darwin.gz"
 url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/726380774"
 
