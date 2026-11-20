@@ -1,6 +1,9 @@
 {
-  "font": "UDEV Gothic NF",
+  "appearance": "dark",
+  "copy_on_select": false,
+  "font": "UDEV Gothic",
   "font_size": 16,
+  "font_weight": 400,
   "minimum_contrast": 1,
   "option_as_alt": "on",
   "sounds": {

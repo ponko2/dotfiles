@@ -1,5 +1,5 @@
 schema_version = 1
-snapzy_min_version = "2.1.0"
+snapzy_min_version = "2.2.0"
 
 [general]
 language = "en"
@@ -7,6 +7,7 @@ appearance = "system"
 use_liquid_glass = true
 play_sounds = true
 url_scheme_enabled = true
+cli_enabled = true
 show_menu_bar_icon = true
 start_at_login = true
 export_location = "~/Downloads"
@@ -22,7 +23,7 @@ retention_days = 3
 
 [menu_bar]
 icon_style = "default"
-item_order = ["captureArea", "captureAreaAnnotate", "captureApplication", "captureFullscreen", "captureActiveWindow", "scrollingCapture", "captureOCR", "captureSmartElement", "captureObjectCutout", "recordScreen", "recordApplication", "openAnnotate", "combineImages", "editVideo", "cloudUploads", "openHistory", "shortcutList", "captureDelayed", "captureDelayedFullscreen", "pickColor"]
+item_order = ["captureArea", "captureAreaAnnotate", "captureApplication", "captureFullscreen", "captureActiveWindow", "scrollingCapture", "captureOCR", "captureSmartElement", "captureObjectCutout", "recordScreen", "recordApplication", "openAnnotate", "combineImages", "editVideo", "cloudUploads", "openHistory", "shortcutList", "captureDelayed", "captureTranslate", "captureDelayedFullscreen", "pickColor", "measureScreen"]
 hidden_items = []
 
 [capture]
@@ -35,6 +36,7 @@ recording_template = "Snapzy_Recording_{datetime}"
 
 [capture.screenshot]
 format = "png"
+clipboard_content = "image_and_file"
 include_snapzy = false
 show_cursor = false
 freeze_area = false
@@ -53,6 +55,10 @@ show_hints = true
 success_notification = false
 selected_model = "builtin"
 custom_models = "[]"
+
+[capture.translate]
+target_language = ""
+selected_engine = "builtin"
 
 [capture.object_cutout]
 auto_crop = true
@@ -153,6 +159,7 @@ region = "us-east-1"
 endpoint = ""
 custom_domain = ""
 expire_time = "7d"
+share_link_style = "descriptive"
 uploads_window_position = "center"
 
 [annotate]
@@ -165,6 +172,8 @@ quick_properties_sync = true
 combine_save_as_edit = true
 crop_snap_to_edges = true
 highlighter_text_snapping = true
+measure_unit = "points"
+measure_axis = "both"
 
 [shortcuts]
 enabled = true
@@ -259,6 +268,11 @@ enabled = true
 key = "2"
 modifiers = ["command", "shift"]
 
+[shortcuts.global.translate]
+enabled = true
+key = "2"
+modifiers = ["shift", "option"]
+
 [shortcuts.global.smart_element]
 enabled = true
 key = "4"
@@ -278,6 +292,11 @@ modifiers = ["command", "shift"]
 enabled = true
 key = ""
 modifiers = []
+
+[shortcuts.global.measure_screen]
+enabled = true
+key = "M"
+modifiers = ["shift", "option"]
 
 [shortcuts.overlay.area_application_capture]
 enabled = true
@@ -347,6 +366,7 @@ highlighter = "h"
 blur = "b"
 spotlight = "s"
 counter = "n"
+measure = "u"
 watermark = "w"
 pencil = "p"
 
@@ -377,3 +397,13 @@ modifiers = ["command"]
 enabled = true
 key = ""
 modifiers = []
+
+[shortcuts.annotate_actions.auto_translate]
+enabled = true
+key = "T"
+modifiers = ["command", "shift"]
+
+[shortcuts.annotate_actions.translate_area]
+enabled = true
+key = "T"
+modifiers = ["command", "option"]
