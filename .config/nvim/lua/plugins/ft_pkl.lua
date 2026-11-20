@@ -7,11 +7,5 @@ return {
     build = function()
       require('pkl-neovim').init()
     end,
-    config = function()
-      vim.g.pkl_neovim = {
-        pkl_cli_path = 'pkl',
-        start_command = { 'pkl-lsp' },
-      }
-    end,
   },
 }
