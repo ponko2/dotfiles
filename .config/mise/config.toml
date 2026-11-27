@@ -217,7 +217,6 @@ run = '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/ins
 [tools]
 "aqua:owenlamont/ryl" = "latest"
 "npm:@vtsls/language-server" = "latest"
-"npm:@vue/language-server" = "latest"
 "npm:@zed-industries/vscode-langservers-extracted" = "latest"
 hk = "latest"
 lua = "5.1"
@@ -229,3 +228,7 @@ ruby = "latest"
 rust-analyzer = "latest"
 tree-sitter = "latest"
 ty = "latest"
+
+[tools."npm:@vue/language-server"]
+version = "latest"
+trust_policy_excludes = ["volar-service-pug@0.0.71"]

@@ -6,6 +6,7 @@ lockfile_version = 4
 version = "0.30.0"
 backend = "aqua:owenlamont/ryl"
 specifiers = ["latest"]
+unsupported_platforms = ["macos-x64"]
 
 [tools."aqua:owenlamont/ryl"."platforms.linux-arm64"]
 checksum = "sha256:2e4a765434d63986c858678df0573349da44abc162b7b698a4395e5b586a1e10"
@@ -233,25 +234,22 @@ url = "https://nodejs.org/dist/v26.13.1/node-v26.13.1-win-x64.zip"
 
 [[tools."npm:@vtsls/language-server"]]
 version = "0.3.0"
-aube = { path = "locks/npm-vtsls-language-server/0.3.0", digest = "sha256:c0efb95948df59ed85df7a3784a8e6dd167b4ebd3d1df86f780e7ebd319c98e8" }
+aube = { path = "locks/npm-vtsls-language-server/0.3.0", digest = "sha256:01dbbdacebfad214477dc984731884c3df57ddf222c4a2560cb0eb66f7910633" }
 backend = "npm:@vtsls/language-server"
 specifiers = ["latest"]
 
-[tools."npm:@vtsls/language-server".provenance]
-repository = "github.com/yioneko/vtsls"
-
 [[tools."npm:@vue/language-server"]]
 version = "3.3.14"
-aube = { path = "locks/npm-vue-language-server/3.3.14", digest = "sha256:bc15af7f80bdd95dbe7f3376e8a11a63feef0f8484ab7679aaa0ad774888f46f" }
+aube = { path = "locks/npm-vue-language-server/3.3.14", digest = "sha256:ba77894906072ae594bb2c9228cb34a1a8879aafaa603682bb9da6837d2ab85c" }
 backend = "npm:@vue/language-server"
 specifiers = ["latest"]
 
-[tools."npm:@vue/language-server".provenance]
-repository = "github.com/vuejs/language-tools"
+[tools."npm:@vue/language-server".options]
+trust_policy_excludes = '["volar-service-pug@0.0.71"]'
 
 [[tools."npm:@zed-industries/vscode-langservers-extracted"]]
 version = "4.10.8"
-aube = { path = "locks/npm-zed-industries-vscode-langservers-extracted/4.10.8", digest = "sha256:94019b22a809b9d1d8b12dfbc646106e53a76e5f6003becc092e36db05d5afd8" }
+aube = { path = "locks/npm-zed-industries-vscode-langservers-extracted/4.10.8", digest = "sha256:cdec2767e7391e32af8e1278deba0f742da4ebc3b502ba99adb735d0b4cdee60" }
 backend = "npm:@zed-industries/vscode-langservers-extracted"
 specifiers = ["latest"]
 
@@ -286,6 +284,7 @@ url_api = "https://api.github.com/repos/apple/pkl/releases/assets/764390166"
 
 [tools.pkl."platforms.macos-arm64"]
 checksum = "sha256:6f93ddf6524a5771bd4b6ebde11010c6dfee8e3a8906ffebaa8f52f8a0ba16b7"
+checksum_source = "mise-versions"
 url = "https://github.com/apple/pkl/releases/download/0.33.1/pkl-macos-aarch64"
 url_api = "https://api.github.com/repos/apple/pkl/releases/assets/764390310"
 
@@ -373,6 +372,7 @@ url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/
 
 [tools.rust-analyzer."platforms.macos-arm64"]
 checksum = "sha256:608b7c7d6bec1fcd6c964578b1f8234888afe6d6c0e7915284f1e2fd36ef1343"
+checksum_source = "mise-versions"
 url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-16/rust-analyzer-aarch64-apple-darwin.gz"
 url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/753602674"
 
@@ -436,48 +436,48 @@ url_api = "https://api.github.com/repos/tree-sitter/tree-sitter/releases/assets/
 provenance = "github-attestations"
 
 [[tools.ty]]
-version = "0.0.108"
+version = "0.0.107"
 backend = "aqua:astral-sh/ty"
 specifiers = ["latest"]
 
 [tools.ty."platforms.linux-arm64"]
-checksum = "sha256:43a85f2f8230e97b428fcc9b65b0ef782ec643a3d6556a588e6039c89f6aaaf5"
-url = "https://github.com/astral-sh/ty/releases/download/0.0.108/ty-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/780392971"
+checksum = "sha256:952097983ff6b6b3235b4b5ec8077c1b8bf5c485679fd794ee70ca2007a3cf7f"
+url = "https://github.com/astral-sh/ty/releases/download/0.0.107/ty-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/765014515"
 provenance = "github-attestations"
 
 [tools.ty."platforms.linux-arm64-musl"]
-checksum = "sha256:ac199d072d3d5c1cf132bc381f3885384269a6ae6c160a099904edeb5bb00d03"
-url = "https://github.com/astral-sh/ty/releases/download/0.0.108/ty-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/780392978"
+checksum = "sha256:e121ea63adbbfb3a2e130bff7a1f5143bfbc90dbb36297044da4d5f91102f3ec"
+url = "https://github.com/astral-sh/ty/releases/download/0.0.107/ty-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/765014541"
 provenance = "github-attestations"
 
 [tools.ty."platforms.linux-x64"]
-checksum = "sha256:c0bb1e959f3b6bb8f3858b7b7ca35d4a10c46018fd7621c7f2a192fef109c927"
-url = "https://github.com/astral-sh/ty/releases/download/0.0.108/ty-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/780393181"
+checksum = "sha256:f93e1f3e45ec81b3ce21473d541eb94470546928499415fc263f2858d65f28af"
+url = "https://github.com/astral-sh/ty/releases/download/0.0.107/ty-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/765014836"
 provenance = "github-attestations"
 
 [tools.ty."platforms.linux-x64-musl"]
-checksum = "sha256:c570a85feca7e39b9f016b5783c012b522a6287049cf82c3ac0e4e7ec6a6d81a"
-url = "https://github.com/astral-sh/ty/releases/download/0.0.108/ty-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/780393206"
+checksum = "sha256:c98b2c3767d44161b7634ff8aa7f0dfc3db840fc5585ccab20cc90a49ad54d93"
+url = "https://github.com/astral-sh/ty/releases/download/0.0.107/ty-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/765014853"
 provenance = "github-attestations"
 
 [tools.ty."platforms.macos-arm64"]
-checksum = "sha256:647014d7cf95d9638bad99ce5fcb3a763679eba23a265134221b34da402724c6"
-url = "https://github.com/astral-sh/ty/releases/download/0.0.108/ty-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/780392909"
+checksum = "sha256:5b514ec3271383263250481b139c2eb59021ca674866b267f37bb988dbea52c9"
+url = "https://github.com/astral-sh/ty/releases/download/0.0.107/ty-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/765014453"
 provenance = "github-attestations"
 
 [tools.ty."platforms.macos-x64"]
-checksum = "sha256:5c1225a3b8c58b69d4b527c04566a3e6cbe685f33308b524b2ab9c456dc258a6"
-url = "https://github.com/astral-sh/ty/releases/download/0.0.108/ty-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/780393155"
+checksum = "sha256:5bff07e2e802815a303cdb7864b7034347bebb63ad159e22a514b5555d87aae5"
+url = "https://github.com/astral-sh/ty/releases/download/0.0.107/ty-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/765014786"
 provenance = "github-attestations"
 
 [tools.ty."platforms.windows-x64"]
-checksum = "sha256:f4d4308e1018490ee3e54c3206fed912da7f667ff2fc463ba6f92369a32db811"
-url = "https://github.com/astral-sh/ty/releases/download/0.0.108/ty-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/780393163"
+checksum = "sha256:3ba361f2edda769040daffb52580d4a9a5f54f7c6040d222fd634aa70d2b9145"
+url = "https://github.com/astral-sh/ty/releases/download/0.0.107/ty-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/765014811"
 provenance = "github-attestations"
