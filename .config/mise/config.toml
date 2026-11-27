@@ -84,7 +84,6 @@ NSGlobalDomain = {
 [bootstrap.settings.macos.dock]
 apps = [
   "/Applications/Google Chrome.app",
-  "/Applications/Herdr.app",
   "/Applications/Rex Beta.app",
   "/Applications/Zed.app",
   "/Applications/DevToys.app",
