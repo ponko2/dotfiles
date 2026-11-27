@@ -342,51 +342,50 @@ checksum = "sha256:0d8f693bb4027378d2c92c285c0bb405f9825623bfbf2caad0d52acabbd49
 url = "https://github.com/oneclick/rubyinstaller2/releases/download/RubyInstaller-4.0.10-1/rubyinstaller-4.0.10-1-x64.7z"
 
 [[tools.rust-analyzer]]
-version = "2026-11-16"
+version = "2026-11-23"
 backend = "aqua:rust-lang/rust-analyzer"
 specifiers = ["latest"]
 
 [tools.rust-analyzer."platforms.linux-arm64"]
-checksum = "sha256:73d8b9b87384b3115a183a8a51db9f7c205ce4c89ea511f3c8c8fea863038a50"
+checksum = "sha256:cf7e9c2cd34540da92473d47f0866c9515425da01116e7aaca988c9b19408285"
 checksum_source = "mise-versions"
-url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-16/rust-analyzer-aarch64-unknown-linux-gnu.gz"
-url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/753602812"
+url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-23/rust-analyzer-aarch64-unknown-linux-gnu.gz"
+url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/782279496"
 
 [tools.rust-analyzer."platforms.linux-arm64-musl"]
-checksum = "sha256:73d8b9b87384b3115a183a8a51db9f7c205ce4c89ea511f3c8c8fea863038a50"
+checksum = "sha256:cf7e9c2cd34540da92473d47f0866c9515425da01116e7aaca988c9b19408285"
 checksum_source = "mise-versions"
-url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-16/rust-analyzer-aarch64-unknown-linux-gnu.gz"
-url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/753602812"
+url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-23/rust-analyzer-aarch64-unknown-linux-gnu.gz"
+url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/782279496"
 
 [tools.rust-analyzer."platforms.linux-x64"]
-checksum = "sha256:4a08727a03094e5114db4438e4bd1d6182cc26eff37d6962115ea1ec1a491ca3"
+checksum = "sha256:99748126069cc1360e2729e45ae7b563a2b885def41c0d600de8e5977a7adf13"
 checksum_source = "mise-versions"
-url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-16/rust-analyzer-x86_64-unknown-linux-gnu.gz"
-url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/753603644"
+url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-23/rust-analyzer-x86_64-unknown-linux-gnu.gz"
+url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/782280534"
 
 [tools.rust-analyzer."platforms.linux-x64-musl"]
-checksum = "sha256:4a08727a03094e5114db4438e4bd1d6182cc26eff37d6962115ea1ec1a491ca3"
+checksum = "sha256:99748126069cc1360e2729e45ae7b563a2b885def41c0d600de8e5977a7adf13"
 checksum_source = "mise-versions"
-url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-16/rust-analyzer-x86_64-unknown-linux-gnu.gz"
-url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/753603644"
+url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-23/rust-analyzer-x86_64-unknown-linux-gnu.gz"
+url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/782280534"
 
 [tools.rust-analyzer."platforms.macos-arm64"]
-checksum = "sha256:608b7c7d6bec1fcd6c964578b1f8234888afe6d6c0e7915284f1e2fd36ef1343"
-checksum_source = "mise-versions"
-url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-16/rust-analyzer-aarch64-apple-darwin.gz"
-url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/753602674"
+checksum = "sha256:9d996784c9bc811642edd9d993c8c85e12c7111463a8e426d5e74c27da1bc0a5"
+url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-23/rust-analyzer-aarch64-apple-darwin.gz"
+url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/782279313"
 
 [tools.rust-analyzer."platforms.macos-x64"]
-checksum = "sha256:6901d956b4f2b091343eaf3570944098488f3ffec018987145285ed8253c07d2"
+checksum = "sha256:4673e51749f937567b77813ef12621b6e11e6ba9c1b591c58f8a98fbbc9f5bac"
 checksum_source = "mise-versions"
-url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-16/rust-analyzer-x86_64-apple-darwin.gz"
-url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/753603505"
+url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-23/rust-analyzer-x86_64-apple-darwin.gz"
+url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/782280363"
 
 [tools.rust-analyzer."platforms.windows-x64"]
-checksum = "sha256:dbf0c36ec54cf727d34cc40c9994fe71b7d52e3c28a3112c3deca1aba46fbc8f"
+checksum = "sha256:6d0c3835155bb1fbee9d93d1eca4270251e08cb9a4621dbcadaf7450a6a4add2"
 checksum_source = "mise-versions"
-url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-16/rust-analyzer-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/753603552"
+url = "https://github.com/rust-lang/rust-analyzer/releases/download/2026-11-23/rust-analyzer-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/rust-lang/rust-analyzer/releases/assets/782280454"
 
 [[tools.tree-sitter]]
 version = "0.27.2"
@@ -436,48 +435,48 @@ url_api = "https://api.github.com/repos/tree-sitter/tree-sitter/releases/assets/
 provenance = "github-attestations"
 
 [[tools.ty]]
-version = "0.0.109"
+version = "0.0.112"
 backend = "aqua:astral-sh/ty"
 specifiers = ["latest"]
 
 [tools.ty."platforms.linux-arm64"]
-checksum = "sha256:81c89882e9aad4e57760dfb829bcdbef45144a82ffa5eeaa226889b7dfea223d"
-url = "https://github.com/astral-sh/ty/releases/download/0.0.109/ty-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/784695367"
+checksum = "sha256:ebf30609c29fdf1198fe86b99206ca1c469c3fbe17e1e42f06ddc2d77f7824eb"
+url = "https://github.com/astral-sh/ty/releases/download/0.0.112/ty-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/796733152"
 provenance = "github-attestations"
 
 [tools.ty."platforms.linux-arm64-musl"]
-checksum = "sha256:6f23820fef99672f5a58a62aa1b26f110d39f6b1a23fc3bf897d77f3fc41caae"
-url = "https://github.com/astral-sh/ty/releases/download/0.0.109/ty-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/784695372"
+checksum = "sha256:151ca7d58d40488d6edb9a80f423a59046b490c4ea666a24508fe4ce13506214"
+url = "https://github.com/astral-sh/ty/releases/download/0.0.112/ty-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/796733165"
 provenance = "github-attestations"
 
 [tools.ty."platforms.linux-x64"]
-checksum = "sha256:38bdf01712a99617af843c0d963ee10fa74d7b2ff91e545c1360909c79bad17b"
-url = "https://github.com/astral-sh/ty/releases/download/0.0.109/ty-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/784695641"
+checksum = "sha256:660b429933023f19f3c02516e58efbcc81745702a235a209030318e0629eaa25"
+url = "https://github.com/astral-sh/ty/releases/download/0.0.112/ty-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/796733514"
 provenance = "github-attestations"
 
 [tools.ty."platforms.linux-x64-musl"]
-checksum = "sha256:f13c865b0a47d0c35c864db62cf4e7ce4a29ae2a70c90930fe4286f95018fffd"
-url = "https://github.com/astral-sh/ty/releases/download/0.0.109/ty-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/784695660"
+checksum = "sha256:ab1af67c57aab7798e799413cd3c0f65f90a09b837b1d2f0b781c9ac2dc7d7ab"
+url = "https://github.com/astral-sh/ty/releases/download/0.0.112/ty-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/796733532"
 provenance = "github-attestations"
 
 [tools.ty."platforms.macos-arm64"]
-checksum = "sha256:c369560235777dadd7b6328248c5742a2ed9aa8cd693a6d61c86cec71f054195"
-url = "https://github.com/astral-sh/ty/releases/download/0.0.109/ty-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/784695308"
+checksum = "sha256:f41132683a2ed9f05af9b8863578768e1aec2f57a61eb966aa48fb56b940634c"
+url = "https://github.com/astral-sh/ty/releases/download/0.0.112/ty-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/796733066"
 provenance = "github-attestations"
 
 [tools.ty."platforms.macos-x64"]
-checksum = "sha256:99da4317b268388899598260b234b01110f54bf227f421b134e1259f090e8816"
-url = "https://github.com/astral-sh/ty/releases/download/0.0.109/ty-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/784695589"
+checksum = "sha256:da218f2eabb207d9b0a69ac2aef7d84381aa96f6d7206fa3f9cadfe77b51ad40"
+url = "https://github.com/astral-sh/ty/releases/download/0.0.112/ty-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/796733473"
 provenance = "github-attestations"
 
 [tools.ty."platforms.windows-x64"]
-checksum = "sha256:5a4feb9bcc0edea1aeabfa8e58775de9247d0d4fc9304fd4458ff3f3006fb18f"
-url = "https://github.com/astral-sh/ty/releases/download/0.0.109/ty-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/784695599"
+checksum = "sha256:8897d90673a1b06a93c36b8830631f8378880df182c340c8a7a8f5551da1025f"
+url = "https://github.com/astral-sh/ty/releases/download/0.0.112/ty-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/astral-sh/ty/releases/assets/796733483"
 provenance = "github-attestations"
